@@ -1,0 +1,11 @@
+file_offset,source_jp,vi_full,status,notes
+0x28818,ストーリーモード,Chế độ Cốt truyện,translated_meaning,School/family adventure tone
+0x2882E,対戦モード,Thi đấu,translated_meaning,Avoid martial/combat-heavy wording
+0x2883C,チーム対戦モード,Thi đấu theo đội,translated_meaning,Avoid martial/combat-heavy wording
+0x28852,まるこＱ,Maruko Q,translated_meaning,Preserve mode name
+0x2885E,まるこペイント,Maruko tập vẽ,translated_meaning,Cute school-game tone
+0x28870,まるこみくじ,Bói vui cùng Maruko,translated_meaning,Playful rather than mystical/serious
+0x28880,針切カラオケ,Karaoke,translated_meaning,Compact menu label; exact nuance can be revisited with context
+0x28892,サウンド,Âm thanh,translated_meaning,Standard UI
+0x288A2,ステレオ,Stereo,translated_meaning,Standard audio term
+0x288B2,モノラル,Mono,translated_meaning,Standard audio term
