@@ -10,13 +10,16 @@ Current committed translated rows:
 - `translation/source/seed_known_strings.csv`: 10 seed rows
 - `translation/source/main_menu_vi.csv`: 10 visible main-menu rows
 - `translation/source/story_batch01_vi.csv`: 126 story/dialogue rows
-- total committed meaning-layer rows: **146**
+- `translation/source/story_batch02_part1_vi.csv`: 42 rows
+- `translation/source/story_batch02_part2_vi.csv`: 42 rows
+- `translation/source/story_batch02_part3_vi.csv`: 42 rows
+- total committed meaning-layer rows: **272**
 
-These counts are translation-source rows, NOT whole-game completion percentage. The scanner still contains false positives, split strings, and unparsed control/layout bytes.
+These counts are translation-source rows, NOT whole-game completion percentage. The scanner still contains false positives, split strings, count/control artifacts, and unparsed layout bytes.
 
 ## Story Batch 01
 
-Range covered approximately:
+Approximate range:
 
 `0x181CC .. 0x1A5CA`
 
@@ -28,24 +31,44 @@ Focus:
 - Sakura-family evening scene;
 - early representative-selection contests and win/loss reactions.
 
-Tone rules are frozen in `translation/STYLE_GUIDE_VI.md`.
+## Story Batch 02
 
-Important editorial choices:
+Approximate range:
 
-- school/minigame competition uses `thi`, `thi đấu`, `so tài` rather than combat-heavy wording;
-- Maruo's `ズバリ` is anchored around `Nói thẳng ra!`;
-- Hanawa keeps his playful `Hey` / `baby` persona;
+`0x1A64F .. 0x1C61C`
+
+Committed as three 42-row source files so the batch remains easy to audit and diff.
+
+Focus:
+
+- later rounds of the class representative-selection games;
+- Maruko becoming overconfident, losing, recovering, and joking with classmates;
+- Maruo's pompous election jokes and repeated `ズバリ` lines;
+- Hanawa's playful `baby` / rose / `Señorita` banter;
+- Tama-chan passport gag and the quiet rivalry near the final round;
+- narrator punchlines and Sakura-family dinner jokes.
+
+Editorial choices:
+
+- school/minigame competition uses `thi`, `thi đấu`, `so tài`, `vượt qua` instead of combat-heavy wording;
+- Maruo's `ズバリ` stays anchored around `Nói thẳng ra!`;
+- Hanawa keeps `Hey`, `baby`, and his slightly theatrical charm;
 - narrator stays dry and lightly teasing;
-- `vi_full` keeps natural Vietnamese with full diacritics and is not shortened for current ROM limits.
+- Japanese wordplay is adapted for readable Vietnamese when a literal rendering would kill the joke;
+- scanner fragments such as `P/Q/R` before `人/回` are NOT treated as proven text semantics. Split rows are translated conservatively from story context and marked for runtime/source-structure review.
+
+Tone rules remain frozen in `translation/STYLE_GUIDE_VI.md`: cute school/family comedy, not an RPG battle script.
 
 ## Runtime separation
 
-No story Batch 01 row has been written into the ROM yet.
+No story Batch 01 or Batch 02 row has been written into the ROM yet.
 
-Font/codepage reverse remains a separate task. Probe 005 is still the current mapping-table runtime proof and requires screenshot evidence before freezing that architecture.
+`vi_full` remains fully accented, meaning-first Vietnamese and must not be shortened to fit the current font or byte budget.
 
-Do not derive runtime-fit text from `vi_full` until the Vietnamese glyph/codepage path is proven.
+Font/codepage reverse remains a separate track. Probe 005 is still the mapping-table runtime proof and requires screenshot evidence before that architecture is frozen.
+
+Do not derive final runtime-fit text from `vi_full` until the Vietnamese glyph/codepage path is proven.
 
 ## Next translation batch
 
-Continue from approximately `0x1A64F` onward, prioritizing coherent real dialogue and skipping scanner garbage/control artifacts rather than guessing them.
+Continue from approximately `0x1C661` onward, prioritizing coherent dialogue and skipping scanner garbage rather than guessing it.
