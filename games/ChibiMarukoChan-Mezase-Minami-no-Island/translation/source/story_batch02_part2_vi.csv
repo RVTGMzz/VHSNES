@@ -1,0 +1,43 @@
+file_offset,source_jp_scanner,byte_length,vi_full,status,notes
+0x1B13C,  「わーい｛    またしても  ,28,Yay! Lại thắng...,translated_meaning_batch02,scanner split/count artifact; meaning translated conservatively; runtime semantics pending
+0x1B159,Q人に  勝ったよ」｛,19,...hai người nữa rồi!,translated_meaning_batch02,scanner split/count artifact; meaning translated conservatively; runtime semantics pending
+0x1B176,  おじーちゃん！！                ｛  ▼,40,Ông ơi!!,translated_meaning_batch02,
+0x1B1A8,  よーやったのう｛  わしには  まる子が｛  かがやいてみえるわい｛  ▼,68,"Giỏi lắm! Trong mắt ông, Maruko đang tỏa sáng đấy!",translated_meaning_batch02,
+0x1B1F6,  やだね  おじいちゃん｛  じつりょくを  みせただけだよ…｛,58,"Thôi đi ông, cháu chỉ cho mọi người thấy thực lực thôi mà...",translated_meaning_batch02,
+0x1B23A,  さくら  ,10,Sakura...,translated_meaning_batch02,scanner split/count artifact; meaning translated conservatively; runtime semantics pending
+0x1B245,Q人に  負けたみたいだぜ｛  ▼,29,...hình như thua hai người rồi đấy.,translated_meaning_batch02,scanner split/count artifact; meaning translated conservatively; runtime semantics pending
+0x1B26C,  けっこう  よわいブー            ｛  ▼,40,"Khá là yếu đấy, buu.",translated_meaning_batch02,
+0x1B29E,  じゃあ  やっぱり  オレたちも｛  行けるかもな｛  ▼,52,Vậy thì có khi tụi mình cũng đi được nhỉ.,translated_meaning_batch02,
+0x1B2DC,  行けるかもしれないブー          ｛,36,"Có khi đi được thật đó, buu.",translated_meaning_batch02,
+0x1B308,  「トホホ…」                    ｛  ▼,40,Hic...,translated_meaning_batch02,
+0x1B33A,  さくら  また,14,Sakura lại...,translated_meaning_batch02,scanner split/count artifact; meaning translated conservatively; runtime semantics pending
+0x1B34D,Pで｛  やるんだねー  すごいなー｛  ▼,37,...thi tiếp à? Ghê thật.,translated_meaning_batch02,scanner split/count artifact; meaning translated conservatively; runtime semantics pending
+0x1B37C,  南の島に  行くのも｛  ラクじゃないよ｛  ▼,44,Muốn đi đảo phương Nam cũng chẳng dễ chút nào.,translated_meaning_batch02,
+0x1B3B2,  南の島かー                      ｛  きっと  めずらしい花や動物が｛  いるんだろうな｛  ▼,90,Đảo phương Nam à... chắc có nhiều hoa và động vật lạ lắm.,translated_meaning_batch02,
+0x1B416,  きっと  めずらしいフルーツも｛  あるね｛  ▼,46,Chắc cũng có nhiều loại trái cây lạ nữa.,translated_meaning_batch02,
+0x1B44E,  ところで  南の島って｛  どこの南の島？｛  ▼,46,Mà đảo phương Nam là đảo nào vậy?,translated_meaning_batch02,
+0x1B48E,  えっ！？｛,12,Hả!?,translated_meaning_batch02,
+0x1B4A4,  「そういえば  わたしって        ｛    どこの島に  行くかもしらずに  ｛    こんなに  くろうしてるんだ…」｛  ▼,112,Nghĩ lại thì... mình còn chẳng biết mình có thể sẽ đi hòn đảo nào mà đã khổ sở thế này rồi...,translated_meaning_batch02,
+0x1B51E,  さくらは  こんどは  ,22,Sakura lần này...,translated_meaning_batch02,scanner split/count artifact; meaning translated conservatively; runtime semantics pending
+0x1B535,R人に｛  勝ったみたいだね｛  ▼,31,...hình như thắng ba người rồi nhỉ.,translated_meaning_batch02,scanner split/count artifact; meaning translated conservatively; runtime semantics pending
+0x1B55E,  そうだね｛  ともだちを  たいせつにしない｛  人だね  さくらは｛  ▼,68,Ừ. Sakura đúng là người chẳng biết trân trọng bạn bè nhỉ.,translated_meaning_batch02,
+0x1B5AC,  きみは  そんなふうだから｛  いつまでたっても  ダメなんだ｛  ▼,64,Cậu cứ như vậy nên mãi mãi mới không khá lên được.,translated_meaning_batch02,
+0x1B5F6,  永沢くんだって  さっき…｛  ▼,32,Nagasawa-kun lúc nãy cũng...,translated_meaning_batch02,
+0x1B620,  さくらは,10,Sakura đã vượt qua...,translated_meaning_batch02,scanner split/count artifact; meaning translated conservatively; runtime semantics pending
+0x1B631,R人を負かしたんだ｛  さくらの  南の島への思いが｛  キミにはわからないのか？｛  ▼,81,...ba người rồi. Cậu không hiểu nó muốn đi đảo phương Nam đến mức nào à?,translated_meaning_batch02,scanner split/count artifact; meaning translated conservatively; runtime semantics pending
+0x1B68C,  う…                            ｛  ▼,40,Ư...,translated_meaning_batch02,
+0x1B6BE,  そんなこと  わからないなんて｛  キミ  いきてるかいがないね｛  しつれいするよ｛  ▼,84,Đến chuyện đó mà cũng không hiểu thì thật chẳng ra sao cả. Xin phép.,translated_meaning_batch02,
+0x1B721,  い  いきてるかい…｛,22,Chẳng... ra sao...,translated_meaning_batch02,
+0x1B73C,  「わたしゃダメな女なんだね…」  ｛,36,Mình đúng là cô gái vô dụng...,translated_meaning_batch02,
+0x1B76D,  まるちゃん  よくがんばったよ｛  ▼,36,"Maru-chan, cậu đã cố gắng lắm rồi.",translated_meaning_batch02,
+0x1B79B,  そういってくれるのは｛  たまちゃんだけだよ｛  心の友だね  まったく｛  ▼,74,Chỉ có Tama-chan mới nói vậy với tớ thôi. Đúng là tri kỷ của tớ!,translated_meaning_batch02,
+0x1B7EA,  じゃあ  これから  うちにきて｛  あそばない？｛  ▼,52,Vậy lát nữa qua nhà tớ chơi không?,translated_meaning_batch02,
+0x1B828,  ごめんね｛  ちょっと  ようじがあるんだ…｛  ▼,48,"Xin lỗi nhé, tớ có chút việc...",translated_meaning_batch02,
+0x1B862,  ん？  なんの？｛  ▼,22,Hửm? Việc gì?,translated_meaning_batch02,
+0x1B882,  パスポートを  とりに…｛,26,Đi làm hộ chiếu...,translated_meaning_batch02,
+0x1B8A4,  「ガーン…                      ｛,36,Choáng...,translated_meaning_batch02,
+0x1B8CD,    た  たまちゃん                ｛    あんた  まさか…」            ｛,72,Ta-Tama-chan... cậu chẳng lẽ...,translated_meaning_batch02,
+0x1B91D,  「わたしって  いったい…」      ｛  ▼,40,Mình rốt cuộc là sao vậy...,translated_meaning_batch02,
+0x1B94F,  女の子を  かなしませてしまう｛  ボクって  つみな男だよ｛  ゆるしておくれ,74,"Làm con gái buồn, tớ đúng là chàng trai tội lỗi. Tha lỗi cho tớ nhé...",translated_meaning_batch02,
+0x1B99C,  ベイビー｛,12,Baby.,translated_meaning_batch02,
+0x1BA12,  ついに  さいごに  なったね｛  ▼,34,Cuối cùng cũng đến lượt cuối rồi nhỉ.,translated_meaning_batch02,
