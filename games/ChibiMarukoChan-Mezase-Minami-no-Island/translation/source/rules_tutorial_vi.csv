@@ -1,0 +1,3 @@
+file_offset,source_jp,vi_full,status,notes
+0x1E2FF,"ルールをせつめいするよ","Giải thích luật chơi nhé!",translated_system,"direct CP932 text; runtime layout pending"
+0x1E326,"・２本先取だよ / ・ゲームの時間は勝つまでだよ","・Ai thắng trước 2 ván là thắng / ・Chơi cho tới khi phân thắng bại nhé",translated_system,"full-width ２ verified in raw ROM; bullet structure preserved semantically; runtime layout pending"
