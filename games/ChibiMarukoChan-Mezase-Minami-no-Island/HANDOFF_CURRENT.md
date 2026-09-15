@@ -6,7 +6,7 @@ Repo: `ronvotri/Viet-Hoa-SNES`
 
 ## Current milestone
 
-Bootstrap / Reverse 001 is complete statically.
+Bootstrap / Reverse 001 is complete statically. Visible-menu reverse is now active.
 
 ### Canonical clean ROM
 
@@ -23,7 +23,7 @@ Never patch an unknown or already modified ROM.
 
 ## Proven text facts
 
-Direct CP932/Shift-JIS text exists in ROM. Known exact examples are recorded in `translation/source/seed_known_strings.csv`.
+Direct CP932/Shift-JIS-like text exists in ROM. Known exact examples are recorded in `translation/source/seed_known_strings.csv`.
 
 A conservative scanner exists at `tools/scan_sjis_candidates.py`.
 
@@ -42,99 +42,86 @@ Frequently observed around text:
 
 Do not assign semantics to these control/marker bytes yet. Early writes must leave them untouched.
 
-## Diagnostic probe 001
+## Visible menu runtime target confirmed by screenshot
 
-Tool: `tools/probe_ascii_menu.py`
+Direct source spans:
 
-It changes only:
-
-- offset `0x2B7C9`
-- source `メロディーありでスタート`
-- exact 24-byte source span
-- replacement `BAT DAU CO NHAC` padded within the same span
-
-Static gates already passed locally:
-
-- exact clean ROM: PASS
-- source identity: PASS
-- field fit: PASS
-- dry-run: PASS
-- build: PASS
-- post-build checksum: PASS
-
-Diagnostic build hashes from the canonical clean ROM:
-
-- SHA-1 `40841562bd8e3ae113ed77145a9e8d28261d710a`
-- SHA-256 `7ed3d93e565e2d50eb09eff29b4bae174a2147ce859d9880db992aad739a7cf8`
-
-Probe 001 was inconvenient to reach in runtime, so it is superseded as the preferred visible test by probe 002. No Runtime PASS is claimed for probe 001.
-
-## Visible menu runtime target confirmed by user screenshot
-
-The immediately reachable main menu contains these direct CP932 strings:
-
-- `0x28818` `ストーリーモード` → meaning-first Vietnamese: `Chế độ Cốt truyện`
+- `0x28818` `ストーリーモード` → `Chế độ Cốt truyện`
 - `0x2882E` `対戦モード` → `Đối kháng`
 - `0x2883C` `チーム対戦モード` → `Đấu đội`
 - `0x28852` `まるこＱ` → `Maruko Q`
 - `0x2885E` `まるこペイント` → `Vẽ cùng Maruko`
 - `0x28870` `まるこみくじ` → `Bói quẻ Maruko`
-- `0x28880` `針切カラオケ` → compact meaning target currently `Karaoke`
+- `0x28880` `針切カラオケ` → compact target `Karaoke`
 - `0x28892` `サウンド` → `Âm thanh`
 - `0x288A2` `ステレオ` → `Stereo`
 - `0x288B2` `モノラル` → `Mono`
 
 The pink heading `どれにする？` is visible as `Chọn gì đây?`, but has NOT been found as a direct CP932 string yet. Treat it as graphic/tilemap/other encoding until proven.
 
-## Diagnostic probe 002 — current preferred runtime test
+## Probe 001
 
-Tool: `tools/probe_visible_menu_002.py`
+`tools/probe_ascii_menu.py`
 
-It starts from the exact CLEAN ROM and changes only the 10 direct text spans above. Surrounding control/terminator bytes are untouched.
+Single raw-ASCII probe at `0x2B7C9`. Static build PASS, but runtime location was inconvenient and no Runtime PASS was claimed.
 
-ASCII runtime candidates:
+## Probe 002 — RUNTIME FAIL
 
-- `COT TRUYEN`
-- `DOI KHANG`
-- `DAU DOI`
-- `MARUKO Q`
-- `VE MARUKO`
-- `BOI MARUKO`
-- `KARAOKE`
-- `AM THANH`
-- `STEREO`
-- `MONO`
+`tools/probe_visible_menu_002.py`
 
-Static gates:
+Probe 002 replaced all ten visible menu strings with raw 1-byte ASCII while preserving the original byte spans and surrounding control bytes.
 
-- exact clean ROM: PASS
-- exact source identity: 10/10 PASS
+Static gates passed:
+
+- clean ROM identity: PASS
+- source identity: 10/10 PASS
 - field fit: 10/10 PASS
-- overlap count: 0
-- dry-run: PASS
-- build: PASS
-- post-build checksum: PASS
+- overlap: 0
+- checksum: PASS
 
-Probe 002 build:
+Runtime evidence from user screenshot:
 
-- checksum `0xF03D`
-- complement `0x0FC2`
-- SHA-1 `6e4df69bd76cc2fe2942f46d4f29d3b144706d62`
-- SHA-256 `098b3ab3af8857fb858e4881727d7a7382edcbf83dbca3f9dfd8ad0d6b348d42`
+- game reaches the Konami copyright screen
+- game then freezes before the normal menu
 
-**Runtime PASS claim: NO.**
+Therefore:
 
-## Next task
+**Probe 002 runtime result: FAIL.**
 
-User should boot probe 002 and screenshot this same menu.
+Do NOT use raw 1-byte ASCII for bulk menu/text patching.
+
+The strongest current hypothesis is that this script/renderer path consumes text in 2-byte units or otherwise treats raw ASCII bytes differently, causing parser/renderer desynchronization. This is a hypothesis from runtime evidence, not yet a proven complete text-engine specification.
+
+## Probe 003 — current next runtime test
+
+`tools/probe_visible_menu_003_2byte.py`
+
+Purpose: isolate the 1-byte-vs-2-byte hypothesis with minimum blast radius.
+
+Changes only the first menu field:
+
+- offset: `0x28818`
+- source: `ストーリーモード`
+- exact source length: 16 bytes / 8 two-byte units
+- replacement: `ＴＥＳＴ１２３４`
+- replacement length: 16 bytes / 8 CP932 two-byte units
+
+No surrounding control/terminator bytes are changed. All other menu strings remain original Japanese.
+
+Static build from canonical clean ROM:
+
+- checksum `0x10D1`
+- complement `0xEF2E`
+- SHA-1 `71c5b6369668bf3092f5e11f4202143392c68e30`
+- SHA-256 `0fb8ea0791879f4d2548d7777f2664d9f0bb4285d8efc927d4072f9e876cfa4d`
+- changed ROM spans only: header checksum/complement and `0x28818..0x28827`
+- Runtime PASS claim: NO
 
 Interpretation:
 
-- If the ASCII labels render correctly: ASCII renderer support is proven for this visible menu path. Then establish width/spacing and design one Vietnamese-glyph/codepage probe with accents.
-- If labels render as garbage/blank: reverse this menu renderer/font mapping before any bulk text patching.
-- If only some labels work: compare the exact failing spans and nearby control bytes before generalizing.
-
-After renderer proof, reverse pointer/field ownership and control semantics before building a bulk exact-offset overlay.
+- If Probe 003 boots and shows `ＴＥＳＴ１２３４`, the 2-byte full-width route is strongly validated for this menu path.
+- If it boots but shows unexpected glyphs, reverse the game's glyph mapping/font table next.
+- If it still freezes, the failure is not explained merely by raw ASCII width; inspect source ownership, parser controls, or checksum-sensitive/game logic before more text writes.
 
 ## Frozen workflow rule
 
