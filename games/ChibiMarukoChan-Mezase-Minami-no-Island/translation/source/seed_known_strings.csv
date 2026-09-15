@@ -1,0 +1,11 @@
+file_offset,source_jp,source_bytes,vi_full,status,notes
+0x2B7C9,メロディーありでスタート,24,Bắt đầu có nhạc,meaning_seed,ASCII runtime probe target; full Vietnamese not runtime-proven
+0x2B7EF,メロディーなしでスタート,24,Bắt đầu không nhạc,meaning_seed,paired menu option
+0x31CFB,スタートをおしてね,18,Nhấn START nhé,meaning_seed,visible instruction candidate
+0x2C74B,ちびまる子ちゃん,16,Chibi Maruko-chan,meaning_seed,proper title/name; preserve established name
+0x2C76A,フルーツを食べてみて,20,Thử ăn trái cây xem,meaning_seed,context appears fortune/advice-like
+0x2C79E,北に行こう,10,Đi về phía Bắc nào,meaning_seed,direction advice
+0x2C7C0,南に行こう,10,Đi về phía Nam nào,meaning_seed,direction advice
+0x2C918,ゲームで開運です,16,Chơi game để gặp may,meaning_seed,fortune/advice context
+0x31D14,クイズを続けますか？,20,Bạn có muốn tiếp tục câu đố không?,meaning_seed,question
+0x31D3A,いいえ,6,Không,meaning_seed,paired yes/no response
