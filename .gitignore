@@ -1,0 +1,17 @@
+# Commercial ROMs / generated builds
+*.sfc
+*.smc
+*.fig
+*.swc
+*.bin
+*.ips
+*.bps
+*.ups
+*.vcdiff
+
+# Generated reports / caches
+__pycache__/
+*.pyc
+build/
+out/
+reports/generated/
