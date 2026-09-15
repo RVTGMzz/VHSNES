@@ -1,0 +1,38 @@
+file_offset,source_jp_scanner,vi_full,status,notes
+0x34009,"クラスメイトの藤木君とのコンビはいい味をだしている。","Cặp bài trùng với bạn cùng lớp Fujiki-kun cũng tạo nên một nét rất riêng.",translated_quiz_batch01,
+0x34073,"くらいが、目のはなせない少女 野口さん。彼女のなによりも","Noguchi-san, cô bé trầm tính mà cứ khiến người ta phải để ý. Thứ cô ấy thích hơn bất cứ gì...",translated_quiz_batch01,
+0x340C0,"すきなものってなに？","...là gì?",translated_quiz_batch01,
+0x340E9,"おわらい","Hài kịch",translated_quiz_batch01,"answer choice"
+0x340F8,"マジック","Ảo thuật",translated_quiz_batch01,"answer choice"
+0x34107,"なぞなぞ","Đố vui",translated_quiz_batch01,"answer choice"
+0x34116,"気になる少女野口さんは「おわらい」がなにより","Cô nàng bí ẩn Noguchi-san thích 'hài kịch' hơn bất cứ thứ gì...",translated_quiz_batch01,
+0x34161,"大すきで、するどいつっこみを入れることすらあるのであった。","...đến mức đôi khi còn tung ra những câu chọc sắc lẹm.",translated_quiz_batch01,
+0x341D5,"大金持ちのキザ少年の花輪くんだが、彼のフルネームは？","Hanawa-kun, cậu ấm giàu có lại điệu đà, có tên đầy đủ là gì?",translated_quiz_batch01,
+0x34227,"花輪和彦","Hanawa Kazuhiko",translated_quiz_batch01,"answer choice"
+0x34236,"花輪一夫","Hanawa Kazuo",translated_quiz_batch01,"answer choice"
+0x34245,"花輪彰","Hanawa Akira",translated_quiz_batch01,"answer choice"
+0x34254,"キザなお金持ち少年花輪くんの名は、花輪和彦。ママには「カズちゃん」とよばれて","Cậu ấm điệu đà Hanawa-kun tên là Hanawa Kazuhiko. Mẹ gọi cậu là 'Kazu-chan'...",translated_quiz_batch01,
+0x342C5,"おり、クラスメイトのみぎわさんにもあいされている。","...và cô bạn cùng lớp Migiwa-san cũng mê cậu ấy như điếu đổ.",translated_quiz_batch01,
+0x34337,"花輪くんはピアノもバイオリンもとくいだが、そんなかれの","Hanawa-kun giỏi cả piano lẫn violin. Người mẹ cậu vô cùng yêu quý...",translated_quiz_batch01,
+0x34382,"大すきなママは今何才？","...hiện bao nhiêu tuổi?",translated_quiz_batch01,
+0x343AB,"２９才","29 tuổi",translated_quiz_batch01,"numeric answer recovered directly from raw ROM; scanner omitted it"
+0x343B8,"４０才","40 tuổi",translated_quiz_batch01,"numeric answer recovered directly from raw ROM; scanner omitted it"
+0x343C5,"３２才","32 tuổi",translated_quiz_batch01,"numeric answer recovered directly from raw ROM; scanner omitted it"
+0x343D2,"花輪くんのママは、なんと まだ…","Mẹ Hanawa-kun, thật bất ngờ, mới...",translated_quiz_batch01,"scanner splits numeric continuation"
+0x34403,"X才。がいこくでしごとをしているので、いつもは","...29 tuổi. Vì làm việc ở nước ngoài nên bình thường...",translated_quiz_batch01,"scanner starts inside multibyte number; raw ROM verifies まだ２９才 at 0x343FC"
+0x34443,"会えないが、それでもがんばる強い花輪くんなのであった。","...cậu không thể thường xuyên gặp mẹ, vậy mà Hanawa-kun vẫn mạnh mẽ cố gắng.",translated_quiz_batch01,
+0x344D1,"お金持ちの花輪くんがよく行くおすし屋さんのなまえは？","Quán sushi đắt tiền Hanawa-kun thường ghé có tên là gì?",translated_quiz_batch01,
+0x34527,"石松寿司","Sushi Ishimatsu",translated_quiz_batch01,"answer choice"
+0x34536,"松の木寿司","Sushi Matsunoki",translated_quiz_batch01,"answer choice"
+0x34547,"次郎長寿司","Sushi Jirocho",translated_quiz_batch01,"answer choice"
+0x34558,"ねだんのたかい石松寿司でスペシャルメニューを食べているおとくいさまの花輪","Hanawa-kun là khách quen, thường ăn thực đơn đặc biệt ở quán Sushi Ishimatsu đắt đỏ.",translated_quiz_batch01,
+0x345BF,"くん。そこのねだんのたかさは友蔵が年金パワーを","Giá ở đó cao tới mức 'sức mạnh lương hưu' của Tomozou...",translated_quiz_batch01,
+0x3460E,"つかいはたすほどである。","...cũng bị tiêu sạch.",translated_quiz_batch01,
+0x3464F,"お調子者で、ギャグのセンスが光るはまじ。クラスのだれと","Hamaji là cậu bạn ham vui với khiếu pha trò nổi bật. Cậu từng...",translated_quiz_batch01,
+0x3469A,"うわさになったことがある？","...bị đồn với ai trong lớp?",translated_quiz_batch01,
+0x346C3,"まる子","Maruko",translated_quiz_batch01,"answer choice"
+0x346D0,"きょう子ちゃん","Kyoko-chan",translated_quiz_batch01,"answer choice"
+0x346E5,"とし子ちゃん","Toshiko-chan",translated_quiz_batch01,"answer choice"
+0x346F8,"まる子からのおみやげに「アイラブユー」と書かれてあったばっかりに、まる子と","Chỉ vì món quà Maruko tặng có ghi 'I LOVE YOU', Hamaji liền bị đồn với Maruko.",translated_quiz_batch01,
+0x34761,"うわさになってしまうはまじ。しかも、さくら家では「おもしろい顔のヤツ」","Chưa hết, ở nhà Sakura cậu còn bị gọi là 'thằng mặt hài'...",translated_quiz_batch01,
+0x347C4,"とか「ハマ人」などと言われてるなんて、彼は知らない。","...hay 'Hama-jin' nữa mà cậu chẳng hề hay biết.",translated_quiz_batch01,"wordplay/name joke kept rather than over-localized"
