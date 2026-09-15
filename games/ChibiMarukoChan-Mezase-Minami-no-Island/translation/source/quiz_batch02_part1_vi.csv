@@ -1,0 +1,44 @@
+file_offset,source_jp_scanner,vi_full,status,notes
+0x34F7B,まる子のクラスメイトの冬田  ｛      さん。実は彼女にはすきな人  ｛,"Fuyuta-san, bạn cùng lớp của Maruko. Thật ra cô bạn đang thích một người...",translated_quiz_batch02,
+0x34FC8,が…。さて冬田さんのすきな  ｛      男子はいったいだれ？  ｛,...Vậy cậu con trai mà Fuyuta-san thích là ai?,translated_quiz_batch02,
+0x3500F,大野くん｛,Ono-kun,translated_quiz_batch02,
+0x3501E,杉山くん｛,Sugiyama-kun,translated_quiz_batch02,
+0x3502D,藤木くん｛,Fujiki-kun,translated_quiz_batch02,
+0x3503C,変な顔シールをあつめている｛      クラスの女子、冬田さん。大野｛      くんがすきで、バレンタイン  ｛,"Fuyuta-san là cô bạn trong lớp thích sưu tầm sticker mặt ngộ nghĩnh. Cô bé thích Ono-kun và vào Valentine...",translated_quiz_batch02,
+0x350AD,にはチョコをわたすが、まさか｛      そのチョコがまる子｛      から、さらには友蔵｛,"...đã tặng cậu ấy sô-cô-la. Nào ngờ số sô-cô-la ấy lại vòng qua Maruko, rồi tới cả Tomozo...",translated_quiz_batch02,
+0x3510A,の手にわたったとは｛      知りもしない。    ｛,...mà cô bé chẳng hề hay biết.,translated_quiz_batch02,
+0x35157,学級委員であることに命を｛      かける少年丸尾くんだが、｛,Maruo-kun là cậu bạn sống chết vì chức lớp trưởng...,translated_quiz_batch02,
+0x3519C,かれのたんじょう日って      ｛      いったいいつ？              ｛,...vậy sinh nhật của cậu ấy là ngày nào?,translated_quiz_batch02,
+0x351E9,１２月３１日,Ngày 31 tháng 12,translated_quiz_batch02,numeric answer recovered directly from raw ROM; scanner omitted it
+0x351FC,１２月１９日,Ngày 19 tháng 12,translated_quiz_batch02,numeric answer recovered directly from raw ROM; scanner omitted it
+0x3520F,３月３日,Ngày 3 tháng 3,translated_quiz_batch02,numeric answer recovered directly from raw ROM; scanner omitted it
+0x3521E,本名、丸尾スエオ。ときどき｛      学級委員の強みをつかいすぎる｛      こともあるが、まじめなかれの｛,"Tên đầy đủ là Maruo Sueo. Đôi khi cậu hơi lạm dụng lợi thế của một lớp trưởng, nhưng vốn là người rất nghiêm túc...",translated_quiz_batch02,
+0x3528F,たんじょう日は,...sinh nhật của cậu ấy là...,translated_quiz_batch02,
+0x352AC,P日。｛      ズバリ、,...ngày 31 tháng 12. Nói thẳng ra!,translated_quiz_batch02,scanner begins inside full-width numeric text; raw ROM verifies preceding text as １２月３１日
+0x352C2,P年のスエに｛      生まれたからスエオ｛,Có lẽ vì sinh vào cuối năm...,translated_quiz_batch02,scanner dropped full-width digit; raw ROM verifies １年のスエに
+0x352EE,なのでしょう！  ｛,...nên mới được đặt tên là Sueo!,translated_quiz_batch02,
+0x3531F,丸尾くんのかあさまは、丸尾｛      くんが学級委員になるためなら｛,"Mẹ của Maruo-kun là người chẳng tiếc công sức nếu điều đó giúp con mình trở thành lớp trưởng...",translated_quiz_batch02,
+0x3536A,どりょくをおしまない人だが、｛      そのかあさまは何才？｛,...vậy mẹ cậu ấy bao nhiêu tuổi?,translated_quiz_batch02,
+0x353AF,４９才,49 tuổi,translated_quiz_batch02,numeric answer recovered directly from raw ROM; scanner omitted it
+0x353BC,４４才,44 tuổi,translated_quiz_batch02,numeric answer recovered directly from raw ROM; scanner omitted it
+0x353C9,３４才,34 tuổi,translated_quiz_batch02,numeric answer recovered directly from raw ROM; scanner omitted it
+0x353D6,丸尾くんのかあさまは,Mẹ của Maruo-kun...,translated_quiz_batch02,
+0x353F3,X才。｛      とてもやさしいかあさまだが、｛      丸尾くんは花輪くんのママの｛,"...49 tuổi. Bà là một người mẹ rất hiền, nhưng Maruo-kun lại...",translated_quiz_batch02,scanner begins inside full-width age; raw ROM verifies ４９才
+0x35445,ような、わかくてきれいな｛      かあさまがいいと｛      いって、かあさまを  ｛,...ước mẹ mình trẻ đẹp như mẹ Hanawa-kun...,translated_quiz_batch02,
+0x3549E,こまらせるので  ｛      あった。  ｛,...khiến bà nhiều phen khổ tâm.,translated_quiz_batch02,
+0x354E1,丸尾くんのメガネのうずは｛      どっちまき？            ｛,Vòng xoáy trên kính của Maruo-kun xoắn theo hướng nào?,translated_quiz_batch02,
+0x3552F,みぎまき｛,Theo chiều kim đồng hồ,translated_quiz_batch02,answer choice
+0x3553E,ひだりまき｛,Ngược chiều kim đồng hồ,translated_quiz_batch02,answer choice
+0x3554F,かたほうずつ｛,Mỗi bên một hướng,translated_quiz_batch02,answer choice
+0x35562,｛        つよいせきにんかんと、  ｛      大きな声でクラスをひっぱる｛,"Với tinh thần trách nhiệm cao và giọng nói oang oang dẫn dắt cả lớp...",translated_quiz_batch02,
+0x355AF,丸尾くんの、いつもキラリと｛      光るそのメガネは、｛      ズバリ！みぎまき  ｛,"...chiếc kính lúc nào cũng sáng loáng của Maruo-kun, nói thẳng ra, xoắn theo chiều kim đồng hồ.",translated_quiz_batch02,
+0x3560A,である。｛,Đúng là như vậy.,translated_quiz_batch02,
+0x35633,クラスメイトのみぎわさん。｛      ほんめいは花輪くんだが、その｛,"Migiwa-san là bạn cùng lớp. Người cô bé mê nhất là Hanawa-kun, nhưng trong nhóm bạn của cậu ấy...",translated_quiz_batch02,
+0x35680,ともだちにもかっこいい男の子｛      が…。さて、そのなまえは？  ｛,...còn có một cậu con trai rất bảnh. Cậu ấy tên gì?,translated_quiz_batch02,
+0x356CD,マーク｛,Mark,translated_quiz_batch02,answer choice
+0x356DA,マイケル｛,Michael,translated_quiz_batch02,answer choice
+0x356E9,ロイ｛,Roy,translated_quiz_batch02,answer choice
+0x356F4,花輪くんひとすじのみぎわ｛      さんだが、花輪くんのともだち｛      マークにもときめいてしまうの｛,"Migiwa-san một lòng với Hanawa-kun, vậy mà cũng từng rung rinh trước Mark, bạn của Hanawa-kun.",translated_quiz_batch02,
+0x35763,だった。でも、やっぱり、花輪｛      くんとなかのいい女の子は彼女｛      のこうげきをうける。｛,"Nhưng rốt cuộc, cô gái nào thân thiết với Hanawa-kun cũng dễ trở thành mục tiêu của cô bé...",translated_quiz_batch02,
+0x357CC,まる子もそのうち｛      の一人である。｛,...và Maruko cũng là một trong số đó.,translated_quiz_batch02,
+0x35813,インパクトのある  ｛      みどりちゃんだが、｛,Midori-chan là một cô bé có cá tính rất mạnh...,translated_quiz_batch02,
