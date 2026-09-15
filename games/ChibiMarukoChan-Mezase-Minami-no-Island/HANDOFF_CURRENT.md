@@ -6,12 +6,12 @@ Repo: `ronvotri/Viet-Hoa-SNES`
 
 ## Current milestone
 
-Two tracks run in parallel:
+Two independent tracks remain active:
 
 1. **meaning-first Vietnamese translation**;
 2. **visible-menu renderer/font reverse**.
 
-Do not block translation work on font work. Do not bulk-write Vietnamese into ROM until the font/codepage path is runtime-proven.
+Do not block translation on font work. Do not bulk-write Vietnamese into ROM until the font/codepage path is runtime-proven.
 
 ## Canonical clean ROM contract
 
@@ -19,10 +19,9 @@ Do not block translation work on font work. Do not bulk-write Vietnamese into RO
 - SHA-1: `08a2415362f69788ec76b1a36044dc1f1a5f2ea1`
 - SHA-256: `e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956`
 - internal title: `RS051 CHIBIMARUKOCHAN`
-- LoROM / FastROM header at file `0x7FC0`
-- no copier header on canonical ROM
-- stored/computed checksum: `0x1115`
-- complement: `0xEEEA`
+- LoROM / FastROM header at `0x7FC0`
+- no copier header
+- checksum `0x1115`, complement `0xEEEA`
 
 Never patch an unknown or already modified ROM.
 
@@ -32,73 +31,79 @@ Direct CP932/Shift-JIS-like text exists in ROM.
 
 Scanner: `tools/scan_sjis_candidates.py`
 
-Current scanner counts:
-
 - whole ROM: 2,274 candidate runs
 - focused `0x18000..0x34000`: 889 candidate runs
 
-These are scanner candidates, NOT translation coverage. They include false positives, split strings, control/layout bytes, and unresolved count markers.
+Candidates are NOT coverage. They include false positives, split strings, control/layout bytes, and scanner starts inside multibyte characters.
 
-Frequently observed around text:
-
-`00 0E xx 0F xx ...text... 81 6F 00`
-
-Do not assign semantics to these control bytes without proof.
+Always recover suspicious numeric/count text from raw ROM before translating it.
 
 ## Vietnamese style — frozen
 
 See `translation/STYLE_GUIDE_VI.md`.
 
-Tone is cute school/family comedy, not combat RPG.
+Game tone: cute school/family comedy, not combat RPG.
 
 Voice anchors:
 
 - Maruko: casual, cheeky, childlike;
 - Tama-chan: gentle, earnest;
-- Maruo: pompous/formal; `ズバリ` → anchor around `Nói thẳng ra!`;
+- Maruo: pompous/formal; `ズバリ` anchored around `Nói thẳng ra!`;
 - Hanawa: theatrical/comic; retain `Hey`, `baby`, `Señorita` when natural;
-- narrator: dry and lightly teasing;
+- narrator: dry, lightly teasing;
 - Sakura family: warm domestic comedy.
 
-Competition wording should favor `thi`, `thi đấu`, `so tài`, `vượt qua`, `chơi theo đội` rather than martial language.
+Competition wording favors `thi`, `thi đấu`, `so tài`, `vượt qua`, `chơi theo đội`.
 
-`vi_full` is the source of truth and stays fully accented/natural. Never shorten it merely to satisfy the current ROM/font.
+`vi_full` is fully accented meaning-first source of truth. Never shorten it for current font/byte limits.
 
-## Translation progress
+## Translation progress — current
 
 Detailed tracker: `translation/TRANSLATION_PROGRESS.md`.
 
-Committed meaning-layer rows:
+Committed meaning-layer rows: **451**.
+
+Breakdown:
 
 - seed known strings: 10
 - visible main menu: 10
 - Story Batch 01: 126
-- Story Batch 02: 126, stored as 3 x 42-row audit-friendly files
-- **total: 272 rows**
+- Story Batch 02: 126
+- Story Batch 03: 84
+- credits: 19
+- direct rules/tutorial: 2
+- Maruko Q Batch 01: 74
 
-### Story Batch 01
+### Main story direct-text arc
 
-Range approximately `0x181CC .. 0x1A5CA`.
+Translated approximately from `0x181CC` through `0x1DE81`.
 
-Covers school exchange announcement, Maruko/Tama reactions, Maruo/Hanawa banter, Sakura-family scenes, and early representative-selection games.
+Story Batch 03 reaches the currently discovered visible ending sequence: final selection, Sakura-family farewell, southern island, classmates arriving, exchange students being called back to study, and the final Maruko/Pusadi beat.
 
-### Story Batch 02
+This is NOT a whole-game completion claim. It only means the coherent main-story strings in the current direct-text scan have reached their ending.
 
-Range approximately `0x1A64F .. 0x1C61C`.
+### Credits and rules
 
-Files:
+- credit roles translated in `translation/source/credits_vi.csv`, personal names preserved;
+- rule text in `translation/source/rules_tutorial_vi.csv`;
+- raw ROM proves full-width `２` in the `2 wins first` rule.
 
-- `translation/source/story_batch02_part1_vi.csv`
-- `translation/source/story_batch02_part2_vi.csv`
-- `translation/source/story_batch02_part3_vi.csv`
+### Maruko Q
 
-Covers later selection rounds, Maruko's win/loss comedy, Maruo election jokes, Hanawa rose/`baby` banter, Tama passport gag, final-round rivalry, narrator punchlines, and family dinner jokes.
+Quiz database begins around `0x34009` and stays coherent at least through `0x368D8`.
 
-Scanner fragments such as `P/Q/R` before `人/回` are NOT treated as proven literals. They are translated conservatively from surrounding context and remain marked for source/runtime review.
+Maruko Q Batch 01 currently covers `0x34009 .. 0x34F3E` in:
 
-No Batch 01/02 dialogue has been patched into ROM.
+- `translation/source/quiz_batch01_part1_vi.csv`
+- `translation/source/quiz_batch01_part2_vi.csv`
 
-**Next translation region:** approximately `0x1C661` onward.
+Raw-ROM recovery corrected scanner omissions/splits such as:
+
+- Hanawa's mother answer choices `29 / 40 / 32`, explanation confirms `29`;
+- missing `100 yen` Hamaji answer choice;
+- Hideji choices `68 / 70 / 78`, explanation confirms `68`.
+
+**Next translation target:** continue Maruko Q from approximately `0x34F7B` onward.
 
 ## Main menu meaning layer
 
@@ -115,29 +120,27 @@ Preferred wording:
 - `ステレオ` → `Stereo`
 - `モノラル` → `Mono`
 
-Pink heading `どれにする？` ≈ `Chọn gì đây?`, but it is not proven to use the same direct text path. Treat as graphic/tilemap/other encoding until proven.
+Pink heading `どれにする？` ≈ `Chọn gì đây?`, but not proven to use the direct text path. Treat as graphic/tilemap/other encoding until proven.
 
 ## Renderer/font reverse status
 
 ### Probe 002 — RUNTIME FAIL
 
-Raw 1-byte ASCII across visible menu fields froze before the normal menu. Do not use raw ASCII bulk patching.
+Raw 1-byte ASCII in visible menu froze before normal menu. Do not use raw ASCII bulk patching.
 
 ### Probe 003 — BOOT PASS / GLYPH IDENTITY FAIL
 
-Full-width CP932 `ＴＥＳＴ１２３４` preserved 2-byte framing and booted, but intended `Ｅ` displayed as zero/circle.
+Full-width CP932 `ＴＥＳＴ１２３４` kept 2-byte framing and booted, but `Ｅ` rendered as digit-zero-like glyph.
 
 ### Probe 004 — RUNTIME COVERAGE MAP PASS
 
-Many full-width Latin codepoints are structurally accepted but map to glyph-id zero. Missing letters therefore display as the actual digit-zero glyph rather than blank.
+Many full-width Latin codes are accepted structurally but map to glyph-id zero.
 
 ## Major static discovery — 0x82xx codepoint -> glyph-id table
 
-A 16-bit little-endian mapping table exists in clean ROM.
+16-bit little-endian table in clean ROM:
 
-For the CP932 `0x82xx` range:
-
-- base entry for `0x824F` (`０`) at file offset `0x29880`
+- base for `0x824F` (`０`) at file `0x29880`
 - `entry = 0x29880 + (trail - 0x4F) * 2`
 
 Examples:
@@ -159,7 +162,7 @@ Examples:
 - `Ｔ` -> `0x0516`
 - `Ｖ` -> `0x020C`
 
-The credits string `ＴＡＲＡＫＯ` supports the theory that only authored Latin letters received dedicated glyph IDs.
+Credits string `ＴＡＲＡＫＯ` supports the theory that only authored Latin letters received dedicated glyph IDs.
 
 ## Probe 005 — CURRENT RUNTIME TEST
 
@@ -168,30 +171,28 @@ Tool: `tools/probe_visible_menu_005_map_entry.py`
 Changes only:
 
 1. first menu field → `ＴＥＳＴ１２３４`, same 8 two-byte units;
-2. mapping entry for full-width `Ｅ` at `0x298AA`: `0x0000` → `0x0517` (A glyph);
+2. full-width `Ｅ` mapping at `0x298AA`: `0x0000` → `0x0517` (A glyph);
 3. checksum/complement.
 
-Expected visible first line if mapping-table hypothesis is correct:
+Expected first line: `TAST1234`.
 
-`TAST1234`
+Static gates PASS. Runtime screenshot still pending. Do not call mapping behavior runtime-proven until user screenshot confirms it.
 
-Static gates PASS. Runtime screenshot still pending.
+If confirmed:
 
-If it appears exactly as predicted:
-
-1. freeze codepoint → glyph-id behavior for this renderer path;
-2. reverse glyph-id → bitmap/font storage;
-3. identify safe unused/repurposable glyph slots;
-4. make ONE Vietnamese glyph probe, preferably `Đ` or `ế`;
-5. then define the Chibi Vietnamese codepage.
+1. freeze codepoint → glyph-id behavior;
+2. reverse glyph-id → bitmap storage;
+3. find safe glyph slots;
+4. create ONE Vietnamese glyph probe (`Đ` or `ế`);
+5. then define Chibi Vietnamese codepage.
 
 ## Reference lesson from Vietnamese FE4 / other SNES work
 
-Useful architectural lesson only: successful SNES translations often use a game-specific internal codepage, custom glyph/font data, and optionally width tables/VWF.
+Architectural lesson only: SNES translation patches often use a game-specific codepage, custom glyph/font data, and optionally width tables/VWF.
 
-Do NOT copy FE4 HiROM offsets, font format, hooks, VWF logic, or any other game-specific assumption into Chibi without proof.
+Do NOT copy FE4 HiROM offsets, font format, hooks, VWF logic, or other game-specific assumptions into Chibi without proof.
 
-Reference note: `docs/REFERENCE_FE4_VIETNAMESE_FONT.md`.
+Reference: `docs/REFERENCE_FE4_VIETNAMESE_FONT.md`.
 
 ## Frozen workflow rule
 
