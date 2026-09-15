@@ -1,0 +1,38 @@
+file_offset,source_jp_scanner,vi_full,status,notes
+0x3482D,"はまじは、まる子になにとこうかんにモモエちゃんの","Hamaji đã đổi thứ gì với Maruko để lấy...",translated_quiz_batch01,
+0x34876,"コンサートのけんをあげたの？","...vé concert của Momoe-chan?",translated_quiz_batch01,
+0x348A7,"コーヒー牛乳","Sữa cà phê",translated_quiz_batch01,"answer choice"
+0x348BA,"１００円","100 yên",translated_quiz_batch01,"numeric answer recovered directly from raw ROM; scanner omitted it"
+0x348C9,"ケーキ","Bánh ngọt",translated_quiz_batch01,"answer choice"
+0x348D6,"なんとはまじは、給食のコーヒー牛乳とモモエちゃんのコンサートのけんをかえっこ","Không ngờ Hamaji lại đổi hộp sữa cà phê trong bữa trưa lấy vé concert của Momoe-chan...",translated_quiz_batch01,
+0x34941,"してしまう、よくのない少年であった。","...đúng là một cậu bé chẳng tham lam chút nào.",translated_quiz_batch01,
+0x34997,"花輪くんの運転手であり、親がわりでもあるヒデじい。","Hideji vừa là tài xế, vừa như người cha chăm sóc Hanawa-kun.",translated_quiz_batch01,
+0x349E0,"いったい何才？","Ông ấy bao nhiêu tuổi?",translated_quiz_batch01,
+0x34A07,"６８才","68 tuổi",translated_quiz_batch01,"numeric answer recovered directly from raw ROM; scanner omitted it"
+0x34A14,"７０才","70 tuổi",translated_quiz_batch01,"numeric answer recovered directly from raw ROM; scanner omitted it"
+0x34A21,"７８才","78 tuổi",translated_quiz_batch01,"numeric answer recovered directly from raw ROM; scanner omitted it"
+0x34A2E,"いつもまる子たちを花輪くんと同じようにあつかってくれるやさしいヒデじいは","Hideji hiền hậu luôn đối xử với Maruko và các bạn tử tế như với Hanawa-kun...",translated_quiz_batch01,
+0x34A99,"W才になる。","...đã 68 tuổi.",translated_quiz_batch01,"scanner begins inside CP932 full-width ６８; raw ROM verifies ６８才になる at 0x34A96"
+0x34AD1,"いつもブーブーうるさい少年ブー太郎はおおきくなったら","Buutaro, cậu bạn lúc nào cũng 'buu buu', lớn lên muốn...",translated_quiz_batch01,
+0x34B1E,"なにになりたい？","...làm nghề gì?",translated_quiz_batch01,
+0x34B3B,"プロ野球の選手","Cầu thủ bóng chày chuyên nghiệp",translated_quiz_batch01,"answer choice"
+0x34B50,"うんてんしゅ","Tài xế",translated_quiz_batch01,"answer choice"
+0x34B63,"パイロット","Phi công",translated_quiz_batch01,"answer choice"
+0x34B74,"ブーブーうるさいながらも、いもうと思いなかれは、","Dù lúc nào cũng 'buu buu' ồn ào, cậu lại là một người anh rất thương em gái...",translated_quiz_batch01,
+0x34BBF,"おおきくなったらプロの野球選手になるのがゆめである。","...và mơ lớn lên sẽ trở thành cầu thủ bóng chày chuyên nghiệp.",translated_quiz_batch01,
+0x34C33,"永沢君のともだちで、いつもくちびるの色がブルーな","Là bạn của Nagasawa-kun, cậu bé có đôi môi lúc nào cũng xanh xanh...",translated_quiz_batch01,
+0x34C7C,"藤木くんのフルネームはなんていうの？","Fujiki-kun có tên đầy đủ là gì?",translated_quiz_batch01,
+0x34CBD,"藤木しげる","Fujiki Shigeru",translated_quiz_batch01,"answer choice"
+0x34CCE,"藤木みのる","Fujiki Minoru",translated_quiz_batch01,"answer choice"
+0x34CDF,"藤木たかし","Fujiki Takashi",translated_quiz_batch01,"answer choice"
+0x34CF0,"まる子たちに不幸の手紙をおくったりした気の小さい藤木くん。永沢くんといちばん","Fujiki-kun nhút nhát từng gửi cả 'thư xui xẻo' cho Maruko và các bạn. Cậu thân nhất với Nagasawa-kun...",translated_quiz_batch01,
+0x34D5B,"なかよしで、またいちばん永沢くんにふり回されるかれで","...và cũng chính là người bị Nagasawa-kun quay như chong chóng nhiều nhất...",translated_quiz_batch01,
+0x34DAC,"あった。","...là thế đấy.",translated_quiz_batch01,
+0x34DD5,"まる子が南の島に行ったとき、なかよしになったプサディー","Khi Maruko đến đảo phương Nam, cô bé kết thân với Pusadi. Pusadi...",translated_quiz_batch01,
+0x34E24,"が、さいごにわたしたものはなに？","...đã tặng Maruko thứ gì lúc chia tay?",translated_quiz_batch01,
+0x34E5B,"お人形","Búp bê",translated_quiz_batch01,"answer choice"
+0x34E68,"変なお面","Chiếc mặt nạ kỳ quặc",translated_quiz_batch01,"answer choice"
+0x34E77,"チョコ","Sô-cô-la",translated_quiz_batch01,"answer choice"
+0x34E84,"やさしくて元気なプサディーにまる子はいろいろとかんどうさせられる。","Pusadi hiền hậu và tràn đầy sức sống khiến Maruko cảm động bởi rất nhiều điều.",translated_quiz_batch01,
+0x34EE7,"お別れのとき手紙と人形をもらい、うれしさとさびしさで","Khi chia tay, Maruko nhận được thư và búp bê. Vừa vui vừa buồn...",translated_quiz_batch01,
+0x34F3E,"ないてしまうまる子であった。","...cô bé đã bật khóc.",translated_quiz_batch01,
