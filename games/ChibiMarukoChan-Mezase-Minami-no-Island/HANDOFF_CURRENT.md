@@ -67,6 +67,12 @@ Diagnostic build hashes from the canonical clean ROM:
 - SHA-1 `40841562bd8e3ae113ed77145a9e8d28261d710a`
 - SHA-256 `7ed3d93e565e2d50eb09eff29b4bae174a2147ce859d9880db992aad739a7cf8`
 
+Diagnostic IPS package generated from the exact clean ROM:
+
+- IPS contains two diff spans only: checksum/complement at `0x7FDC` (4 bytes) and text field at `0x2B7C9` (24 bytes)
+- IPS SHA-256: `e071a15b3ae65cb3157da4bb4654dd79ef63043945c8501449517cda6162b021`
+- applying the IPS back to the canonical clean ROM reproduces the exact diagnostic build hashes above: PASS
+
 **Runtime PASS claim: NO.**
 
 ## Next task
