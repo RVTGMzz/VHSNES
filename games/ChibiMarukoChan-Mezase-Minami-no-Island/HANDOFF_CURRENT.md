@@ -67,23 +67,72 @@ Diagnostic build hashes from the canonical clean ROM:
 - SHA-1 `40841562bd8e3ae113ed77145a9e8d28261d710a`
 - SHA-256 `7ed3d93e565e2d50eb09eff29b4bae174a2147ce859d9880db992aad739a7cf8`
 
-Diagnostic IPS package generated from the exact clean ROM:
+Probe 001 was inconvenient to reach in runtime, so it is superseded as the preferred visible test by probe 002. No Runtime PASS is claimed for probe 001.
 
-- IPS contains two diff spans only: checksum/complement at `0x7FDC` (4 bytes) and text field at `0x2B7C9` (24 bytes)
-- IPS SHA-256: `e071a15b3ae65cb3157da4bb4654dd79ef63043945c8501449517cda6162b021`
-- applying the IPS back to the canonical clean ROM reproduces the exact diagnostic build hashes above: PASS
+## Visible menu runtime target confirmed by user screenshot
+
+The immediately reachable main menu contains these direct CP932 strings:
+
+- `0x28818` `ストーリーモード` → meaning-first Vietnamese: `Chế độ Cốt truyện`
+- `0x2882E` `対戦モード` → `Đối kháng`
+- `0x2883C` `チーム対戦モード` → `Đấu đội`
+- `0x28852` `まるこＱ` → `Maruko Q`
+- `0x2885E` `まるこペイント` → `Vẽ cùng Maruko`
+- `0x28870` `まるこみくじ` → `Bói quẻ Maruko`
+- `0x28880` `針切カラオケ` → compact meaning target currently `Karaoke`
+- `0x28892` `サウンド` → `Âm thanh`
+- `0x288A2` `ステレオ` → `Stereo`
+- `0x288B2` `モノラル` → `Mono`
+
+The pink heading `どれにする？` is visible as `Chọn gì đây?`, but has NOT been found as a direct CP932 string yet. Treat it as graphic/tilemap/other encoding until proven.
+
+## Diagnostic probe 002 — current preferred runtime test
+
+Tool: `tools/probe_visible_menu_002.py`
+
+It starts from the exact CLEAN ROM and changes only the 10 direct text spans above. Surrounding control/terminator bytes are untouched.
+
+ASCII runtime candidates:
+
+- `COT TRUYEN`
+- `DOI KHANG`
+- `DAU DOI`
+- `MARUKO Q`
+- `VE MARUKO`
+- `BOI MARUKO`
+- `KARAOKE`
+- `AM THANH`
+- `STEREO`
+- `MONO`
+
+Static gates:
+
+- exact clean ROM: PASS
+- exact source identity: 10/10 PASS
+- field fit: 10/10 PASS
+- overlap count: 0
+- dry-run: PASS
+- build: PASS
+- post-build checksum: PASS
+
+Probe 002 build:
+
+- checksum `0xF03D`
+- complement `0x0FC2`
+- SHA-1 `6e4df69bd76cc2fe2942f46d4f29d3b144706d62`
+- SHA-256 `098b3ab3af8857fb858e4881727d7a7382edcbf83dbca3f9dfd8ad0d6b348d42`
 
 **Runtime PASS claim: NO.**
 
 ## Next task
 
-Highest-information next step is runtime evidence for probe 001.
+User should boot probe 002 and screenshot this same menu.
 
 Interpretation:
 
-- If `BAT DAU CO NHAC` renders correctly: establish ASCII width/spacing, then design the Vietnamese glyph/codepage experiment without touching unrelated text.
-- If it renders as garbage/blank: reverse the text renderer/font mapping first; do not bulk-patch no-diacritic text.
-- If the screen is not easily reachable: pick a more visible exact Shift-JIS phrase, but keep the one-probe rule.
+- If the ASCII labels render correctly: ASCII renderer support is proven for this visible menu path. Then establish width/spacing and design one Vietnamese-glyph/codepage probe with accents.
+- If labels render as garbage/blank: reverse this menu renderer/font mapping before any bulk text patching.
+- If only some labels work: compare the exact failing spans and nearby control bytes before generalizing.
 
 After renderer proof, reverse pointer/field ownership and control semantics before building a bulk exact-offset overlay.
 
