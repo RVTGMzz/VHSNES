@@ -6,7 +6,7 @@ Repo: `ronvotri/Viet-Hoa-SNES`
 
 ## Current milestone
 
-Bootstrap / Reverse 001 is complete statically. Visible-menu reverse is now active.
+Bootstrap / Reverse 001 is complete statically. Visible-menu renderer reverse is active.
 
 ### Canonical clean ROM
 
@@ -69,86 +69,142 @@ Single raw-ASCII probe at `0x2B7C9`. Static build PASS, but runtime location was
 
 `tools/probe_visible_menu_002.py`
 
-Probe 002 replaced all ten visible menu strings with raw 1-byte ASCII while preserving the original byte spans and surrounding control bytes.
+Raw 1-byte ASCII across visible menu fields caused runtime freeze before the normal menu.
 
-Static gates passed, but runtime screenshot showed the game freezing at/after the Konami copyright screen before the normal menu.
-
-Therefore:
-
-**Probe 002 runtime result: FAIL.**
-
-Do NOT use raw 1-byte ASCII for bulk menu/text patching.
+Conclusion: do NOT use raw 1-byte ASCII for bulk menu/text patching.
 
 ## Probe 003 — BOOT PASS / GLYPH IDENTITY FAIL
 
 `tools/probe_visible_menu_003_2byte.py`
 
-Changed only first menu field:
+Changed only first menu field to CP932 full-width `ＴＥＳＴ１２３４`, preserving 8 two-byte units.
 
-- offset `0x28818`
-- source `ストーリーモード`
-- exact source length `16` bytes / `8` two-byte units
-- replacement intended as CP932 full-width `ＴＥＳＴ１２３４`
+Runtime screenshot:
 
-Static build:
+- game boots to menu: PASS
+- framing/position preserved
+- intended full-width `Ｅ` (`82 64`) displayed as a zero/circle-like glyph, not `E`
 
-- checksum `0x10D1`
-- complement `0xEF2E`
-- SHA-1 `71c5b6369668bf3092f5e11f4202143392c68e30`
-- SHA-256 `0fb8ea0791879f4d2548d7777f2664d9f0bb4285d8efc927d4072f9e876cfa4d`
+Conclusion: two-byte framing is safe for this path, but standard CP932 glyph identity is not complete.
 
-Runtime screenshot evidence:
-
-- game boots fully to the visible main menu: PASS
-- the first line renders with correct field length/position and recognizable `T`, `S`, `T`, digits
-- the intended full-width `Ｅ` (`CP932 82 64`) renders as an O/circle-like glyph rather than `E`
-
-Conclusion:
-
-- keeping the text field in 2-byte units avoids the Probe 002 crash for this path
-- standard CP932 glyph identity is NOT valid for the whole full-width Latin range in this renderer/font
-- do not assume `CP932 code -> expected Latin glyph` merely because the byte sequence is structurally accepted
-
-This is not yet a final Runtime PASS for Vietnamese rendering. It is a runtime proof of safe 2-byte framing plus evidence of a custom/incomplete glyph mapping.
-
-## Probe 004 — current next runtime test: full-width glyph map
+## Probe 004 — RUNTIME PASS FOR COVERAGE MAP / INCOMPLETE LATIN FONT
 
 `tools/probe_visible_menu_004_fullwidth_map.py`
 
-Purpose: map the renderer's actual glyph results for the CP932 full-width Latin/digit code range without changing byte-unit counts.
+Runtime screenshot observed the following intended A–Z/digit probe:
 
-It modifies only the first six visible menu fields, preserving exact two-byte unit counts:
+- intended `ＡＢＣＤＥＦＧＨ` → visible approximately `AB000000`
+- intended `ＩＪＫＬＭ` → visible approximately `I0KLM`
+- intended `ＮＯＰＱＲＳＴＵ` → visible approximately `00PQRST0`
+- intended `ＶＷＸＹ` → visible approximately `V000`
+- intended `Ｚ０１２３４５` → visible approximately `0012345`
+- intended `６７８９ＡＢ` → visible `6789AB`
 
-- row 1 (8 units): `ＡＢＣＤＥＦＧＨ`
-- row 2 (5 units): `ＩＪＫＬＭ`
-- row 3 (8 units): `ＮＯＰＱＲＳＴＵ`
-- row 4 (4 units): `ＶＷＸＹ`
-- row 5 (7 units): `Ｚ０１２３４５`
-- row 6 (6 units): `６７８９ＡＢ`
+Here `0` means the same round glyph as the game's full-width digit zero, not a missing/blank pixel.
 
-Rows 7–10 remain original Japanese.
+This proves many CP932 full-width Latin codepoints are structurally accepted but map to glyph-id zero rather than dedicated Latin glyphs.
 
-Static gates from canonical clean ROM:
+## Major static discovery — CP932 0x82xx codepoint -> glyph-id table
 
-- clean source: PASS
-- source identity: 6/6 PASS
-- exact two-byte length preservation: PASS
-- overlaps: 0
+A 16-bit little-endian mapping table has been identified in the CLEAN ROM.
+
+For the `0x82xx` range used by full-width digits/Latin/hiragana:
+
+- base entry for CP932 `0x824F` (full-width `０`) is file offset `0x29880`
+- entry address formula for trail byte `t` in this range:
+
+```text
+entry = 0x29880 + (t - 0x4F) * 2
+```
+
+Examples from CLEAN ROM:
+
+- `０` `0x824F` -> glyph-id `0x0000`
+- `１` `0x8250` -> `0x0001`
+- ...
+- `９` `0x8258` -> `0x0009`
+- `Ａ` `0x8260` -> `0x0517`
+- `Ｂ` `0x8261` -> `0x0705`
+- `Ｃ` `0x8262` -> `0x0000`
+- `Ｅ` `0x8264` -> `0x0000`
+- `Ｉ` `0x8268` -> `0x074B`
+- `Ｋ` `0x826A` -> `0x0519`
+- `Ｌ` `0x826B` -> `0x074C`
+- `Ｍ` `0x826C` -> `0x0814`
+- `Ｏ` `0x826E` -> `0x051A`
+- `Ｐ` `0x826F` -> `0x0815`
+- `Ｑ` `0x8270` -> `0x0216`
+- `Ｒ` `0x8271` -> `0x0518`
+- `Ｓ` `0x8272` -> `0x020D`
+- `Ｔ` `0x8273` -> `0x0516`
+- `Ｕ` `0x8274` -> `0x0000`
+- `Ｖ` `0x8275` -> `0x020C`
+- unsupported letters seen in Probe 004 also map to `0x0000`
+
+Critical interpretation:
+
+`0x0000` is not merely a generic null/failure value. Because full-width digit `０` itself maps to glyph-id `0x0000`, unsupported Latin letters resolve to the digit-zero glyph, exactly matching the Probe 004 screenshot.
+
+This is strong static+runtime correlation, but the table-control relationship should still be proven with one targeted runtime mutation before treating it as frozen architecture.
+
+Additional supporting pattern:
+
+The credits string `ＴＡＲＡＫＯ` exists in source, and the table assigns its needed glyphs in a compact group:
+
+- `Ｔ` -> `0x0516`
+- `Ａ` -> `0x0517`
+- `Ｒ` -> `0x0518`
+- `Ｋ` -> `0x0519`
+- `Ｏ` -> `0x051A`
+
+This strongly suggests glyph IDs were allocated from the game's actual authored character inventory rather than a complete CP932 Latin font.
+
+## Probe 005 — current next runtime test: mapping-table proof
+
+`tools/probe_visible_menu_005_map_entry.py`
+
+Purpose: prove that the discovered table directly controls the visible menu glyph selection without touching font bitmap data yet.
+
+Changes from exact CLEAN ROM only:
+
+1. first menu field at `0x28818`: `ストーリーモード` -> full-width `ＴＥＳＴ１２３４` (same 16-byte / 8-unit span)
+2. mapping entry for full-width `Ｅ` at `0x298AA`: `0x0000` -> `0x0517`, which is the proven glyph-id used by full-width `Ａ`
+3. normal SNES checksum/complement update
+
+Expected runtime first line if mapping-table hypothesis is correct:
+
+```text
+TAST1234
+```
+
+The `E` position should deliberately render as `A`.
+
+Static build gates:
+
+- clean ROM identity: PASS
+- text source identity: PASS
+- A mapping identity: `0x0517` PASS
+- E mapping identity before write: `0x0000` PASS
 - dry-run: PASS
-- post-build checksum: PASS
-- checksum `0x0994`
-- complement `0xF66B`
-- SHA-1 `3eb93145e8243c35083cf0da9a0f79a9ed802810`
-- SHA-256 `bc11554e22c8909b09e909c2508626830e94c7c791e4abb20da0d81437465d67`
+- checksum: PASS
+- checksum `0x10ED`
+- complement `0xEF12`
+- SHA-1 `c2f830859ce4925acf76a7aa4c1bf22ba0b838bb`
+- SHA-256 `36f106bd02022afa74a3c0329250ca7fbbf08bcc6f1081c8a7a95c90aa3ccdfc`
 
-**Runtime PASS claim: NO.**
+**Runtime PASS claim: NO until screenshot.**
 
-Next evidence needed: one screenshot of Probe 004's same menu. Compare intended rows with displayed glyphs and record an observed code→glyph table. Then either:
+## Next architecture task after Probe 005
 
-1. reuse proven native glyph codes for a compact Latin base if enough letters exist, or
-2. reverse/replace the font tiles and establish a Vietnamese 2-byte codepage.
+If `TAST1234` appears exactly as predicted:
 
-Do not attempt bulk Vietnamese text until this glyph identity layer is mapped.
+1. freeze the 0x82xx mapping-table behavior as runtime-proven for this renderer path;
+2. reverse the glyph-id -> bitmap/font asset storage;
+3. identify whether there are unused glyph slots or safely repurposable glyph slots;
+4. create ONE custom Vietnamese glyph probe (for example `Ế` or `Đ`) using a chosen 2-byte code and mapping entry;
+5. only after that works, define the Vietnamese codepage and expand translation.
+
+Do not brute-force more alphabet tests unless needed. The missing-letter mechanism is now explained by the mapping table.
 
 ## Frozen workflow rule
 
