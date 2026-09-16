@@ -1,0 +1,78 @@
+file_offset,source_jp,vi_full,status,notes
+0x2C538,なくしたものが見つかるよ,Đồ bị mất sẽ tìm thấy,translated_fortune_batch01,
+0x2C557,明日はきっとはれじゃよ,Ngày mai chắc chắn trời đẹp,translated_fortune_batch01,
+0x2C574,勝負ごとについてるよ,Hôm nay thi thố rất có duyên,translated_fortune_batch01,
+0x2C58F,いそがば回れじゃ,Càng vội càng phải từ từ,translated_fortune_batch01,
+0x2C5A6,今日は  ごちそうだよ！,Hôm nay có món ngon đó!,translated_fortune_batch01,
+0x2C5C3,ゲームで  こうとく点じゃ,Chơi game sẽ được điểm cao,translated_fortune_batch01,
+0x2C5E2,あんた、すごくついてるよ,Hôm nay bạn may ghê đó,translated_fortune_batch01,
+0x2C601,プリンを食べてみよう,Thử ăn pudding xem,translated_fortune_batch01,
+0x2C61C,歯みがきしてみよう,Thử đánh răng thật kỹ nhé,translated_fortune_batch01,
+0x2C635,４人集めてみて,Thử rủ đủ 4 người xem,translated_fortune_batch01,raw ROM confirms leading full-width ４; scanner started one byte late and showed S
+0x2C64A,ハプニングのヨ・カ・ン,Có điềm sắp xảy ra chuyện bất ngờ,translated_fortune_batch01,
+0x2C667,計画を立ててからね,Lập kế hoạch trước nhé,translated_fortune_batch01,
+0x2C680,お友達は大切にしなきゃね,Phải biết quý bạn bè nhé,translated_fortune_batch01,
+0x2C69F,一休み、一休み,"Nghỉ một chút, nghỉ một chút",translated_fortune_batch01,
+0x2C6B4,あわてない、あわてない,"Đừng cuống, đừng cuống",translated_fortune_batch01,
+0x2C6D1,ハンカチが幸運のカギだよ,Khăn tay là chìa khóa may mắn,translated_fortune_batch01,
+0x2C6F0,消しゴムが幸運のカギだよ,Cục tẩy là chìa khóa may mắn,translated_fortune_batch01,
+0x2C70F,ノートが幸運のカギだよ,Quyển vở là chìa khóa may mắn,translated_fortune_batch01,
+0x2C72C,今日は  おやつをやめよう,Hôm nay thử nhịn ăn vặt nhé,translated_fortune_batch01,
+0x2C74B,ちびまる子ちゃんをみよう,Xem Chibi Maruko-chan đi,translated_fortune_batch01,
+0x2C76A,フルーツを食べてみて,Thử ăn trái cây xem,translated_fortune_batch01,
+0x2C785,人には  しんせつに,Hãy tử tế với mọi người,translated_fortune_batch01,
+0x2C79E,北に行こう,Đi về phía Bắc nào,translated_fortune_batch01,
+0x2C7AF,西に行こう,Đi về phía Tây nào,translated_fortune_batch01,
+0x2C7C0,南に行こう,Đi về phía Nam nào,translated_fortune_batch01,
+0x2C7D1,東に行こう,Đi về phía Đông nào,translated_fortune_batch01,
+0x2C7E2,はやく  ねたまえ,Đi ngủ sớm đi nào,translated_fortune_batch01,
+0x2C7F9,かんちがいは  こまるよ,Hiểu lầm là phiền lắm đó,translated_fortune_batch01,
+0x2C816,おとしものにちゅういだよ,Coi chừng làm rơi đồ,translated_fortune_batch01,
+0x2C835,むしばに  ちゅういだって,Nhớ coi chừng sâu răng,translated_fortune_batch01,
+0x2C854,上には気をつけて,Coi chừng phía trên nhé,translated_fortune_batch01,
+0x2C86B,また来週,Hẹn tuần sau,translated_fortune_batch01,
+0x2C87A,まずは宿題さ,Trước hết làm bài tập đã,translated_fortune_batch01,
+0x2C88D,まずは  ひるねだよ,Trước hết ngủ trưa đã,translated_fortune_batch01,
+0x2C8A6,まずは  おやつさ,Trước hết ăn vặt đã,translated_fortune_batch01,
+0x2C8BD,カラオケが開運のカギだよ,Karaoke là chìa khóa may mắn,translated_fortune_batch01,
+0x2C8DC,ペイントが開運のカギだよ,Vẽ tranh là chìa khóa may mắn,translated_fortune_batch01,
+0x2C8FB,クイズが開運のカギだよ,Đố vui là chìa khóa may mắn,translated_fortune_batch01,
+0x2C918,ゲームで開運です,Chơi game sẽ gặp may,translated_fortune_batch01,
+0x2C92F,もう一度ひいてください,Hãy rút quẻ thêm lần nữa,translated_fortune_batch01,
+0x2C94C,ボールが開運のカギ,Quả bóng là chìa khóa may mắn,translated_fortune_batch01,
+0x2C965,プールが開運のカギ,Hồ bơi là chìa khóa may mắn,translated_fortune_batch01,
+0x2C97E,ペンキが開運のカギ,Sơn màu là chìa khóa may mắn,translated_fortune_batch01,
+0x2C997,全てあきらめてください,Xin hãy... từ bỏ tất cả,translated_fortune_batch01,
+0x2C9B4,０,0,translated_fortune_batch01,recovered directly from raw ROM; conservative scanner omitted this field
+0x2C9BD,１,1,translated_fortune_batch01,recovered directly from raw ROM; conservative scanner omitted this field
+0x2C9C6,２,2,translated_fortune_batch01,recovered directly from raw ROM; conservative scanner omitted this field
+0x2C9CF,３,3,translated_fortune_batch01,recovered directly from raw ROM; conservative scanner omitted this field
+0x2C9D8,４,4,translated_fortune_batch01,recovered directly from raw ROM; conservative scanner omitted this field
+0x2C9E1,５,5,translated_fortune_batch01,recovered directly from raw ROM; conservative scanner omitted this field
+0x2C9EA,６,6,translated_fortune_batch01,recovered directly from raw ROM; conservative scanner omitted this field
+0x2C9F3,７,7,translated_fortune_batch01,recovered directly from raw ROM; conservative scanner omitted this field
+0x2C9FC,８,8,translated_fortune_batch01,recovered directly from raw ROM; conservative scanner omitted this field
+0x2CA05,９,9,translated_fortune_batch01,recovered directly from raw ROM; conservative scanner omitted this field
+0x2CA0E,１６，７７７，２１６,16.777.216,translated_fortune_batch01,recovered directly from raw ROM; conservative scanner omitted this field
+0x2CA29,１，０００，０００,1.000.000,translated_fortune_batch01,recovered directly from raw ROM; conservative scanner omitted this field
+0x2CA42,１３０，０００，０００,130.000.000,translated_fortune_batch01,recovered directly from raw ROM; conservative scanner omitted this field
+0x2CA5F,あかいろ,Đỏ,translated_fortune_batch01,
+0x2CA6E,あおいろ,Xanh dương,translated_fortune_batch01,
+0x2CA7D,きいろ,Vàng,translated_fortune_batch01,
+0x2CA8A,みどりいろ,Xanh lá,translated_fortune_batch01,
+0x2CA9B,ピンクいろ,Hồng,translated_fortune_batch01,
+0x2CAAC,みずいろ,Xanh da trời,translated_fortune_batch01,
+0x2CABB,オレンジいろ,Cam,translated_fortune_batch01,
+0x2CACE,くろいろ,Đen,translated_fortune_batch01,
+0x2CADD,しろいろ,Trắng,translated_fortune_batch01,
+0x2CAEC,きんいろ,Vàng kim,translated_fortune_batch01,
+0x2CAFB,ぎんいろ,Bạc,translated_fortune_batch01,
+0x2CB0A,ちゃいろ,Nâu,translated_fortune_batch01,
+0x2CB19,むらさきいろ,Tím,translated_fortune_batch01,
+0x2CB2C,はだいろ,Màu da,translated_fortune_batch01,
+0x2CB3B,はいいろ,Xám,translated_fortune_batch01,
+0x2CB4A,きみどりいろ,Xanh lá mạ,translated_fortune_batch01,
+0x2CB5D,おうどいろ,Vàng đất,translated_fortune_batch01,
+0x2CB6E,やまぶきいろ,Vàng cam,translated_fortune_batch01,
+0x2CB81,レモンいろ,Vàng chanh,translated_fortune_batch01,
+0x2CB92,ぐんじょういろ,Xanh lam đậm,translated_fortune_batch01,
