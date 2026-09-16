@@ -21,7 +21,8 @@ Current committed translated rows:
 - Minigame UI Batch 01: 52
 - Karaoke Batch 01: 28
 - Stage-name Batch 01: 15
-- **total committed meaning-layer rows: 1,010**
+- Quiz misc/result UI: 8
+- **total committed meaning-layer rows: 1,018**
 
 These counts are source-translation rows, NOT whole-game completion percentage. Scanner output still contains false positives, split strings, control/layout data, and numeric/count artifacts.
 
@@ -61,27 +62,11 @@ File: `translation/source/minigame_ui_batch01_vi.csv`
 
 Range approximately `0x288C2 .. 0x28C40`.
 
-Translated:
+Translated ball-throwing, paint/dryer, and pool/pushing rules; controls; rounds-to-win; CPU difficulty; game duration; player 1–4 assignment/status; controller type; stage selector; stage digits `0..9`.
 
-- ball-throwing rules and controls;
-- paint/dryer rules and controls;
-- pool/pushing rules and controls;
-- rounds-to-win setting;
-- CPU difficulty;
-- game duration;
-- player 1–4 assignment/status;
-- controller type (`Pad`, mouse, Super Scope);
-- stage selector and stage numbers `0..9`.
+Raw-ROM recovery fixed `１ゲームの時間`, `１本..５本`, both `１８０秒` fields, `プレイヤー１..４`, and stage digits that the scanner missed or entered mid-character.
 
-Raw-ROM recovery fixed fields the scanner missed or started inside:
-
-- `１ゲームの時間` at `0x28AC4`;
-- `１本..５本` at `0x28AD6..0x28AF6`;
-- both `１８０秒` occurrences at `0x28B1C` and `0x28B34`;
-- `プレイヤー１..４`;
-- stage digits `０..９` at `0x28C0A..0x28C40`.
-
-UI fragments that form a two-line Japanese label are localized as a Vietnamese pair rather than forced word-for-word. Examples: `ボールを` / `なげる` becomes `Ném` / `bóng`, and `コンピュータの` / `つよさ` becomes `Độ khó của` / `máy tính`.
+Two-line Japanese UI fragments may be intentionally reordered in Vietnamese for natural reading, while source rows remain separately documented.
 
 ## Karaoke — Batch 01
 
@@ -89,9 +74,9 @@ File: `translation/source/karaoke_batch01_vi.csv`
 
 Range approximately `0x2B380 .. 0x2B76E`.
 
-The song-like text for `針切じいさんのロケンロール` has a meaning-first Vietnamese translation. The current source layer preserves playful wording and jokes, but it is **not yet a singable lyric pass**. Rhythm, syllable count, and timing must be audited separately before runtime insertion.
+The `針切じいさんのロケンロール` song-like text now has a meaning-first Vietnamese translation. It is **not yet a singable lyric pass**. Rhythm, syllable count, and timing must be audited separately before runtime insertion.
 
-The existing start options near `0x2B7C9` / `0x2B7EF` remain represented by `seed_known_strings.csv` and were not duplicated in the karaoke batch.
+The existing start options near `0x2B7C9` / `0x2B7EF` remain in `seed_known_strings.csv` and were not duplicated.
 
 ## Stage-name Batch 01
 
@@ -99,9 +84,25 @@ File: `translation/source/stage_names_batch01_vi.csv`
 
 Range approximately `0x2CBAD .. 0x2CD5F`.
 
-Translated 15 stage/title strings, including `Coi chừng sóng!`, `Vòng tròn bật nảy`, several paint stages (`tiệm Mitsuya`, `quầy hội chợ`, `dinh thự`, `trung tâm bách hóa`, `trường học`), and playful square/circle names such as `Quảng trường trơn tuột` and `Quảng trường quay tít`.
+Translated 15 stage/title strings, including wave/ring/park stages, paint stages at Mitsuya/festival stall/mansion/department store/school, and playful square/circle names.
 
 These are meaning-first names; runtime layout path is not yet audited.
+
+## Quiz misc/result UI
+
+File: `translation/source/quiz_ui_misc_vi.csv`
+
+Translated player-facing quiz UI around `0x3153A` and `0x31C52 .. 0x31D2F`:
+
+- dynamic `Câu số` labels;
+- full-clear congratulations;
+- number of questions;
+- answer count;
+- correct-answer rate;
+- count of first-try correct answers;
+- `Có` choice paired with the existing `Không` seed.
+
+Raw ROM confirms the trailing `回` counter after `一発で正解したのは`; the conservative scanner split before that counter.
 
 ## Editorial rules
 
