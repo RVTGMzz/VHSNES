@@ -1,0 +1,53 @@
+﻿file_offset,source_jp,vi_full,status,notes
+0x288C2,ルール  相手にボールをぶつけよう。しゃがむとボールに当たりません。,LUẬT CHƠI  Hãy ném bóng trúng đối thủ. Cúi xuống thì bóng sẽ không trúng bạn.,translated_minigame_ui_batch01,scanner line breaks/control spacing normalized in source field
+0x28924,しゃがむ,Cúi xuống,translated_minigame_ui_batch01,
+0x28932,移動,Di chuyển,translated_minigame_ui_batch01,
+0x2893C,ボールを,Ném,translated_minigame_ui_batch01,paired two-line control label; Vietnamese word order intentionally rearranged
+0x2894A,なげる,bóng,translated_minigame_ui_batch01,paired two-line control label; Vietnamese word order intentionally rearranged
+0x28958,ルール  ペンキをうまくぬり、相手にふませよう。ドライヤーでペンキをかわかすこともできます。,LUẬT CHƠI  Sơn thật khéo để đối thủ giẫm phải. Bạn cũng có thể dùng máy sấy để làm khô sơn.,translated_minigame_ui_batch01,scanner line breaks/control spacing normalized in source field
+0x289DE,ドライヤー,Máy sấy,translated_minigame_ui_batch01,
+0x289EE,移動,Di chuyển,translated_minigame_ui_batch01,
+0x289F8,おしている間,Giữ nút để,translated_minigame_ui_batch01,paired two-line control label
+0x28A0A,ペンキをぬる,quét sơn,translated_minigame_ui_batch01,paired two-line control label
+0x28A1E,ルール  相手をおしたり、なげとばしたりして、プールにおとそう。,LUẬT CHƠI  Đẩy hoặc ném đối thủ xuống hồ bơi.,translated_minigame_ui_batch01,scanner line breaks/control spacing normalized in source field
+0x28A70,投げる,Ném,translated_minigame_ui_batch01,
+0x28A7C,移動,Di chuyển,translated_minigame_ui_batch01,
+0x28A86,体当り,Lao vào,translated_minigame_ui_batch01,
+0x28A94,何本先取？,Thắng mấy ván?,translated_minigame_ui_batch01,
+0x28AA4,コンピュータの,Độ khó của,translated_minigame_ui_batch01,paired two-line heading; Vietnamese word order intentionally rearranged
+0x28AB8,つよさ,máy tính,translated_minigame_ui_batch01,paired two-line heading; Vietnamese word order intentionally rearranged
+0x28AC4,１ゲームの時間,Thời gian mỗi ván,translated_minigame_ui_batch01,raw-ROM recovery; scanner began one byte late and displayed P
+0x28AD6,１本,1 ván,translated_minigame_ui_batch01,raw-ROM recovery; scanner omitted full-width numeric option
+0x28ADE,２本,2 ván,translated_minigame_ui_batch01,raw-ROM recovery; scanner omitted full-width numeric option
+0x28AE6,３本,3 ván,translated_minigame_ui_batch01,raw-ROM recovery; scanner omitted full-width numeric option
+0x28AEE,４本,4 ván,translated_minigame_ui_batch01,raw-ROM recovery; scanner omitted full-width numeric option
+0x28AF6,５本,5 ván,translated_minigame_ui_batch01,raw-ROM recovery; scanner omitted full-width numeric option
+0x28AFE,よわい,Dễ,translated_minigame_ui_batch01,CPU strength label localized as difficulty
+0x28B08,ふつう,Thường,translated_minigame_ui_batch01,CPU strength label localized as difficulty
+0x28B12,つよい,Khó,translated_minigame_ui_batch01,CPU strength label localized as difficulty
+0x28B1C,１８０秒,180 giây,translated_minigame_ui_batch01,raw-ROM recovery; scanner skipped full-width numeric field
+0x28B28,勝つまで,Đến khi thắng,translated_minigame_ui_batch01,
+0x28B34,１８０秒,180 giây,translated_minigame_ui_batch01,second occurrence; raw-ROM recovery
+0x28B40,勝つまで,Đến khi thắng,translated_minigame_ui_batch01,second occurrence
+0x28B50,プレイヤー１,Người chơi 1,translated_minigame_ui_batch01,raw-ROM recovery restored full-width digit
+0x28B62,プレイヤー２,Người chơi 2,translated_minigame_ui_batch01,raw-ROM recovery restored full-width digit
+0x28B74,プレイヤー３,Người chơi 3,translated_minigame_ui_batch01,raw-ROM recovery restored full-width digit
+0x28B86,プレイヤー４,Người chơi 4,translated_minigame_ui_batch01,raw-ROM recovery restored full-width digit
+0x28B96,対戦するよ,Tham gia,translated_minigame_ui_batch01,player-slot status
+0x28BA6,コンピュータ,Máy tính,translated_minigame_ui_batch01,player-slot status
+0x28BB6,おやすみだよ,Nghỉ nhé,translated_minigame_ui_batch01,player-slot inactive status
+0x28BC6,接続なし,Chưa kết nối,translated_minigame_ui_batch01,
+0x28BD2,パッド,Tay cầm,translated_minigame_ui_batch01,controller type
+0x28BDE,マウス,Chuột,translated_minigame_ui_batch01,controller type
+0x28BEA,スコープ,Super Scope,translated_minigame_ui_batch01,SNES accessory name preserved
+0x28BFF,ステージ,Màn chơi,translated_minigame_ui_batch01,
+0x28C0A,０,0,translated_minigame_ui_batch01,raw-ROM recovery; stage number
+0x28C10,１,1,translated_minigame_ui_batch01,raw-ROM recovery; stage number
+0x28C16,２,2,translated_minigame_ui_batch01,raw-ROM recovery; stage number
+0x28C1C,３,3,translated_minigame_ui_batch01,raw-ROM recovery; stage number
+0x28C22,４,4,translated_minigame_ui_batch01,raw-ROM recovery; stage number
+0x28C28,５,5,translated_minigame_ui_batch01,raw-ROM recovery; stage number
+0x28C2E,６,6,translated_minigame_ui_batch01,raw-ROM recovery; stage number
+0x28C34,７,7,translated_minigame_ui_batch01,raw-ROM recovery; stage number
+0x28C3A,８,8,translated_minigame_ui_batch01,raw-ROM recovery; stage number
+0x28C40,９,9,translated_minigame_ui_batch01,raw-ROM recovery; stage number
