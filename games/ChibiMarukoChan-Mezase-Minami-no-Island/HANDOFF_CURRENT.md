@@ -16,7 +16,7 @@ Tone is cute school/family comedy, not combat RPG. Keep `vi_full` natural and fu
 
 Detailed tracker: `translation/TRANSLATION_PROGRESS.md`.
 
-Committed meaning-layer rows: **1,010**.
+Committed meaning-layer rows: **1,018**.
 
 - seed: 10
 - main menu: 10
@@ -32,6 +32,7 @@ Committed meaning-layer rows: **1,010**.
 - Minigame UI Batch 01: 52
 - Karaoke Batch 01: 28
 - Stage-name Batch 01: 15
+- Quiz misc/result UI: 8
 
 Main story direct-text arc is translated approximately `0x181CC .. 0x1DE81`, through the current visible ending sequence.
 
@@ -47,15 +48,7 @@ Range approximately `0x288C2 .. 0x28C40`.
 
 Covers ball, paint/dryer, and pool minigame rules; controls; rounds-to-win; CPU difficulty; match duration; player slots; controller type; stage selector; stage digits.
 
-Raw ROM corrections include:
-
-- `１ゲームの時間` at `0x28AC4` (scanner showed leading `P` because it began inside the full-width `１`);
-- `１本..５本` at `0x28AD6..0x28AF6`;
-- `１８０秒` at `0x28B1C` and `0x28B34`;
-- `プレイヤー１..４`;
-- stage digits `０..９` at `0x28C0A..0x28C40`.
-
-Two-line Japanese UI fragments may be intentionally reordered in Vietnamese for natural reading, but the source rows remain separately documented.
+Raw ROM corrections include `１ゲームの時間`, `１本..５本`, both `１８０秒` fields, `プレイヤー１..４`, and stage digits `０..９`.
 
 ### Karaoke Batch 01
 
@@ -76,6 +69,14 @@ Range approximately `0x2CBAD .. 0x2CD5F`.
 15 stage/title strings translated, including wave/ring/park stages, paint stages at Mitsuya/festival stall/mansion/department store/school, and playful square/circle names.
 
 Runtime layout path for these stage names is not yet audited.
+
+### Quiz misc/result UI
+
+File: `translation/source/quiz_ui_misc_vi.csv`
+
+Player-facing quiz UI translated around `0x3153A` and `0x31C52 .. 0x31D2F`: dynamic question-number labels, full-clear congratulations, question count, answer count, correct-answer rate, first-try correct count, and the `Có` option paired with the existing `Không` seed.
+
+Raw ROM confirms a trailing `回` counter after `一発で正解したのは`; the conservative scanner split before it.
 
 No Story / Quiz / Fortune / Minigame / Karaoke / Credits batch has been bulk-patched into ROM.
 
