@@ -16,8 +16,9 @@ Current committed translated rows:
 - `translation/source/rules_tutorial_vi.csv`: 2
 - Maruko Q Batch 01: 74
 - Maruko Q Batch 02: 129
-- Maruko Q Batch 03: 178 rows across `quiz_batch03_part1_vi.csv`, `quiz_batch03_part2_vi.csv`, `quiz_batch03_part3_vi.csv`
-- **total committed meaning-layer rows: 758**
+- Maruko Q Batch 03: 178
+- Maruko Fortune / `まるこみくじ` Batch 01: 157 rows across `fortune_batch01_part1_vi.csv`, `fortune_batch01_part2_vi.csv`, `fortune_batch01_part3_vi.csv`
+- **total committed meaning-layer rows: 915**
 
 These counts are source-translation rows, NOT whole-game completion percentage. Scanner output still contains false positives, split strings, control/layout data, and numeric/count artifacts.
 
@@ -27,58 +28,44 @@ The coherent direct-text story arc is translated approximately from `0x181CC .. 
 
 Tone remains frozen in `translation/STYLE_GUIDE_VI.md`: cute school/family comedy, not combat RPG.
 
-## Maruko Q — Batch 01
+## Maruko Q
 
-Approximate range: `0x34009 .. 0x34F3E`.
+The large coherent quiz banks are translated through the currently discovered direct-text end at approximately `0x368D8`.
 
-Covers Noguchi, Hanawa, Hamaji, Hideji, Buutaro, Fujiki, Pusadi, and related trivia. Raw-ROM recovery restored scanner-missed numeric choices such as Hanawa's mother age, Hamaji's 100-yen choice, and Hideji's age.
+- Batch 03: `0x31D47 .. 0x33F98`
+- Batch 01: `0x34009 .. 0x34F3E`
+- Batch 02: `0x34F7B .. 0x368D8`
 
-## Maruko Q — Batch 02
+Raw-ROM recovery is required whenever the conservative scanner starts inside a full-width digit/Latin character or omits a short numeric field.
 
-Approximate range: `0x34F7B .. 0x368D8`.
+## Maruko Fortune / `まるこみくじ` — Batch 01
 
-Covers Fuyuta, Maruo, Migiwa, Midori, Yamada, Yamane, Yoshiko, Nagayama, Ono/Sugiyama, Hiroshi's brother, Fujiki, the Sakura house, Hideji, Maruko's sister, and Mitsuya shop trivia.
-
-Raw-ROM recovery confirmed:
-
-- Maruo birthday: `12/31`;
-- Maruo's mother: `49` years old;
-- Yoshiko: class `6-2`;
-- Sakura house: one story.
-
-## Maruko Q — Batch 03
-
-Approximate range: `0x31D47 .. 0x33F98`, with the explanation continuing into the already translated Batch 01 at `0x34009`.
+Range: approximately `0x2BD28 .. 0x2CB92`.
 
 Files:
 
-- `translation/source/quiz_batch03_part1_vi.csv`
-- `translation/source/quiz_batch03_part2_vi.csv`
-- `translation/source/quiz_batch03_part3_vi.csv`
+- `translation/source/fortune_batch01_part1_vi.csv`
+- `translation/source/fortune_batch01_part2_vi.csv`
+- `translation/source/fortune_batch01_part3_vi.csv`
 
-Focus:
+Translated systems:
 
-- Maruko / Momoe-chan gift trivia;
-- Maruko birthday, age, blood type, and allowance;
-- Tomozou, grandmother, Hiroshi, Sumire, and Maruko's older sister;
-- Ono, Kayoko, Hasegawa Kenta, Sugiyama, Sekiguchi;
-- Tama-chan, teacher Togawa, Toku-chan, Toshiko;
-- Buutaro's younger sister and Nagasawa's family.
+- headings: `Điều ước`, `Tài lộc`, `Tình duyên`, `Học hành`, `Lời trời mách`, `Con số may mắn`, `Màu may mắn`;
+- wish fortunes;
+- money fortunes;
+- romance fortunes;
+- study fortunes;
+- general advice / lucky-item messages;
+- lucky-number fields;
+- lucky-color list.
 
-Raw-ROM recovery was used instead of guessing scanner placeholders. Newly recovered/corrected fields include:
+Tone is intentionally light, school-age, and playful rather than mystical/formal. Examples include `Coi chừng tiêu hoang`, `Chỉ có lúc này thôi, tỏ tình đi!`, `Trước hết ôn bài đã`, and the deliberately deadpan `Xin hãy... từ bỏ tất cả`.
 
-- Maruko: grade 3, blood type A, age 9;
-- birthday choices: `5/8`, `4/23`, `10/1`;
-- allowance choices: `30`, `1,000,000`, `50` yen;
-- Tomozou choices: `76`, `67`, `82`, with explanation confirming `76`;
-- Hiroshi choices: `40`, `45`, `36`, with explanation confirming `40`;
-- Sumire: `40` years old;
-- older sister: grade 6;
-- Ono transfers in the 3rd semester;
-- Maruko/Sugiyama class: `3-4`;
-- `B級男子トリオ` restored as the `B-class boys trio` wording;
-- Toshiko/Maruko/Tama school question restores full-width `3` and `Kamome No. 3 Elementary` choice;
-- their grade restores to grade 3.
+Raw-ROM recovery corrected scanner omissions/splits:
+
+- `４人集めてみて` begins with full-width `４`; the scanner started one byte late and displayed `S人...`;
+- lucky digits `０..９` were recovered directly from raw ROM;
+- large lucky-number strings recovered directly: `１６，７７７，２１６`, `１，０００，０００`, `１３０，０００，０００`.
 
 ## Editorial rules
 
@@ -92,18 +79,24 @@ Raw-ROM recovery was used instead of guessing scanner placeholders. Newly recove
 
 ## Runtime separation
 
-No bulk Story / Quiz / Credits translation has been patched into ROM yet.
+No bulk Story / Quiz / Fortune / Credits translation has been patched into ROM yet.
 
 Font/codepage reverse remains separate. Probe 005 is still the current mapping-table runtime proof and requires screenshot evidence before freezing that architecture.
 
 ## Next translation work
 
-The large coherent Maruko Q banks now cover the discovered quiz text through `0x368D8`.
+Strong next player-facing direct-text target: minigame rules/config around `0x288C2 .. 0x28BFF`.
 
-Next meaning-first target should move to other coherent direct-text systems rather than binary-looking scanner noise. Strong candidates are:
+This region includes:
 
-- fortune / `まるこみくじ` message bank around `0x2C000`;
-- karaoke / song-like text around `0x2B000`;
-- remaining menu/tutorial strings around `0x2865E .. 0x289xx`.
+- ball-throwing rules;
+- paint/dryer rules;
+- pool/pushing rules;
+- controls;
+- rounds-to-win settings;
+- CPU strength;
+- match duration;
+- player/controller assignment;
+- stage selection.
 
-Audit each subsystem separately because menu, fortune text, karaoke lyrics/phrases, and graphics may use different runtime/layout paths.
+Recover short full-width numeric fields directly from raw ROM where the scanner omits them, such as `１ゲームの時間`, `１本..５本`, and `１８０秒`.
