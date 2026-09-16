@@ -5,7 +5,7 @@ Branch: `chibi-maruko-bootstrap-01`
 
 ## Meaning-first Vietnamese source layer
 
-Current committed translated rows:
+Current committed **player-facing / release-intent** translated rows:
 
 - `translation/source/seed_known_strings.csv`: 10
 - `translation/source/main_menu_vi.csv`: 10
@@ -22,7 +22,12 @@ Current committed translated rows:
 - Karaoke Batch 01: 28
 - Stage-name Batch 01: 15
 - Quiz misc/result UI: 8
-- **total committed meaning-layer rows: 1,018**
+- **total release-intent meaning rows: 1,018**
+
+Additional reverse/reference material:
+
+- `translation/source/internal_debug_reference_vi.csv`: 10 translated internal QA/debug rows, **excluded from the 1,018 release-intent count**
+- `translation/source/graphics_text_targets_vi.csv`: 5 visual-text targets/hypotheses for later graphics/tilemap work, not direct-text rows
 
 These counts are source-translation rows, NOT whole-game completion percentage. Scanner output still contains false positives, split strings, control/layout data, and numeric/count artifacts.
 
@@ -66,8 +71,6 @@ Translated ball-throwing, paint/dryer, and pool/pushing rules; controls; rounds-
 
 Raw-ROM recovery fixed `１ゲームの時間`, `１本..５本`, both `１８０秒` fields, `プレイヤー１..４`, and stage digits that the scanner missed or entered mid-character.
 
-Two-line Japanese UI fragments may be intentionally reordered in Vietnamese for natural reading, while source rows remain separately documented.
-
 ## Karaoke — Batch 01
 
 File: `translation/source/karaoke_batch01_vi.csv`
@@ -84,25 +87,49 @@ File: `translation/source/stage_names_batch01_vi.csv`
 
 Range approximately `0x2CBAD .. 0x2CD5F`.
 
-Translated 15 stage/title strings, including wave/ring/park stages, paint stages at Mitsuya/festival stall/mansion/department store/school, and playful square/circle names.
-
-These are meaning-first names; runtime layout path is not yet audited.
+Translated 15 stage/title strings. These are meaning-first names; runtime layout path is not yet audited.
 
 ## Quiz misc/result UI
 
 File: `translation/source/quiz_ui_misc_vi.csv`
 
-Translated player-facing quiz UI around `0x3153A` and `0x31C52 .. 0x31D2F`:
+Translated player-facing quiz UI around `0x3153A` and `0x31C52 .. 0x31D2F`: dynamic `Câu số` labels, full-clear congratulations, number of questions, answer count, correct-answer rate, first-try correct count, and the `Có` choice paired with the existing `Không` seed.
 
-- dynamic `Câu số` labels;
-- full-clear congratulations;
-- number of questions;
-- answer count;
-- correct-answer rate;
-- count of first-try correct answers;
-- `Có` choice paired with the existing `Không` seed.
+## Internal QA / debug block audit
 
-Raw ROM confirms the trailing `回` counter after `一発で正解したのは`; the conservative scanner split before that counter.
+Range approximately `0x2865E .. 0x287FC`.
+
+File: `translation/source/internal_debug_reference_vi.csv`.
+
+Raw ROM resolves this block as a development/test navigation section rather than normal retail dialogue. It includes:
+
+- Sakura Production video submission deadline `８／３１`;
+- Start / Password screen description;
+- `今からやるよ` conversation demo description;
+- full-width `ＶＳ` demo description;
+- Maru-chan win / loss demos;
+- Continue screen;
+- Story Mode quit screen;
+- final-win demo;
+- ending.
+
+These 10 rows are translated only as reverse-engineering references and are deliberately **excluded** from the release-intent count. Do not patch them into a normal release unless runtime evidence proves they are player-visible.
+
+Full audit: `docs/DIRECT_TEXT_COVERAGE_AUDIT_20260916.md`.
+
+## Graphics / tilemap translation targets
+
+File: `translation/source/graphics_text_targets_vi.csv`.
+
+Current targets:
+
+- visible pink heading `どれにする？` → `Chọn gì đây?`;
+- `はじめから` → `Bắt đầu`;
+- `パスワード` → `Mật khẩu`;
+- `今からやるよ` → `Bắt đầu thôi!` pending exact on-screen context;
+- `ＶＳ` → `VS`.
+
+Only `どれにする？` is visually verified from the user screenshot. The other four are inferred from the internal QA block and must be located in their actual render path before insertion.
 
 ## Editorial rules
 
@@ -120,8 +147,13 @@ No bulk Story / Quiz / Fortune / Minigame / Karaoke / Credits translation has be
 
 Font/codepage reverse remains separate. Probe 005 is still the current mapping-table runtime proof and requires screenshot evidence before freezing that architecture.
 
-## Next translation work
+## Next translation / reverse work
 
-Strong next target: audit the remaining direct UI/demo strings around `0x2865E .. 0x28817` and keep only strings that are actually player-facing or useful runtime labels. This region contains demo/start/password/continue/ending descriptions and may include debug/development text, so do **not** assume all of it belongs in the final player translation.
+The currently proven large coherent direct-text banks are now meaning-covered. Do **not** inflate the untranslated count using binary-looking CP932 false positives.
 
-After that, scan remaining coherent direct-text islands before touching binary-looking candidates. Karaoke also needs a separate singability pass later, after font/layout behavior is understood.
+Next high-value work:
+
+1. locate and extract graphics/tilemap text for the Start / Password / Continue / ending family of screens hinted by the debug block;
+2. locate the pink `どれにする？` heading render path;
+3. continue font/codepage reverse so full Vietnamese can be inserted safely;
+4. later perform a karaoke singability/timing pass after font/layout behavior is known.
