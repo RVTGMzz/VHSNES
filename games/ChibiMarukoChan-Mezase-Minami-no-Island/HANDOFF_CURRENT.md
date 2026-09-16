@@ -16,7 +16,7 @@ Tone is cute school/family comedy, not combat RPG. Keep `vi_full` natural and fu
 
 Detailed tracker: `translation/TRANSLATION_PROGRESS.md`.
 
-Committed meaning-layer rows: **915**.
+Committed meaning-layer rows: **1,010**.
 
 - seed: 10
 - main menu: 10
@@ -28,45 +28,62 @@ Committed meaning-layer rows: **915**.
 - Maruko Q Batch 01: 74
 - Maruko Q Batch 02: 129
 - Maruko Q Batch 03: 178
-- Maruko Fortune / `まるこみくじ` Batch 01: 157
+- Maruko Fortune Batch 01: 157
+- Minigame UI Batch 01: 52
+- Karaoke Batch 01: 28
+- Stage-name Batch 01: 15
 
 Main story direct-text arc is translated approximately `0x181CC .. 0x1DE81`, through the current visible ending sequence.
 
-### Maruko Q coverage
+The currently discovered coherent Maruko Q banks are translated through approximately `0x368D8`.
 
-The currently discovered coherent direct quiz banks are translated through approximately `0x368D8`.
+Maruko Fortune / `まるこみくじ` is translated approximately `0x2BD28 .. 0x2CB92`, including wish/money/romance/study fortunes, advice, lucky numbers, and lucky colors.
 
-Raw-ROM recovery is mandatory when the conservative scanner starts inside a full-width digit/Latin character or omits a short field.
+### Minigame UI Batch 01
 
-### Maruko Fortune / `まるこみくじ` Batch 01
+File: `translation/source/minigame_ui_batch01_vi.csv`
 
-Range approximately `0x2BD28 .. 0x2CB92`.
+Range approximately `0x288C2 .. 0x28C40`.
 
-Files:
+Covers ball, paint/dryer, and pool minigame rules; controls; rounds-to-win; CPU difficulty; match duration; player slots; controller type; stage selector; stage digits.
 
-- `translation/source/fortune_batch01_part1_vi.csv`
-- `translation/source/fortune_batch01_part2_vi.csv`
-- `translation/source/fortune_batch01_part3_vi.csv`
+Raw ROM corrections include:
 
-Translated: headings, wish fortunes, money fortunes, romance fortunes, study fortunes, general advice, lucky items, lucky numbers, and lucky colors.
+- `１ゲームの時間` at `0x28AC4` (scanner showed leading `P` because it began inside the full-width `１`);
+- `１本..５本` at `0x28AD6..0x28AF6`;
+- `１８０秒` at `0x28B1C` and `0x28B34`;
+- `プレイヤー１..４`;
+- stage digits `０..９` at `0x28C0A..0x28C40`.
 
-Raw-ROM recovery corrected important scanner misses:
+Two-line Japanese UI fragments may be intentionally reordered in Vietnamese for natural reading, but the source rows remain separately documented.
 
-- `４人集めてみて` was mis-scanned as `S人集めてみて`; raw ROM proves full-width `４`;
-- digits `０..９` are direct short fields omitted by the scanner;
-- large lucky-number fields recovered directly: `１６，７７７，２１６`, `１，０００，０００`, `１３０，０００，０００`.
+### Karaoke Batch 01
 
-No Story / Quiz / Fortune / Credits batch has been bulk-patched into ROM.
+File: `translation/source/karaoke_batch01_vi.csv`
+
+Range approximately `0x2B380 .. 0x2B76E`.
+
+Meaning-first translation of the `針切じいさんのロケンロール` song-like text is committed. This is **not** yet a singable lyric adaptation. Rhythm, syllable count, and timing require a later dedicated pass.
+
+Start options near `0x2B7C9` / `0x2B7EF` remain in `seed_known_strings.csv`; they were not duplicated.
+
+### Stage-name Batch 01
+
+File: `translation/source/stage_names_batch01_vi.csv`
+
+Range approximately `0x2CBAD .. 0x2CD5F`.
+
+15 stage/title strings translated, including wave/ring/park stages, paint stages at Mitsuya/festival stall/mansion/department store/school, and playful square/circle names.
+
+Runtime layout path for these stage names is not yet audited.
+
+No Story / Quiz / Fortune / Minigame / Karaoke / Credits batch has been bulk-patched into ROM.
 
 ### NEXT TRANSLATION TARGET
 
-Translate the coherent player-facing minigame rules/config region around `0x288C2 .. 0x28BFF` next.
+Audit direct UI/demo strings around `0x2865E .. 0x28817` next. This region contains descriptions such as start/password screen, conversation demo, win/loss demo, continue screen, story-exit screen, final victory demo, and ending. It may be a hidden debug/development index rather than normal player-facing UI, so translate only after classifying what is actually displayed at runtime.
 
-It includes ball-throwing rules, paint/dryer rules, pool/pushing rules, controls, rounds-to-win, CPU strength, game time, player/controller assignment, and stage selection.
-
-Raw ROM already shows short fields that the scanner partially misses, including `１ゲームの時間`, `１本..５本`, and `１８０秒`. Recover these directly instead of guessing.
-
-After that, audit karaoke/song-like text around `0x2B000` separately because it may have different layout/runtime behavior.
+Then continue scanning only coherent direct-text islands. Do not promote binary-looking scanner candidates into translation rows without evidence.
 
 ## Main menu meaning layer
 
