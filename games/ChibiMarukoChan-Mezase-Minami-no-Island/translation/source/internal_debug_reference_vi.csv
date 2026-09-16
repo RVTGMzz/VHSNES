@@ -1,0 +1,11 @@
+file_offset,source_jp,vi_full,status,notes
+0x2865E,"さくらプロへのビデオ出しは、８／３１です。皆さん、頑張りましょう！！","Hạn nộp video cho Sakura Production là ngày 31/8. Mọi người cố lên nhé!!",internal_debug_reference_only,"development/QA message; not confirmed player-facing; full-width date recovered from raw ROM"
+0x286B4,"『はじめから』『パスワード』の画面です。","Đây là màn hình “Bắt đầu” / “Mật khẩu”.",internal_debug_reference_only,"describes another screen; useful as reverse-engineering navigation hint"
+0x286EA,"『今からやるよ』の会話デモです。","Đây là đoạn hội thoại demo “Bắt đầu thôi!”.",internal_debug_reference_only,"meta description; not final player dialogue"
+0x2871B,"『ＶＳ』のデモです。","Đây là demo “VS”.",internal_debug_reference_only,"raw ROM confirms full-width ＶＳ; scanner misread it"
+0x28732,"まるちゃんが、勝った時のデモです。","Đây là demo khi Maru-chan thắng.",internal_debug_reference_only,"meta/debug description"
+0x2875E,"まるちゃんが、敗けた時のデモです。","Đây là demo khi Maru-chan thua.",internal_debug_reference_only,"meta/debug description"
+0x2878A,"コンティニュー画面です。","Đây là màn hình Tiếp tục.",internal_debug_reference_only,"meta/debug description"
+0x287AC,"ストーリーモードをやめる時の画面です。","Đây là màn hình khi thoát Chế độ Cốt truyện.",internal_debug_reference_only,"meta/debug description"
+0x287E0,"最終勝利デモです。","Đây là demo chiến thắng cuối cùng.",internal_debug_reference_only,"meta/debug description; outcome wording only"
+0x287FC,"エンディングです。","Đây là phần kết.",internal_debug_reference_only,"meta/debug description"
