@@ -11,22 +11,15 @@ Two tracks continue in parallel:
 1. meaning-first Vietnamese translation;
 2. renderer/font/graphics reverse.
 
-Visible-menu architecture is now runtime-proven as:
+Visible-menu architecture is runtime-proven as:
 
 ```text
 2-byte game code -> 16-bit glyph ID -> 12x12 raw 1bpp bitmap
 ```
 
-Probe 006 showed exact `TĐST1234`, proving one custom Vietnamese `Đ` glyph. Probe 007 then proved that the dedicated Vietnamese `0x84xx` codepage and a large multi-glyph custom bank boot and render through the same path.
+Probe 006 showed exact `TĐST1234`, proving one custom Vietnamese `Đ`. Probe 007 proved the dedicated Vietnamese `0x84xx` codepage and a large multi-glyph bank render in game, but its typography was weak. Probe 008 booted and rendered the intended Vietnamese rows, but the handcrafted V2 font looked visibly worse than V1.
 
-**Probe 007 classification:**
-
-- Vietnamese codepage / multi-glyph runtime semantics: **PASS**;
-- font typography/readability: **NEEDS REVISION**.
-
-User screenshot on 2026-09-16 showed all six intended rows recognizable, but many accents were too faint or visually unstable. Do not freeze V1 glyph artwork.
-
-**Current runtime test: Probe 008 Font V2.**
+**Current runtime test: Probe 009 FE4-reference Font V3.**
 
 ## Canonical clean ROM contract
 
@@ -45,7 +38,7 @@ Never patch an unknown or already modified ROM.
 
 Committed release-intent meaning-layer rows: **1,018**. Detailed tracker: `translation/TRANSLATION_PROGRESS.md`.
 
-Meaning coverage includes the currently discovered coherent direct-text story, Maruko Q banks, fortune bank, minigame setup/rules, karaoke meaning pass, stage names, credits, and quiz misc/result UI. This is not a whole-game completion claim. Visible Japanese may still be graphics/tilemaps, compressed assets, alternate renderers, or dynamic UI.
+Meaning coverage includes the currently discovered coherent direct-text story, Maruko Q, fortune, minigame setup/rules, karaoke meaning pass, stage names, credits, and quiz misc/result UI. This is not a whole-game completion claim. Visible Japanese may still be graphics/tilemaps, compressed assets, alternate renderers, or dynamic UI.
 
 Tone is cute school/family comedy, not combat RPG. Keep `vi_full` natural and fully accented.
 
@@ -76,7 +69,7 @@ Full reverse note: `docs/REVERSE_FONT_001.md`.
 
 ## Vietnamese codepage architecture
 
-V1/V2 preserve the same code assignments:
+V1/V2/V3 preserve the same proven text encoding architecture:
 
 - dedicated Shift-JIS lead: `0x84`
 - lead pointer resolves to CPU `$85:9A74`
@@ -84,10 +77,7 @@ V1/V2 preserve the same code assignments:
 - entry formula: `0x29A74 + (trail - 0x40) * 2`
 - trail `0x7F` skipped
 - 160 Unicode codepage entries
-- 121 custom visual glyphs
-- Probe 006 slot `0x0963` retained for `Đ`
-
-The current conservative extracted direct-text corpus has zero decoded lead-0x84 characters, so this lead remains reserved for Vietnamese.
+- current conservative extracted direct-text corpus has zero decoded lead-0x84 characters
 
 ## Probe history
 
@@ -103,43 +93,14 @@ Many unsupported full-width Latin codes rendered glyph zero.
 ### Probe 006 — CUSTOM GLYPH RUNTIME PASS
 Custom `Đ` at glyph `0x0963`; screenshot showed exact `TĐST1234`.
 
-### Probe 007 — CODEPAGE PASS / TYPOGRAPHY NEEDS REVISION
+### Probe 007 — CODEPAGE PASS / TYPOGRAPHY FAIL
+Dedicated `0x84xx` Vietnamese codepage and multi-glyph bank worked at runtime. Screenshot showed intended rows recognizably, but accents/strokes were too weak or inconsistent for release.
 
-Files:
+### Probe 008 — BOOT/ENCODING PASS / TYPOGRAPHY FAIL
 
-- `translation/codepage/vi_codepage_v1.csv`
-- `translation/codepage/vi_glyphs_v1.json`
-- `tools/probe_visible_menu_007_vi_codepage.py`
+V2 kept the same code assignments and replaced bitmap art with a handcrafted deterministic pixel face.
 
-Screenshot showed the intended rows recognizably:
-
-```text
-ĐẦY ĐỦ!!
-được!
-CÓ DẤU!!
-Việt
-Maruko?
-Ổn rồi
-```
-
-but accents and stroke consistency were not release-quality. Encoding semantics are usable; V1 bitmap artwork is not frozen.
-
-## Font V2
-
-Docs: `docs/VI_FONT_V2.md`.
-
-Files:
-
-- `translation/codepage/vi_codepage_v2.csv`
-- `translation/codepage/vi_glyphs_v2.json`
-- `tools/generate_vi_glyphs_v2.py`
-- `tools/probe_visible_menu_008_font_v2.py`
-
-V2 keeps all proven code assignments and redraws the custom bitmap bank with a deterministic retro-pixel style. Tone marks are thicker and positioned deliberately for 12x12 readability. The exact Probe 006 `Đ` bitmap remains unchanged.
-
-## Probe 008 — CURRENT RUNTIME TEST
-
-Probe 008 uses six already-visible menu fields purely as a typography board, with exact two-byte unit preservation:
+User screenshot on 2026-09-16 showed:
 
 ```text
 Âm thanh
@@ -150,37 +111,107 @@ Maruko?
 Ổn rồi
 ```
 
-This tests `Â`, `ó`, `Đ`, `ấ`, `đ`, `ộ`, `ẽ`, `Ổ`, `ồ` and common lowercase Latin. These are not yet final menu labels.
+The game booted and text remained recognizable, so codepage/runtime behavior was healthy. However, user judged V2 visually worse than the previous font, with awkward proportions and spacing. **Do not freeze V2 typography.**
+
+## FE4 Vietnamese reference font extraction
+
+Doc: `docs/VI_FONT_V3_FE4_REFERENCE.md`.
+
+The user supplied `Seiseno no Keifu Vietnamese(1).smc` as a visual font reference.
+
+Exact supplied reference identity:
+
+- total size `4,194,816` bytes = 4 MiB body + 512-byte copier header
+- full SHA-1 `2556860f8f51d0895c191a5f614c9088fc8fd98e`
+- internal title `FIREEMBLEM4`
+
+Recovered dialogue-font range from the headerless body:
+
+```text
+0x128000 .. 0x12BBFF
+```
+
+Size `0x3C00` bytes, raw SNES 2bpp. It decodes as 240 logical 16x16 cells (2x2 8x8 tiles per cell), with Latin/Vietnamese ink in the left 8 pixels. The reference contains a compact 8x16 Latin/Vietnamese face with native tone-marked lowercase glyph families.
+
+Recovered source ordering includes:
+
+- `A..Z` = cells `0x00..0x19`
+- `a..z` = cells `0x1A..0x33`
+- Vietnamese lowercase accented families roughly `0x3A..0x7B`
+
+Important: **only raster shapes are transferred.** FE4 addresses, renderer, codepage, width rules, and engine assumptions are not copied into Chibi.
+
+## Font V3 — FE4-reference transfer
+
+Files:
+
+- `translation/codepage/vi_codepage_v3_fe4ref.csv`
+- `translation/codepage/vi_glyphs_v3_fe4ref.json`
+- `tools/generate_vi_glyphs_v3_fe4ref.py`
+- `tools/probe_visible_menu_009_fe4ref_font.py`
+- `docs/VI_FONT_V3_FE4_REFERENCE.md`
+
+Adaptation:
+
+```text
+FE4 8x16 raster shape -> nearest-neighbor 10x12 -> centered in Chibi 12x12 cell
+```
+
+V3 keeps the `0x84xx` encoding semantics. Five previously native letters needed by the typography board receive safe custom slots so the comparison is visually consistent:
+
+```text
+B -> 0x0958
+u -> 0x0959
+M -> 0x095A
+o -> 0x095B
+V -> 0x095C
+```
+
+V3 uses 126 custom visual glyphs, leaving 6 conservatively safe blank slots reserved.
+
+## Probe 009 — CURRENT RUNTIME TEST
+
+Probe rows are deliberately identical to Probe 008 for direct visual comparison:
+
+```text
+Âm thanh
+Bói!!
+Đấu đội!
+Vẽ!!
+Maruko?
+Ổn rồi
+```
 
 Static CLEAN-ROM build PASS:
 
 - codepage entries: 160
-- custom visual glyphs: 121
-- lead pointer identity: PASS
+- custom visual glyphs: 126
+- lead `0x84` pointer identity: PASS
 - blank/reuse audit: PASS
 - six source identities: PASS
 - exact two-byte unit fit: PASS
 - diff-surface gate: PASS
-- checksum `0x8DFC`
-- complement `0x7203`
-- SHA-1 `605240bb3ca81883e6c4f06e76c642ad84be59a1`
-- SHA-256 `7b9a447d7d3c19631699cfa9daa17124c08998f68878730ba89d5ee4fc6e31b5`
+- checksum `0x04DF`
+- complement `0xFB20`
+- SHA-1 `94c0c2c303dd824ee617ec765a645a4a7adefde9`
+- SHA-256 `072abd670a2e0dca888391f74b3104ba853ac49ec6144373e820eb95a18a782b`
 
 **Runtime status: PENDING user screenshot.**
 
-Do not call Font V2 Runtime PASS until screenshot evidence confirms readability.
+Do not call V3 typography Runtime PASS until the screenshot shows it is materially better than Probe 007/008.
 
-## After Probe 008
+## After Probe 009
 
-If V2 is readable:
+If V3 looks good:
 
-1. freeze the V2 bitmap style/codepage for the direct-text renderer;
-2. build a real compact Vietnamese menu candidate;
-3. address fixed-field limits separately for longer labels such as `Cốt truyện` and `Thi đấu` via relocation/layout proof rather than truncating meaning blindly;
+1. freeze the FE4-derived raster face for the direct-text renderer;
+2. build a real compact Vietnamese main-menu candidate;
+3. separately solve field-length/spacing constraints rather than truncating meaning blindly;
 4. begin guarded insertion of translated direct-text batches;
-5. continue graphics/tilemap reverse for the pink heading and Start/Password/Continue/ending family.
+5. consider width/advance work only if fixed-width spacing remains objectionable;
+6. continue graphics/tilemap reverse for the pink heading and Start/Password/Continue/ending family.
 
-If some V2 accents remain ambiguous, revise only the affected glyph bitmaps and keep code assignments stable.
+If V3 still looks poor, do not keep redrawing blindly. Audit the Chibi renderer's character advance/spacing behavior and consider a width/advance layer inspired by reference projects, but prove it on Chibi before adopting it.
 
 ## Frozen workflow
 
