@@ -11,17 +11,22 @@ Two tracks continue in parallel:
 1. meaning-first Vietnamese translation;
 2. renderer/font/graphics reverse.
 
-Probe 006 screenshot already runtime-proved the visible-menu path as:
+Visible-menu architecture is now runtime-proven as:
 
 ```text
 2-byte game code -> 16-bit glyph ID -> 12x12 raw 1bpp bitmap
 ```
 
-The exact first line `TĐST1234` appeared in game, proving that a custom-drawn Vietnamese `Đ` can render through this path.
+Probe 006 showed exact `TĐST1234`, proving one custom Vietnamese `Đ` glyph. Probe 007 then proved that the dedicated Vietnamese `0x84xx` codepage and a large multi-glyph custom bank boot and render through the same path.
 
-**Current runtime test is now Probe 007**, which installs the first corpus-derived Vietnamese codepage and a multi-glyph Vietnamese font bank. Runtime screenshot is still pending.
+**Probe 007 classification:**
 
-Do not infer that every graphics/text subsystem uses this same renderer.
+- Vietnamese codepage / multi-glyph runtime semantics: **PASS**;
+- font typography/readability: **NEEDS REVISION**.
+
+User screenshot on 2026-09-16 showed all six intended rows recognizable, but many accents were too faint or visually unstable. Do not freeze V1 glyph artwork.
+
+**Current runtime test: Probe 008 Font V2.**
 
 ## Canonical clean ROM contract
 
@@ -30,7 +35,7 @@ Do not infer that every graphics/text subsystem uses this same renderer.
 - SHA-256 `e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956`
 - internal title `RS051 CHIBIMARUKOCHAN`
 - LoROM / FastROM
-- internal header file `0x7FC0`
+- header file `0x7FC0`
 - no copier header
 - clean checksum `0x1115`, complement `0xEEEA`
 
@@ -38,196 +43,75 @@ Never patch an unknown or already modified ROM.
 
 ## Translation progress
 
-Detailed tracker: `translation/TRANSLATION_PROGRESS.md`.
+Committed release-intent meaning-layer rows: **1,018**. Detailed tracker: `translation/TRANSLATION_PROGRESS.md`.
 
-Committed **release-intent meaning-layer rows: 1,018**.
+Meaning coverage includes the currently discovered coherent direct-text story, Maruko Q banks, fortune bank, minigame setup/rules, karaoke meaning pass, stage names, credits, and quiz misc/result UI. This is not a whole-game completion claim. Visible Japanese may still be graphics/tilemaps, compressed assets, alternate renderers, or dynamic UI.
 
-Breakdown:
+Tone is cute school/family comedy, not combat RPG. Keep `vi_full` natural and fully accented.
 
-- seed: 10
-- main menu: 10
-- Story Batch 01: 126
-- Story Batch 02: 126
-- Story Batch 03: 84
-- credits: 19
-- rules/tutorial: 2
-- Maruko Q Batch 01: 74
-- Maruko Q Batch 02: 129
-- Maruko Q Batch 03: 178
-- Maruko Fortune Batch 01: 157
-- Minigame UI Batch 01: 52
-- Karaoke Batch 01: 28
-- Stage-name Batch 01: 15
-- Quiz misc/result UI: 8
+## Graphics/tilemap targets remain separate
 
-Additional reverse/reference rows excluded from that count:
-
-- `translation/source/internal_debug_reference_vi.csv`: 10 internal QA/debug rows
-- `translation/source/graphics_text_targets_vi.csv`: graphics/tilemap targets/hypotheses
-
-Meaning coverage reached:
-
-- main direct-text story: approx `0x181CC .. 0x1DE81`
-- Maruko Q coherent banks: through approx `0x368D8`
-- Fortune / `まるこみくじ`: approx `0x2BD28 .. 0x2CB92`
-- minigame setup/rules: approx `0x288C2 .. 0x28C40`
-- karaoke lyric-like bank: approx `0x2B380 .. 0x2B76E`
-- stage names: approx `0x2CBAD .. 0x2CD5F`
-- quiz misc/result UI: around `0x3153A` and `0x31C52 .. 0x31D2F`
-
-Tone is cute school/family comedy, not combat RPG. Keep `vi_full` natural and fully accented. Prefer `thi`, `thi đấu`, `so tài`, `vượt qua`; Maruo `ズバリ` stays around `Nói thẳng ra!`; Hanawa retains `Hey` / `baby` / `Señorita` when natural; narrator stays dry and lightly teasing.
-
-No bulk Story / Quiz / Fortune / Minigame / Karaoke / Credits translation has been patched into ROM yet.
-
-## Direct-text audit
-
-Audit doc: `docs/DIRECT_TEXT_COVERAGE_AUDIT_20260916.md`.
-
-The large coherent retail-facing direct-text banks currently discovered by the conservative scanner are meaning-covered. Do not inflate untranslated counts with random CP932-decodable binary islands.
-
-This is NOT a whole-game completion claim. Visible Japanese may still be graphics/tilemaps, compressed assets, alternate renderers, or dynamic UI.
-
-## Graphics/tilemap targets
-
-`translation/source/graphics_text_targets_vi.csv` currently includes:
+`translation/source/graphics_text_targets_vi.csv` includes targets such as:
 
 - `どれにする？` -> `Chọn gì đây?` — visually verified, render path unknown
-- `はじめから` -> `Bắt đầu` — inferred from QA block
-- `パスワード` -> `Mật khẩu` — inferred
-- `今からやるよ` -> `Bắt đầu thôi!` — inferred, exact context pending
-- `ＶＳ` -> `VS` — inferred
+- `はじめから` -> `Bắt đầu`
+- `パスワード` -> `Mật khẩu`
+- `今からやるよ` -> `Bắt đầu thôi!`
+- `ＶＳ` -> `VS`
 
-Do not patch these until their actual render/assets are located.
+Do not assume these use the proven direct-text renderer.
 
-## Main menu meaning layer
-
-Preferred wording:
-
-- `ストーリーモード` -> `Chế độ Cốt truyện`
-- `対戦モード` -> `Thi đấu`
-- `チーム対戦モード` -> `Thi đấu theo đội`
-- `まるこＱ` -> `Maruko Q`
-- `まるこペイント` -> `Maruko tập vẽ`
-- `まるこみくじ` -> `Bói vui cùng Maruko`
-- `針切カラオケ` -> `Karaoke`
-- `サウンド` -> `Âm thanh`
-- `ステレオ` -> `Stereo`
-- `モノラル` -> `Mono`
-
-## Renderer/font reverse — proven facts
+## Renderer/font proven facts
 
 Full reverse note: `docs/REVERSE_FONT_001.md`.
 
-Visible-menu parser: file `0x283D8`, CPU `$85:83D8`.
+- parser: file `0x283D8`, CPU `$85:83D8`
+- per-lead mapping pointer table: file `0x29756`
+- renderer: file `0x28E7B`, CPU `$85:8E7B`
+- font page pointer table: file `0x295EE`
+- 10 font pages at `0x128000 .. 0x12C800`, step `0x800`
+- each page: raw 1bpp 128x128 bitmap
+- each page: 10x10 logical grid of 12x12 cells
+- glyph ID high byte = page 0..9; low byte = cell index 0..99
 
-Per-lead mapping pointer table: file `0x29756`, CPU `$85:9756`.
+## Vietnamese codepage architecture
 
-Renderer: file `0x28E7B`, CPU `$85:8E7B`.
+V1/V2 preserve the same code assignments:
 
-Font page pointer table: file `0x295EE`, CPU `$85:95EE`.
+- dedicated Shift-JIS lead: `0x84`
+- lead pointer resolves to CPU `$85:9A74`
+- mapping file base: `0x29A74`
+- entry formula: `0x29A74 + (trail - 0x40) * 2`
+- trail `0x7F` skipped
+- 160 Unicode codepage entries
+- 121 custom visual glyphs
+- Probe 006 slot `0x0963` retained for `Đ`
 
-Ten raw 1bpp 128x128 pages:
-
-```text
-0x128000
-0x128800
-0x129000
-0x129800
-0x12A000
-0x12A800
-0x12B000
-0x12B800
-0x12C000
-0x12C800
-```
-
-Each page contains a 10x10 logical grid of **12x12 glyph cells**.
-
-Glyph ID format:
-
-```text
-high byte = font page 0..9
-low byte  = cell index 0..99
-```
+The current conservative extracted direct-text corpus has zero decoded lead-0x84 characters, so this lead remains reserved for Vietnamese.
 
 ## Probe history
 
 ### Probe 002 — RUNTIME FAIL
-
-Raw 1-byte ASCII froze before the visible menu.
+Raw 1-byte ASCII froze before the menu.
 
 ### Probe 003 — BOOT PASS / GLYPH IDENTITY FAIL
-
-Full-width `ＴＥＳＴ１２３４` kept two-byte framing, but `Ｅ` rendered as zero.
+Same-size two-byte full-width text booted, but unsupported Latin glyphs mapped incorrectly.
 
 ### Probe 004 — RUNTIME COVERAGE MAP PASS
-
-Unsupported full-width Latin codes were shown to map to glyph zero.
-
-### Probe 005 — superseded
-
-No separate runtime test needed after Probe 006 proved mapping + bitmap together.
+Many unsupported full-width Latin codes rendered glyph zero.
 
 ### Probe 006 — CUSTOM GLYPH RUNTIME PASS
+Custom `Đ` at glyph `0x0963`; screenshot showed exact `TĐST1234`.
 
-Tool: `tools/probe_visible_menu_006_custom_glyph.py`.
-
-Custom slot `0x0963` received a 12x12 `Đ`, and the `Ｅ` code was remapped to that slot. User screenshot showed exactly:
-
-```text
-TĐST1234
-```
-
-Visible-menu custom glyph rendering is therefore runtime-proven.
-
-## Vietnamese Codepage V1
-
-Full note: `docs/VI_CODEPAGE_V1.md`.
+### Probe 007 — CODEPAGE PASS / TYPOGRAPHY NEEDS REVISION
 
 Files:
 
 - `translation/codepage/vi_codepage_v1.csv`
 - `translation/codepage/vi_glyphs_v1.json`
+- `tools/probe_visible_menu_007_vi_codepage.py`
 
-Architecture:
-
-- dedicated valid Shift-JIS lead byte: `0x84`
-- clean lead pointer: CPU `$85:9A74`
-- mapping table file base: `0x29A74`
-- entry formula: `0x29A74 + (trail - 0x40) * 2`
-- trail `0x7F` deliberately skipped
-
-Current conservative direct-text scan has **zero decoded lead-0x84 characters**, which is why this lead is reserved for the Vietnamese codepage.
-
-V1 inventory:
-
-- **160 Unicode characters**
-- full A-Z / a-z and digits
-- corpus punctuation
-- Vietnamese precomposed letters currently needed by the 1,018-row meaning layer
-- `ñ` for `Señorita`
-- a few extra uppercase accented letters used by Probe 007
-
-Glyph allocation audit:
-
-- 133 blank font cells found
-- `0x022D` is blank but already referenced
-- **132 conservatively safe blank cells** remain after reference audit
-- V1 uses **121 custom visual glyphs**
-- **11 audited blank slots remain reserved**
-- Probe 006's proven `Đ` slot `0x0963` is retained
-
-The compact glyph file stores each custom 12x12 bitmap as exactly 18 bytes / 144 bits. No external font file is needed by the build tool.
-
-Typography is still a first functional pass and is not frozen until runtime screenshots confirm readability.
-
-## Probe 007 — CURRENT RUNTIME TEST
-
-Tool: `tools/probe_visible_menu_007_vi_codepage.py`.
-
-Probe 007 starts from CLEAN ROM and installs the entire V1 mapping/glyph bank, then changes only the first six known visible menu string spans while preserving their exact two-byte unit counts.
-
-Expected rows:
+Screenshot showed the intended rows recognizably:
 
 ```text
 ĐẦY ĐỦ!!
@@ -238,50 +122,66 @@ Maruko?
 Ổn rồi
 ```
 
-Static checkpoint PASS:
+but accents and stroke consistency were not release-quality. Encoding semantics are usable; V1 bitmap artwork is not frozen.
+
+## Font V2
+
+Docs: `docs/VI_FONT_V2.md`.
+
+Files:
+
+- `translation/codepage/vi_codepage_v2.csv`
+- `translation/codepage/vi_glyphs_v2.json`
+- `tools/generate_vi_glyphs_v2.py`
+- `tools/probe_visible_menu_008_font_v2.py`
+
+V2 keeps all proven code assignments and redraws the custom bitmap bank with a deterministic retro-pixel style. Tone marks are thicker and positioned deliberately for 12x12 readability. The exact Probe 006 `Đ` bitmap remains unchanged.
+
+## Probe 008 — CURRENT RUNTIME TEST
+
+Probe 008 uses six already-visible menu fields purely as a typography board, with exact two-byte unit preservation:
+
+```text
+Âm thanh
+Bói!!
+Đấu đội!
+Vẽ!!
+Maruko?
+Ổn rồi
+```
+
+This tests `Â`, `ó`, `Đ`, `ấ`, `đ`, `ộ`, `ẽ`, `Ổ`, `ồ` and common lowercase Latin. These are not yet final menu labels.
+
+Static CLEAN-ROM build PASS:
 
 - codepage entries: 160
 - custom visual glyphs: 121
-- lead `0x84` pointer identity: PASS
-- custom blank/reuse audit: PASS
+- lead pointer identity: PASS
+- blank/reuse audit: PASS
 - six source identities: PASS
-- exact two-byte unit preservation: PASS
+- exact two-byte unit fit: PASS
 - diff-surface gate: PASS
-- SNES checksum/complement: PASS
-- checksum `0xB46C`
-- complement `0x4B93`
-- SHA-1 `9d890f1d00af6d893dcf07174ea66f8954c30382`
-- SHA-256 `e3a9e1555f3bb85ac326a47bd610e6fd9cfa4e1428666fd99bc0276c1456e46a`
+- checksum `0x8DFC`
+- complement `0x7203`
+- SHA-1 `605240bb3ca81883e6c4f06e76c642ad84be59a1`
+- SHA-256 `7b9a447d7d3c19631699cfa9daa17124c08998f68878730ba89d5ee4fc6e31b5`
 
-**Runtime status: PENDING screenshot.**
+**Runtime status: PENDING user screenshot.**
 
-Do not call V1 runtime-proven until the user screenshot confirms the intended Vietnamese rows and shows which glyphs need typography correction.
+Do not call Font V2 Runtime PASS until screenshot evidence confirms readability.
 
-## NEXT HIGH-VALUE WORK
+## After Probe 008
 
-If Probe 007 renders all six rows recognizably:
+If V2 is readable:
 
-1. freeze V1 encoding semantics;
-2. correct any ambiguous 12x12 glyph shapes revealed by screenshot, without changing code assignments unnecessarily;
-3. build a guarded real Vietnamese main-menu candidate from the meaning layer;
-4. begin runtime-fit work for translated direct-text banks, with source identity/control preservation;
-5. continue graphics/tilemap reverse separately for `どれにする？`, Start, Password, Continue, ending family.
+1. freeze the V2 bitmap style/codepage for the direct-text renderer;
+2. build a real compact Vietnamese menu candidate;
+3. address fixed-field limits separately for longer labels such as `Cốt truyện` and `Thi đấu` via relocation/layout proof rather than truncating meaning blindly;
+4. begin guarded insertion of translated direct-text batches;
+5. continue graphics/tilemap reverse for the pink heading and Start/Password/Continue/ending family.
 
-If Probe 007 freezes or corrupts unrelated text:
-
-1. do not blame the bitmap layer already proven by Probe 006;
-2. isolate whether lead `0x84` or a specific mapping/trail causes the failure;
-3. binary-split the codepage installation while keeping exact source-unit counts.
+If some V2 accents remain ambiguous, revise only the affected glyph bitmaps and keep code assignments stable.
 
 ## Frozen workflow
 
-Use Gaia Master-style guardrails, not Gaia Master hardware assumptions.
-
-Always separate:
-
-- source meaning translation;
-- runtime candidate/layout;
-- font/codepage;
-- graphics/tilemap text.
-
-Do not call whole-game Runtime PASS from a subsystem probe. Runtime claims must state exactly what screenshot evidence proved.
+Use Gaia Master-style guardrails, not Gaia Master hardware assumptions. Keep source meaning, runtime candidate/layout, font/codepage, and graphics/tilemap as separate layers. Every runtime claim must state exactly what screenshot evidence proved.
