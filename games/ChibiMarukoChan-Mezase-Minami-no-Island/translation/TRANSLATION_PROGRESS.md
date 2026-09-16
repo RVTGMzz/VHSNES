@@ -17,8 +17,11 @@ Current committed translated rows:
 - Maruko Q Batch 01: 74
 - Maruko Q Batch 02: 129
 - Maruko Q Batch 03: 178
-- Maruko Fortune / `まるこみくじ` Batch 01: 157 rows across `fortune_batch01_part1_vi.csv`, `fortune_batch01_part2_vi.csv`, `fortune_batch01_part3_vi.csv`
-- **total committed meaning-layer rows: 915**
+- Maruko Fortune / `まるこみくじ` Batch 01: 157
+- Minigame UI Batch 01: 52
+- Karaoke Batch 01: 28
+- Stage-name Batch 01: 15
+- **total committed meaning-layer rows: 1,010**
 
 These counts are source-translation rows, NOT whole-game completion percentage. Scanner output still contains false positives, split strings, control/layout data, and numeric/count artifacts.
 
@@ -40,7 +43,7 @@ Raw-ROM recovery is required whenever the conservative scanner starts inside a f
 
 ## Maruko Fortune / `まるこみくじ` — Batch 01
 
-Range: approximately `0x2BD28 .. 0x2CB92`.
+Range approximately `0x2BD28 .. 0x2CB92`.
 
 Files:
 
@@ -48,24 +51,57 @@ Files:
 - `translation/source/fortune_batch01_part2_vi.csv`
 - `translation/source/fortune_batch01_part3_vi.csv`
 
-Translated systems:
+Translated headings, wish/money/romance/study fortunes, general advice, lucky items, lucky numbers, and lucky colors.
 
-- headings: `Điều ước`, `Tài lộc`, `Tình duyên`, `Học hành`, `Lời trời mách`, `Con số may mắn`, `Màu may mắn`;
-- wish fortunes;
-- money fortunes;
-- romance fortunes;
-- study fortunes;
-- general advice / lucky-item messages;
-- lucky-number fields;
-- lucky-color list.
+Raw-ROM recovery corrected scanner omissions including full-width `４` in `４人集めてみて`, digits `０..９`, and large lucky-number fields such as `１６，７７７，２１６`, `１，０００，０００`, and `１３０，０００，０００`.
 
-Tone is intentionally light, school-age, and playful rather than mystical/formal. Examples include `Coi chừng tiêu hoang`, `Chỉ có lúc này thôi, tỏ tình đi!`, `Trước hết ôn bài đã`, and the deliberately deadpan `Xin hãy... từ bỏ tất cả`.
+## Minigame UI — Batch 01
 
-Raw-ROM recovery corrected scanner omissions/splits:
+File: `translation/source/minigame_ui_batch01_vi.csv`
 
-- `４人集めてみて` begins with full-width `４`; the scanner started one byte late and displayed `S人...`;
-- lucky digits `０..９` were recovered directly from raw ROM;
-- large lucky-number strings recovered directly: `１６，７７７，２１６`, `１，０００，０００`, `１３０，０００，０００`.
+Range approximately `0x288C2 .. 0x28C40`.
+
+Translated:
+
+- ball-throwing rules and controls;
+- paint/dryer rules and controls;
+- pool/pushing rules and controls;
+- rounds-to-win setting;
+- CPU difficulty;
+- game duration;
+- player 1–4 assignment/status;
+- controller type (`Pad`, mouse, Super Scope);
+- stage selector and stage numbers `0..9`.
+
+Raw-ROM recovery fixed fields the scanner missed or started inside:
+
+- `１ゲームの時間` at `0x28AC4`;
+- `１本..５本` at `0x28AD6..0x28AF6`;
+- both `１８０秒` occurrences at `0x28B1C` and `0x28B34`;
+- `プレイヤー１..４`;
+- stage digits `０..９` at `0x28C0A..0x28C40`.
+
+UI fragments that form a two-line Japanese label are localized as a Vietnamese pair rather than forced word-for-word. Examples: `ボールを` / `なげる` becomes `Ném` / `bóng`, and `コンピュータの` / `つよさ` becomes `Độ khó của` / `máy tính`.
+
+## Karaoke — Batch 01
+
+File: `translation/source/karaoke_batch01_vi.csv`
+
+Range approximately `0x2B380 .. 0x2B76E`.
+
+The song-like text for `針切じいさんのロケンロール` has a meaning-first Vietnamese translation. The current source layer preserves playful wording and jokes, but it is **not yet a singable lyric pass**. Rhythm, syllable count, and timing must be audited separately before runtime insertion.
+
+The existing start options near `0x2B7C9` / `0x2B7EF` remain represented by `seed_known_strings.csv` and were not duplicated in the karaoke batch.
+
+## Stage-name Batch 01
+
+File: `translation/source/stage_names_batch01_vi.csv`
+
+Range approximately `0x2CBAD .. 0x2CD5F`.
+
+Translated 15 stage/title strings, including `Coi chừng sóng!`, `Vòng tròn bật nảy`, several paint stages (`tiệm Mitsuya`, `quầy hội chợ`, `dinh thự`, `trung tâm bách hóa`, `trường học`), and playful square/circle names such as `Quảng trường trơn tuột` and `Quảng trường quay tít`.
+
+These are meaning-first names; runtime layout path is not yet audited.
 
 ## Editorial rules
 
@@ -79,24 +115,12 @@ Raw-ROM recovery corrected scanner omissions/splits:
 
 ## Runtime separation
 
-No bulk Story / Quiz / Fortune / Credits translation has been patched into ROM yet.
+No bulk Story / Quiz / Fortune / Minigame / Karaoke / Credits translation has been patched into ROM yet.
 
 Font/codepage reverse remains separate. Probe 005 is still the current mapping-table runtime proof and requires screenshot evidence before freezing that architecture.
 
 ## Next translation work
 
-Strong next player-facing direct-text target: minigame rules/config around `0x288C2 .. 0x28BFF`.
+Strong next target: audit the remaining direct UI/demo strings around `0x2865E .. 0x28817` and keep only strings that are actually player-facing or useful runtime labels. This region contains demo/start/password/continue/ending descriptions and may include debug/development text, so do **not** assume all of it belongs in the final player translation.
 
-This region includes:
-
-- ball-throwing rules;
-- paint/dryer rules;
-- pool/pushing rules;
-- controls;
-- rounds-to-win settings;
-- CPU strength;
-- match duration;
-- player/controller assignment;
-- stage selection.
-
-Recover short full-width numeric fields directly from raw ROM where the scanner omits them, such as `１ゲームの時間`, `１本..５本`, and `１８０秒`.
+After that, scan remaining coherent direct-text islands before touching binary-looking candidates. Karaoke also needs a separate singability pass later, after font/layout behavior is understood.
