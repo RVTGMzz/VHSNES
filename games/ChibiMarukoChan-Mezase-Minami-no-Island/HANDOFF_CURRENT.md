@@ -16,7 +16,7 @@ Tone is cute school/family comedy, not combat RPG. Keep `vi_full` natural and fu
 
 Detailed tracker: `translation/TRANSLATION_PROGRESS.md`.
 
-Committed meaning-layer rows: **580**.
+Committed meaning-layer rows: **758**.
 
 - seed: 10
 - main menu: 10
@@ -27,24 +27,37 @@ Committed meaning-layer rows: **580**.
 - rules/tutorial: 2
 - Maruko Q Batch 01: 74
 - Maruko Q Batch 02: 129
+- Maruko Q Batch 03: 178
 
 Main story direct-text arc is translated approximately `0x181CC .. 0x1DE81`, through the current visible ending sequence.
 
-Maruko Q Batch 01 covers `0x34009 .. 0x34F3E`.
+### Maruko Q coverage
 
-Maruko Q Batch 02 covers `0x34F7B .. 0x368D8` in:
+- Batch 03 covers the earlier bank `0x31D47 .. 0x33F98`, with its last explanation continuing into the already translated `0x34009` row.
+- Batch 01 covers `0x34009 .. 0x34F3E`.
+- Batch 02 covers `0x34F7B .. 0x368D8`.
 
-- `translation/source/quiz_batch02_part1_vi.csv`
-- `translation/source/quiz_batch02_part2_vi.csv`
-- `translation/source/quiz_batch02_part3_vi.csv`
+Batch 03 files:
 
-Batch 02 raw-ROM recovery confirmed numeric/class fields that the scanner missed or split: Maruo birthday choices `12/31`, `12/19`, `3/3` with `12/31` correct; Maruo mother ages `49`, `44`, `34` with `49` correct; Yoshiko classes `6-2`, `5-3`, `6-5` with `6-2` correct; Maruko house choices `1`, `2`, `4` floors with one-story correct.
+- `translation/source/quiz_batch03_part1_vi.csv`
+- `translation/source/quiz_batch03_part2_vi.csv`
+- `translation/source/quiz_batch03_part3_vi.csv`
 
-The coherent direct quiz sequence ends at `0x368D8`; do not treat following binary-looking scanner candidates as real quiz text.
+Raw-ROM recovery in Batch 03 corrected scanner omissions/splits instead of guessing. Proven fields include Maruko grade 3 / blood type A / age 9; birthday choices `5/8`, `4/23`, `10/1`; allowance choices `30`, `1,000,000`, `50` yen; Tomozou `76`; Hiroshi `40`; Sumire `40`; older sister grade 6; Ono's 3rd-semester transfer; class `3-4`; full-width `B` in `B級男子トリオ`; and the full `かもめ第３小学校` choice.
+
+No Story / Quiz / Credits batch has been bulk-patched into ROM.
 
 ### NEXT TRANSLATION TARGET
 
-A coherent untranslated Maruko Q block remains at approximately `0x31D47 .. 0x34008`, at least 165 scanner candidates. It covers Maruko/Momoe, Maruko's birthday and allowance, Tomozo, grandmother, Hiroshi, Sumire, older sister, Ono, Kayoko, Kenta, Sugiyama, Buutaro's sister, Nagasawa family, and more. Translate this block next in audited chunks. Recover numeric/full-width fields from raw ROM instead of guessing scanner placeholders.
+The currently discovered coherent Maruko Q banks are now translated through `0x368D8`.
+
+Move next to other coherent direct-text subsystems, auditing each separately:
+
+1. fortune / `まるこみくじ` message bank around `0x2C000`;
+2. karaoke / song-like text around `0x2B000`;
+3. remaining menu/tutorial strings around `0x2865E .. 0x289xx`.
+
+Do not interpret binary-looking scanner candidates in unrelated regions as real text without evidence.
 
 ## Main menu meaning layer
 
@@ -71,7 +84,7 @@ Probe 004 alphabet map: runtime shows many full-width Latin codes map to glyph-i
 
 Static mapping table discovered for CP932 `0x82xx`: base for `0x824F` (`０`) at file `0x29880`, entry formula `0x29880 + (trail - 0x4F) * 2`. Examples: `Ａ -> 0x0517`, `Ｅ -> 0x0000`, `Ｔ -> 0x0516`.
 
-Probe 005 changes first menu field to `ＴＥＳＴ１２３４` and changes the `Ｅ` mapping at `0x298AA` from `0x0000` to A's glyph `0x0517`. Expected runtime line: `TAST1234`. Static gates PASS; screenshot is still pending. Do not call this mapping behavior runtime-proven until the screenshot confirms it.
+Probe 005 changes first menu field to `ＴＥＳＴ１２３４` and changes the `Ｅ` mapping at `0x298AA` from `0x0000` to A's glyph `0x0517`. Expected runtime line: `TAST1234`. Static gates PASS; screenshot is still pending. Do not call this mapping behavior runtime-proven until screenshot evidence confirms it.
 
 If Probe 005 is confirmed, next technical task is glyph-id -> bitmap reverse, safe slot selection, then one custom Vietnamese glyph probe (`Đ` or `ế`).
 
