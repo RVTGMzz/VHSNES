@@ -6,7 +6,7 @@ Repo: `ronvotri/Viet-Hoa-SNES`
 
 ## Current rules
 
-Two tracks run independently: meaning-first Vietnamese translation and renderer/font reverse. Do not block translation on font work. Do not bulk-write Vietnamese into ROM until the font/codepage path is runtime-proven.
+Two tracks run independently: meaning-first Vietnamese translation and renderer/font/graphics reverse. Do not block translation on font work. Do not bulk-write Vietnamese into ROM until the font/codepage path is runtime-proven.
 
 Canonical clean ROM: size `0x200000`, SHA-1 `08a2415362f69788ec76b1a36044dc1f1a5f2ea1`, SHA-256 `e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956`, LoROM/FastROM, header `0x7FC0`, no copier header, checksum `0x1115`, complement `0xEEEA`. Never patch an unknown or already modified ROM.
 
@@ -16,7 +16,9 @@ Tone is cute school/family comedy, not combat RPG. Keep `vi_full` natural and fu
 
 Detailed tracker: `translation/TRANSLATION_PROGRESS.md`.
 
-Committed meaning-layer rows: **1,018**.
+Committed **release-intent meaning-layer rows: 1,018**.
+
+Breakdown:
 
 - seed: 10
 - main menu: 10
@@ -34,57 +36,64 @@ Committed meaning-layer rows: **1,018**.
 - Stage-name Batch 01: 15
 - Quiz misc/result UI: 8
 
-Main story direct-text arc is translated approximately `0x181CC .. 0x1DE81`, through the current visible ending sequence.
+Additional reverse/reference rows are **not** included in the 1,018 count:
 
-The currently discovered coherent Maruko Q banks are translated through approximately `0x368D8`.
+- `translation/source/internal_debug_reference_vi.csv`: 10 internal QA/debug translations
+- `translation/source/graphics_text_targets_vi.csv`: 5 graphics/tilemap translation targets/hypotheses
 
-Maruko Fortune / `まるこみくじ` is translated approximately `0x2BD28 .. 0x2CB92`, including wish/money/romance/study fortunes, advice, lucky numbers, and lucky colors.
+Main story direct-text arc is meaning-covered approximately `0x181CC .. 0x1DE81`.
 
-### Minigame UI Batch 01
+Maruko Q coherent banks are meaning-covered through approximately `0x368D8`.
 
-File: `translation/source/minigame_ui_batch01_vi.csv`
+Fortune / `まるこみくじ` is meaning-covered approximately `0x2BD28 .. 0x2CB92`.
 
-Range approximately `0x288C2 .. 0x28C40`.
+Minigame setup/rules are translated approximately `0x288C2 .. 0x28C40`.
 
-Covers ball, paint/dryer, and pool minigame rules; controls; rounds-to-win; CPU difficulty; match duration; player slots; controller type; stage selector; stage digits.
+Karaoke lyric-like bank is meaning-translated approximately `0x2B380 .. 0x2B76E`; singability/timing pass remains separate.
 
-Raw ROM corrections include `１ゲームの時間`, `１本..５本`, both `１８０秒` fields, `プレイヤー１..４`, and stage digits `０..９`.
+Stage names are translated approximately `0x2CBAD .. 0x2CD5F`.
 
-### Karaoke Batch 01
+Quiz misc/result UI is translated around `0x3153A` and `0x31C52 .. 0x31D2F`.
 
-File: `translation/source/karaoke_batch01_vi.csv`
+## Direct-text audit milestone
 
-Range approximately `0x2B380 .. 0x2B76E`.
+Audit doc: `docs/DIRECT_TEXT_COVERAGE_AUDIT_20260916.md`.
 
-Meaning-first translation of the `針切じいさんのロケンロール` song-like text is committed. This is **not** yet a singable lyric adaptation. Rhythm, syllable count, and timing require a later dedicated pass.
+The remaining large coherent retail-facing direct-text banks currently discovered by the conservative scanner are meaning-covered. Do not treat random CP932-decodable binary islands elsewhere in the ROM as untranslated dialogue without evidence.
 
-Start options near `0x2B7C9` / `0x2B7EF` remain in `seed_known_strings.csv`; they were not duplicated.
+This is **not** a whole-game completion claim. Visible Japanese may still live in graphics/tilemaps, compressed assets, alternate renderers, or dynamic UI.
 
-### Stage-name Batch 01
+### Internal QA/debug block classified
 
-File: `translation/source/stage_names_batch01_vi.csv`
+Range approximately `0x2865E .. 0x287FC`.
 
-Range approximately `0x2CBAD .. 0x2CD5F`.
+Raw ROM resolves a development/test navigation block containing:
 
-15 stage/title strings translated, including wave/ring/park stages, paint stages at Mitsuya/festival stall/mansion/department store/school, and playful square/circle names.
+- `さくらプロへのビデオ出しは、８／３１です。皆さん、頑張りましょう！！`
+- Start / Password screen description
+- `今からやるよ` conversation demo description
+- full-width `ＶＳ` demo description
+- Maru-chan win/loss demos
+- Continue screen
+- Story Mode quit screen
+- final-win demo
+- ending
 
-Runtime layout path for these stage names is not yet audited.
+These 10 rows are translated in `internal_debug_reference_vi.csv` only for reverse-engineering. **Do not patch them into a normal release unless runtime evidence proves they are player-visible.**
 
-### Quiz misc/result UI
+The block is valuable because it reveals visual/graphics targets that are not present in the proven direct-text path.
 
-File: `translation/source/quiz_ui_misc_vi.csv`
+## Graphics/tilemap translation targets
 
-Player-facing quiz UI translated around `0x3153A` and `0x31C52 .. 0x31D2F`: dynamic question-number labels, full-clear congratulations, question count, answer count, correct-answer rate, first-try correct count, and the `Có` option paired with the existing `Không` seed.
+File: `translation/source/graphics_text_targets_vi.csv`.
 
-Raw ROM confirms a trailing `回` counter after `一発で正解したのは`; the conservative scanner split before it.
+Current targets:
 
-No Story / Quiz / Fortune / Minigame / Karaoke / Credits batch has been bulk-patched into ROM.
-
-### NEXT TRANSLATION TARGET
-
-Audit direct UI/demo strings around `0x2865E .. 0x28817` next. This region contains descriptions such as start/password screen, conversation demo, win/loss demo, continue screen, story-exit screen, final victory demo, and ending. It may be a hidden debug/development index rather than normal player-facing UI, so translate only after classifying what is actually displayed at runtime.
-
-Then continue scanning only coherent direct-text islands. Do not promote binary-looking scanner candidates into translation rows without evidence.
+- `どれにする？` → `Chọn gì đây?` — visually verified from user screenshot, render path still unknown
+- `はじめから` → `Bắt đầu` — inferred from QA block
+- `パスワード` → `Mật khẩu` — inferred from QA block
+- `今からやるよ` → `Bắt đầu thôi!` — inferred, exact visible context must be verified
+- `ＶＳ` → `VS` — inferred from QA block
 
 ## Main menu meaning layer
 
@@ -99,8 +108,6 @@ Then continue scanning only coherent direct-text islands. Do not promote binary-
 - `ステレオ` → `Stereo`
 - `モノラル` → `Mono`
 
-Pink heading `どれにする？` ≈ `Chọn gì đây?`, but its text path is not yet proven.
-
 ## Renderer/font reverse
 
 Probe 002 raw 1-byte ASCII: runtime FAIL, froze before menu.
@@ -113,8 +120,13 @@ Static mapping table discovered for CP932 `0x82xx`: base for `0x824F` (`０`) at
 
 Probe 005 changes first menu field to `ＴＥＳＴ１２３４` and changes the `Ｅ` mapping at `0x298AA` from `0x0000` to A's glyph `0x0517`. Expected runtime line: `TAST1234`. Static gates PASS; screenshot is still pending. Do not call this mapping behavior runtime-proven until screenshot evidence confirms it.
 
-If Probe 005 is confirmed, next technical task is glyph-id -> bitmap reverse, safe slot selection, then one custom Vietnamese glyph probe (`Đ` or `ế`).
+## NEXT HIGH-VALUE WORK
+
+1. locate/extract graphics or tilemaps for the Start / Password / Continue / ending family of screens revealed by the internal QA block;
+2. locate the pink `どれにする？` render path;
+3. continue static glyph-id -> bitmap/font reverse while Probe 005 runtime confirmation remains pending;
+4. once font/codepage is proven, build one custom Vietnamese glyph probe (`Đ` or `ế`), then start runtime insertion.
 
 ## Frozen workflow
 
-Use Gaia Master-style guardrails, not Gaia Master hardware assumptions. Keep source meaning, runtime candidate/layout, font/codepage, and graphic/tilemap text as separate layers. Do not call Runtime PASS without gameplay screenshot evidence.
+Use Gaia Master-style guardrails, not Gaia Master hardware assumptions. Keep source meaning, runtime candidate/layout, font/codepage, and graphics/tilemap text as separate layers. Do not call Runtime PASS without gameplay screenshot evidence.
