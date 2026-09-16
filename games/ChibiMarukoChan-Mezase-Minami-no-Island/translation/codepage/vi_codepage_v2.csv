@@ -1,0 +1,161 @@
+unicode,code_hex,glyph_id_hex,glyph_source,visual_key,notes
+ ,8440,022D,native, ,
+!,8441,0151,native,!,
+"""",8442,083A,custom,"""",font V2 handcrafted pixel glyph
+',8443,083B,custom,',font V2 handcrafted pixel glyph
+(,8444,0157,native,(,
+),8445,0158,native,),
+",",8446,014D,native,",",
+-,8447,083C,custom,-,font V2 handcrafted pixel glyph
+.,8448,014E,native,.,
+/,8449,0202,native,/,
+:,844A,083D,custom,:,font V2 handcrafted pixel glyph
+?,844B,0150,native,?,
+~,844C,0154,native,~,
+“,844D,083A,custom,"""",shares straight double-quote glyph; font V2 handcrafted pixel glyph
+”,844E,083A,custom,"""",shares straight double-quote glyph; font V2 handcrafted pixel glyph
+0,844F,0000,native,0,
+1,8450,0001,native,1,
+2,8451,0002,native,2,
+3,8452,0003,native,3,
+4,8453,0004,native,4,
+5,8454,0005,native,5,
+6,8455,0006,native,6,
+7,8456,0007,native,7,
+8,8457,0008,native,8,
+9,8458,0009,native,9,
+A,8459,0517,native,A,
+B,845A,0705,native,B,
+C,845B,083E,custom,C,font V2 handcrafted pixel glyph
+D,845C,083F,custom,D,font V2 handcrafted pixel glyph
+E,845D,0840,custom,E,font V2 handcrafted pixel glyph
+F,845E,0841,custom,F,font V2 handcrafted pixel glyph
+G,845F,0842,custom,G,font V2 handcrafted pixel glyph
+H,8460,0843,custom,H,font V2 handcrafted pixel glyph
+I,8461,074B,native,I,
+J,8462,0844,custom,J,font V2 handcrafted pixel glyph
+K,8463,0519,native,K,
+L,8464,074C,native,L,
+M,8465,0814,native,M,
+N,8466,0845,custom,N,font V2 handcrafted pixel glyph
+O,8467,051A,native,O,
+P,8468,0815,native,P,
+Q,8469,0216,native,Q,
+R,846A,0518,native,R,
+S,846B,020D,native,S,
+T,846C,0516,native,T,
+U,846D,0846,custom,U,font V2 handcrafted pixel glyph
+V,846E,020C,native,V,
+W,846F,0847,custom,W,font V2 handcrafted pixel glyph
+X,8470,0848,custom,X,font V2 handcrafted pixel glyph
+Y,8471,0849,custom,Y,font V2 handcrafted pixel glyph
+Z,8472,084A,custom,Z,font V2 handcrafted pixel glyph
+a,8473,084B,custom,a,font V2 handcrafted pixel glyph
+b,8474,084C,custom,b,font V2 handcrafted pixel glyph
+c,8475,084D,custom,c,font V2 handcrafted pixel glyph
+d,8476,084E,custom,d,font V2 handcrafted pixel glyph
+e,8477,074F,native,e,
+f,8478,084F,custom,f,font V2 handcrafted pixel glyph
+g,8479,0850,custom,g,font V2 handcrafted pixel glyph
+h,847A,0851,custom,h,font V2 handcrafted pixel glyph
+i,847B,0852,custom,i,font V2 handcrafted pixel glyph
+j,847C,0853,custom,j,font V2 handcrafted pixel glyph
+k,847D,0854,custom,k,font V2 handcrafted pixel glyph
+l,847E,0855,custom,l,font V2 handcrafted pixel glyph
+m,8480,0856,custom,m,font V2 handcrafted pixel glyph
+n,8481,0857,custom,n,font V2 handcrafted pixel glyph
+o,8482,074D,native,o,
+p,8483,0858,custom,p,font V2 handcrafted pixel glyph
+q,8484,0859,custom,q,font V2 handcrafted pixel glyph
+r,8485,085A,custom,r,font V2 handcrafted pixel glyph
+s,8486,085B,custom,s,font V2 handcrafted pixel glyph
+t,8487,085C,custom,t,font V2 handcrafted pixel glyph
+u,8488,0751,native,u,
+v,8489,074E,native,v,
+w,848A,085D,custom,w,font V2 handcrafted pixel glyph
+x,848B,085E,custom,x,font V2 handcrafted pixel glyph
+y,848C,0750,native,y,
+z,848D,085F,custom,z,font V2 handcrafted pixel glyph
+À,848E,0860,custom,À,font V2 handcrafted pixel glyph
+Â,848F,0861,custom,Â,font V2 handcrafted pixel glyph
+Ó,8490,0862,custom,Ó,font V2 handcrafted pixel glyph
+Ô,8491,0863,custom,Ô,font V2 handcrafted pixel glyph
+Ý,8492,090A,custom,Ý,font V2 handcrafted pixel glyph
+à,8493,090B,custom,à,font V2 handcrafted pixel glyph
+á,8494,090C,custom,á,font V2 handcrafted pixel glyph
+â,8495,090D,custom,â,font V2 handcrafted pixel glyph
+ã,8496,090E,custom,ã,font V2 handcrafted pixel glyph
+è,8497,090F,custom,è,font V2 handcrafted pixel glyph
+é,8498,0910,custom,é,font V2 handcrafted pixel glyph
+ê,8499,0911,custom,ê,font V2 handcrafted pixel glyph
+ì,849A,0912,custom,ì,font V2 handcrafted pixel glyph
+í,849B,0913,custom,í,font V2 handcrafted pixel glyph
+ñ,849C,0914,custom,ñ,font V2 handcrafted pixel glyph
+ò,849D,0915,custom,ò,font V2 handcrafted pixel glyph
+ó,849E,0916,custom,ó,font V2 handcrafted pixel glyph
+ô,849F,0917,custom,ô,font V2 handcrafted pixel glyph
+õ,84A0,0918,custom,õ,font V2 handcrafted pixel glyph
+ù,84A1,0919,custom,ù,font V2 handcrafted pixel glyph
+ú,84A2,091A,custom,ú,font V2 handcrafted pixel glyph
+ý,84A3,091B,custom,ý,font V2 handcrafted pixel glyph
+Ă,84A4,091C,custom,Ă,font V2 handcrafted pixel glyph
+ă,84A5,091D,custom,ă,font V2 handcrafted pixel glyph
+Đ,84A6,0963,custom,Đ,uses Probe 006 runtime-proven custom slot 0x0963; font V2 handcrafted pixel glyph
+đ,84A7,091E,custom,đ,font V2 handcrafted pixel glyph
+ĩ,84A8,091F,custom,ĩ,font V2 handcrafted pixel glyph
+ũ,84A9,0920,custom,ũ,font V2 handcrafted pixel glyph
+Ơ,84AA,0921,custom,Ơ,font V2 handcrafted pixel glyph
+ơ,84AB,0922,custom,ơ,font V2 handcrafted pixel glyph
+Ư,84AC,0923,custom,Ư,font V2 handcrafted pixel glyph
+ư,84AD,0924,custom,ư,font V2 handcrafted pixel glyph
+ạ,84AE,0925,custom,ạ,font V2 handcrafted pixel glyph
+Ả,84AF,0926,custom,Ả,font V2 handcrafted pixel glyph
+ả,84B0,0927,custom,ả,font V2 handcrafted pixel glyph
+Ấ,84B1,0928,custom,Ấ,font V2 handcrafted pixel glyph
+ấ,84B2,0929,custom,ấ,font V2 handcrafted pixel glyph
+Ầ,84B3,092A,custom,Ầ,font V2 handcrafted pixel glyph
+ầ,84B4,092B,custom,ầ,font V2 handcrafted pixel glyph
+ẩ,84B5,092C,custom,ẩ,font V2 handcrafted pixel glyph
+ẫ,84B6,092D,custom,ẫ,font V2 handcrafted pixel glyph
+Ậ,84B7,092E,custom,Ậ,font V2 handcrafted pixel glyph
+ậ,84B8,092F,custom,ậ,font V2 handcrafted pixel glyph
+ắ,84B9,0930,custom,ắ,font V2 handcrafted pixel glyph
+ẳ,84BA,0931,custom,ẳ,font V2 handcrafted pixel glyph
+ặ,84BB,0932,custom,ặ,font V2 handcrafted pixel glyph
+ẹ,84BC,0933,custom,ẹ,font V2 handcrafted pixel glyph
+ẻ,84BD,0934,custom,ẻ,font V2 handcrafted pixel glyph
+ẽ,84BE,0935,custom,ẽ,font V2 handcrafted pixel glyph
+ế,84BF,0936,custom,ế,font V2 handcrafted pixel glyph
+ề,84C0,0937,custom,ề,font V2 handcrafted pixel glyph
+ể,84C1,0938,custom,ể,font V2 handcrafted pixel glyph
+ễ,84C2,0939,custom,ễ,font V2 handcrafted pixel glyph
+ệ,84C3,093A,custom,ệ,font V2 handcrafted pixel glyph
+ỉ,84C4,093B,custom,ỉ,font V2 handcrafted pixel glyph
+ị,84C5,093C,custom,ị,font V2 handcrafted pixel glyph
+ọ,84C6,093D,custom,ọ,font V2 handcrafted pixel glyph
+ỏ,84C7,093E,custom,ỏ,font V2 handcrafted pixel glyph
+ố,84C8,093F,custom,ố,font V2 handcrafted pixel glyph
+Ồ,84C9,0940,custom,Ồ,font V2 handcrafted pixel glyph
+ồ,84CA,0941,custom,ồ,font V2 handcrafted pixel glyph
+Ổ,84CB,0942,custom,Ổ,font V2 handcrafted pixel glyph
+ổ,84CC,0943,custom,ổ,font V2 handcrafted pixel glyph
+ỗ,84CD,0944,custom,ỗ,font V2 handcrafted pixel glyph
+ộ,84CE,0945,custom,ộ,font V2 handcrafted pixel glyph
+Ớ,84CF,0946,custom,Ớ,font V2 handcrafted pixel glyph
+ớ,84D0,0947,custom,ớ,font V2 handcrafted pixel glyph
+ờ,84D1,0948,custom,ờ,font V2 handcrafted pixel glyph
+ở,84D2,0949,custom,ở,font V2 handcrafted pixel glyph
+ỡ,84D3,094A,custom,ỡ,font V2 handcrafted pixel glyph
+ợ,84D4,094B,custom,ợ,font V2 handcrafted pixel glyph
+ụ,84D5,094C,custom,ụ,font V2 handcrafted pixel glyph
+Ủ,84D6,094D,custom,Ủ,font V2 handcrafted pixel glyph
+ủ,84D7,094E,custom,ủ,font V2 handcrafted pixel glyph
+ứ,84D8,094F,custom,ứ,font V2 handcrafted pixel glyph
+Ừ,84D9,0950,custom,Ừ,font V2 handcrafted pixel glyph
+ừ,84DA,0951,custom,ừ,font V2 handcrafted pixel glyph
+ử,84DB,0952,custom,ử,font V2 handcrafted pixel glyph
+ữ,84DC,0953,custom,ữ,font V2 handcrafted pixel glyph
+ự,84DD,0954,custom,ự,font V2 handcrafted pixel glyph
+ỳ,84DE,0955,custom,ỳ,font V2 handcrafted pixel glyph
+ỷ,84DF,0956,custom,ỷ,font V2 handcrafted pixel glyph
+ỹ,84E0,0957,custom,ỹ,font V2 handcrafted pixel glyph
