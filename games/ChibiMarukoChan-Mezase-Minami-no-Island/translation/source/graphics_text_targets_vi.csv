@@ -1,0 +1,6 @@
+source_jp,vi_full,status,evidence,notes
+どれにする？,Chọn gì đây?,graphics_target_verified_visible,"user screenshot of main menu","visible pink-banner heading; not found in proven direct CP932 text path"
+はじめから,Bắt đầu,graphics_target_inferred,"internal QA block names a Start/Password screen","actual retail rendering path not yet located"
+パスワード,Mật khẩu,graphics_target_inferred,"internal QA block names a Start/Password screen","actual retail rendering path not yet located"
+今からやるよ,Bắt đầu thôi!,graphics_target_inferred,"internal QA block refers to a dialogue demo with this title/line","verify actual on-screen context before final insertion"
+ＶＳ,VS,graphics_target_inferred,"internal QA block refers to a VS demo","preserve VS unless screen layout suggests otherwise"
