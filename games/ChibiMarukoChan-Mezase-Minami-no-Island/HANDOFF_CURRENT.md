@@ -16,7 +16,7 @@ Tone is cute school/family comedy, not combat RPG. Keep `vi_full` natural and fu
 
 Detailed tracker: `translation/TRANSLATION_PROGRESS.md`.
 
-Committed meaning-layer rows: **758**.
+Committed meaning-layer rows: **915**.
 
 - seed: 10
 - main menu: 10
@@ -28,36 +28,45 @@ Committed meaning-layer rows: **758**.
 - Maruko Q Batch 01: 74
 - Maruko Q Batch 02: 129
 - Maruko Q Batch 03: 178
+- Maruko Fortune / `まるこみくじ` Batch 01: 157
 
 Main story direct-text arc is translated approximately `0x181CC .. 0x1DE81`, through the current visible ending sequence.
 
 ### Maruko Q coverage
 
-- Batch 03 covers the earlier bank `0x31D47 .. 0x33F98`, with its last explanation continuing into the already translated `0x34009` row.
-- Batch 01 covers `0x34009 .. 0x34F3E`.
-- Batch 02 covers `0x34F7B .. 0x368D8`.
+The currently discovered coherent direct quiz banks are translated through approximately `0x368D8`.
 
-Batch 03 files:
+Raw-ROM recovery is mandatory when the conservative scanner starts inside a full-width digit/Latin character or omits a short field.
 
-- `translation/source/quiz_batch03_part1_vi.csv`
-- `translation/source/quiz_batch03_part2_vi.csv`
-- `translation/source/quiz_batch03_part3_vi.csv`
+### Maruko Fortune / `まるこみくじ` Batch 01
 
-Raw-ROM recovery in Batch 03 corrected scanner omissions/splits instead of guessing. Proven fields include Maruko grade 3 / blood type A / age 9; birthday choices `5/8`, `4/23`, `10/1`; allowance choices `30`, `1,000,000`, `50` yen; Tomozou `76`; Hiroshi `40`; Sumire `40`; older sister grade 6; Ono's 3rd-semester transfer; class `3-4`; full-width `B` in `B級男子トリオ`; and the full `かもめ第３小学校` choice.
+Range approximately `0x2BD28 .. 0x2CB92`.
 
-No Story / Quiz / Credits batch has been bulk-patched into ROM.
+Files:
+
+- `translation/source/fortune_batch01_part1_vi.csv`
+- `translation/source/fortune_batch01_part2_vi.csv`
+- `translation/source/fortune_batch01_part3_vi.csv`
+
+Translated: headings, wish fortunes, money fortunes, romance fortunes, study fortunes, general advice, lucky items, lucky numbers, and lucky colors.
+
+Raw-ROM recovery corrected important scanner misses:
+
+- `４人集めてみて` was mis-scanned as `S人集めてみて`; raw ROM proves full-width `４`;
+- digits `０..９` are direct short fields omitted by the scanner;
+- large lucky-number fields recovered directly: `１６，７７７，２１６`, `１，０００，０００`, `１３０，０００，０００`.
+
+No Story / Quiz / Fortune / Credits batch has been bulk-patched into ROM.
 
 ### NEXT TRANSLATION TARGET
 
-The currently discovered coherent Maruko Q banks are now translated through `0x368D8`.
+Translate the coherent player-facing minigame rules/config region around `0x288C2 .. 0x28BFF` next.
 
-Move next to other coherent direct-text subsystems, auditing each separately:
+It includes ball-throwing rules, paint/dryer rules, pool/pushing rules, controls, rounds-to-win, CPU strength, game time, player/controller assignment, and stage selection.
 
-1. fortune / `まるこみくじ` message bank around `0x2C000`;
-2. karaoke / song-like text around `0x2B000`;
-3. remaining menu/tutorial strings around `0x2865E .. 0x289xx`.
+Raw ROM already shows short fields that the scanner partially misses, including `１ゲームの時間`, `１本..５本`, and `１８０秒`. Recover these directly instead of guessing.
 
-Do not interpret binary-looking scanner candidates in unrelated regions as real text without evidence.
+After that, audit karaoke/song-like text around `0x2B000` separately because it may have different layout/runtime behavior.
 
 ## Main menu meaning layer
 
