@@ -1,0 +1,9 @@
+﻿file_offset,source_jp,vi_full,status,notes
+0x3153A,第  問,Câu số,translated_quiz_ui_misc,dynamic question-number label; spacing/layout handled later
+0x31547,第    問,Câu số,translated_quiz_ui_misc,second layout variant of dynamic question-number label
+0x31C52,全問クリアおめでとう！！,Chúc mừng! Bạn đã hoàn thành tất cả câu hỏi!!,translated_quiz_ui_misc,quiz completion result
+0x31C73,もんだい数              問,Số câu hỏi,translated_quiz_ui_misc,dynamic numeric suffix/layout omitted from meaning-first Vietnamese
+0x31C94,こたえた回数            回,Số lần trả lời,translated_quiz_ui_misc,dynamic numeric suffix/layout omitted from meaning-first Vietnamese
+0x31CB5,せいかいりつ            ％,Tỷ lệ trả lời đúng,translated_quiz_ui_misc,dynamic percentage value inserted at runtime
+0x31CD8,一発で正解したのは      回,Số câu đúng ngay lần đầu,translated_quiz_ui_misc,raw ROM shows trailing 回 counter after spaces; scanner split before it
+0x31D2F,はい,Có,translated_quiz_ui_misc,paired with いいえ already present in seed_known_strings.csv
