@@ -1,0 +1,61 @@
+file_offset,source_jp_scanner,vi_full,status,notes
+0x31D47,      モモエちゃんが大好きなまる｛      子は、コンサートで｛,"Maruko, cô bé mê Momoe-chan, tại buổi hòa nhạc đã...",translated_quiz_batch03,
+0x31D88,      マヨネーズと何を｛      プレゼントした？｛,...tặng mayonnaise cùng với thứ gì?,translated_quiz_batch03,
+0x31DBD,かにカンとカンきり｛,Hộp cua và đồ khui hộp,translated_quiz_batch03,
+0x31DD6,きゅうりとツナカン｛,Dưa leo và cá ngừ đóng hộp,translated_quiz_batch03,
+0x31DEF,おさらとちくわ｛,Đĩa và chikuwa,translated_quiz_batch03,
+0x31E04,        さくらももこことまる子  ｛      はモモエちゃんが大すきな｛      小学,"Sakura Momoko, tức Maruko, là cô bé rất mê Momoe-chan và đang học tiểu học...",translated_quiz_batch03,
+0x31E50,３年生。,...lớp 3.,translated_quiz_batch03,scanner started inside full-width ３; raw ROM corrected
+0x31E6D,      血液型は,Nhóm máu của cô bé là...,translated_quiz_batch03,
+0x31E7B,Ａ型で          ｛      なまけもの。            ｛      このプレゼント、はたして｛,"...nhóm A, lại còn lười biếng. Món quà này liệu có...",translated_quiz_batch03,scanner started inside full-width Ａ; raw ROM corrected
+0x31ED2,      モモエちゃんはたべてくれ｛      たのだろうか…？｛,...được Momoe-chan ăn thật không nhỉ...?,translated_quiz_batch03,
+0x31F23,      おうし座で,Maruko thuộc cung Kim Ngưu và...,translated_quiz_batch03,
+0x31F33,９才になるまる子｛      のおたんじょうびっていつ？｛,...đã 9 tuổi. Sinh nhật của cô bé là ngày nào?,translated_quiz_batch03,scanner omitted leading full-width ９; raw ROM corrected
+0x31F75,５月８日,Ngày 8 tháng 5,translated_quiz_batch03,answer choice recovered directly from raw ROM
+0x31F84,４月２３日,Ngày 23 tháng 4,translated_quiz_batch03,answer choice recovered directly from raw ROM
+0x31F95,１０月１日,Ngày 1 tháng 10,translated_quiz_batch03,answer choice recovered directly from raw ROM
+0x31FA6,        ウキウキのおたんじょうび｛      のはずが、花輪君、丸尾君、｛      みどりちゃんというメンバー｛,"Đáng lẽ sinh nhật phải thật háo hức, nhưng Hanawa-kun, Maruo-kun và Midori-chan...",translated_quiz_batch03,
+0x32011,      がもれなくついて来ることで｛      ハッピーなきぶんになりきれ｛      ないまる子であった。｛,"...lại kéo đến đủ cả, khiến Maruko chẳng thể vui trọn vẹn.",translated_quiz_batch03,
+0x32095,      ハンバーグとアイスクリームが｛      大すきなまる子のおこづかい｛,Maruko mê hamburger và kem. Tiền tiêu vặt của cô bé...,translated_quiz_batch03,
+0x320E8,１日いくら？｛,...mỗi ngày là bao nhiêu?,translated_quiz_batch03,scanner omitted leading full-width １; raw ROM corrected
+0x320FB,３０円,30 yên,translated_quiz_batch03,answer choice recovered directly from raw ROM
+0x32108,１００万円｛,1.000.000 yên,translated_quiz_batch03,scanner started inside full-width digits; raw ROM corrected
+0x32119,５０円,50 yên,translated_quiz_batch03,answer choice recovered directly from raw ROM
+0x32126,  ｛        このたいせつなおこづかい｛      をかみしばい屋で使いはたす  ｛,Maruko lại đem khoản tiền tiêu vặt quý giá ấy tiêu sạch ở hàng kể chuyện tranh...,translated_quiz_batch03,
+0x32175,      少女まる子。ちなみにきらい｛      なものはなっとうと、トマト｛      と、ネギ。である。｛,"...Cô bé còn ghét natto, cà chua và hành lá nữa.",translated_quiz_batch03,
+0x321F5,        いつもまる子とつるんで  ｛      さわぎをおこす友蔵だが、  ｛,Ông Tomozou lúc nào cũng quậy cùng Maruko và gây ra đủ chuyện...,translated_quiz_batch03,
+0x3223E,      このじいさんっていったい  ｛      何才？｛,...thế ông cụ này rốt cuộc bao nhiêu tuổi?,translated_quiz_batch03,
+0x32273,７６才,76 tuổi,translated_quiz_batch03,answer choice recovered directly from raw ROM
+0x32280,６７才,67 tuổi,translated_quiz_batch03,answer choice recovered directly from raw ROM
+0x3228D,８２才,82 tuổi,translated_quiz_batch03,answer choice recovered directly from raw ROM
+0x322A2,７６才にもなってしばしば  ｛      まる子にだまされるさくら｛      友蔵。しかし、まる子の  ｛,"Dù đã 76 tuổi, Sakura Tomozou vẫn thường xuyên bị Maruko lừa. Nhưng ông...",translated_quiz_batch03,scanner omitted leading full-width ７６; raw ROM corrected
+0x32303,      いちばんのりかいしゃであり、｛      なかよし。時に、｛      心のはいくをよむ。｛,"...là người hiểu Maruko nhất, cũng là bạn thân của cô bé. Thi thoảng còn ngâm haiku trong lòng.",translated_quiz_batch03,
+0x3237B,      まる子はきらいで、おじい｛      ちゃんはすきな、頭がよく｛,"Maruko ghét, còn ông nội lại thích. Món ăn được cho là giúp đầu óc...",translated_quiz_batch03,
+0x323C0,      なる食べものってなに？｛,...thông minh hơn là món gì?,translated_quiz_batch03,
+0x323E3,ネギ｛,Hành lá,translated_quiz_batch03,
+0x323EE,トマト｛,Cà chua,translated_quiz_batch03,
+0x323FB,ピーマン｛,Ớt chuông,translated_quiz_batch03,
+0x3240A,  ｛        これでネギには頭がよく  ｛      なるというこうかがないこと｛,Vậy là ta biết hành lá chẳng thật sự có tác dụng làm thông minh...,translated_quiz_batch03,
+0x32457,      がわかった…？  ちなみに  ｛      友蔵のすきなものは｛      やわらかくて、｛,"...chăng? Nhân tiện, ông Tomozou thích những món mềm mềm...",translated_quiz_batch03,
+0x324AE,      うまいもの。  ｛,...và ngon.,translated_quiz_batch03,
+0x324DD,      おっとりしていてむかしながら｛      のことにくわしいまる子の｛,"Bà của Maruko hiền hòa, lại rất rành những chuyện xưa...",translated_quiz_batch03,
+0x32526,      おばあちゃんが、うんてん｛      できるのりものは、なに？｛,...bà có thể điều khiển loại phương tiện nào?,translated_quiz_batch03,
+0x3256B,じてんしゃ｛,Xe đạp,translated_quiz_batch03,
+0x3257C,じどうしゃ｛,Ô tô,translated_quiz_batch03,
+0x3258D,バイク｛,Xe máy,translated_quiz_batch03,
+0x3259A,        目立たないおばあちゃんも  ｛      じつは、じてんしゃにのれた。｛      このじじつは、まる子が      ｛,Người bà ít nổi bật ấy thật ra biết đi xe đạp. Chuyện này được phát hiện khi Maruko...,translated_quiz_batch03,
+0x3260B,      じてんしゃのれんしゅうをして｛      いた時にあきらかになった。  ｛,...đang tập đi xe đạp.,translated_quiz_batch03,
+0x32675,      酒に人生をささげる男、ヒロシ｛      は、巨人と酒をこよなく愛する｛,"Hiroshi, người đàn ông dâng đời mình cho rượu, mê đội Giants và rượu hơn gì hết...",translated_quiz_batch03,
+0x326C2,      まる子の父だが、かれはいま｛      何才？｛,...là bố của Maruko. Hiện ông bao nhiêu tuổi?,translated_quiz_batch03,
+0x326F7,４０才,40 tuổi,translated_quiz_batch03,answer choice recovered directly from raw ROM
+0x32704,４５才,45 tuổi,translated_quiz_batch03,answer choice recovered directly from raw ROM
+0x32711,３６才,36 tuổi,translated_quiz_batch03,answer choice recovered directly from raw ROM
+0x3271E,  ｛        父ヒロシはしゅみがつりで、｛      美空ひばりファンの,"Bố Hiroshi có thú vui câu cá, là fan của Misora Hibari và...",translated_quiz_batch03,
+0x3275E,４０才。｛,...40 tuổi.,translated_quiz_batch03,scanner omitted leading full-width ４; raw ROM corrected
+0x3276D,      さしみが大すきである。｛,Ông còn cực kỳ mê sashimi.,translated_quiz_batch03,
+0x327AD,      まる子はお母さんのたからもの｛      のゆびわをなくしてしまい、  ｛,Maruko từng làm mất chiếc nhẫn quý của mẹ và bị mắng một trận...,translated_quiz_batch03,
+0x327FA,      ひどくしかられたことがあるが｛      それはなんのゆびわだった？｛,...đó là chiếc nhẫn gì?,translated_quiz_batch03,
+0x32845,オパール｛,Nhẫn opal,translated_quiz_batch03,
+0x32854,ネパール｛,Nepal,translated_quiz_batch03,
+0x32863,金銀パール｛,Vàng bạc ngọc trai,translated_quiz_batch03,
+0x32874,        母、さくらすみれは,"Mẹ, Sakura Sumire, hiện...",translated_quiz_batch03,
