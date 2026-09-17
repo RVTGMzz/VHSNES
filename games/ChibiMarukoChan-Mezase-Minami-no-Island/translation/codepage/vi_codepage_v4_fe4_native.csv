@@ -1,0 +1,161 @@
+unicode,code_hex,glyph_id_hex,glyph_source,visual_key,notes
+ ,8440,022D,native, ,
+!,8441,0151,native,!,
+"""",8442,083A,custom,"""",FE4 Vietnamese native-width transfer V4
+',8443,083B,custom,',FE4 Vietnamese native-width transfer V4
+(,8444,0157,native,(,
+),8445,0158,native,),
+",",8446,014D,native,",",
+-,8447,083C,custom,-,FE4 Vietnamese native-width transfer V4
+.,8448,014E,native,.,
+/,8449,0202,native,/,
+:,844A,083D,custom,:,FE4 Vietnamese native-width transfer V4
+?,844B,0150,native,?,
+~,844C,0154,native,~,
+“,844D,083A,custom,"""",FE4 Vietnamese native-width transfer V4
+”,844E,083A,custom,"""",FE4 Vietnamese native-width transfer V4
+0,844F,0000,native,0,
+1,8450,0001,native,1,
+2,8451,0002,native,2,
+3,8452,0003,native,3,
+4,8453,0004,native,4,
+5,8454,0005,native,5,
+6,8455,0006,native,6,
+7,8456,0007,native,7,
+8,8457,0008,native,8,
+9,8458,0009,native,9,
+A,8459,0517,native,A,
+B,845A,0958,custom,B,FE4 Vietnamese native-width transfer for Probe 010
+C,845B,083E,custom,C,FE4 Vietnamese native-width transfer V4
+D,845C,083F,custom,D,FE4 Vietnamese native-width transfer V4
+E,845D,0840,custom,E,FE4 Vietnamese native-width transfer V4
+F,845E,0841,custom,F,FE4 Vietnamese native-width transfer V4
+G,845F,0842,custom,G,FE4 Vietnamese native-width transfer V4
+H,8460,0843,custom,H,FE4 Vietnamese native-width transfer V4
+I,8461,074B,native,I,
+J,8462,0844,custom,J,FE4 Vietnamese native-width transfer V4
+K,8463,0519,native,K,
+L,8464,074C,native,L,
+M,8465,095A,custom,M,FE4 Vietnamese native-width transfer for Probe 010
+N,8466,0845,custom,N,FE4 Vietnamese native-width transfer V4
+O,8467,051A,native,O,
+P,8468,0815,native,P,
+Q,8469,0216,native,Q,
+R,846A,0518,native,R,
+S,846B,020D,native,S,
+T,846C,0516,native,T,
+U,846D,0846,custom,U,FE4 Vietnamese native-width transfer V4
+V,846E,095C,custom,V,FE4 Vietnamese native-width transfer for Probe 010
+W,846F,0847,custom,W,FE4 Vietnamese native-width transfer V4
+X,8470,0848,custom,X,FE4 Vietnamese native-width transfer V4
+Y,8471,0849,custom,Y,FE4 Vietnamese native-width transfer V4
+Z,8472,084A,custom,Z,FE4 Vietnamese native-width transfer V4
+a,8473,084B,custom,a,FE4 Vietnamese native-width transfer V4
+b,8474,084C,custom,b,FE4 Vietnamese native-width transfer V4
+c,8475,084D,custom,c,FE4 Vietnamese native-width transfer V4
+d,8476,084E,custom,d,FE4 Vietnamese native-width transfer V4
+e,8477,074F,native,e,
+f,8478,084F,custom,f,FE4 Vietnamese native-width transfer V4
+g,8479,0850,custom,g,FE4 Vietnamese native-width transfer V4
+h,847A,0851,custom,h,FE4 Vietnamese native-width transfer V4
+i,847B,0852,custom,i,FE4 Vietnamese native-width transfer V4
+j,847C,0853,custom,j,FE4 Vietnamese native-width transfer V4
+k,847D,0854,custom,k,FE4 Vietnamese native-width transfer V4
+l,847E,0855,custom,l,FE4 Vietnamese native-width transfer V4
+m,8480,0856,custom,m,FE4 Vietnamese native-width transfer V4
+n,8481,0857,custom,n,FE4 Vietnamese native-width transfer V4
+o,8482,095B,custom,o,FE4 Vietnamese native-width transfer for Probe 010
+p,8483,0858,custom,p,FE4 Vietnamese native-width transfer V4
+q,8484,0859,custom,q,FE4 Vietnamese native-width transfer V4
+r,8485,085A,custom,r,FE4 Vietnamese native-width transfer V4
+s,8486,085B,custom,s,FE4 Vietnamese native-width transfer V4
+t,8487,085C,custom,t,FE4 Vietnamese native-width transfer V4
+u,8488,0959,custom,u,FE4 Vietnamese native-width transfer for Probe 010
+v,8489,074E,native,v,
+w,848A,085D,custom,w,FE4 Vietnamese native-width transfer V4
+x,848B,085E,custom,x,FE4 Vietnamese native-width transfer V4
+y,848C,0750,native,y,
+z,848D,085F,custom,z,FE4 Vietnamese native-width transfer V4
+À,848E,0860,custom,À,FE4 Vietnamese native-width transfer V4
+Â,848F,0861,custom,Â,FE4 Vietnamese native-width transfer V4
+Ó,8490,0862,custom,Ó,FE4 Vietnamese native-width transfer V4
+Ô,8491,0863,custom,Ô,FE4 Vietnamese native-width transfer V4
+Ý,8492,090A,custom,Ý,FE4 Vietnamese native-width transfer V4
+à,8493,090B,custom,à,FE4 Vietnamese native-width transfer V4
+á,8494,090C,custom,á,FE4 Vietnamese native-width transfer V4
+â,8495,090D,custom,â,FE4 Vietnamese native-width transfer V4
+ã,8496,090E,custom,ã,FE4 Vietnamese native-width transfer V4
+è,8497,090F,custom,è,FE4 Vietnamese native-width transfer V4
+é,8498,0910,custom,é,FE4 Vietnamese native-width transfer V4
+ê,8499,0911,custom,ê,FE4 Vietnamese native-width transfer V4
+ì,849A,0912,custom,ì,FE4 Vietnamese native-width transfer V4
+í,849B,0913,custom,í,FE4 Vietnamese native-width transfer V4
+ñ,849C,0914,custom,ñ,FE4 Vietnamese native-width transfer V4
+ò,849D,0915,custom,ò,FE4 Vietnamese native-width transfer V4
+ó,849E,0916,custom,ó,FE4 Vietnamese native-width transfer V4
+ô,849F,0917,custom,ô,FE4 Vietnamese native-width transfer V4
+õ,84A0,0918,custom,õ,FE4 Vietnamese native-width transfer V4
+ù,84A1,0919,custom,ù,FE4 Vietnamese native-width transfer V4
+ú,84A2,091A,custom,ú,FE4 Vietnamese native-width transfer V4
+ý,84A3,091B,custom,ý,FE4 Vietnamese native-width transfer V4
+Ă,84A4,091C,custom,Ă,FE4 Vietnamese native-width transfer V4
+ă,84A5,091D,custom,ă,FE4 Vietnamese native-width transfer V4
+Đ,84A6,0963,custom,Đ,FE4 Vietnamese native-width transfer V4
+đ,84A7,091E,custom,đ,FE4 Vietnamese native-width transfer V4
+ĩ,84A8,091F,custom,ĩ,FE4 Vietnamese native-width transfer V4
+ũ,84A9,0920,custom,ũ,FE4 Vietnamese native-width transfer V4
+Ơ,84AA,0921,custom,Ơ,FE4 Vietnamese native-width transfer V4
+ơ,84AB,0922,custom,ơ,FE4 Vietnamese native-width transfer V4
+Ư,84AC,0923,custom,Ư,FE4 Vietnamese native-width transfer V4
+ư,84AD,0924,custom,ư,FE4 Vietnamese native-width transfer V4
+ạ,84AE,0925,custom,ạ,FE4 Vietnamese native-width transfer V4
+Ả,84AF,0926,custom,Ả,FE4 Vietnamese native-width transfer V4
+ả,84B0,0927,custom,ả,FE4 Vietnamese native-width transfer V4
+Ấ,84B1,0928,custom,Ấ,FE4 Vietnamese native-width transfer V4
+ấ,84B2,0929,custom,ấ,FE4 Vietnamese native-width transfer V4
+Ầ,84B3,092A,custom,Ầ,FE4 Vietnamese native-width transfer V4
+ầ,84B4,092B,custom,ầ,FE4 Vietnamese native-width transfer V4
+ẩ,84B5,092C,custom,ẩ,FE4 Vietnamese native-width transfer V4
+ẫ,84B6,092D,custom,ẫ,FE4 Vietnamese native-width transfer V4
+Ậ,84B7,092E,custom,Ậ,FE4 Vietnamese native-width transfer V4
+ậ,84B8,092F,custom,ậ,FE4 Vietnamese native-width transfer V4
+ắ,84B9,0930,custom,ắ,FE4 Vietnamese native-width transfer V4
+ẳ,84BA,0931,custom,ẳ,FE4 Vietnamese native-width transfer V4
+ặ,84BB,0932,custom,ặ,FE4 Vietnamese native-width transfer V4
+ẹ,84BC,0933,custom,ẹ,FE4 Vietnamese native-width transfer V4
+ẻ,84BD,0934,custom,ẻ,FE4 Vietnamese native-width transfer V4
+ẽ,84BE,0935,custom,ẽ,FE4 Vietnamese native-width transfer V4
+ế,84BF,0936,custom,ế,FE4 Vietnamese native-width transfer V4
+ề,84C0,0937,custom,ề,FE4 Vietnamese native-width transfer V4
+ể,84C1,0938,custom,ể,FE4 Vietnamese native-width transfer V4
+ễ,84C2,0939,custom,ễ,FE4 Vietnamese native-width transfer V4
+ệ,84C3,093A,custom,ệ,FE4 Vietnamese native-width transfer V4
+ỉ,84C4,093B,custom,ỉ,FE4 Vietnamese native-width transfer V4
+ị,84C5,093C,custom,ị,FE4 Vietnamese native-width transfer V4
+ọ,84C6,093D,custom,ọ,FE4 Vietnamese native-width transfer V4
+ỏ,84C7,093E,custom,ỏ,FE4 Vietnamese native-width transfer V4
+ố,84C8,093F,custom,ố,FE4 Vietnamese native-width transfer V4
+Ồ,84C9,0940,custom,Ồ,FE4 Vietnamese native-width transfer V4
+ồ,84CA,0941,custom,ồ,FE4 Vietnamese native-width transfer V4
+Ổ,84CB,0942,custom,Ổ,FE4 Vietnamese native-width transfer V4
+ổ,84CC,0943,custom,ổ,FE4 Vietnamese native-width transfer V4
+ỗ,84CD,0944,custom,ỗ,FE4 Vietnamese native-width transfer V4
+ộ,84CE,0945,custom,ộ,FE4 Vietnamese native-width transfer V4
+Ớ,84CF,0946,custom,Ớ,FE4 Vietnamese native-width transfer V4
+ớ,84D0,0947,custom,ớ,FE4 Vietnamese native-width transfer V4
+ờ,84D1,0948,custom,ờ,FE4 Vietnamese native-width transfer V4
+ở,84D2,0949,custom,ở,FE4 Vietnamese native-width transfer V4
+ỡ,84D3,094A,custom,ỡ,FE4 Vietnamese native-width transfer V4
+ợ,84D4,094B,custom,ợ,FE4 Vietnamese native-width transfer V4
+ụ,84D5,094C,custom,ụ,FE4 Vietnamese native-width transfer V4
+Ủ,84D6,094D,custom,Ủ,FE4 Vietnamese native-width transfer V4
+ủ,84D7,094E,custom,ủ,FE4 Vietnamese native-width transfer V4
+ứ,84D8,094F,custom,ứ,FE4 Vietnamese native-width transfer V4
+Ừ,84D9,0950,custom,Ừ,FE4 Vietnamese native-width transfer V4
+ừ,84DA,0951,custom,ừ,FE4 Vietnamese native-width transfer V4
+ử,84DB,0952,custom,ử,FE4 Vietnamese native-width transfer V4
+ữ,84DC,0953,custom,ữ,FE4 Vietnamese native-width transfer V4
+ự,84DD,0954,custom,ự,FE4 Vietnamese native-width transfer V4
+ỳ,84DE,0955,custom,ỳ,FE4 Vietnamese native-width transfer V4
+ỷ,84DF,0956,custom,ỷ,FE4 Vietnamese native-width transfer V4
+ỹ,84E0,0957,custom,ỹ,FE4 Vietnamese native-width transfer V4
