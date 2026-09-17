@@ -2,10 +2,12 @@ Tiếp tục Chibi Maruko-chan SNES từ `HANDOFF_CURRENT.md` trên branch `chib
 
 Canonical clean ROM SHA1: `08a2415362f69788ec76b1a36044dc1f1a5f2ea1`.
 
-Runtime evidence: Probe 006 proved custom glyph rendering; Probe 007 proved the `0x84xx` Vietnamese codepage; Probe 008/009 were typography failures; Probe 010 FE4-native-width was clearly readable but user asked for thinner/lighter strokes.
+User đã tạm dừng vòng lặp typography để quay lại dịch nội dung. Font path/codepage đã được chứng minh runtime; Probe 010 là baseline đẹp nhất hiện tại. Probe 011..018 bị user loại vì nét/dấu không đồng đều; Probe 019 chỉ là thử sửa riêng `đ`, chưa phải release font PASS. Không tự ý mở lại font work nếu không cần.
 
-Current test is **Probe 011 FE4 Native Thin V5**. Read `docs/VI_FONT_V5_FE4_THIN.md`, `docs/REVERSE_FONT_001.md`, and `HANDOFF_CURRENT.md` before changes. Files: reuses `translation/codepage/vi_codepage_v3_fe4ref.csv`, plus `translation/codepage/vi_glyphs_v5_fe4_thin.json`, `tools/generate_vi_glyphs_v5_fe4_thin.py`, `tools/probe_visible_menu_011_fe4_thin.py`.
+Meaning-first translation hiện có 1,018 release-intent source rows. Large coherent direct-text banks đã được meaning-covered. Không dịch scanner noise để tăng số lượng.
 
-Probe 011 expected rows: `Âm thanh`, `Bói!!`, `Đấu đội!`, `Vẽ!!`, `Maruko?`, `Ổn rồi`. Static CLEAN-ROM build PASS: checksum `0x38C2`, complement `0xC73D`, SHA1 `45d06514306cd6d1a0cf0c65c6339527944199d4`, SHA256 `11b1b8c824be60dcdad8d9f287e916a245fe5edc42cdbb33855c02f25bf8f9bd`. Runtime screenshot pending.
+Mới thêm `translation/source/karaoke_batch01_singable_v1_vi.csv`: second-pass cho 28 dòng karaoke, giữ nguyên `vi_full` và thêm `vi_singable_v1` ngắn/gọn/nhịp hơn. Đây chưa phải timing-fit runtime PASS và không tăng unique source-row count.
 
-Meaning-first translation remains 1,018 release-intent rows. Do not bulk-patch yet. Keep graphics/tilemap text (`どれにする？`, Start/Password/Continue/ending family) separate. Always build from CLEAN ROM, preserve source identity/control bytes, use dry-run/diff-surface/checksum gates, and never call whole-game Runtime PASS from a subsystem screenshot.
+Ưu tiên tiếp theo: tiếp tục editorial translation có giá trị, locate graphics/tilemap player-facing text để dịch khi asset được chứng minh, sau đó mới chuẩn bị các runtime insertion batch nhỏ có guardrail. Giữ riêng graphics text như `どれにする？`, Start/Password/Continue/ending family.
+
+Luôn build từ CLEAN ROM, preserve source identity/control bytes, dry-run/diff-surface/checksum gates, và không gọi whole-game Runtime PASS từ một subsystem screenshot.
