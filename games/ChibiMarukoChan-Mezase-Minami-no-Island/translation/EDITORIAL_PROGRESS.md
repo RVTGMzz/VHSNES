@@ -25,9 +25,24 @@ File: `translation/editorial/tone_consistency_pass02.csv`
 
 - `Mạnh ghê` -> `Giỏi ghê` in friendly minigame cheering;
 - `sức mạnh bộc phát lúc nguy cấp` -> `sức trâu` for the comic `バカぢから` punchline;
-- Hanawa keeps `Hey`, `lady`, `señorita` while sounding playful rather than battle-heavy;
+- Hanawa keeps `Hey`, `baby`, `señorita` while sounding playful rather than battle-heavy;
 - Maruo keeps his formal `Nói thẳng ra!!` personality, but surrounding Vietnamese is less stiff;
 - narrator wording stays dry and lightly teasing.
+
+## Tone consistency pass 03
+
+File: `translation/editorial/tone_consistency_pass03.csv`
+
+18 Story Batch 03 rows received a focused character-voice pass. Main changes:
+
+- Maruo remains formal and self-important without sounding like translated legal prose;
+- Maruko and classmates use more natural kid-to-kid Vietnamese such as `hên xui`, `mất mặt`, and `không có cửa` where the Japanese register supports it;
+- removed combat-like phrasing such as `trụ tới đây` in favor of neutral competition wording;
+- Hanawa's rich-kid flourish stays intact (`Hey`, `baby`, `papa`, `señorita`) while the Vietnamese flows more naturally;
+- Tomozou/family dialogue is kept warm and domestic rather than heroic;
+- the ending-island sequence now sounds more playful and conversational;
+- `寂しかった` was corrected from a stronger inferred `nhớ` to the source-faithful `buồn vì vắng bạn` sense;
+- the foreign-speaker study call no longer invents an age hierarchy (`các em` -> `các bạn`).
 
 ## Current editorial total
 
@@ -35,7 +50,8 @@ File: `translation/editorial/tone_consistency_pass02.csv`
 - karaoke singable V1: **28 existing rows** with second-pass lyric drafts
 - tone consistency pass 01: **7 existing rows** refined
 - tone consistency pass 02: **12 existing rows** refined
-- total existing rows with explicit second-pass editorial attention so far: **47 passes/row-revisions** (not unique-source additions)
+- tone consistency pass 03: **18 existing rows** refined
+- total existing rows with explicit second-pass editorial attention so far: **65 passes/row-revisions** (not unique-source additions)
 
 ## Rule
 
