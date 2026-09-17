@@ -4,3 +4,5 @@ source_jp,vi_full,status,evidence,notes
 パスワード,Mật khẩu,graphics_target_inferred,"internal QA block names a Start/Password screen","actual retail rendering path not yet located"
 今からやるよ,Bắt đầu thôi!,graphics_target_inferred,"internal QA block refers to a dialogue demo with this title/line","verify actual on-screen context before final insertion"
 ＶＳ,VS,graphics_target_inferred,"internal QA block refers to a VS demo","preserve VS unless screen layout suggests otherwise"
+コンティニュー,Tiếp tục,graphics_target_inferred,"internal QA block explicitly names a Continue screen","actual retail label/rendering path not yet located"
+エンディング,Kết thúc,graphics_target_inferred,"internal QA block explicitly names an Ending screen","use as compact UI target; prose meaning remains 'phần kết'; actual retail rendering path not yet located"
