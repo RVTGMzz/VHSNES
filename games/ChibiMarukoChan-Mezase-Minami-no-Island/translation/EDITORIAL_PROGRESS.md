@@ -44,6 +44,21 @@ File: `translation/editorial/tone_consistency_pass03.csv`
 - `寂しかった` was corrected from a stronger inferred `nhớ` to the source-faithful `buồn vì vắng bạn` sense;
 - the foreign-speaker study call no longer invents an age hierarchy (`các em` -> `các bạn`).
 
+## Quiz naturalness pass 01
+
+File: `translation/editorial/quiz_naturalness_pass01.csv`
+
+15 Maruko Q rows were polished for smoother Vietnamese while preserving question/answer facts.
+
+Highlights:
+
+- split several Japanese-style chained clauses into natural Vietnamese question lead-ins;
+- restored explicit subjects where Vietnamese otherwise sounded clipped;
+- kept the narrator's teasing tone in lines about birthdays, pocket money, Tomozou, and Hiroshi;
+- retained `kamishibai` context as a street `gánh kể chuyện tranh` rather than replacing it with a modern medium;
+- preserved joke uncertainty such as `...chắc vậy?` instead of turning it into a factual statement;
+- no answer choice or factual quiz content was changed.
+
 ## Current editorial total
 
 - unique source rows translated: **1,018**
@@ -51,7 +66,8 @@ File: `translation/editorial/tone_consistency_pass03.csv`
 - tone consistency pass 01: **7 existing rows** refined
 - tone consistency pass 02: **12 existing rows** refined
 - tone consistency pass 03: **18 existing rows** refined
-- total existing rows with explicit second-pass editorial attention so far: **65 passes/row-revisions** (not unique-source additions)
+- quiz naturalness pass 01: **15 existing rows** refined
+- total existing rows with explicit second-pass editorial attention so far: **80 passes/row-revisions** (not unique-source additions)
 
 ## Rule
 
