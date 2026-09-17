@@ -1,6 +1,6 @@
 # Translation progress — Chibi Maruko-chan
 
-Updated: 2026-09-16 +07
+Updated: 2026-09-18 +07
 Branch: `chibi-maruko-bootstrap-01`
 
 ## Meaning-first Vietnamese source layer
@@ -27,7 +27,7 @@ Current committed **player-facing / release-intent** translated rows:
 Additional reverse/reference material:
 
 - `translation/source/internal_debug_reference_vi.csv`: 10 translated internal QA/debug rows, **excluded from the 1,018 release-intent count**
-- `translation/source/graphics_text_targets_vi.csv`: 5 visual-text targets/hypotheses for later graphics/tilemap work, not direct-text rows
+- `translation/source/graphics_text_targets_vi.csv`: visual-text targets/hypotheses for later graphics/tilemap work, not direct-text rows
 
 These counts are source-translation rows, NOT whole-game completion percentage. Scanner output still contains false positives, split strings, control/layout data, and numeric/count artifacts.
 
@@ -36,6 +36,8 @@ These counts are source-translation rows, NOT whole-game completion percentage. 
 The coherent direct-text story arc is translated approximately from `0x181CC .. 0x1DE81`, through the currently discovered visible ending sequence.
 
 Tone remains frozen in `translation/STYLE_GUIDE_VI.md`: cute school/family comedy, not combat RPG.
+
+Editorial polish has now explicitly reviewed 100 row-revisions/passes across story, quiz, and karaoke. See `translation/EDITORIAL_PROGRESS.md`.
 
 ## Maruko Q
 
@@ -59,8 +61,6 @@ Files:
 
 Translated headings, wish/money/romance/study fortunes, general advice, lucky items, lucky numbers, and lucky colors.
 
-Raw-ROM recovery corrected scanner omissions including full-width `４` in `４人集めてみて`, digits `０..９`, and large lucky-number fields such as `１６，７７７，２１６`, `１，０００，０００`, and `１３０，０００，０００`.
-
 ## Minigame UI — Batch 01
 
 File: `translation/source/minigame_ui_batch01_vi.csv`
@@ -69,67 +69,42 @@ Range approximately `0x288C2 .. 0x28C40`.
 
 Translated ball-throwing, paint/dryer, and pool/pushing rules; controls; rounds-to-win; CPU difficulty; game duration; player 1–4 assignment/status; controller type; stage selector; stage digits `0..9`.
 
-Raw-ROM recovery fixed `１ゲームの時間`, `１本..５本`, both `１８０秒` fields, `プレイヤー１..４`, and stage digits that the scanner missed or entered mid-character.
-
 ## Karaoke — Batch 01
 
-File: `translation/source/karaoke_batch01_vi.csv`
+Files:
 
-Range approximately `0x2B380 .. 0x2B76E`.
+- `translation/source/karaoke_batch01_vi.csv`
+- `translation/source/karaoke_batch01_singable_v1_vi.csv`
 
-The `針切じいさんのロケンロール` song-like text now has a meaning-first Vietnamese translation. It is **not yet a singable lyric pass**. Rhythm, syllable count, and timing must be audited separately before runtime insertion.
-
-The existing start options near `0x2B7C9` / `0x2B7EF` remain in `seed_known_strings.csv` and were not duplicated.
+The karaoke text has a meaning-first Vietnamese translation plus a complete 28-row singable V1 draft. Singable V1 remains timing/layout-unproven and does not replace `vi_full`.
 
 ## Stage-name Batch 01
 
 File: `translation/source/stage_names_batch01_vi.csv`
 
-Range approximately `0x2CBAD .. 0x2CD5F`.
-
-Translated 15 stage/title strings. These are meaning-first names; runtime layout path is not yet audited.
+Translated 15 stage/title strings. Runtime layout path is not yet audited.
 
 ## Quiz misc/result UI
 
 File: `translation/source/quiz_ui_misc_vi.csv`
 
-Translated player-facing quiz UI around `0x3153A` and `0x31C52 .. 0x31D2F`: dynamic `Câu số` labels, full-clear congratulations, number of questions, answer count, correct-answer rate, first-try correct count, and the `Có` choice paired with the existing `Không` seed.
-
-## Internal QA / debug block audit
-
-Range approximately `0x2865E .. 0x287FC`.
-
-File: `translation/source/internal_debug_reference_vi.csv`.
-
-Raw ROM resolves this block as a development/test navigation section rather than normal retail dialogue. It includes:
-
-- Sakura Production video submission deadline `８／３１`;
-- Start / Password screen description;
-- `今からやるよ` conversation demo description;
-- full-width `ＶＳ` demo description;
-- Maru-chan win / loss demos;
-- Continue screen;
-- Story Mode quit screen;
-- final-win demo;
-- ending.
-
-These 10 rows are translated only as reverse-engineering references and are deliberately **excluded** from the release-intent count. Do not patch them into a normal release unless runtime evidence proves they are player-visible.
-
-Full audit: `docs/DIRECT_TEXT_COVERAGE_AUDIT_20260916.md`.
+Translated dynamic `Câu số` labels, full-clear congratulations, question count, answer count, correct-answer rate, first-try correct count, and the `Có` choice paired with the existing `Không` seed.
 
 ## Graphics / tilemap translation targets
 
 File: `translation/source/graphics_text_targets_vi.csv`.
 
-Current targets:
+Known targets include:
 
 - visible pink heading `どれにする？` → `Chọn gì đây?`;
 - `はじめから` → `Bắt đầu`;
 - `パスワード` → `Mật khẩu`;
 - `今からやるよ` → `Bắt đầu thôi!` pending exact on-screen context;
-- `ＶＳ` → `VS`.
+- `ＶＳ` → `VS`;
+- `コンティニュー` → `Tiếp tục`;
+- `エンディング` → `Kết thúc`.
 
-Only `どれにする？` is visually verified from the user screenshot. The other four are inferred from the internal QA block and must be located in their actual render path before insertion.
+`どれにする？` is visually verified but its asset/storage path is still unresolved. Simple CP932/glyph-ID/interleaved/tilemap searches did not find an exact storage sequence.
 
 ## Editorial rules
 
@@ -137,23 +112,54 @@ Only `どれにする？` is visually verified from the user screenshot. The oth
 - do not shorten source translation to current ROM/font limits;
 - school/minigame competition uses `thi`, `thi đấu`, `so tài`, `vượt qua` rather than combat-heavy language;
 - Maruo's `ズバリ` stays around `Nói thẳng ra!`;
-- Hanawa keeps `Hey`, `baby`, `Señorita` where natural;
+- Hanawa keeps `Hey`, `baby`, `señorita` where natural;
 - narrator stays dry and lightly teasing;
 - suspicious scanner fragments are verified against raw ROM before translation.
 
-## Runtime separation
+## Runtime status
 
-No bulk Story / Quiz / Fortune / Minigame / Karaoke / Credits translation has been patched into ROM yet.
+The pre-GBA Vietnamese font/codepage baseline remains Build 023 / Probe 019 state. The Golden Sun GBA donor experiment was rejected for Chibi and is not part of current runtime work.
 
-Font/codepage reverse remains separate. Probe 005 is still the current mapping-table runtime proof and requires screenshot evidence before freezing that architecture.
+### Build 024 — compact Vietnamese main menu
 
-## Next translation / reverse work
+Runtime candidates: `translation/runtime/main_menu_compact_v1.csv`
 
-The currently proven large coherent direct-text banks are now meaning-covered. Do **not** inflate the untranslated count using binary-looking CP932 false positives.
+Builder: `tools/build_main_menu_compact_v1.py`
+
+Ten direct mode-selection menu fields now have guarded exact-fit Vietnamese runtime labels on top of Build 023:
+
+- `Truyện`
+- `Đấu`
+- `Đấu đội`
+- `M.Q`
+- `Tập vẽ`
+- `Bói`
+- `Hát`
+- `Âm`
+- `ST`
+- `Mono`
+
+The fuller meanings remain in `translation/source/main_menu_vi.csv`. These compact forms are fixed-field runtime candidates, not a rewrite of `vi_full`.
+
+Build 024 static facts:
+
+- SHA-1 `9616e9937e0cfbd3b5294bbf7beff4dd4725301a`
+- SHA-256 `4dc1ca459a4c04558bc421937ee6110b286fe19a9e94956b40e797777e4d863e`
+- checksum `0x9969`, complement `0x6696`
+- 10/10 field-fit PASS
+- diff surface limited to ten menu text spans plus checksum/complement
+- Runtime PASS: **not yet**, pending user gameplay/screenshot confirmation.
+
+No bulk Story / Quiz / Fortune / Minigame / Karaoke / Credits runtime insertion has been declared yet. Those require guarded control-byte-aware insertion batches.
+
+## Next translation / runtime work
+
+The currently proven large coherent direct-text banks are meaning-covered. Do **not** inflate the untranslated count using binary-looking CP932 false positives.
 
 Next high-value work:
 
-1. locate and extract graphics/tilemap text for the Start / Password / Continue / ending family of screens hinted by the debug block;
-2. locate the pink `どれにする？` heading render path;
-3. continue font/codepage reverse so full Vietnamese can be inserted safely;
-4. later perform a karaoke singability/timing pass after font/layout behavior is known.
+1. validate Build 024 mode-selection menu when convenient;
+2. build the first guarded story/dialogue insertion batch while preserving control bytes;
+3. continue editorial naturalness passes on remaining story/quiz text;
+4. trace `どれにする？` plus Start / Password / Continue / ending graphics paths;
+5. later audit karaoke timing/singability in runtime.
