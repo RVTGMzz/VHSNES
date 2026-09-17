@@ -1,0 +1,13 @@
+file_offset,source_jp,vi_previous,vi_revised,reason,apply_to
+0x1AA5B,"またしても 負けるとは… キミも ゆだんならないなぁ…","Lại thua nữa rồi... Cậu đúng là không thể lơ là được.","Lại thua nữa rồi... Đúng là không thể xem thường cậu được.","Tự nhiên hơn trong thoại bạn bè","story_batch02_part1_vi.csv"
+0x1ACEF,"やったねー また勝ったよ つよい つよい！","Yay! Lại thắng rồi! Mạnh ghê, mạnh ghê!","Hay quá! Lại thắng nữa rồi! Giỏi ghê, giỏi ghê!","Tránh sắc thái sức mạnh/đánh nhau khi đang cổ vũ minigame","story_batch02_part1_vi.csv"
+0x1AE02,"この人の じんせいって いったい…","Đời người này rốt cuộc là thế nào vậy...","Cuộc đời người này rốt cuộc là sao vậy trời...","Giữ chất narrator cà khịa nhẹ","story_batch02_part1_vi.csv"
+0x1B057,"南の島に 行くんだから それくらいやったって おかしくないブー","Nó sắp đi đảo phương Nam rồi, làm cỡ đó cũng chẳng lạ đâu, buu.","Sắp được đi đảo phương Nam cơ mà, làm tới mức đó cũng phải thôi, buu.","Mềm và tự nhiên hơn trong hội thoại trẻ con","story_batch02_part1_vi.csv"
+0x1BC7B,"やっぱり まるちゃん つよいねぇー","Đúng là Maru-chan mạnh thật đó.","Maru-chan đúng là giỏi ghê.","Ưu tiên giọng khen vui thay vì nhấn sức mạnh","story_batch02_part3_vi.csv"
+0x1BD13,"まるちゃん それをいうなら バカぢからだよ","Maru-chan, phải nói là 'sức mạnh bộc phát lúc nguy cấp' chứ.","Maru-chan, phải gọi là 'sức trâu' mới đúng.","バカぢから là cách nói hài về sức khỏe bất ngờ; bản cũ quá sách vở","story_batch02_part3_vi.csv"
+0x1BD86,"ちからもちじゃなくて バカぢからだよ まるちゃん","Không phải 'lực sĩ', là 'sức mạnh bộc phát' đó, Maru-chan.","Không phải 'lực sĩ', là 'sức trâu' đó, Maru-chan.","Giữ punchline và cách gọi nhất quán với dòng trước","story_batch02_part3_vi.csv"
+0x1CF56,"ヘーイ 強いレディーも ステキだよ セニョリータ","Hey, một lady mạnh mẽ cũng tuyệt lắm, señorita.","Hey, một lady bản lĩnh cũng tuyệt lắm, señorita.","Giữ chất Hanawa nhưng bớt cảm giác chiến đấu","story_batch03_part1_vi.csv"
+0x1D014,"ズバリ あなたが 今まで 勝ち進んだのは まぐれだという 事を お教えしましょう！","Nói thẳng ra! Tôi sẽ cho bạn biết việc bạn thắng tới giờ chỉ là ăn may!","Nói thẳng ra! Tôi sẽ cho bạn biết từ nãy tới giờ bạn chỉ gặp may thôi!","Maruo vẫn long trọng nhưng câu Việt tự nhiên hơn","story_batch03_part1_vi.csv"
+0x19A55,"ズバリ！！ いつの世でも正義は勝つのです","Nói thẳng ra!! Chính nghĩa lúc nào cũng chiến thắng!","Nói thẳng ra!! Chính nghĩa lúc nào cũng thắng!","Giữ câu cửa miệng nhưng bớt sắc thái chiến trận","story_batch01_vi.csv"
+0x1A24B,"まるちゃん つよかったねー","Maru-chan, cậu mạnh ghê!","Maru-chan, cậu giỏi ghê!","Hợp ngữ cảnh bạn bè khen nhau trong minigame","story_batch01_vi.csv"
+0x1A27D,"わたしって じつは つよいのかもね…","Có khi tớ mạnh thật ấy chứ...","Hay là tớ cũng ghê gớm thật nhỉ...","Giữ sự tự đắc ngộ nghĩnh của Maruko, bớt literal","story_batch01_vi.csv"
