@@ -1,0 +1,11 @@
+file_offset,source_jp,vi_full,vi_runtime_v1,max_units,status,notes
+0x28818,ストーリーモード,Chế độ Cốt truyện,Truyện,8,runtime_candidate_exact_fit,Temporary compact label until menu relocation/expansion is proven
+0x2882E,対戦モード,Thi đấu,Đấu,5,runtime_candidate_exact_fit,Compact but semantically clear
+0x2883C,チーム対戦モード,Thi đấu theo đội,Đấu đội,8,runtime_candidate_exact_fit,Exact-fit with one padded 2-byte space
+0x28852,まるこＱ,Maruko Q,M.Q,4,runtime_candidate_exact_fit,Compact mode name
+0x2885E,まるこペイント,Maruko tập vẽ,Tập vẽ,7,runtime_candidate_exact_fit,Exact-fit with one padded 2-byte space
+0x28870,まるこみくじ,Bói vui cùng Maruko,Bói,6,runtime_candidate_exact_fit,Short runtime label only; vi_full remains canonical
+0x28880,針切カラオケ,Karaoke,Hát,6,runtime_candidate_exact_fit,Short runtime label only; exact nuance stays in source layer
+0x28892,サウンド,Âm thanh,Âm,4,runtime_candidate_exact_fit,Short runtime label only
+0x288A2,ステレオ,Stereo,ST,4,runtime_candidate_exact_fit,Temporary abbreviation due fixed 4-unit field
+0x288B2,モノラル,Mono,Mono,4,runtime_candidate_exact_fit,Fits exactly
