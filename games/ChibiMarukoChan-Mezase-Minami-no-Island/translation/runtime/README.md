@@ -2,11 +2,28 @@
 
 Runtime text is renderer/byte-budget specific and must be derived from `translation/source/`.
 
-Current state:
+Current proven state on the visible mode-selection menu path:
 
-- full Vietnamese glyph support: UNPROVEN
-- ASCII renderer support: UNPROVEN
-- pointer relocation: UNPROVEN
-- field terminators/control semantics: UNPROVEN
+- 2-byte Vietnamese codepage via lead `0x84`: runtime proven;
+- multiple accented Vietnamese glyphs: runtime proven on this menu path;
+- raw 1-byte ASCII substitution: rejected by Probe 002 because that build froze;
+- pointer relocation / field expansion: still UNPROVEN;
+- general story/quiz control semantics outside the menu path: still UNPROVEN.
 
-Do not mass-generate no-diacritic Vietnamese until the ASCII renderer probe has runtime evidence. If a compact/no-diacritic candidate is needed for diagnostics, retain `vi_full` untouched.
+Keep `vi_full` as the source-of-truth meaning layer. Runtime labels may be shortened only in this directory and must never silently overwrite `vi_full`.
+
+## Main menu compact V1
+
+`main_menu_compact_v1.csv` contains exact-fit 2-byte-unit labels for the ten direct menu fields around `0x28818..0x288B9`.
+
+These are practical runtime candidates for the fixed-width menu fields, not replacements for the fuller source translations. Examples:
+
+- `Chế độ Cốt truyện` -> runtime `Truyện`;
+- `Thi đấu theo đội` -> runtime `Đấu đội`;
+- `Bói vui cùng Maruko` -> runtime `Bói`;
+- `Âm thanh` -> runtime `Âm`;
+- `Stereo` -> temporary runtime abbreviation `ST`.
+
+Build 024 uses these candidates on top of Build 023 / Probe 019. It preserves the accepted pre-GBA font/codepage baseline and changes only the ten menu text spans plus SNES checksum/complement.
+
+Do not call these compact labels final if relocation/expansion later makes the full wording fit cleanly.
