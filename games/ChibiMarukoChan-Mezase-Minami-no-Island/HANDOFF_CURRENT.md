@@ -150,23 +150,22 @@ Key runtime evidence:
 - Probe 019: Probe 010 baseline plus targeted lowercase `đ` fix; user then said the font was good enough temporarily and asked to continue translation.
 - Probe 020/021: experimental Golden Sun GBA donor font. User rejected this donor on 2026-09-17: **do not use it for Chibi**.
 
-### Canonical pre-GBA build layer
+### Canonical pre-GBA runtime state
 
-Build 022 was reconstructed from the exact clean ROM with only the accepted pre-GBA font/codepage differences from Probe 019, while restoring the visible menu test fields to their original Japanese source bytes.
+**Correction:** Build 022 was a mistaken reconstruction. It restored the visible menu probe strings back to clean Japanese, which the user did not ask for. Build 022 is superseded and must not be used as the working baseline.
 
-Static facts for Build 022:
+Build 023 restores the **exact pre-GBA runtime state of Probe 019**, including its Vietnamese test strings and the accepted pre-GBA font/codepage state. It is byte-for-byte identical to Probe 019.
 
-- output name: `Chibi_Maruko_Build_022_PRE_GBA_FONT_RESTORED_READY.sfc`
-- transplanted non-probe bytes: `1684`
-- checksum `0x9F0B`
-- complement `0x60F4`
-- SHA-1 `833465fa09b9e0a6d8282e3944513082c869cfc7`
-- SHA-256 `5c41ce6c10afd14bc680fb4458baf5d2b0a64428abd02600e6097672adc76104`
-- visible probe menu restored to clean Japanese: PASS
-- codepage mapping matches Probe 019: PASS
-- Chibi font pages match Probe 019: PASS
+Static facts for Build 023:
 
-Treat this **pre-GBA font/codepage layer** as the working font baseline for future builds. It is not a release-quality typography claim; it is simply the user-approved temporary baseline.
+- output name: `Chibi_Maruko_Build_023_PRE_GBA_STATE_RESTORED_READY.sfc`
+- exact match to Probe 019: PASS
+- checksum `0x9B04`
+- complement `0x64FB`
+- SHA-1 `a1cdd19934ec59cf9cc1142e69730bd27efe7820`
+- SHA-256 `b6ee74bbaee07b385eca78f94e03e6cc65842ab1c88f66027f6811b67e890498`
+
+Treat **Build 023 / Probe 019 state** as the temporary working runtime baseline. The Golden Sun donor changes are discarded. Do not silently restore translated/test-visible text back to Japanese when reverting font experiments.
 
 ## Runtime separation
 
@@ -184,7 +183,7 @@ Keep these layers separate:
 1. continue editorial translation passes where wording is still stiff, especially remaining Maruko Q banks and Story early batches;
 2. trace the mode-selection screen setup to locate the actual source asset for `どれにする？`;
 3. locate Start / Password / Continue / ending visual text paths;
-4. build guarded small runtime insertion batches from the 1,018-row meaning layer on top of the **Build 022 pre-GBA font baseline**;
+4. build guarded small runtime insertion batches from the 1,018-row meaning layer on top of the **Build 023 / Probe 019 pre-GBA state**;
 5. do not resume Golden Sun donor work for Chibi unless the user explicitly asks.
 
 ## Frozen workflow
