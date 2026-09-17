@@ -6,7 +6,7 @@ Repo: `ronvotri/Viet-Hoa-SNES`
 
 ## Current milestone
 
-The project is now continuing the **translation/content track**. Font work is temporarily paused at the user's request so translation can keep moving.
+Continue the **translation/content track** using the pre-GBA Chibi Vietnamese font/codepage layer. The experimental Golden Sun GBA donor font has been rejected by the user for this game and must not be used in future Chibi builds unless the user explicitly reopens that experiment.
 
 Visible-menu architecture remains runtime-proven as:
 
@@ -53,11 +53,11 @@ File:
 
 `translation/source/karaoke_batch01_singable_v1_vi.csv`
 
-This is a **second-pass lyric draft** for all 28 karaoke rows. It keeps `vi_full` intact and adds `vi_singable_v1` with shorter, more rhythmic Vietnamese phrasing.
+This is a second-pass lyric draft for all 28 karaoke rows. It keeps `vi_full` intact and adds `vi_singable_v1` with shorter, more rhythmic Vietnamese phrasing.
 
 Important:
 
-- this does **not** increase the 1,018 unique source-row count;
+- this does not increase the 1,018 unique source-row count;
 - it is not yet timing-validated or syllable-fit proven;
 - do not patch it into ROM until the karaoke timing/layout path is audited.
 
@@ -75,8 +75,6 @@ Current explicit second-pass attention:
 - tone consistency pass 03: 18 existing rows;
 - quiz naturalness pass 01: 15 existing rows;
 - total: **80 row-revisions/passes**, not new source rows.
-
-Recent Story Batch 03 pass removes combat-like wording, preserves Maruo/Hanawa/Tomozou voices, and makes the ending-island sequence more conversational. Quiz naturalness pass 01 smooths 15 Maruko Q rows without changing any factual answer choice.
 
 ## Direct-text coverage conclusion
 
@@ -119,19 +117,7 @@ Proven glyph mapping:
 - `る` -> `0x0054`
 - `？` -> `0x0150`
 
-The letterforms visually match the already-reversed Chibi font artwork, but storage is not a simple direct string.
-
-Negative storage evidence on the exact clean ROM:
-
-- no contiguous raw CP932 sequence;
-- no contiguous LE/BE glyph-ID sequence;
-- no ordered full CP932 sequence even allowing up to 32 interleaved bytes between adjacent characters;
-- no ordered little-endian glyph-ID sequence even allowing up to 32 interleaved bytes;
-- no first-five low-byte glyph-index ordered match with gaps `<= 8`;
-- no contiguous masked 16-bit tilemap row under masks `0x03FF`, `0x01FF`, or `0x00FF`;
-- in menu neighborhood `0x28000..0x2B000`, no 24- or 32-byte window contains all six low glyph bytes.
-
-Therefore a simple interleaved CP932/glyph-ID command stream is now weak. Prioritize tracing screen setup / VRAM asset / indirect pointer structures rather than guessing offsets.
+The letterforms visually match the already-reversed Chibi font artwork, but storage is not a simple direct string. Simple contiguous/interleaved CP932, glyph-ID, and masked tilemap hypotheses have all failed; prioritize tracing screen setup / VRAM asset / indirect pointer structures.
 
 ## Renderer/font proven facts
 
@@ -152,25 +138,35 @@ Vietnamese codepage architecture remains:
 - 160 Unicode entries;
 - conservative direct-text corpus has zero decoded lead-0x84 characters.
 
-## Font probe status
+## Font baseline status
 
 Key runtime evidence:
 
 - Probe 006: custom `Đ` runtime PASS (`TĐST1234`).
 - Probe 007: Vietnamese `0x84xx` multi-glyph codepage PASS, typography weak.
 - Probe 008/009: typography FAIL.
-- Probe 010: best overall readable baseline so far, FE4 native-width raster transfer.
-- Probe 011..018: various thinning/accent experiments were rejected by user as inconsistent or uglier.
-- Probe 019: returned to Probe 010 baseline and changed only lowercase `đ`; no final font freeze was declared.
+- Probe 010: best overall readable FE4/native-width baseline.
+- Probe 011..018: thinning/accent experiments rejected as inconsistent or uglier.
+- Probe 019: Probe 010 baseline plus targeted lowercase `đ` fix; user then said the font was good enough temporarily and asked to continue translation.
+- Probe 020/021: experimental Golden Sun GBA donor font. User rejected this donor on 2026-09-17: **do not use it for Chibi**.
 
-**User decision on 2026-09-17:** font is "tạm thời xong" so pause font iteration and resume translation.
+### Canonical pre-GBA build layer
 
-Therefore:
+Build 022 was reconstructed from the exact clean ROM with only the accepted pre-GBA font/codepage differences from Probe 019, while restoring the visible menu test fields to their original Japanese source bytes.
 
-- treat Probe 010 as the visual baseline to return to later;
-- treat Probe 019 only as a temporary targeted `đ` experiment;
-- do not call the font release-quality PASS;
-- do not resume typography work unless translation/runtime needs it or the user asks.
+Static facts for Build 022:
+
+- output name: `Chibi_Maruko_Build_022_PRE_GBA_FONT_RESTORED_READY.sfc`
+- transplanted non-probe bytes: `1684`
+- checksum `0x9F0B`
+- complement `0x60F4`
+- SHA-1 `833465fa09b9e0a6d8282e3944513082c869cfc7`
+- SHA-256 `5c41ce6c10afd14bc680fb4458baf5d2b0a64428abd02600e6097672adc76104`
+- visible probe menu restored to clean Japanese: PASS
+- codepage mapping matches Probe 019: PASS
+- Chibi font pages match Probe 019: PASS
+
+Treat this **pre-GBA font/codepage layer** as the working font baseline for future builds. It is not a release-quality typography claim; it is simply the user-approved temporary baseline.
 
 ## Runtime separation
 
@@ -180,7 +176,7 @@ Keep these layers separate:
 
 1. `vi_full` meaning source;
 2. optional editorial/runtime candidates;
-3. font/codepage;
+3. pre-GBA Chibi font/codepage layer;
 4. graphics/tilemap text.
 
 ## Next high-value work
@@ -188,8 +184,8 @@ Keep these layers separate:
 1. continue editorial translation passes where wording is still stiff, especially remaining Maruko Q banks and Story early batches;
 2. trace the mode-selection screen setup to locate the actual source asset for `どれにする？`;
 3. locate Start / Password / Continue / ending visual text paths;
-4. later build guarded small runtime insertion batches from the 1,018-row meaning layer;
-5. return to font typography only after content/layout needs are clearer.
+4. build guarded small runtime insertion batches from the 1,018-row meaning layer on top of the **Build 022 pre-GBA font baseline**;
+5. do not resume Golden Sun donor work for Chibi unless the user explicitly asks.
 
 ## Frozen workflow
 
