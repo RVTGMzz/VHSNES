@@ -1,6 +1,6 @@
 # Editorial progress — Chibi Maruko-chan
 
-Updated: 2026-09-17 +07
+Updated: 2026-09-18 +07
 Branch: `chibi-maruko-bootstrap-01`
 
 The meaning-first source layer remains **1,018 unique player-facing rows**. Editorial passes do not increase this count because they refine existing translated rows rather than add new Japanese source strings.
@@ -59,6 +59,19 @@ Highlights:
 - preserved joke uncertainty such as `...chắc vậy?` instead of turning it into a factual statement;
 - no answer choice or factual quiz content was changed.
 
+## Tone consistency pass 04 — early story
+
+File: `translation/editorial/tone_consistency_pass04_story_early.csv`
+
+20 Story Batch 01 rows were polished. Focus:
+
+- smoother child-to-child dialogue around the exchange-student announcement;
+- less Japanese-style nominal phrasing in Maruko's daydream scenes;
+- Hanawa remains suave without sounding translated literally;
+- family dialogue is warmer and more conversational;
+- Maruo's `Nói thẳng ra!!` stays intact but the surrounding Vietnamese is less stiff;
+- narrator punchlines remain dry and lightly teasing.
+
 ## Current editorial total
 
 - unique source rows translated: **1,018**
@@ -67,7 +80,8 @@ Highlights:
 - tone consistency pass 02: **12 existing rows** refined
 - tone consistency pass 03: **18 existing rows** refined
 - quiz naturalness pass 01: **15 existing rows** refined
-- total existing rows with explicit second-pass editorial attention so far: **80 passes/row-revisions** (not unique-source additions)
+- tone consistency pass 04: **20 existing rows** refined
+- total existing rows with explicit second-pass editorial attention so far: **100 passes/row-revisions** (not unique-source additions)
 
 ## Rule
 
