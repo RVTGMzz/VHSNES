@@ -1,6 +1,6 @@
 # HANDOFF CURRENT — Chibi Maruko-chan SNES Việt hóa
 
-Updated: 2026-09-17 +07
+Updated: 2026-09-18 +07
 Branch: `chibi-maruko-bootstrap-01`
 Repo: `ronvotri/Viet-Hoa-SNES`
 
@@ -27,7 +27,7 @@ Do not restart font reverse from scratch.
 - no copier header
 - clean checksum `0x1115`, complement `0xEEEA`
 
-Always build from this exact clean ROM.
+Always derive reproducible release work from this clean-ROM contract, while current runtime continuation uses the accepted pre-GBA baseline described below.
 
 ## Translation progress
 
@@ -47,25 +47,9 @@ Covered coherent direct-text banks include:
 
 Tone stays cute school/family comedy. Do not rewrite competition language into combat/RPG language.
 
-### Karaoke singable pass V1
-
-File:
-
-`translation/source/karaoke_batch01_singable_v1_vi.csv`
-
-This is a second-pass lyric draft for all 28 karaoke rows. It keeps `vi_full` intact and adds `vi_singable_v1` with shorter, more rhythmic Vietnamese phrasing.
-
-Important:
-
-- this does not increase the 1,018 unique source-row count;
-- it is not yet timing-validated or syllable-fit proven;
-- do not patch it into ROM until the karaoke timing/layout path is audited.
-
 ### Editorial status
 
-Tracker:
-
-`translation/EDITORIAL_PROGRESS.md`
+Tracker: `translation/EDITORIAL_PROGRESS.md`
 
 Current explicit second-pass attention:
 
@@ -74,13 +58,16 @@ Current explicit second-pass attention:
 - tone consistency pass 02: 12 existing rows;
 - tone consistency pass 03: 18 existing rows;
 - quiz naturalness pass 01: 15 existing rows;
-- total: **80 row-revisions/passes**, not new source rows.
+- tone consistency pass 04 early story: 20 existing rows;
+- total: **100 row-revisions/passes**, not new source rows.
+
+`vi_full` remains canonical meaning. Editorial/runtime-shortened forms stay separate.
 
 ## Direct-text coverage conclusion
 
 The currently proven large coherent CP932 direct-text banks are meaning-covered. Do not inflate untranslated counts from scanner false positives or random binary that happens to decode as Japanese.
 
-Next translation work should come from newly located player-facing assets or from editorial passes such as quiz/story naturalness and karaoke timing/singability, not from blindly translating scanner noise.
+Next translation work should come from newly located player-facing assets, editorial polish, or guarded runtime insertion, not from blindly translating scanner noise.
 
 ## Graphics/tilemap track remains separate
 
@@ -117,7 +104,7 @@ Proven glyph mapping:
 - `る` -> `0x0054`
 - `？` -> `0x0150`
 
-The letterforms visually match the already-reversed Chibi font artwork, but storage is not a simple direct string. Simple contiguous/interleaved CP932, glyph-ID, and masked tilemap hypotheses have all failed; prioritize tracing screen setup / VRAM asset / indirect pointer structures.
+The letterforms match the reversed Chibi font artwork, but storage is not a simple direct string. Contiguous/interleaved CP932, glyph-ID, and masked tilemap hypotheses failed; prioritize tracing screen setup / VRAM asset / indirect pointer structures.
 
 ## Renderer/font proven facts
 
@@ -131,12 +118,13 @@ Full reverse note: `docs/REVERSE_FONT_001.md`.
 - each page: 128x128 bitmap, logical 10x10 grid of 12x12 cells
 - glyph ID high byte = page 0..9; low byte = cell index 0..99
 
-Vietnamese codepage architecture remains:
+Vietnamese codepage architecture:
 
 - dedicated lead `0x84`;
 - mapping base `0x29A74`;
 - 160 Unicode entries;
-- conservative direct-text corpus has zero decoded lead-0x84 characters.
+- conservative direct-text corpus has zero decoded lead-0x84 characters;
+- committed runtime codepage: `translation/codepage/vi_codepage_v4_fe4_native.csv`.
 
 ## Font baseline status
 
@@ -152,20 +140,58 @@ Key runtime evidence:
 
 ### Canonical pre-GBA runtime state
 
-**Correction:** Build 022 was a mistaken reconstruction. It restored the visible menu probe strings back to clean Japanese, which the user did not ask for. Build 022 is superseded and must not be used as the working baseline.
+Build 022 was a mistaken reconstruction that restored visible menu test strings back to Japanese. It is superseded and must not be used.
 
-Build 023 restores the **exact pre-GBA runtime state of Probe 019**, including its Vietnamese test strings and the accepted pre-GBA font/codepage state. It is byte-for-byte identical to Probe 019.
+Build 023 restores the **exact pre-GBA runtime state of Probe 019**, including the Vietnamese test strings and accepted pre-GBA font/codepage state. It is byte-for-byte identical to Probe 019.
 
-Static facts for Build 023:
+Build 023 static facts:
 
-- output name: `Chibi_Maruko_Build_023_PRE_GBA_STATE_RESTORED_READY.sfc`
-- exact match to Probe 019: PASS
+- output `Chibi_Maruko_Build_023_PRE_GBA_STATE_RESTORED_READY.sfc`
 - checksum `0x9B04`
 - complement `0x64FB`
 - SHA-1 `a1cdd19934ec59cf9cc1142e69730bd27efe7820`
 - SHA-256 `b6ee74bbaee07b385eca78f94e03e6cc65842ab1c88f66027f6811b67e890498`
 
-Treat **Build 023 / Probe 019 state** as the temporary working runtime baseline. The Golden Sun donor changes are discarded. Do not silently restore translated/test-visible text back to Japanese when reverting font experiments.
+Treat Build 023 / Probe 019 state as the temporary font/codepage runtime baseline.
+
+## Build 024 — compact Vietnamese main menu
+
+New runtime candidate file:
+
+`translation/runtime/main_menu_compact_v1.csv`
+
+Builder:
+
+`tools/build_main_menu_compact_v1.py`
+
+Build 024 applies ten exact-fit Vietnamese labels on top of Build 023 without changing the accepted font/codepage. Full source translations remain untouched in `translation/source/main_menu_vi.csv`.
+
+Runtime labels:
+
+- `ストーリーモード` -> `Truyện`
+- `対戦モード` -> `Đấu`
+- `チーム対戦モード` -> `Đấu đội`
+- `まるこＱ` -> `M.Q`
+- `まるこペイント` -> `Tập vẽ`
+- `まるこみくじ` -> `Bói`
+- `針切カラオケ` -> `Hát`
+- `サウンド` -> `Âm`
+- `ステレオ` -> `ST`
+- `モノラル` -> `Mono`
+
+These are compact fixed-field runtime labels, **not final replacements for the fuller meaning layer**. `ST` in particular is temporary until field expansion/relocation is proven.
+
+Build 024 static facts:
+
+- output `Chibi_Maruko_Build_024_MAIN_MENU_VI_COMPACT_READY.sfc`
+- checksum `0x9969`
+- complement `0x6696`
+- SHA-1 `9616e9937e0cfbd3b5294bbf7beff4dd4725301a`
+- SHA-256 `4dc1ca459a4c04558bc421937ee6110b286fe19a9e94956b40e797777e4d863e`
+- 10/10 field-fit PASS
+- overlap 0 PASS
+- diff surface: only ten text spans + checksum/complement
+- Runtime PASS: **NOT YET**; requires user screenshot/gameplay confirmation.
 
 ## Runtime separation
 
@@ -174,16 +200,17 @@ No bulk Story / Quiz / Fortune / Minigame / Karaoke / Credits translation has be
 Keep these layers separate:
 
 1. `vi_full` meaning source;
-2. optional editorial/runtime candidates;
-3. pre-GBA Chibi font/codepage layer;
-4. graphics/tilemap text.
+2. editorial overrides;
+3. compact/runtime candidates;
+4. pre-GBA Chibi font/codepage layer;
+5. graphics/tilemap text.
 
 ## Next high-value work
 
-1. continue editorial translation passes where wording is still stiff, especially remaining Maruko Q banks and Story early batches;
-2. trace the mode-selection screen setup to locate the actual source asset for `どれにする？`;
-3. locate Start / Password / Continue / ending visual text paths;
-4. build guarded small runtime insertion batches from the 1,018-row meaning layer on top of the **Build 023 / Probe 019 pre-GBA state**;
+1. validate Build 024 main menu when the user next tests it;
+2. continue editorial passes on remaining Story/Maruko Q text;
+3. design guarded direct-text insertion batches for story/dialogue while preserving control bytes;
+4. trace the mode-selection screen asset for `どれにする？` and other Start/Password/Continue/Ending visual text;
 5. do not resume Golden Sun donor work for Chibi unless the user explicitly asks.
 
 ## Frozen workflow
