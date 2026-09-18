@@ -222,6 +222,21 @@ Key UI conventions are now:
 
 Release-intent source-row count remains **1,018**.
 
+## Unified game-flow UI wording
+
+Added:
+
+- `translation/editorial/ui_choice_flow_pass02.csv`
+- `translation/runtime/graphics_ui_labels_v1.csv`
+
+The recurring UI vocabulary is now frozen around:
+
+**Bắt đầu / Mật khẩu / Tiếp tục / Thoát / Có / Không / Dễ / Vừa / Khó / Chơi / CPU / Nghỉ / Thắng / Thua / Kết thúc**
+
+`やめる` is resolved to **Thoát** for the Story Mode quit context.
+
+This does not create a new runtime build and does not change the **1,018** proven release-intent source-row count.
+
 ## Editorial / runtime rules
 
 - keep `vi_full` fully accented and meaning-first;
