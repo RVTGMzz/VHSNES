@@ -12,6 +12,6 @@ __LOCALIZATION_CREDIT__,"Việt hóa bởi VôtriValley",graphics_target_new_cre
 勝ち,Thắng,graphics_target_verified_visible,"user screenshot of large victory card + internal win descriptor at 0x28732","large graphic; not ordinary direct-text"
 敗けた,Thua,graphics_target_inferred,"internal lose descriptor at 0x2875E","verify exact visible result graphic wording before insertion"
 コンティニュー,Tiếp tục,graphics_target_inferred,"internal Continue descriptor at 0x2878A","actual retail visible asset path unresolved"
-やめる,Hủy / Thoát,graphics_target_inferred,"internal quit-story descriptor at 0x287AC","choose Hủy vs Thoát only after exact visible screen context is verified"
-最終勝利,Chiến thắng cuối,graphics_target_inferred,"internal final-victory descriptor at 0x287E0","descriptor only; actual visible title/result asset unresolved"
+やめる,Thoát,graphics_target_context_resolved,"internal quit-story descriptor at 0x287AC","descriptor explicitly identifies Story Mode quit screen; visible asset path still unresolved"
+最終勝利,Chiến thắng cuối cùng!,graphics_target_inferred,"internal final-victory descriptor at 0x287E0","natural Vietnamese result wording; descriptor only; actual visible title/result asset unresolved"
 エンディング,Kết thúc,graphics_target_inferred,"internal Ending descriptor at 0x287FC","actual visible ending graphic/title path unresolved"
