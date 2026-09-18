@@ -349,6 +349,25 @@ Proof gate:
 
 `reset/title setup -> BG/VRAM/DMA path -> DMA source -> decoded title asset -> visible title artwork`
 
+### Graphics asset render probe 001
+
+Added:
+
+- `tools/render_snes_graphics_probe.py`
+- `docs/GRAPHICS_ASSET_RENDER_PROBE_001.md`
+
+Purpose: once G0/G1 tracing proves a source graphics range, render candidate SNES 2bpp/4bpp tiles or a raw 16-bit tilemap to PNG for visual identity proof.
+
+Static tests:
+
+- Python compile: **PASS**
+- synthetic 2bpp decode: **PASS**
+- synthetic 4bpp decode: **PASS**
+- tile flip handling: **PASS**
+- dependency-free PNG writer: **PASS**
+
+A recognizable render is not enough by itself; screen setup / DMA / pointer reachability still has to prove the asset path.
+
 ### Graphics Batch G1
 
 Reverse the actual rendered asset path for:
