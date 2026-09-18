@@ -186,9 +186,12 @@ The release-intent source count remains **1,018** because no new player-facing J
 New second-pass work:
 
 - `translation/editorial/tone_consistency_pass05_story_mid.csv`: **32** Story Batch 02 revisions;
-- `translation/editorial/fortune_naturalness_pass01.csv`: **24** Fortune revisions.
+- `translation/editorial/fortune_naturalness_pass01.csv`: **24** Fortune revisions;
+- `translation/editorial/quiz_naturalness_pass02.csv`: **36** Maruko Q Batch 02 revisions.
 
-These are meaning-preserving editorial improvements, not new source-row discoveries. See `translation/EDITORIAL_PROGRESS.md`.
+The latest Quiz pass also corrects several source-faithfulness issues, including `心にうたれ`, `しるよしもない`, and `だがし屋`.
+
+These are editorial improvements to already-proven source rows, not new source-row discoveries. See `translation/EDITORIAL_PROGRESS.md`.
 
 ## Editorial / runtime rules
 
