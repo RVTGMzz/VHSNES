@@ -259,6 +259,18 @@ Cumulative explicit editorial row revisions are now **247**.
 
 Do not re-invent UI wording in later build scripts; derive from the glossary unless new runtime evidence changes context.
 
+## UI localization coverage audit
+
+Added `docs/UI_LOCALIZATION_COVERAGE_001.md`.
+
+Current UI-language conclusion:
+
+- proven direct-text menu/setup/control/quiz/karaoke UI has Vietnamese wording coverage;
+- graphics G0–G3 wording is frozen;
+- remaining UI bottleneck is now asset recovery / layout, not untranslated wording;
+- fields marked `runtime_needs_expansion` should be expanded instead of degraded into poor abbreviations;
+- internal QA descriptors remain excluded from retail UI.
+
 ## Direct-text audit after Build 035
 
 Whole-ROM audit found only 13 unchanged kana-rich candidates.
