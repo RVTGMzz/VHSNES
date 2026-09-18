@@ -115,6 +115,19 @@ The tracer does **not** patch ROM bytes. It is intended to establish the missing
 
 At the checkpoint that added the tool, no canonical ROM binary was available in the active runtime, so the tracer has not yet produced a clean-ROM report. Therefore there is still **no proven G1 asset offset** and no graphics build may be claimed from this checkpoint alone.
 
+## G1 Shape Probe 004
+
+The graphics reverse track now has a second independent evidence layer:
+
+- `tools/scan_g1_shape_fingerprints.py` extracts the real 12x12 source glyph masks for all G1 Japanese characters and scans candidate raw 1bpp / SNES 2bpp / 4bpp asset layouts.
+- `tools/correlate_g1_evidence.py` cross-ranks those shape clusters against pointer/DMA/xref evidence from `trace_g1_render_path.py`.
+
+The intended promotion rule is deliberately strict: a multi-glyph bitmap cluster becomes high-priority only when a candidate pointer target lands inside it. Even then, it is still only a reverse target until the actual screen setup reaches that path and the decoded asset reproduces the visible label.
+
+Static fixture validation for both new tools is **PASS**. No canonical-ROM execution is claimed yet because the binary was unavailable in the active runtime.
+
+See `docs/G1_SHAPE_PROBE_004.md`.
+
 ## Next action
 
 Reverse the **actual rendered asset path** for Batch G1:
