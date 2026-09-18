@@ -172,6 +172,23 @@ Static facts:
 
 See `docs/RUNTIME_BUILD_035_CHECKPOINT.md`.
 
+## Latest translation/editorial work
+
+Meaning-first player-facing coverage remains **1,018 source rows**. No scanner noise was promoted as new translation.
+
+Latest editorial additions:
+
+- Story Batch 02 tone consistency pass 05: **32** rows;
+- Maruko Fortune naturalness pass 01: **24** rows;
+- cumulative explicit editorial row revisions: **156**.
+
+Files:
+
+- `translation/editorial/tone_consistency_pass05_story_mid.csv`
+- `translation/editorial/fortune_naturalness_pass01.csv`
+
+These refine existing `vi_full` meanings and do not change the Build 035 runtime claim.
+
 ## Direct-text audit after Build 035
 
 Whole-ROM audit found only 13 unchanged kana-rich candidates.
