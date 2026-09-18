@@ -10,6 +10,7 @@ Tiếp tục dự án Việt hóa **Chibi Maruko-chan SNES** từ repo `ronvotri
 - `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/G1_RENDER_PATH_TRACE_003.md`
 - `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/G1_SHAPE_PROBE_004.md`
 - `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/GRAPHICS_G0_TITLE_SCREEN_PLAN.md`
+- `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/G0_BOOT_TITLE_TRACE_001.md`
 - `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/UI_LOCALIZATION_COVERAGE_001.md`
 
 Canonical clean ROM SHA1: `08a2415362f69788ec76b1a36044dc1f1a5f2ea1`.
@@ -90,6 +91,21 @@ Also read:
 - `translation/runtime/ui_auxiliary_compact_v2.csv`
 
 The UI glossary is now the preferred language authority for all proven player-facing UI. Only change it when new screen evidence proves a context mismatch.
+
+## G0 title reverse first
+
+Before G1, run `tools/trace_g0_title_boot.py` on the exact clean ROM.
+
+Prioritize a boot-near routine only when it shows coherent:
+
+- BG mode/tilemap/tile-data setup;
+- VRAM address/data setup;
+- DMA channel configuration;
+- MDMA trigger.
+
+Then prove the DMA source pointer and decode the source graphics before any title write.
+
+Do not patch a high-scoring routine by score alone.
 
 ## Main task now: graphics/tilemap reverse
 
