@@ -392,6 +392,25 @@ Current limitation remains the missing canonical binary in the active runtime, s
 
 If top ROM-backed candidates fail visual decode, investigate compressed/WRAM staging rather than guessing offsets.
 
+### G0 WRAM staging trace 003
+
+Added:
+
+- `tools/trace_wram_staging_candidates.py`
+- `docs/G0_WRAM_STAGING_TRACE_003.md`
+
+This is the fallback when a title DMA source lives in WRAM `$7E/$7F` rather than directly in ROM.
+
+The tracer reports conservative staging/decompressor candidates via:
+
+- exact 24-bit WRAM literals;
+- long stores into the DMA source span;
+- MVN/MVP block moves touching the source bank.
+
+Static validation: **PASS**.
+
+Do not interpret weak WRAM hits as asset proof. If needed, move to targeted disassembly/emulator tracing around the proven title DMA path.
+
 ### Graphics Batch G1
 
 Reverse the actual rendered asset path for:
