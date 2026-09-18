@@ -9,6 +9,7 @@ Tiếp tục dự án Việt hóa **Chibi Maruko-chan SNES** từ repo `ronvotri
 - `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/HEADING_REVERSE_002.md`
 - `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/G1_RENDER_PATH_TRACE_003.md`
 - `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/G1_SHAPE_PROBE_004.md`
+- `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/GRAPHICS_G0_TITLE_SCREEN_PLAN.md`
 
 Canonical clean ROM SHA1: `08a2415362f69788ec76b1a36044dc1f1a5f2ea1`.
 
@@ -49,6 +50,18 @@ Build 034 statically repaired issues reported after Build 033:
 - dot-below disappearing.
 
 These fixes are inherited by Build 035 but are **not yet runtime-release PASS**.
+
+## Added Graphics Batch G0 — title / intro
+
+The user wants the first title screen localized as well.
+
+Frozen presentation:
+
+- `ちびまる子ちゃん めざせ！南のアイランド！！` -> **Chibi Maruko-chan: Tiến tới đảo phương Nam!!**
+- add small credit: **Việt hóa bởi VôtriValley**
+- preserve original publisher/copyright attribution.
+
+Reverse the actual title-screen graphics path before writing; do not assume the 12x12 direct-text renderer.
 
 ## Main task now: graphics/tilemap reverse
 
