@@ -8,6 +8,7 @@ Tiếp tục dự án Việt hóa **Chibi Maruko-chan SNES** từ repo `ronvotri
 - `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/HEADING_REVERSE_001.md`
 - `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/HEADING_REVERSE_002.md`
 - `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/G1_RENDER_PATH_TRACE_003.md`
+- `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/G1_SHAPE_PROBE_004.md`
 
 Canonical clean ROM SHA1: `08a2415362f69788ec76b1a36044dc1f1a5f2ea1`.
 
@@ -78,6 +79,13 @@ Then G3:
 - ending/chapter/large title cards
 
 For G1, determine whether the actual visible asset uses raw 2bpp/4bpp tiles, tilemap composition, compressed graphics, or another renderer. Do not guess offsets.
+
+A second read-only layer now also exists:
+
+- `tools/scan_g1_shape_fingerprints.py`
+- `tools/correlate_g1_evidence.py`
+
+Run these after the render tracer. The shape scanner searches visual fingerprints for all three G1 targets under raw 1bpp and SNES 2bpp/4bpp hypotheses; the correlator ranks clusters that are also reached by candidate pointer tables. Do not treat a shape hit alone as a patch offset.
 
 A read-only tracer now exists at:
 
