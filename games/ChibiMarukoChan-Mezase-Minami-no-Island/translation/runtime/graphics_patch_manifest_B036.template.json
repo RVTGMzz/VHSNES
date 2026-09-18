@@ -1,0 +1,17 @@
+{
+  "schema": "chibi.graphics.patch.v1",
+  "ready": false,
+  "base": {
+    "name": "Chibi_Maruko_Build_035_QUIZ01_CREDITS_PASS_READY.sfc",
+    "size": "0x200000",
+    "sha1": "054380f9b452f245471e6309eb33c7486d581462",
+    "sha256": "f8fb662a9e1b8fc5a5ff689f690ceaf332055ed86983e52b476a78852e4fd58d"
+  },
+  "patches": [],
+  "notes": [
+    "TEMPLATE ONLY. Do not build until every patch has a proven asset span.",
+    "Each patch must provide id, offset, length, expected_original_sha256 and exactly one replacement_file or replacement_hex.",
+    "Do not store the commercial ROM in the repository.",
+    "G0-G3 graphics patches remain separately auditable even if assembled into one Build 036."
+  ]
+}
