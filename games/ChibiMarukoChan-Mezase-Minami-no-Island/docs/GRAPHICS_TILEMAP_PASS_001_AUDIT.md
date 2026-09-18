@@ -96,6 +96,25 @@ Therefore the still-visible Japanese in user screenshots should now be treated a
 - Do not claim Runtime PASS until the user tests the exact affected screen.
 - Prefer one high-information graphics probe or a larger coherent batch because the user wants to minimize repeated testing.
 
+## G1 trace infrastructure checkpoint
+
+A new read-only helper now exists:
+
+`tools/trace_g1_render_path.py`
+
+It is documented in:
+
+`docs/G1_RENDER_PATH_TRACE_003.md`
+
+The tracer does **not** patch ROM bytes. It is intended to establish the missing evidence chain by collecting:
+
+- xrefs to the screen/menu/descriptor anchors;
+- direct calls to the proven parser and glyph renderer;
+- bank-`$85` VRAM/PPU/DMA register stores and nearby fixed-size control-flow targets;
+- candidate local and long ROM-pointer runs.
+
+At the checkpoint that added the tool, no canonical ROM binary was available in the active runtime, so the tracer has not yet produced a clean-ROM report. Therefore there is still **no proven G1 asset offset** and no graphics build may be claimed from this checkpoint alone.
+
 ## Next action
 
 Reverse the **actual rendered asset path** for Batch G1:
