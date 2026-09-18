@@ -1,22 +1,22 @@
 # HANDOFF CURRENT — Chibi Maruko-chan SNES Việt hóa
 
-Updated: 2026-09-18 +07
-Branch: `chibi-maruko-bootstrap-01`
+Updated: 2026-09-18 +07  
+Branch: `chibi-maruko-bootstrap-01`  
 Repo: `ronvotri/Viet-Hoa-SNES`
 
 ## Current milestone
 
-The project is now on a **large runtime insertion checkpoint** using the accepted pre-GBA Chibi Vietnamese font/codepage layer.
+The project has finished the large **direct-text insertion sweep** for the currently discovered coherent player-facing banks and has now moved to the **graphics/tilemap/asset reverse track** for the remaining visible Japanese.
 
-The Golden Sun GBA donor-font experiment was rejected by the user for Chibi and must not be reused unless explicitly reopened.
+Latest large direct-text candidate:
 
-Visible-menu architecture remains runtime-proven as:
+`Chibi_Maruko_Build_035_QUIZ01_CREDITS_PASS_READY.sfc`
 
-```text
-2-byte game code -> 16-bit glyph ID -> 12x12 raw 1bpp bitmap
-```
+Do **not** commit ROMs to GitHub.
 
-Do not restart font reverse from scratch.
+Build 035 runtime status: **UNTESTED**. Do not call whole-game Runtime PASS.
+
+The user prefers **fewer, larger tests**. Avoid tiny sequential test builds unless a narrow diagnostic probe is technically necessary.
 
 ## Canonical clean ROM contract
 
@@ -29,139 +29,253 @@ Do not restart font reverse from scratch.
 - no copier header
 - clean checksum `0x1115`, complement `0xEEEA`
 
-Always derive reproducible release work from this clean-ROM contract.
+Always derive reproducible work from this exact clean-ROM contract.
 
-## Translation source status
+## Translation meaning layer
 
-Committed player-facing / release-intent meaning layer remains **1,018 source rows**. Detailed tracker: `translation/TRANSLATION_PROGRESS.md`.
+Committed player-facing / release-intent meaning layer remains **1,018 source rows**.  
+Tracker: `translation/TRANSLATION_PROGRESS.md`.
 
-Covered meaning banks include:
+Meaning-covered banks include:
 
-- main story through the discovered ending sequence;
-- credits and tutorial/rules;
-- Maruko Q quiz banks;
-- Maruko Fortune / `まるこみくじ`;
-- minigame setup/rules/UI;
-- karaoke meaning-first lyrics;
+- main Story through the discovered ending sequence;
+- Maruko Q / Quiz banks;
+- Maruko Fortune;
+- Minigame UI / rules / setup;
+- Karaoke meaning layer + singable V1 draft;
 - stage names;
+- credits;
 - quiz misc/result UI;
-- known seed strings and main-menu meanings.
+- main-menu meanings and seed strings.
 
-Tone stays cute school/family comedy. `vi_full` remains canonical meaning; compact runtime forms are a separate layer.
+`vi_full` is canonical meaning-first Vietnamese. Compact runtime forms are a separate layer.
 
-## Font/codepage baseline
+Tone stays cute school/family comedy, not combat RPG.
 
-Proven reverse facts: `docs/REVERSE_FONT_001.md`.
+## Renderer / font / codepage architecture
+
+Proven visible-text architecture:
+
+```text
+2-byte game code -> 16-bit glyph ID -> 12x12 raw 1bpp bitmap
+```
+
+Key reverse facts:
 
 - parser: file `0x283D8`, CPU `$85:83D8`
 - per-lead mapping pointer table: file `0x29756`
 - renderer: file `0x28E7B`, CPU `$85:8E7B`
 - font page pointer table: file `0x295EE`
-- 10 raw 1bpp font pages at `0x128000 .. 0x12C800`, step `0x800`
+- 10 raw 1bpp pages at `0x128000 .. 0x12C800`, step `0x800`
 - each page: 128x128 bitmap, logical 10x10 grid of 12x12 cells
-- glyph ID high byte = page 0..9; low byte = cell index 0..99
+- glyph ID high byte = page; low byte = cell index
 
 Vietnamese codepage:
 
-- dedicated lead `0x84`;
-- mapping base `0x29A74`;
-- 160 Unicode entries;
-- committed runtime codepage: `translation/codepage/vi_codepage_v4_fe4_native.csv`.
+- dedicated lead `0x84`
+- mapping base `0x29A74`
+- 160 Unicode entries
+- canonical runtime map: `translation/codepage/vi_codepage_v4_fe4_native.csv`
 
-Font runtime history:
+Do not restart font reverse from scratch.
 
-- Probe 006: custom `Đ` PASS.
-- Probe 007: multi-glyph Vietnamese codepage PASS, typography weak.
-- Probe 010: best overall FE4/native-width baseline.
-- Probe 019: Probe 010 + targeted lowercase `đ` fix; user accepted it temporarily and asked to continue translation.
-- Probe 020/021: Golden Sun donor experiment rejected for Chibi.
+### Golden Sun donor status
 
-Build 023 is byte-for-byte the accepted pre-GBA Probe 019 runtime state and remains the font/codepage baseline.
+The Golden Sun GBA donor-font experiment was rejected by the user for Chibi.  
+Do **not** reuse it unless explicitly reopened.
 
-## Build 024 — compact Vietnamese main menu
+### Font runtime feedback and current repair state
 
-Build 024 applies ten fixed-field Vietnamese labels on top of Build 023 while keeping full translations intact in `translation/source/main_menu_vi.csv`.
+The user screenshots after Build 033 showed:
 
-Runtime labels include `Truyện`, `Đấu`, `Đấu đội`, `M.Q`, `Tập vẽ`, `Bói`, `Hát`, `Âm`, `ST`, `Mono`.
+- `T` too thick;
+- `V` still thin;
+- uppercase `A/K/L` thin;
+- lowercase `e` thin and floating;
+- lowercase `g` unclear / clipped;
+- circumflex looked reversed / breve-like;
+- dot-below marks disappeared in runtime.
+
+Build 034 applied targeted static repairs:
+
+- medium `T`;
+- thicker `V`;
+- thicker `A/K/L`;
+- lower/thicker `e` family;
+- redrawn `g`;
+- corrected circumflex orientation;
+- dot-below moved upward to survive bottom-row clipping.
+
+These repairs are inherited by Build 035, but **font release PASS is still unconfirmed**.
+
+See: `docs/RUNTIME_BUILD_035_CHECKPOINT.md`.
+
+## Runtime insertion history
+
+### Build 024
+
+Compact Vietnamese main-menu direct fields:
+
+- `Truyện`
+- `Đấu`
+- `Đấu đội`
+- `M.Q`
+- `Tập vẽ`
+- `Bói`
+- `Hát`
+- `Âm`
+- `ST`
+- `Mono`
+
+### Build 027
+
+Large Story checkpoint:
+
+- Story Batch01: 123 runtime fields
+- Story Batch02: 121
+- Story Batch03: 84
+- cumulative Story direct runtime fields: **328**
+
+See `docs/RUNTIME_STORY_BUILD_027.md`.
+
+### Build 028+
+
+Subsequent candidates expanded the direct-text runtime layer with:
+
+- Minigame UI / setup / rules;
+- stage labels;
+- quiz misc/result UI;
+- story wording hotfixes;
+- Fortune insertion;
+- Karaoke direct-text candidates;
+- large Maruko Q / Quiz insertion;
+- direct credits-role labels;
+- targeted font corrections.
+
+### Build 035 — latest direct-text checkpoint
+
+Artifact:
+
+`Chibi_Maruko_Build_035_QUIZ01_CREDITS_PASS_READY.sfc`
 
 Static facts:
 
-- checksum `0x9969`
-- complement `0x6696`
-- SHA-1 `9616e9937e0cfbd3b5294bbf7beff4dd4725301a`
-- SHA-256 `4dc1ca459a4c04558bc421937ee6110b286fe19a9e94956b40e797777e4d863e`
+- base: Build 034
+- new Quiz/direct entries: **65**
+- new Credits role-token patches: **22**
+- changed bytes vs Build034: **3129**
+- checksum `0x6547`
+- complement `0x9AB8`
+- SHA-1 `054380f9b452f245471e6309eb33c7486d581462`
+- SHA-256 `f8fb662a9e1b8fc5a5ff689f690ceaf332055ed86983e52b476a78852e4fd58d`
+- runtime status: **UNTESTED**
 
-Runtime PASS was not yet separately declared for Build 024.
+See `docs/RUNTIME_BUILD_035_CHECKPOINT.md`.
 
-## Build 027 — BIG Story runtime checkpoint
+## Direct-text audit after Build 035
 
-Full note: `docs/RUNTIME_STORY_BUILD_027.md`.
+Whole-ROM audit found only 13 unchanged kana-rich candidates.
 
-The user explicitly requested one large test after inserting as much translated Story content as possible.
+They are not established normal player-facing direct text:
 
-Build chain:
+- internal review/debug descriptors around `0x2865E..0x287FC`;
+- likely effect/debug-like data;
+- binary false positives.
 
-- Build 025: Story Batch 01 compact runtime text, 123 non-overlapping fields.
-- Build 026: Story Batch 02 compact runtime text, 121 fields.
-- Build 027: Story Batch 03 through the discovered ending sequence, 84 fields.
+Therefore the still-visible Japanese reported in screenshots should now be treated as **graphics/tilemap/compressed-asset/alternate-renderer work**, not another broad direct-text sweep.
 
-Cumulative Story runtime fields inserted: **328**.
+## Graphics / tilemap track — CURRENT PRIORITY
 
-Insertion guardrails:
+See `docs/GRAPHICS_TILEMAP_PASS_001_AUDIT.md`.
 
-- source bytes verified against the exact clean ROM before every Story write;
-- preserve known script separator/control-like pairs `81 6F` and `81 A5`;
-- preserve low control bytes following each player-text region;
-- no pointer relocation or field expansion claimed;
-- Vietnamese is wrapped into the existing fixed byte budget through the proven `0x84xx` codepage;
-- overlap rejected;
-- diff surface restricted to target text spans + checksum/complement.
+A descriptor/debug block names the same screens but is **not the retail visible asset**:
 
-Build 027 artifact:
+- `0x286B4`: Start / Password screen descriptor
+- `0x286EA`: `今からやるよ` demo descriptor
+- `0x28714`: VS demo descriptor
+- `0x28732`: win-demo descriptor
+- `0x2875E`: lose-demo descriptor
+- `0x2878A`: Continue-screen descriptor
+- `0x287AC`: quit-story descriptor
+- `0x287E0`: final-victory descriptor
+- `0x287FC`: ending descriptor
 
-`Chibi_Maruko_Build_027_STORY_COMPLETE_READY.sfc`
+Do **not** patch these descriptors and claim the visible Japanese graphic is fixed.
 
-Static facts:
+### Graphics Batch G1
 
-- cumulative Story runtime fields: **328**
-- checksum `0x87CF`
-- complement `0x7830`
-- SHA-1 `9a9280d27c9e96df972e0b21f8b806bf19ef52f7`
-- SHA-256 `ed815e70f1956d37e9fe3023bb651378874de32ebfbbd8544cbc087860f17b04`
-- Batch03 source identity 84/84 PASS
-- overlap 0 PASS
-- diff surface PASS
+Reverse the actual rendered asset path for:
 
-**Runtime status: UNTESTED. Do not call Runtime PASS yet.**
+- `どれにする？` -> **Chọn gì đây?**
+- `はじめから` -> **Bắt đầu**
+- `パスワード` -> **Mật khẩu**
 
-Next user test should boot Build 027, enter `Truyện`, verify the first classroom dialogue renders/advances, then continue through several scene/minigame transitions if practical. If something breaks, record the earliest broken line/freeze and isolate from there instead of restarting font work.
+### Graphics Batch G2
 
-## Graphics/tilemap track remains separate
+Then:
 
-Known visual targets include:
+- `今からやるよ` -> **Bắt đầu thôi!**
+- VS/rule-panel visible graphics:
+  - `ルールをせつめいするよ` -> **Luật chơi**
+  - `２本先取だよ` -> **Thắng 2**
+  - `ゲームの時間は勝つまでだよ` -> **Đến khi thắng**
 
-- `どれにする？` -> `Chọn gì đây?`
-- `はじめから` -> `Bắt đầu`
-- `パスワード` -> `Mật khẩu`
-- `今からやるよ` -> `Bắt đầu thôi!`
-- `ＶＳ` -> `VS`
-- `コンティニュー` -> `Tiếp tục`
-- `エンディング` -> `Kết thúc`
+### Graphics Batch G3
 
-The pink `どれにする？` banner is not a simple contiguous CP932/glyph-ID string. See `docs/HEADING_REVERSE_001.md` and `docs/HEADING_REVERSE_002.md`. Do not guess offsets.
+Then:
 
-## Next high-value work after Build 027 test
+- win graphic `勝ち` -> **Thắng**
+- lose-result graphic -> **Thua**
+- Continue -> **Tiếp tục**
+- quit-story -> **Hủy / Thoát** after exact screen-context verification
+- ending / chapter / large title cards
 
-If Build 027 Story runtime is good:
+## Pink heading reverse
 
-1. keep Build 027 as the new runtime insertion baseline;
-2. apply the same guarded fixed-field method to Quiz / Fortune / Minigame / Karaoke / Credits where practical;
-3. continue tracing visual/tilemap text such as the pink banner and Start/Password/Continue/Ending family;
-4. keep `vi_full` separate from compact runtime forms;
-5. do not resume Golden Sun donor work for Chibi.
+The visible pink `どれにする？` heading is not a simple contiguous direct string.
 
-If Build 027 fails, isolate the earliest failing Story field first.
+Prior searches already rejected:
+
+- exact CP932 sequence;
+- simple alternate/full-width sequence guesses;
+- proven glyph-ID sequence;
+- simple sparse/interleaved representations;
+- simple 16-bit tilemap/index sequence searches.
+
+Docs:
+
+- `docs/HEADING_REVERSE_001.md`
+- `docs/HEADING_REVERSE_002.md`
+
+Do not guess offsets.
+
+## Next high-value work
+
+1. Stay on the graphics/tilemap track.
+2. Reverse the **actual rendered asset path** for Graphics Batch G1.
+3. Determine whether the asset is:
+   - raw 2bpp / 4bpp graphics;
+   - a tilemap using reusable character tiles;
+   - compressed graphics;
+   - or another renderer.
+4. Keep graphics edits as a separately auditable layer on top of Build 035.
+5. Prefer one high-information graphics probe or one larger coherent batch.
+6. Do not reopen broad direct-text scanning unless new runtime evidence proves a genuine untranslated direct-text bank.
+7. Do not call Runtime PASS without user screenshot/gameplay evidence.
 
 ## Frozen workflow
 
-Use Gaia Master-style guardrails, not Gaia Master hardware assumptions. Preserve source identity and control bytes, validate diff surface/checksum, and never call whole-game Runtime PASS from one subsystem screenshot.
+Use Gaia Master-style guardrails, not Gaia Master hardware assumptions.
+
+Preserve:
+
+- exact clean-ROM identity;
+- source identity before writes;
+- control bytes;
+- fixed-field byte-fit where applicable;
+- overlap rejection;
+- diff-surface validation;
+- checksum/complement validation;
+- separate source meaning, runtime compact text, font/codepage, and graphics/tilemap layers.
+
+No ROMs in GitHub.
