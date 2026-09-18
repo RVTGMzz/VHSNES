@@ -191,6 +191,26 @@ Files:
 
 These refine existing `vi_full` meanings and do not change the Build 035 runtime claim.
 
+## UI / game-choice localization pass
+
+Added:
+
+- `translation/editorial/ui_menu_naturalness_pass01.csv`: **31** UI/menu/stage revisions;
+- `translation/runtime/ui_choices_compact_v1.csv`: fixed-field compact candidates.
+
+Frozen UI direction now includes:
+
+- difficulty: **Dễ / Vừa / Khó**;
+- slot states: **Chơi / CPU / Nghỉ**;
+- stage selector: **Màn**;
+- start instruction: **Bấm START**;
+- quiz continue: **Tiếp tục câu đố?**, compact **Tiếp tục?**;
+- yes/no remains **Có / Không** in the natural layer.
+
+Important quality rule: do not degrade Vietnamese into `Ko`, `No`, or `Off` merely because a fixed field is too short. Mark those fields for relocation/expansion instead.
+
+Cumulative explicit editorial row revisions are now **223**.
+
 ## Direct-text audit after Build 035
 
 Whole-ROM audit found only 13 unchanged kana-rich candidates.
