@@ -221,6 +221,26 @@ A descriptor/debug block names the same screens but is **not the retail visible 
 
 Do **not** patch these descriptors and claim the visible Japanese graphic is fixed.
 
+### Graphics Batch G0 — title / intro screen
+
+User explicitly requested the first title screen be localized too.
+
+Visible Japanese title:
+
+- `ちびまる子ちゃん めざせ！南のアイランド！！`
+
+Frozen Vietnamese presentation:
+
+- **Chibi Maruko-chan**
+- **Tiến tới đảo phương Nam!!**
+- small added credit: **Việt hóa bởi VôtriValley**
+
+Preserve the original publisher/production copyright artwork. The VôtriValley line is an additional localization credit, not a replacement copyright.
+
+See `docs/GRAPHICS_G0_TITLE_SCREEN_PLAN.md`.
+
+Actual title asset path is still **UNPROVEN**; no ROM write or Runtime PASS claim yet.
+
 ### Graphics Batch G1
 
 Reverse the actual rendered asset path for:
