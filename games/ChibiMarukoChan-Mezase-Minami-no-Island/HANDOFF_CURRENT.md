@@ -249,6 +249,34 @@ Docs:
 
 Do not guess offsets.
 
+## G1 render-path trace infrastructure
+
+Added read-only tracer:
+
+`tools/trace_g1_render_path.py`
+
+Checkpoint note:
+
+`docs/G1_RENDER_PATH_TRACE_003.md`
+
+The tracer is designed to connect the G1 screens to an actual render source by reporting:
+
+- xrefs to descriptor/menu anchors;
+- direct calls to the proven parser/renderer;
+- bank `$85` VRAM/PPU/DMA register stores;
+- nearby control-flow targets;
+- candidate 16-bit and 24-bit pointer tables.
+
+Important current status:
+
+- tool syntax check: **PASS**;
+- clean-ROM execution in the current session: **NOT RUN** because the commercial ROM/build binary was not available in the active runtime;
+- proven G1 asset offset: **NO**;
+- G1 ROM write: **NO**;
+- G1 Runtime PASS: **NO**.
+
+Do not convert this infrastructure checkpoint into an asset-path claim. The next proof must connect screen setup -> renderer/DMA/pointer -> source asset before any graphics write.
+
 ## Next high-value work
 
 1. Stay on the graphics/tilemap track.
