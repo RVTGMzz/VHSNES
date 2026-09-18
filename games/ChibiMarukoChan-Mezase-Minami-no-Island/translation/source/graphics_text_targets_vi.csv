@@ -1,4 +1,6 @@
 source_jp,vi_full,status,evidence,notes
+ちびまる子ちゃん めざせ！南のアイランド！！,"Chibi Maruko-chan: Tiến tới đảo phương Nam!!",graphics_target_verified_visible_title,"verified title-screen screenshot/reference","title/logo artwork; preserve Chibi Maruko-chan brand name; reverse actual title asset before write"
+__LOCALIZATION_CREDIT__,"Việt hóa bởi VôtriValley",graphics_target_new_credit,"user-requested localization credit","new line on title/intro screen; keep separate from original copyright; exact placement after asset/layout reverse"
 どれにする？,Chọn gì đây?,graphics_target_verified_visible,"user screenshot of main menu","pink-banner heading; prior direct CP932/glyph-ID/interleaved/simple tilemap searches failed; actual asset path unresolved"
 はじめから,Bắt đầu,graphics_target_verified_visible,"user screenshot + internal screen descriptor at 0x286B4","descriptor is not the retail visible asset"
 パスワード,Mật khẩu,graphics_target_verified_visible,"user screenshot + internal screen descriptor at 0x286B4","descriptor is not the retail visible asset"
