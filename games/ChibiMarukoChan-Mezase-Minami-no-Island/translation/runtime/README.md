@@ -47,3 +47,26 @@ Do not force poor abbreviations merely to fit. Fields such as **Đến khi thắ
 
 This layer is a runtime candidate only. Full natural Vietnamese remains in the source/editorial layers.
 
+## Graphics UI labels V1
+
+`graphics_ui_labels_v1.csv` freezes full-diacritic redraw targets for the remaining graphics-driven game-flow UI.
+
+Examples:
+
+- **Chọn gì đây?**
+- **Bắt đầu**
+- **Mật khẩu**
+- **Bắt đầu thôi!**
+- **Luật chơi**
+- **Thắng 2**
+- **Đến khi thắng**
+- **Thắng / Thua**
+- **Tiếp tục**
+- **Thoát**
+- **Chiến thắng cuối cùng!**
+- **Kết thúc**
+
+These are graphics-layer wording candidates, not direct-text byte-fit strings. Preserve full Vietnamese whenever the redrawn asset path allows it.
+
+`Thoát` is context-resolved for `やめる` from the Story Mode quit descriptor. Other descriptor-only result/ending assets still require retail-screen/path confirmation before redraw.
+
