@@ -2,7 +2,7 @@
 
 Updated: 2026-09-18 +07  
 Branch: `chibi-maruko-bootstrap-01`  
-Repo: `ronvotri/Viet-Hoa-SNES`
+Repo: `RVTGMzz/VHSNES`
 
 ## Current milestone
 
@@ -376,6 +376,48 @@ Implications for Chibi:
 - G1-G3 pre-rendered Vietnamese graphics remain a strong strategy.
 
 Do not copy reference ROM bytes/assets/addresses. Reuse only the architectural ideas.
+
+## G1 Story entry execution proof 008
+
+Read:
+
+- `docs/G1_STORY_ENTRY_SCREEN_PROOF_008.md`
+
+Current proven retail route:
+
+`main menu Story index 0 -> route $A0 -> $70=$A0 -> $80:D328 -> $88:F5F1 -> $85:E959`
+
+The G1 module loads:
+
+- `$82:AF23` — stage/background package
+- `$82:AA30` — OBJ tile package at VRAM `0x6000`
+- `$82:AA50` — OBJ tile package at VRAM `0x7000`
+- `$82:B364` — multi-command metasprite/layout script
+
+The module state table is:
+
+- `$85:E97F`
+- `$85:EA09`
+- `$85:EAB8`
+- `$85:EB84`
+- `$85:EB8C`
+
+Input state `$85:EAB8` toggles `$1404` between 0/1. Result state returns `$1406=$1404+1`, proving result 1 = first choice and result 2 = second choice.
+
+Offline reconstruction of `$82:AF23` reproduces the Story entry stage-curtain background.
+
+Therefore:
+
+- G1 screen execution path: **STATIC PASS**
+- G1 stage/background identity: **STATIC PASS**
+- G1 two-choice logic: **STATIC PASS**
+- visible G1 label source: **UNPROVEN**
+- graphics ROM write: **NO**
+- Runtime PASS: **NO**
+
+Added reproducible tool:
+
+`tools/trace_g1_story_entry_flow.py`
 
 ## Direct-text audit after Build 035
 
