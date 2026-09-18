@@ -146,6 +146,15 @@ Therefore broad direct-text scanning is no longer the current priority.
 
 ## Graphics / tilemap translation targets — CURRENT PRIORITY
 
+### Batch G0 — title / intro
+
+- `ちびまる子ちゃん めざせ！南のアイランド！！` -> **Chibi Maruko-chan: Tiến tới đảo phương Nam!!**
+- additional localization credit -> **Việt hóa bởi VôtriValley**
+- preserve original copyright/publisher attribution
+- actual title-screen asset path still requires reverse
+
+
+
 See:
 
 - `translation/source/graphics_text_targets_vi.csv`
