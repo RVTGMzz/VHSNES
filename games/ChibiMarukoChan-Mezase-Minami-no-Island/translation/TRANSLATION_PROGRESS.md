@@ -1,6 +1,6 @@
 # Translation progress — Chibi Maruko-chan
 
-Updated: 2026-09-18 +07
+Updated: 2026-09-18 +07  
 Branch: `chibi-maruko-bootstrap-01`
 
 ## Meaning-first Vietnamese source layer
@@ -26,30 +26,32 @@ Current committed **player-facing / release-intent** translated rows:
 
 Additional reverse/reference material:
 
-- `translation/source/internal_debug_reference_vi.csv`: 10 translated internal QA/debug rows, **excluded from the 1,018 release-intent count**
-- `translation/source/graphics_text_targets_vi.csv`: visual-text targets/hypotheses for later graphics/tilemap work, not direct-text rows
+- `translation/source/internal_debug_reference_vi.csv`: internal QA/debug reference, excluded from the 1,018 release-intent count
+- `translation/source/graphics_text_targets_vi.csv`: visual-text targets for graphics/tilemap work, not direct-text rows
 
-These counts are source-translation rows, NOT whole-game completion percentage. Scanner output still contains false positives, split strings, control/layout data, and numeric/count artifacts.
+These counts are source-translation rows, **not whole-game completion percentage**.
+
+`vi_full` remains the canonical meaning-first translation. Runtime compact strings are allowed to shorten for fixed fields but must not replace `vi_full`.
 
 ## Main story
 
-The coherent direct-text story arc is translated approximately from `0x181CC .. 0x1DE81`, through the currently discovered visible ending sequence.
+The coherent direct-text story arc is meaning-covered through the currently discovered ending sequence.
 
 Tone remains frozen in `translation/STYLE_GUIDE_VI.md`: cute school/family comedy, not combat RPG.
 
-Editorial polish has now explicitly reviewed 100 row-revisions/passes across story, quiz, and karaoke. See `translation/EDITORIAL_PROGRESS.md`.
+The large runtime Story chain inserted **328** discovered direct Story fields by Build 027.
 
-## Maruko Q
+See `docs/RUNTIME_STORY_BUILD_027.md`.
 
-The large coherent quiz banks are translated through the currently discovered direct-text end at approximately `0x368D8`.
+## Maruko Q / Quiz
 
-- Batch 03: `0x31D47 .. 0x33F98`
-- Batch 01: `0x34009 .. 0x34F3E`
-- Batch 02: `0x34F7B .. 0x368D8`
+The large coherent quiz banks are meaning-covered through the currently discovered direct-text end.
 
-Raw-ROM recovery is required whenever the conservative scanner starts inside a full-width digit/Latin character or omits a short numeric field.
+Build 035 added another **65** Quiz/direct runtime entries in the remaining discovered Batch01 region around `0x34009..0x34F3E`.
 
-## Maruko Fortune / `まるこみくじ` — Batch 01
+The current runtime chain also carries the earlier large Quiz insertions.
+
+## Maruko Fortune
 
 Range approximately `0x2BD28 .. 0x2CB92`.
 
@@ -59,107 +61,139 @@ Files:
 - `translation/source/fortune_batch01_part2_vi.csv`
 - `translation/source/fortune_batch01_part3_vi.csv`
 
-Translated headings, wish/money/romance/study fortunes, general advice, lucky items, lucky numbers, and lucky colors.
+Meaning coverage includes wish, money, romance, study, general advice, lucky items, lucky numbers, and lucky colors.
 
-## Minigame UI — Batch 01
+The current runtime chain carries compact Fortune insertion.
+
+## Minigame UI
 
 File: `translation/source/minigame_ui_batch01_vi.csv`
 
-Range approximately `0x288C2 .. 0x28C40`.
+Meaning coverage includes:
 
-Translated ball-throwing, paint/dryer, and pool/pushing rules; controls; rounds-to-win; CPU difficulty; game duration; player 1–4 assignment/status; controller type; stage selector; stage digits `0..9`.
+- ball-throwing rules/controls;
+- paint/dryer rules/controls;
+- pool/pushing rules/controls;
+- rounds;
+- CPU difficulty;
+- game duration;
+- player slots/status;
+- controller type;
+- stage selector/digits.
 
-## Karaoke — Batch 01
+The current runtime chain carries a direct-text Minigame/UI pass. Large Japanese title/rule graphics remain a separate graphics track.
+
+## Karaoke
 
 Files:
 
 - `translation/source/karaoke_batch01_vi.csv`
 - `translation/source/karaoke_batch01_singable_v1_vi.csv`
 
-The karaoke text has a meaning-first Vietnamese translation plus a complete 28-row singable V1 draft. Singable V1 remains timing/layout-unproven and does not replace `vi_full`.
+The 28-row singable V1 draft remains a second-pass runtime-oriented draft and does not replace `vi_full`.
 
-## Stage-name Batch 01
+## Stage names / Credits / Quiz UI
 
-File: `translation/source/stage_names_batch01_vi.csv`
+Meaning-covered source files include:
 
-Translated 15 stage/title strings. Runtime layout path is not yet audited.
+- `translation/source/stage_names_batch01_vi.csv`
+- `translation/source/quiz_ui_misc_vi.csv`
+- `translation/source/credits_vi.csv`
 
-## Quiz misc/result UI
+Build 035 adds **22 compact Credits role-token patches** on top of the prior runtime chain.
 
-File: `translation/source/quiz_ui_misc_vi.csv`
+## Current direct-text runtime checkpoint
 
-Translated dynamic `Câu số` labels, full-clear congratulations, question count, answer count, correct-answer rate, first-try correct count, and the `Có` choice paired with the existing `Không` seed.
+Latest large candidate:
 
-## Graphics / tilemap translation targets
+`Chibi_Maruko_Build_035_QUIZ01_CREDITS_PASS_READY.sfc`
 
-File: `translation/source/graphics_text_targets_vi.csv`.
+Static facts:
 
-Known targets include:
+- base: Build 034
+- new Quiz/direct entries: **65**
+- new Credits role-token patches: **22**
+- changed bytes vs Build034: **3129**
+- checksum `0x6547`
+- complement `0x9AB8`
+- SHA-1 `054380f9b452f245471e6309eb33c7486d581462`
+- SHA-256 `f8fb662a9e1b8fc5a5ff689f690ceaf332055ed86983e52b476a78852e4fd58d`
+- runtime status: **UNTESTED**
 
-- visible pink heading `どれにする？` → `Chọn gì đây?`;
-- `はじめから` → `Bắt đầu`;
-- `パスワード` → `Mật khẩu`;
-- `今からやるよ` → `Bắt đầu thôi!` pending exact on-screen context;
-- `ＶＳ` → `VS`;
-- `コンティニュー` → `Tiếp tục`;
-- `エンディング` → `Kết thúc`.
+See `docs/RUNTIME_BUILD_035_CHECKPOINT.md`.
 
-`どれにする？` is visually verified but its asset/storage path is still unresolved. Simple CP932/glyph-ID/interleaved/tilemap searches did not find an exact storage sequence.
+## Font/codepage status
 
-## Editorial rules
+The current architecture is the proven dedicated `0x84xx` Vietnamese codepage mapped to 12x12 raw 1bpp glyphs.
 
-- `vi_full` stays fully accented and meaning-first;
-- do not shorten source translation to current ROM/font limits;
-- school/minigame competition uses `thi`, `thi đấu`, `so tài`, `vượt qua` rather than combat-heavy language;
-- Maruo's `ズバリ` stays around `Nói thẳng ra!`;
-- Hanawa keeps `Hey`, `baby`, `señorita` where natural;
-- narrator stays dry and lightly teasing;
-- suspicious scanner fragments are verified against raw ROM before translation.
+The Golden Sun GBA donor-font experiment was rejected for Chibi and is not part of the current plan.
 
-## Runtime status
+User runtime screenshots after Build 033 identified several typography defects. Build 034 applied targeted static fixes for T/V/A/K/L/e/g, circumflex orientation, and dot-below visibility. Those changes are inherited by Build 035, but the font is **not yet release-runtime PASS**.
 
-The pre-GBA Vietnamese font/codepage baseline remains Build 023 / Probe 019 state. The Golden Sun GBA donor experiment was rejected for Chibi and is not part of current runtime work.
+Do not reopen broad font reverse unless new runtime evidence requires it.
 
-### Build 024 — compact Vietnamese main menu
+## Direct-text remaining audit
 
-Runtime candidates: `translation/runtime/main_menu_compact_v1.csv`
+After Build 035, a whole-ROM scanner audit found only 13 unchanged kana-rich candidates.
 
-Builder: `tools/build_main_menu_compact_v1.py`
+They are not established ordinary player-facing direct text:
 
-Ten direct mode-selection menu fields now have guarded exact-fit Vietnamese runtime labels on top of Build 023:
+- internal review/debug screen descriptors;
+- likely effect/debug data;
+- likely binary false positives.
 
-- `Truyện`
-- `Đấu`
-- `Đấu đội`
-- `M.Q`
-- `Tập vẽ`
-- `Bói`
-- `Hát`
-- `Âm`
-- `ST`
-- `Mono`
+Therefore broad direct-text scanning is no longer the current priority.
 
-The fuller meanings remain in `translation/source/main_menu_vi.csv`. These compact forms are fixed-field runtime candidates, not a rewrite of `vi_full`.
+## Graphics / tilemap translation targets — CURRENT PRIORITY
 
-Build 024 static facts:
+See:
 
-- SHA-1 `9616e9937e0cfbd3b5294bbf7beff4dd4725301a`
-- SHA-256 `4dc1ca459a4c04558bc421937ee6110b286fe19a9e94956b40e797777e4d863e`
-- checksum `0x9969`, complement `0x6696`
-- 10/10 field-fit PASS
-- diff surface limited to ten menu text spans plus checksum/complement
-- Runtime PASS: **not yet**, pending user gameplay/screenshot confirmation.
+- `translation/source/graphics_text_targets_vi.csv`
+- `docs/GRAPHICS_TILEMAP_PASS_001_AUDIT.md`
+- `docs/HEADING_REVERSE_001.md`
+- `docs/HEADING_REVERSE_002.md`
 
-No bulk Story / Quiz / Fortune / Minigame / Karaoke / Credits runtime insertion has been declared yet. Those require guarded control-byte-aware insertion batches.
+### Batch G1
 
-## Next translation / runtime work
+- `どれにする？` -> **Chọn gì đây?**
+- `はじめから` -> **Bắt đầu**
+- `パスワード` -> **Mật khẩu**
 
-The currently proven large coherent direct-text banks are meaning-covered. Do **not** inflate the untranslated count using binary-looking CP932 false positives.
+### Batch G2
 
-Next high-value work:
+- `今からやるよ` -> **Bắt đầu thôi!**
+- visible VS/rule graphics:
+  - `ルールをせつめいするよ` -> **Luật chơi**
+  - `２本先取だよ` -> **Thắng 2**
+  - `ゲームの時間は勝つまでだよ` -> **Đến khi thắng**
 
-1. validate Build 024 mode-selection menu when convenient;
-2. build the first guarded story/dialogue insertion batch while preserving control bytes;
-3. continue editorial naturalness passes on remaining story/quiz text;
-4. trace `どれにする？` plus Start / Password / Continue / ending graphics paths;
-5. later audit karaoke timing/singability in runtime.
+### Batch G3
+
+- `勝ち` -> **Thắng**
+- lose-result graphic -> **Thua**
+- Continue -> **Tiếp tục**
+- quit story -> **Hủy / Thoát** after exact context confirmation
+- ending/chapter/large title cards
+
+The descriptor block at approximately `0x286B4..0x287FC` names these screens but is **not the actual visible retail asset**.
+
+Do not patch the descriptor text and claim the graphic is translated.
+
+## Editorial / runtime rules
+
+- keep `vi_full` fully accented and meaning-first;
+- keep compact runtime candidates separate;
+- preserve the school/family-comedy tone;
+- preserve source identity/control bytes;
+- do not translate scanner noise to inflate progress;
+- graphics/tilemap is a separate layer from direct text;
+- no Runtime PASS without user screenshot/gameplay evidence;
+- user prefers fewer, larger tests.
+
+## Next work
+
+1. reverse actual Graphics Batch G1 asset paths;
+2. determine raw tiles vs tilemap vs compressed graphics vs alternate renderer;
+3. make one high-information graphics probe or one coherent graphics batch on top of Build 035;
+4. then proceed to G2 and G3;
+5. update `HANDOFF_CURRENT.md` whenever a new asset path/build checkpoint is proven.
