@@ -290,6 +290,11 @@ def main() -> int:
     ap.add_argument("--start", type=lambda s: int(s, 0), default=0)
     ap.add_argument("--end", type=lambda s: int(s, 0), default=ROM_SIZE)
     ap.add_argument("--lookback", type=lambda s: int(s, 0), default=0x80)
+    ap.add_argument(
+        "--sites-csv",
+        type=Path,
+        help="optional trace_g0_title_boot CSV; restrict reconstruction to boot/title MDMAEN sites",
+    )
     ap.add_argument("--report", type=Path)
     ap.add_argument("--csv", type=Path)
     args = ap.parse_args()
@@ -297,7 +302,23 @@ def main() -> int:
     from rom_common import require_clean_rom
 
     data = require_clean_rom(args.rom)
-    sites = find_mdma_sites(data, args.start, args.end)
+    if args.sites_csv:
+        sites = []
+        with args.sites_csv.open(encoding="utf-8-sig", newline="") as f:
+            for row in csv.DictReader(f):
+                if row.get("type") != "reg_site":
+                    continue
+                detail = row.get("detail", "")
+                if "$420B" not in detail or "MDMAEN" not in detail:
+                    continue
+                off = int(row["file"], 16)
+                if args.start <= off < args.end:
+                    sites.append(off)
+        sites = sorted(set(sites))
+        site_source = f"boot_trace_csv:{args.sites_csv}"
+    else:
+        sites = find_mdma_sites(data, args.start, args.end)
+        site_source = "whole_range_scan"
 
     lines: list[str] = []
     rows: list[dict[str, str | int]] = []
@@ -314,6 +335,7 @@ def main() -> int:
         f"mdma_sites={len(sites)} range=0x{args.start:X}..0x{args.end:X} "
         f"lookback=0x{args.lookback:X}"
     )
+    emit(f"site_source={site_source}")
     emit(
         "heuristic_note=immediate-width inference requires local REP/SEP; "
         "unknown-width cases are downgraded"
