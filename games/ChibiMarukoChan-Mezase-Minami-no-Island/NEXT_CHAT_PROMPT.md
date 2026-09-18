@@ -14,6 +14,7 @@ Tiếp tục dự án Việt hóa **Chibi Maruko-chan SNES** từ repo `ronvotri
 - `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/G0_DMA_SOURCE_TRACE_002.md`
 - `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/G0_WRAM_STAGING_TRACE_003.md`
 - `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/G0_G1_ONE_COMMAND_PIPELINE_004.md`
+- `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/G2_G3_GRAPHICS_REVERSE_PIPELINE_005.md`
 - `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/GRAPHICS_ASSET_RENDER_PROBE_001.md`
 - `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/UI_LOCALIZATION_COVERAGE_001.md`
 
@@ -152,6 +153,18 @@ python tools/run_g1_graphics_reverse_pipeline.py clean.sfc
 Inspect the generated JSON summaries and G0 candidate PNGs before any write.
 
 The GitHub static workflow is committed but no run/status has been observed yet, so do not claim CI PASS.
+
+## Master graphics runner
+
+When the exact clean ROM is available, prefer:
+
+```bash
+python tools/run_all_graphics_reverse.py clean.sfc
+```
+
+This generates one master summary spanning G0 through G3.
+
+Do not patch based on ranking alone. Promote only a candidate with both path evidence and decoded retail-asset identity.
 
 ## Main task now: graphics/tilemap reverse
 
