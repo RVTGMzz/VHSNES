@@ -29,3 +29,6 @@ jobs:
 
       - name: Run G0 reverse selftest
         run: python selftest_g0_reverse_tools.py
+
+      - name: Run G1 reverse selftest
+        run: python selftest_g1_reverse_tools.py
