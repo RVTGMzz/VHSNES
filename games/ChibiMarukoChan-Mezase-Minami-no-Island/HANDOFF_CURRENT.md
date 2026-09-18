@@ -321,6 +321,34 @@ See `docs/GRAPHICS_G0_TITLE_SCREEN_PLAN.md`.
 
 Actual title asset path is still **UNPROVEN**; no ROM write or Runtime PASS claim yet.
 
+### G0 boot/title trace 001
+
+Added read-only title-path tracer:
+
+- `tools/trace_g0_title_boot.py`
+- `docs/G0_BOOT_TITLE_TRACE_001.md`
+
+Known boot anchor:
+
+- reset vector: `0xFF90`
+- mapped file reset entry: `0x7F90`
+
+The tracer expands boot-near control-flow candidates and prioritizes routines with BG tile/tilemap setup plus VRAM/DMA activity.
+
+Static tests: **PASS**.
+
+Current limitation:
+
+- exact clean ROM / Build 035 binary unavailable in active runtime;
+- no real G0 trace report yet;
+- no title asset offset proven;
+- no G0 ROM write;
+- no Runtime PASS claim.
+
+Proof gate:
+
+`reset/title setup -> BG/VRAM/DMA path -> DMA source -> decoded title asset -> visible title artwork`
+
 ### Graphics Batch G1
 
 Reverse the actual rendered asset path for:
