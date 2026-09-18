@@ -15,6 +15,7 @@ Tiếp tục dự án Việt hóa **Chibi Maruko-chan SNES** từ repo `ronvotri
 - `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/G0_WRAM_STAGING_TRACE_003.md`
 - `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/G0_G1_ONE_COMMAND_PIPELINE_004.md`
 - `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/G2_G3_GRAPHICS_REVERSE_PIPELINE_005.md`
+- `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/GRAPHICS_BUILD_036_PIPELINE_006.md`
 - `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/GRAPHICS_ASSET_RENDER_PROBE_001.md`
 - `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/UI_LOCALIZATION_COVERAGE_001.md`
 
@@ -165,6 +166,19 @@ python tools/run_all_graphics_reverse.py clean.sfc
 This generates one master summary spanning G0 through G3.
 
 Do not patch based on ranking alone. Promote only a candidate with both path evidence and decoded retail-asset identity.
+
+## Build 036 path after asset proof
+
+Once an asset span is proven:
+
+1. G1-G3: use `prepare_graphics_patch_bundle.py`;
+2. G0 custom title: use `prepare_custom_graphics_patch_bundle.py`;
+3. assemble fragments with `assemble_graphics_manifest.py`;
+4. build with `build_036_graphics.py`;
+5. require independent verifier PASS;
+6. keep Runtime status UNTESTED until Ron confirms screenshots/gameplay.
+
+Never truncate a replacement to fit. Use the fit planner; relocate/layout-change if replacement is larger.
 
 ## Main task now: graphics/tilemap reverse
 
