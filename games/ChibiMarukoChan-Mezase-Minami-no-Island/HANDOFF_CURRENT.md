@@ -277,6 +277,33 @@ Important current status:
 
 Do not convert this infrastructure checkpoint into an asset-path claim. The next proof must connect screen setup -> renderer/DMA/pointer -> source asset before any graphics write.
 
+## G1 Shape Probe 004
+
+Added read-only bitmap-shape reverse layer:
+
+- `tools/scan_g1_shape_fingerprints.py`
+- `tools/correlate_g1_evidence.py`
+- `docs/G1_SHAPE_PROBE_004.md`
+
+Probe 004 uses the already-proven Chibi 12x12 font bitmaps as visual fingerprints for all three G1 targets, then scans raw 1bpp and SNES 2bpp/4bpp hypotheses. Candidate clusters are cross-ranked against pointer/DMA/xref evidence from `trace_g1_render_path.py`.
+
+Static status:
+
+- shape scanner Python compile: **PASS**
+- synthetic 1bpp / 2bpp / 4bpp fixtures: **PASS**
+- cluster / target-coverage fixtures: **PASS**
+- evidence correlator compile: **PASS**
+- synthetic pointer-in-cluster ranking: **PASS**
+- strong-candidate gate fixture: **PASS**
+
+Current limitation remains unchanged: the canonical clean ROM / Build 035 binary was not available in the active runtime, so no clean-ROM Probe 004 report has been produced and **no G1 asset offset is proven yet**.
+
+Proof gate before any Build 036 write:
+
+`screen setup -> pointer/DMA/render path -> decoded source asset -> visible G1 text`
+
+Do not patch a visually plausible cluster without that chain.
+
 ## Next high-value work
 
 1. Stay on the graphics/tilemap track.
