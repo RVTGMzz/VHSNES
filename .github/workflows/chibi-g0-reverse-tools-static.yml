@@ -1,0 +1,31 @@
+name: Chibi G0 reverse tools static
+
+on:
+  push:
+    branches:
+      - chibi-maruko-bootstrap-01
+    paths:
+      - "games/ChibiMarukoChan-Mezase-Minami-no-Island/tools/**"
+      - ".github/workflows/chibi-g0-reverse-tools-static.yml"
+  workflow_dispatch:
+
+jobs:
+  static:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: games/ChibiMarukoChan-Mezase-Minami-no-Island/tools
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Compile reverse tools
+        run: python -m py_compile *.py
+
+      - name: Run G0 reverse selftest
+        run: python selftest_g0_reverse_tools.py
