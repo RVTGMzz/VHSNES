@@ -349,6 +349,34 @@ Final Build 036 wrapper requires `ready=true` manifest and still reports runtime
 
 Static workflow now includes reverse, patcher, rasterizer, fit planner, assembler and custom graphics encoder selftests. GitHub workflow execution is still **NOT OBSERVED**, therefore CI PASS is not claimed.
 
+## Vietnamese SNES reference-ROM findings
+
+Read:
+
+- `docs/REFERENCE_VI_ROM_TECHNIQUES_001.md`
+
+Three user-provided Vietnamese SNES ROMs were analyzed as technical references only:
+
+- Rockman X2 Vietnamese
+- Rockman X3 Vietnamese
+- Stoneboat Clock Tower VN / AowVN
+
+High-value findings:
+
+1. Rockman X2/X3 both begin with `JML $66:8000` into expanded ROM at file `0x330000`, then later `JML $00:8006` back to the original engine.
+2. Their expanded code includes an explicit DMA helper writing A1T/A1B/DAS and uploading to VRAM through BBAD `$18`, plus a sister CGRAM path.
+3. `0x310000..0x32FFFF` is byte-identical between X2 and X3, strongly indicating a reusable localization/bootstrap payload.
+4. Clock Tower visually decodes as raw 4bpp graphics around `0x330000` for title artwork and around `0x340000` for Vietnamese text with diacritics.
+
+Implications for Chibi:
+
+- in-place bounded G0-G3 replacement remains preferred;
+- if a replacement does not fit, expanded-ROM relocation + explicit DMA is a proven practical SNES strategy;
+- if editing the original G0 title proves too fragile, an optional pre-title localization splash is now a justified fallback;
+- G1-G3 pre-rendered Vietnamese graphics remain a strong strategy.
+
+Do not copy reference ROM bytes/assets/addresses. Reuse only the architectural ideas.
+
 ## Direct-text audit after Build 035
 
 Whole-ROM audit found only 13 unchanged kana-rich candidates.
