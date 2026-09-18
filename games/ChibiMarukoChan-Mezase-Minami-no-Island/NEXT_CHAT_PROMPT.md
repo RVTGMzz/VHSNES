@@ -63,6 +63,22 @@ Frozen presentation:
 
 Reverse the actual title-screen graphics path before writing; do not assume the 12x12 direct-text renderer.
 
+## Frozen UI wording before graphics insertion
+
+Read:
+
+- `translation/editorial/ui_choice_flow_pass02.csv`
+- `translation/runtime/graphics_ui_labels_v1.csv`
+
+Do not re-decide these labels unless new screen evidence changes the context.
+
+Notably:
+
+- `コンティニュー` -> **Tiếp tục**
+- `やめる` -> **Thoát**
+- `勝ち / 敗けた` -> **Thắng / Thua**
+- `はい / いいえ` -> **Có / Không**
+
 ## Main task now: graphics/tilemap reverse
 
 The remaining visible Japanese in screenshots is no longer a normal direct-text problem.
