@@ -12,6 +12,7 @@ Tiếp tục dự án Việt hóa **Chibi Maruko-chan SNES** từ repo `ronvotri
 - `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/GRAPHICS_G0_TITLE_SCREEN_PLAN.md`
 - `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/G0_BOOT_TITLE_TRACE_001.md`
 - `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/G0_DMA_SOURCE_TRACE_002.md`
+- `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/G0_WRAM_STAGING_TRACE_003.md`
 - `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/GRAPHICS_ASSET_RENDER_PROBE_001.md`
 - `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/UI_LOCALIZATION_COVERAGE_001.md`
 
@@ -129,6 +130,14 @@ After `trace_g0_title_boot.py`, run:
 A candidate is not proven until decoded output reproduces the retail title and the boot/title setup reaches that transfer.
 
 If DMA source points to WRAM or candidate ROM tiles do not reproduce the title, trace the decompressor/staging path next.
+
+## WRAM fallback
+
+If reconstructed G0 DMA source is `$7E/$7F`, run `trace_wram_staging_candidates.py`.
+
+Do not resume blind ROM scanning. Prove:
+
+`title setup -> staging/decompressor -> WRAM -> VRAM DMA -> visible title`
 
 ## Main task now: graphics/tilemap reverse
 
