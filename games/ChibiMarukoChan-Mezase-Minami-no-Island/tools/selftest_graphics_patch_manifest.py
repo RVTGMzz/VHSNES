@@ -144,6 +144,27 @@ def main() -> int:
         out = out_path.read_bytes()
         check("builder_writes_replacement", out[off:off + 4] == replacement)
 
+        verifier = Path(__file__).with_name(
+            "verify_graphics_patch_build.py"
+        )
+        verify_result = subprocess.run(
+            [
+                sys.executable,
+                str(verifier),
+                str(base_path),
+                str(out_path),
+                str(manifest_path),
+            ],
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+        check(
+            "independent_verifier_pass",
+            "snes_checksum=PASS" in verify_result.stdout
+            and "diff_surface=PASS" in verify_result.stdout,
+        )
+
         changed = {
             i
             for i, (before, after) in enumerate(zip(base, out))
