@@ -97,6 +97,18 @@ Static validation:
 
 No canonical-ROM run is claimed yet because the commercial binary was unavailable in the active runtime.
 
+## DMA source reconstruction layer
+
+The G0 toolchain now also includes:
+
+- `tools/reconstruct_dma_sources.py`
+- `tools/correlate_g0_dma_sources.py`
+- `docs/G0_DMA_SOURCE_TRACE_002.md`
+
+This allows the title reverse to proceed from boot-near PPU/DMA routine discovery to source pointer/size reconstruction and visual tile probing without guessing ROM offsets.
+
+If the retail title is staged through WRAM or decompressed at runtime, the next reverse target will be the staging/decompression routine rather than a blind asset scan.
+
 ## Runtime status
 
 - title source wording: **VERIFIED VISIBLE**
