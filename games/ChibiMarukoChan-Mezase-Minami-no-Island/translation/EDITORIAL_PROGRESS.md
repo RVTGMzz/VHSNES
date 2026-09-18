@@ -72,6 +72,32 @@ File: `translation/editorial/tone_consistency_pass04_story_early.csv`
 - Maruo's `Nói thẳng ra!!` stays intact but the surrounding Vietnamese is less stiff;
 - narrator punchlines remain dry and lightly teasing.
 
+## Tone consistency pass 05 — Story Batch 02
+
+File: `translation/editorial/tone_consistency_pass05_story_mid.csv`
+
+32 Story Batch 02 rows were polished without changing contest outcomes or story facts. Focus:
+
+- Maruko sounds more casual and cheeky instead of translated/literary;
+- Tama-chan's supportive lines flow more naturally;
+- Hanawa keeps his theatrical `baby` / romantic persona without sounding combative;
+- Maruo stays pompous and formal, with `ズバリ` consistently carried by `Nói thẳng ra`;
+- narrator jokes are drier and less literal;
+- restored the direct `生きてるかいがない` / `いきてるかい…` callback that the earlier Vietnamese had softened too much;
+- contest language stays playful rather than RPG/battle-heavy.
+
+## Fortune naturalness pass 01
+
+File: `translation/editorial/fortune_naturalness_pass01.csv`
+
+24 Maruko Fortune rows were refined for short, playful fortune-cookie Vietnamese. Main corrections:
+
+- restored `カン` as **trực giác** instead of generic `đầu óc` / `đoán mò`;
+- removed added meaning such as `đặc biệt`, `chiêu`, and `thật kỹ` where the Japanese did not assert it;
+- made money-fortune lines punchier while preserving their meaning;
+- retained the intentionally odd/comic fortune tone in lines such as looking down while walking;
+- tightened warnings and lucky-day lines into natural spoken Vietnamese.
+
 ## Current editorial total
 
 - unique source rows translated: **1,018**
@@ -81,7 +107,9 @@ File: `translation/editorial/tone_consistency_pass04_story_early.csv`
 - tone consistency pass 03: **18 existing rows** refined
 - quiz naturalness pass 01: **15 existing rows** refined
 - tone consistency pass 04: **20 existing rows** refined
-- total existing rows with explicit second-pass editorial attention so far: **100 passes/row-revisions** (not unique-source additions)
+- tone consistency pass 05: **32 existing rows** refined
+- Fortune naturalness pass 01: **24 existing rows** refined
+- total explicit second-pass editorial row revisions so far: **156 passes/row-revisions** (not unique-source additions)
 
 ## Rule
 
