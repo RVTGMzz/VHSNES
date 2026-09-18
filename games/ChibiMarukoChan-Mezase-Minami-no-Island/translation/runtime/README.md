@@ -70,3 +70,23 @@ These are graphics-layer wording candidates, not direct-text byte-fit strings. P
 
 `Thoát` is context-resolved for `やめる` from the Story Mode quit descriptor. Other descriptor-only result/ending assets still require retail-screen/path confirmation before redraw.
 
+## Auxiliary UI compact V2
+
+`ui_auxiliary_compact_v2.csv` covers compact runtime candidates for:
+
+- karaoke start choices;
+- START prompt;
+- dynamic quiz result/stat labels;
+- minigame control labels.
+
+Examples include:
+
+- **Có nhạc / Không nhạc**
+- **Bấm START**
+- **Câu / Tổng câu / Lượt / Đúng % / Lần đầu**
+- **Cúi / Đi / Sấy / Ném / Húc**
+
+The canonical natural wording is frozen in `translation/UI_GLOSSARY_VI.md`.
+
+Field expansion is still preferred over ugly Vietnamese abbreviations where a clean exact-fit label is impossible.
+
