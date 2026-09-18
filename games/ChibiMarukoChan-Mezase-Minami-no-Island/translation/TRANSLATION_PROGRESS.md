@@ -179,6 +179,17 @@ The descriptor block at approximately `0x286B4..0x287FC` names these screens but
 
 Do not patch the descriptor text and claim the graphic is translated.
 
+## Latest editorial translation pass
+
+The release-intent source count remains **1,018** because no new player-facing Japanese source rows were proven.
+
+New second-pass work:
+
+- `translation/editorial/tone_consistency_pass05_story_mid.csv`: **32** Story Batch 02 revisions;
+- `translation/editorial/fortune_naturalness_pass01.csv`: **24** Fortune revisions.
+
+These are meaning-preserving editorial improvements, not new source-row discoveries. See `translation/EDITORIAL_PROGRESS.md`.
+
 ## Editorial / runtime rules
 
 - keep `vi_full` fully accented and meaning-first;
