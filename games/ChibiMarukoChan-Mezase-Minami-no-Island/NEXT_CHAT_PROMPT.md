@@ -16,6 +16,7 @@ Tiếp tục dự án Việt hóa **Chibi Maruko-chan SNES** từ repo `ronvotri
 - `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/G0_G1_ONE_COMMAND_PIPELINE_004.md`
 - `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/G2_G3_GRAPHICS_REVERSE_PIPELINE_005.md`
 - `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/GRAPHICS_BUILD_036_PIPELINE_006.md`
+- `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/REFERENCE_VI_ROM_TECHNIQUES_001.md`
 - `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/GRAPHICS_ASSET_RENDER_PROBE_001.md`
 - `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/UI_LOCALIZATION_COVERAGE_001.md`
 
@@ -179,6 +180,19 @@ Once an asset span is proven:
 6. keep Runtime status UNTESTED until Ron confirms screenshots/gameplay.
 
 Never truncate a replacement to fit. Use the fit planner; relocate/layout-change if replacement is larger.
+
+## Reference-ROM fallback architecture
+
+Use the three Vietnamese reference ROMs only as technique references.
+
+If a proven Chibi graphics replacement exceeds the original span:
+
+1. prefer a clean relocation plan over truncation;
+2. evaluate free/expanded ROM space;
+3. hook/upload only with exact guarded evidence;
+4. preserve original execution flow and checksum.
+
+For G0 only, if direct title replacement remains fragile after real trace, a pre-title localization splash modeled on the reset-trampoline architecture is allowed as fallback.
 
 ## Main task now: graphics/tilemap reverse
 
