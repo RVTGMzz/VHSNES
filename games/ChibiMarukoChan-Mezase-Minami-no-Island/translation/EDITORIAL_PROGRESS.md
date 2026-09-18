@@ -153,6 +153,22 @@ Important context resolution:
 
 The glossary also keeps evidence/status separate so descriptor-only labels are not mistaken for verified retail graphics.
 
+## Auxiliary UI pass 03
+
+File: `translation/editorial/ui_auxiliary_pass03.csv`
+
+24 more player-facing UI rows were polished across karaoke start options, quiz result labels, and minigame control prompts.
+
+Highlights:
+
+- karaoke start choices are normalized to **Chơi có nhạc / Chơi không nhạc**;
+- `スタートをおしてね` becomes **Bấm START nhé**;
+- dynamic quiz labels are shortened to **Câu / Tổng câu / Lượt trả lời / Tỷ lệ đúng / Đúng lần đầu**;
+- minigame controls are normalized to concise verbs such as **Cúi / Đi / Sấy / Ném / Húc**;
+- paired control labels keep Vietnamese word order where the original uses two stacked Japanese fragments.
+
+A canonical glossary now lives at `translation/UI_GLOSSARY_VI.md`.
+
 ## Current editorial total
 
 - unique source rows translated: **1,018**
@@ -166,7 +182,8 @@ The glossary also keeps evidence/status separate so descriptor-only labels are n
 - Fortune naturalness pass 01: **24 existing rows** refined
 - Quiz naturalness pass 02: **36 existing rows** refined
 - UI / game-choice naturalness pass 01: **31 existing rows** refined
-- total explicit second-pass editorial row revisions so far: **223 passes/row-revisions** (not unique-source additions)
+- auxiliary UI pass 03: **24 existing rows** refined
+- total explicit second-pass editorial row revisions so far: **247 passes/row-revisions** (not unique-source additions)
 
 ## Rule
 
