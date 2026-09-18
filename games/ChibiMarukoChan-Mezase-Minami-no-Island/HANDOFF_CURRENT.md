@@ -411,6 +411,27 @@ Static validation: **PASS**.
 
 Do not interpret weak WRAM hits as asset proof. If needed, move to targeted disassembly/emulator tracing around the proven title DMA path.
 
+### G0/G1 one-command reverse pipeline 004
+
+Added:
+
+- `tools/run_g0_title_reverse_pipeline.py`
+- `tools/run_g1_graphics_reverse_pipeline.py`
+- `tools/selftest_g0_reverse_tools.py`
+- `tools/selftest_g1_reverse_tools.py`
+- `.github/workflows/chibi-g0-reverse-tools-static.yml`
+- `docs/G0_G1_ONE_COMMAND_PIPELINE_004.md`
+
+G0 runner now performs boot trace -> boot-filtered DMA reconstruction -> correlation -> direct-ROM candidate PNG rendering -> WRAM staging trace -> JSON summary.
+
+G1 runner now performs render-path trace -> bitmap-shape scan -> evidence correlation -> JSON summary.
+
+`reconstruct_dma_sources.py` now supports `--sites-csv` so G0 can reconstruct only MDMAEN sites already surfaced by the boot/title trace instead of scanning every DMA trigger in the ROM.
+
+CI note: the workflow and ROM-free selftests are committed, but GitHub returned no workflow run/status for the branch commits. **CI PASS is therefore NOT claimed.**
+
+File Library was rechecked by keyword and recent-upload metadata; no Chibi clean ROM / Build 035 binary was found.
+
 ### Graphics Batch G1
 
 Reverse the actual rendered asset path for:
