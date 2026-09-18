@@ -41,3 +41,6 @@ jobs:
 
       - name: Run Vietnamese SNES graphics rasterizer selftest
         run: python selftest_vi_text_snes_graphics.py
+
+      - name: Run graphics fit planner selftest
+        run: python selftest_graphics_asset_fit.py
