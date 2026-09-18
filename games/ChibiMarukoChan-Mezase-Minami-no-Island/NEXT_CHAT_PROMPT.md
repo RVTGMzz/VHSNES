@@ -7,6 +7,7 @@ Tiếp tục dự án Việt hóa **Chibi Maruko-chan SNES** từ repo `ronvotri
 - `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/GRAPHICS_TILEMAP_PASS_001_AUDIT.md`
 - `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/HEADING_REVERSE_001.md`
 - `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/HEADING_REVERSE_002.md`
+- `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/G1_RENDER_PATH_TRACE_003.md`
 
 Canonical clean ROM SHA1: `08a2415362f69788ec76b1a36044dc1f1a5f2ea1`.
 
@@ -77,6 +78,12 @@ Then G3:
 - ending/chapter/large title cards
 
 For G1, determine whether the actual visible asset uses raw 2bpp/4bpp tiles, tilemap composition, compressed graphics, or another renderer. Do not guess offsets.
+
+A read-only tracer now exists at:
+
+`tools/trace_g1_render_path.py`
+
+It must be run on the exact clean ROM before making a G1 write. Use its xrefs, proven renderer calls, bank-`$85` VRAM/DMA sites, and pointer runs to establish a real screen-setup -> source-asset path. In the checkpoint that added this tool, the clean ROM/Build 035 binary was not available in the active runtime, so **no G1 asset offset has been proven yet** and **no G1 ROM patch exists yet**.
 
 The pink `どれにする？` heading has already failed simple CP932/glyph-ID/interleaved/tilemap sequence searches. Continue from the existing reverse docs instead of restarting.
 
