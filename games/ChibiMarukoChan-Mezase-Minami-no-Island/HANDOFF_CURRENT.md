@@ -271,6 +271,44 @@ Current UI-language conclusion:
 - fields marked `runtime_needs_expansion` should be expanded instead of degraded into poor abbreviations;
 - internal QA descriptors remain excluded from retail UI.
 
+## G2/G3 + master graphics reverse pipeline
+
+Added:
+
+- `tools/scan_graphics_shape_targets.py`
+- `tools/run_g2_g3_graphics_reverse_pipeline.py`
+- `tools/selftest_g2_g3_reverse_tools.py`
+- `tools/run_all_graphics_reverse.py`
+- `docs/G2_G3_GRAPHICS_REVERSE_PIPELINE_005.md`
+
+G2 targets:
+
+- **Bắt đầu thôi!**
+- **Luật chơi**
+- **Thắng 2**
+- **Đến khi thắng**
+
+G3 targets:
+
+- **Thắng**
+- **Thua**
+- **Tiếp tục**
+- **Thoát**
+- **Chiến thắng cuối cùng!**
+- **Kết thúc**
+
+The shared target-shape scanner keeps G2 and G3 independent and reuses the proven 12x12 glyph-shape engine. Weak/no shape evidence does not prove absence because screen graphics may be stylized.
+
+Master runner:
+
+```bash
+python tools/run_all_graphics_reverse.py clean.sfc
+```
+
+It executes the G0, G1 and G2/G3 pipelines and writes one `graphics_master_summary.json`.
+
+The static workflow now includes G0, G1 and G2/G3 ROM-free self-tests, but no GitHub workflow run/status has been observed yet. **CI PASS is not claimed.**
+
 ## Direct-text audit after Build 035
 
 Whole-ROM audit found only 13 unchanged kana-rich candidates.
