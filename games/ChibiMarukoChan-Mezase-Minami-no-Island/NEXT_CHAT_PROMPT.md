@@ -11,6 +11,7 @@ Tiếp tục dự án Việt hóa **Chibi Maruko-chan SNES** từ repo `ronvotri
 - `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/G1_SHAPE_PROBE_004.md`
 - `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/GRAPHICS_G0_TITLE_SCREEN_PLAN.md`
 - `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/G0_BOOT_TITLE_TRACE_001.md`
+- `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/GRAPHICS_ASSET_RENDER_PROBE_001.md`
 - `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/UI_LOCALIZATION_COVERAGE_001.md`
 
 Canonical clean ROM SHA1: `08a2415362f69788ec76b1a36044dc1f1a5f2ea1`.
@@ -106,6 +107,15 @@ Prioritize a boot-near routine only when it shows coherent:
 Then prove the DMA source pointer and decode the source graphics before any title write.
 
 Do not patch a high-scoring routine by score alone.
+
+## Candidate asset visual proof
+
+After a G0/G1 source pointer is proven, use `tools/render_snes_graphics_probe.py` to render:
+
+- a 2bpp/4bpp contact sheet; or
+- the candidate graphics through its raw 16-bit tilemap.
+
+Use visual reproduction as confirmation, not as a substitute for pointer/DMA proof.
 
 ## Main task now: graphics/tilemap reverse
 
