@@ -368,6 +368,30 @@ Static tests:
 
 A recognizable render is not enough by itself; screen setup / DMA / pointer reachability still has to prove the asset path.
 
+### G0 DMA source trace 002
+
+Added:
+
+- `tools/reconstruct_dma_sources.py`
+- `tools/correlate_g0_dma_sources.py`
+- `docs/G0_DMA_SOURCE_TRACE_002.md`
+
+The G0 pipeline can now move from boot/title routine ranking to conservative DMA source reconstruction:
+
+- A1T / A1B source pointer;
+- DAS transfer size;
+- BBAD destination;
+- DMAP mode;
+- LoROM file offset mapping.
+
+The correlator then prioritizes boot-near VRAM transfers with ROM-backed, tile-aligned sources and prints candidate render commands for `render_snes_graphics_probe.py`.
+
+Static validation: **PASS**.
+
+Current limitation remains the missing canonical binary in the active runtime, so no real DMA source or title asset offset is claimed yet.
+
+If top ROM-backed candidates fail visual decode, investigate compressed/WRAM staging rather than guessing offsets.
+
 ### Graphics Batch G1
 
 Reverse the actual rendered asset path for:
