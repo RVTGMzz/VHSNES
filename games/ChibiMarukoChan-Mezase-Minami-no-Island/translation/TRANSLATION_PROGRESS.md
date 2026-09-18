@@ -202,6 +202,26 @@ The latest Quiz pass also corrects several source-faithfulness issues, including
 
 These are editorial improvements to already-proven source rows, not new source-row discoveries. See `translation/EDITORIAL_PROGRESS.md`.
 
+## UI / game-choice pass
+
+The game-choice/setup layer now has a dedicated polish + compact-runtime pass.
+
+Files:
+
+- `translation/editorial/ui_menu_naturalness_pass01.csv`: **31** existing rows refined;
+- `translation/runtime/ui_choices_compact_v1.csv`: compact fixed-field candidates and explicit expansion-required fields.
+
+Key UI conventions are now:
+
+- **Dễ / Vừa / Khó**
+- **Chơi / CPU / Nghỉ**
+- **Màn**
+- **Bấm START**
+- **Tiếp tục câu đố?** / runtime **Tiếp tục?**
+- **Có / Không** in the meaning layer; `Không` is not shortened to informal `Ko` merely to fit.
+
+Release-intent source-row count remains **1,018**.
+
 ## Editorial / runtime rules
 
 - keep `vi_full` fully accented and meaning-first;
