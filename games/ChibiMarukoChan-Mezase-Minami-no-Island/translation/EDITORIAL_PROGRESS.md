@@ -113,6 +113,22 @@ Notable corrections:
 - several fragmentary Japanese-style question leads were reworked into natural Vietnamese while preserving answer facts;
 - Migiwa/Midori/Yamane/Nagayama character-description jokes now retain their intended contrast and teasing tone.
 
+## UI / game-choice naturalness pass 01
+
+File: `translation/editorial/ui_menu_naturalness_pass01.csv`
+
+31 existing UI/menu/stage rows were refined for clearer game-language Vietnamese.
+
+Highlights:
+
+- difficulty is standardized as **Dễ / Vừa / Khó**;
+- `体当り` becomes the concise control label **Húc**;
+- CPU/player slot states are simplified to **Chơi / CPU / Nghỉ** where appropriate;
+- quiz statistics become shorter labels such as **Lượt trả lời**, **Tỷ lệ đúng**, **Đúng ngay lần đầu**;
+- `クイズを続けますか？` is tightened to **Tiếp tục câu đố?**;
+- several stage-selection names were polished to read like game stages rather than literal Japanese compounds;
+- menu `ストーリーモード` is normalized to **Cốt truyện**, while runtime may remain even shorter where fixed fields demand it.
+
 ## Current editorial total
 
 - unique source rows translated: **1,018**
@@ -125,7 +141,8 @@ Notable corrections:
 - tone consistency pass 05: **32 existing rows** refined
 - Fortune naturalness pass 01: **24 existing rows** refined
 - Quiz naturalness pass 02: **36 existing rows** refined
-- total explicit second-pass editorial row revisions so far: **192 passes/row-revisions** (not unique-source additions)
+- UI / game-choice naturalness pass 01: **31 existing rows** refined
+- total explicit second-pass editorial row revisions so far: **223 passes/row-revisions** (not unique-source additions)
 
 ## Rule
 
