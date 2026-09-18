@@ -1,4 +1,4 @@
-name: Chibi G0 reverse tools static
+name: Chibi graphics reverse and build static
 
 on:
   push:
@@ -38,3 +38,6 @@ jobs:
 
       - name: Run graphics patch manifest selftest
         run: python selftest_graphics_patch_manifest.py
+
+      - name: Run Vietnamese SNES graphics rasterizer selftest
+        run: python selftest_vi_text_snes_graphics.py
