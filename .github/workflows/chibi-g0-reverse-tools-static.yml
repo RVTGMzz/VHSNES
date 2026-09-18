@@ -47,3 +47,6 @@ jobs:
 
       - name: Run graphics manifest assembler selftest
         run: python selftest_graphics_manifest_assembler.py
+
+      - name: Run indexed PNM graphics encoder selftest
+        run: python selftest_indexed_pnm_snes_graphics.py
