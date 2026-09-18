@@ -79,6 +79,17 @@ Notably:
 - `勝ち / 敗けた` -> **Thắng / Thua**
 - `はい / いいえ` -> **Có / Không**
 
+## Canonical UI wording authority
+
+Read `translation/UI_GLOSSARY_VI.md` before changing any menu/setup/result wording.
+
+Also read:
+
+- `translation/editorial/ui_auxiliary_pass03.csv`
+- `translation/runtime/ui_auxiliary_compact_v2.csv`
+
+The UI glossary is now the preferred language authority for all proven player-facing UI. Only change it when new screen evidence proves a context mismatch.
+
 ## Main task now: graphics/tilemap reverse
 
 The remaining visible Japanese in screenshots is no longer a normal direct-text problem.
