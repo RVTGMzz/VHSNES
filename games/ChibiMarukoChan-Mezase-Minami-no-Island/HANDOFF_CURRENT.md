@@ -211,6 +211,29 @@ Important quality rule: do not degrade Vietnamese into `Ko`, `No`, or `Off` mere
 
 Cumulative explicit editorial row revisions are now **223**.
 
+## Unified game-flow UI glossary
+
+Added:
+
+- `translation/editorial/ui_choice_flow_pass02.csv`
+- `translation/runtime/graphics_ui_labels_v1.csv`
+
+Frozen recurring game-flow labels:
+
+- Start: **Bắt đầu**
+- Password: **Mật khẩu**
+- Continue: **Tiếp tục**
+- Quit Story: **Thoát**
+- Yes / No: **Có / Không**
+- Difficulty: **Dễ / Vừa / Khó**
+- Player slot: **Chơi / CPU / Nghỉ**
+- Results: **Thắng / Thua**
+- Ending: **Kết thúc**
+
+`やめる` is no longer ambiguous: internal QA text explicitly identifies it as the Story Mode quit screen, so **Thoát** is the canonical Vietnamese target.
+
+Do not promote descriptor-only graphics to Runtime PASS without verifying the actual retail asset/screen.
+
 ## Direct-text audit after Build 035
 
 Whole-ROM audit found only 13 unchanged kana-rich candidates.
