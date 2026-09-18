@@ -27,3 +27,23 @@ These are practical runtime candidates for the fixed-width menu fields, not repl
 Build 024 uses these candidates on top of Build 023 / Probe 019. It preserves the accepted pre-GBA font/codepage baseline and changes only the ten menu text spans plus SNES checksum/complement.
 
 Do not call these compact labels final if relocation/expansion later makes the full wording fit cleanly.
+
+## UI choices compact V1
+
+`ui_choices_compact_v1.csv` contains compact Vietnamese candidates for the direct minigame / setup / quiz-choice fields.
+
+Current preferred compact set includes:
+
+- CPU difficulty: **Dễ / Vừa / Khó**
+- per-round time heading: **Mỗi ván**
+- player slots: **P1 / P2 / P3 / P4**
+- slot states: **Chơi / CPU / Nghỉ**
+- stage heading: **Màn**
+- start instruction: **Bấm START**
+- quiz continuation prompt: **Tiếp tục?**
+- yes choice: **Có**
+
+Do not force poor abbreviations merely to fit. Fields such as **Đến khi thắng**, **Không kết nối**, **Chuột**, and **Không** are explicitly marked `runtime_needs_expansion` when the current fixed 2-byte-unit field is too small.
+
+This layer is a runtime candidate only. Full natural Vietnamese remains in the source/editorial layers.
+
