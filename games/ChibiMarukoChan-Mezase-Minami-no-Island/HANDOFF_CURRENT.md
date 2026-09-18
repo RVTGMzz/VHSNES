@@ -180,12 +180,14 @@ Latest editorial additions:
 
 - Story Batch 02 tone consistency pass 05: **32** rows;
 - Maruko Fortune naturalness pass 01: **24** rows;
-- cumulative explicit editorial row revisions: **156**.
+- Maruko Q naturalness pass 02: **36** rows;
+- cumulative explicit editorial row revisions: **192**.
 
 Files:
 
 - `translation/editorial/tone_consistency_pass05_story_mid.csv`
 - `translation/editorial/fortune_naturalness_pass01.csv`
+- `translation/editorial/quiz_naturalness_pass02.csv`
 
 These refine existing `vi_full` meanings and do not change the Build 035 runtime claim.
 
