@@ -234,6 +234,31 @@ Frozen recurring game-flow labels:
 
 Do not promote descriptor-only graphics to Runtime PASS without verifying the actual retail asset/screen.
 
+## Auxiliary UI localization pass
+
+Added:
+
+- `translation/editorial/ui_auxiliary_pass03.csv`: **24** additional UI revisions;
+- `translation/runtime/ui_auxiliary_compact_v2.csv`: compact runtime candidates;
+- `translation/UI_GLOSSARY_VI.md`: canonical Vietnamese UI glossary.
+
+The glossary now freezes wording across:
+
+- main menu;
+- Start / Password / Continue / Quit;
+- Yes / No;
+- difficulty and match setup;
+- player/controller states;
+- minigame controls;
+- quiz results;
+- karaoke start options;
+- win/lose/ending;
+- title/intro localization.
+
+Cumulative explicit editorial row revisions are now **247**.
+
+Do not re-invent UI wording in later build scripts; derive from the glossary unless new runtime evidence changes context.
+
 ## Direct-text audit after Build 035
 
 Whole-ROM audit found only 13 unchanged kana-rich candidates.
