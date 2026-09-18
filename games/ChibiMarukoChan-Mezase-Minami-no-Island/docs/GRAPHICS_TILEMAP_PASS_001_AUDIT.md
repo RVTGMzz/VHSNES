@@ -33,6 +33,24 @@ Do not patch these descriptor strings and claim the visible graphic is translate
 - `0x287FC`: `エンディングです。`
   - describes the ending
 
+## Added title-screen target — Batch G0
+
+The first retail title/intro screen is now part of the localization scope.
+
+Visible title:
+
+`ちびまる子ちゃん めざせ！南のアイランド！！`
+
+Vietnamese target:
+
+`Chibi Maruko-chan: Tiến tới đảo phương Nam!!`
+
+Additional requested credit:
+
+`Việt hóa bởi VôtriValley`
+
+Original copyright/publisher attribution must remain intact. See `docs/GRAPHICS_G0_TITLE_SCREEN_PLAN.md`.
+
 ## Visible graphics targets
 
 ### Batch G1
