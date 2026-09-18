@@ -237,6 +237,18 @@ The recurring UI vocabulary is now frozen around:
 
 This does not create a new runtime build and does not change the **1,018** proven release-intent source-row count.
 
+## Auxiliary UI pass
+
+Added:
+
+- `translation/editorial/ui_auxiliary_pass03.csv`: **24** existing UI rows refined;
+- `translation/runtime/ui_auxiliary_compact_v2.csv`: compact runtime candidates for karaoke start, quiz results, and minigame controls;
+- `translation/UI_GLOSSARY_VI.md`: canonical UI wording authority.
+
+Current canonical UI language now covers the main menu, game-flow choices, match setup, difficulty, controllers, minigame controls, quiz results, karaoke start options, result labels, and title/intro wording.
+
+Release-intent source-row count remains **1,018**.
+
 ## Editorial / runtime rules
 
 - keep `vi_full` fully accented and meaning-first;
