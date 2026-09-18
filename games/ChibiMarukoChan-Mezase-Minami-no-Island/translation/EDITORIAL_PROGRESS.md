@@ -129,6 +129,30 @@ Highlights:
 - several stage-selection names were polished to read like game stages rather than literal Japanese compounds;
 - menu `ストーリーモード` is normalized to **Cốt truyện**, while runtime may remain even shorter where fixed fields demand it.
 
+## UI choice-flow pass 02
+
+File: `translation/editorial/ui_choice_flow_pass02.csv`
+
+A unified glossary now freezes the Vietnamese wording for the recurring game-flow choices and states.
+
+Key choices:
+
+- **Bắt đầu**
+- **Mật khẩu**
+- **Tiếp tục**
+- **Thoát**
+- **Có / Không**
+- **Dễ / Vừa / Khó**
+- **Chơi / CPU / Nghỉ**
+- **Thắng / Thua**
+- **Kết thúc**
+
+Important context resolution:
+
+- `やめる` is now fixed as **Thoát** because the internal descriptor explicitly identifies the Story Mode quit screen.
+
+The glossary also keeps evidence/status separate so descriptor-only labels are not mistaken for verified retail graphics.
+
 ## Current editorial total
 
 - unique source rows translated: **1,018**
