@@ -44,3 +44,6 @@ jobs:
 
       - name: Run graphics fit planner selftest
         run: python selftest_graphics_asset_fit.py
+
+      - name: Run graphics manifest assembler selftest
+        run: python selftest_graphics_manifest_assembler.py
