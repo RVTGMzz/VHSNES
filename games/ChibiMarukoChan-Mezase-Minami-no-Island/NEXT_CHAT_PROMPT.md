@@ -1,4 +1,4 @@
-Tiếp tục dự án Việt hóa **Chibi Maruko-chan SNES** từ repo `ronvotri/Viet-Hoa-SNES`, branch `chibi-maruko-bootstrap-01`.
+Tiếp tục dự án Việt hóa **Chibi Maruko-chan SNES** từ repo `RVTGMzz/VHSNES`, branch `chibi-maruko-bootstrap-01`.
 
 Đọc trước:
 
@@ -193,6 +193,22 @@ If a proven Chibi graphics replacement exceeds the original span:
 4. preserve original execution flow and checksum.
 
 For G0 only, if direct title replacement remains fragile after real trace, a pre-title localization splash modeled on the reset-trampoline architecture is allowed as fallback.
+
+## Current G1 execution proof
+
+Story selection is now statically traced through the retail main menu into the Story entry module:
+
+`Story index 0 -> route A0 -> $70=A0 -> $80:D328 -> $88:F5F1 -> $85:E959`
+
+The stage-curtain background is reproduced from `$82:AF23`. The two-choice logic is proven through `$1404` / `$1406`.
+
+Continue only inside this proven module to identify the visible source representation of:
+
+- `どれにする？`
+- `はじめから`
+- `パスワード`
+
+Do not fall back to broad direct-text or raw-shape scans.
 
 ## Main task now: graphics/tilemap reverse
 
