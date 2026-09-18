@@ -11,6 +11,7 @@ Tiếp tục dự án Việt hóa **Chibi Maruko-chan SNES** từ repo `ronvotri
 - `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/G1_SHAPE_PROBE_004.md`
 - `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/GRAPHICS_G0_TITLE_SCREEN_PLAN.md`
 - `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/G0_BOOT_TITLE_TRACE_001.md`
+- `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/G0_DMA_SOURCE_TRACE_002.md`
 - `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/GRAPHICS_ASSET_RENDER_PROBE_001.md`
 - `games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/UI_LOCALIZATION_COVERAGE_001.md`
 
@@ -116,6 +117,18 @@ After a G0/G1 source pointer is proven, use `tools/render_snes_graphics_probe.py
 - the candidate graphics through its raw 16-bit tilemap.
 
 Use visual reproduction as confirmation, not as a substitute for pointer/DMA proof.
+
+## G0 DMA source pipeline
+
+After `trace_g0_title_boot.py`, run:
+
+1. `reconstruct_dma_sources.py`;
+2. `correlate_g0_dma_sources.py`;
+3. render only the best ROM-backed tile-aligned candidates with `render_snes_graphics_probe.py`.
+
+A candidate is not proven until decoded output reproduces the retail title and the boot/title setup reaches that transfer.
+
+If DMA source points to WRAM or candidate ROM tiles do not reproduce the title, trace the decompressor/staging path next.
 
 ## Main task now: graphics/tilemap reverse
 
