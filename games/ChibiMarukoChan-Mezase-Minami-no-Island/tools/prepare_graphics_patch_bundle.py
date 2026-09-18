@@ -169,16 +169,16 @@ def main() -> int:
         allow_padding=args.allow_gfx_zero_padding,
     )
 
-    entries = [
-        patch_entry(
-            args.build035,
-            gfx_replacement,
-            f"{args.id}_gfx",
-            args.gfx_offset,
-            args.evidence + " | generated Vietnamese tile graphics",
-            tool_dir,
-        )
-    ]
+    gfx_entry = patch_entry(
+        args.build035,
+        gfx_replacement,
+        f"{args.id}_gfx",
+        args.gfx_offset,
+        args.evidence + " | generated Vietnamese tile graphics",
+        tool_dir,
+    )
+    gfx_entry["replacement_file"] = gfx_replacement.name
+    entries = [gfx_entry]
 
     tilemap_fit = None
     tilemap_replacement = None
@@ -190,16 +190,16 @@ def main() -> int:
             tilemap_replacement,
             allow_padding=False,
         )
-        entries.append(
-            patch_entry(
-                args.build035,
-                tilemap_replacement,
-                f"{args.id}_tilemap",
-                args.tilemap_offset,
-                args.evidence + " | generated Vietnamese tilemap",
-                tool_dir,
-            )
+        map_entry = patch_entry(
+            args.build035,
+            tilemap_replacement,
+            f"{args.id}_tilemap",
+            args.tilemap_offset,
+            args.evidence + " | generated Vietnamese tilemap",
+            tool_dir,
         )
+        map_entry["replacement_file"] = tilemap_replacement.name
+        entries.append(map_entry)
 
     fragment = {
         "schema": "chibi.graphics.patch.fragment.v1",
