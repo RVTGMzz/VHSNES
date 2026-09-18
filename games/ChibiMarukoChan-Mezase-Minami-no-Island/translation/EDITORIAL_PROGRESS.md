@@ -98,6 +98,21 @@ File: `translation/editorial/fortune_naturalness_pass01.csv`
 - retained the intentionally odd/comic fortune tone in lines such as looking down while walking;
 - tightened warnings and lucky-day lines into natural spoken Vietnamese.
 
+## Quiz naturalness pass 02
+
+File: `translation/editorial/quiz_naturalness_pass02.csv`
+
+36 Maruko Q Batch 02 rows were revised. This pass includes both naturalness work and source-faithfulness corrections.
+
+Notable corrections:
+
+- `心にうたれ` is restored as **cảm động** rather than the earlier inferred **áy náy**;
+- `しるよしもない` restores the missing meaning that Yoshiko-san had **no way of knowing** what happened to the guppies;
+- `だがし屋` is corrected from the unnatural **tiệm quà vặt** to a **tiệm bánh kẹo** context;
+- `みぎまき` is kept as **xoáy sang phải** rather than over-specifying a clock direction;
+- several fragmentary Japanese-style question leads were reworked into natural Vietnamese while preserving answer facts;
+- Migiwa/Midori/Yamane/Nagayama character-description jokes now retain their intended contrast and teasing tone.
+
 ## Current editorial total
 
 - unique source rows translated: **1,018**
@@ -109,7 +124,8 @@ File: `translation/editorial/fortune_naturalness_pass01.csv`
 - tone consistency pass 04: **20 existing rows** refined
 - tone consistency pass 05: **32 existing rows** refined
 - Fortune naturalness pass 01: **24 existing rows** refined
-- total explicit second-pass editorial row revisions so far: **156 passes/row-revisions** (not unique-source additions)
+- Quiz naturalness pass 02: **36 existing rows** refined
+- total explicit second-pass editorial row revisions so far: **192 passes/row-revisions** (not unique-source additions)
 
 ## Rule
 
