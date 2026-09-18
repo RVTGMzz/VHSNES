@@ -79,6 +79,24 @@ Graphics G1 menu/start/password layer
 
 G0 and G1 should remain separately auditable even if packaged into one larger user test build.
 
+## G0 boot/title trace infrastructure
+
+Added:
+
+- `tools/trace_g0_title_boot.py`
+- `docs/G0_BOOT_TITLE_TRACE_001.md`
+
+The tracer starts from the proven reset vector `$00:FF90` / file `0x7F90`, expands boot-near call/jump candidates, and ranks routines with coherent BG / VRAM / DMA register activity.
+
+Static validation:
+
+- Python compile: **PASS**
+- reset-vector mapping fixture: **PASS**
+- synthetic boot-call expansion: **PASS**
+- synthetic VRAM/DMA-site detection: **PASS**
+
+No canonical-ROM run is claimed yet because the commercial binary was unavailable in the active runtime.
+
 ## Runtime status
 
 - title source wording: **VERIFIED VISIBLE**
