@@ -309,6 +309,46 @@ It executes the G0, G1 and G2/G3 pipelines and writes one `graphics_master_summa
 
 The static workflow now includes G0, G1 and G2/G3 ROM-free self-tests, but no GitHub workflow run/status has been observed yet. **CI PASS is not claimed.**
 
+## Graphics Build 036 guarded pipeline
+
+Added:
+
+- `tools/apply_graphics_patch_manifest.py`
+- `tools/verify_graphics_patch_build.py`
+- `tools/make_graphics_patch_entry.py`
+- `tools/plan_graphics_asset_fit.py`
+- `tools/rasterize_vi_text_to_snes_tiles.py`
+- `tools/prepare_graphics_patch_bundle.py`
+- `tools/encode_indexed_pnm_to_snes_tiles.py`
+- `tools/prepare_custom_graphics_patch_bundle.py`
+- `tools/assemble_graphics_manifest.py`
+- `tools/build_036_graphics.py`
+- `translation/runtime/graphics_patch_manifest_B036.template.json`
+- `docs/GRAPHICS_BUILD_036_PIPELINE_006.md`
+
+Build 036 base contract is frozen to exact Build 035:
+
+- SHA-1 `054380f9b452f245471e6309eb33c7486d581462`
+- SHA-256 `f8fb662a9e1b8fc5a5ff689f690ceaf332055ed86983e52b476a78852e4fd58d`
+
+G1-G3 replacement path:
+
+`Build 035 Vietnamese 12x12 glyphs -> SNES 2bpp/4bpp tiles -> fit gate -> patch fragment`
+
+G0 custom-title path:
+
+`indexed P1/P2 pixel art -> SNES 2bpp/4bpp tiles -> fit gate -> patch fragment`
+
+Manifest assembly rejects duplicate IDs, overlaps and replacement hash mismatches.
+
+Builder permits changes only inside declared graphics spans + SNES checksum bytes.
+
+Independent verifier checks replacement spans, whole-ROM diff surface and checksum.
+
+Final Build 036 wrapper requires `ready=true` manifest and still reports runtime as **UNTESTED**.
+
+Static workflow now includes reverse, patcher, rasterizer, fit planner, assembler and custom graphics encoder selftests. GitHub workflow execution is still **NOT OBSERVED**, therefore CI PASS is not claimed.
+
 ## Direct-text audit after Build 035
 
 Whole-ROM audit found only 13 unchanged kana-rich candidates.
