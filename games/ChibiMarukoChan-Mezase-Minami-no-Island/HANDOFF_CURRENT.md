@@ -755,3 +755,14 @@ Preserve:
 - separate source meaning, runtime compact text, font/codepage, and graphics/tilemap layers.
 
 No ROMs in GitHub.
+
+### G2 targeted tracer / CI
+
+Added:
+
+- `tools/trace_g2_start_flow.py`
+- `tools/selftest_g2_start_flow.py`
+
+Workflow run **#39** at commit `6c7026cf4b857c24e2efbeebac544cc71e055850` is **CI PASS**, including the dedicated G2 targeted selftest.
+
+This is a tooling/static CI claim only. Exact G2 asset identity and G2 Runtime PASS remain **NO** until the tracer is run against the canonical clean ROM and the resulting source is decoded/verified.
