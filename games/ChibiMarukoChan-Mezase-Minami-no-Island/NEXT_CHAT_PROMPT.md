@@ -1,5 +1,46 @@
 Tiếp tục dự án Việt hóa **Chibi Maruko-chan SNES** từ repo `RVTGMzz/VHSNES`, branch `chibi-maruko-bootstrap-01`.
 
+
+## AUTHORITATIVE CURRENT CHECKPOINT
+
+Repo: `RVTGMzz/VHSNES`  
+Branch: `chibi-maruko-bootstrap-01`
+
+Do not restart G1.
+
+G1 **Bắt đầu / Mật khẩu** is **Runtime PASS**. Exact retail asset:
+
+`$82:AF23 record #8 -> $97:F95E (file 0x0BF95E) -> VRAM $7800`
+
+- JP packed `0x1B4`
+- output `0x3E0`
+- VI packed `0x16A`
+- probe changed **360** bytes
+- SHA-1 `904435c61153fd7f41649ab25e8f50318d3ec72f`
+- SHA-256 `16c2975f431edc74754b8b6ad9272b78e4cc37852df653d1581094efb5d15edb`
+- checksum/complement `0x28CA / 0xD735`
+
+Read `docs/G1_LABEL_ASSET_PROOF_009.md`.
+
+`どれにする？` remains separate.
+
+Continue G2 only:
+
+`今からやるよ` -> **Bắt đầu thôi!**
+
+Current reverse chain:
+
+`Start -> A1 -> $80:E131 -> $80:E169 -> $88:8139 -> $88:CB4E -> group 4 -> school-front scene -> continue tracing overlay`
+
+Read `docs/G2_REVERSE_CHECKPOINT_010.md`.
+
+Rules:
+
+- `0x286EA` is descriptor/QA evidence only; never patch it as the retail solution.
+- `$9A:CB34` is rejected.
+- do not call G2 asset proof until the actual retail source is decoded and tied to the execution path.
+- do not call G2 Runtime PASS until user gameplay/screenshot confirms it.
+
 Đọc trước:
 
 - `games/ChibiMarukoChan-Mezase-Minami-no-Island/HANDOFF_CURRENT.md`
