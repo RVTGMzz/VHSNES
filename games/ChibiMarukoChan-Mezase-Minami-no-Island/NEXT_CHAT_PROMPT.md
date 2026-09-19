@@ -307,3 +307,18 @@ The pink `どれにする？` heading has already failed simple CP932/glyph-ID/i
 - user prefers **fewer, larger tests**, so use one high-information probe or one coherent graphics batch where technically safe.
 
 Continue directly with the graphics/tilemap investigation and update `HANDOFF_CURRENT.md` when a new asset path or build checkpoint is proven.
+
+## G2 TARGETED TRACER NOW COMMITTED
+
+Use `tools/trace_g2_start_flow.py` before any new broad scan.
+
+Command:
+
+```bash
+python tools/trace_g2_start_flow.py clean.sfc \
+  --json reports/generated/g2_start_flow.json
+```
+
+CI run #39 on commit `6c7026cf4b857c24e2efbeebac544cc71e055850` passed, including `selftest_g2_start_flow.py`.
+
+Do not convert that CI pass into an asset/runtime claim. The next evidence gate is still the real clean-ROM trace around `$88:CB4E` / school-front.
