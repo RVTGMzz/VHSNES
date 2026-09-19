@@ -171,32 +171,46 @@ Type-0, one record:
 
 The decoded 4bpp tile bank also contains character/object fragments, not the visible menu labels.
 
-## Multi-command script `$82:B364`
+## Type-FF script `$82:B364`
 
-`$82:B364` is not one ordinary type-0 package.
+`$82:B364` is one standalone type-FF resource script.
 
-It begins with a repeated sequence of type-FF commands. The observed command shape is:
+Its proven retail shape is:
 
 `FF + source24 + parameter16 + 80`
 
-Seven such commands occur before the next inline command.
+For `$82:B364`:
 
-These resources decode as structured metasprite/object data rather than raw pixel graphics.
+- resource source: `$A3:9AB3`
+- parameter: `$C000`
+- `0x80` terminates this script
 
-After the type-FF prefix, script execution reaches an inline type-0 package at:
+The decoded `$A3:9AB3` payload is metasprite/OAM-layout data. Its structure has been reverse-validated as:
 
-`$82:B395`
+`frame_count + total_sprite_count + counts[] + X[] + Y[] + tile[] + attr[]`
 
-The inline package contains six resource records, including:
+For `$A3:9AB3`:
 
-- VRAM `0x2000` <- `$97:BA23`
-- VRAM `0x3000` <- `$90:8003`
-- VRAM `0x4000` <- `$9B:8000`
-- VRAM `0x0000` <- `$A1:C37B`
-- VRAM `0x5000` <- `$A1:C262`
-- VRAM `0x6000` <- `$A0:CBB3`
+- frames: **47**
+- sprite entries: **1613**
+- all array counts consume the decompressed payload exactly
 
-Offline renders from this inline package show additional stage/object/silhouette assets, but still do not establish the source span of the visible `はじめから / パスワード` labels.
+Offline frame reconstruction with the G1 OBJ banks shows Maruko, Tomozou and related sprite parts. It does **not** establish the visible Start/Password label source.
+
+### Important correction: neighboring scripts are separate
+
+The following addresses are separate standalone scripts, not commands concatenated onto `$82:B364`:
+
+- `$82:B36B`
+- `$82:B372`
+- `$82:B379`
+- `$82:B380`
+- `$82:B387`
+- `$82:B38E`
+
+Likewise `$82:B395` is a separate neighboring type-0 package.
+
+The G1 initializer explicitly loads `$82:B364`. No G1 execution claim is made for the neighboring scripts unless a later trace proves one.
 
 ## Reproducible trace tool
 
@@ -221,8 +235,8 @@ The tool validates:
 - five-state G1 module table;
 - selection toggle and result mapping;
 - type-0 packages `AF23/AA30/AA50`;
-- type-FF prefix in `B364`;
-- inline type-0 package `B395`.
+- standalone type-FF script `B364`;
+- neighboring script-bank structure without claiming execution of `B36B..B395`.
 
 ## Current G1 status
 
