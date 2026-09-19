@@ -1,8 +1,49 @@
 # HANDOFF CURRENT — Chibi Maruko-chan SNES Việt hóa
 
-Updated: 2026-09-18 +07  
+Updated: 2026-09-19 +07  
 Branch: `chibi-maruko-bootstrap-01`  
 Repo: `RVTGMzz/VHSNES`
+
+
+## Latest checkpoint — G1 Runtime PASS / G2 school-front trace
+
+Read first:
+
+- `docs/G1_LABEL_ASSET_PROOF_009.md`
+- `docs/G2_REVERSE_CHECKPOINT_010.md`
+
+G1 Start/Password is no longer unresolved:
+
+- exact package: `$82:AF23`, record **#8**
+- compressed source: `$97:F95E` / file `0x0BF95E`
+- VRAM: `$7800`
+- original packed span: `0x1B4`
+- decompressed output: `0x3E0`
+- Vietnamese packed size: `0x16A`
+- probe: `G1_LABEL_PROBE_001_CLEAN.sfc`
+- changed bytes: **360**
+- SHA-1: `904435c61153fd7f41649ab25e8f50318d3ec72f`
+- SHA-256: `16c2975f431edc74754b8b6ad9272b78e4cc37852df653d1581094efb5d15edb`
+- checksum/complement: `0x28CA / 0xD735`
+- user-confirmed visible labels **Bắt đầu / Mật khẩu**: **RUNTIME PASS**
+
+`どれにする？` is a separate target and is not included in that replacement claim.
+
+Current G2 target:
+
+`今からやるよ` -> **Bắt đầu thôi!**
+
+Current execution checkpoint:
+
+`Start -> A1 -> $80:E131 -> $80:E169 -> $88:8139 -> $88:CB4E -> group 4 -> school-front scene`
+
+- QA descriptor `0x286EA`: clue only, **do not patch**
+- candidate `$9A:CB34`: **rejected**, decoded graphics do not match
+- exact G2 overlay asset: **UNPROVEN**
+- G2 graphics write: **NO**
+- G2 Runtime PASS: **NO**
+
+Continue from the school-front scene and trace the retail overlay callback/resource for `今からやるよ`.
 
 ## Current milestone
 
