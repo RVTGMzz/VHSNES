@@ -76,3 +76,33 @@ Continue from:
 and trace the overlay callback/resource load that appears immediately around the `今からやるよ` presentation.
 
 Prefer execution/resource evidence over another broad whole-ROM shape scan.
+
+## Targeted G2 tracer added
+
+New read-only tool:
+
+`tools/trace_g2_start_flow.py`
+
+ROM-free self-test:
+
+`tools/selftest_g2_start_flow.py`
+
+Intended command:
+
+```bash
+python tools/trace_g2_start_flow.py clean.sfc \
+  --json reports/generated/g2_start_flow.json
+```
+
+The tracer is intentionally narrow around:
+
+- `$80:E131`
+- `$80:E169`
+- `$88:8139`
+- `$88:CB4E`
+
+It reports nearby JSL/JML/JSR/JMP flow, the proven `LDX #script ; JSL $80:E255` resource-call shape, and calls to worker `$81:D10D`.
+
+CI run **#39**, commit `6c7026cf4b857c24e2efbeebac544cc71e055850`: **PASS**. The dedicated step **Run G2 targeted start-flow selftest** completed successfully.
+
+This CI result validates the tool mechanics only. It does not prove the retail `今からやるよ` asset because the clean ROM is not stored in GitHub and was not executed in CI.
