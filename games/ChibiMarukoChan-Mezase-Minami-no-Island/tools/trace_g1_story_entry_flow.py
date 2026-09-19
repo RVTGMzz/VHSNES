@@ -22,8 +22,16 @@ G1_INPUT = 0x85EAB8
 G1_RESULT = 0x85EB84
 
 G1_TYPE0_PACKAGES = (0x82AF23, 0x82AA30, 0x82AA50)
-G1_MULTI_SCRIPT = 0x82B364
-G1_INLINE_TYPE0 = 0x82B395
+G1_FF_SCRIPT = 0x82B364
+G1_NEIGHBOR_FF_SCRIPTS = (
+    0x82B36B,
+    0x82B372,
+    0x82B379,
+    0x82B380,
+    0x82B387,
+    0x82B38E,
+)
+G1_NEIGHBOR_TYPE0 = 0x82B395
 
 
 def read_u16(rom: bytes | bytearray, cpu: int) -> int:
@@ -46,41 +54,31 @@ def require_bytes(
         )
 
 
-def parse_ff_prefix(rom: bytes | bytearray, cpu: int) -> tuple[list[dict], int]:
-    """Parse the proven repeated type-FF prefix used by the G1 multi-script.
+def parse_single_ff_script(rom: bytes | bytearray, cpu: int) -> dict:
+    """Parse one standalone type-FF script.
 
-    The observed command shape is:
+    Proven retail shape:
         FF + source24 + parameter16 + 80
 
-    Parsing stops at the first non-FF command and returns its CPU pointer.
+    The trailing 0x80 terminates this script. Neighboring bytes at B36B,
+    B372, ... are separate script entries and must not be concatenated.
     """
     p = cpu_to_file(cpu)
-    if rom[p] != 0xFF:
-        raise RuntimeError("G1 multi-script does not begin with type FF")
-
-    rows: list[dict] = []
-    while rom[p] == 0xFF:
-        if p + 7 > len(rom):
-            raise RuntimeError("truncated type-FF command")
-        src = rom[p + 1] | (rom[p + 2] << 8) | (rom[p + 3] << 16)
-        param = rom[p + 4] | (rom[p + 5] << 8)
-        terminator = rom[p + 6]
-        if terminator != 0x80:
-            raise RuntimeError(
-                f"type-FF command at file 0x{p:X} lacks 0x80 terminator"
-            )
-        rows.append(
-            {
-                "command_cpu": f"0x{((0x82 << 16) | ((p - 0x10000) + 0x8000)):06X}",
-                "source_cpu": f"0x{src:06X}",
-                "source_file": f"0x{cpu_to_file(src):06X}",
-                "parameter": f"0x{param:04X}",
-            }
+    if p + 7 > len(rom):
+        raise RuntimeError("truncated type-FF script")
+    if rom[p] != 0xFF or rom[p + 6] != 0x80:
+        raise RuntimeError(
+            f"type-FF signature mismatch at ${cpu:06X}"
         )
-        p += 7
-
-    next_cpu = (0x82 << 16) | ((p - 0x10000) + 0x8000)
-    return rows, next_cpu
+    src = rom[p + 1] | (rom[p + 2] << 8) | (rom[p + 3] << 16)
+    param = rom[p + 4] | (rom[p + 5] << 8)
+    return {
+        "script_cpu": f"0x{cpu:06X}",
+        "source_cpu": f"0x{src:06X}",
+        "source_file": f"0x{cpu_to_file(src):06X}",
+        "parameter": f"0x{param:04X}",
+        "terminator": "0x80",
+    }
 
 
 def main() -> int:
@@ -200,14 +198,17 @@ def main() -> int:
             ],
         }
 
-    ff_rows, next_cpu = parse_ff_prefix(rom, G1_MULTI_SCRIPT)
-    if next_cpu != G1_INLINE_TYPE0:
-        raise RuntimeError(
-            f"G1 multi-script inline package mismatch: 0x{next_cpu:06X}"
-        )
-    _typ, inline_flags, inline_records, _vram = parse_type0_package(
+    ff_script = parse_single_ff_script(rom, G1_FF_SCRIPT)
+    neighbor_ff_scripts = [
+        parse_single_ff_script(rom, cpu)
+        for cpu in G1_NEIGHBOR_FF_SCRIPTS
+    ]
+
+    # B395 is a separate neighboring type-0 script. It is recorded only as
+    # local script-bank context; this tool does NOT claim G1 executes it.
+    _typ, neighbor_flags, neighbor_records, _vram = parse_type0_package(
         rom,
-        G1_INLINE_TYPE0,
+        G1_NEIGHBOR_TYPE0,
     )
 
     report = {
@@ -236,18 +237,22 @@ def main() -> int:
             },
         },
         "type0_packages": packages,
-        "multi_script": {
-            "cpu": f"0x{G1_MULTI_SCRIPT:06X}",
-            "ff_commands": ff_rows,
-            "inline_type0_cpu": f"0x{G1_INLINE_TYPE0:06X}",
-            "inline_type0_flags": f"0x{inline_flags:02X}",
-            "inline_type0_records": [
+        "g1_ff_script": ff_script,
+        "neighbor_script_context": {
+            "note": (
+                "B36B..B38E and B395 are separate neighboring scripts; "
+                "no G1 execution claim is made for them here."
+            ),
+            "ff_scripts": neighbor_ff_scripts,
+            "type0_cpu": f"0x{G1_NEIGHBOR_TYPE0:06X}",
+            "type0_flags": f"0x{neighbor_flags:02X}",
+            "type0_records": [
                 {
                     "vram_word": f"0x{r.vram_word:04X}",
                     "source_cpu": f"0x{r.source_cpu:06X}",
                     "output_size": f"0x{r.output_size:X}",
                 }
-                for r in inline_records
+                for r in neighbor_records
             ],
         },
         "claims": {
@@ -266,8 +271,9 @@ def main() -> int:
     print("g1_state_table=PASS")
     print("g1_selection_logic=PASS")
     print(f"type0_packages={len(packages)}")
-    print(f"type_ff_prefix_commands={len(ff_rows)}")
-    print(f"inline_type0=0x{next_cpu:06X}")
+    print("g1_type_ff_script=PASS")
+    print(f"neighbor_ff_scripts={len(neighbor_ff_scripts)}")
+    print(f"neighbor_type0=0x{G1_NEIGHBOR_TYPE0:06X}")
     print("g1_visible_label_source=UNPROVEN")
     print("runtime_claim=NO")
 
