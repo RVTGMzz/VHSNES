@@ -392,7 +392,7 @@ The G1 module loads:
 - `$82:AF23` — stage/background package
 - `$82:AA30` — OBJ tile package at VRAM `0x6000`
 - `$82:AA50` — OBJ tile package at VRAM `0x7000`
-- `$82:B364` — multi-command metasprite/layout script
+- `$82:B364` — standalone type-FF metasprite/layout script using source `$A3:9AB3`
 
 The module state table is:
 
@@ -414,6 +414,8 @@ Therefore:
 - visible G1 label source: **UNPROVEN**
 - graphics ROM write: **NO**
 - Runtime PASS: **NO**
+
+Important correction: `$82:B364` terminates at its own trailing `0x80`. Neighboring `$82:B36B..$82:B38E` entries and `$82:B395` are separate scripts, not an inline continuation. The G1 initializer explicitly loads only `$82:B364` in this cluster unless later execution evidence proves otherwise.
 
 Added reproducible tool:
 
