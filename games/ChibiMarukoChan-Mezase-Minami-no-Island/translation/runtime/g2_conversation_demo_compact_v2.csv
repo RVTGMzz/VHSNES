@@ -1,0 +1,4 @@
+file_offset,line1,line2,line3,line_bytes,status,notes
+0x181CE,"Nói thẳng nhé!","Du học chớ ngại!","Luyện phản xạ!","32/34/34",probe003_ready,"All Vietnamese printable units use 2-byte 0x84xx codepage; quote and 0x816F separators preserved"
+0x18247,"Nói thẳng nhé!","Du học chớ ngại!","Tập khỏi rơi!","32/34/34",probe003_ready,"All Vietnamese printable units use 2-byte 0x84xx codepage; quote and 0x816F separators preserved"
+0x182C0,"Nói thẳng nhé!","Du học chớ ngại!","Rèn gu mỹ thuật!","32/34/34",probe003_ready,"All Vietnamese printable units use 2-byte 0x84xx codepage; quote and 0x816F separators preserved"
