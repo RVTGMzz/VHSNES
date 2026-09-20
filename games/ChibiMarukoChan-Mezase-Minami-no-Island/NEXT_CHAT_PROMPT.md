@@ -384,3 +384,21 @@ Expected visible Vietnamese on the school-front dialogue variants:
 - Luyện phản xạ! / Tập khỏi rơi! / Rèn gu mỹ thuật!
 
 Check both text rendering and whether the background/palette returns to normal compared with Probe 001.
+
+## PROBE 003 IS THE ONLY NEXT RUNTIME TEST
+
+Probe 002 is **RUNTIME FAIL**: black screen at the target dialogue.
+
+Read `docs/G2_DIRECT_TEXT_PROBE_003_014.md`.
+
+Test:
+
+`Chibi_Maruko_G2_DIRECT_TEXT_PROBE_003.sfc`
+
+Expected SHA-1:
+
+`d0f7969aea3cad0a167dca3889ee9960be6415e0`
+
+Probe 003 preserves D038 and all Story separators, and uses strict 2-byte `0x84xx` units for letters, spaces, punctuation and padding.
+
+If it still black-screens, do not make Probe 004 from clean ROM. Recover/rebuild the exact Build 023/024/027 baseline first.
