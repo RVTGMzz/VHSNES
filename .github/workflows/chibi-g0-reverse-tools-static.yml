@@ -39,6 +39,9 @@ jobs:
       - name: Run G2 targeted start-flow selftest
         run: python selftest_g2_start_flow.py
 
+      - name: Run G2 school-front resource collector selftest
+        run: python selftest_g2_school_front_resources.py
+
       - name: Run graphics patch manifest selftest
         run: python selftest_graphics_patch_manifest.py
 
