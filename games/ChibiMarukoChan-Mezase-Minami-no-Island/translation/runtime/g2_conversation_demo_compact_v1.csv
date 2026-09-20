@@ -1,4 +1,4 @@
 file_offset,source_sha256,line1,line2,line3,field_bytes,status,notes
-0x181CE,bba59fd14eb22e6b1c20b022cc8b5b1deefea805a662060ff4bb969e940f1d1a,"Nói thẳng nhé!","Du học chớ xấu hổ!","Luyện phản xạ!",106,runtime_probe_ready,"Fixed line widths 32/34/34 bytes; original D038 preserved"
-0x18247,bf7f9ce44005a4dff7807a2028e96030f835dc19247400adfbf293600877c237,"Nói thẳng nhé!","Du học chớ xấu hổ!","Tập khỏi rơi!",106,runtime_probe_ready,"Fixed line widths 32/34/34 bytes; original D038 preserved"
-0x182C0,ec02dcf7e69d501c99deba14b3e1a954bffb33c9955e2c1e95b4509a3874361f,"Nói thẳng nhé!","Du học chớ xấu hổ!","Rèn gu mỹ thuật!",106,runtime_probe_ready,"Fixed line widths 32/34/34 bytes; original D038 preserved"
+0x181CE,bba59fd14eb22e6b1c20b022cc8b5b1deefea805a662060ff4bb969e940f1d1a,"Nói thẳng nhé!","Du học chớ xấu hổ!","Luyện phản xạ!",106,runtime_fail_mixed_width,"Rejected after runtime black-screen; mixed 0x84xx text with 1-byte spaces/SJIS punctuation"
+0x18247,bf7f9ce44005a4dff7807a2028e96030f835dc19247400adfbf293600877c237,"Nói thẳng nhé!","Du học chớ xấu hổ!","Tập khỏi rơi!",106,runtime_fail_mixed_width,"Rejected after runtime black-screen; mixed 0x84xx text with 1-byte spaces/SJIS punctuation"
+0x182C0,ec02dcf7e69d501c99deba14b3e1a954bffb33c9955e2c1e95b4509a3874361f,"Nói thẳng nhé!","Du học chớ xấu hổ!","Rèn gu mỹ thuật!",106,runtime_fail_mixed_width,"Rejected after runtime black-screen; mixed 0x84xx text with 1-byte spaces/SJIS punctuation"
