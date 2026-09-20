@@ -42,6 +42,9 @@ jobs:
       - name: Run G2 school-front resource collector selftest
         run: python selftest_g2_school_front_resources.py
 
+      - name: Run G2 conversation direct-text probe selftest
+        run: python selftest_g2_conversation_direct_probe.py
+
       - name: Run graphics patch manifest selftest
         run: python selftest_graphics_patch_manifest.py
 
