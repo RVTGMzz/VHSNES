@@ -45,6 +45,9 @@ jobs:
       - name: Run G2 conversation direct-text probe selftest
         run: python selftest_g2_conversation_direct_probe.py
 
+      - name: Run G2 direct-text Probe 003 framing selftest
+        run: python selftest_g2_conversation_direct_probe_003.py
+
       - name: Run graphics patch manifest selftest
         run: python selftest_graphics_patch_manifest.py
 
