@@ -322,3 +322,20 @@ python tools/trace_g2_start_flow.py clean.sfc \
 CI run #39 on commit `6c7026cf4b857c24e2efbeebac544cc71e055850` passed, including `selftest_g2_start_flow.py`.
 
 Do not convert that CI pass into an asset/runtime claim. The next evidence gate is still the real clean-ROM trace around `$88:CB4E` / school-front.
+
+## SCHOOL-FRONT COLLECTOR READY
+
+Read `docs/G2_SCHOOL_FRONT_RESOURCE_COLLECTOR_011.md`.
+
+New preferred command once the canonical clean ROM is available:
+
+```bash
+python tools/trace_g2_school_front_resources.py clean.sfc \
+  --out reports/generated/g2_school_front_resources
+```
+
+Inspect the generated JSON and previews before any G2 write.
+
+Do not fall back to broad shape scanning unless this execution-aware pass fails to expose a usable resource path.
+
+Current target remains `今からやるよ` -> **Bắt đầu thôi!**.
