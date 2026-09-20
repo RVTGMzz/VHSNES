@@ -1,6 +1,6 @@
 # Translation progress — Chibi Maruko-chan
 
-Updated: 2026-09-18 +07  
+Updated: 2026-09-20 +07  
 Branch: `chibi-maruko-bootstrap-01`
 
 ## Meaning-first Vietnamese source layer
@@ -22,11 +22,12 @@ Current committed **player-facing / release-intent** translated rows:
 - Karaoke Batch 01: 28
 - Stage-name Batch 01: 15
 - Quiz misc/result UI: 8
-- **total release-intent meaning rows: 1,018**
+- G2 conversation demo direct text: 3
+- **total release-intent meaning rows: 1,021**
 
 Additional reverse/reference material:
 
-- `translation/source/internal_debug_reference_vi.csv`: internal QA/debug reference, excluded from the 1,018 release-intent count
+- `translation/source/internal_debug_reference_vi.csv`: internal QA/debug reference, excluded from the 1,021 release-intent count
 - `translation/source/graphics_text_targets_vi.csv`: visual-text targets for graphics/tilemap work, not direct-text rows
 
 These counts are source-translation rows, **not whole-game completion percentage**.
