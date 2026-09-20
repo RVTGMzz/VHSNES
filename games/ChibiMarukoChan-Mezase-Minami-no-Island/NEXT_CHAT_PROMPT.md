@@ -360,3 +360,27 @@ Interpretation:
 - phrase remains -> eliminate D038 and continue through CE80/downstream path.
 
 Do not redo G1.
+
+## G2 DIRECT-TEXT PROBE 002 READY
+
+Read `docs/G2_CONVERSATION_DEMO_DIRECT_TEXT_013.md`.
+
+Do not treat `今からやるよ` as a visible graphics banner. It is currently descriptor-only naming for the conversation demo.
+
+Probe to test:
+
+`Chibi_Maruko_G2_DIRECT_TEXT_PROBE_002.sfc`
+
+Expected SHA-1:
+
+`60968e7dfb6f38158003cc57723569d88f66a849`
+
+D038 is left untouched in Probe 002.
+
+Expected visible Vietnamese on the school-front dialogue variants:
+
+- Nói thẳng nhé!
+- Du học chớ xấu hổ!
+- Luyện phản xạ! / Tập khỏi rơi! / Rèn gu mỹ thuật!
+
+Check both text rendering and whether the background/palette returns to normal compared with Probe 001.
