@@ -863,3 +863,38 @@ Local Probe 002:
 - runtime: **RETEST REQUIRED**
 
 Do not resume graphics hunting for literal `今からやるよ` unless exact visible runtime evidence later proves those characters appear.
+
+### G2 Probe 002 Runtime FAIL / Probe 003 strict 2-byte
+
+Read:
+
+`docs/G2_DIRECT_TEXT_PROBE_003_014.md`
+
+User runtime result for Probe 002:
+
+**black screen when entering the target dialogue screen**
+
+Therefore Probe 002 is **RUNTIME FAIL** and its mixed-width payload must not be reused.
+
+Root-cause correction:
+
+- Build 027 Story insertion uses the proven `0x84xx` 2-byte Vietnamese codepage inside fixed fields.
+- Probe 002 incorrectly mixed `0x84xx` glyphs with raw 1-byte spaces `0x20` and SJIS `0x8149` exclamation.
+- Probe 003 encodes letters, spaces, punctuation and padding as 2-byte `0x84xx` units.
+- original `8175/8176` quotes and `816F` separators are preserved.
+- separator offsets remain exactly 32 / 68 / 104.
+- D038 remains original.
+
+Probe 003 artifact:
+
+`Chibi_Maruko_G2_DIRECT_TEXT_PROBE_003.sfc`
+
+Static identity:
+
+- SHA-1 `d0f7969aea3cad0a167dca3889ee9960be6415e0`
+- SHA-256 `5208bec10147f478cc17955c4f262a5cde08e5b85708caa2717370f6835fbacd`
+- checksum/complement `0x4FE8 / 0xB017`
+- total diff bytes vs clean: **621**
+- Runtime: **RETEST REQUIRED**
+
+If Probe 003 still black-screens, stop iterating field encoding and reconstruct/test from the exact Build 023/024/027 baseline instead of clean ROM.
