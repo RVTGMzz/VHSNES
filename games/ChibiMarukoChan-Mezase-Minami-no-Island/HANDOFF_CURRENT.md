@@ -766,3 +766,20 @@ Added:
 Workflow run **#39** at commit `6c7026cf4b857c24e2efbeebac544cc71e055850` is **CI PASS**, including the dedicated G2 targeted selftest.
 
 This is a tooling/static CI claim only. Exact G2 asset identity and G2 Runtime PASS remain **NO** until the tracer is run against the canonical clean ROM and the resulting source is decoded/verified.
+
+### G2 school-front resource collector checkpoint 011
+
+Read:
+
+`docs/G2_SCHOOL_FRONT_RESOURCE_COLLECTOR_011.md`
+
+Added:
+
+- `tools/trace_g2_school_front_resources.py`
+- `tools/selftest_g2_school_front_resources.py`
+
+The collector starts at `$88:8139` and `$88:CB4E`, walks a bounded local call neighborhood, finds exact `LDX #script ; JSL $80:E255` resource calls, parses referenced type-0/type-FF resources, and exports 2bpp/4bpp previews for tile-aligned type-0 records.
+
+CI run #42 on commit `3755af52f3ea7e5499afa6914143be379c3f7274` passed every substantive test step observed, including the dedicated school-front collector selftest.
+
+The clean ROM was not recoverable from File Library in this session, so no real G2 resource list or asset identity is claimed yet.
