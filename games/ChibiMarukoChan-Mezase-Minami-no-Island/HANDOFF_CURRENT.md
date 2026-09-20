@@ -819,3 +819,47 @@ Local artifact:
 SHA-1 `da3cf951acd8d772df1b60a54fc0c81eb412f755`
 
 Runtime retest required. Do not call D038 the final dialogue path until the probe result is known.
+
+### G2 conversation demo direct-text correction 013
+
+Read:
+
+`docs/G2_CONVERSATION_DEMO_DIRECT_TEXT_013.md`
+
+Runtime feedback from Probe 001 showed palette/background instability after removing D038. Because Probe 001 was built from the clean ROM, Japanese dialogue in that build was expected and is not a regression.
+
+Critical model correction:
+
+- internal descriptor `0x286EA` says `『今からやるよ』の会話デモです。`
+- `今からやるよ` is an internal semantic label for the conversation demo, not established visible player-facing graphics
+- the actual screenshot dialogue is normal direct CP932 text
+
+New player-facing direct-text records:
+
+- `0x181CE` — reflex-training variant
+- `0x18247` — do-not-fall-from-island variant
+- `0x182C0` — art-sense variant
+
+All are exact **106-byte** payloads with the original 32/34/34 line layout.
+
+Added:
+
+- `translation/source/g2_conversation_demo_vi.csv`
+- `translation/runtime/g2_conversation_demo_compact_v1.csv`
+- `tools/build_g2_conversation_direct_probe.py`
+- `tools/selftest_g2_conversation_direct_probe.py`
+
+Release-intent meaning count is now **1,021** rows.
+
+Local Probe 002:
+
+`Chibi_Maruko_G2_DIRECT_TEXT_PROBE_002.sfc`
+
+- D038: **ORIGINAL**
+- total diff: **642 bytes**
+- SHA-1: `60968e7dfb6f38158003cc57723569d88f66a849`
+- SHA-256: `4c526be4554cbec58153e11c11afc95f42aa132466a7b631a20155fea807df9b`
+- checksum/complement: `0x4C21 / 0xB3DE`
+- runtime: **RETEST REQUIRED**
+
+Do not resume graphics hunting for literal `今からやるよ` unless exact visible runtime evidence later proves those characters appear.
