@@ -339,3 +339,24 @@ Inspect the generated JSON and previews before any G2 write.
 Do not fall back to broad shape scanning unless this execution-aware pass fails to expose a usable resource path.
 
 Current target remains `今からやるよ` -> **Bắt đầu thôi!**.
+
+## G2 PROBE 001 READY
+
+Read `docs/G2_D038_DISABLE_PROBE_012.md`.
+
+Probe:
+
+`Chibi_Maruko_G2_D038_DISABLE_PROBE_001.sfc`
+
+Expected SHA-1:
+
+`da3cf951acd8d772df1b60a54fc0c81eb412f755`
+
+Test only the first Start route through the school-front `今からやるよ` conversation demo.
+
+Interpretation:
+
+- phrase disappears while scene survives -> continue tracing D038 shared dialogue/controller path;
+- phrase remains -> eliminate D038 and continue through CE80/downstream path.
+
+Do not redo G1.
