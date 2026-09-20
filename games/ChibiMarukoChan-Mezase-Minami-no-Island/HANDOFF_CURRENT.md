@@ -783,3 +783,39 @@ The collector starts at `$88:8139` and `$88:CB4E`, walks a bounded local call ne
 CI run #42 on commit `3755af52f3ea7e5499afa6914143be379c3f7274` passed every substantive test step observed, including the dedicated school-front collector selftest.
 
 The clean ROM was not recoverable from File Library in this session, so no real G2 resource list or asset identity is claimed yet.
+
+### G2 D038 disable probe 012
+
+Read:
+
+`docs/G2_D038_DISABLE_PROBE_012.md`
+
+Canonical clean ROM was re-uploaded and revalidated.
+
+New static proof:
+
+- `$88:CB4E` group 4 first list -> `$82:AB4E`, `$82:AE66`
+- `$82:AB4E` offline render reproduces the retail school-front scene: **STATIC PASS**
+- group 4 second list -> `$88:CE80`, `$88:D038`
+- `$88:D038` is shared by many groups
+- `$82:AAB0` is too small to contain the full six-character target and is rejected as the complete overlay asset
+
+Added reproducible probe builder:
+
+`tools/build_g2_d038_disable_probe.py`
+
+Probe 001 changes group-4 second-list from:
+
+`CE80 -> D038 -> end`
+
+to:
+
+`CE80 -> end`
+
+Local artifact:
+
+`Chibi_Maruko_G2_D038_DISABLE_PROBE_001.sfc`
+
+SHA-1 `da3cf951acd8d772df1b60a54fc0c81eb412f755`
+
+Runtime retest required. Do not call D038 the final dialogue path until the probe result is known.
