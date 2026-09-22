@@ -420,3 +420,21 @@ Expected SHA-1:
 Probe 004 changes only the 27 custom glyph bitmaps used by the target conversation. The text bytes and Story controls are identical to Probe 003.
 
 Check readability only. If still poor, stop blind thickening and move to a redesigned/recovered font baseline.
+
+## PROBE 005 CLEAN DIALOGUE FONT NEXT
+
+Probe 004 typography is **RUNTIME FAIL**.
+
+Read `docs/G2_PROBE_005_CLEAN_DIALOGUE_FONT_016.md`.
+
+Test:
+
+`Chibi_Maruko_G2_DIRECT_TEXT_PROBE_005_CLEAN_DIALOGUE_FONT.sfc`
+
+Expected SHA-1:
+
+`36c2aff02d471e6d49bab48c783c1179eb0e91f4`
+
+Probe 005 keeps the exact Probe-003 Story text/control path. It changes only the 32 required dialogue glyphs plus five 0x84 codepage remaps for style consistency.
+
+Check readability and Vietnamese marks. Do not resume V5 thin or Probe-004 thickening.
