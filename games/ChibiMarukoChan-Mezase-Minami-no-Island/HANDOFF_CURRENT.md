@@ -926,3 +926,37 @@ Artifact:
 - typography: **RETEST REQUIRED**
 
 Do not call Probe 003 or Probe 004 a whole G2 Runtime PASS.
+
+### Probe 004 typography fail / Probe 005 clean dialogue font
+
+Read:
+
+`docs/G2_PROBE_005_CLEAN_DIALOGUE_FONT_016.md`
+
+User screenshot confirms Probe 004 is visually unacceptable: thickening merges strokes into blocky letterforms.
+
+Therefore Probe 004 typography is **RUNTIME FAIL** and the dilation approach is abandoned.
+
+Probe 005 keeps the proven Probe-003 text path unchanged and replaces only the 32 glyphs required by the three recovered conversation variants with a new clean 12x12 1bpp dialogue face.
+
+To avoid mixed font styles, Probe 005 also temporarily remaps `! / L / y / R / T` to clean blank custom slots.
+
+Artifact:
+
+`Chibi_Maruko_G2_DIRECT_TEXT_PROBE_005_CLEAN_DIALOGUE_FONT.sfc`
+
+Static identity:
+
+- base: Probe 003
+- glyphs: 32
+- font diff bytes: 471
+- mapping diff bytes: 10
+- total diff vs Probe 003: 485
+- SHA-1: `36c2aff02d471e6d49bab48c783c1179eb0e91f4`
+- SHA-256: `c98934c7233f032a2dd6b369f8b7858042aed606bb1dfe69301be55d3b9b1940`
+- checksum/complement: `0x68E4 / 0x971B`
+- text payload: unchanged from Probe 003
+- D038 / scene / palette logic: unchanged
+- typography: **RETEST REQUIRED**
+
+Do not return to Probe 004 thickening.
