@@ -402,3 +402,21 @@ Expected SHA-1:
 Probe 003 preserves D038 and all Story separators, and uses strict 2-byte `0x84xx` units for letters, spaces, punctuation and padding.
 
 If it still black-screens, do not make Probe 004 from clean ROM. Recover/rebuild the exact Build 023/024/027 baseline first.
+
+## PROBE 004 MEDIUM FONT NEXT
+
+Probe 003: direct-text path works, typography fails.
+
+Read `docs/G2_PROBE_004_MEDIUM_FONT_015.md`.
+
+Test:
+
+`Chibi_Maruko_G2_DIRECT_TEXT_PROBE_004_MEDIUM_FONT.sfc`
+
+Expected SHA-1:
+
+`850b3e794dbcb4e8d46d7738efc078d944b5e1f0`
+
+Probe 004 changes only the 27 custom glyph bitmaps used by the target conversation. The text bytes and Story controls are identical to Probe 003.
+
+Check readability only. If still poor, stop blind thickening and move to a redesigned/recovered font baseline.
