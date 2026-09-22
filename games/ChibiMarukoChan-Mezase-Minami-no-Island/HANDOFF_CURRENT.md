@@ -898,3 +898,31 @@ Static identity:
 - Runtime: **RETEST REQUIRED**
 
 If Probe 003 still black-screens, stop iterating field encoding and reconstruct/test from the exact Build 023/024/027 baseline instead of clean ROM.
+
+### Probe 003 text-path pass / Probe 004 medium font
+
+Read:
+
+`docs/G2_PROBE_004_MEDIUM_FONT_015.md`
+
+User screenshot for Probe 003 proves the target scene loads and Vietnamese text renders. Therefore strict 2-byte direct-text framing is now a **RUNTIME PATH PASS**.
+
+However the text is visually very difficult to read. Probe 003 typography is **FAIL**.
+
+Cause: Probe 003 installed the old `vi_glyphs_v5_fe4_thin` experiment, which the user had already rejected as too thin/inconsistent.
+
+Probe 004 is built directly on Probe 003 and changes only 27 custom glyph cells by adding one pixel to the right of each lit pixel. Text payload, D038, separators and scene logic are unchanged.
+
+Artifact:
+
+`Chibi_Maruko_G2_DIRECT_TEXT_PROBE_004_MEDIUM_FONT.sfc`
+
+- base: Probe 003
+- font diff bytes: 215
+- total diff vs Probe 003: 219
+- SHA-1: `850b3e794dbcb4e8d46d7738efc078d944b5e1f0`
+- SHA-256: `00e9be78b0532f34d13bb8f352de16bbc453637d38184b9400e83bf3e36153b5`
+- checksum/complement: `0x69BF / 0x9640`
+- typography: **RETEST REQUIRED**
+
+Do not call Probe 003 or Probe 004 a whole G2 Runtime PASS.
