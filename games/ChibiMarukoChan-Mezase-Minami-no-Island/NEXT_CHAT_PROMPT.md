@@ -438,3 +438,48 @@ Expected SHA-1:
 Probe 005 keeps the exact Probe-003 Story text/control path. It changes only the 32 required dialogue glyphs plus five 0x84 codepage remaps for style consistency.
 
 Check readability and Vietnamese marks. Do not resume V5 thin or Probe-004 thickening.
+
+## NEXT: PROBE 008 FULL VIETNAMESE FONT HARMONIZATION
+
+Read first:
+
+`docs/G2_FULL_VI_FONT_HARMONIZATION_017.md`
+
+Do not restart G1/G2 reverse and do not return to Probe 004/005 morphology experiments.
+
+Authoritative text path:
+
+- Probe 003 strict 2-byte Story framing = **RUNTIME PATH PASS**
+- D038 remains original
+- scene/palette/controller logic remains untouched
+
+Current best visual direction:
+
+- Probe 006 thin-clean
+- SHA-1 `1e658ec71360a1d5a8cd0437b39cea0251b41682`
+- user feedback: broadly okay, but `ơ` is unclear
+
+Probe 007 isolated `ơ/ớ` hook patch is **rejected**. Do not reuse it.
+
+Next work:
+
+1. create a reusable thin-clean 12x12 Vietnamese construction system
+2. harmonize full families:
+   - `a á à ả ã ạ`
+   - `ă ắ ằ ẳ ẵ ặ`
+   - `â ấ ầ ẩ ẫ ậ`
+   - `e é è ẻ ẽ ẹ`
+   - `ê ế ề ể ễ ệ`
+   - `i í ì ỉ ĩ ị`
+   - `o ó ò ỏ õ ọ`
+   - `ô ố ồ ổ ỗ ộ`
+   - `ơ ớ ờ ở ỡ ợ`
+   - `u ú ù ủ ũ ụ`
+   - `ư ứ ừ ử ữ ự`
+   - `y ý ỳ ỷ ỹ ỵ`
+   - `d đ D Đ`
+3. prioritize the full **hỏi** and **ngã** sets
+4. preview full atlas + runtime sample lines first
+5. only after visual review build **Probe 008**
+
+Do not build a malformed preview into ROM.
