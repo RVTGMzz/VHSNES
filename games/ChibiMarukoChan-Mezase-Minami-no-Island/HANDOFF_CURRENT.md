@@ -960,3 +960,44 @@ Static identity:
 - typography: **RETEST REQUIRED**
 
 Do not return to Probe 004 thickening.
+
+### Full Vietnamese font harmonization checkpoint 017
+
+Read:
+
+`docs/G2_FULL_VI_FONT_HARMONIZATION_017.md`
+
+Latest runtime/font conclusions:
+
+- Probe 003: strict 2-byte direct-text path **RUNTIME PATH PASS**
+- Probe 004: **TYPOGRAPHY FAIL**
+- Probe 005: superseded by request for a thinner overall face
+- Probe 006: **current best runtime direction**; user says it is broadly okay, but `ơ` is unclear
+- Probe 007: isolated `ơ/ớ` repair **REJECTED IN PREVIEW**; do not test/promote it
+
+Current local Probe 006 identity:
+
+- SHA-1 `1e658ec71360a1d5a8cd0437b39cea0251b41682`
+- SHA-256 `0ad309c4cfede4791cd5891714e487d2c1e933965f3e5b4064be3ee66c2b1efd`
+
+The next task is **not another one-glyph patch**.
+
+Build a coherent full Vietnamese thin-clean font pass covering:
+
+- `a/ă/â` families
+- `e/ê`
+- `i`
+- `o/ô/ơ`
+- `u/ư`
+- `y`
+- `d/đ` plus uppercase `D/Đ`
+
+Highest-priority defects are the Vietnamese **hỏi** and **ngã** marks across all families. The user specifically flagged those two accent systems as broadly wrong.
+
+Planned next probe:
+
+**Probe 008 — Full Vietnamese Harmonized Thin-Clean Set**
+
+Preview the full atlas and actual runtime sample lines before producing another ROM.
+
+Keep Probe 003's text/control path frozen. Do not alter D038, scene, palette or controller logic.
