@@ -38,3 +38,28 @@ python tools/repair_g2_probe008_full_font.py
 ```
 
 Expected next-step statuses: **ROM build not performed, runtime UNTESTED, font release FAIL/PENDING**.
+
+
+## 2026-10-10 continuation: exact Probe003 rebuilt + dual pointer fix
+
+The supplied clean ROM was independently used to reconstruct the exact strict-framing Probe003, using 33 runtime codepoints / thin V5 glyphs from the frozen builder. **Hash matched both existing checkpoint digests**:
+
+- SHA-1: `d0f7969aea3cad0a167dca3889ee9960be6415e0`
+- SHA-256: `5208bec10147f478cc17955c4f262a5cde08e5b85708caa2717370f6835fbacd`
+- 621 changed bytes vs clean, checksum/complement `0x4FE8/0xB017`.
+- Separators exactly 32/68/104, strict two-byte payloads. Source/derived ROMs are kept **local**, never committed.
+
+**Renderer-critical relocation correction:** `$85:8EA8` (`BF EE 95 85`) accesses the low-word page-pointer address, **AND** `$85:8EAD` (`BF EF 95 85`) reads the overlapping pointer bank byte. On page-table relocation both opcodes must be repointed (`BF 00 F8 85` **and** `BF 01 F8 85`); relocating only the first would use the wrong bank for page 0x0A. The guarded builder now patches both.
+
+New tools committed:
+
+- `tools/build_g2_probe008_v2_font_only.py` — exact clean + exact Probe003 inputs, install all 212 mapped glyphs through existing 126 reserved custom cells and expanded page 0x0A, 52-codepoint separate 0x85 map, 13px unchanged, checksum and diff whitelist. **FONT-ONLY EXPERIMENT — NOT FOR PUBLIC RELEASE**.
+- `tools/verify_g2_probe008_v2_font_only.py` — independent checksum, both pointer-opcode fixups, bitmap roundtrip, 210 physical glyphs, all 212 mapped Unicode characters, exact original Probe003 payloads, scope verification, unchanged 13px tables.
+
+Usage on a local machine with all binary inputs:
+```bash
+python tools/build_g2_probe008_v2_font_only.py clean.sfc Probe003.sfc Probe008_V2_FONT_ONLY_UNTESTED.sfc probe008-build.json
+python tools/verify_g2_probe008_v2_font_only.py clean.sfc Probe003.sfc Probe008_V2_FONT_ONLY_UNTESTED.sfc probe008-verify.json
+```
+
+**Important:** builder and independent verifier added to repo, but full candidate V2 ROM has **not been built/emulated in this turn**, and scripts have not yet passed a real end-to-end local run. No new ROM runtime PASS, CI PASS or font release PASS is claimed. Next action is run both tools with supplied baseline in an environment containing the full repo, inspect font images, prove 0x85 native-safety and page0x0A renderer access, then emulator test. The actual 9px layout remains unimplemented in release version.
