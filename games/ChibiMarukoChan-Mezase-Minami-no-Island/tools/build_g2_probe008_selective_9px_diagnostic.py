@@ -224,7 +224,8 @@ def build(raw):
         "complement":f"0x{ck^0xFFFF:04X}",
         "vi_test_cases":len(ids)*19, "native_control_cases":len(native_controls)*19,
         "old_13px_tables_unchanged":True,
-        "mixed_japanese_quotation_marks":"POTENTIAL_SPACING_ISSUE",
+        "mixed_japanese_quotation_marks":"OFFLINE_LAYOUT_FAIL_64PX_TRAILING_QUOTE",
+        "final_line_quote_displacement_px":64,
         "limitations":"No SNES emulator/WRAM behavior demonstrated; no Japanese full-game PASS",
     }
     return bytes(data), report
