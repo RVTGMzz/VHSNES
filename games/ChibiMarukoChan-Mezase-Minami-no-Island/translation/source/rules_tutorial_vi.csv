@@ -1,3 +1,3 @@
 file_offset,source_jp,vi_full,status,notes
 0x1E2FF,"ルールをせつめいするよ","Luật chơi đây!",translated_system,"direct CP932 text; runtime layout pending"
-0x1E326,"・２本先取だよ / ・ゲームの時間は勝つまでだよ","・Thắng trước 2 ván / ・Chơi đến khi có người thắng",translated_system,"full-width ２ verified in raw ROM; bullet structure preserved semantically; runtime layout pending"
+0x1E325,"・２本先取だよ / ・ゲームの時間は勝つまでだよ","・Ai thắng 2 ván trước sẽ thắng / ・Chơi đến khi phân thắng bại",translated_system,"ROM-verified full-width ２ begins at 0x1E325 (NOT 0x1E326 mid-CP932); original bullets at 0x1E323 and 0x1E337; runtime width/layout pending"
