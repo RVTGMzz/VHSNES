@@ -1,5 +1,14 @@
 # Translation progress — Chibi Maruko-chan
 
+## LATEST RETAIL GRAPHICS — 2026-10-11 CHECKPOINT 035
+
+**Two more genuine Japanese graphics labels were replaced in a SNES experiment**, not just translated in a CSV: G1 Story `はじめから → Bắt đầu` and `パスワード → Mật khẩu`. Their exact original sprite resource is `$97:F95E`, file `0xBF95E`, loaded by G1 resource package `$82:AF23` to VRAM word `0x7800`; 31 tiles ×32B = 992B, **436B original compressed slot**, now **331B**. Blank separator and original icon tiles are preserved. See `docs/G1_START_PASSWORD_ACTUAL_ROM_PATCH_CHECKPOINT_035.md`.
+
+Checkpoint034 title graphics `Chibi Maruko-chan / Tiến tới đảo phương Nam!! / Việt hóa bởi Votri Valley` and two G1 new Vietnamese graphic labels are **now combined** as a clean-ROM-only experimental IPS: 10,880B /225 records, joint SHA256 `77a207589857d2886059057151eaf3d47530032b726744fe739e991ff81a5b80`; clean-ROM IPS reapply PASS, **zero G0/G1 byte collisions except checksum**. Original Japanese Story/Quiz/Fortune text still exists in this graphics-only build; no full Vietnamese merge, emulator gameplay test or final font acceptance has happened.
+
+**G1 heading `どれにする？` still pending**. G2 rules and G3 results/ending still pending graphics insertion. Do not confuse this with the 216 source-language editorial changes from 032: these are two real **retail graphics** labels patched, not new meaning-source discoveries. User priority remains translation/content/graphics first, font later.
+
+
 ## LATEST GRAPHICS CONTENT — 2026-10-11 CHECKPOINT 034
 
 G0 **actual first-boot title graphics asset FOUND and replaced in an experimental ROM**, not just a suggested Japanese→Vietnamese wording. Original title BG package `$82:A087`, map at ROM `0xF1F00`, graphics at `0xF6456`; offline render visually identifies the original logo. Approved pixels now contain `Chibi Maruko-chan` / `Tiến tới đảo phương Nam!!` / `Việt hóa bởi Votri Valley`, and have been round-tripped from the patched graphics ROM. **166 new title tiles, 583 non-title shared tiles preserved, four background maps identical, OBJ sprites untouched.** See `docs/G0_ACTUAL_TITLE_ASSET_REPACK_CHECKPOINT_034.md`.
