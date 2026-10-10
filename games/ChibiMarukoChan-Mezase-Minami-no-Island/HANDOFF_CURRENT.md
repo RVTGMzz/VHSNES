@@ -1,5 +1,19 @@
 # HANDOFF CURRENT — Chibi Maruko-chan SNES Việt hóa
 
+## ACTIVE CHECKPOINT 024 — 2026-10-10: G2 source-scoped 9px (supersedes glyph-scoped fail)
+
+**READ FIRST:** `docs/G2_PROBE008_LINE_SCOPED_9PX_CHECKPOINT_024.md`.
+
+- Instead of choosing 9px by individual glyph ID (which left Japanese closing quote `8176` 64px out of place), the new diagnostic chooses **9px by original G2 ROM source bank/range**: DBR=`$83`, `$1F94` in `$81CE..$8238`, `$8247..$82B1`, or `$82C0..$832A`. This gives the entire known G2 text, including native quotes, a consistent step while leaving other Japanese content at original 13px.
+- Built from **exact Probe008 V2 13px**, SHA256 `2ca9b82bf09d0e4b6feeb65ba59d3c94cb22cdfcd475e68dd96af47a119f75bd`.
+- New local diagnostic SHA256 `feb7215a67046128ff67113fd921b6479d956df6018a3ae4e74992d03b0c978a`; **181** changed bytes, checksum/complement `0xF4D6/0x0B29`, two **57-byte** 65816 hooks.
+- **12,464** CPU-instruction-subset tests PASS. Independent ROM verifier PASS and **5/5** negative corruption controls PASS. Original Probe003 framing, 3x106 source records, `816F` at 32/68/104, D038, original 13px tables, palette and scene untouched.
+- No persistent WRAM flag or added memory reservation. A local offline bitmap image shows correct closing quote x148 vs previous broken x212, but it is **NOT** an emulator screenshot.
+- **CRITICAL RUNTIME BLOCKER:** live DBR and `$1F94` source pointer in G2 must be checked in emulator debugger; do not claim source-scoped 9px runs in-game merely because static emulated-subset PASS. No SNES emulator accessible during this turn.
+- Code `tools/build_g2_probe008_line_scoped_9px_diagnostic.py`, `tools/verify_g2_probe008_line_scoped_9px_diagnostic.py` and docs committed; ROM excluded.
+- Full 0x85 native-code safety, complete typography QA, remaining G0/title and G2/G3 graphics, and whole-game playtesting remain pending.
+
+
 ## Current priority checkpoint 023 — 2026-10-10
 
 **Read `docs/G2_PROBE008_SELECTIVE_SPACING_CHECKPOINT_023.md` FIRST.** This supersedes the earlier notion that a font-glyph-only 9px gate would fully solve spacing.
