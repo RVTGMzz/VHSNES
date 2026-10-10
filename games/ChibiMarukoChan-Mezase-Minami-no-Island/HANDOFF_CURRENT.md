@@ -1,5 +1,18 @@
 # HANDOFF CURRENT — Chibi Maruko-chan SNES Việt hóa
 
+## Latest active checkpoint — 2026-10-10 (Probe008-021)
+
+**Start with `docs/G2_PROBE008_COMPLETE_FONT_CHECKPOINT_021.md`**, then `docs/G2_PROBE008_RENDERER_SPACING_PROOF_020.md` and `docs/G2_PROBE008_SPACING_HANDOFF_019.md`. This supersedes prior "renderer spacing unknown" claims.
+
+- **Measured original pitch: 13px** (both 19-entry renderer tables verified), NOT preview-assumed 12px. Local 13/12/9 sample preview and committed SVG are available. At 9px five sample rows have no literal ink collision in the offline simulation.
+- Fixed accented A crossbar and centered stacked hỏi/ngã in **V2 candidate**. V2 generated data committed: **212 entries / 210 unique glyph bitmaps**, covers **49 additional uppercase + 3 lowercase** with proposed separate lead `0x8540..0x8573`. No V2 ROM/runtime PASS.
+- **126 unique existing custom glyph slots** audited blank/unreferenced in clean ROM, all reserved by 128 existing codepage rows; not free for 52 extras. Candidate spare page `0x125000`, pointer relocation `0x2F800`, extended lead table `0x2FA00` all read-only byte-level preflight only; unknown indirect ownership and 0x85 native proprietary use remain blockers.
+- `tools/probe008_spacing_evidence.py`, `tools/repair_g2_probe008_full_font.py`, `tools/audit_g2_probe008_font_expansion.py`, V2 candidate JSON and SVG previews are on GitHub.
+- 9px is **not** a release ROM patch: a global table change would also alter remaining Japanese glyphs. Vietnamese-only conditional advance remains to design.
+- Probe003 strict framing, quote bytes, line separators at 32/68/104, D038, palettes, scene logic are frozen. No commercial ROM in GitHub.
+- **No emulator test in this session.** Neither Probe008 ROM nor font/runtime PASS can be claimed.
+
+
 ## Current task checkpoint — 2026-10-10
 
 **Read `docs/G2_PROBE008_SPACING_HANDOFF_019.md` first.** User requests saving progress now. ROM source is available and verified; Probe 003 reconstruction matches. Probe 008 font has visual defects and fresh-slot capacity FAIL (6 candidates vs 161 unique bitmaps). User wants tighter spacing: investigate 9 px advance; no spacing patch implemented. No Probe 008 ROM or runtime PASS. Older sections below are historical where superseded.
