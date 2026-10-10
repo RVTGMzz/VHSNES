@@ -1,5 +1,24 @@
 # HANDOFF CURRENT — Chibi Maruko-chan SNES Việt hóa
 
+## ACTIVE CONTENT-FIRST CHECKPOINT 032 — 2026-10-11 — VIỆT HÓA TRƯỚC, FONT SAU
+
+**USER DIRECTION OVERRIDES PRIOR FONT PRIORITY:** finish all recoverable Japanese-language content and graphics wording before returning to font/9px/65816 runtime experiments. Do not make another 032+ font probe next. Font history 025 user FAIL, 029 static-only, 031 parser audit stays preserved/on hold.
+
+**READ FIRST:** `docs/CONTENT_FIRST_CANONICAL_MERGE_CHECKPOINT_032.md`, `translation/TRANSLATION_PROGRESS.md`, `translation/runtime/content_first_graphics_queue_032.csv`, then graphics reverse docs from handoff below.
+
+**ACTUAL CONTENT WORK COMMITTED:**
+- Translated/edited Vietnamese from 10 older review CSVs has NOW BEEN APPLIED TO REAL `translation/source/*.csv` canonical `vi_full`, not merely archived editorial suggestions.
+- **220 editorial events**, **216 distinct verified `(source file, ROM offset)` keys**; 4 later-pass overrides. **209 value-changing editorial operations**, 11 values already in place. 20 canonical source CSV files in Story, Maruko Q, Fortune, main menu/quiz UI/minigame/stages.
+- Post-write LIVE GITHUB verification individually compared all 216 final `vi_full` strings against the winning editorial revision. **Story 85/85, Quiz 54/54, Fortune 24/24, UI 53/53; TOTAL 216/216 PASS, ZERO conflicts.** JavaScript CSV merge preserved Japanese originals, file offsets, technical fields, notes and UTF8 BOM where present. Three editorial conflicts manually resolved with source context.
+- New standard-library reproducible QA: `tools/audit_g2_editorial_canonical_032.py`, checks 220 edit events -> 216 latest row identities in 20 source files.
+- Language counts reconciled: **1,018** existing regular release-intent meaning rows + **3** G2 demo rows = **1,021 historical known source-row records**. Not whole ROM coverage, not 1,021 newly translated lines and not runtime pass.
+- New concrete **16-target G0–G3 graphics localization queue** `translation/runtime/content_first_graphics_queue_032.csv`: source Japanese, frozen target Vietnamese, visual-evidence level, asset blocker, next actions, release gate. One VS original Latin unchanged, one user-requested new credit, 14 existing Japanese labels requiring original asset identification/redraw/insertion.
+- G0 title and credit, G1 choice/Start/Password, G2 rules/banner, G3 results/ending wording already prepared. **Actual graphics source path still pending**, so don't patch internal debug descriptors as if retail graphics. Old known direct-text banks already meaning-covered; no new Japanese source rows invented this round.
+- No ROM, font glyph, codepage, or renderer was modified this checkpoint. No new build or emulator runtime PASS.
+
+**NEXT WORK MUST BE CONTENT/GRAPHICS, NOT FONT:** use existing G1/G0 rendering pipeline to prove actual bitmap/tilemap or compressed asset feeding visible Start/Password/heading; prepare real Vietnamese graphic replacements for verified assets, then G2 and G3. Add new meaning rows only when source and retail visibility are grounded. Keep runtime integration/acceptance separate from language completion. ROM remains off GitHub.
+
+
 ## ACTIVE CHECKPOINT 031 — 2026-10-11: RECOVERED V2 + EXCLUSIVE CALLGRAPH + QUOTE PREFLIGHT
 
 **Read first:** `docs/G2_PROBE008_RECOVERY_CALLGRAPH_CHECKPOINT_031.md`, then checkpoint030, checkpoint029 and the user screenshot failure checkpoint026.
