@@ -14,6 +14,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 CLEAN_SHA256 = "e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956"
 PROBE003_SHA256 = "5208bec10147f478cc17955c4f262a5cde08e5b85708caa2717370f6835fbacd"
+PROBE008_V2_FONT_SHA256 = "2ca9b82bf09d0e4b6feeb65ba59d3c94cb22cdfcd475e68dd96af47a119f75bd"
 TABLE_TILES = 0x29670
 TABLE_SHIFTS = 0x29696
 COUNT = 19
@@ -36,7 +37,7 @@ def table_bytes(pitch: int) -> tuple[bytes, bytes]:
 
 def proof(rom: bytes) -> dict:
     h = hashlib.sha256(rom).hexdigest()
-    if len(rom) != 0x200000 or h not in (CLEAN_SHA256, PROBE003_SHA256):
+    if len(rom) != 0x200000 or h not in (CLEAN_SHA256, PROBE003_SHA256, PROBE008_V2_FONT_SHA256):
         raise ValueError("exact clean or Probe003 2 MiB ROM required")
     expected_tiles, expected_shifts = table_bytes(13)
     if rom[TABLE_TILES:TABLE_TILES + 38] != expected_tiles:
@@ -103,8 +104,8 @@ def make_preview(destination: Path, fonts: dict) -> list[dict]:
 
 
 def patch_diagnostic_9px(rom: bytes, dest: Path) -> dict:
-    if hashlib.sha256(rom).hexdigest() != PROBE003_SHA256:
-        raise ValueError("diagnostic patch is permitted only from exact Probe003")
+    if hashlib.sha256(rom).hexdigest() not in (PROBE003_SHA256, PROBE008_V2_FONT_SHA256):
+        raise ValueError("diagnostic patch needs exact Probe003 or verified Probe008 V2 13px font-only build")
     original = bytes(rom)
     data = bytearray(rom)
     tiles, shifts = table_bytes(9)
@@ -128,7 +129,8 @@ def patch_diagnostic_9px(rom: bytes, dest: Path) -> dict:
     return {"sha256": hashlib.sha256(data).hexdigest(),
             "checksum": f"0x{checksum:04X}", "changed_bytes": len(diff),
             "runtime": "UNTESTED", "release_ready": False,
-            "global_native_text_spacing_may_regress": True}
+            "global_native_text_spacing_may_regress": True,
+            "source_is_font_v2": hashlib.sha256(original).hexdigest() == PROBE008_V2_FONT_SHA256}
 
 
 def main():
@@ -137,7 +139,7 @@ def main():
     ap.add_argument("--report", type=Path)
     ap.add_argument("--preview", type=Path)
     ap.add_argument("--diagnostic-9px", type=Path,
-                    help="UNTESTED global renderer experiment on exact Probe003 only")
+                    help="UNTESTED global renderer experiment on exact Probe003 or Probe008 V2 font-only")
     args = ap.parse_args()
     raw = args.rom.read_bytes()
     report = proof(raw)
