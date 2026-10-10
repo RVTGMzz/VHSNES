@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""G2 source-range 9px spacing DIAGNOSTIC. Stateless, no ROMs in GitHub.
+"""FAILED G2 source-range 9px diagnostic (checkpoint 025). Do not release.
+
+User's real emulator screenshot from 2026-10-10 showed broken glyph spacing
+and thin fragmented font. The static microtests do not model the full game.
+Historical reproduction is opt-in only; continue from font-only V2 instead.
+
+Original: G2 source-range 9px spacing DIAGNOSTIC. Stateless, no ROMs in GitHub.
 
 Only the exact three 106-byte G2 direct-text ROM fields use 9px, including
 native Japanese quotes. All other source banks/ranges retain original 13px.
@@ -248,8 +254,8 @@ def build(original):
                         raise AssertionError("13px native-field microhook failed")
                     checks += 1
     return bytes(data), {
-        "status":"STATIC_65816_SUBSET_PASS_ONLY", "release_ready":False,
-        "runtime":"UNTESTED", "base_sha256":INPUT_SHA256,
+        "status":"STATIC_TESTED_BUT_USER_RUNTIME_VISUAL_FAIL", "release_ready":False,
+        "runtime":"FAIL_2026_10_10_USER_SCREENSHOT", "base_sha256":INPUT_SHA256,
         "sha256":hashlib.sha256(data).hexdigest(),"changed_bytes":len(diff),
         "checksum":f"0x{ck:04X}","complement":f"0x{ck^0xFFFF:04X}",
         "word_stub_bytes":len(word),"byte_stub_bytes":len(byte),
@@ -257,7 +263,7 @@ def build(original):
         "G2_source_ranges":[[hex(x),hex(y)] for x,y in G2_RANGES],
         "G2_native_quotes_use_9px":True,
         "out_of_range_source_keeps_13px":True,
-        "runtime_blocker":"DBR bank, source pointer, and saved-stack provenance require emulator confirmation"
+        "runtime_blocker":"Actual emulation shows nearly 13px / broken glyphs; source-bank gate must be traced and font redesigned"
     }
 
 
@@ -266,7 +272,11 @@ def main():
     p.add_argument("probe008_v2_font_only",type=Path)
     p.add_argument("output_diagnostic_rom",type=Path)
     p.add_argument("output_json_report",type=Path)
+    p.add_argument("--reproduce-known-runtime-fail-025",action="store_true",
+                   help="explicitly reproduce failed diagnostic for investigation ONLY")
     a=p.parse_args()
+    if not a.reproduce_known_runtime_fail_025:
+        p.error("BLOCKED: checkpoint 025 FAILED in real screenshot. Use --reproduce-known-runtime-fail-025 only for regression analysis.")
     paths=(a.probe008_v2_font_only,a.output_diagnostic_rom,a.output_json_report)
     if len({p.resolve() for p in paths})!=3:
         raise ValueError("do not overwrite source ROM or report")
