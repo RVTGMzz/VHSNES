@@ -1,5 +1,14 @@
 # Translation progress — Chibi Maruko-chan
 
+## LATEST GRAPHICS — CHECKPOINT 036 (2026-10-11)
+
+One additional **actually modified retail graphic label**: the main-mode header “どれにする？” → “Chọn gì” / “đây?” (display reading **Chọn gì đây?**). Original asset found in package $82:A213 index6 (main mode init ROM 0x20047), source $98:F06F / file0xC706F, 8192B=256 4bpp sprite tiles. Actual ROM graphic replacement keeps first **192 native icon/menu-label tiles** identical and rewrites only last 64 heading tiles. Compressed stream **3485→2428 bytes**, same original slot, no relocation.
+
+Merged with G0 startup three-line title and G1 Story Start/Password sprite. Three graphics targets now patched in actual art assets (G0 title + credit, G1 two buttons + main-menu heading): current graphics-only combined clean-ROM experiment SHA256 **2c8beee73e985c9a2690cc36ace335f05115c1a3e81b369e09d0cfb132117090**. IPS 14,452B/263 records, replay exact. Main-menu sprite referenced by 13 UI scripts: requires real emulator smoke tests before acceptance.
+
+**Important:** graphic-only experiment still does NOT contain prior Story/Quiz/Fortune direct-text Vietnamese meaning layer. Actual SNES runtime NOT TESTED; no assertion of whole-game completion. Full font path deferred per user request. Next: G2 VS/rules graphics and G3 result/ending screens, then exact-verified merge with canonical language build.
+
+
 ## LATEST RETAIL GRAPHICS — 2026-10-11 CHECKPOINT 035
 
 **Two more genuine Japanese graphics labels were replaced in a SNES experiment**, not just translated in a CSV: G1 Story `はじめから → Bắt đầu` and `パスワード → Mật khẩu`. Their exact original sprite resource is `$97:F95E`, file `0xBF95E`, loaded by G1 resource package `$82:AF23` to VRAM word `0x7800`; 31 tiles ×32B = 992B, **436B original compressed slot**, now **331B**. Blank separator and original icon tiles are preserved. See `docs/G1_START_PASSWORD_ACTUAL_ROM_PATCH_CHECKPOINT_035.md`.
