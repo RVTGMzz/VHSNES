@@ -1,5 +1,14 @@
 # Translation progress — Chibi Maruko-chan
 
+## NEW CHECKPOINT 039 — 2026-10-11: 38 ACTUAL ADDITIONAL VIETNAMESE DIRECT-UI ROM FIELDS
+
+- Real experimental ROM produced from exact CLEAN Japanese + previously existing V2 0x84 Unicode glyph/codepage layer + checkpoint036 G0 first-boot Vietnamese title/credit and G1 selection graphics. All three existing binary layers byte-compatible (0 collisions except header).
+- **38 current source runtime UI strings actually encoded into ROM this round**: ten direct main-mode/sound fields, plus 28 VS/minigame/Quiz fields marked `runtime_candidate_exact_fit`. Codepoint mapping and original Japanese field lengths/delimiters/padding verified for every field. No new `vi_full` meaning/source row was invented; these are actual runtime patch entries selected from already reviewed Vietnamese source.
+- **Five runtime strings requiring wider fields** kept untouched in Japanese, not replaced with mangled abbreviations: `Đến khi thắng` twice, `Không kết nối`, `Chuột`, `Không`. The natural Vietnamese remains in `vi_full`.
+- Experiment output SHA256 `a1f4459942e3a757cc314d12c959168046b4a6dd66018d55b014c70d052e98ce` (headerless 2MiB); checksum/complement `7485/8B7A`; clean-ROM IPS 21,130B/674 records, independently replay verified exact. Source `tools/build_content_first_g0g1_v2_38_ui_039.py`; read `docs/CONTENT_FIRST_REAL_UI_ROM_CHECKPOINT_039.md` for evidence and build.
+- **Do not claim completed Story/Quiz/Fortune**. Historical direct-text Build035 still missing, and the 216 edits applied to canonical `vi_full` in 032 are not in this candidate. Existing V2 font was REUSED without modifications but previous user 025 visual fail NOT CLEARED; no emulator acceptance. **User said content first, font later.**
+
+
 ## LATEST 2026-10-11 — CHECKPOINT 038: G3 EVIDENCE + COMBINED GRAPHICS-TEXT BUILD PREPARATION
 
 - **0 new Japanese entries translated, 0 new graphics assets rewritten into ROM this checkpoint.** Instead, excluded six false candidate sources for G3: `勝ち` appears three times as Story prose; five other exact result/ending phrases appear only in `0x2865E..0x287FF` internal QA descriptors. Actual G3 displayed text/graphics still needs executable source-path proof. Updated `translation/runtime/content_first_graphics_queue_032.csv` with evidence status rather than guessing writes. Independent exact-ROM report `Chibi_G3_Result_Literal_Source_Audit_038.json`; new audit tool in tools/.
