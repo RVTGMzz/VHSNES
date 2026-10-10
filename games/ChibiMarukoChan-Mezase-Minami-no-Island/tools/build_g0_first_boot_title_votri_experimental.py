@@ -225,14 +225,8 @@ def build(source: bytes, font_bold: str, font_regular: str):
         source_decoded[off] = raw
         original[off] = (
             reorder_flag1_blocks(raw) if hdr.postprocess else raw)
-    old_tilemap = original[TITLE_MAP[0]]
-    protected = set()
-    for base in OTHER_MAPS:
-        for i in range(1024):
-            off = base * 2 + i * 2
-            protected.add(int.from_bytes(old_tilemap[off:off + 2], "little") & 0x3FF)
-    # The extra BG maps occupy separate VRAM positions; use the actual G0
-    # package snapshot, not the 2 KiB title tilemap, to derive protections.
+    # Tile sharing is determined from the complete decoded 64-KiB VRAM
+    # package, not from the title-only 2-KiB tilemap.
     vram = bytearray(0x10000)
     for off, dest, length, _span in (*GRAPHICS, TITLE_MAP):
         vram[dest * 2:dest * 2 + length] = original[off]
@@ -251,7 +245,7 @@ def build(source: bytes, font_bold: str, font_regular: str):
         p += 5
     if len(references) != 10:
         raise AssertionError("G0 package no longer contains ten resources")
-    protected.clear()
+    protected = set()
     for base in OTHER_MAPS:
         for i in range(1024):
             off = base * 2 + i * 2
