@@ -1,5 +1,19 @@
 # HANDOFF CURRENT — Chibi Maruko-chan SNES Việt hóa
 
+## Current priority checkpoint 023 — 2026-10-10
+
+**Read `docs/G2_PROBE008_SELECTIVE_SPACING_CHECKPOINT_023.md` FIRST.** This supersedes the earlier notion that a font-glyph-only 9px gate would fully solve spacing.
+
+- Exact Probe008 V2 13px font-only: static build/bitmap/map PASS, SHA-256 `2ca9b82bf09d0e4b6feeb65ba59d3c94cb22cdfcd475e68dd96af47a119f75bd`; 212 mappings and 210 physical glyphs.
+- New independent LoROM mapping reachability test: **212/212 mappings resolve through the actual 2-byte parser, lead pointer table and expanded 11th font page to expected raw 12x12 bitmaps**, including **84 page-$A4:D000 lookups**. This is STATIC evidence, not gameplay.
+- New *diagnostic-only* 9px glyph-gated renderer hook built locally (SHA256 `dffdec30af4c3ef4d02c58414a25fa8312dcffdd168691ed4add755de1582328`, 157 changed bytes, checksum `0xF9AF/0x0650`). It leaves original native 13px lookup tables untouched and passes 4,028 VI + 190 native microhook cases; independent byte verifier PASS. Tools and documentation on GitHub, ROM local only.
+- **BLOCKER:** glyph-gated 9px is not line-aware. The original closing quote `0x8176` remains native glyph `0x015A`, so the G2 line `Rèn gu mỹ thuật!` followed by that quote has **64px excess spacing** in offline renderer math. Do NOT ship the selective diagnostic. The global 9px variant also must NOT be released while Japanese UI side effects are unknown.
+- Existing Japanese `0x85` usage still **UNPROVEN SAFE** (32 raw candidate pairs in broad bank range are not proof of rendered use).
+- No SNES emulator/runtime font validation in this session; no new Runtime PASS. Need line- or scene-aware pitch selection including native quotes, in-game font review, and remaining G0/G2/G3 graphics and text work after font stabilizes.
+- Scripts: `tools/build_g2_probe008_selective_9px_diagnostic.py`, `tools/verify_g2_probe008_selective_9px_diagnostic.py`, `tools/verify_g2_probe008_codepage_pointer_chain.py`.
+- No ROM was committed.
+
+
 ## Active checkpoint 022 — 2026-10-10 (supersedes earlier Probe008 NOT BUILT status)
 
 **Read `docs/G2_PROBE008_LOCAL_STATIC_BUILDS_CHECKPOINT_022.md` FIRST.**
