@@ -1,9 +1,21 @@
-Tiếp tục Việt hóa Chibi Maruko SNES trên RVTGMzz/VHSNES, nhánh chibi-maruko-bootstrap-01.
+TIẾP TỤC VIỆT HÓA CHIBI MARUKO SNES — RVTGMzz/VHSNES, branch chibi-maruko-bootstrap-01.
 
-ĐỌC TRƯỚC: HANDOFF_CURRENT.md, docs/G2_PROBE008_COMPLETE_FONT_CHECKPOINT_021.md, docs/G2_PROBE008_RENDERER_SPACING_PROOF_020.md, docs/G2_PROBE008_SPACING_HANDOFF_019.md.
+ĐỌC TRƯỚC THEO THỨ TỰ:
+1. games/ChibiMarukoChan-Mezase-Minami-no-Island/HANDOFF_CURRENT.md
+2. games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/G2_PROBE008_LOCAL_STATIC_BUILDS_CHECKPOINT_022.md
+3. .../docs/G2_PROBE008_COMPLETE_FONT_CHECKPOINT_021.md
+4. .../docs/G2_PROBE008_RENDERER_SPACING_PROOF_020.md
+5. .../docs/G2_PROBE008_SPACING_HANDOFF_019.md
 
-ĐÃ CHỨNG MINH: renderer dùng 13 px/ký tự (hai bảng ROM 0x29670 và 0x29696), không phải 12 px như ảnh preview trước. Đã tạo so sánh 13/12/9 px và commit SVG. 9 px chưa được kiểm thử trong game, thay toàn cục sẽ ảnh hưởng chữ Nhật nên chưa thể coi là bản vá phát hành.
+ĐÃ HOÀN THÀNH (KIỂM TRA TĨNH THẬT, KHÔNG PHẢI EMULATOR):
+- ROM clean đúng SHA256 e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956.
+- Probe003 dựng lại KHỚP 100% hash SHA256 5208bec10147f478cc17955c4f262a5cde08e5b85708caa2717370f6835fbacd.
+- Đã build Probe008 V2 FONT ONLY tại máy local, SHA256 2ca9b82bf09d0e4b6feeb65ba59d3c94cb22cdfcd475e68dd96af47a119f75bd, 4034 byte diff so với Probe003, checksum 0x622E / complement 0x9DD1.
+- V2 có 212 mã Unicode, 210 bitmap thật, 49 chữ hoa tiếng Việt thêm + 3 chữ thường, 84/100 ô trang font 0x0A mới; đã phục hồi crossbar A hoa và sửa vị trí hỏi/ngã. Đã kiểm tra roundtrip tất cả font, giữ nguyên 3 text payloads và dấu phân cách 32/68/104, D038/scene.
+- LỖI QUAN TRỌNG ĐÃ SỬA: relocate 2 lệnh con trỏ font ở offsets 0x28EA8 VÀ 0x28EAE (không phải 0x28EAD). Builder và verifier trên repo đã được fix.
+- Renderer gốc advance 13px (2 bảng tại 0x29670/0x29696), mẫu 9px không có bitmap collision trên tất cả 44.944 cặp Unicode; script tự động test có negative-control 7px.
+- Đã build riêng bản thử DIAGNOSTIC font V2 + GLOBAL 9px, SHA256 7b982dbbcd683fa981b2a20da10850d61b6f34fd9f25970baa5f32dab75440f8, 35 bytes khác V2 13px, checksum 0x60CE / 0x9F31.
+- Đã tạo PNG offline 13/9 từ chính glyph ROM đã patch và atlas 212 ký tự. Có SVG so sánh trong repo.
+- KHÔNG ĐƯA ROM LÊN GITHUB; đã cập nhật mã, tài liệu, JSON, công cụ, preview SVG trên nhánh.
 
-ĐÃ LƯU: script sửa chữ A hoa có dấu giữ nét ngang và căn giữa dấu hỏi/ngã xếp tầng; JSON font V2 212 ký tự / 210 bitmap, bổ sung 49 hoa + 3 thường, đề xuất 52 mã 0x8540..0x8573. 126 ô custom cũ được kiểm tra trống trên ROM gốc nhưng là slot đang được dành cho codepage cũ. Phương án trang font thứ 11 và bảng ánh xạ mới có đủ vùng đệm theo kiểm tra byte, song chưa xác nhận không có tham chiếu gián tiếp và chưa thử renderer với trang 0x0A.
-
-HƯỚNG TIẾP: chạy các script mới với ROM gốc (đã có SHA256 chuẩn), kiểm thử sinh font V2; xác minh 0x85 có được game dùng theo mã riêng không, chứng minh relocate trang font; thiết kế 9 px chỉ cho tiếng Việt, sau đó build ROM từ Probe003 SHA256 5208bec10147f478cc17955c4f262a5cde08e5b85708caa2717370f6835fbacd, kiểm tra checksum+ROM diff độc lập và chạy giả lập trước khi gửi phiên bản. Tuyệt đối không commit ROM và không claim runtime PASS khi chưa test. Giữ framing 2 byte, các dấu phân cách 32/68/104, D038, palette và logic cảnh Probe003.
+BƯỚC TIẾP THEO: chạy builder + verifier đúng repo và Probe003; kiểm tra độ tương thích đường mapping 0x85, renderer font page0x0A, xử lý 9px CHỈ dành cho tiếng Việt/không tác động Japanese; test trên giả lập (môi trường phiên chat trước không có emulator), thu ảnh thật từ màn hội thoại/truyện, menu Nhật, dấu hỏi ngã và chữ hoa. Chưa có Runtime PASS, chưa release Probe008 hay kết luận toàn game hoàn thiện. Sau đó mới quay lại các tồn đọng phần đồ họa/title/menus theo handoff.
