@@ -1,5 +1,17 @@
 # HANDOFF CURRENT — Chibi Maruko-chan SNES Việt hóa
 
+## ACTIVE CHECKPOINT 027 — 2026-10-10 V3 MEDIUM FONT (DATA-ONLY)
+
+**READ FIRST:** `docs/G2_PROBE008_V3_MEDIUM_FONT_CHECKPOINT_027.md`, then `docs/G2_PROBE008_USER_RUNTIME_FAIL_CHECKPOINT_026.md`.
+
+- **Probe008 025 remains USER SCREENSHOT RUNTIME TYPOGRAPHY FAIL.** No new ROM has passed gameplay. 025's 9px selector is quarantined and must NOT be reused as a known-good baseline.
+- Static renderer re-audit: parser `$85:8340` uses `$1F94` to read source; renderer `$85:8E7B` calls word table at `0x28E0C` through helper `$85:8E05`; shift lookup at `0x290EE` after DBR bank switch. Screen's ~13px pitch is consistent with fallback, but needs live emulator DBR/`$1F94` trace. Columns and wrap are separate from physical glyph spacing.
+- Proposed **V3 medium-weight font only**, NO ROM patch: 178 custom physical glyphs strengthened by one pixel right on body rows y>=4, 32 relocated native glyphs preserved, 212 Unicode mappings untouched, 210 physical glyphs, 180 mapping rows changed due aliasing. Total proposed ink 5,055 (baseline V2 3,651), **zero collisions for 44,100 ordered glyph pairs at 9px**.
+- Added `tools/propose_g2_probe008_v3_medium_font.py`. It generates JSON only from exact V2 13px font-only source (sha256 `2ca9b82bf09d0e4b6feeb65ba59d3c94cb22cdfcd475e68dd96af47a119f75bd`), audits bitmap identity and refuses wrong input. Renderer hooks, codepage assignments and original commercial ROM remain untouched.
+- Local offline comparative image `Chibi_Probe008_V3_Font_Weight_Prototype_027.png` has 2x2 full-line layouts for 13px V2, 9px V2, 9px V3 medium, 9px V3 dense. This image is **not emulator output**.
+- Need real emulator trace for runtime 9px activation BEFORE offering another experimental ROM. Do not claim V3 runtime PASS, Japanese menu compatibility, or full-game translation. Finish G0/G2/G3 content afterward.
+
+
 ## ACTIVE CHECKPOINT 026 — 2026-10-10 USER SCREENSHOT RUNTIME TYPOGRAPHY FAIL
 
 **READ FIRST:** `docs/G2_PROBE008_USER_RUNTIME_FAIL_CHECKPOINT_026.md`.
