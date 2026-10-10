@@ -167,7 +167,7 @@ Therefore broad direct-text scanning is no longer the current priority.
 ### Batch G0 — title / intro
 
 - `ちびまる子ちゃん めざせ！南のアイランド！！` -> **Chibi Maruko-chan: Tiến tới đảo phương Nam!!**
-- additional localization credit -> **Việt hóa bởi VôtriValley**
+- additional localization credit -> **Việt hóa bởi Votri Valley**
 - preserve original copyright/publisher attribution
 - actual title-screen asset path still requires reverse
 
