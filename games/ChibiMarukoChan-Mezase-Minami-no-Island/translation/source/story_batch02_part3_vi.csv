@@ -22,7 +22,7 @@ file_offset,source_jp_scanner,byte_length,vi_full,status,notes
 0x1BF77,  さいごまで  キミには  ボクの｛  センスは  つうじないようだね｛  ざんねんだよ｛  ▼,84,Đến tận cuối cùng cậu vẫn không hiểu được gu của tớ nhỉ. Tiếc thật.,translated_meaning_batch02,
 0x1BFD8,  ………                          ｛,36,.........,translated_meaning_batch02,
 0x1C006,  わたしも  やりゃ  できるのかもね｛  ▼,40,Có khi tớ cũng làm được nếu chịu khó nhỉ.,translated_meaning_batch02,
-0x1C03D,  まさに  キミの  勝ちさっ｛  この勝利にカンパイ｛,50,Đúng là cậu thắng rồi. Nâng ly vì chiến thắng này!,translated_meaning_batch02,
+0x1C03D,  まさに  キミの  勝ちさっ｛  この勝利にカンパイ｛,50,Đúng là cậu thắng rồi. Nâng ly mừng cậu nào!,translated_meaning_batch02,
 0x1C077,  「あぁー  南の島かぁ…          ｛    なみのおとが  もう            ｛    きこえてくるようだよ…」｛,102,"Aaa, đảo phương Nam... nghe như tiếng sóng đã vọng tới rồi...",translated_meaning_batch02,
 0x1C0E5,  「セニョリータ｛    それには  まだ｛    はやいんじゃないか…」｛,66,"Señorita, còn sớm để mơ vậy đấy...",translated_meaning_batch02,
 0x1C12C,  「青い海  白いくも｛    あぁー  たのしみだよ…」｛  ▼,56,"Biển xanh, mây trắng... a, háo hức quá...",translated_meaning_batch02,
@@ -35,7 +35,7 @@ file_offset,source_jp_scanner,byte_length,vi_full,status,notes
 0x1C31D,  「やめ  やめたまえ              ｛    さくらくんっっ」              ｛  ▼,76,"Đ-đừng, Sakura-kun!",translated_meaning_batch02,
 0x1C373,  ついに最後の競技ですね          ｛  ▼  丸尾スエオ  今まであなたを甘く｛  見ていましたが  心を鬼にして｛  本気を出させていただきますよ｛  ▼,142,"Cuối cùng cũng tới phần thi cuối. Maruo Sueo này trước giờ đã coi thường bạn, nhưng giờ tôi sẽ quyết tâm nghiêm túc hết sức!",translated_meaning_batch02,
 0x1C40B,  ホント  オニのようだよ｛,26,Đúng là biến thành quỷ thật rồi đấy.,translated_meaning_batch02,
-0x1C42F,  「今こそ！！  真の代表者が｛    選ばれるのです｛    いざっ  勝負っっ」｛,74,"Giờ là lúc người đại diện thực sự được chọn! Nào, so tài!!",translated_meaning_batch02,
+0x1C42F,  「今こそ！！  真の代表者が｛    選ばれるのです｛    いざっ  勝負っっ」｛,74,"Giờ là lúc chọn ra người đại diện thật sự! Nào, so tài thôi!!",translated_meaning_batch02,
 0x1C47F,印  「アハ…アハアハ…」            ｛  ▼,42,A ha... a ha ha...,translated_meaning_batch02,leading scanner artifact; visible JP translated; runtime pending
 0x1C4AC,  「もはや  南の島よりも  この男を｛    なんとかしてほしい  まる子で  ｛    あった」                      ｛,108,"Đến lúc này, Maruko còn muốn ai đó xử lý cậu chàng này hơn cả chuyện đi đảo phương Nam...",translated_meaning_batch02,
 0x1C525,  まる子  よくがんばったね        ｛  こんやは  まる子の  すきなものに｛  してあげるよ                    ｛  ▼,112,"Maruko, con cố gắng lắm rồi. Tối nay mẹ sẽ làm món con thích.",translated_meaning_batch02,
