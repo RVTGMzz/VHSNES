@@ -1,5 +1,19 @@
 # HANDOFF CURRENT — Chibi Maruko-chan SNES Việt hóa
 
+## ACTIVE CHECKPOINT 034 — 2026-10-11: ACTUAL G0 TITLE GAME GRAPHICS PATCH CREATED
+
+**NEW HIGH-IMPACT CONTENT/GRAPHICS WORK — READ FIRST:** `docs/G0_ACTUAL_TITLE_ASSET_REPACK_CHECKPOINT_034.md`.
+
+- **Actual title asset DISCOVERED** by decoding clean SNES ROM. Initializer near file `0xFEE`: `LDX #$A087; JSL $80:E255`. This loads exact ten-resource retail graphics package `$82:A087` (file `0x12087`). Its title BG tilemap resource `$9E:9F00` (file `0xF1F00`), 2048B VRAM word0, and 4bpp title graphics `$9E:E456` (file `0xF6456`), 8192B VRAM word0x2000. Offline render visibly reproduces original Japanese `ちびまる子ちゃん めざせ！南のアイランド！！`; this is not inferred from descriptors.
+- **Real binary graphics edit** made to user's exact clean ROM: SNES 4bpp/tilemap for `Chibi Maruko-chan`, `Tiến tới đảo phương Nam!!`, `Việt hóa bởi Votri Valley`, each line visually decoded back FROM THE PATCHED ROM offline. Main 25px, subtitle 18px, credit 11px, 256x88 pixel title layer, 166 isolated new tile IDs.
+- **Protected original characters and copyright graphics**: four non-title tilemaps `0x400/0x1000/0x5000/0x5800` and 583 shared 4bpp IDs remain byte-identical, entire OBJ VRAM 0xC000..FFFF unchanged, title map lower rows preserved. Initial destructive version was REJECTED; do not reuse. Source screen art/palettes on other layers preserved offline, not in-game verified.
+- Gfx bank0 modified at ROM `0xF6456` compressed **4582 of 5570** slot; title tilemap `0xF1F00` compressed **506 of 545**; middle bank `0xF5005` unchanged; bank2 modified 3420 bytes exceeds old `0xF456D` 2712B slot, therefore moved to originally free ROM file **`0x36907` / CPU `$86:E907`**, with exactly 3 pointer bytes updated at `0x12095` inside G0 package. Original bank2 stream left untouched.
+- Local G0 title-only **UNTESTED experimental ROM** SHA256 `012cdfb87eae1b7c5a9feada4e1c322541e3c91ba45ba0b857e08a2465f47ce0`, 9317 bytes changed from clean, checksum/complement `20C8/DF37`. **IPS patch 10,415B, 218 records**, independent application reproduces exact ROM SHA. G0 resource roundtrip / other maps and sprites checks PASS. Local zip `Chibi_G0_TieuDe_VotriValley_Only_UNTESTED.zip`; no ROM binaries uploaded to GitHub.
+- **Critical:** G0 demo is based on CLEAN Japanese ROM only, NOT Build035, so story/menu/quiz remain Japanese. Never claim a complete Vietnamese game. Don't overlay IPS on Build035 until checking resource and relocation conflicts. No emulator installed here, **actual title gameplay Runtime UNTESTED**. Do not mistake asset decode / IPS roundtrip for emulator acceptance.
+- New GitHub scripts `tools/build_g0_first_boot_title_votri_experimental.py`, `tools/verify_g0_title_034_real_asset_static.py`, source contract `translation/runtime/g0_startup_title_copy_v1.json` now marks actual G0 source proven, and graphics queue G0 priority P0 has experiment recorded.
+- Continue **CONTENT FIRST**: next work should be G1 actual Start/Password graphics or safe layering G0 title delta onto confirmed Vietnamese build after collision checks. Font probes 025–031 remain deferred per user instruction. Runtime screen test only when one meaningful combined build exists; avoid many tiny test ROMs.
+
+
 ## G0 STARTUP TITLE — USER CONFIRMED 2026-10-11 (PRIORITY P0)
 
 **EXACT DISPLAY COPY:** `Chibi Maruko-chan` / `Tiến tới đảo phương Nam!!` / small `Việt hóa bởi Votri Valley`. This is the **title screen seen immediately at boot**, not an internal descriptor or later Story option. Preserve original copyright/publisher marks and game operation. Graphics targets + glossary + G0 reverse pipeline must use the exact spelling **Votri Valley**, with a space and without the previous branded form. Title artwork asset/layout still unproven; no in-ROM title rendering or gameplay PASS is claimed. Proceed with content/graphics work, leave font checkpoint031 frozen.
