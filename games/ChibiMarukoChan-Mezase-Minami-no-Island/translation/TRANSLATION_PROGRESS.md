@@ -1,5 +1,12 @@
 # Translation progress — Chibi Maruko-chan
 
+## LATEST GRAPHICS CONTENT — 2026-10-11 CHECKPOINT 034
+
+G0 **actual first-boot title graphics asset FOUND and replaced in an experimental ROM**, not just a suggested Japanese→Vietnamese wording. Original title BG package `$82:A087`, map at ROM `0xF1F00`, graphics at `0xF6456`; offline render visually identifies the original logo. Approved pixels now contain `Chibi Maruko-chan` / `Tiến tới đảo phương Nam!!` / `Việt hóa bởi Votri Valley`, and have been round-tripped from the patched graphics ROM. **166 new title tiles, 583 non-title shared tiles preserved, four background maps identical, OBJ sprites untouched.** See `docs/G0_ACTUAL_TITLE_ASSET_REPACK_CHECKPOINT_034.md`.
+
+The clean-ROM G0 title-only experiment SHA256 is `012cdfb87eae1b7c5a9feada4e1c322541e3c91ba45ba0b857e08a2465f47ce0`, with verified IPS patch available locally. This title-only ROM **does not contain the main Story/Quiz/Fortune Vietnamese work** (Build035 not merged) and **has not run in an SNES emulator**; title graphics runtime PASS must not be claimed. G1 Start/Password and G2/G3 retail screen graphics still need asset proof and real integration. Font stays deferred.
+
+
 ## CURRENT CONTENT-FIRST CHECKPOINT 032 — 2026-10-11
 
 **User priority: finish translating the game content first; font/renderer work later.** See `docs/CONTENT_FIRST_CANONICAL_MERGE_CHECKPOINT_032.md`.
