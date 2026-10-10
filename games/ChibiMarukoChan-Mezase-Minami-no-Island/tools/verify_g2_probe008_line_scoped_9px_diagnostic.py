@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""Independent byte-level verifier of G2 line-scoped 9px ROM diagnostic.
+"""Historical byte-level verifier for checkpoint 025 (runtime visual FAIL).
+
+This can verify byte-level preservation and checksum but NEVER release
+readiness. The 2026-10-10 real emulator screenshot showed broken spacing
+and glyph readability. Audit passed static bytes, NOT gameplay.
+
+Independent byte-level verifier of G2 line-scoped 9px ROM diagnostic.
 
 No builder import. Fails on unexpected byte, checksum, source-framing,
 callsite, 65816 stub, source-pointer path or original 13px-table change.
@@ -90,14 +96,14 @@ def verify(original, candidate, check_sha=True):
     if check_sha and digest!=TARGET_SHA256:
         raise AssertionError("ROM not identical to reviewed line-scoped probe")
     return {
-        "status":"INDEPENDENT_STATIC_PASS_ONLY",
+        "status":"HISTORICAL_STATIC_PASS_RUNTIME_VISUAL_FAIL",
         "base_sha256":BASE_SHA256,"candidate_sha256":digest,
         "changed_bytes":len(changed),"checksum":f"0x{ck:04X}",
         "complement":f"0x{ck^0xFFFF:04X}",
         "original_13px_tables_preserved":True,
         "G2_3x106_byte_records_preserved":True,
         "65816_stubs_verified":True,
-        "runtime":"UNTESTED","release_ready":False
+        "runtime":"FAIL_2026_10_10_USER_SCREENSHOT","release_ready":False
     }
 
 
