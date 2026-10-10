@@ -114,7 +114,7 @@ Only after that should the project allocate/redraw:
 
 - **Chibi Maruko-chan**
 - **Tiến tới đảo phương Nam!!**
-- **Việt hóa bởi VôtriValley**
+- **Việt hóa bởi Votri Valley**
 
 while preserving original publisher/copyright attribution.
 
