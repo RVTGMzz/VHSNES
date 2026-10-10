@@ -40,8 +40,13 @@
     "exact_credit_spelling": "Việt hóa bởi Votri Valley",
     "do_not_expand_or_modify_snes_internal_cartridge_title": true,
     "title_layout_coordinates": "PENDING_ACTUAL_SCREEN_ASSET_DECODE",
-    "title_graphics_source_offset": null,
-    "runtime_gameplay_verified": false
+    "title_graphics_source_offset": "0x0F6456",
+    "runtime_gameplay_verified": false,
+    "title_tilemap_source_offset": "0x0F1F00",
+    "G0_resource_script_cpu": "0x82A087",
+    "actual_title_asset_identification": "PROVEN_BY_ROM_DECODE",
+    "graphics_patch_status": "EXPERIMENTAL_STATIC_ROM_PATCH_ONLY",
+    "experimental_g0_sha256": "012cdfb87eae1b7c5a9feada4e1c322541e3c91ba45ba0b857e08a2465f47ce0"
   },
   "acceptance": [
     "Actual startup retail screen carries translated Vietnamese subtitle",
@@ -49,5 +54,5 @@
     "No copyright/publisher mark is removed",
     "Start/intro sequence remains usable in emulator"
   ],
-  "notes": "Content-first checkpoint 033; artwork strings and position rules are fixed, but title asset is not yet identified in SNES ROM."
+  "notes": "Checkpoint 034: actual retail title asset decoded from ROM, experimental graphics-only ROM patched and independently reverse-verified. No SNES emulator runtime pass, not integrated with Build035 whole-game Vietnamese translation."
 }
