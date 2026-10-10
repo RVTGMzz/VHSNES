@@ -1,5 +1,17 @@
 # HANDOFF CURRENT — Chibi Maruko-chan SNES Việt hóa
 
+## ACTIVE CONTENT-FIRST CHECKPOINT 039 — 2026-10-11: REAL G0/G1 + 38 VI DIRECT-UI FIELDS IN ROM
+
+**IMPORTANT: NEW ACTUAL COMBINED LOCAL ROM BUILT**, not historical direct-text Build035. Read `docs/CONTENT_FIRST_REAL_UI_ROM_CHECKPOINT_039.md` FIRST, then 038, 037 and 036. User explicitly wants **all content/graphics first, typography fixes later**.
+
+- Exact original clean SNES `e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956`, recovered existing V2 font/codepage baseline `2ca9b82bf09d0e4b6feeb65ba59d3c94cb22cdfcd475e68dd96af47a119f75bd`, actual graphics036 (G0 title/credit + G1 Start/Password/Chọn gì đây?) `2c8beee73e985c9a2690cc36ace335f05115c1a3e81b369e09d0cfb132117090` were bytewise THREE-WAY combined from clean. **0 V2/graphics byte collisions** outside SNES checksum header. No changes to existing font glyph bitmaps.
+- **38 ACTUAL DIRECT UI LABELS WRITTEN INTO NEW ROM** using source `translation/runtime/main_menu_compact_v1.csv` (10) + only accepted `runtime_candidate_exact_fit` records of `ui_choices_compact_v1.csv` (28). Every original CP932 two-byte source character, field length, terminator `816F`, ASCII and fullwidth 8140 padding checked. Each VI Unicode char mapped by `vi_codepage_v4_fe4_native.csv` through real V2 0x84 lead table. **Five `runtime_needs_expansion` fields deliberately untouched**, not abbreviated to gibberish: 28B28,28B40,28BC6,28BDE,31D3A.
+- Local experimental ROM `/mnt/data/Chibi_039_Integration_38UI_UNTESTED.sfc` SHA256 **`a1f4459942e3a757cc314d12c959168046b4a6dd66018d55b014c70d052e98ce`**, checksum/complement **`7485/8B7A`**, changed 17,752 source bytes. Exact clean-Japanese IPS `/mnt/data/Chibi_039_Integration_38UI_UNTESTED.ips` **21,130B/674 records**. An independent IPS decoder reapplied all IPS records to original Japanese ROM and returned identical SHA. Exact graphic G0+G1 resource bytes and V2 lookup/glyph data compared and unchanged.
+- **NO COMMERCIAL ROM committed**. IPS+README+two reports in local ZIP `/mnt/data/Chibi_039_G0G1_38UI_Content_First_UNTESTED.zip`, SHA safeguards described in `docs/CONTENT_FIRST_REAL_UI_ROM_CHECKPOINT_039.md`. Code in repo `tools/build_content_first_g0g1_v2_38_ui_039.py`; local equivalent built and executed from verified 38 reviewed source candidates and real ROM, final exact output independent QA PASS. GitHub script itself NOT run in CI, no CI checks configured.
+- This **is NOT a complete translation**: historical direct-text Build035 (Story/Quiz/Fortune/Credits etc) binary absent and no source replay to main storyline yet. 032 completed 216 `vi_full` reviews in canonical CSV, but those do not magically appear in 039 ROM. Old 025 typography user FAIL; 039 live emulator **NOT TESTED**, legacy V2 font **NOT FIXED**, do not ask user to test this partial candidate.
+- G2 rule fix 037 offset `0x1E325` remains source-only and G3 result assets still unproven. Keep working on **reproducible direct-text Story/Quiz/Fortune insertion from canonical CSV** or find actual 035 binary/patch, and G3 proper executed result. Aim one large later runtime test.
+
+
 ## ACTIVE CONTENT-FIRST CHECKPOINT 038 — 2026-10-11: G3 FALSE-LABEL EXCLUSION + DIRECT-TEXT/GRAPHICS MERGE GATE
 
 **READ:** `docs/G3_RESULT_AND_GRAPHICS_TEXT_MERGE_CHECKPOINT_038.md` before checkpoint037 and 036. User still wants to finish all CONTENT/TEXT/GRAPHICS BEFORE returning to font. Do not return to 65816 9px probes.
