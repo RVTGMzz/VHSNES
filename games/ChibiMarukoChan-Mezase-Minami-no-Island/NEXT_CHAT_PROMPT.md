@@ -1,28 +1,26 @@
-TIẾP TỤC CHIBI MARUKO-CHAN SNES VIỆT HÓA
+TIẾP TỤC VIỆT HÓA CHIBI MARUKO-CHAN SNES
 Repo: RVTGMzz/VHSNES
 Nhánh: chibi-maruko-bootstrap-01
 
-ĐỌC TRƯỚC (THEO THỨ TỰ):
+ĐỌC THEO THỨ TỰ:
 1. games/ChibiMarukoChan-Mezase-Minami-no-Island/HANDOFF_CURRENT.md
-2. .../docs/G2_PROBE008_SELECTIVE_SPACING_CHECKPOINT_023.md
-3. .../docs/G2_PROBE008_LOCAL_STATIC_BUILDS_CHECKPOINT_022.md
-4. .../docs/G2_PROBE008_COMPLETE_FONT_CHECKPOINT_021.md
-5. .../docs/G2_PROBE008_RENDERER_SPACING_PROOF_020.md
+2. games/ChibiMarukoChan-Mezase-Minami-no-Island/docs/G2_PROBE008_LINE_SCOPED_9PX_CHECKPOINT_024.md
+3. docs/G2_PROBE008_SELECTIVE_SPACING_CHECKPOINT_023.md
+4. docs/G2_PROBE008_LOCAL_STATIC_BUILDS_CHECKPOINT_022.md
+5. docs/G2_PROBE008_COMPLETE_FONT_CHECKPOINT_021.md
 
-MỐC 023:
-- ROM clean chính xác SHA256 e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956; Probe003 rebuilt chính xác SHA256 5208bec10147f478cc17955c4f262a5cde08e5b85708caa2717370f6835fbacd.
-- Probe008 V2 FONT ONLY được build/test tĩnh (chưa emulator), SHA256 2ca9b82bf09d0e4b6feeb65ba59d3c94cb22cdfcd475e68dd96af47a119f75bd. 212 mã, 210 bitmap, 84 ô trang font A4:D000. Đã sửa A hoa có dấu, hỏi/ngã xếp tầng và có đủ 49 chữ hoa + 3 chữ thường.
-- Mới chạy kiểm toán parser thật trên ROM: 212/212 mã 2 byte truy cập đúng bộ font qua bảng lead, glyphID, con trỏ trang và bitmap 12x12 (0 mismatches); trong đó 84 glyph ở trang font mới. Có script tools/verify_g2_probe008_codepage_pointer_chain.py.
-- Renderer gốc có bước 13px. Đã thử global-9px DIAGNOSTIC, ảnh offline đẹp hơn nhưng nguy cơ ảnh hưởng Nhật. Không được release.
-- Đã tạo DIAGNOSTIC 9px theo từng glyph (chỉ glyph Việt 9px, Nhật giữ 13px) bằng 2 65816 JSL hook. 4.028 phép thử microhook Việt +190 đối chứng Nhật tĩnh PASS, độc lập checksum và changed-byte whitelist PASS. SHA256 diagnostic dffdec30af4c3ef4d02c58414a25fa8312dcffdd168691ed4add755de1582328, 157 byte changed so với V2 13px, checksum 0xF9AF / complement 0x0650.
-- TUY NHIÊN: selective-9px theo glyph bị LỖI BỐ CỤC. Dòng 'Rèn gu mỹ thuật!' dài 16 ký tự rồi có dấu ngoặc gốc 8176/glyph 015A. Nó được đặt ở x212 thay vì x148, lệch 64 pixel. Có PNG minh họa offline. KHÔNG ĐƯỢC release selective probe.
-- Byte 0x85 nguyên bản có 32 cặp raw 85 40..73 trong bank được scan nhưng đa số là opcode/data; native 0x85 render use chưa được chứng minh an toàn. Không nói 'đã chứng minh lead mới an toàn toàn game'.
-- Các công cụ mới trên GitHub: tools/build_g2_probe008_selective_9px_diagnostic.py, tools/verify_g2_probe008_selective_9px_diagnostic.py, tools/verify_g2_probe008_codepage_pointer_chain.py. Các ROM đang ở môi trường local, KHÔNG commit ROM lên GitHub.
+ĐÃ LÀM ĐẾN 024:
+- ROM clean SHA256 e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956; Probe003 tái tạo đúng SHA256 5208bec10147f478cc17955c4f262a5cde08e5b85708caa2717370f6835fbacd.
+- Probe008 V2 font-only 13px SHA256 2ca9b82bf09d0e4b6feeb65ba59d3c94cb22cdfcd475e68dd96af47a119f75bd (212 Unicode, 210 bitmap, 49 chữ hoa +3 chữ thường mới, font page 0x0A).
+- Renderer gốc advance 13px. Bản 9px chọn theo TỪNG GLYPH bị lỗi dấu ngoặc Nhật cuối câu cách dư 64px. KHÔNG PHÁT HÀNH kiểu đó.
+- ĐÃ BUILD MỚI THỬ NGHIỆM: G2 SOURCE-RANGE-SCOPED 9PX, SHA256 feb7215a67046128ff67113fd921b6479d956df6018a3ae4e74992d03b0c978a, 181 bytes diff so với V2, checksum 0xF4D6, complement 0x0B29. Hai hook 65816 57 byte; vẫn giữ bảng 13px Nhật nguyên trạng. Chọn 9px khi DBR=$83 và nguồn $1F94 nằm trong 3 bản ghi 106byte đã xác minh: $83:81CE..8238, $83:8247..82B1, $83:82C0..832A. Tất cả ký tự trong G2, gồm ngoặc Nhật 8175/8176, bước 9px, nên mô hình không còn lệch 64px.
+- Đã xác minh tĩnh qua 12.464 test micro-65816, bộ xác minh ROM ĐỘC LẬP PASS, 5 phép test làm hỏng dữ liệu đều bị từ chối. Text và dấu phân cách 816F ở 32/68/104, D038, scene/palette giữ nguyên.
+- Script: tools/build_g2_probe008_line_scoped_9px_diagnostic.py và tools/verify_g2_probe008_line_scoped_9px_diagnostic.py. Checkpoint 024 và HANDOFF đã cập nhật lên GitHub. KHÔNG UPLOAD ROM.
 
-BƯỚC TỚI CẦN GIẢI:
-1. Thiết kế và kiểm thử 9px theo CẢ DÒNG hoặc theo CẢNH để dấu ngoặc Nhật 8175/8176 ở câu Việt cũng căn 9px, nhưng những câu Nhật thông thường vẫn 13px; tránh chiếm WRAM chưa xác minh. Chú ý reset trạng thái giữa dòng/cảnh. Không được thay quote/control byte của Probe003.
-2. Kiểm tra độc lập đường 0x85 và quyền sở hữu các vùng FF khi di chuyển font.
-3. Giả lập SNES thật để test font page A, dấu, spacing, cắt chữ, menu và input. Chưa emulator Runtime PASS. Không phát hành bản mới khi chưa test.
-4. Khi font thật sự ổn mới tiếp tục G0/title, G2/G3 graphics, kiểm thử nhiều minigame, toàn bộ dịch còn lại theo HANDOFF_CURRENT.md.
+CẦN LÀM TIẾP:
+1. Kiểm thử thật trong giả lập SNES debugger. Đặc biệt quan sát DBR và WRAM $1F94 ngay lúc G2 renderer chạy để chứng minh lựa chọn đúng nguồn $83; kiểm tra màn đen/crash, font page0x0A, dấu hỏi/ngã, tiếng Việt, ngoặc 8176, wrap dòng; màn Nhật khác vẫn 13px. Phiên cũ không có SNES emulator nên CHƯA RUNTIME PASS.
+2. Xác minh bộ codepage lead 0x85 mới không làm hỏng nội dung game Nhật; các ô FF mới chưa thể khẳng định an toàn trên mọi luồng.
+3. Chỉ sau khi test runtime mới nâng patch G2 từ diagnostic sang candidate. Muốn 9px ở các Story/UI khác, phải lần ra nguồn chính xác rồi mở rộng các phạm vi đã chứng minh; KHÔNG tự ý toàn cục.
+4. Khi font tốt, tiếp tục G0 title/credit VôtriValley, G2/G3 graphics, menu và những chỗ Nhật còn sót theo HANDOFF_CURRENT.md.
 
-Giữ nguyên strict 2-byte text, dấu phân cách ở 32/68/104, D038, palette, controller và scene logic. Không coi STATIC PASS là RUNTIME PASS.
+Không coi kiểm tra checksum/bitmap/micro-interpreter PASS là đã chạy được game. Không đưa ROM lên GitHub.
