@@ -1,17 +1,17 @@
 ﻿file_offset,source_jp,vi_full,status,notes
 0x288C2,ルール  相手にボールをぶつけよう。しゃがむとボールに当たりません。,LUẬT CHƠI  Ném bóng trúng đối thủ. Cúi xuống để né bóng.,translated_minigame_ui_batch01,scanner line breaks/control spacing normalized in source field
-0x28924,しゃがむ,Cúi xuống,translated_minigame_ui_batch01,
-0x28932,移動,Di chuyển,translated_minigame_ui_batch01,
+0x28924,しゃがむ,Cúi,translated_minigame_ui_batch01,
+0x28932,移動,Đi,translated_minigame_ui_batch01,
 0x2893C,ボールを,Ném,translated_minigame_ui_batch01,paired two-line control label; Vietnamese word order intentionally rearranged
 0x2894A,なげる,bóng,translated_minigame_ui_batch01,paired two-line control label; Vietnamese word order intentionally rearranged
 0x28958,ルール  ペンキをうまくぬり、相手にふませよう。ドライヤーでペンキをかわかすこともできます。,LUẬT CHƠI  Sơn thật khéo để đối thủ giẫm phải. Có thể dùng máy sấy làm khô sơn.,translated_minigame_ui_batch01,scanner line breaks/control spacing normalized in source field
-0x289DE,ドライヤー,Máy sấy,translated_minigame_ui_batch01,
-0x289EE,移動,Di chuyển,translated_minigame_ui_batch01,
-0x289F8,おしている間,Giữ nút để,translated_minigame_ui_batch01,paired two-line control label
-0x28A0A,ペンキをぬる,quét sơn,translated_minigame_ui_batch01,paired two-line control label
+0x289DE,ドライヤー,Sấy,translated_minigame_ui_batch01,
+0x289EE,移動,Đi,translated_minigame_ui_batch01,
+0x289F8,おしている間,Giữ nút,translated_minigame_ui_batch01,paired two-line control label
+0x28A0A,ペンキをぬる,Sơn,translated_minigame_ui_batch01,paired two-line control label
 0x28A1E,ルール  相手をおしたり、なげとばしたりして、プールにおとそう。,LUẬT CHƠI  Đẩy hoặc hất đối thủ xuống hồ!,translated_minigame_ui_batch01,scanner line breaks/control spacing normalized in source field
 0x28A70,投げる,Ném,translated_minigame_ui_batch01,
-0x28A7C,移動,Di chuyển,translated_minigame_ui_batch01,
+0x28A7C,移動,Đi,translated_minigame_ui_batch01,
 0x28A86,体当り,Húc,translated_minigame_ui_batch01,
 0x28A94,何本先取？,Thắng mấy ván?,translated_minigame_ui_batch01,
 0x28AA4,コンピュータの,Độ khó,translated_minigame_ui_batch01,paired two-line heading; Vietnamese word order intentionally rearranged
