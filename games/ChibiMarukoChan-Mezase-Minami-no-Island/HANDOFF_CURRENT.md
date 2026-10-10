@@ -1,5 +1,17 @@
 # HANDOFF CURRENT — Chibi Maruko-chan SNES Việt hóa
 
+## ACTIVE CHECKPOINT 035 — 2026-10-11: G1 TWO VISIBLE CHOICE GRAPHICS ACTUALLY VIETNAMESED
+
+**USER DIRECTIVE: finish content/graphics first, font after.** New actual G1 **Start/Password** sprite source is decoded and patched; no 65816 font work. Read `docs/G1_START_PASSWORD_ACTUAL_ROM_PATCH_CHECKPOINT_035.md` first, then checkpoint034 for G0.
+
+- G1 first Story choice screen initializer `$85:E97F` loads type-0 resource package **`$82:AF23`**. Its resource entry 8 at ROM `0x12F4D` uploads **`$97:F95E` / file `0xBF95E`** into VRAM word **0x7800**. Original game decompresses **436 compressed bytes -> 992 bytes = 31 8×8 SNES 4bpp sprite tiles**, directly decoded and visibly confirmed to contain `はじめから` and `パスワード` plus the two-tile icon. This was also present in historical `tools/extract_g1_story_select_assets.py` but was still incorrectly marked unresolved in the content queue; now corrected.
+- G1-only actual clean-ROM graphics patch rasterizes **`Bắt đầu`** and **`Mật khẩu`** to the original tile slots (0..14, 16..28). Original 15 spacer + 29,30 game icon preserved exactly. Original 992-byte resource footprint, **new compressed span 331B (<436B original)**, in-place at `0xBF95E`, source package pointer unchanged. New G1-only ROM SHA256 **`9a7bddb9afb7062a63c775e647c9ee04c226202bd16d23a7d5aadf091ea1bdaf`**. All sprite resource and byte-whitelist static checks pass, **NO emulator/runtime QA**.
+- Merged G1 in-place sprite bytes into exact G0 checkpoint034 title-only ROM, no shared edit offset except checksum (0 collisions), keeping G0 relocation bank86 at file0x36907 and G0 logo gfx resources unchanged. G0+G1 **CLEAN JAPANESE ROM GRAPHICS-ONLY** experimental SHA256 **`77a207589857d2886059057151eaf3d47530032b726744fe739e991ff81a5b80`**, SNES checksum/complement **470A/B8F5**, joint IPS **10,880 bytes /225 records** tested by independent clean-ROM IPS replay. Local bundle `Chibi_G0_G1_Title_Start_Password_035_UNTESTED.zip`.
+- **Important:** this is **NOT** full Vietnamese ROM; earlier direct-text Story/Quiz/Fortune Build035 not integrated. No emulator installed. 8px G1 sprite style may need final readability QA. **Pink heading `どれにする？` / `Chọn gì đây?` STILL UNPATCHED**, its source is not the G1 Story option sprite. Continue graphics asset extraction, don't regress into font-only patches.
+- GitHub new tools `tools/build_g1_start_password_vietnamese_035.py`, `tools/verify_g0_g1_graphics_035_independent.py`; queue `translation/runtime/content_first_graphics_queue_032.csv` now marks only G1 Start/Password `EXPERIMENTAL_PATCH_STATIC_RECONSTRUCTED`, while G1 heading remains `UNRESOLVED`.
+- Next practical work: trace remaining G1 heading or G2 rules/G3 result display assets; add actual visible graphics translation; then explicitly collision-audit clean-ROM G0+G1 against historical direct-text Build035 before assembling full game. Do not blindly overlay IPS from Japanese clean onto Build035. Don't demand another player test per tiny asset.
+
+
 ## ACTIVE CHECKPOINT 034 — 2026-10-11: ACTUAL G0 TITLE GAME GRAPHICS PATCH CREATED
 
 **NEW HIGH-IMPACT CONTENT/GRAPHICS WORK — READ FIRST:** `docs/G0_ACTUAL_TITLE_ASSET_REPACK_CHECKPOINT_034.md`.
