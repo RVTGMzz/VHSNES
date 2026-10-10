@@ -100,7 +100,7 @@ def audit(data: bytes) -> dict:
             "native_quote_glyph_shape":native_quotes(data),
             "original_13px_tables_preserved":True,
             "checkpoint025_user_real_typography":"FAIL",
-            "checkpoint029_sn es_runtime".replace(" ",""):"NOT_TESTED",
+            "checkpoint029_snes_runtime":"NOT_TESTED",
             "runtime_stack_modes_verified":False,
             "emulator_execution":False,"release_ready":False}
 
