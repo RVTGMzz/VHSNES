@@ -1,5 +1,19 @@
 # HANDOFF CURRENT — Chibi Maruko-chan SNES Việt hóa
 
+## Active checkpoint 022 — 2026-10-10 (supersedes earlier Probe008 NOT BUILT status)
+
+**Read `docs/G2_PROBE008_LOCAL_STATIC_BUILDS_CHECKPOINT_022.md` FIRST.**
+
+- Clean ROM and Probe003 SHA-1/SHA-256 **exact reconstruction PASS**.
+- **Probe008 V2 font-only ROM has now been BUILT LOCALLY**, with exact SHA-256 `2ca9b82bf09d0e4b6feeb65ba59d3c94cb22cdfcd475e68dd96af47a119f75bd`. It is 2 MiB, 4,034 changed bytes versus Probe003, header checksum `0x622E / 0x9DD1`. 212 Unicode codepoints, 210 physical bitmaps, 84 additional page0x0A cells; A crossbar and stacked-tone construction repaired.
+- Font page-pointer relocation MUST patch BOTH opcode sources: `0x28EA8` and `0x28EAE` (not `0x28EAD`).
+- Independent static verifier PASS: all mapped glyphs, bitmap reads, preserved framing and positions, checksum and diff surface. Four local negative-corruption fixtures rejected.
+- **Actual renderer pitch 13px**; all 44,944 ordered glyph pairs have **zero bitmap-ink overlap at 9px**. V2 glyph pixels rendered from resulting ROM in offline 13-versus-9 preview.
+- Separate **GLOBAL 9px diagnostic ROM built locally**, SHA-256 `7b982dbbcd683fa981b2a20da10850d61b6f34fd9f25970baa5f32dab75440f8`. Only 35 changed bytes versus V2 13px; checksum `0x60CE / 0x9F31`. Because it shifts remaining native Japanese UI, this is **not a release patch**.
+- **No emulator available/tested**. No runtime PASS. Need prove new 0x85 lead/game use and 11th page in-game, refine selectively applied 9px, check aesthetics and other scenes before new ROM distribution.
+- Code/JSON/SVG/checkpoints/validators pushed to GitHub; **no ROM committed**.
+
+
 ## Latest active checkpoint — 2026-10-10 (Probe008-021)
 
 **Start with `docs/G2_PROBE008_COMPLETE_FONT_CHECKPOINT_021.md`**, then `docs/G2_PROBE008_RENDERER_SPACING_PROOF_020.md` and `docs/G2_PROBE008_SPACING_HANDOFF_019.md`. This supersedes prior "renderer spacing unknown" claims.
