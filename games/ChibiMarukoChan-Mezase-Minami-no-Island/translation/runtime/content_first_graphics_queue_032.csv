@@ -1,6 +1,6 @@
 batch,priority,source_jp,vi_target,visible_evidence,asset_source_state,next_action,release_gate
-G0,P1,ちびまる子ちゃん めざせ！南のアイランド！！,Chibi Maruko-chan: Tiến tới đảo phương Nam!!,verified_title_screen,UNRESOLVED,trace title graphics and map actual tile/tilemap source,real screenshot text and copyright preserved
-G0,P1,__LOCALIZATION_CREDIT__,Việt hóa bởi VôtriValley,user_requested_new_credit,NOT_IN_ORIGINAL,place credit under title after title asset proof,publisher attribution preserved
+G0,P0,ちびまる子ちゃん めざせ！南のアイランド！！,Chibi Maruko-chan: Tiến tới đảo phương Nam!!,verified_title_screen,UNRESOLVED,trace title graphics and map actual tile/tilemap source,real screenshot text and copyright preserved
+G0,P0,__LOCALIZATION_CREDIT__,Việt hóa bởi Votri Valley,user_requested_new_credit,NOT_IN_ORIGINAL,add small credit directly on startup title screen after title asset proof,publisher attribution preserved
 G1,P0,どれにする？,Chọn gì đây?,verified_visible_user_screenshot,UNRESOLVED,identify pink heading actual render source,correct Vietnamese accented bitmap in game
 G1,P0,はじめから,Bắt đầu,verified_visible_user_screenshot,UNRESOLVED,trace Start artwork pixels and tilemap,action still starts Story
 G1,P0,パスワード,Mật khẩu,verified_visible_user_screenshot,UNRESOLVED,trace Password artwork and tilemap,password screen remains accessible
