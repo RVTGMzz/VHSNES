@@ -1,5 +1,13 @@
 # Translation progress — Chibi Maruko-chan
 
+## LATEST 2026-10-11 — CHECKPOINT 038: G3 EVIDENCE + COMBINED GRAPHICS-TEXT BUILD PREPARATION
+
+- **0 new Japanese entries translated, 0 new graphics assets rewritten into ROM this checkpoint.** Instead, excluded six false candidate sources for G3: `勝ち` appears three times as Story prose; five other exact result/ending phrases appear only in `0x2865E..0x287FF` internal QA descriptors. Actual G3 displayed text/graphics still needs executable source-path proof. Updated `translation/runtime/content_first_graphics_queue_032.csv` with evidence status rather than guessing writes. Independent exact-ROM report `Chibi_G3_Result_Literal_Source_Audit_038.json`; new audit tool in tools/.
+- **NEW guarded three-way merge script** for exact direct-text **Build035** + clean-based **GRAPHICS checkpoint036** + exact clean Japanese ROM. SHA contracts, guards on all graphics source allocations and relocated bank86 bytes, original loader call signatures, future opt-in Build035-relative IPS. Actual 036 graphics changed **13,129 bytes**, **zero outside validated resources**, five synthetic overlap cases correctly blocked, two non-overlapping fake text edits preserved. This is **SIMULATED baseline test**, not actual Build035 integration. Read `docs/G3_RESULT_AND_GRAPHICS_TEXT_MERGE_CHECKPOINT_038.md`.
+- **Blocker:** historical exact direct-text Build035 ROM SHA256 `f8fb662a9e1b8fc5a5ff689f690ceaf332055ed86983e52b476a78852e4fd58d` is unavailable in local/connected files, and GitHub has no matching binary or patch. Therefore **NO full Story/Quiz/Fortune + graphics ROM exists yet**. Existing GRAPHICS036 G0/G1 startup/menu experiment remains **SNES runtime UNTESTED**. Source editorial checkpoint032 also still requires direct-text build integration; no full completion claim.
+- No font/9px renderer work; content-first priority preserved. G2 source audit checker had expected bullet spacing typo corrected (audit only, no game data changes).
+
+
 ## LATEST — 2026-10-11 CHECKPOINT 037: G2 RULE DATA CORRECTION
 
 **User priority remains: finish text/graphics content first, font later.** G2 rule-board source is now classified more accurately: 3 originally Japanese lines `ルールをせつめいするよ`, `２本先取だよ`, `ゲームの時間は勝つまでだよ` have **real coherent direct CP932 source bytes** in bank83 at offsets 0x1E307/0x1E325/0x1E339, not necessarily separate graphics that must be redrawn. Exact menu rendering path still needs tracing.
