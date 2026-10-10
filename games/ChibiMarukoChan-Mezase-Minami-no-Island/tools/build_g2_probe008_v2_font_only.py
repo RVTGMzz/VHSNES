@@ -25,6 +25,7 @@ EXISTING_PAGE_TABLE = 0x295EE
 EXISTING_84_TABLE = 0x29A74
 LEAD85_PTR = 0x29760
 RENDERER_PAGEPTR_INSN = 0x28EA8
+RENDERER_PAGEPTR_BANK_INSN = 0x28EAD
 TABLE_MAP_NEXT_START = 0x29BE8
 CHECKSUM_OFF = 0x7FDC
 TEXT_RECORDS = (0x181CE, 0x18247, 0x182C0)
@@ -74,7 +75,9 @@ def build(clean: bytes, probe003: bytes, font: dict) -> tuple[bytes, dict]:
         if any(byte != 0xFF for byte in probe003[a:z]):
             raise ValueError(f"reserved stage modified by Probe003: {a:06X}")
     if probe003[RENDERER_PAGEPTR_INSN:RENDERER_PAGEPTR_INSN+4] != bytes.fromhex("BF EE 95 85"):
-        raise ValueError("unexpected page pointer lookup code")
+        raise ValueError("unexpected low-word page pointer lookup")
+    if probe003[RENDERER_PAGEPTR_BANK_INSN:RENDERER_PAGEPTR_BANK_INSN+4] != bytes.fromhex("BF EF 95 85"):
+        raise ValueError("unexpected shifted high-bank page pointer lookup")
     with (ROOT / "translation/codepage/vi_codepage_v4_fe4_native.csv").open(
             encoding="utf-8", newline="") as f:
         codepage = {r["unicode"]: r for r in csv.DictReader(f)}
@@ -105,6 +108,8 @@ def build(clean: bytes, probe003: bytes, font: dict) -> tuple[bytes, dict]:
     allowed.update(range(PAGEPTR_STAGE, PAGEPTR_STAGE+33))
     data[RENDERER_PAGEPTR_INSN:RENDERER_PAGEPTR_INSN+4] = bytes.fromhex("BF 00 F8 85")
     allowed.update(range(RENDERER_PAGEPTR_INSN, RENDERER_PAGEPTR_INSN+4))
+    data[RENDERER_PAGEPTR_BANK_INSN:RENDERER_PAGEPTR_BANK_INSN+4] = bytes.fromhex("BF 01 F8 85")
+    allowed.update(range(RENDERER_PAGEPTR_BANK_INSN, RENDERER_PAGEPTR_BANK_INSN+4))
     # Dedicated new mapping array, do not reuse 84E1+ native-owned mappings.
     data[NEW_LEAD_MAP:NEW_LEAD_MAP+0x180] = bytes(0x180)
     allowed.update(range(NEW_LEAD_MAP, NEW_LEAD_MAP+0x180))
