@@ -1,5 +1,18 @@
 # HANDOFF CURRENT — Chibi Maruko-chan SNES Việt hóa
 
+## ACTIVE CHECKPOINT 026 — 2026-10-10 USER SCREENSHOT RUNTIME TYPOGRAPHY FAIL
+
+**READ FIRST:** `docs/G2_PROBE008_USER_RUNTIME_FAIL_CHECKPOINT_026.md`.
+
+- The user ACTUALLY ran checkpoint 025 (`d4bd629003812578580e7a380e791d87fdf64614441394f1261df3951b9815dc`) and showed a real in-game screenshot. **G2 renders but font is UNREADABLE due to fragmented/narrow strokes, excessive inter-glyph gaps and disordered-looking accents. CHECKPOINT 025 IS RUNTIME VISUAL FAIL — DO NOT RELEASE.**
+- Exact user screenshot SHA256 `5fe322fe15746017ee1362daf9ffe0a275344f91b256bdd30732d033ceb62ee0` (user conversation attachment, do NOT commit to GitHub). Row black-ink widths 599/672/638 px; approximate native advance 13.73/14.37/14.62 px, **much closer to original 13px than intended 9px**. Source-bank/WRAM offset gating likely falls back at runtime, but requires actual debugger to prove DBR/`$1F94` values.
+- All 18,696 025 synthetic microtests still describe offline code behavior, NOT runtime compatibility. Static PASS must never override user screenshot FAIL.
+- Quarantined `tools/build_g2_probe008_line_scoped_9px_diagnostic.py`; it now REJECTS build by default unless explicitly invoked with `--reproduce-known-runtime-fail-025`. Structural verifier marks RUNTIME VISUAL FAIL as well.
+- Added fail-closed actual-image regression script `tools/audit_g2_probe008_runtime_screenshot_025.py` and checkpoint 026. Original screenshot stays private; code/reports only in GitHub.
+- **No new ROM offered.** Need live parser/renderer debugger trace at `$85:8340`, `$85:8E0C`, `$85:90EE` and font redesign/readability QA before any subsequent user build. Keep a copy of original clean ROM.
+- Previously current checkpoints 023/024/025 are history / failed diagnostic. Continue from exact Probe008 V2 font-only baseline for further experiments, NOT from released 025.
+
+
 ## ACTIVE CHECKPOINT 025 — 2026-10-10: corrected G2 9px renderer bank handling
 
 **READ FIRST:** `docs/G2_PROBE008_STACK_BANK_SAFE_CHECKPOINT_025.md`. Supersedes the status of checkpoint 024: the 024 line-scoped 9px microhook is **not correct** because the renderer changes DBR from text source to `$7F` between its two lookups.
