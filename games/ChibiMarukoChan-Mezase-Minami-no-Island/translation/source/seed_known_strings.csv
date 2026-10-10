@@ -7,5 +7,5 @@ file_offset,source_jp,source_bytes,vi_full,status,notes
 0x2C79E,北に行こう,10,Đi về phía Bắc nào,meaning_seed,direction advice
 0x2C7C0,南に行こう,10,Đi về phía Nam nào,meaning_seed,direction advice
 0x2C918,ゲームで開運です,16,Chơi game để gặp may,meaning_seed,fortune/advice context
-0x31D14,クイズを続けますか？,20,Bạn có muốn tiếp tục câu đố không?,meaning_seed,question
+0x31D14,クイズを続けますか？,20,Tiếp tục câu đố?,meaning_seed,question
 0x31D3A,いいえ,6,Không,meaning_seed,paired yes/no response
