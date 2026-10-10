@@ -11,7 +11,7 @@ import json
 from pathlib import Path
 
 BASE_SHA256 = "2ca9b82bf09d0e4b6feeb65ba59d3c94cb22cdfcd475e68dd96af47a119f75bd"
-TARGET_SHA256 = "1963ef80e9c3503423365f93da4c07aa9ef783a0ceb65108c75fd58481f6c767"
+TARGET_SHA256 = "d4bd629003812578580e7a380e791d87fdf64614441394f1261df3951b9815dc"
 WORD_STUB = bytes.fromhex(
     "08 e2 20 8b 68 c9 83 d0 24 c2 20 af 94 1f 00 "
     "c9 ce 81 90 19 c9 38 82 90 1a c9 47 82 90 0f "
@@ -19,7 +19,7 @@ WORD_STUB = bytes.fromhex(
     "28 bf 70 96 85 6b 28 bf 80 fc 85 6b"
 )
 BYTE_STUB = bytes.fromhex(
-    "08 e2 20 a3 09 c9 83 d0 24 c2 20 af 94 1f 00 "
+    "08 e2 20 a3 01 29 10 f0 04 a3 07 80 02 a3 09 c9 83 d0 24 c2 20 af 94 1f 00 "
     "c9 ce 81 90 19 c9 38 82 90 1a c9 47 82 90 0f "
     "c9 b1 82 90 10 c9 c0 82 90 05 c9 2a 83 90 06 "
     "28 bf 96 96 85 6b 28 bf c0 fc 85 6b"
@@ -31,7 +31,7 @@ def verify(original, candidate, check_sha=True):
         raise ValueError("wrong exact Probe008 V2 font-only source")
     if len(candidate) != 0x200000:
         raise ValueError("ROM size changed")
-    if len(WORD_STUB) != 57 or len(BYTE_STUB) != 57:
+    if len(WORD_STUB) != 57 or len(BYTE_STUB) != 67:
         raise AssertionError("unexpected reference stub length")
     if candidate[0x28E0C:0x28E10] != bytes.fromhex("2280FB85"):
         raise AssertionError("word-table JSL callsite changed")
@@ -39,7 +39,7 @@ def verify(original, candidate, check_sha=True):
         raise AssertionError("shift-table JSL callsite changed")
     if candidate[0x2FB80:0x2FB80+57] != WORD_STUB:
         raise AssertionError("word stub differs from reference")
-    if candidate[0x2FC00:0x2FC00+57] != BYTE_STUB:
+    if candidate[0x2FC00:0x2FC00+67] != BYTE_STUB:
         raise AssertionError("byte stub differs from reference")
     for i in range(19):
         x=4+9*i
@@ -55,8 +55,8 @@ def verify(original, candidate, check_sha=True):
     for o,z in ((0x29670,0x296A9),(0x28EA8,0x28EB2),(0x29756,0x29776)):
         if candidate[o:z] != original[o:z]:
             raise AssertionError(f"original renderer/mapping state changed at {o:06X}")
-    # The renderer changes DBR to $7F between the two lookup hooks; the
-    # second uses LDA $09,S to recover the bank saved by the first PHB.
+    # Renderer changes DBR to $7F before the second hook. It reads the
+    # PHP-saved X flag and uses $07,S (X8) or $09,S (X16) for original DBR.
     if original[0x28E7B:0x28E7F] != bytes.fromhex("8BDA5A48"):
         raise AssertionError("renderer source-bank stack frame changed")
     if original[0x28E87] != 0x68 or original[0x28E95:0x28E9A] != bytes.fromhex("F4007FABAB"):
@@ -84,7 +84,7 @@ def verify(original, candidate, check_sha=True):
     header_comp=int.from_bytes(candidate[0x7FDC:0x7FDE],"little")
     if ck!=header_ck or header_comp!=(ck^0xFFFF):
         raise AssertionError("independent checksum/complement error")
-    if len(changed)!=181 or ck!=0xF48F:
+    if len(changed)!=191 or ck!=0xED96:
         raise AssertionError("unexpected diff count/checksum")
     digest=hashlib.sha256(candidate).hexdigest()
     if check_sha and digest!=TARGET_SHA256:
