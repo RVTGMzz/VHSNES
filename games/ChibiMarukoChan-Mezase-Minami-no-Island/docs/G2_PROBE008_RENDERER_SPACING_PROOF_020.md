@@ -23,10 +23,10 @@ Potential ROM locations read-only verified (contents only, not reachability or o
 
 - raw 0x800-byte page at `0x125000..0x1257FF` currently all `FF`, LoROM pointer `$A4:D000`.
 - bank 85 staging at `0x2F800..0x2FBFF` currently all `FF`.
-- native font pointer table at `0x295EE`: 10 three-byte page pointers; one usage `BF EE 95 85` at `0x28EA8`, high-page lookup supports low four bits of glyph ID, but **page 0x0A has NOT been executed**.
+- native font pointer table at `0x295EE`: 10 three-byte page pointers; TWO overlapping pointer reads: `BF EE 95 85` at `0x28EA8` and `BF EF 95 85` at `0x28EAE`, high-page lookup supports low four bits of glyph ID, but **page 0x0A has NOT been executed**.
 - lead `0x85` pointer-table entry at `0x29760` currently aliases `0x84` (`0x9A74`). A separate table at `$85:FA00` is a *candidate* route for the 52 extra two-byte codes; **0x85 native-text use has NOT been ruled out**.
 - Existing `0x84E1..` entries must NOT be blindly extended: they contain nonzero pre-existing mappings, and at `0x29BE8` the next native map starts. Do not overwrite them.
-- Possible one-page route: relocate 10 page pointers to `$85:F800`, append `$A4:D000` for page 0x0A, and repoint *only* the proven `BF EE 95 85` reference. This is an **unproven allocation plan**; don't claim a runnable Probe008 from it.
+- Possible one-page route: relocate 10 page pointers to `$85:F800`, append `$A4:D000` for page 0x0A, and repoint **BOTH** proven pointer loads: `BF EE 95 85` at `0x28EA8` AND `BF EF 95 85` at `0x28EAE`. This is an **unproven allocation plan**; don't claim a runnable Probe008 from it.
 
 ## Font defects still pending
 
