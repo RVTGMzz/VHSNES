@@ -34,7 +34,7 @@ Unlike blindly applying an IPS, it rejects **any preexisting text-build modifica
 |---|---|
 | G0 title loader source pointer | `0x12095..0x12097` |
 | G0 relocated bank86 compressed stream | `0x36907..0x37662` |
-| G0 title 4bpp graphics | `0xF6456..0xFAA17` (5570 bytes) |
+| G0 title 4bpp graphics | `0xF6456..0xF7A17` (5570 bytes) |
 | G0 title BG tilemap compressed asset | `0xF1F00..0xF2120` (545 bytes) |
 | G1 Story Start/Password sprite | `0xBF95E..0xBFB11` (436 bytes) |
 | G1 main-mode heading sprite | `0xC706F..0xC7E0B` (3485 bytes) |
