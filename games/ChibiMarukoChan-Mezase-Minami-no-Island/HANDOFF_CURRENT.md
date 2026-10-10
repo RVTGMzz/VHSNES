@@ -1,5 +1,18 @@
 # HANDOFF CURRENT — Chibi Maruko-chan SNES Việt hóa
 
+## ACTIVE CONTENT-FIRST CHECKPOINT 036 — 2026-10-11: MAIN MENU “CHỌN GÌ ĐÂY?” ACTUAL PATCH
+
+**Read first:** docs/G1_MAINMENU_HEADING_ACTUAL_PATCH_CHECKPOINT_036.md, then checkpoint035 (Story buttons), checkpoint034 (start title), and translation/runtime/content_first_graphics_queue_032.csv.
+
+- **New REAL original heading asset FOUND AND EDITED**. Main-mode initializer ROM file 0x20047: LDX #$A213; JSL $80:E255. Package $82:A213 file 0x12213 resource index6 -> CPU $98:F06F, file0xC706F, VRAM word0x7000. Directly decompressed/visually confirmed Japanese two-row mode-select heading in 256 4bpp sprite tiles. First 192 tile IDs hold other Japanese mode labels and arrow; last 64 tile IDs 192..255 hold question heading.
+- Patched only tiles192..255 into two native 16px rows **“Chọn gì” / “đây?”**; original first 192×32=6144 decoded bytes remain IDENTICAL. Graphic codec source 3485 compressed bytes -> **2428**, in-place (no relocated source or package pointer edits). Thick shadow draft rejected; final uses clean 14px raster.
+- Merged onto exact GRAPHICS checkpoint035 G0+G1 ROM, keeping actual first-boot **Chibi Maruko-chan / Tiến tới đảo phương Nam!! / Việt hóa bởi Votri Valley**, and Story choice **Bắt đầu / Mật khẩu** bit-identical. New combined **GRAPHICS-ONLY** ROM SHA256 **2c8beee73e985c9a2690cc36ace335f05115c1a3e81b369e09d0cfb132117090**, SNES checksum/complement 3A35/C5CA. Clean Japanese ROM IPS **14452 bytes, 263 records** independent replay exact PASS. Local zip **Chibi_G0_G1_ChonGiDay_036_UNTESTED.zip** (IPS, README, rendered tile preview, two QA JSON). NO ROM or font binaries in GitHub.
+- **13 original UI package scripts share $98:F06F / VRAM0x7000**. All pointers were checked, no collision or corrupted data. Exact screen rendering of each using this asset is UNPROVEN; real emulator regressions are required.
+- Source docs + two scripts on GitHub: tools/build_g1_mode_heading_vietnamese_036.py and tools/verify_g1_mode_heading_036_independent.py. G1 heading has advanced from UNRESOLVED to EXPERIMENTAL_PATCH_STATIC_RECONSTRUCTED in graphics queue.
+- **DO NOT CONFUSE** local “graphics checkpoint035” (clean-ROM graphics, SHA77a2...) with historical direct-text “Build035”. FULL STORY/QUIZ/FORTUNE source translations (1,021 tracked rows; 216 editorial final revisions) are NOT included in graphics036 ROM. Runtime SNES emulator is still NOT TESTED. No claim of game completion.
+- User explicit order remains CONTENT/GRAPHICS FIRST, FONT LATER. Continue real G2 VS rule-panel and G3 result/ending assets, then stage collision-checked combined Story+Graphics test build. Do not re-enter 65816 font microtests now.
+
+
 ## ACTIVE CHECKPOINT 035 — 2026-10-11: G1 TWO VISIBLE CHOICE GRAPHICS ACTUALLY VIETNAMESED
 
 **USER DIRECTIVE: finish content/graphics first, font after.** New actual G1 **Start/Password** sprite source is decoded and patched; no 65816 font work. Read `docs/G1_START_PASSWORD_ACTUAL_ROM_PATCH_CHECKPOINT_035.md` first, then checkpoint034 for G0.
