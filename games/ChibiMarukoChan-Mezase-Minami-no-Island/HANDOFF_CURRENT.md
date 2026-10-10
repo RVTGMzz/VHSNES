@@ -1,5 +1,21 @@
 # HANDOFF CURRENT — Chibi Maruko-chan SNES Việt hóa
 
+## ACTIVE CONTENT-FIRST CHECKPOINT 037 — 2026-10-11: G2 DIRECT TEXT ORIGINS AND CP932 OFFSET FIX
+
+**Read `docs/G2_RULE_TEXT_ACTUAL_ROM_SOURCE_CHECKPOINT_037.md` first.** Continue Vietnamese text/graphics first, NO font/9px/65816 patch at this time per explicit user direction.
+
+**VERIFIED NEW EVIDENCE ON THE EXACT CLEAN ROM:**
+- G2 rules/source phrases `ルールをせつめいするよ`, `２本先取だよ`, `ゲームの時間は勝つまでだよ` are real **CP932 DIRECT-TEXT** at file offsets `0x1E307`, `0x1E325`, `0x1E339`, respectively. First source record layout begins `0x1E2FF`. Two source full-width bullets are at `0x1E323` and `0x1E337`; three `816F` delimiter pairs checked. Their actual retail render callback still untraced; DO NOT claim direct language is already active in 036 graphics-only ROM.
+- **FIXED BAD SOURCE OFFSET** `translation/source/rules_tutorial_vi.csv`: old `0x1E326` was the second byte of Japanese fullwidth digit ２ (`82 51`). Correct is `0x1E325`. Updated Vietnamese rule wording to `Ai thắng 2 ván trước sẽ thắng / Chơi đến khi phân thắng bại`, still bullets semantically. One source-row offset correction and one `vi_full` wording edit in repo.
+- **35 known G2 VS/minigame menu/UI labels** at ROM offsets `0x288C2..0x28BFF` were individually checked for CP932 and UI source record identity; three rule rows intentionally begin with TWO ASCII spaces before the Japanese label. All 35 have existing semantic Vietnamese in `minigame_ui_batch01_vi.csv`. New reproducible tool `tools/audit_g2_rules_direct_sources_037.py`. Local report `/mnt/data/Chibi_G2_CP932_Source_Audit_037.json` PASS using exact clean ROM and locally reconstructed representative source rows; GitHub live full CSV separately reviewed, **NO CI result claimed**. Negative control with original wrong offset `0x1E326` fails as intended.
+- Reclassified three G2 graphics-queue entries to `DIRECT_CP932_TEXT_SOURCE_FOUND`, NOT graphics patches. Need actual text renderer/line-wrap integration from Build035.
+- Read-only resource scouts generated `chibi_g2_candidate_sprite_sheet_1.png` (42 near G2 packages) and `Chibi_G3_Result_Sprite_Atlas_037_[1-3].png` (52 sprite source+dest pairs). None conclusively identified a real G3 victory/lose/continue text source or a verified new graphics patch. **Do not infer paths from contact sheet alone.**
+- G2 label `今からやるよ` exact CP932 hit `0x286EA` is in internal descriptor/debug area; DO NOT patch that offset as retail label, visible source still unproven.
+- Historical GRAPHICS-only checkpoint036 ROM/IPS remains SHA256 `2c8beee73e985c9a2690cc36ace335f05115c1a3e81b369e09d0cfb132117090` and **SNES emulator UNTESTED**; G0 first boot title + Votri Valley credit, G1 main-mode heading + Start/Password are real static ROM patch assets. Original Story/Quiz/Fortune DIRECT-TEXT Build035 separately exists by SHA256 `f8fb662a9e1b8fc5a5ff689f690ceaf332055ed86983e52b476a78852e4fd58d`, but binary not available in current runtime. **Do not overlay the graphics-only IPS on Build035 blindly** or claim whole-game patch.
+
+**NEXT PRACTICAL PRIORITIES:** (1) trace G3 RESULT screen callback/pointer to actual visible Win/Lose graphics/text; (2) trace G2 rule-field live use and integrate corrected CP932 source offset into direct-text patch pipeline; (3) find exact Build035 candidate and collision-audit G0/G1 036 against it; (4) deliver one LARGE combined test build when ready, font LATER.
+
+
 ## ACTIVE CONTENT-FIRST CHECKPOINT 036 — 2026-10-11: MAIN MENU “CHỌN GÌ ĐÂY?” ACTUAL PATCH
 
 **Read first:** docs/G1_MAINMENU_HEADING_ACTUAL_PATCH_CHECKPOINT_036.md, then checkpoint035 (Story buttons), checkpoint034 (start title), and translation/runtime/content_first_graphics_queue_032.csv.
