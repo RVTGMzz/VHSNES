@@ -1,3 +1,33 @@
+TIẾP TỤC CHIBI MARUKO-CHAN SNES — CHECKPOINT 036 (2026-10-11)
+Repo: RVTGMzz/VHSNES / branch chibi-maruko-bootstrap-01
+
+ƯU TIÊN CỦA USER: HOÀN THÀNH NỘI DUNG GAME TRƯỚC — FONT XỬ LÝ SAU. KHÔNG QUAY LẠI 65816 FONT.
+
+ĐỌC TRƯỚC:
+1. games/ChibiMarukoChan-Mezase-Minami-no-Island/HANDOFF_CURRENT.md, section 036 ở đầu.
+2. docs/G1_MAINMENU_HEADING_ACTUAL_PATCH_CHECKPOINT_036.md (MỚI NHẤT).
+3. docs/G1_START_PASSWORD_ACTUAL_ROM_PATCH_CHECKPOINT_035.md.
+4. docs/G0_ACTUAL_TITLE_ASSET_REPACK_CHECKPOINT_034.md.
+5. translation/runtime/content_first_graphics_queue_032.csv.
+
+NEW 036 THÀNH QUẢ:
+- Đã tìm ĐÚNG nguồn sprite chữ NHẬT “どれにする？” ở main mode menu, KHÔNG phải G1 Story Start/Password. Main-mode initializer ROM 0x20047 = LDX #$A213 ; JSL $80:E255. Script package $82:A213 ở ROM 0x12213, record6 ở 0x12233 = 00 70 6F F0 98, upload VRAM word 0x7000 từ CPU $98:F06F -> file0xC706F.
+- Source 3485B nén -> 8192B=256 tile 4bpp 8×8. Tile0..191 chứa chữ Nhật menu khác và mũi tên; tile192..255 chứa heading 2 dòng. Hình thật đã giải mã Chibi_G1_MainMode_AllSpriteTiles_036.png.
+- ĐÃ GHI THẬT VÀO ROM THỬ: “Chọn gì” / “đây?” (nghĩa Chọn gì đây?) trong tile192..255, giữ nguyên CHÍNH XÁC tile0..191 (6144B). Bỏ bản shadow quá đậm, dùng font 14px clean. Nén mới 2428B < 3485B, ghi lại ĐÚNG vị trí gốc, không đổi pointer.
+- Source sprite $98:F06F được 13 type-0 package cùng load ở VRAM 0x7000. Đã kiểm tra đầy đủ 13 pointer; chưa biết có màn khác hiển thị chính vùng heading không nên BẮT BUỘC smoke test trong emulator.
+- Combined graphics checkpoint036 ROM từ CLEAN Japanese gốc (không phải direct-text Build035) SHA256 2c8beee73e985c9a2690cc36ace335f05115c1a3e81b369e09d0cfb132117090; checksum/complement 3A35/C5CA. G0 title và Votri Valley credit + G1 Story Bắt đầu/Mật khẩu giữ nguyên. IPS kích thước 14452B / 263 record, replay onto CLEAN chính xác hash. Local zip Chibi_G0_G1_ChonGiDay_036_UNTESTED.zip gồm IPS/README/preview/2xQA JSON.
+- GitHub tools mới: tools/build_g1_mode_heading_vietnamese_036.py, tools/verify_g1_mode_heading_036_independent.py. Doc checkpoint036. Queue G1 heading đổi sang EXPERIMENTAL_PATCH_STATIC_RECONSTRUCTED.
+- RẤT QUAN TRỌNG: GRAPHICS 036 KHÔNG BAO GỒM Story/Quiz/Fortune tiếng Việt ở historical Build035/direct text. Checkpoint 032 hợp nhất 216 câu vi_full QA PASS nhưng chưa runtime. Không coi đã hoàn thiện game. Không có emulator runtime QA (không claim PASS).
+- Không upload ROM hay font lên GitHub.
+
+HÃY LÀM TIẾP:
+1. CHUYỂN TỚI G2 VS / RULE PANEL, rồi G3 THẮNG/THUA/KẾT THÚC. Xem docs/G2_G3_GRAPHICS_REVERSE_PIPELINE_005.md, tools/trace_g2_school_front_resources.py và tools/run_g2_g3_graphics_reverse_pipeline.py. Phải tìm nguồn graphics thật: màn/game code -> package -> nén -> giải hình -> sửa đúng asset; KHÔNG vá debug descriptor 0x286B4..0x287FC.
+2. Sau khi đồ họa G2/G3 tiến triển, đối chiếu EXACT file bytes của historical direct-text Build035 với graphics036: nhất là reloc bank86 0x36907 và font/codepage. GỘP AN TOÀN sang một ROM test có nội dung tiếng Việt thật. KHÔNG áp IPS trên bản Build035 nếu chưa kiểm tra xung đột.
+3. Khi có bản lớn, chạy SNES emulator game để xác minh từ G0 tới G3 và 13 menu dùng chung asset; đừng bắt user test nhiều bản bé.
+4. ĐỂ FONT SAU đúng lời user; đo tiến độ bằng chuỗi/đồ họa vá thật, không microtests renderer.
+
+OLD NEXT PROMPT 035 archival below:
+---
 TIẾP TỤC VIỆT HÓA CHIBI MARUKO-CHAN SNES — CHECKPOINT 035 (2026-10-11)
 Repo: RVTGMzz/VHSNES, branch chibi-maruko-bootstrap-01
 
