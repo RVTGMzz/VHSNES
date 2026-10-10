@@ -91,6 +91,29 @@ def audit(data: bytes) -> dict:
     if (x8["glyph_low_byte_stack_offset"],
         x16["glyph_low_byte_stack_offset"]) != (10,12):
         raise AssertionError("unexpected actual glyph PHA stack offset")
+    # Potential native quote ALIAS codes; raw bytes are not proof of rendered
+    # text or reachability. Check the exact clean ROM's Story/G2 bank separately.
+    alias_occupancy=[]
+    for code in ("8574","8575"):
+        needle=bytes.fromhex(code)
+        hits=[]
+        pos=0
+        while True:
+            pos=data.find(needle,pos)
+            if pos<0:
+                break
+            hits.append(pos)
+            pos+=1
+        alias_occupancy.append({
+            "candidate_code":code,
+            "raw_occurrences_clean_rom":len(hits),
+            "raw_occurrences_file_bank_0x18000_0x20000":sum(
+                0x18000<=p<0x20000 for p in hits),
+            "native_render_reachability":"UNKNOWN",
+        })
+    if [(r["raw_occurrences_clean_rom"],r["raw_occurrences_file_bank_0x18000_0x20000"])
+            for r in alias_occupancy] != [(13,0),(6,0)]:
+        raise AssertionError("candidate alias raw-byte inventory changed")
     return {"status":"READ_ONLY_STATIC_65816_FRAME_PASS",
             "exact_clean_rom_sha256":SHA,
             "checked_original_code_anchors":len(ANCHORS),
@@ -98,6 +121,7 @@ def audit(data: bytes) -> dict:
             "shift_lookup_rom_offset":"0x290EE",
             "original_call_frames":[x8,x16],
             "native_quote_glyph_shape":native_quotes(data),
+            "new_G2_alias_code_raw_inventory":alias_occupancy,
             "original_13px_tables_preserved":True,
             "checkpoint025_user_real_typography":"FAIL",
             "checkpoint029_snes_runtime":"NOT_TESTED",
