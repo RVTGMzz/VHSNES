@@ -31,7 +31,7 @@ Built several **offline bitmap-only** font comparisons using all 210 physical gl
 - `Tập khỏi rơi!`
 - `Rèn gu mỹ thuật!`
 
-Compared V2 at 13px (what screenshot most resembles), V2 at 9px, V3 medium weight at 9px, V3 dense at 9px. Generated local PNG `Chibi_Probe008_V3_Font_Weight_Prototype_027.png` with **four complete unclipped columns** in a 2x2 layout. It is **NOT** a screenshot from emulator.
+Compared V2 at 13px (what screenshot most resembles), V2 at 9px, V3 medium weight at 9px, V3 dense at 9px. Generated local PNG `Chibi_Probe008_V3_Font_Weight_Prototype_027.png` with **four complete unclipped panels** in a 2x2 layout. It is **NOT** a screenshot from emulator.
 
 Pure data generator added:
 `tools/propose_g2_probe008_v3_medium_font.py`
@@ -43,9 +43,9 @@ The generator:
 - strengthens body pixels **only** (y≥4; adds a right-side pixel for x≤8) on **178 custom glyphs** (180 codepoint aliases); accents y=0..3 are not widened;
 - proposes a V3 bitmap JSON and a QA JSON; no ROM modified or produced, no font pointer/lead/scene change.
 - independently tested custom-only subset locally: 178 physical glyphs changed, **5,055** total ink pixels vs V2 3,651, zero overlaps among **210×210 = 44,100 ordered glyph pairs at 9px**.
-- original all-glyph weighting preview has 5,254 pixels; the committed scoped generator intentionally excludes the 32 native glyphs and yields 5,055. Do **not** confuse preview with identical candidate JSON pixels in native punctuation.
+- Current preview follows the same native-protected policy as the proposed V3 medium JSON: 32 native glyphs unchanged and 5,055 total ink pixels.
 
-The denser experimental all-glyph option has 6,526 ink pixels but looks visually too heavy; V3 medium is the working candidate, not approved.
+The exact native-protected V3 medium preview has 5,055 pixels, while the native-protected V3 dense option has 6,174 ink pixels. The all-glyph version was only an early prototype and is no longer the pictured artifact. V3 medium is a working candidate, not approved.
 
 ### Reproduce data-only proposal
 
