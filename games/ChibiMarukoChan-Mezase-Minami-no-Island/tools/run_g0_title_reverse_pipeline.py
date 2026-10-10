@@ -329,7 +329,7 @@ def main() -> int:
         "title_target": [
             "Chibi Maruko-chan",
             "Tiến tới đảo phương Nam!!",
-            "Việt hóa bởi VôtriValley",
+            "Việt hóa bởi Votri Valley",
         ],
         "boot_windows": len(windows),
         "dma_transfers": len(transfers),
