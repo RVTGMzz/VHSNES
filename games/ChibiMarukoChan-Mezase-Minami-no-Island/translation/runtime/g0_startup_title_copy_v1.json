@@ -1,0 +1,53 @@
+{
+  "schema": "chibi.g0.startup_title_copy.v1",
+  "batch": "G0",
+  "priority": "P0",
+  "target_screen": "first retail title screen immediately after startup",
+  "source_title_jp": "ちびまる子ちゃん めざせ！南のアイランド！！",
+  "layers": [
+    {
+      "id": "brand_title",
+      "text": "Chibi Maruko-chan",
+      "role": "main title",
+      "render": "redrawn title graphic",
+      "alignment": "center",
+      "status": "translation_approved_not_integrated"
+    },
+    {
+      "id": "subtitle_vi",
+      "text": "Tiến tới đảo phương Nam!!",
+      "role": "translated Japanese subtitle",
+      "render": "redrawn title graphic",
+      "alignment": "center",
+      "status": "translation_approved_not_integrated"
+    },
+    {
+      "id": "localization_credit",
+      "text": "Việt hóa bởi Votri Valley",
+      "role": "small credit under Vietnamese title",
+      "render": "independent graphic layer",
+      "alignment": "center",
+      "font_size_role": "small readable",
+      "status": "user_approved_not_integrated"
+    }
+  ],
+  "constraints": {
+    "preserve_original_character_artwork": true,
+    "preserve_original_publisher_and_copyright": true,
+    "no_fake_runtime_asset_claim": true,
+    "do_not_patch_internal_debug_descriptors": true,
+    "do_not_write_rom_without_proven_original_asset_ranges": true,
+    "exact_credit_spelling": "Việt hóa bởi Votri Valley",
+    "do_not_expand_or_modify_snes_internal_cartridge_title": true,
+    "title_layout_coordinates": "PENDING_ACTUAL_SCREEN_ASSET_DECODE",
+    "title_graphics_source_offset": null,
+    "runtime_gameplay_verified": false
+  },
+  "acceptance": [
+    "Actual startup retail screen carries translated Vietnamese subtitle",
+    "Credit is legible and not overlapping publisher or original character art",
+    "No copyright/publisher mark is removed",
+    "Start/intro sequence remains usable in emulator"
+  ],
+  "notes": "Content-first checkpoint 033; artwork strings and position rules are fixed, but title asset is not yet identified in SNES ROM."
+}
