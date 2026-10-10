@@ -75,14 +75,14 @@ def verify(clean: bytes, before: bytes, after: bytes) -> dict:
     allow.update(range(STAGE_MAP, STAGE_MAP+0x180))
     allow.update(range(0x7FDC,0x7FE0))
     allow.update(range(0x29760,0x29762))
-    for address in (0x28EA8, 0x28EAD):
+    for address in (0x28EA8, 0x28EAE):
         allow.update(range(address,address+4))
     expected_ptrs = before[0x295EE:0x295EE+30] + bytes.fromhex("00D0A4")
     if after[STAGE_PTR:STAGE_PTR+33] != expected_ptrs:
         raise AssertionError("expanded page pointer array incorrect")
     if after[0x28EA8:0x28EAC] != bytes.fromhex("BF00F885"):
         raise AssertionError("low-word pointer lookup not relocated")
-    if after[0x28EAD:0x28EB1] != bytes.fromhex("BF01F885"):
+    if after[0x28EAE:0x28EB2] != bytes.fromhex("BF01F885"):
         raise AssertionError("bank-byte pointer lookup not relocated")
     if after[0x29760:0x29762] != bytes.fromhex("00FA"):
         raise AssertionError("new 0x85 lead pointer not relocated")
