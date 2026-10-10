@@ -1,5 +1,19 @@
 # HANDOFF CURRENT — Chibi Maruko-chan SNES Việt hóa
 
+## ACTIVE CHECKPOINT 028 — 2026-10-10: REAL GLYPH / ATLAS 9px + V3 MEDIUM STATIC ONLY
+
+**Read first:** `docs/G2_PROBE008_GLYPH_GEOMETRY_V3_CHECKPOINT_028.md`, then checkpoint 027 and checkpoint 026.
+
+- **Checkpoint025 user runtime typography FAIL is still binding.** No 028 gameplay test/emulator screenshot; DO NOT release any 028 ROM yet.
+- Fixed an old conceptual mistake: glyph ID in actual renderer comes from input A saved by `PHA` at `$85:8E7B`, **not from `$001FB2`**. Old 023 glyph-aware selector based on $1FB2 was not justified. Old 025 scene-bank DBR/pointer gate likely fell back at runtime and visually FAILED.
+- In word table hook at `$85:8E0C`, actual glyph ID is on CPU stack at `$0A,S` for X8 or `$0C,S` for X16. At shift hook `$85:90EE`, renderer has already computed font-page pointer `$18` and atlas offsets `$08/$0A`; neither requires assumed DBR source bank. Quote glyph IDs 0159/015A handled explicitly.
+- New **READ-ONLY** `tools/audit_g2_probe008_renderer_glyph_geometry_028.py`: 1,100/1,100 font page-cell IDs matched between two lookups, 218 glyph IDs eligible for 9px (including original Japanese quotes), 882 keep 13px. The exact three G2 106-byte records have 50 drawable 2-byte codes + 3 separators each; **all 150 drawable codes match 9px selection**.
+- New opt-in `tools/build_g2_probe008_glyph_geometry9_diagnostic.py`: local UNTESTED ROM SHA256 `a3d2e75da5f9dac36750ef77e249fae7613ffd35f8185c50cd6f6197ca8a8688`, 258 bytes diff vs V2 font-only, SNES checksum `C1E2/3E1D`. 71-byte word and 120-byte shift 65816 hooks. Original G2 records and 13px tables intact.
+- New `tools/selftest_g2_probe008_geometry9_opcode_028.py`: executes generated 65816 subset for **83,600** combinations (1,100 IDs ×19 positions ×2 X widths ×2 lookup hooks); all static PASS; **not real SNES**.
+- New `tools/build_g2_probe008_v3_medium_geometry9_experiment.py`: local V3 combo SHA256 `59f4c45b14a24e6cf67de1c9c7cbe1d9b862eaa2eb4c6518bbc4bcbd6dd006fb`, 1,183 diff bytes from geometry-only, checksum `7587/8A78`, 178 custom glyphs weight-increased, 32 relocated native glyphs preserved, 210 full bitmap roundtrips and 44,100 glyph-pair 9px collision checks PASS, 5,055 total ink pixels. Both builders reject calls unless user explicitly opts into UNTESTED diagnostic. No ROM committed to GitHub.
+- **CAVEAT:** native Japanese quote IDs 0159/015A select 9px anywhere in game (even outside G2), so Japanese UI/Story quoting is not guaranteed unchanged. Real SNES debugger and screenshot are mandatory, plus 0x85 lead/page integrity checks. Only after font passes, resume G0 title, G2/G3 graphics, rest of translation.
+
+
 ## ACTIVE CHECKPOINT 027 — 2026-10-10 V3 MEDIUM FONT (DATA-ONLY)
 
 **READ FIRST:** `docs/G2_PROBE008_V3_MEDIUM_FONT_CHECKPOINT_027.md`, then `docs/G2_PROBE008_USER_RUNTIME_FAIL_CHECKPOINT_026.md`.
