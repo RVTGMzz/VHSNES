@@ -1,3 +1,5 @@
+BẮT BUỘC G0: người dùng yêu cầu Việt hóa ngay MÀN TITLE HIỆN KHI KHỞI ĐỘNG: dòng chính `Chibi Maruko-chan`, phụ đề `Tiến tới đảo phương Nam!!`, credit nhỏ CHÍNH XÁC `Việt hóa bởi Votri Valley`. G0 P0 ngang với G1. Giữ logo/ảnh nhân vật/bản quyền gốc; đừng vá debug descriptor thay asset retail. Chưa có source graphics chính xác và chưa tích hợp vào ROM thì KHÔNG claim đã xuất hiện trong game.
+
 TIẾP TỤC VIỆT HÓA CHIBI MARUKO-CHAN SNES — CONTENT FIRST CHECKPOINT 032 (2026-10-11)
 Repo: RVTGMzz/VHSNES
 Branch: chibi-maruko-bootstrap-01
@@ -17,7 +19,7 @@ TIẾN ĐỘ THẬT ĐÃ LƯU GITHUB:
 - 10 file editorial chứa 220 revision events. Vừa nhập chúng TRỰC TIẾP vào canonical translation/source/*.csv ở 20 file, 209 lượt chỉnh câu thực tế, 11 lượt đã khớp. Do 4 lượt sửa đè các lời đề xuất cũ, có 216 nguồn (file, file_offset) cuối cùng.
 - QA LIVE sau cập nhật GitHub: Story 85/85, Quiz 54/54, Fortune 24/24, UI 53/53 = 216/216 câu cuối ở vi_full khớp review cuối cùng; 0 conflict. Công cụ mới tools/audit_g2_editorial_canonical_032.py (chỉ kiểm tra ngôn ngữ, không đụng ROM).
 - Xử lý BOM UTF8 trong các source CSV, giữ nguyên byte gốc ngoài giá trị vi_full. Ba khác biệt giữa review và source đã được rà theo JP, sửa xong.
-- 16 target graphics đã có trong translation/runtime/content_first_graphics_queue_032.csv: G0 title + dòng Việt hóa bởi VôtriValley, G1 heading + Start/Password, G2 start banner/VS/rules, G3 Win/Lose/Continue/Quit/final/Ending. Trong đó 14 chữ Nhật cần xử lý đồ họa, 1 VS Latin giữ nguyên, 1 credit mới. Asset graphics thật nhiều cái CHƯA TRUY RA.
+- 16 target graphics đã có trong translation/runtime/content_first_graphics_queue_032.csv: G0 title + dòng Việt hóa bởi Votri Valley, G1 heading + Start/Password, G2 start banner/VS/rules, G3 Win/Lose/Continue/Quit/final/Ending. Trong đó 14 chữ Nhật cần xử lý đồ họa, 1 VS Latin giữ nguyên, 1 credit mới. Asset graphics thật nhiều cái CHƯA TRUY RA.
 - Previous Build035 direct text candidate chưa runtime PASS; bản 025 font user test thực tế FAIL. 029 font experiment only static; 031 stack audit only static. ĐÓNG FONT TRACK CHO TỚI KHI XỬ LÝ NỘI DUNG XONG.
 - Không đưa ROM thương mại lên GitHub, không claim game dịch hoàn chỉnh chỉ vì 1.021 source rows.
 
