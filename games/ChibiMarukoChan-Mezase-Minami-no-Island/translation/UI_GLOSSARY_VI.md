@@ -114,7 +114,7 @@ Preferred presentation:
 
 - **Chibi Maruko-chan**
 - **Tiến tới đảo phương Nam!!**
-- **Việt hóa bởi VôtriValley**
+- **Việt hóa bởi Votri Valley**
 
 Preserve the original publisher/copyright attribution.
 
