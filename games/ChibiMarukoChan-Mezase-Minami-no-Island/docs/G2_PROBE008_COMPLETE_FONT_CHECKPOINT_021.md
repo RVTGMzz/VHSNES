@@ -49,7 +49,7 @@ The supplied clean ROM was independently used to reconstruct the exact strict-fr
 - 621 changed bytes vs clean, checksum/complement `0x4FE8/0xB017`.
 - Separators exactly 32/68/104, strict two-byte payloads. Source/derived ROMs are kept **local**, never committed.
 
-**Renderer-critical relocation correction:** `$85:8EA8` (`BF EE 95 85`) accesses the low-word page-pointer address, **AND** `$85:8EAD` (`BF EF 95 85`) reads the overlapping pointer bank byte. On page-table relocation both opcodes must be repointed (`BF 00 F8 85` **and** `BF 01 F8 85`); relocating only the first would use the wrong bank for page 0x0A. The guarded builder now patches both.
+**Renderer-critical relocation correction:** `$85:8EA8` (`BF EE 95 85`) accesses the low-word page-pointer address, **AND** `$85:8EAE` (`BF EF 95 85`) reads the overlapping pointer bank byte. On page-table relocation both opcodes must be repointed (`BF 00 F8 85` **and** `BF 01 F8 85`); relocating only the first would use the wrong bank for page 0x0A. The guarded builder now patches both.
 
 New tools committed:
 
