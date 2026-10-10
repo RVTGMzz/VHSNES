@@ -1,5 +1,19 @@
 # HANDOFF CURRENT — Chibi Maruko-chan SNES Việt hóa
 
+## ACTIVE CHECKPOINT 029 — 2026-10-10: QUOTE-ISOLATED G2 9px + V3, STATIC ONLY
+
+**Read first:** `docs/G2_PROBE008_ISOLATED_QUOTES_CHECKPOINT_029.md` then checkpoints 028, 027 and **026 user screenshot RUNTIME FAIL**.
+
+- Critical 028 risk: original Japanese quotes `8175` and `8176` appear as raw bytes 121 and 123 times respectively outside three G2 records; globally selecting 9px for their native glyph IDs `0159/015A` could disrupt other scenes (raw occurrences ≠ guaranteed visible text).
+- New 029 experimental strategy: **copy the two native quote bitmaps into two spare G2-only 9px glyph slots** `0A54/0A55`. Extend already-staged lead `0x85` with `8574/8575`, and change ONLY the 3 G2 opening +3 closing quote code-pairs `8175/8176` -> `8574/8575`. This **intentionally changes 12 bytes of original G2 text** while preserving all other dialogue, strict 2-byte record lengths 3×106, separators `816F` at 32/68/104, D038, scene, native Japanese glyphs and 13px lookup tables. **Do not claim all G2 payload bytes remain identical.**
+- Word/shift 9px selectors now cover custom IDs `083A..0863`, `090A..0963`, `0A00..0A55` and EXCLUDE native quotes `0159/015A`, preserving Japanese original 13px spacing outside G2.
+- Locally built 029 ROM SHA256 `a23304cedff0eac959a6455d90b866c49543ca381425b089771b65da264e928e`, 180 diff bytes vs exact 028 V3 geometry diagnostic SHA256 `59f4c45b14a24e6cf67de1c9c7cbe1d9b862eaa2eb4c6518bbc4bcbd6dd006fb`, checksum/complement `9309/6CF6`, hook sizes 61/86 bytes.
+- All 83,600 micro-executions of both new 65816 lookup stubs, 1,100 slots × 19 positions × 2 X widths × 2 hooks, STATIC PASS. Every G2 drawable token uses 9px; native quote glyph IDs use 13px; new quote IDs bitmap-identical to originals.
+- New GitHub tools: `tools/build_g2_probe008_029_isolated_quotes_diagnostic.py`, `tools/selftest_g2_probe008_029_isolated_quotes_opcode.py`. Explicit `--allow-untested-diagnostic` required for ROM output. No ROM uploaded.
+- **Not fixed in-game yet.** No emulator accessible here; container outbound DNS cannot resolve GitHub, apt package lists unavailable. Checkpoint 025 has user-confirmed RUNTIME TYPOGRAPHY FAIL. 029 is diagnostic only; do not offer user another "fixed" ROM until live 65816/PPU test. New lead `0x85` can still conflict with untraced native data and must be audited.
+- Next: verify both lookups in a REAL SNES debugger and check font V3 readability/line wrap and Japanese UI; only then resume G0/title, G2/G3 images, menu/minigames translation.
+
+
 ## ACTIVE CHECKPOINT 028 — 2026-10-10: REAL GLYPH / ATLAS 9px + V3 MEDIUM STATIC ONLY
 
 **Read first:** `docs/G2_PROBE008_GLYPH_GEOMETRY_V3_CHECKPOINT_028.md`, then checkpoint 027 and checkpoint 026.
