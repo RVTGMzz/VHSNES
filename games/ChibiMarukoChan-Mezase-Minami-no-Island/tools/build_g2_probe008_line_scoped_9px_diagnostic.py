@@ -57,7 +57,12 @@ def make_stub(is_word):
     a = Assembly()
     # The original word/shift consumers have M=16 and M=8 respectively.
     # PHP/PLP restore M and C; PHB/PLA read DBR without altering it.
-    a.emit(0x08, 0xE2, 0x20, 0x8B, 0x68, 0xC9, 0x83)
+    a.emit(0x08, 0xE2, 0x20)  # PHP; SEP M=8
+    if is_word:
+        a.emit(0x8B, 0x68)  # PHB; PLA: live source DBR before bank switch
+    else:
+        a.emit(0xA3, 0x09)  # LDA $09,S: saved original DBR after PEA/PLB/PLB
+    a.emit(0xC9, 0x83)  # CMP #$83
     a.branch(0xD0, "native")  # if DBR != 0x83, preserve native 13px
     a.emit(0xC2, 0x20, 0xAF, 0x94, 0x1F, 0x00)  # REP M=16; LDA.l $001F94
     for first, end in G2_RANGES:
@@ -93,6 +98,9 @@ def interpret(stub, rom, source_pointer, source_dbr, index, is_word):
     accumulator = 0xBEEF if is_word else 0xEE
     x = index * (2 if is_word else 1)
     carry = zero = False
+    # At the word hook DBR is the source bank. Before the shift hook the
+    # renderer executes PEA $7F00; PLB; PLB, so LIVE DBR becomes $7F.
+    live_dbr = source_dbr if is_word else 0x7F
     for _ in range(90):
         op = stub[ip]
         ip += 1
@@ -104,9 +112,14 @@ def interpret(stub, rom, source_pointer, source_dbr, index, is_word):
             ip += 1
             m = 8 if op == 0xE2 else 16
         elif op == 0x8B:  # PHB
-            stack.append(source_dbr)
+            stack.append(live_dbr)
         elif op == 0x68:  # PLA (M=8)
             accumulator = stack.pop()
+        elif op == 0xA3:  # LDA $09,S from saved pre-switch DBR
+            if stub[ip] != 0x09 or is_word or len(stack) != 1 or live_dbr != 0x7F:
+                raise AssertionError("incorrect stack-relative original DBR access")
+            ip += 1
+            accumulator = source_dbr
         elif op == 0xC9:  # CMP immediate
             width = 2 if m == 16 else 1
             operand = int.from_bytes(stub[ip:ip+width], "little")
@@ -151,6 +164,11 @@ def build(original):
         raise ValueError("font low-pointer relocation is missing")
     if original[0x28EAE:0x28EB2] != bytes.fromhex("BF01F885"):
         raise ValueError("font bank-pointer relocation is missing")
+    # The renderer saves the source DBR, changes it to $7F before BYTE lookup.
+    if original[0x28E7B:0x28E7F] != bytes.fromhex("8BDA5A48"):
+        raise ValueError("renderer PHB/PHX/PHY/PHA stack frame changed")
+    if original[0x28E87] != 0x68 or original[0x28E95:0x28E9A] != bytes.fromhex("F4007FABAB"):
+        raise ValueError("renderer bank switch or original PHA/PLA changed")
     spans = ((WORD_STUB, WORD_STUB+0x80), (BYTE_STUB, BYTE_STUB+0x80),
              (NINE_WORD, NINE_WORD+38), (NINE_BYTE, NINE_BYTE+19))
     for lo, hi in spans:
