@@ -1,3 +1,29 @@
+TIẾP TỤC VIỆT HÓA CHIBI MARUKO-CHAN SNES — CHECKPOINT 030 (2026-10-11)
+Repo: RVTGMzz/VHSNES, branch chibi-maruko-bootstrap-01.
+
+ĐỌC TRƯỚC:
+1. games/ChibiMarukoChan-Mezase-Minami-no-Island/HANDOFF_CURRENT.md
+2. docs/G2_PROBE008_RENDERER_STACK_AUDIT_CHECKPOINT_030.md
+3. docs/G2_PROBE008_ISOLATED_QUOTES_CHECKPOINT_029.md
+4. docs/G2_PROBE008_GLYPH_GEOMETRY_V3_CHECKPOINT_028.md
+5. docs/G2_PROBE008_USER_RUNTIME_FAIL_CHECKPOINT_026.md
+
+ĐỢT 030 MỚI LÀM:
+- Mở chính xác ROM gốc 2 MiB SHA256 e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956, phân tích 9 mã lệnh then chốt original parser, renderer PHA, word/shift hooks, atlas X/Y, font pointers, dữ liệu BCD. Dùng biểu thức mô hình stack từ đúng thứ tự PHB PHX PHY PHA JSL PHX PHY JSL PHP: glyph gốc được giữ tại $0A,S nếu X8, $0C,S nếu X16 (GIẢ ĐỊNH A16, cần emulator xác minh sống). 9 phép đổi byte lỗi được bộ kiểm tra từ chối.
+- Hai dấu ngoặc gốc glyph ID 0159/015A đều chỉ chứa 11 pixel, nét rộng bốn điểm, xác nhận bản sao của chúng có thể giữ hình dáng 12x12 cũ.
+- QUÉT THỰC TẾ: trong toàn bộ bank file 0x18000..0x1FFFF chứa dữ liệu Story, hai mã quote alias 8574, 8575 đều có 0 cặp byte gốc trùng. Nhưng xuyên toàn ROM có 13 và 6 cặp byte raw trùng tương ứng; nhiều nơi là code/data, không chứng minh hoàn toàn không có conflict. Phải test game Nhật và mã lead 0x85.
+- Script mới tools/audit_g2_probe008_030_renderer_stack_contract.py; checkpoint docs/G2_PROBE008_RENDERER_STACK_AUDIT_CHECKPOINT_030.md; JSON báo cáo local Chibi_Probe008_030_stack_contract_report.json. Không tạo ROM ở checkpoint030.
+- 029: đã tạo font V3 medium + geometry9 + duplicate 2 quote G2 riêng 0A54/0A55 và map 8574/8575, 83.600 microtests PASS, nhưng chưa emulator thực. SHA256 ROM 029 a23304cedff0eac959a6455d90b866c49543ca381425b089771b65da264e928e (KHÔNG UPLOAD ROM).
+- 025 là RUNTIME VISUAL FAIL do chính người dùng chơi và gửi ảnh, không tái sử dụng.
+
+TIẾP THEO:
+1. Làm real SNES emulator/debugger trace. Tập trung thanh ghi M/X tại renderer PHA, ID glyph trong stack tại word hook $85:8E0C, DP $18/$08/$0A tại shift hook $85:90EE; phát hiện actual pitch, quote alias, newline/wrap và font V3 hiển thị.
+2. Test Nhật ngoài G2 để chắc quote 8175/8176 vẫn 13px. Kiểm tra mã lead 0x85 không chạm dữ liệu game khác.
+3. Chỉ khi runtime PASS mới promote, test full game, rồi tiếp tục G0 title, G2/G3 graphics, menus, mini-games.
+4. Không claim giả lập đã được chạy vì môi trường hiện tại không có emulator SNES; không upload ROM thương mại. Giữ checkpoint đã push GitHub.
+
+---- LỊCH SỬ 029 VÀ TRƯỚC ----
+
 TIẾP TỤC VIỆT HÓA CHIBI MARUKO-CHAN SNES — CHECKPOINT 029
 GitHub: RVTGMzz/VHSNES — branch chibi-maruko-bootstrap-01
 
