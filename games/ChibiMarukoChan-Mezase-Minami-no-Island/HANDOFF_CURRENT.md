@@ -1,5 +1,16 @@
 # HANDOFF CURRENT — Chibi Maruko-chan SNES Việt hóa
 
+## ACTIVE CHECKPOINT 031 — 2026-10-11: RECOVERED V2 + EXCLUSIVE CALLGRAPH + QUOTE PREFLIGHT
+
+**Read first:** `docs/G2_PROBE008_RECOVERY_CALLGRAPH_CHECKPOINT_031.md`, then checkpoint030, checkpoint029 and the user screenshot failure checkpoint026.
+
+- Locally **recovered exact canonical Probe008 V2 font-only ROM** from the user's uploaded FAILED checkpoint025 binary by reverting only its two renderer JSL calls, injected staging bytes and recalculating checksum. Recovered 2MiB SHA256 `2ca9b82bf09d0e4b6feeb65ba59d3c94cb22cdfcd475e68dd96af47a119f75bd` EXACT, 191 reversed byte positions, SNES checksum `622E/9DD1`. **This is not a new runtime-good candidate.** Tool: `tools/recover_g2_probe008_v2_from_failed025.py`.
+- New actual-ROM direct call scan finds exactly ONE `JSL $85:8E7B` parser->renderer (0x28413), and ONE `JSL $85:8E05` renderer->helper (0x28E83); no same-bank direct JSR to either. Parser restores **A16 with REP #$20** immediately before loading mapped glyph ID and calling renderer. Strengthens justification for the 029 word-hook `PHA` stack model; indirect calls/live flags remain unproved. **7/7 mutation guards reject corruption**. Tool: `tools/audit_g2_probe008_031_direct_call_graph.py`.
+- New physical font/lead-map preflight on exact CLEAN + recovered V2: native quotes `8175/8176` map to `0159/015A`; proposed `8574/8575` map entries are empty; `0A54/0A55` 12×12 font cells are physically blank. Three 106-byte G2 fields each contain exactly one opening/closing quote and original 816F controls at pair indices 16/34/52. Zero original raw `8574/8575` pairs in Story bank, 13/6 raw matches elsewhere in full ROM: **global 0x85 safety still UNPROVEN**. Tool: `tools/audit_g2_probe008_031_alias_preflight.py`.
+- Both read-only audits executed on exact original and recovered V2 ROM locally; JSON reports generated. No new binary distributed/uploaded to GitHub. **029 is still static-only; 025 is confirmed user RUNTIME TYPOGRAPHY FAIL; SNES emulator absent.**
+- Next highest priority: real SNES debugger trace for 029 word/shift hooks and V3 font screenshot quality. Then test Japanese punctuation/UI and story, and continue G0/title, G2/G3/menu/minigames after font gate.
+
+
 ## ACTIVE CHECKPOINT 030 — 2026-10-11: ORIGINAL RENDERER STACK & ALIAS OCCUPANCY
 
 **Read first:** `docs/G2_PROBE008_RENDERER_STACK_AUDIT_CHECKPOINT_030.md`, then checkpoint029 and checkpoint026.
