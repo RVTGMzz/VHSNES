@@ -1,5 +1,16 @@
 # HANDOFF CURRENT — Chibi Maruko-chan SNES Việt hóa
 
+## ACTIVE CHECKPOINT 030 — 2026-10-11: ORIGINAL RENDERER STACK & ALIAS OCCUPANCY
+
+**Read first:** `docs/G2_PROBE008_RENDERER_STACK_AUDIT_CHECKPOINT_030.md`, then checkpoint029 and checkpoint026.
+
+- Read-only analysis of exact original ROM verified **9 instruction anchors** from text parser → renderer `PHB;PHX;PHY;PHA` → word lookup `0x28E0C` → atlas-pointer x/y → shift lookup `0x290EE`. Saved original glyph ID in A is at **`$0A,S` (X8)** or **`$0C,S` (X16)** under a 16-bit A assumption. 9 mutated original-code fixtures rejected; this is a structural/static check, NOT actual 65816 runtime trace.
+- Original Japanese quote IDs `0159/015A` each have 11 lit bitmap pixels and width four pixels in their original page1 cells, so duplicate G2-only glyphs need no shape alteration.
+- New G2-only quote code pairs `8574` and `8575` occur **13** and **6** times as raw bytes in original ROM, but **ZERO times inside full bank file `0x18000..0x1FFFF`** containing G2 Story. Other banks may contain code/data matches; full global 0x85 safety remains UNPROVEN.
+- Committed `tools/audit_g2_probe008_030_renderer_stack_contract.py` and doc 030; local JSON `Chibi_Probe008_030_stack_contract_report.json`. No ROM changes made this round, no emulator installed/accessible. 
+- **029 remains ONLY STATIC PASS / emulator UNTESTED. 025 remains USER RUNTIME TYPOGRAPHY FAIL. Do not claim fixed gameplay, and do not send a release ROM yet.** Continue with real debugger at `$85:8E0C` and `$85:90EE`, font V3 tone/quote/wrap and native Japanese UI QA, then remaining content.
+
+
 ## ACTIVE CHECKPOINT 029 — 2026-10-10: QUOTE-ISOLATED G2 9px + V3, STATIC ONLY
 
 **Read first:** `docs/G2_PROBE008_ISOLATED_QUOTES_CHECKPOINT_029.md` then checkpoints 028, 027 and **026 user screenshot RUNTIME FAIL**.
