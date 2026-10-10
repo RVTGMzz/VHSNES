@@ -1,5 +1,18 @@
 # HANDOFF CURRENT — Chibi Maruko-chan SNES Việt hóa
 
+## ACTIVE CHECKPOINT 025 — 2026-10-10: corrected G2 9px renderer bank handling
+
+**READ FIRST:** `docs/G2_PROBE008_STACK_BANK_SAFE_CHECKPOINT_025.md`. Supersedes the status of checkpoint 024: the 024 line-scoped 9px microhook is **not correct** because the renderer changes DBR from text source to `$7F` between its two lookups.
+
+- Original renderer at file `0x28E7B`: `PHB; PHX; PHY; PHA`. At `0x28E95`: `PEA $7F00; PLB; PLB`. The byte lookup at `0x290EE` thus cannot test live source DBR.
+- New corrected byte hook dynamically reads the bank saved on CPU stack, using `$07,S` if X=8-bit, `$09,S` if X=16-bit (based on saved P's X flag). Word hook at `0x28E0C` checks original live DBR before the bank switch. Both include the same three G2 source ranges, preserving original 13px outside G2 and 9px for all glyphs/quotes inside.
+- **New build**: SHA256 `d4bd629003812578580e7a380e791d87fdf64614441394f1261df3951b9815dc`; 191 changed bytes vs V2 font-only, checksum/complement `0xED96/0x1269`; 57-byte word and 67-byte byte hook. **18,696** static 65816 subset tests PASS, independent verifier PASS, 5/5 deliberate corruption checks rejected.
+- All 3 original G2 payloads remain byte-identical and 13px native tables unchanged. No runtime/emulator test; do not distribute as final.
+- GitHub script updates: `tools/build_g2_probe008_line_scoped_9px_diagnostic.py` and `tools/verify_g2_probe008_line_scoped_9px_diagnostic.py`, and docs checkpoint 025. No commercial ROM committed.
+- **Still must validate live DBR/`$1F94` source bank/pointer, actual new font page, wrap, typography, Japanese modes in emulator.** Also audit 0x85 new lead beyond the G2 source record.
+- Previous checkpoints 023 (per-glyph-selective) and 024 (per-source but live-DBR check at both lookups) are **REJECTED FOR RELEASE**. Only 025 is current *static diagnostic* baseline.
+
+
 ## ACTIVE CHECKPOINT 024 — 2026-10-10: G2 source-scoped 9px (supersedes glyph-scoped fail)
 
 **READ FIRST:** `docs/G2_PROBE008_LINE_SCOPED_9PX_CHECKPOINT_024.md`.
