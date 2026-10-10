@@ -37,3 +37,17 @@ The 163 entries cover the existing 160-entry map plus proposed ằ/ẵ/ỵ at 84
 - Preserve strict two-byte text framing, D038, palette and scene/controller logic.
 - Render spacing shown here assumes 12 px advance; runtime spacing remains unverified.
 - Runtime typography: UNTESTED. No ROM produced or committed.
+
+## Continuation — read-only slot preflight
+
+Added `tools/plan_g2_probe008_font.py` and `tools/selftest_g2_probe008_preflight.py`. The planner requires exact Probe 003 SHA-1 and SHA-256, excludes all existing codepage glyph slots, and scans only blank cells not referenced in the audited mapping range. It deduplicates identical bitmap aliases when calculating capacity. It never patches ROMs and always reports build_ready=false: added code capacity and possible references outside the mapping range remain unproven.
+
+ROM-free tests PASS: protected/referenced/nonblank cells excluded, scan leaves bytes unchanged, wrong ROM identity rejected, altered or duplicate codes rejected. Existing strict Probe 003 text-framing selftest also PASS. These are local tests, not CI or runtime PASS. Actual ROM preflight not run because no matching input ROM was found locally or by two Library title searches.
+
+GitHub synchronization remains BLOCKED by automatic approval review. Local preview commit is `3c575e2`; the push was rejected even after the user's general continuation. Do not claim the remote branch contains these changes. Obtain explicit authorization naming repository, branch and payload before retrying. Payload consists of font-generation/preview/preflight scripts, generated glyph JSON, preview PNGs and checkpoint documentation; excludes ROMs.
+
+Run with a user-provided verified baseline:
+
+```sh
+python tools/plan_g2_probe008_font.py Probe003.sfc probe008-slot-plan.json
+```

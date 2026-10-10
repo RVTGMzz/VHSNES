@@ -8,7 +8,7 @@ Repo: `RVTGMzz/VHSNES`
 ## Latest font design checkpoint — 2026-10-09
 
 Read `docs/G2_PROBE008_CUSTOM_FONT_018.md` first for the current font task.
-User rejected the first Probe 008 preview; a wider custom monoline candidate and side-by-side comparison are now available. Preview-only, 163 current-map candidate entries, no ROM built and no runtime PASS.
+User rejected the first Probe 008 preview; a wider custom monoline candidate and side-by-side comparison are now available. Preview-only, 163 current-map candidate entries, no ROM built and no runtime PASS. Read-only slot preflight and ROM-free regression checks are added; local tests PASS, actual ROM preflight pending input. GitHub push blocked by automatic approval review; changes are local only until explicit publication authorization.
 
 ## Latest checkpoint — G1 Runtime PASS / G2 school-front trace
 
