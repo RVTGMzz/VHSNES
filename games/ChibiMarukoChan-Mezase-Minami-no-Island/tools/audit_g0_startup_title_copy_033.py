@@ -43,7 +43,11 @@ def check() -> dict:
     if (not flags["preserve_original_publisher_and_copyright"]
             or not flags["preserve_original_character_artwork"]
             or not flags["do_not_patch_internal_debug_descriptors"]
-            or flags["title_graphics_source_offset"] is not None
+            or flags["title_graphics_source_offset"] != "0x0F6456"
+            or flags["title_tilemap_source_offset"] != "0x0F1F00"
+            or flags["G0_resource_script_cpu"] != "0x82A087"
+            or flags["actual_title_asset_identification"] != "PROVEN_BY_ROM_DECODE"
+            or flags["graphics_patch_status"] != "EXPERIMENTAL_STATIC_ROM_PATCH_ONLY"
             or flags["runtime_gameplay_verified"] is not False):
         raise AssertionError("title artwork/asset/runtime assertions are unsafe")
 
@@ -59,8 +63,8 @@ def check() -> dict:
             raise AssertionError("startup title/credit must be G0 priority P0")
         if rows[key]["vi_target"] != phrase:
             raise AssertionError(f"graphics backlog text drift: {key}")
-    if rows["ちびまる子ちゃん めざせ！南のアイランド！！"]["asset_source_state"] != "UNRESOLVED":
-        raise AssertionError("asset claim changed without verified replacement")
+    if rows["ちびまる子ちゃん めざせ！南のアイランド！！"]["asset_source_state"] != "EXPERIMENTAL_PATCH_STATIC_RECONSTRUCTED":
+        raise AssertionError("G0 asset discovery/static patch status drift")
 
     checked=[CONTRACT,GRAPHICS,QUEUE,GLOSSARY,G0_RUNNER,MASTER_RUNNER]
     for path in checked:
@@ -76,7 +80,8 @@ def check() -> dict:
         "status":"G0_STARTUP_TITLE_COPY_CONSISTENCY_PASS",
         "title": TITLE,"subtitle": SUBTITLE,"credit": CREDIT,
         "batch":"G0","priority":"P0",
-        "source_assets_resolved":False,
+        "source_assets_resolved":True,
+        "experimental_rom_repacked":True,
         "emulator_runtime_pass":False,
         "copyright_and_original_character_artwork_preservation_required":True,
         "files_verified":len(checked),
