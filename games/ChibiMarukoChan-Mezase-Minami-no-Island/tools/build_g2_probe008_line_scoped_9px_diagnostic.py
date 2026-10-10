@@ -61,7 +61,15 @@ def make_stub(is_word):
     if is_word:
         a.emit(0x8B, 0x68)  # PHB; PLA: live source DBR before bank switch
     else:
-        a.emit(0xA3, 0x09)  # LDA $09,S: saved original DBR after PEA/PLB/PLB
+        # The saved DBR lies at 7,S if X=8 (1-byte PHX/PHY), or at 9,S
+        # if X=16 (2-byte PHX/PHY). Read X flag from PHP-saved status.
+        a.emit(0xA3, 0x01, 0x29, 0x10)  # LDA $01,S; AND #$10
+        a.branch(0xF0, "x16")  # BEQ if X flag is clear
+        a.emit(0xA3, 0x07)  # LDA $07,S for X8
+        a.branch(0x80, "got_bank")
+        a.label("x16")
+        a.emit(0xA3, 0x09)  # LDA $09,S for X16
+        a.label("got_bank")
     a.emit(0xC9, 0x83)  # CMP #$83
     a.branch(0xD0, "native")  # if DBR != 0x83, preserve native 13px
     a.emit(0xC2, 0x20, 0xAF, 0x94, 0x1F, 0x00)  # REP M=16; LDA.l $001F94
@@ -90,7 +98,7 @@ def cpu_to_file(addr):
     return (addr >> 16 & 0x7F)*0x8000 + (addr & 0x7FFF)
 
 
-def interpret(stub, rom, source_pointer, source_dbr, index, is_word):
+def interpret(stub, rom, source_pointer, source_dbr, index, is_word, x8=False):
     """Only the emitted 65816 subset; static test, NOT SNES emulation."""
     ip = 0
     stack = []
@@ -115,20 +123,32 @@ def interpret(stub, rom, source_pointer, source_dbr, index, is_word):
             stack.append(live_dbr)
         elif op == 0x68:  # PLA (M=8)
             accumulator = stack.pop()
-        elif op == 0xA3:  # LDA $09,S from saved pre-switch DBR
-            if stub[ip] != 0x09 or is_word or len(stack) != 1 or live_dbr != 0x7F:
-                raise AssertionError("incorrect stack-relative original DBR access")
+        elif op == 0xA3:  # LDA stack relative (saved P or saved original DBR)
+            displacement = stub[ip]
             ip += 1
-            accumulator = source_dbr
+            if is_word or len(stack) != 1 or live_dbr != 0x7F:
+                raise AssertionError("invalid stack-frame access")
+            if displacement == 0x01:
+                accumulator = 0x10 if x8 else 0  # PHP-saved X-width status
+            elif displacement == (0x07 if x8 else 0x09):
+                accumulator = source_dbr
+            else:
+                raise AssertionError("wrong saved-DBR stack offset")
+        elif op == 0x29:  # AND immediate, 8-bit A
+            if m != 8:
+                raise AssertionError("X-width test was not 8-bit")
+            accumulator &= stub[ip]
+            ip += 1
+            zero = accumulator == 0
         elif op == 0xC9:  # CMP immediate
             width = 2 if m == 16 else 1
             operand = int.from_bytes(stub[ip:ip+width], "little")
             ip += width
             carry, zero = accumulator >= operand, accumulator == operand
-        elif op in (0xD0, 0x90):  # BNE / BCC
+        elif op in (0xD0, 0x90, 0xF0, 0x80):  # BNE / BCC / BEQ / BRA
             rel = stub[ip]
             ip += 1
-            if (op == 0xD0 and not zero) or (op == 0x90 and not carry):
+            if (op == 0xD0 and not zero) or (op == 0x90 and not carry) or (op == 0xF0 and zero) or op == 0x80:
                 ip += rel if rel < 128 else rel - 256
         elif op == 0xAF:  # LDA long current ROM-source pointer
             addr = int.from_bytes(stub[ip:ip+3], "little")
@@ -209,22 +229,24 @@ def build(original):
         for first,end in G2_RANGES:
             for pointer in range(first,end):
                 for is_word,stub in ((True,word),(False,byte)):
-                    value = interpret(stub,data,pointer,0x83,i,is_word)
-                    x = 4+9*i
-                    expected = 16*(x//8) if is_word else x%8
-                    if value != expected:
-                        raise AssertionError("9px field-address microhook failed")
-                    checks += 1
+                    for x8 in ((False,) if is_word else (False,True)):
+                        value = interpret(stub,data,pointer,0x83,i,is_word,x8=x8)
+                        x = 4+9*i
+                        expected = 16*(x//8) if is_word else x%8
+                        if value != expected:
+                            raise AssertionError("9px field-address microhook failed")
+                        checks += 1
         for ptr,dbr in ((0x81CE,0x80),(0x82C0,0x7E),(0x8238,0x83),
                         (0x8246,0x83),(0x82B1,0x83),(0x82BF,0x83),
                         (0x832A,0x83),(0x81CD,0x83),(0,0x83),(0xFFFF,0x83)):
             for is_word,stub in ((True,word),(False,byte)):
-                value = interpret(stub,data,ptr,dbr,i,is_word)
-                x = 4+13*i
-                expected = 16*(x//8) if is_word else x%8
-                if value != expected:
-                    raise AssertionError("13px native-field microhook failed")
-                checks += 1
+                for x8 in ((False,) if is_word else (False,True)):
+                    value = interpret(stub,data,ptr,dbr,i,is_word,x8=x8)
+                    x = 4+13*i
+                    expected = 16*(x//8) if is_word else x%8
+                    if value != expected:
+                        raise AssertionError("13px native-field microhook failed")
+                    checks += 1
     return bytes(data), {
         "status":"STATIC_65816_SUBSET_PASS_ONLY", "release_ready":False,
         "runtime":"UNTESTED", "base_sha256":INPUT_SHA256,
@@ -235,7 +257,7 @@ def build(original):
         "G2_source_ranges":[[hex(x),hex(y)] for x,y in G2_RANGES],
         "G2_native_quotes_use_9px":True,
         "out_of_range_source_keeps_13px":True,
-        "runtime_blocker":"DBR bank and field pointer provenance require emulator confirmation"
+        "runtime_blocker":"DBR bank, source pointer, and saved-stack provenance require emulator confirmation"
     }
 
 
