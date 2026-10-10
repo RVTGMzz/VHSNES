@@ -1,5 +1,18 @@
 # Editorial progress — Chibi Maruko-chan
 
+## LATEST — 2026-10-11 — canonical source integration DONE (checkpoint 032)
+
+The ten historical editorial pass files have now been **applied to canonical source `vi_full`**. They are NOT outstanding proposals anymore. Details and real-file verification: `docs/CONTENT_FIRST_CANONICAL_MERGE_CHECKPOINT_032.md`.
+
+- **220 review events, 216 distinct `(source CSV, file_offset)` locations** (four later revisions override earlier ones).
+- **209 actual Vietnamese revision operations written**, 11 reviewed values already matching.
+- **20 source CSV files updated or audited**; **216/216 current canonical `vi_full` values match the final review**, with zero outstanding conflicts.
+- Actual `ui_auxiliary_pass03.csv` contains **25** rows, not the outdated 24 reported below.
+- The earlier **1,018** means ordinary release-intent source rows; the source tracker counts **1,021 including three G2 demo rows**. These are known-source row counts, not whole-game runtime translation percentages.
+- The historical instruction below “Editorial CSVs are proposals until merged” now applies only to *future unmerged editorial passes*.
+- User has expressly postponed font/renderer fixes until content and graphics-language work has progressed. No ROM compiled or new runtime test was performed this round.
+
+
 Updated: 2026-09-18 +07
 Branch: `chibi-maruko-bootstrap-01`
 
