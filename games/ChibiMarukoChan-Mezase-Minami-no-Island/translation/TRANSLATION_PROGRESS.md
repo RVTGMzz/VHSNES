@@ -1,5 +1,16 @@
 # Translation progress — Chibi Maruko-chan
 
+## LATEST — 2026-10-11 CHECKPOINT 037: G2 RULE DATA CORRECTION
+
+**User priority remains: finish text/graphics content first, font later.** G2 rule-board source is now classified more accurately: 3 originally Japanese lines `ルールをせつめいするよ`, `２本先取だよ`, `ゲームの時間は勝つまでだよ` have **real coherent direct CP932 source bytes** in bank83 at offsets 0x1E307/0x1E325/0x1E339, not necessarily separate graphics that must be redrawn. Exact menu rendering path still needs tracing.
+
+**One real source-integrity error FIXED:** canonical `translation/source/rules_tutorial_vi.csv` record moved from `0x1E326` (second byte of full-width SJIS digit ２) to correct `0x1E325`. Natural Vietnamese wording revised to `Ai thắng 2 ván trước sẽ thắng / Chơi đến khi phân thắng bại`; bullet structure semantically retained. The 0x1E323/0x1E337 original full-width bullet bytes and 3 paragraph delimiters were independently verified intact in clean ROM.
+
+**35 already-translated minigame/VS direct UI fields** were checked against exact raw CP932 source offsets 0x288C2..0x28BFF (fullwidth rounds, difficulty, timer, player slots, controller and stage). This confirms existing semantic source inventory; it adds **zero** new Japanese meaning rows. The audit deliberately rejects the old wrong 0x1E326 offset. See `docs/G2_RULE_TEXT_ACTUAL_ROM_SOURCE_CHECKPOINT_037.md` and `tools/audit_g2_rules_direct_sources_037.py`.
+
+A read-only scout decoded 42 nearby candidate resources for G2 and 52 distinct 4bpp sprite source/destination entries from the package catalog for G3. **No G3 result asset was proven or changed**, and there is **NO new ROM patch** this checkpoint. Graphics-only 036 remains static UNTESTED and not merged into historical Vietnamese direct-text Build035. Need G3 result callback proof and safe combined build. Font remains deferred.
+
+
 ## LATEST GRAPHICS — CHECKPOINT 036 (2026-10-11)
 
 One additional **actually modified retail graphic label**: the main-mode header “どれにする？” → “Chọn gì” / “đây?” (display reading **Chọn gì đây?**). Original asset found in package $82:A213 index6 (main mode init ROM 0x20047), source $98:F06F / file0xC706F, 8192B=256 4bpp sprite tiles. Actual ROM graphic replacement keeps first **192 native icon/menu-label tiles** identical and rewrites only last 64 heading tiles. Compressed stream **3485→2428 bytes**, same original slot, no relocation.
