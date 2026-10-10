@@ -1,5 +1,10 @@
 # Graphics Batch G0 — Title / Intro Screen Vietnamese Plan
 
+## UPDATE — 2026-10-11: G0 TITLE ASSET IS NOW PROVEN OFFLINE AND EXPERIMENTALLY PATCHED
+
+**Supersedes the historical 'UNPROVEN' status lower in this planning document.** Read `docs/G0_ACTUAL_TITLE_ASSET_REPACK_CHECKPOINT_034.md`. Actual first-boot title logo source `$82:A087`, tilemap `$9E:9F00` / `0xF1F00`, BG 4bpp graphics `$9E:E456` / `0xF6456` were decoded and original Japanese title verified in reconstructed bitmap. Experimental exact clean-ROM title-only IPS replaces them with Vietnamese copy and `Việt hóa bởi Votri Valley`; protected character and copyright graphic layers remain byte-identical in offline reconstruction. **Not merged into Build035 or tested in actual SNES emulator.**
+
+
 Updated: 2026-09-18 +07
 
 ## Scope
@@ -16,7 +21,7 @@ Vietnamese target:
 
 Requested localization credit:
 
-`Việt hóa bởi VôtriValley`
+`Việt hóa bởi Votri Valley`
 
 ## Layout intent
 
@@ -29,7 +34,7 @@ Replace only the Japanese title/logo lettering with a Vietnamese/Latin treatment
 2. Subtitle:
    - **Tiến tới đảo phương Nam!!**
 3. Small localization credit:
-   - **Việt hóa bởi VôtriValley**
+   - **Việt hóa bởi Votri Valley**
 
 The localization credit should be visibly separate from the original publisher/copyright lines.
 
