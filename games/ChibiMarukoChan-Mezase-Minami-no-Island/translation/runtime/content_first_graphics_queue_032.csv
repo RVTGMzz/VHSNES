@@ -1,0 +1,17 @@
+batch,priority,source_jp,vi_target,visible_evidence,asset_source_state,next_action,release_gate
+G0,P1,ちびまる子ちゃん めざせ！南のアイランド！！,Chibi Maruko-chan: Tiến tới đảo phương Nam!!,verified_title_screen,UNRESOLVED,trace title graphics and map actual tile/tilemap source,real screenshot text and copyright preserved
+G0,P1,__LOCALIZATION_CREDIT__,Việt hóa bởi VôtriValley,user_requested_new_credit,NOT_IN_ORIGINAL,place credit under title after title asset proof,publisher attribution preserved
+G1,P0,どれにする？,Chọn gì đây?,verified_visible_user_screenshot,UNRESOLVED,identify pink heading actual render source,correct Vietnamese accented bitmap in game
+G1,P0,はじめから,Bắt đầu,verified_visible_user_screenshot,UNRESOLVED,trace Start artwork pixels and tilemap,action still starts Story
+G1,P0,パスワード,Mật khẩu,verified_visible_user_screenshot,UNRESOLVED,trace Password artwork and tilemap,password screen remains accessible
+G2,P0,今からやるよ,Bắt đầu thôi!,user_screenshot_family_demo_context,UNRESOLVED,identify actual school front overlay graphics and callback,actual retail banner position verified
+G2,P0,ＶＳ,VS,verified_visible_user_screenshot,ALREADY_LATIN,keep source VS asset unchanged by default,no redraw required
+G2,P0,ルールをせつめいするよ,Luật chơi,verified_visible_user_screenshot,UNRESOLVED,identify VS rule panel heading source,full diacritics in on-screen panel
+G2,P0,２本先取だよ,Thắng 2,verified_visible_user_screenshot,UNRESOLVED,identify VS target-score graphic source,result still means first to two wins
+G2,P0,ゲームの時間は勝つまでだよ,Đến khi thắng,verified_visible_user_screenshot,UNRESOLVED,identify VS duration option graphics,option still means until someone wins
+G3,P1,勝ち,Thắng,verified_visible_user_screenshot,UNRESOLVED,trace full screen win-result asset,win card layout verified
+G3,P1,敗けた,Thua,descriptor_only_visibility_unverified,UNRESOLVED,verify actual retail lose-result visual source before patch,screen source identity proven
+G3,P1,コンティニュー,Tiếp tục,descriptor_only_visibility_unverified,UNRESOLVED,verify actual continue screen and artwork before patch,continue action unchanged
+G3,P1,やめる,Thoát,quit_story_context_resolved_asset_unverified,UNRESOLVED,verify retail Story quit-screen asset,correct quit context preserved
+G3,P1,最終勝利,Chiến thắng cuối cùng!,descriptor_only_visibility_unverified,UNRESOLVED,verify final victory card actual text artwork,final victory meaning and layout
+G3,P1,エンディング,Kết thúc,descriptor_only_visibility_unverified,UNRESOLVED,verify actual ending/credits screen asset,ending still loads correctly
