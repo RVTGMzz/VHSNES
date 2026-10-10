@@ -1,5 +1,10 @@
 # HANDOFF CURRENT — Chibi Maruko-chan SNES Việt hóa
 
+## G0 STARTUP TITLE — USER CONFIRMED 2026-10-11 (PRIORITY P0)
+
+**EXACT DISPLAY COPY:** `Chibi Maruko-chan` / `Tiến tới đảo phương Nam!!` / small `Việt hóa bởi Votri Valley`. This is the **title screen seen immediately at boot**, not an internal descriptor or later Story option. Preserve original copyright/publisher marks and game operation. Graphics targets + glossary + G0 reverse pipeline must use the exact spelling **Votri Valley**, with a space and without the previous branded form. Title artwork asset/layout still unproven; no in-ROM title rendering or gameplay PASS is claimed. Proceed with content/graphics work, leave font checkpoint031 frozen.
+
+
 ## ACTIVE CONTENT-FIRST CHECKPOINT 032 — 2026-10-11 — VIỆT HÓA TRƯỚC, FONT SAU
 
 **USER DIRECTION OVERRIDES PRIOR FONT PRIORITY:** finish all recoverable Japanese-language content and graphics wording before returning to font/9px/65816 runtime experiments. Do not make another 032+ font probe next. Font history 025 user FAIL, 029 static-only, 031 parser audit stays preserved/on hold.
@@ -675,9 +680,9 @@ Frozen Vietnamese presentation:
 
 - **Chibi Maruko-chan**
 - **Tiến tới đảo phương Nam!!**
-- small added credit: **Việt hóa bởi VôtriValley**
+- small added credit: **Việt hóa bởi Votri Valley**
 
-Preserve the original publisher/production copyright artwork. The VôtriValley line is an additional localization credit, not a replacement copyright.
+Preserve the original publisher/production copyright artwork. The Votri Valley line is an additional localization credit, not a replacement copyright.
 
 See `docs/GRAPHICS_G0_TITLE_SCREEN_PLAN.md`.
 
