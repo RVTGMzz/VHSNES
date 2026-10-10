@@ -54,7 +54,7 @@ def audit(rom,project):
     source={x["file_offset"].upper():x for x in csv_rows(base/"rules_tutorial_vi.csv")}
     if "0X1E326" in source or not {"0X1E325","0X1E2FF"}<=set(source):
         raise AssertionError("G2 source CSV contains wrong mid-CP932 field offset")
-    accepted="・ Ai thắng 2 ván trước sẽ thắng / ・Chơi đến khi phân thắng bại"
+    accepted="・Ai thắng 2 ván trước sẽ thắng / ・Chơi đến khi phân thắng bại"
     if source["0X1E325"]["vi_full"]!=accepted:
         raise AssertionError("approved Vietnamese rule text changed")
     ui_source={int(x["file_offset"],16):x
