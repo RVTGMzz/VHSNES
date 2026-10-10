@@ -86,7 +86,7 @@ def main() -> int:
         "batches": {
             "g0": {
                 "title": "Chibi Maruko-chan / Tiến tới đảo phương Nam!!",
-                "localization_credit": "Việt hóa bởi VôtriValley",
+                "localization_credit": "Việt hóa bởi Votri Valley",
                 "boot_windows": g0.get("boot_windows"),
                 "dma_transfers": g0.get("dma_transfers"),
                 "direct_rom_pngs": len(g0.get("direct_rom_rendered", [])),
