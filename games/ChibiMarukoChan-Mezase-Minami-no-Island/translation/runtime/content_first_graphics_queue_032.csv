@@ -2,8 +2,8 @@ batch,priority,source_jp,vi_target,visible_evidence,asset_source_state,next_acti
 G0,P0,ちびまる子ちゃん めざせ！南のアイランド！！,Chibi Maruko-chan: Tiến tới đảo phương Nam!!,verified_title_screen,EXPERIMENTAL_PATCH_STATIC_RECONSTRUCTED,run G0 034 title-only ROM in SNES emulator then check merge conflicts with Build035,full first-boot title screenshot and original copyright preserved
 G0,P0,__LOCALIZATION_CREDIT__,Việt hóa bởi Votri Valley,user_requested_new_credit,EXPERIMENTAL_PATCH_STATIC_RECONSTRUCTED,verify small credit on actual startup screenshot and preserve native copyright,original publisher attribution untouched in game
 G1,P0,どれにする？,Chọn gì đây?,verified_visible_user_screenshot,UNRESOLVED,identify pink heading actual render source,correct Vietnamese accented bitmap in game
-G1,P0,はじめから,Bắt đầu,verified_visible_user_screenshot,UNRESOLVED,trace Start artwork pixels and tilemap,action still starts Story
-G1,P0,パスワード,Mật khẩu,verified_visible_user_screenshot,UNRESOLVED,trace Password artwork and tilemap,password screen remains accessible
+G1,P0,はじめから,Bắt đầu,verified_visible_user_screenshot,EXPERIMENTAL_PATCH_STATIC_RECONSTRUCTED,run first-boot G0+G1 graphic trial then confirm visual quality and button navigation,Story start result unchanged
+G1,P0,パスワード,Mật khẩu,verified_visible_user_screenshot,EXPERIMENTAL_PATCH_STATIC_RECONSTRUCTED,run first-boot G0+G1 graphic trial then confirm password option access,password screen remains accessible
 G2,P0,今からやるよ,Bắt đầu thôi!,user_screenshot_family_demo_context,UNRESOLVED,identify actual school front overlay graphics and callback,actual retail banner position verified
 G2,P0,ＶＳ,VS,verified_visible_user_screenshot,ALREADY_LATIN,keep source VS asset unchanged by default,no redraw required
 G2,P0,ルールをせつめいするよ,Luật chơi,verified_visible_user_screenshot,UNRESOLVED,identify VS rule panel heading source,full diacritics in on-screen panel
