@@ -1,5 +1,9 @@
 # HANDOFF CURRENT — Chibi Maruko-chan SNES Việt hóa
 
+## Current task checkpoint — 2026-10-10
+
+**Read `docs/G2_PROBE008_SPACING_HANDOFF_019.md` first.** User requests saving progress now. ROM source is available and verified; Probe 003 reconstruction matches. Probe 008 font has visual defects and fresh-slot capacity FAIL (6 candidates vs 161 unique bitmaps). User wants tighter spacing: investigate 9 px advance; no spacing patch implemented. No Probe 008 ROM or runtime PASS. Older sections below are historical where superseded.
+
 Updated: 2026-09-19 +07  
 Branch: `chibi-maruko-bootstrap-01`  
 Repo: `RVTGMzz/VHSNES`
