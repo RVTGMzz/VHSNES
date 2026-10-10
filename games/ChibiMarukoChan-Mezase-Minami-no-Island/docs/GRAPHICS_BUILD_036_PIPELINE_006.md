@@ -91,7 +91,7 @@ This allows a custom pixel-art treatment for:
 
 - **Chibi Maruko-chan**
 - **Tiến tới đảo phương Nam!!**
-- **Việt hóa bởi VôtriValley**
+- **Việt hóa bởi Votri Valley**
 
 while retaining the screen's proven palette/layout constraints.
 
