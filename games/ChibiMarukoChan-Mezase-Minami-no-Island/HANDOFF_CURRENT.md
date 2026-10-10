@@ -5,6 +5,11 @@ Branch: `chibi-maruko-bootstrap-01`
 Repo: `RVTGMzz/VHSNES`
 
 
+## Latest font design checkpoint — 2026-10-09
+
+Read `docs/G2_PROBE008_CUSTOM_FONT_018.md` first for the current font task.
+User rejected the first Probe 008 preview; a wider custom monoline candidate and side-by-side comparison are now available. Preview-only, 163 current-map candidate entries, no ROM built and no runtime PASS.
+
 ## Latest checkpoint — G1 Runtime PASS / G2 school-front trace
 
 Read first:
