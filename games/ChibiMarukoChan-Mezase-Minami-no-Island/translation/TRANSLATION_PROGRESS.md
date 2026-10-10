@@ -1,5 +1,22 @@
 # Translation progress — Chibi Maruko-chan
 
+## CURRENT CONTENT-FIRST CHECKPOINT 032 — 2026-10-11
+
+**User priority: finish translating the game content first; font/renderer work later.** See `docs/CONTENT_FIRST_CANONICAL_MERGE_CHECKPOINT_032.md`.
+
+- Historical source-language tally: **1,018 ordinary player-facing meaning rows**, plus **3 G2 demo rows**, giving **1,021 tracked release-intent source records** including demo. Neither total is a whole-game completion percentage.
+- **220** editorial revision events from **10** review CSVs were reconciled into the actual canonical `translation/source/*.csv` `vi_full` cells.
+- They represent **216 distinct source offsets** across **20 source CSV files**, with **4 later-pass supersessions**.
+- **209 revision operations changed Vietnamese `vi_full` strings**, **11 already matched**. No new Japanese source rows were invented or added.
+- After applying final revision precedence, current GitHub branch source vs final editorial audit: **216/216 exact matches, zero unresolved conflicts** (Story 85, Quiz 54, Fortune 24, UI 53). Source Japanese, offsets, technical fields and controls were preserved.
+- Earlier editorial notes saying auxiliary UI pass03 had 24 rows were off by one: the checked-in CSV has **25** rows.
+- New tool: `tools/audit_g2_editorial_canonical_032.py`. This checks semantic source consistency; it is not a ROM/font runtime test.
+- **Font work frozen** at historical 031 until text/graphics content is handled. Old 025 user screenshot is still a typography FAIL; candidate 029 static-only. No new runtime PASS claimed.
+- Next translation/content tasks: graphics-language integration G0 title, G1 Start/Password, G2 rules, G3 results/ending; prove actual visible graphics assets before patching. Audit new Japanese lines only when clearly user-facing, never from raw scanner noise.
+
+The later headings in this tracker document earlier historical work; this checkpoint 032 status supersedes their old claims about editorial CSVs being merely unmerged proposals.
+
+
 Updated: 2026-09-20 +07  
 Branch: `chibi-maruko-bootstrap-01`
 
