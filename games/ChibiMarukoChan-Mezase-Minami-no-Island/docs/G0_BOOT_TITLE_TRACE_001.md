@@ -10,7 +10,7 @@ Target screen:
   - **Chibi Maruko-chan**
   - **Tiến tới đảo phương Nam!!**
 - added localization credit:
-  - **Việt hóa bởi VôtriValley**
+  - **Việt hóa bởi Votri Valley**
 
 This checkpoint adds reverse infrastructure only. It does **not** claim a proven title asset offset and does not modify a ROM.
 
@@ -110,7 +110,7 @@ Then independently bound:
 - tilemap span;
 - palette dependencies if any;
 - free/replaceable tile capacity for the Vietnamese redraw;
-- safe placement for **Việt hóa bởi VôtriValley**;
+- safe placement for **Việt hóa bởi Votri Valley**;
 - preservation of original publisher/copyright attribution.
 
 ## Current status
