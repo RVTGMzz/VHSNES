@@ -1,5 +1,18 @@
 # HANDOFF CURRENT — Chibi Maruko-chan SNES Việt hóa
 
+## ACTIVE CONTENT-FIRST CHECKPOINT 038 — 2026-10-11: G3 FALSE-LABEL EXCLUSION + DIRECT-TEXT/GRAPHICS MERGE GATE
+
+**READ:** `docs/G3_RESULT_AND_GRAPHICS_TEXT_MERGE_CHECKPOINT_038.md` before checkpoint037 and 036. User still wants to finish all CONTENT/TEXT/GRAPHICS BEFORE returning to font. Do not return to 65816 9px probes.
+
+- **NO G3 retail result image verified yet.** Exact clean ROM searched for CP932 six target labels: `勝ち` only at `0x1C04F/0x1C25C/0x1D03A` in Story dialogues; `敗けた`, `コンティニュー`, `やめる`, `最終勝利`, `エンディング` each has a sole exact phrase in **internal QA descriptor block** `0x2865E..0x287FF`. Not player-facing Win/Lose/Continue labels; DO NOT patch as result art. Tools: `tools/audit_g3_literal_source_scope_038.py`, local report `Chibi_G3_Result_Literal_Source_Audit_038.json`. Queue G3 six entries now accurately classified.
+- **NEW REAL THREE-WAY INTEGRATION PREFLIGHT SCRIPT:** `tools/merge_graphics036_directtext035_preflight_038.py` requires exact original Japanese ROM SHA `e62768e8...`, historical DIRECT-TEXT Build035 SHA `f8fb662a...`, and actual clean-based GRAPHICS checkpoint036 SHA `2c8beee7...`. Full occupied-resource safeguards for G0 title graphics/title map/bank86 relocation `0x36907..0x37662`/G1 Story sprite/G1 main heading/pointer. Byte whitelist validates all **13,129 changed bytes** from exact graphics036, **0 outside known regions**. Refuses to merge if Build035 changed any byte in any reserved graphics allocation; separate loader signatures checked. Only explicit opt-in can generate an untested merged ROM/Build035-relative IPS after PASS.
+- **NO ACTUAL FULL MERGE THIS TURN**: exact direct-text Build035 ROM binary absent from active container, repository's 265-entry tree contains no direct-text Build035 ROM or patch, and available Library/conversation filename search found no candidate. DO NOT pretend the synthetic test is Build035 or that graphics036 already includes Story/Quiz/Fortune text.
+- Offline local REAL exact-clean+GRAPHICS036 and **synthetic unrelated text fixture** test: two text edits outside graphics survive a hypothetical merge, FIVE injected G0/relocation/G1 conflicts are rejected. Report `/mnt/data/Chibi_038_Graphics_Text_Merge_Simulated_Preflight.json`. Selftest source: `tools/selftest_merge_graphics036_directtext035_038.py`. The test is **simulated text**, not live Build035, no gameplay QA or CI check.
+- G2 prior checker typo fixed: expected `vi_full` bullet spacing matches actual `translation/source/rules_tutorial_vi.csv`; no ROM modifications.
+
+**NEXT WORK:** (1) retrieve exact Build035 original binary or reproducible exact direct-text patch if available; run 038 safe merge preflight, preserve all Vietnamese canonical content; (2) trace G3 actual result-screen CALLBACK/pointer to prove retail win/lose/continue graphics before edits; (3) test actual SNES emulator after one large combined build; (4) **FONT AFTER**. User prefers real localization work, not endless checklists/rounds of font tests.
+
+
 ## ACTIVE CONTENT-FIRST CHECKPOINT 037 — 2026-10-11: G2 DIRECT TEXT ORIGINS AND CP932 OFFSET FIX
 
 **Read `docs/G2_RULE_TEXT_ACTUAL_ROM_SOURCE_CHECKPOINT_037.md` first.** Continue Vietnamese text/graphics first, NO font/9px/65816 patch at this time per explicit user direction.
