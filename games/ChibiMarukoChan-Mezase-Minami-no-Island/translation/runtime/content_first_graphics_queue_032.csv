@@ -6,9 +6,9 @@ G1,P0,はじめから,Bắt đầu,verified_visible_user_screenshot,EXPERIMENTAL
 G1,P0,パスワード,Mật khẩu,verified_visible_user_screenshot,EXPERIMENTAL_PATCH_STATIC_RECONSTRUCTED,run first-boot G0+G1 graphic trial then confirm password option access,password screen remains accessible
 G2,P0,今からやるよ,Bắt đầu thôi!,user_screenshot_family_demo_context,UNRESOLVED,identify actual school front overlay graphics and callback,actual retail banner position verified
 G2,P0,ＶＳ,VS,verified_visible_user_screenshot,ALREADY_LATIN,keep source VS asset unchanged by default,no redraw required
-G2,P0,ルールをせつめいするよ,Luật chơi,verified_visible_user_screenshot,UNRESOLVED,identify VS rule panel heading source,full diacritics in on-screen panel
-G2,P0,２本先取だよ,Thắng 2,verified_visible_user_screenshot,UNRESOLVED,identify VS target-score graphic source,result still means first to two wins
-G2,P0,ゲームの時間は勝つまでだよ,Đến khi thắng,verified_visible_user_screenshot,UNRESOLVED,identify VS duration option graphics,option still means until someone wins
+G2,P0,ルールをせつめいするよ,Luật chơi,verified_visible_user_screenshot,DIRECT_CP932_TEXT_SOURCE_FOUND,trace live rules screen use of ROM 0x1E307 then insert existing vi_full into direct-text build,keep original 816F delimiters and title legible
+G2,P0,２本先取だよ,Thắng 2,verified_visible_user_screenshot,DIRECT_CP932_TEXT_SOURCE_FOUND,check 0x1E325 full-width digit and canonical rule text layout; do not reuse wrong 0x1E326 offset,first to win two rounds wins
+G2,P0,ゲームの時間は勝つまでだよ,Đến khi thắng,verified_visible_user_screenshot,DIRECT_CP932_TEXT_SOURCE_FOUND,trace 0x1E339 bank83 direct text plus 0x28B28 and 0x28B40 options into exact runtime builder,play continues until a winner is decided
 G3,P1,勝ち,Thắng,verified_visible_user_screenshot,UNRESOLVED,trace full screen win-result asset,win card layout verified
 G3,P1,敗けた,Thua,descriptor_only_visibility_unverified,UNRESOLVED,verify actual retail lose-result visual source before patch,screen source identity proven
 G3,P1,コンティニュー,Tiếp tục,descriptor_only_visibility_unverified,UNRESOLVED,verify actual continue screen and artwork before patch,continue action unchanged
