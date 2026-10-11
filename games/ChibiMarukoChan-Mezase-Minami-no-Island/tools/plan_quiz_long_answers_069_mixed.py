@@ -121,6 +121,15 @@ def plan(clean:bytes,root:Path):
         source_header=0x30000+old_pointer-0x8000
         if source_header+4!=original_addr:
             raise AssertionError("Original answer pointer/source relationship changed")
+        original_end=clean.find(b"\x81\x6f",original_addr,original_addr+140)
+        if original_end<0:
+            raise AssertionError("Original answer native delimiter missing")
+        original_raw=clean[original_addr:original_end].strip(b" ")
+        if len(original_raw)%2:
+            raise AssertionError("Original native Japanese answer glyph width incorrect")
+        original_glyphs=len(original_raw)//2
+        if len(full)<=original_glyphs:
+            raise AssertionError("Unexpected non-expanded choice in 81-long-answer batch")
         new_snes=0x8000+(cursor-0x30000)
         if not 0x8000<=new_snes<=0xffff:
             raise AssertionError("Relocation crosses a bank06 16-bit pointer boundary")
@@ -137,6 +146,8 @@ def plan(clean:bytes,root:Path):
             "unapproved_new_record_ROM_offset":f"0x{cursor:X}",
             "full_canonical_vietnamese":full,
             "v2_glyph_count":len(full),
+            "original_native_answer_glyph_count":original_glyphs,
+            "glyph_growth_needing_UI_width_QA":len(full)-original_glyphs,
             "full_new_record_bytes":len(record),
             "original_choice_text_preserved":True,
             "emulator_rendering_approved":False,
@@ -147,6 +158,11 @@ def plan(clean:bytes,root:Path):
     expected_native={0x33DDF,0x33DFD}
     if (native_kanji_choices!=expected_native or native_kanji_char_count!=4):
         raise AssertionError("Two Japanese-original names/4 distinctive CP932 Kanji not retained")
+    if (sum(p["v2_glyph_count"]>10 for p in planned)!=43 or
+        sum(p["v2_glyph_count"]>14 for p in planned)!=15 or
+        sum(p["v2_glyph_count"]>20 for p in planned)!=1 or
+        max(p["v2_glyph_count"] for p in planned)!=23):
+        raise AssertionError("Actual answer width expansion risk inventory changed")
     # Fail if original Japanese alternatives ceased to be distinct.
     if not ("(一雄)" in next(r["full_canonical_vietnamese"] for r in planned
                          if r["original_file_offset"]=="0x33DDF")
@@ -183,6 +199,12 @@ def plan(clean:bytes,root:Path):
         "two_names_with_distinct_original_CP932_kanji":len(native_kanji_choices),
         "original_CP932_kanji_2byte_glyphs":native_kanji_char_count,
         "mixed_V2_CP932_renderer_compatibility_tested":False,
+        "answers_longer_than_original_glyph_width":81,
+        "answers_with_more_than_10_glyphs":43,
+        "answers_with_more_than_14_glyphs":15,
+        "answers_with_more_than_20_glyphs":1,
+        "longest_full_answer_glyph_count":23,
+        "all_relocated_choices_need_emulator_visual_width_acceptance":True,
         "full_Vietnamese_blocked_by_legacy_codepage":len(deferred),
         "unapproved_4KiB_storage_start":f"0x{RELOCATION_START:X}",
         "unapproved_used_through_exclusive":f"0x{cursor:X}",
