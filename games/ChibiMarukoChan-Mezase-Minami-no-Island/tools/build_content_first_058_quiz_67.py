@@ -41,9 +41,9 @@ def build(clean:bytes,base057:bytes,root:Path):
         plan["source_clean_rom_sha256"]!=CLEAN_SHA or len(rows)!=67 or
         plan["candidate_count"]!=67 or plan["physical_line_segments"]!=149 or
         len({r["file_offset"].upper() for r in rows})!=67 or
-        plan["original_clean_preview_IPS_sha256"]!=PREVIEW_IPS_SHA or
-        plan["original_clean_preview_ROM_sha256"]!=PREVIEW_ROM_SHA):
-        raise AssertionError("057 reviewed Quiz source manifest drift")
+        plan["clean_source_only_IPS_sha256"]!=PREVIEW_IPS_SHA or
+        plan["clean_source_only_ROM_sha256"]!=PREVIEW_ROM_SHA):
+        raise AssertionError("058 reviewed Quiz source manifest drift")
     canonical={}
     for filename in ("quiz_batch03_part2_vi.csv","quiz_batch03_part3_vi.csv"):
         for rec in csv_rows(root/"translation/source"/filename):
@@ -97,7 +97,7 @@ def build(clean:bytes,base057:bytes,root:Path):
                 dst.extend(bytes.fromhex(code))
             if field:
                 span=set(range(start,stop))
-                if span&allowed:raise AssertionError("Overlap between 057 Quiz fields "+key)
+                if span&allowed:raise AssertionError("Overlap between 058 Quiz fields "+key)
                 allowed|=span
                 output[start:stop]=dst
                 preview[start:stop]=dst
@@ -105,7 +105,7 @@ def build(clean:bytes,base057:bytes,root:Path):
     if (len(allowed)!=3180 or nsegments!=149 or len(markers)!=149):
         raise AssertionError("058 physical text / native line inventory changed")
     if any(output[m:m+2]!=b"\x81\x6f" for m in markers):
-        raise AssertionError("057 altered original 816F script line controls")
+        raise AssertionError("058 altered original 816F script line controls")
     probe=bytes(preview);probe_ips,probe_count=make_ips(clean,probe)
     if (sha(probe)!=PREVIEW_ROM_SHA or sha(probe_ips)!=PREVIEW_IPS_SHA or
         len(probe_ips)!=3937 or probe_count!=151 or apply_ips(clean,probe_ips)!=probe):
@@ -120,10 +120,10 @@ def build(clean:bytes,base057:bytes,root:Path):
     merged=bytes(output)
     all_changes={i for i,(a,b) in enumerate(zip(base057,merged)) if a!=b}
     if all_changes-(allowed|set(range(0x7fdc,0x7fe0))):
-        raise AssertionError("057 final ROM changed bytes outside Quiz and checksum")
+        raise AssertionError("058 final ROM changed bytes outside Quiz and checksum")
     ips,records=make_ips(clean,merged)
     if apply_ips(clean,ips)!=merged:
-        raise AssertionError("057 final clean-ROM IPS replay failed")
+        raise AssertionError("058 final clean-ROM IPS replay failed")
     return ips,{"status":"058_QUIZ67_STATIC_PASS_EMULATOR_NOT_TESTED",
         "new_Quiz_records":67,"original_native_line_frames":nsegments,
         "native_816F_controls_preserved":len(markers),
