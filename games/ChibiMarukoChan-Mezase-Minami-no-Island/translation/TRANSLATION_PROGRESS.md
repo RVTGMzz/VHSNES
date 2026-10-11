@@ -1,5 +1,13 @@
 # Translation progress — Chibi Maruko-chan
 
+## NEW — CHECKPOINT 043 CONTENT-FIRST STORY EXPANSION (2026-10-11)
+
+- **58 more real, player-facing Story Batch01 records** actually encoded into a new ROM experiment over checkpoint042, organized into 170 raw physical source segments and preserving 167 original line/page markers `816F`/`81A5` in those records. Markers throughout Story bank 0x18000..0x1DFFF remain unchanged. Speaker expressions `Maru-chan`, `Tama-chan`, Maruo's `Nói thẳng ra!`, Hanawa's `Baby` retained. Canonical full Vietnamese `vi_full` text is untouched; separate compact candidates remain subject to runtime editorial/screenshot QA.
+- **Actual content totals (this experimental patch): 38 UI +33 Fortune +21 Quiz +84 Story =176 direct-text fields**. Story Batch01 84/123 physically inserted (26 from 042, 58 from 043); remaining 39 Batch01 and broader Story Batch02/03 require safe layout expansion/continuation. G0/G1 first-boot game title, subtitle and `Việt hóa bởi Votri Valley` remain present as binary graphics from 036.
+- New 043 ROM SHA **`45ffca7db5db83bc2734e885ee90c77f33746e2c4a54d1c99f1502f3e992a6ae`**, exact Japanese-clean IPS SHA **`d3cb7ea84067675a5cc12cb4a26f260194b0a6f00ff235f0129460a902a58a50`**, 28,135B /977 records; independent 2MiB IPS reconstruction PASS and diff whitelist 4144 modified bytes vs 042 only in new Story fields and checksum `E83A/17C5`. No different old patched ROMs should be used as patch base.
+- Published `translation/runtime/story_batch01_safe_segments_043.json`, `tools/build_content_first_043_story_58.py` and `docs/CONTENT_FIRST_STORY_CHECKPOINT_043.md`. User requested CONTENT before font; no font 025 QA closure and no actual SNES emulator gameplay PASS. **Not a completed translation**.
+
+
 ## LATEST CONTENT-FIRST — CHECKPOINT 042 (2026-10-11)
 
 **New actual binary translated Story: 26 early first-arc dialogue/narrator source records**, preserving 41 physical Story segments and 40 original `816F/81A5` line/page markers. Separate runtime short forms preserve character voices; full canonical `vi_full` and previous review results untouched. Explicitly skipped dynamic raw-ASCII `P` field and scanner artifact; did not guess or truncate lines requiring more than their existing byte budgets.
