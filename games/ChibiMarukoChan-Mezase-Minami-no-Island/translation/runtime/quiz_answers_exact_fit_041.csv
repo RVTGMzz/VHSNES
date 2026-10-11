@@ -1,0 +1,22 @@
+file_offset,source_jp,vi_full_reference,vi_runtime,max_units,category,status,notes
+0x340E9,おわらい,Hài kịch,Hài,4,quiz_answer,runtime_candidate_exact_fit,Comedy answer natural short-form
+0x34107,なぞなぞ,Đố vui,Đố,4,quiz_answer,runtime_candidate_exact_fit,Riddle answer short-form
+0x343AB,２９才,29 tuổi,29,3,quiz_age,runtime_candidate_exact_fit,Age unit present in question
+0x343B8,４０才,40 tuổi,40,3,quiz_age,runtime_candidate_exact_fit,Age unit present in question
+0x343C5,３２才,32 tuổi,32,3,quiz_age,runtime_candidate_exact_fit,Age unit present in question
+0x34A07,６８才,68 tuổi,68,3,quiz_age,runtime_candidate_exact_fit,Age unit present in question
+0x34A14,７０才,70 tuổi,70,3,quiz_age,runtime_candidate_exact_fit,Age unit present in question
+0x34A21,７８才,78 tuổi,78,3,quiz_age,runtime_candidate_exact_fit,Age unit present in question
+0x34B50,うんてんしゅ,Tài xế,Tài xế,6,quiz_answer,runtime_candidate_exact_fit,Driver occupation fits without shortening
+0x351E9,１２月３１日,Ngày 31 tháng 12,31/12,6,quiz_date,runtime_candidate_exact_fit,Day/month compact convention
+0x351FC,１２月１９日,Ngày 19 tháng 12,19/12,6,quiz_date,runtime_candidate_exact_fit,Day/month compact convention
+0x3520F,３月３日,Ngày 3 tháng 3,3/3,4,quiz_date,runtime_candidate_exact_fit,Day/month compact convention
+0x353AF,４９才,49 tuổi,49,3,quiz_age,runtime_candidate_exact_fit,Age unit present in question
+0x353BC,４４才,44 tuổi,44,3,quiz_age,runtime_candidate_exact_fit,Age unit present in question
+0x353C9,３４才,34 tuổi,34,3,quiz_age,runtime_candidate_exact_fit,Age unit present in question
+0x35D4F,６年２組,"Khối 6, lớp 2",6-2,4,quiz_class,runtime_candidate_exact_fit,Grade-class conventional notation
+0x35D5E,５年３組,"Khối 5, lớp 3",5-3,4,quiz_class,runtime_candidate_exact_fit,Grade-class conventional notation
+0x35D6D,６年５組,"Khối 6, lớp 5",6-5,4,quiz_class,runtime_candidate_exact_fit,Grade-class conventional notation
+0x36471,１かい,1 tầng,T1,3,quiz_floor,runtime_candidate_exact_fit,Floor shorthand in choice list
+0x3647E,２かい,2 tầng,T2,3,quiz_floor,runtime_candidate_exact_fit,Floor shorthand in choice list
+0x3648B,４かい,4 tầng,T4,3,quiz_floor,runtime_candidate_exact_fit,Floor shorthand in choice list
