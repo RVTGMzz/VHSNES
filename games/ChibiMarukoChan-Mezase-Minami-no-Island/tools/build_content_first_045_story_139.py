@@ -22,6 +22,7 @@ from pathlib import Path
 
 from build_content_first_040_fortune import apply_ips, make_ips
 from build_content_first_042_story_safe_segments import physical_segments
+from build_content_first_044_story_87 import build as rebuild_044_from_043
 
 ROOT=Path(__file__).resolve().parent.parent
 CLEAN_SHA="e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956"
@@ -179,7 +180,8 @@ def build(clean:bytes,patch044:bytes,project:Path):
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument("exact_clean_rom",type=Path)
-    p.add_argument("exact_checkpoint044_clean_ips",type=Path)
+    p.add_argument("exact_checkpoint044_or_043_clean_ips",type=Path)
+    p.add_argument("--rebuild-044-from-043",action="store_true",help="Use the exact 043 clean IPS and reconstruct 044 from GitHub source instead of requiring its missing intermediate IPS")
     p.add_argument("--project-root",type=Path,default=ROOT)
     p.add_argument("--ips",type=Path,required=True)
     p.add_argument("--report",type=Path,required=True)
@@ -188,12 +190,19 @@ def main():
     a=p.parse_args()
     if not a.allow_untested:
         p.error("045 ROM is experimental and emulator-untested; pass --allow-untested")
-    paths=[a.exact_clean_rom,a.exact_checkpoint044_clean_ips,a.ips,a.report]+([a.output_rom] if a.output_rom else [])
+    paths=[a.exact_clean_rom,a.exact_checkpoint044_or_043_clean_ips,a.ips,a.report]+([a.output_rom] if a.output_rom else [])
     if len({x.resolve() for x in paths})!=len(paths):
         p.error("input and output paths must be distinct")
-    binary,ips,report=build(a.exact_clean_rom.read_bytes(),
-                            a.exact_checkpoint044_clean_ips.read_bytes(),
-                            a.project_root)
+    clean=a.exact_clean_rom.read_bytes()
+    input_ips=a.exact_checkpoint044_or_043_clean_ips.read_bytes()
+    if a.rebuild_044_from_043:
+        expected_043="d3cb7ea84067675a5cc12cb4a26f260194b0a6f00ff235f0129460a902a58a50"
+        if sha(input_ips)!=expected_043:
+            raise ValueError("requires exact earlier checkpoint043 clean-ROM IPS to rebuild 044")
+        intermediate_rom,input_ips,intermediate_report=rebuild_044_from_043(clean,input_ips,a.project_root)
+        if sha(intermediate_rom)!=BASE_ROM_SHA or sha(input_ips)!=BASE_IPS_SHA:
+            raise AssertionError("GitHub source pipeline could not reproduce exact checkpoint044")
+    binary,ips,report=build(clean,input_ips,a.project_root)
     for target,data in ((a.ips,ips),(a.report,
           (json.dumps(report,indent=2,ensure_ascii=False)+"\n").encode("utf-8"))):
         target.parent.mkdir(parents=True,exist_ok=True)
