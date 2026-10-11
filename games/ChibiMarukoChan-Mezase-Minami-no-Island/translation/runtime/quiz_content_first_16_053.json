@@ -1,19 +1,10 @@
 {
   "schema": "chibi.quiz.content_first.053.v1",
   "base_checkpoint": "048",
-  "state": "source_authored_pending_exact_ROM_byte_check_and_emulator_QA",
+  "state": "15_source_candidates_exact_original_rom_CP932_816F_verified_2026_10_11_pending_baseline_048",
   "not_patched": true,
   "policy": "Exact original CP932 length, 816F delimiter, untouched baseline glyph bytes, NFC, assigned existing V2 code, keep canonical vi_full and semantic meaning; no auto-truncation.",
   "records": [
-    {
-      "file_offset": "0x340C0",
-      "source_jp": "すきなものってなに？",
-      "vi_full_reference": "...là gì?",
-      "vi_runtime": "...là gì?",
-      "source_file": "translation/source/quiz_batch01_part1_vi.csv",
-      "max_source_two_byte_units": 10,
-      "status": "candidate_requires_original_rom_validation"
-    },
     {
       "file_offset": "0x340E9",
       "source_jp": "おわらい",
@@ -149,5 +140,11 @@
       "max_source_two_byte_units": 3,
       "status": "candidate_requires_original_rom_validation"
     }
-  ]
+  ],
+  "original_clean_rom_sha256": "e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956",
+  "rejected_from_prior_053": {
+    "file_offset": "0x340C0",
+    "reason": "Expected Japanese CP932 bytes not present at claimed clean-ROM offset; excluded from patch safely"
+  },
+  "record_count": 15
 }
