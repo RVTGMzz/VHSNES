@@ -1,32 +1,29 @@
-TIẾP CHIBI MARUKO-CHAN SNES VIỆT HÓA — CHECKPOINT 047 (2026-10-11)
-Repo: RVTGMzz/VHSNES / branch: chibi-maruko-bootstrap-01
+TIẾP CHIBI MARUKO-CHAN SNES — CHECKPOINT 048 (2026-10-11)
+GitHub: RVTGMzz/VHSNES, branch chibi-maruko-bootstrap-01
 
-ƯU TIÊN USER: GAME SNES QUÁ LÂU, PHẢI LÀM NHIỀU NỘI DUNG THẬT, KHÔNG micro-checkpoints. KHÔNG gửi IPS/ZIP thử nghiệm lẻ trừ khi user yêu cầu; không bắt user tải/test bản chưa hoàn thiện. FONT ĐỂ SAU KHI NỘI DUNG ĐỦ. Xưng hô/ngữ cảnh Story phải tự nhiên.
+YÊU CẦU USER: ĐÃ LÂU QUÁ, ĐỪNG LÀM CHECKPOINT VỤN. CỨ LÀM NHIỀU NỘI DUNG THẬT VÀ GHI GITHUB. USER KHÔNG MUỐN LINK TẢI IPS THỬ NGHIỆM LẺ. FONT ĐỂ SAU. NHỚ GIỌNG THOẠI TỰ NHIÊN, KHÔNG ÉP CÂU DÀI THÀNH 1 TỪ.
 
 ĐỌC NGAY:
-1. games/ChibiMarukoChan-Mezase-Minami-no-Island/HANDOFF_CURRENT.md (047 trên cùng).
-2. docs/CONTENT_FIRST_STORY_ALIGN_AND_QUIZ_FORTUNE_CHECKPOINT_047.md.
-3. translation/runtime/story_special_cp932_alignment_046.json / tools/build_content_first_046_story_special.py.
-4. translation/runtime/quiz_fortune_exactfit_047.json / tools/build_content_first_047_quiz_fortune_30.py.
-5. docs/CONTENT_FIRST_STORY_BATCH02_03_CHECKPOINT_045.md.
+1. games/ChibiMarukoChan-Mezase-Minami-no-Island/HANDOFF_CURRENT.md, mục 048 đầu tiên.
+2. docs/CONTENT_FIRST_FORTUNE_103_CHECKPOINT_048.md.
+3. translation/runtime/fortune_content_first_103_048.json (103 nguồn exact offset + full vi_full + compact, actual JP bytes capacity).
+4. tools/build_content_first_048_fortune_103.py.
+5. docs/CONTENT_FIRST_STORY_ALIGN_AND_QUIZ_FORTUNE_CHECKPOINT_047.md.
 
-ĐÃ LÀM 046/047 — ROM THẬT, KHÔNG CHỈ CSV:
-- ROM Nhật gốc 2MiB không header SHA e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956; /mnt/data/Chibi Maruko-chan - Mezase! Minami no Island!! (Japan)(1).sfc.
-- Source Story 7 CSV có 336 row. 045 báo 313, 23 thiếu. Điều tra phát hiện 8 scanner offset sai CP932: P/Q/R/O thật ra byte SAU của số fullwidth １/２/３/０ (82 50/51/52/4F), KHÔNG PHẢI BIẾN GAME. 4 alias đã có trong record đã vá 043/044, 4 alias được giải quyết bằng bản vá real parent mới 046. 3 tutorial đầu 181CC/18245/182BE đã Việt hóa từ cũ.
-- Đã VÁ THẬT 15 original PHYSICAL Story records 046 (số record độc lập, không tính 8 scanner aliases), giữ nguyên mọi prefix xxf3 (E6F3/88F3/FAF3/92F3) đáng ngờ, không vá sai byte, giữ 30 marker 816F/81A5, 31 physical source segments, không thay mã script/các đoạn trước. Local /mnt/data/chibi046_local.sfc, /mnt/data/chibi046_local.ips.
-- ROM046 SHA c10c0f444a97d6bea7f8f669d67bb6c0c5b6889b654d99d6e6dfa25e3d061624; clean-based IPS046 SHA 11abac1b8e0f48e6580822bcdcd3b1b3568ae08676020b86c819ae641f53367d, 44450 bytes,1599 records. Checksum F71E / complement 08E1. Diff 620 byte positions chỉ vùng cho phép+checksum.
-- LIVE GH SET AUDIT đếm 7 Story CSV 126+42+42+42+42+21+21=336, so với manifests 042(26)+043(58)+044(87)+045(139)=310, +15 physical newly patched,+8 scanner alias,+3 tutorial =336/336 SOURCE ROW MAPPED, zero unknown. Có 328 distinct actual physical Story fields in ROM. **Không phải gameplay test hoặc bằng chứng toàn bộ chữ visible đã xong.**
-- Sau Story 046, thêm THẬT 30 nhãn trực tiếp khác trong ROM047: 15 Quiz đáp án tuổi/sinh nhật/lớp/giá tiền, 15 Fortune con số/mức tiền/mẹo 'Gọi thử!', 'Văn hên!'. Không đổi vi_full, không rút gọn tên nhân vật.
-- Final ROM047 SHA 1f6430064b70671a4f3ba94f0fd256764db54690950519c22d9e03ec74230dd9; CLEAN JP IPS047 SHA 725ca433dfeb919bd19bde6903a1e2e7d95cde1889980677863724007090cd6c, 44980 bytes/1671 IPS records, checksum EB53/14AC, replay độc lập từ original clean PASS.
-- Tổng direct physical source 450 =328 Story + 38 UI +36 Quiz +48 Fortune, + separate graphic G0/G1 title/credit 'Việt hóa bởi Votri Valley', Chọn gì đây/Bắt đầu/Mật khẩu. **Không phải toàn game xong.**
-- Source Quiz có 381 rows, Fortune có 157 (chiếm nhiều phần chưa chèn). G2 3 câu luật source CP932 at 1E307/1E325/1E339 cần chèn/wrap; G3 actual Win/Lose source chưa truy thật. Font V2 bị user phản ánh xấu, LÀM SAU khi nội dung hoàn chỉnh. SNES EMULATOR CHƯA CHẠY.
-- Local 046 report /mnt/data/chibi046_story_static.json và 047 report /mnt/data/chibi047_static_qa.json. GH đã có manifests, 046/047 reproducible builder, checkpoint document, HANDOFF/PROGRESS. Chưa chạy CI GH, chỉ local binary & independent IPS parser.
-- User KHÔNG muốn IPS/ZIP download lẻ, đừng gửi link sandbox. KHÔNG upload ROM thương mại hoặc font files.
+CÁI ĐÃ HOÀN THÀNH THẬT 048:
+- Quét 3 Fortune canonical source 157 dòng; trước 040+047 đã chèn 48 dòng. Đợt 048 biên tập **103 Fortune runtime compact mới** đúng ngữ cảnh, đã đối chiếu trực tiếp all 103 với raw ROM Nhật 2MiB và cp932 byte capacity (chú ý 2 ASCII 20 trong JP chỉ là 2 byte, KHÔNG chiếm 2 fullwidth glyph units). 103/103 không quá độ dài và các glyph V2 0x84 đều hợp lệ, 103/103 original 816F intact. Full vi_full KHÔNG đổi.
+- Xác nhận ZERO overlaps với 33 040 và 15 047 original Fortune file_offset. GitHub manifest 103 + builder fail-closed đã push.
+- Actual cleaned ROM SHA e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956. Original local /mnt/data/Chibi Maruko-chan - Mezase! Minami no Island!! (Japan)(1).sfc (mount hiện tại đã có, nhưng lượt sau PHẢI kiểm tra). Đã extract old 043 IPS từ /mnt/data/Chibi_043_G0G1_176Fields_Story58_Content_First_UNTESTED.zip -> rebuild 043 ROM sha 45ffca7db5db83bc2734e885ee90c77f33746e2c4a54d1c99f1502f3e992a6ae.
+- **THỬ ROM BYTES THẬT**: chèn 103 nguồn Fortune vào 043, 2002 original glyph bytes approved, 1997 changed bytes, no 816F modified, no V2 glyph/graphics/script touched. Build riêng TEXT-ONLY overlay IPS no checksum 2545B/108 records SHA 3eb7dcc55d0c0b585beb4b27d6d2ca08c5facd39196042756eae0cf0dc68379c. Preview (UNFIXED checksum) ROM 043 + text SHA 4f461333d171fc21c3541ae29393056f0c9234ea0f5c4de46f97589afd20378b; independent reapply IPS passed. LOCAL files: /mnt/data/chibi_048_fortune_candidates.txt, /mnt/data/chibi_048_build_local.py, /mnt/data/chibi048_source_entries.json, /mnt/data/chibi048_fortune_103_overlay_no_checksum.ips, /mnt/data/chibi048_local_qa.json.
+- **LƯU Ý QUAN TRỌNG CHƯA GỘP FULL 047+048**: ROM047 published exact SHA 1f6430064b70671a4f3ba94f0fd256764db54690950519c22d9e03ec74230dd9 KHÔNG CÓ FILE NHỊ PHÂN TRONG CONTAINER. GitHub có toàn bộ manifests/tools 044 045 046 047 nhưng ROM047 không được commit. DO NOT CLAIM that a full 048 ROM has 151 Fortune installed. Local preview 043+103 has deliberately unchanged checksum, NOT playable! Bản code GitHub tools/build_content_first_048_fortune_103.py requires exact full 047 base SHA and either merges/rechecks/recalculates SNES checksum/creates clean-based IPS OR --static-check-043 for preview QA. It fails if any old 047 edit overlaps; no bypass. Github builder itself chưa GitHub CI-tested, but local equivalent physically patched 043.
+- Potential Fortune after verified merge 48+103=151/157; 6 rows còn thiếu cần field expansion hoặc biên tập tử tế: offsets 2BD5E 天の声,2C413 体育...,2C601 プリン...,2C86B また来週,2CA7D きいろ,2CADD しろいろ. Không ép ra từ vô nghĩa.
+- Toàn dự án previous 047 có 328 distinct Story physical records mapped từ 336 source CSV rows (8 false scanner offsets middle of CP932 two-byte number, 3 original tutorial), 38 UI,36 Quiz,48 Fortune and G0/G1 actual graphics; GAME PLAY CHƯA EMULATOR-TEST, font V2 user từng phàn nàn xấu.
+- GitHub 048 file paths: translation/runtime/fortune_content_first_103_048.json; tools/build_content_first_048_fortune_103.py; docs/CONTENT_FIRST_FORTUNE_103_CHECKPOINT_048.md, HANDOFF_CURRENT.md, translation/TRANSLATION_PROGRESS.md. No downloadable patch links given to user.
 
-HƯỚNG NEXT (LÀM NHIỀU THẬT):
-1. Chèn Quiz và Fortune theo nguồn hiện có, PHẢI nghiên cứu safe pointer relocation/wrapping để dịch được full Vietnamese dài, không làm thoại cộc lốc hoặc cắt tên nhân vật. Các exact fit có thể gom 20–50+ mục/ngày thay vì microbuild. Đối chiếu CP932 Nhật, mã 816F/delimiter, codepage đúng.
-2. G2 thực thi luật chơi còn Nhật: 1E307,1E325,1E339; hiểu 2-byte fullwidth bullet, field budget trước khi vá. Không được dịch 2 ván thành chỉ 2 chữ vô nghĩa.
-3. G3 Win/Lose/Continue: trace actual executed scene asset, không dùng debug descriptor 0x2865E..0x287FF.
-4. Khi đủ content, chạy thật SNES emulator QA nội dung/visual/font rồi phát hành bản tổng hợp 1 lần. Font typography SAU nội dung theo lệnh user.
+LÀM TIẾP THẬT:
+1. ƯU TIÊN KHÔI PHỤC CHÍNH XÁC ROM 047 từ ROM clean + available local old 043 IPS + GH manifests/tools 044,045,046,047, không dùng shortcut BỎ qua các sửa cũ; phải SHA verify 044 2312b9..., 045 7ddf449c..., 046 c10c0f..., 047 1f643006... trước khi merge.
+2. RỒI chạy GH builder 048 cho exact 047 ROM, recompute checksum, static SHA report, clean-ROM IPS. Không bắt user tải/test micro patch.
+3. Gom Quiz (source 381 rows), 6 Fortune còn khó, luật G2 1E307/1E325/1E339, G3 kết quả xác định từ asset thật (KHÔNG vá internal QA debug descriptor 0x2865E..287FF) vào cùng ROM; context-aware text wrapping/field expansion.
+4. Sau khi nội dung đủ lớn, emulator test thật (title/credit, G1, Story, Quiz, Fortune, G2, results, font). FONT ENGINEERING SAU CONTENT theo user. Không claim game hoàn thành chỉ vì IPS checksum PASS.
 
-Tiếp bằng sửa ROM/nguồn và update GitHub, không báo checkpoint lắt nhắt, không link IPS lẻ.
+GIỮ CHÍNH XÁC DÒNG: Việt hóa bởi Votri Valley.
