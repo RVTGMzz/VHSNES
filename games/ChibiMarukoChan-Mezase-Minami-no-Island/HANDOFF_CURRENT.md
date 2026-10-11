@@ -1,5 +1,16 @@
 # HANDOFF CURRENT — Chibi Maruko-chan SNES Việt hóa
 
+## CHECKPOINT 064 — 2026-10-12: SCRIPT GRAMMAR READ-ONLY QA; DAILY AUTOMATED CONTINUATION ENABLED
+
+**Read `docs/QUIZ_SCRIPT_STRUCTURE_CHECKPOINT_064.md` first.** User requested automated continuation even when active chat ends. A recurring **daily 10 AM (Vietnam local time, flexible)** ChatGPT task titled `Tiếp tục Việt hóa Chibi` has been enabled. Future execution is **separate bounded runs**, not an infinite Work chat/background process; tasks should check this handoff, read latest repository code, make a **real audited change**, commit safe source when applicable, report truthfully, and avoid repeating work. Do not auto-create duplicate reminders. As before, all old historical checkpoints are informative, not evidence of emulator acceptance.
+
+**NEW ORIGINAL-JAPANESE ROM SCRIPT RESEARCH:** Read exact clean 2MiB source SHA `e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956`. In native Quiz script region `0x31C00–0x36907`, classified **409** exact native `81 6F 00` end-of-text transitions into **355 ordinary `0E ?? 0F ??`**, **4 extended introductory `10 ?? 0E ?? 0F ??`**, and **50 special 7-byte record footers** (6th `C6`, 8th `00`); **zero unclassified**. Counts reproduced independently via raw byte scan. Seven-byte footer semantics are **unknown**: do NOT assert they are pointers. The existing 5881-byte `FF` at `0x36907–0x38000` is still UNAPPROVED for relocation; original script/pointer table or CPU interpreter not decoded. Committed reproducible read-only `tools/probe_quiz_script_grammar_064.py` and `docs/QUIZ_SCRIPT_STRUCTURE_CHECKPOINT_064.md`; **NO text newly patched in 064, no ROM/IPS emitted, no emulator test**.
+
+**Previous 063 remains:** **279/381** uniquely staged Quiz source target IDs, 546 original staged physical glyph frames (no overlaps), 102 unstaged source IDs, 82 standalone valid original text starts + nested/unsafe scanner fragments. Historical 043 clean-ROM IPS SHA `d3cb7ea84067675a5cc12cb4a26f260194b0a6f00ff235f0129460a902a58a50` still NOT materialized; archived ZIP visible only as library metadata. Therefore **FULL INTEGRATED 061 ROM NOT BUILT/NOT TESTED**. Do not send standalone clean Japanese ROM text overlays as playable patches; do not commit copyright-bearing ROM/font binaries.
+
+**Next concrete work:** trace record/footer/entrypoint behavior in SNES engine to safely relocate long Quiz text, or tackle canonical translation/QA without inappropriate truncation. Proper names must remain full in canonical text. Also four Fortune width cases, G3 result/menu art, and eventual complete SNES emulation test. User explicitly wants **CONTENT FIRST; FONT LAST**.
+
+
 ## CHECKPOINT 063 — 2026-10-12: INDEPENDENT PHYSICAL TRIAGE OF REMAINING 102 QUIZ ENTRIES
 
 Read `docs/QUIZ_REMAINING_SOURCE_TRIAGE_063.md` **before** adding more byte patches. The previous 061 snapshot remains **279/381 uniquely staged source IDs; 102 IDs unstaged**. This checkpoint adds **no** counted translations.
