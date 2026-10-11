@@ -1,5 +1,23 @@
 # HANDOFF CURRENT — Chibi Maruko-chan SNES Việt hóa
 
+## CHECKPOINT 060 — 2026-10-11: CORRECTED 059 DUPLICATES + 21 NEW BYTE-VERIFIED QUIZ RECORDS
+
+**Read `docs/CONTENT_FIRST_QUIZ_21_CHECKPOINT_060.md` first.** Source-only physical QA is on the *actual user-supplied exact* original Japanese 2MiB SFC SHA256 `e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956`.
+
+**CORRECTION TO HISTORICAL CHECKPOINT 059:** 0x31F75 / 0x31F84 / 0x31F95 (three birthday date answers) were previously included in 047. Old 059 duplicate claims and 244/381 cumulative count were wrong. They have now been removed from 059, and `tools/build_content_first_059_quiz_37.py` explicitly rejects reintroduction. Corrected 059 count **34 records**, **73 native `816F` markers**, 1544 writable text bytes /1541 changed, **1914B /73 record** isolated source IPS SHA256 `d383a705336236b3ff2c992ab3ce28c4605d1a5afd809bb8f8eb630035802a81`. Corrected source test ROM SHA256 `7a6c5cb411738706b019ea4b320e20d4bb131888ba2acdf3bd3aae3fdd3be0c2`. The earlier 059 source-only IPS SHA was reproduced byte-for-byte before the correction, proving the investigation used the same clean input. Note that the two 059 filenames containing `37` are historical and now hold/build 34 source records.
+
+**NEW 060 ORIGINAL CLEAN-ROM SOURCE BYTE QA PASS:** 21 additional distinct Quiz records, 43 original text frames with all **43 immutable `816F` line markers**, **816 allowed** physical text bytes / **815 changed**; isolated nonplayable source IPS **1038B /43 records**, SHA256 `f03313fd1d822c2b3c49b46c3bec520313f3ae3d5b8c62db6d177206238a5822`; overlay ROM SHA256 `8eb2b3ea0aedafd744039d4b05f2a647d0c4a239e778ef4c604305c2b033fbe9`. An independently implemented IPS parser reproduced the entire 2MiB source overlay exactly. New captions cover Hanawa/Kazuhiko, Maruo glasses, Migiwa/Mark, Pusadi farewell, caring brother, Rolls-Royce plus short recognizable answer alternatives `Ono`, `Jump`, `Idol`, `Sáo`. Canonical full `vi_full` and original Japanese scans unchanged.
+
+Repo committed: `translation/runtime/quiz_content_first_21_060.json`, `tools/build_content_first_060_quiz_21.py`, `tools/rebuild_content_first_060_full_chain.py`, `tools/audit_quiz_unique_060.py`, plus QA document. The unique-offset inventory was cross-checked from 8 source CSV + all 7 staged manifests, **262 distinct Quiz targets /381 original**, **119 remain**. The audit tool now fails closed if previously integrated offsets recur.
+
+**DO NOT claim a playable build:** the 043 clean-source IPS SHA `d3cb7ea84067675a5cc12cb4a26f260194b0a6f00ff235f0129460a902a58a50` is still inaccessible as raw bytes, despite archived ZIP metadata in Library. The exact original clean ROM is accessible; its source overlay checks PASS, but the **FULL 060 COMBINED ROM IS NOT BUILT, EMULATOR NOT TESTED**. Once authorized historical checkpoint043 IPS is accessible, run from the game directory:
+
+`python tools/audit_quiz_unique_060.py`
+`python tools/rebuild_content_first_060_full_chain.py clean.sfc checkpoint043.ips --ips full060.ips --report full060_qa.json --allow-untested`
+
+Next: 119 remaining Quiz source rows, mostly proper-name answer alternatives requiring safe text expansion, four Fortune too-small fields, G3 result/title graphics, then SNES emulator/full font test. User wants content-first, font last, and no useless intermediate patch downloads.
+
+
 ## CHECKPOINT 059 — 2026-10-11: 37 MORE QUIZ FIELDS, EXACT ORIGINAL-ROM BYTE TEST PASS
 
 Read `docs/CONTENT_FIRST_QUIZ_37_CHECKPOINT_059.md`.
