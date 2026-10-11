@@ -1,5 +1,15 @@
 # HANDOFF CURRENT — Chibi Maruko-chan SNES Việt hóa
 
+## 2026-10-11 — LIVE USER ROM CHECK / 053 SOURCE CORRECTION
+
+**VERIFIED against user-uploaded exact clean SNES ROM, 2,097,152 B, SHA256 `e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956`: 16/16 reviewed Quiz source records match original CP932 and actual `816F` field boundaries.** The prior rejected `0x340C0` Quiz row is real: 6 native ASCII spaces at the scanner offset, JP text actually starts `0x340C6`, then eight native trailing ASCII spaces and `816F`. The corrected 053 manifest and builder protect both original padding regions byte-for-byte and replace ONLY the real 10-glyph text region. Other 15 records match original source and delimiters without padded scanner correction.
+
+- Updated `translation/runtime/quiz_content_first_16_053.json` and `tools/build_content_first_053_quiz_16.py` to retain 16 original-ROM-safe candidates; it is not a new patch build yet.
+- Full combined 048/053 ROM is **NOT BUILT**. ROM screenshot/emulator QA **NOT TESTED**. The exact checkpoint043 IPS from the prior archive has SHA256 `d3cb7ea84067675a5cc12cb4a26f260194b0a6f00ff235f0129460a902a58a50`, but its raw bytes are not available in the working container.
+- The Library metadata lists `/Dịch giả lập/Chibi_043_G0G1_176Fields_Story58_Content_First_UNTESTED.zip` (22,558 B) but Files raw materialization was refused by authorization, so **do not claim it was read or extracted**. User may attach this archived ZIP directly in the conversation for building full 043 -> 048 -> 053 from their already supplied clean ROM.
+- No copyrighted ROM/font uploaded to GitHub. Keep content-first and no intermediate IPS links. After archived 043 patch is accessible, run guarded chain, validate exact 047 SHA, merge 048 and 053, then proceed with remaining Quiz/G2/G3.
+
+
 ## CHECKPOINT 053 — 2026-10-11: 16 CURATED QUIZ ROM-SLOT TRANSLATIONS + GUARDED BUILDER
 
 - Authored `translation/runtime/quiz_content_first_16_053.json`: **16** Quiz source-addressed compact Vietnamese captions, including original Japanese and full canonical Vietnamese text. Covered short trivia/answers (comedy, riddles, driver, six age choices, birthday choices and more). Avoids name mutilation and preserves source-of-truth `vi_full`.
