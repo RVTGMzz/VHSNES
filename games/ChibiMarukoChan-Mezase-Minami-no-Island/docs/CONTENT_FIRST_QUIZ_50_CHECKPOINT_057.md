@@ -4,6 +4,8 @@ Date: 2026-10-11. Branch: `chibi-maruko-bootstrap-01`.
 
 ## Substantive content change (not another font experiment)
 
+Edited four additional lines for natural context (Maruko/Midori relation, Yoshikawa's impact, sister's calm demeanor and Mitsuya's role); re-checked all original fields, the 105 line markers and byte-exact IPS replay. The final verified IPS/ROM source fingerprints are listed below.
+
 Added **50 new, nonduplicated Quiz narrative/question/answer fields** from
 `translation/source/quiz_batch02_part2_vi.csv` and
 `translation/source/quiz_batch02_part3_vi.csv`. These are the Yoshikawa Midori,
@@ -42,8 +44,8 @@ the canonical CSVs.
 | Writable source text byte positions | **2,106** |
 | Physically changed source text bytes | **2,106** |
 | Text-only QA IPS size / records | **2,614 B / 100** |
-| QA-only IPS SHA256 | `e763f959c851bffea4d0df1f9d42cb90c9026ffdb442df288615581235f8f482` |
-| Original-ROM QA text overlay SHA256 | `3c20e41ba5fe16c6ce9c5acb26f81e6b5665a9512059eb96403bcf8919b46f98` |
+| QA-only IPS SHA256 | `73829cb20f1b182142e428ba55366227417258d8e87f9e7da6de4fa1d093b749` |
+| Original-ROM QA text overlay SHA256 | `525575f7d178d3a2df4d616934484b8e5ae4a15db60c264c607db5fd3f1c4b98` |
 | Apply IPS to original, compare every byte | **PASS** |
 | Original Japanese source ROM SHA pinned | **PASS** |
 | SNES emulator screenshot or gameplay QA | **NOT TESTED** |
