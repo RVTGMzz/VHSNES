@@ -1,5 +1,16 @@
 # HANDOFF CURRENT — Chibi Maruko-chan SNES Việt hóa
 
+## CHECKPOINT 055 — 2026-10-11: G2 RULES TRANSLATED, QUIZ 054 EDITORIAL QA
+
+Read `docs/CONTENT_FIRST_G2_RULES_CHECKPOINT_055.md`.
+
+- **REAL CLEAN-ROM QA PASS:** Three G2 rule captions translated with original physical Japanese fields **0x1E307 / 0x1E323 / 0x1E337**: `Luật chơi!`, `Thắng 2`, `Tới khi thắng`. Native Japanese CP932 sources 64 editable text bytes; 64 text-byte modifications; all 3 original `816F` delimiters and ASCII indentation unchanged. Original bullet `・` is ordinary CP932 punctuation, legally repurposed as a text cell without changing a control opcode. Independent 87-byte /3-record text-only IPS replay PASS, SHA `b2372df59679573167cd82f0c95b2c30de24eb088b323d91a2b4a8d72f494f04`. **Text-only clean-ROM overlay is NOT playable.**
+- **REAL CLEAN-ROM QA PASS after semantic revision:** 12 awkward runtime Quiz captions improved among the same 54 already-authored fields, with Fujiki/Nagasawa role correction, Hanawa/Tomozo pension joke and Valentine chocolate narrative clarified. 54/54 original Quiz spans and 123/123 `816F` markers preserved. Updated 3,279-byte /127-record source overlay IPS SHA `792b0ccb6f60b77d6cc93f7ec91f87006e9d17a2c723344379df96731faf7ee9`, independent IPS replay PASS. 54/54 entries now cross-check exact canonical Japanese and complete `vi_full` in source CSV before final build.
+- Committed `translation/runtime/g2_rules_content_first_055.json`, `tools/build_content_first_055_g2_rules.py`, and `tools/rebuild_content_first_055_full_chain.py`; improved guarded 054 builder now pins updated source physical-IPS fingerprint.
+- **Full 054/055 combined ROM remains NOT BUILT and emulator NOT TESTED.** User's original clean ROM is available and exact SHA verified. The historical checkpoint043 IPS is still missing as raw attached bytes (Library metadata not materializable). Until its original clean-ROM IPS is made available, do not claim a final patch/game.
+- User preference: content-first, no repeated standalone test IPS downloads; after exact 043 bytes available run `python tools/rebuild_content_first_055_full_chain.py clean.sfc exact-043.ips --ips final-055.ips --report qa055.json --allow-untested`. Next: remaining 6 Fortune exceptions, Quiz long names/layout, G3 results, then runtime font QA.
+
+
 ## CHECKPOINT 054 — 2026-10-11: +54 NONDUPLICATE QUIZ PHYSICAL SOURCE FIELDS (INTEGRATED BUILD PENDING)
 
 **Read `docs/CONTENT_FIRST_QUIZ_54_CHECKPOINT_054.md` first.** Actual user-supplied Japanese clean ROM SHA `e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956` verified. **54 new original Quiz records**, 123 physical line spans, 123 original `816F` controls preserved, 2,642 permitted editable source bytes and 2,636 actual changed bytes were physically tested on the clean ROM as a **text-only, non-checksummed, NONPLAYABLE QA overlay**. Independently reapplying its 3,279B /127-record IPS returned the same 2MiB bytes; overlay IPS SHA `9f5069f7a105e371a71f9cf8bf5fdd38bae099d774c184a272f9abec9c8908ad`. No emulator test.
