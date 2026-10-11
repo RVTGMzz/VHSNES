@@ -2,15 +2,15 @@
   "schema": "chibi.quiz.content_first.059.v1",
   "source_clean_rom_sha256": "e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956",
   "stage_input": "full_integrated_058",
-  "candidate_count": 37,
-  "native_physical_segments": 76,
-  "native_816F_markers": 76,
-  "source_editable_glyph_bytes": 1572,
-  "changed_source_bytes": 1568,
-  "clean_source_only_IPS_bytes": 1961,
-  "clean_source_only_IPS_records": 77,
-  "clean_source_only_IPS_sha256": "15e12c50f501f6455c4b31dc837231ca23dbccdfe94bd07ef5a4d4384f844856",
-  "clean_source_only_ROM_sha256": "3dcdaca24ed47d92c7f11d8851fcf1c3516a41412f224a123fb3fe4234e51aaf",
+  "candidate_count": 34,
+  "native_physical_segments": 73,
+  "native_816F_markers": 73,
+  "source_editable_glyph_bytes": 1544,
+  "changed_source_bytes": 1541,
+  "clean_source_only_IPS_bytes": 1914,
+  "clean_source_only_IPS_records": 73,
+  "clean_source_only_IPS_sha256": "d383a705336236b3ff2c992ab3ce28c4605d1a5afd809bb8f8eb630035802a81",
+  "clean_source_only_ROM_sha256": "7a6c5cb411738706b019ea4b320e20d4bb131888ba2acdf3bd3aae3fdd3be0c2",
   "source_only_byte_qa": "PASS_REAL_USER_CLEAN_ROM_NOT_PLAYABLE",
   "full_integrated_059_ROM": "NOT_BUILT",
   "emulator_tested": false,
@@ -133,45 +133,6 @@
       "expected_capacities": [
         13,
         13
-      ],
-      "status": "verified_clean_original_byte_overlay_pending_full_058_merged_ROM_and_emulator"
-    },
-    {
-      "file_offset": "0x31F75",
-      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
-      "source_jp_scanner": "５月８日",
-      "vi_full_reference": "Ngày 8 tháng 5",
-      "vi_runtime_lines": [
-        "8/5"
-      ],
-      "expected_capacities": [
-        4
-      ],
-      "status": "verified_clean_original_byte_overlay_pending_full_058_merged_ROM_and_emulator"
-    },
-    {
-      "file_offset": "0x31F84",
-      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
-      "source_jp_scanner": "４月２３日",
-      "vi_full_reference": "Ngày 23 tháng 4",
-      "vi_runtime_lines": [
-        "23/4"
-      ],
-      "expected_capacities": [
-        5
-      ],
-      "status": "verified_clean_original_byte_overlay_pending_full_058_merged_ROM_and_emulator"
-    },
-    {
-      "file_offset": "0x31F95",
-      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
-      "source_jp_scanner": "１０月１日",
-      "vi_full_reference": "Ngày 1 tháng 10",
-      "vi_runtime_lines": [
-        "1/10"
-      ],
-      "expected_capacities": [
-        5
       ],
       "status": "verified_clean_original_byte_overlay_pending_full_058_merged_ROM_and_emulator"
     },
@@ -575,5 +536,16 @@
       ],
       "status": "verified_clean_original_byte_overlay_pending_full_058_merged_ROM_and_emulator"
     }
-  ]
+  ],
+  "historical_059_correction": {
+    "old_count": 37,
+    "removed_as_previously_in_047": [
+      "0x31F75",
+      "0x31F84",
+      "0x31F95"
+    ],
+    "distinct_count": 34,
+    "reverified_original_rom_sha": "e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956",
+    "clean_rom_qa_method": "Reconstructed all 37 original text writes, verified old 059 exact published IPS SHA, then removed three previous-047 entries; remeasured IPS/ROM SHA from exact user-provided clean Japanese SFC."
+  }
 }
