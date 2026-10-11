@@ -14,7 +14,7 @@
       "max_source_two_byte_units": 10,
       "leading_source_padding_bytes": 6,
       "trailing_source_padding_bytes": 8,
-      "status": "candidate_requires_original_rom_validation"
+      "status": "verified_exact_clean_ROM_CP932_and_816F_not_patched"
     },
     {
       "file_offset": "0x340E9",
@@ -23,7 +23,7 @@
       "vi_runtime": "Hài",
       "source_file": "translation/source/quiz_batch01_part1_vi.csv",
       "max_source_two_byte_units": 4,
-      "status": "candidate_requires_original_rom_validation"
+      "status": "verified_exact_clean_ROM_CP932_and_816F_not_patched"
     },
     {
       "file_offset": "0x34107",
@@ -32,7 +32,7 @@
       "vi_runtime": "Đố",
       "source_file": "translation/source/quiz_batch01_part1_vi.csv",
       "max_source_two_byte_units": 4,
-      "status": "candidate_requires_original_rom_validation"
+      "status": "verified_exact_clean_ROM_CP932_and_816F_not_patched"
     },
     {
       "file_offset": "0x343AB",
@@ -41,7 +41,7 @@
       "vi_runtime": "29",
       "source_file": "translation/source/quiz_batch01_part1_vi.csv",
       "max_source_two_byte_units": 3,
-      "status": "candidate_requires_original_rom_validation"
+      "status": "verified_exact_clean_ROM_CP932_and_816F_not_patched"
     },
     {
       "file_offset": "0x343B8",
@@ -50,7 +50,7 @@
       "vi_runtime": "40",
       "source_file": "translation/source/quiz_batch01_part1_vi.csv",
       "max_source_two_byte_units": 3,
-      "status": "candidate_requires_original_rom_validation"
+      "status": "verified_exact_clean_ROM_CP932_and_816F_not_patched"
     },
     {
       "file_offset": "0x343C5",
@@ -59,7 +59,7 @@
       "vi_runtime": "32",
       "source_file": "translation/source/quiz_batch01_part1_vi.csv",
       "max_source_two_byte_units": 3,
-      "status": "candidate_requires_original_rom_validation"
+      "status": "verified_exact_clean_ROM_CP932_and_816F_not_patched"
     },
     {
       "file_offset": "0x34A07",
@@ -68,7 +68,7 @@
       "vi_runtime": "68",
       "source_file": "translation/source/quiz_batch01_part2_vi.csv",
       "max_source_two_byte_units": 3,
-      "status": "candidate_requires_original_rom_validation"
+      "status": "verified_exact_clean_ROM_CP932_and_816F_not_patched"
     },
     {
       "file_offset": "0x34A14",
@@ -77,7 +77,7 @@
       "vi_runtime": "70",
       "source_file": "translation/source/quiz_batch01_part2_vi.csv",
       "max_source_two_byte_units": 3,
-      "status": "candidate_requires_original_rom_validation"
+      "status": "verified_exact_clean_ROM_CP932_and_816F_not_patched"
     },
     {
       "file_offset": "0x34A21",
@@ -86,7 +86,7 @@
       "vi_runtime": "78",
       "source_file": "translation/source/quiz_batch01_part2_vi.csv",
       "max_source_two_byte_units": 3,
-      "status": "candidate_requires_original_rom_validation"
+      "status": "verified_exact_clean_ROM_CP932_and_816F_not_patched"
     },
     {
       "file_offset": "0x34B50",
@@ -95,7 +95,7 @@
       "vi_runtime": "Tài xế",
       "source_file": "translation/source/quiz_batch01_part2_vi.csv",
       "max_source_two_byte_units": 6,
-      "status": "candidate_requires_original_rom_validation"
+      "status": "verified_exact_clean_ROM_CP932_and_816F_not_patched"
     },
     {
       "file_offset": "0x351E9",
@@ -104,7 +104,7 @@
       "vi_runtime": "31/12",
       "source_file": "translation/source/quiz_batch02_part1_vi.csv",
       "max_source_two_byte_units": 6,
-      "status": "candidate_requires_original_rom_validation"
+      "status": "verified_exact_clean_ROM_CP932_and_816F_not_patched"
     },
     {
       "file_offset": "0x351FC",
@@ -113,7 +113,7 @@
       "vi_runtime": "19/12",
       "source_file": "translation/source/quiz_batch02_part1_vi.csv",
       "max_source_two_byte_units": 6,
-      "status": "candidate_requires_original_rom_validation"
+      "status": "verified_exact_clean_ROM_CP932_and_816F_not_patched"
     },
     {
       "file_offset": "0x3520F",
@@ -122,7 +122,7 @@
       "vi_runtime": "3/3",
       "source_file": "translation/source/quiz_batch02_part1_vi.csv",
       "max_source_two_byte_units": 4,
-      "status": "candidate_requires_original_rom_validation"
+      "status": "verified_exact_clean_ROM_CP932_and_816F_not_patched"
     },
     {
       "file_offset": "0x353AF",
@@ -131,7 +131,7 @@
       "vi_runtime": "49",
       "source_file": "translation/source/quiz_batch02_part1_vi.csv",
       "max_source_two_byte_units": 3,
-      "status": "candidate_requires_original_rom_validation"
+      "status": "verified_exact_clean_ROM_CP932_and_816F_not_patched"
     },
     {
       "file_offset": "0x353BC",
@@ -140,7 +140,7 @@
       "vi_runtime": "44",
       "source_file": "translation/source/quiz_batch02_part1_vi.csv",
       "max_source_two_byte_units": 3,
-      "status": "candidate_requires_original_rom_validation"
+      "status": "verified_exact_clean_ROM_CP932_and_816F_not_patched"
     },
     {
       "file_offset": "0x353C9",
@@ -149,10 +149,19 @@
       "vi_runtime": "34",
       "source_file": "translation/source/quiz_batch02_part1_vi.csv",
       "max_source_two_byte_units": 3,
-      "status": "candidate_requires_original_rom_validation"
+      "status": "verified_exact_clean_ROM_CP932_and_816F_not_patched"
     }
   ],
   "original_clean_rom_sha256": "e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956",
   "record_count": 16,
-  "corrected_scanner_offset_0x340C0": "Six native ASCII padding bytes precede the actual 10-glyph Japanese phrase at 0x340C6, followed by eight ASCII padding bytes, then original 816F. Patch only 0x340C6..0x340D9, preserve all padding."
+  "corrected_scanner_offset_0x340C0": "Six native ASCII padding bytes precede the actual 10-glyph Japanese phrase at 0x340C6, followed by eight ASCII padding bytes, then original 816F. Patch only 0x340C6..0x340D9, preserve all padding.",
+  "clean_rom_qa": {
+    "checked_at": "2026-10-11",
+    "original_clean_sha256": "e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956",
+    "entries_checked": 16,
+    "entries_exact_CP932_816F": 16,
+    "leading_trailing_ASCII_layout_checked": true,
+    "physical_048_053_merge": "NOT_EXECUTED",
+    "emulator": "NOT_TESTED"
+  }
 }
