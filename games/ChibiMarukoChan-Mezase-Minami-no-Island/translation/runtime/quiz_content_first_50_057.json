@@ -7,10 +7,10 @@
   "native_816F_markers": 105,
   "source_editable_bytes": 2106,
   "source_changed_bytes": 2106,
-  "original_clean_preview_IPS_sha256": "e763f959c851bffea4d0df1f9d42cb90c9026ffdb442df288615581235f8f482",
+  "original_clean_preview_IPS_sha256": "73829cb20f1b182142e428ba55366227417258d8e87f9e7da6de4fa1d093b749",
   "original_clean_preview_IPS_bytes": 2614,
   "original_clean_preview_IPS_records": 100,
-  "original_clean_preview_ROM_sha256": "3c20e41ba5fe16c6ce9c5acb26f81e6b5665a9512059eb96403bcf8919b46f98",
+  "original_clean_preview_ROM_sha256": "525575f7d178d3a2df4d616934484b8e5ae4a15db60c264c607db5fd3f1c4b98",
   "rules": "Preserve full Japanese and canonical vi_full in eight CSV sources; compact runtime lines are an editorial layer. Reject scanner aliases, unknown opcodes, overlapped patches, missing original control boundaries and glyphs. Preserve all leading and trailing raw layout bytes.",
   "explicitly_deferred": [
     "Names too long to preserve accurately (Hanawa/Fujiki/Nagasawa families, Ichiro, etc.)",
@@ -22,8 +22,8 @@
     {
       "file_offset": "0x3584C",
       "vi_runtime_lines": [
-        "Với Maru",
-        "họ là gì?"
+        "Họ là gì",
+        "với Maru?"
       ],
       "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
     },
@@ -48,7 +48,7 @@
       "vi_runtime_lines": [
         "Con của",
         "bạn ông",
-        "Tomozo rất lạ"
+        "rất khác lạ"
       ],
       "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
     },
@@ -379,7 +379,7 @@
       "vi_runtime_lines": [
         "",
         "Chị Maruko",
-        "mà thích mơ"
+        "nhìn rất cool"
       ],
       "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
     },
@@ -411,8 +411,8 @@
     {
       "file_offset": "0x3686F",
       "vi_runtime_lines": [
-        "tại Mitsuya",
-        "quán quen",
+        "Mitsuya luôn",
+        "gắn với",
         "cả nhóm!"
       ],
       "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
