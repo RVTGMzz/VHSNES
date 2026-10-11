@@ -1,10 +1,21 @@
 {
   "schema": "chibi.quiz.content_first.053.v1",
   "base_checkpoint": "048",
-  "state": "15_source_candidates_exact_original_rom_CP932_816F_verified_2026_10_11_pending_baseline_048",
+  "state": "16_source_candidates_original_clean_ROM_CP932_and_816F_verified_2026_10_11_pending_048_merger_and_emulator",
   "not_patched": true,
   "policy": "Exact original CP932 length, 816F delimiter, untouched baseline glyph bytes, NFC, assigned existing V2 code, keep canonical vi_full and semantic meaning; no auto-truncation.",
   "records": [
+    {
+      "file_offset": "0x340C0",
+      "source_jp": "すきなものってなに？",
+      "vi_full_reference": "...là gì?",
+      "vi_runtime": "...là gì?",
+      "source_file": "translation/source/quiz_batch01_part1_vi.csv",
+      "max_source_two_byte_units": 10,
+      "leading_source_padding_bytes": 6,
+      "trailing_source_padding_bytes": 8,
+      "status": "candidate_requires_original_rom_validation"
+    },
     {
       "file_offset": "0x340E9",
       "source_jp": "おわらい",
@@ -142,9 +153,6 @@
     }
   ],
   "original_clean_rom_sha256": "e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956",
-  "rejected_from_prior_053": {
-    "file_offset": "0x340C0",
-    "reason": "Expected Japanese CP932 bytes not present at claimed clean-ROM offset; excluded from patch safely"
-  },
-  "record_count": 15
+  "record_count": 16,
+  "corrected_scanner_offset_0x340C0": "Six native ASCII padding bytes precede the actual 10-glyph Japanese phrase at 0x340C6, followed by eight ASCII padding bytes, then original 816F. Patch only 0x340C6..0x340D9, preserve all padding."
 }
