@@ -1,0 +1,943 @@
+{
+  "schema": "chibi.fortune.content_first.048.v1",
+  "source_clean_rom_sha256": "e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956",
+  "verified_existing_043_rom_sha256": "45ffca7db5db83bc2734e885ee90c77f33746e2c4a54d1c99f1502f3e992a6ae",
+  "verified_043_plus_103_glyph_only_rom_sha256": "4f461333d171fc21c3541ae29393056f0c9234ea0f5c4de46f97589afd20378b",
+  "verified_103_text_only_overlay_sha256": "3eb7dcc55d0c0b585beb4b27d6d2ca08c5facd39196042756eae0cf0dc68379c",
+  "published_prior_047_rom_sha256": "1f6430064b70671a4f3ba94f0fd256764db54690950519c22d9e03ec74230dd9",
+  "intended_048_merge_base": "047 exact full combined ROM, which was unavailable to the current local container; do not claim tested 047+048 release",
+  "new_Fortune_fields": 103,
+  "previous_Fortune_fields": 48,
+  "total_Fortune_fields_after_successful_merge": 151,
+  "other_6_canonical_Fortune_rows": "require review/expansion",
+  "editorial_policy": "Full canonical vi_full preserved. Short ROM variants manually contextualized for fortune column/question and verified exact original CP932 capacity. A few precise nuances are compressed; runtime/editorial QA pending.",
+  "records": [
+    {
+      "file_offset": "0x2BD6B",
+      "source_file": "translation/source/fortune_batch01_part1_vi.csv",
+      "source_jp": "幸運の数字",
+      "vi_full_reference": "Con số may mắn",
+      "vi_runtime": "Số đỏ",
+      "max_source_two_byte_units": 5,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2BD7C",
+      "source_file": "translation/source/fortune_batch01_part1_vi.csv",
+      "source_jp": "幸運のいろ",
+      "vi_full_reference": "Màu may mắn",
+      "vi_runtime": "Màu",
+      "max_source_two_byte_units": 5,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2BD8D",
+      "source_file": "translation/source/fortune_batch01_part1_vi.csv",
+      "source_jp": "どんどん  かなうよ",
+      "vi_full_reference": "Ước gì cũng lần lượt thành hết đó",
+      "vi_runtime": "Dần thành",
+      "max_source_two_byte_units": 9,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2BDA6",
+      "source_file": "translation/source/fortune_batch01_part1_vi.csv",
+      "source_jp": "ぜんぶ  かなうよ",
+      "vi_full_reference": "Mọi điều ước đều thành",
+      "vi_runtime": "Được hết",
+      "max_source_two_byte_units": 8,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2BDBD",
+      "source_file": "translation/source/fortune_batch01_part1_vi.csv",
+      "source_jp": "幸運は  ねてまてじゃよ",
+      "vi_full_reference": "Vận may cứ nằm chờ là tới thôi",
+      "vi_runtime": "Ngủ chờ may",
+      "max_source_two_byte_units": 11,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2BDDA",
+      "source_file": "translation/source/fortune_batch01_part1_vi.csv",
+      "source_jp": "とつぜんかなうよ",
+      "vi_full_reference": "Bỗng dưng điều ước sẽ thành",
+      "vi_runtime": "Tự thành",
+      "max_source_two_byte_units": 8,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2BDF1",
+      "source_file": "translation/source/fortune_batch01_part1_vi.csv",
+      "source_jp": "きっと  かなうよ",
+      "vi_full_reference": "Nhất định sẽ thành hiện thực",
+      "vi_runtime": "Sẽ thành",
+      "max_source_two_byte_units": 8,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2BE08",
+      "source_file": "translation/source/fortune_batch01_part1_vi.csv",
+      "source_jp": "いずれ  かなうよ",
+      "vi_full_reference": "Rồi cũng sẽ thành thôi",
+      "vi_runtime": "Sẽ được",
+      "max_source_two_byte_units": 8,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2BE1F",
+      "source_file": "translation/source/fortune_batch01_part1_vi.csv",
+      "source_jp": "ひとつだけ  かないそう",
+      "vi_full_reference": "Có vẻ chỉ một điều ước sẽ thành",
+      "vi_runtime": "Một ước đạt",
+      "max_source_two_byte_units": 11,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2BE3C",
+      "source_file": "translation/source/fortune_batch01_part1_vi.csv",
+      "source_jp": "やればできるよ",
+      "vi_full_reference": "Cứ làm là sẽ được",
+      "vi_runtime": "Cứ làm!",
+      "max_source_two_byte_units": 7,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2BE51",
+      "source_file": "translation/source/fortune_batch01_part1_vi.csv",
+      "source_jp": "少しなら  かなうかもね",
+      "vi_full_reference": "Có khi được một chút đó",
+      "vi_runtime": "Ước ít thôi",
+      "max_source_two_byte_units": 11,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2BE6E",
+      "source_file": "translation/source/fortune_batch01_part1_vi.csv",
+      "source_jp": "よくを出さない事だよ",
+      "vi_full_reference": "Đừng tham quá nhé",
+      "vi_runtime": "Đừng tham",
+      "max_source_two_byte_units": 10,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2BE89",
+      "source_file": "translation/source/fortune_batch01_part1_vi.csv",
+      "source_jp": "どりょくをつづけるべきさ",
+      "vi_full_reference": "Cứ tiếp tục cố gắng đi",
+      "vi_runtime": "Cố tiếp đi!",
+      "max_source_two_byte_units": 12,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2BEA8",
+      "source_file": "translation/source/fortune_batch01_part1_vi.csv",
+      "source_jp": "しんぼうすればいいのさ",
+      "vi_full_reference": "Kiên nhẫn một chút là được",
+      "vi_runtime": "Nhẫn nại!",
+      "max_source_two_byte_units": 11,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2BEC5",
+      "source_file": "translation/source/fortune_batch01_part1_vi.csv",
+      "source_jp": "かなう・・・カモね",
+      "vi_full_reference": "Có lẽ... sẽ thành đó",
+      "vi_runtime": "Biết đâu!",
+      "max_source_two_byte_units": 9,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2BEDE",
+      "source_file": "translation/source/fortune_batch01_part1_vi.csv",
+      "source_jp": "たかのぞみは  いけないよ",
+      "vi_full_reference": "Đừng mong cao quá nhé",
+      "vi_runtime": "Chớ mơ quá",
+      "max_source_two_byte_units": 12,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2BEFD",
+      "source_file": "translation/source/fortune_batch01_part1_vi.csv",
+      "source_jp": "心がけしだいです",
+      "vi_full_reference": "Còn tùy bạn cố gắng thế nào thôi",
+      "vi_runtime": "Tùy tâm",
+      "max_source_two_byte_units": 8,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2BF14",
+      "source_file": "translation/source/fortune_batch01_part1_vi.csv",
+      "source_jp": "よくは出さないことです",
+      "vi_full_reference": "Đừng tham lam quá",
+      "vi_runtime": "Đừng tham",
+      "max_source_two_byte_units": 11,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2BF4A",
+      "source_file": "translation/source/fortune_batch01_part1_vi.csv",
+      "source_jp": "大金が  ころがりこむよ",
+      "vi_full_reference": "Một khoản tiền lớn sắp tự tìm đến",
+      "vi_runtime": "Tiền to tới",
+      "max_source_two_byte_units": 11,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2BF67",
+      "source_file": "translation/source/fortune_batch01_part1_vi.csv",
+      "source_jp": "おもいがけないもうけあり",
+      "vi_full_reference": "Có món lời bất ngờ",
+      "vi_runtime": "Lộc bất ngờ",
+      "max_source_two_byte_units": 12,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2BF86",
+      "source_file": "translation/source/fortune_batch01_part1_vi.csv",
+      "source_jp": "家族にゴマをすってみよう",
+      "vi_full_reference": "Thử nịnh người nhà xem",
+      "vi_runtime": "Thử nịnh nhà",
+      "max_source_two_byte_units": 12,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2BFC0",
+      "source_file": "translation/source/fortune_batch01_part1_vi.csv",
+      "source_jp": "こつこつ  ちょきんしよう",
+      "vi_full_reference": "Tích góp từng chút một nhé",
+      "vi_runtime": "Góp dần nhé",
+      "max_source_two_byte_units": 12,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2BFDF",
+      "source_file": "translation/source/fortune_batch01_part1_vi.csv",
+      "source_jp": "おこづかいがもらえるカモ",
+      "vi_full_reference": "Có khi được cho thêm tiền tiêu vặt",
+      "vi_runtime": "Có tiền vặt!",
+      "max_source_two_byte_units": 12,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2BFFE",
+      "source_file": "translation/source/fortune_batch01_part1_vi.csv",
+      "source_jp": "むだづかいには気をつけて",
+      "vi_full_reference": "Coi chừng tiêu hoang",
+      "vi_runtime": "Chớ phí tiền",
+      "max_source_two_byte_units": 12,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C01D",
+      "source_file": "translation/source/fortune_batch01_part1_vi.csv",
+      "source_jp": "下をむいて歩こう",
+      "vi_full_reference": "Đi đường cứ nhìn xuống đất nhé",
+      "vi_runtime": "Nhìn đất",
+      "max_source_two_byte_units": 8,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C034",
+      "source_file": "translation/source/fortune_batch01_part1_vi.csv",
+      "source_jp": "かしかりはソンのもと",
+      "vi_full_reference": "Cho vay mượn là dễ thiệt thân lắm",
+      "vi_runtime": "Vay là lỗ",
+      "max_source_two_byte_units": 10,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C04F",
+      "source_file": "translation/source/fortune_batch01_part1_vi.csv",
+      "source_jp": "しゃっきんはサイテーだね",
+      "vi_full_reference": "Nợ nần thì tệ lắm",
+      "vi_runtime": "Nợ khổ lắm",
+      "max_source_two_byte_units": 12,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C06E",
+      "source_file": "translation/source/fortune_batch01_part1_vi.csv",
+      "source_jp": "おもわぬムダ使いしそうだ",
+      "vi_full_reference": "Có vẻ sẽ lỡ tay tiêu hoang",
+      "vi_runtime": "Tiêu hoang!",
+      "max_source_two_byte_units": 12,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C08D",
+      "source_file": "translation/source/fortune_batch01_part1_vi.csv",
+      "source_jp": "サイフをおとすかもね",
+      "vi_full_reference": "Coi chừng làm rơi ví đó",
+      "vi_runtime": "Dễ rơi ví!",
+      "max_source_two_byte_units": 10,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C0A8",
+      "source_file": "translation/source/fortune_batch01_part1_vi.csv",
+      "source_jp": "まったくサイテーだよ",
+      "vi_full_reference": "Tệ hết chỗ nói luôn",
+      "vi_runtime": "Tệ quá đi",
+      "max_source_two_byte_units": 10,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C0DE",
+      "source_file": "translation/source/fortune_batch01_part1_vi.csv",
+      "source_jp": "ピンチですね",
+      "vi_full_reference": "Hầu bao nguy rồi đó",
+      "vi_runtime": "Nguy!",
+      "max_source_two_byte_units": 6,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C0F1",
+      "source_file": "translation/source/fortune_batch01_part2_vi.csv",
+      "source_jp": "両思いに  なれるよ",
+      "vi_full_reference": "Hai người sẽ thích nhau đấy",
+      "vi_runtime": "Yêu nhau!",
+      "max_source_two_byte_units": 9,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C10A",
+      "source_file": "translation/source/fortune_batch01_part2_vi.csv",
+      "source_jp": "今しかない、告白すべし",
+      "vi_full_reference": "Chỉ có lúc này thôi, tỏ tình đi!",
+      "vi_runtime": "Tỏ tình đi",
+      "max_source_two_byte_units": 11,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C127",
+      "source_file": "translation/source/fortune_batch01_part2_vi.csv",
+      "source_jp": "であいのヨ・カ・ン",
+      "vi_full_reference": "Có linh cảm sắp gặp ai đó...",
+      "vi_runtime": "Có duyên!",
+      "max_source_two_byte_units": 9,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C140",
+      "source_file": "translation/source/fortune_batch01_part2_vi.csv",
+      "source_jp": "告白されるかもよ",
+      "vi_full_reference": "Có khi được người ta tỏ tình đấy",
+      "vi_runtime": "Ai ngỏ?",
+      "max_source_two_byte_units": 8,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C157",
+      "source_file": "translation/source/fortune_batch01_part2_vi.csv",
+      "source_jp": "もうひとガンバリだよ",
+      "vi_full_reference": "Cố thêm một chút nữa thôi",
+      "vi_runtime": "Cố thêm!",
+      "max_source_two_byte_units": 10,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C172",
+      "source_file": "translation/source/fortune_batch01_part2_vi.csv",
+      "source_jp": "いいカンジ、じっくりとね",
+      "vi_full_reference": "Có vẻ ổn đó, cứ từ từ thôi",
+      "vi_runtime": "Ổn, từ từ",
+      "max_source_two_byte_units": 12,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C191",
+      "source_file": "translation/source/fortune_batch01_part2_vi.csv",
+      "source_jp": "やっぱりプレゼントだよ",
+      "vi_full_reference": "Quà tặng vẫn là số một",
+      "vi_runtime": "Quà là nhất",
+      "max_source_two_byte_units": 11,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C212",
+      "source_file": "translation/source/fortune_batch01_part2_vi.csv",
+      "source_jp": "そばにステキな人が・・・",
+      "vi_full_reference": "Có một người tuyệt vời ngay bên cạnh...",
+      "vi_runtime": "Người bên ta",
+      "max_source_two_byte_units": 12,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C231",
+      "source_file": "translation/source/fortune_batch01_part2_vi.csv",
+      "source_jp": "いっしょにゲームがいいよ",
+      "vi_full_reference": "Chơi game cùng nhau là hợp nhất",
+      "vi_runtime": "Game đôi!",
+      "max_source_two_byte_units": 12,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C250",
+      "source_file": "translation/source/fortune_batch01_part2_vi.csv",
+      "source_jp": "デートにさそってみよう",
+      "vi_full_reference": "Thử rủ người ta đi chơi xem",
+      "vi_runtime": "Rủ đi chơi",
+      "max_source_two_byte_units": 11,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C26D",
+      "source_file": "translation/source/fortune_batch01_part2_vi.csv",
+      "source_jp": "ライバルが出てくるのさ",
+      "vi_full_reference": "Tình địch sắp xuất hiện rồi",
+      "vi_runtime": "Tình địch!",
+      "max_source_two_byte_units": 11,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C28A",
+      "source_file": "translation/source/fortune_batch01_part2_vi.csv",
+      "source_jp": "その人でいいのかい？",
+      "vi_full_reference": "Người đó thật sự ổn chứ?",
+      "vi_runtime": "Có ổn?",
+      "max_source_two_byte_units": 10,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C2DB",
+      "source_file": "translation/source/fortune_batch01_part2_vi.csv",
+      "source_jp": "しばらくは  おとなしく",
+      "vi_full_reference": "Tạm thời cứ ngoan ngoãn một chút nhé",
+      "vi_runtime": "Ngoan chút",
+      "max_source_two_byte_units": 11,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C2F8",
+      "source_file": "translation/source/fortune_batch01_part2_vi.csv",
+      "source_jp": "甘いことばにちゅういです",
+      "vi_full_reference": "Cẩn thận lời đường mật",
+      "vi_runtime": "Chớ tin nịnh",
+      "max_source_two_byte_units": 12,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C317",
+      "source_file": "translation/source/fortune_batch01_part2_vi.csv",
+      "source_jp": "カンが  さえてるよ",
+      "vi_full_reference": "Trực giác hôm nay bén lắm đó",
+      "vi_runtime": "Nhạy ghê!",
+      "max_source_two_byte_units": 9,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C330",
+      "source_file": "translation/source/fortune_batch01_part2_vi.csv",
+      "source_jp": "テスト運がよさそうじゃよ",
+      "vi_full_reference": "Vận thi cử có vẻ tốt đấy",
+      "vi_runtime": "Thi cử hên!",
+      "max_source_two_byte_units": 12,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C34F",
+      "source_file": "translation/source/fortune_batch01_part2_vi.csv",
+      "source_jp": "じつりょく  はっきじゃ！",
+      "vi_full_reference": "Đến lúc phát huy thực lực rồi!",
+      "vi_runtime": "Trổ tài nào!",
+      "max_source_two_byte_units": 12,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C387",
+      "source_file": "translation/source/fortune_batch01_part2_vi.csv",
+      "source_jp": "算数がいいみたいだよ",
+      "vi_full_reference": "Môn Toán có vẻ thuận lợi",
+      "vi_runtime": "Toán hên!",
+      "max_source_two_byte_units": 10,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C3A2",
+      "source_file": "translation/source/fortune_batch01_part2_vi.csv",
+      "source_jp": "理科が幸運のカギ",
+      "vi_full_reference": "Môn Khoa học là chìa khóa may mắn",
+      "vi_runtime": "Khoa hên",
+      "max_source_two_byte_units": 8,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C3B9",
+      "source_file": "translation/source/fortune_batch01_part2_vi.csv",
+      "source_jp": "社会で開運だよ",
+      "vi_full_reference": "Môn Xã hội sẽ đem may mắn",
+      "vi_runtime": "Sử hên!",
+      "max_source_two_byte_units": 7,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C3CE",
+      "source_file": "translation/source/fortune_batch01_part2_vi.csv",
+      "source_jp": "音楽がいいみたい",
+      "vi_full_reference": "Môn Âm nhạc có vẻ tốt",
+      "vi_runtime": "Nhạc may",
+      "max_source_two_byte_units": 8,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C3E5",
+      "source_file": "translation/source/fortune_batch01_part2_vi.csv",
+      "source_jp": "美術でラッキーに",
+      "vi_full_reference": "Môn Mỹ thuật sẽ gặp may",
+      "vi_runtime": "Vẽ hên!",
+      "max_source_two_byte_units": 8,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C3FC",
+      "source_file": "translation/source/fortune_batch01_part2_vi.csv",
+      "source_jp": "家庭科で開運だよ",
+      "vi_full_reference": "Môn Gia chánh sẽ đem may mắn",
+      "vi_runtime": "Bếp hên!",
+      "max_source_two_byte_units": 8,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C42A",
+      "source_file": "translation/source/fortune_batch01_part2_vi.csv",
+      "source_jp": "努力を重ねることだね",
+      "vi_full_reference": "Cứ chăm chỉ từng ngày nhé",
+      "vi_runtime": "Chăm chỉ!",
+      "max_source_two_byte_units": 10,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C445",
+      "source_file": "translation/source/fortune_batch01_part2_vi.csv",
+      "source_jp": "まずは基本をしっかりね",
+      "vi_full_reference": "Trước hết phải chắc phần cơ bản",
+      "vi_runtime": "Học căn bản",
+      "max_source_two_byte_units": 11,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C477",
+      "source_file": "translation/source/fortune_batch01_part2_vi.csv",
+      "source_jp": "あんた、予習はだいじだよ",
+      "vi_full_reference": "Này, học trước bài cũng quan trọng lắm đó",
+      "vi_runtime": "Xem trước đi",
+      "max_source_two_byte_units": 12,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C4B1",
+      "source_file": "translation/source/fortune_batch01_part2_vi.csv",
+      "source_jp": "宿題は  やったのかい？",
+      "vi_full_reference": "Bài tập về nhà làm chưa?",
+      "vi_runtime": "Đã làm bài?",
+      "max_source_two_byte_units": 11,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C4CE",
+      "source_file": "translation/source/fortune_batch01_part2_vi.csv",
+      "source_jp": "カンにたよっちゃだめだよ",
+      "vi_full_reference": "Đừng chỉ trông vào trực giác nhé",
+      "vi_runtime": "Chớ đoán mò!",
+      "max_source_two_byte_units": 12,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C4ED",
+      "source_file": "translation/source/fortune_batch01_part2_vi.csv",
+      "source_jp": "ものわすれしそうだね",
+      "vi_full_reference": "Có vẻ hôm nay dễ quên đồ",
+      "vi_runtime": "Dễ quên đồ",
+      "max_source_two_byte_units": 10,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C508",
+      "source_file": "translation/source/fortune_batch01_part2_vi.csv",
+      "source_jp": "どりょく、どりょく",
+      "vi_full_reference": "Cố gắng, cố gắng!",
+      "vi_runtime": "Cố lên!",
+      "max_source_two_byte_units": 9,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C521",
+      "source_file": "translation/source/fortune_batch01_part2_vi.csv",
+      "source_jp": "やる気しだいです",
+      "vi_full_reference": "Tất cả tùy vào quyết tâm",
+      "vi_runtime": "Tùy tâm!",
+      "max_source_two_byte_units": 8,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C538",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "source_jp": "なくしたものが見つかるよ",
+      "vi_full_reference": "Đồ bị mất sẽ tìm thấy",
+      "vi_runtime": "Tìm lại đồ",
+      "max_source_two_byte_units": 12,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C557",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "source_jp": "明日はきっとはれじゃよ",
+      "vi_full_reference": "Ngày mai chắc chắn trời đẹp",
+      "vi_runtime": "Mai nắng!",
+      "max_source_two_byte_units": 11,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C574",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "source_jp": "勝負ごとについてるよ",
+      "vi_full_reference": "Hôm nay thi thố gì cũng hên",
+      "vi_runtime": "Thi hên!",
+      "max_source_two_byte_units": 10,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C58F",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "source_jp": "いそがば回れじゃ",
+      "vi_full_reference": "Càng vội càng phải từ từ",
+      "vi_runtime": "Chớ vội!",
+      "max_source_two_byte_units": 8,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C5C3",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "source_jp": "ゲームで  こうとく点じゃ",
+      "vi_full_reference": "Chơi game sẽ được điểm cao",
+      "vi_runtime": "Điểm cao đó",
+      "max_source_two_byte_units": 12,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C5E2",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "source_jp": "あんた、すごくついてるよ",
+      "vi_full_reference": "Hôm nay hên dữ lắm đó",
+      "vi_runtime": "Hên dữ luôn!",
+      "max_source_two_byte_units": 12,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C64A",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "source_jp": "ハプニングのヨ・カ・ン",
+      "vi_full_reference": "Có linh cảm sắp có chuyện!",
+      "vi_runtime": "Sắp có biến",
+      "max_source_two_byte_units": 11,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C667",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "source_jp": "計画を立ててからね",
+      "vi_full_reference": "Lập kế hoạch trước nhé",
+      "vi_runtime": "Lập kế!",
+      "max_source_two_byte_units": 9,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C680",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "source_jp": "お友達は大切にしなきゃね",
+      "vi_full_reference": "Phải biết quý bạn bè nhé",
+      "vi_runtime": "Quý bạn bè",
+      "max_source_two_byte_units": 12,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C69F",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "source_jp": "一休み、一休み",
+      "vi_full_reference": "Nghỉ thôi, nghỉ thôi",
+      "vi_runtime": "Nghỉ đi",
+      "max_source_two_byte_units": 7,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C6D1",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "source_jp": "ハンカチが幸運のカギだよ",
+      "vi_full_reference": "Khăn tay là chìa khóa may mắn",
+      "vi_runtime": "Khăn tay may",
+      "max_source_two_byte_units": 12,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C6F0",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "source_jp": "消しゴムが幸運のカギだよ",
+      "vi_full_reference": "Cục tẩy là chìa khóa may mắn",
+      "vi_runtime": "Tẩy mang may",
+      "max_source_two_byte_units": 12,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C70F",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "source_jp": "ノートが幸運のカギだよ",
+      "vi_full_reference": "Quyển vở là chìa khóa may mắn",
+      "vi_runtime": "Vở mang may",
+      "max_source_two_byte_units": 11,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C72C",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "source_jp": "今日は  おやつをやめよう",
+      "vi_full_reference": "Hôm nay thôi ăn vặt nhé",
+      "vi_runtime": "Thôi ăn vặt!",
+      "max_source_two_byte_units": 12,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C74B",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "source_jp": "ちびまる子ちゃんをみよう",
+      "vi_full_reference": "Xem Chibi Maruko-chan đi",
+      "vi_runtime": "Xem Maruko!",
+      "max_source_two_byte_units": 12,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C76A",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "source_jp": "フルーツを食べてみて",
+      "vi_full_reference": "Thử ăn trái cây xem",
+      "vi_runtime": "Ăn hoa quả",
+      "max_source_two_byte_units": 10,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C785",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "source_jp": "人には  しんせつに",
+      "vi_full_reference": "Hãy tử tế với mọi người",
+      "vi_runtime": "Tử tế nhé",
+      "max_source_two_byte_units": 9,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C79E",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "source_jp": "北に行こう",
+      "vi_full_reference": "Đi về phía Bắc nào",
+      "vi_runtime": "Bắc",
+      "max_source_two_byte_units": 5,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C7AF",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "source_jp": "西に行こう",
+      "vi_full_reference": "Đi về phía Tây nào",
+      "vi_runtime": "Tây",
+      "max_source_two_byte_units": 5,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C7C0",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "source_jp": "南に行こう",
+      "vi_full_reference": "Đi về phía Nam nào",
+      "vi_runtime": "Nam",
+      "max_source_two_byte_units": 5,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C7D1",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "source_jp": "東に行こう",
+      "vi_full_reference": "Đi về phía Đông nào",
+      "vi_runtime": "Đông",
+      "max_source_two_byte_units": 5,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C7E2",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "source_jp": "はやく  ねたまえ",
+      "vi_full_reference": "Đi ngủ sớm đi nào",
+      "vi_runtime": "Ngủ sớm!",
+      "max_source_two_byte_units": 8,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C7F9",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "source_jp": "かんちがいは  こまるよ",
+      "vi_full_reference": "Hiểu lầm là phiền lắm đó",
+      "vi_runtime": "Đừng lầm!",
+      "max_source_two_byte_units": 11,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C816",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "source_jp": "おとしものにちゅういだよ",
+      "vi_full_reference": "Coi chừng làm rơi đồ",
+      "vi_runtime": "Chớ mất đồ",
+      "max_source_two_byte_units": 12,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C835",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "source_jp": "むしばに  ちゅういだって",
+      "vi_full_reference": "Nhớ coi chừng sâu răng",
+      "vi_runtime": "Sâu răng đó",
+      "max_source_two_byte_units": 12,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C854",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "source_jp": "上には気をつけて",
+      "vi_full_reference": "Cẩn thận phía trên!",
+      "vi_runtime": "Nhìn lên",
+      "max_source_two_byte_units": 8,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C87A",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "source_jp": "まずは宿題さ",
+      "vi_full_reference": "Trước hết làm bài tập đã",
+      "vi_runtime": "Bài đã",
+      "max_source_two_byte_units": 6,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C88D",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "source_jp": "まずは  ひるねだよ",
+      "vi_full_reference": "Trước hết ngủ trưa đã",
+      "vi_runtime": "Ngủ trưa!",
+      "max_source_two_byte_units": 9,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C8A6",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "source_jp": "まずは  おやつさ",
+      "vi_full_reference": "Trước hết ăn vặt đã",
+      "vi_runtime": "Ăn vặt!",
+      "max_source_two_byte_units": 8,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C8BD",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "source_jp": "カラオケが開運のカギだよ",
+      "vi_full_reference": "Karaoke là chìa khóa may mắn",
+      "vi_runtime": "Karaoke hên!",
+      "max_source_two_byte_units": 12,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C8DC",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "source_jp": "ペイントが開運のカギだよ",
+      "vi_full_reference": "Vẽ tranh là chìa khóa may mắn",
+      "vi_runtime": "Vẽ tranh hên",
+      "max_source_two_byte_units": 12,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C8FB",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "source_jp": "クイズが開運のカギだよ",
+      "vi_full_reference": "Đố vui là chìa khóa may mắn",
+      "vi_runtime": "Đố vui hên!",
+      "max_source_two_byte_units": 11,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C918",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "source_jp": "ゲームで開運です",
+      "vi_full_reference": "Chơi game sẽ gặp may",
+      "vi_runtime": "Game đỏ",
+      "max_source_two_byte_units": 8,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C92F",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "source_jp": "もう一度ひいてください",
+      "vi_full_reference": "Hãy rút quẻ thêm lần nữa",
+      "vi_runtime": "Rút quẻ nữa",
+      "max_source_two_byte_units": 11,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C94C",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "source_jp": "ボールが開運のカギ",
+      "vi_full_reference": "Quả bóng là chìa khóa may mắn",
+      "vi_runtime": "Bóng may!",
+      "max_source_two_byte_units": 9,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C965",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "source_jp": "プールが開運のカギ",
+      "vi_full_reference": "Hồ bơi là chìa khóa may mắn",
+      "vi_runtime": "Bơi may!",
+      "max_source_two_byte_units": 9,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C97E",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "source_jp": "ペンキが開運のカギ",
+      "vi_full_reference": "Sơn màu là chìa khóa may mắn",
+      "vi_runtime": "Sơn hên!",
+      "max_source_two_byte_units": 9,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2C997",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "source_jp": "全てあきらめてください",
+      "vi_full_reference": "Xin hãy... từ bỏ tất cả",
+      "vi_runtime": "Bỏ hết đi",
+      "max_source_two_byte_units": 11,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2CA8A",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "source_jp": "みどりいろ",
+      "vi_full_reference": "Xanh lá",
+      "vi_runtime": "Lục",
+      "max_source_two_byte_units": 5,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2CB5D",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "source_jp": "おうどいろ",
+      "vi_full_reference": "Vàng đất",
+      "vi_runtime": "Đất",
+      "max_source_two_byte_units": 5,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    },
+    {
+      "file_offset": "0x2CB6E",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "source_jp": "やまぶきいろ",
+      "vi_full_reference": "Vàng cam",
+      "vi_runtime": "Vàng",
+      "max_source_two_byte_units": 6,
+      "status": "approved_static_048_experimental_not_emulator_reviewed"
+    }
+  ]
+}
