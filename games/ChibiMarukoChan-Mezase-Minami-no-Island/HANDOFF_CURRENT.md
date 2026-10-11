@@ -1,5 +1,20 @@
 # HANDOFF CURRENT — Chibi Maruko-chan SNES Việt hóa
 
+## ACTIVE CONTENT-FIRST CHECKPOINT 041 — 2026-10-11: 21 ACTUAL QUIZ CHOICES ADDED; 92 DIRECT VI FIELDS IN ROM
+
+**Read docs/CONTENT_FIRST_QUIZ_CHECKPOINT_041.md FIRST**, then docs/CONTENT_FIRST_FORTUNE_CHECKPOINT_040.md, docs/CONTENT_FIRST_REAL_UI_ROM_CHECKPOINT_039.md. User asked to finish CONTENT and GRAPHICS first, font after. No 65816/spacing font experiments in 041.
+
+- Starting from exact CLEAN 2MiB Japanese ROM SHA `e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956`, apply exact 040 clean-ROM IPS SHA `2bfdcc64973bc31ce268fa7e68a6118808c633b10d1437b7f811ac290616e580`; base040 ROM SHA `d892c51576c103f5881f1481c65fd2746635d222b1d387f9666cd7f44b1da3ac`.
+- **21 new REAL Quiz answer labels** were encoded in original fixed two-byte CP932 fields (ages, birthdays, classes, floor labels, short answers), preserving original `816F` controls and byte budget. No partial-question scanner artifacts were patched. Five Quiz canonical source files were cross-checked live with 21/21 exact Japanese/full Vietnamese matches. New runtime `translation/runtime/quiz_answers_exact_fit_041.csv`; builder `tools/build_content_first_041_quiz.py`.
+- Current 041 ROM SHA **`56c36cbc8e477d262216d3aa0f06909e09b9929ba0f6f544dccbaa3671bf48fb`**; exact clean-ROM IPS SHA `2117bc6e165f2c86263e74a637b6961a13f79257fccd9f02152a769fe1deb962`, length **22,100B/756 records**. SNES checksum/complement **327D/CD82**. Diff from 040 **132 bytes**, completely inside 21 Quiz fields+checksum.
+- Independent local IPL IPS parser replay with actual exact Japanese ROM => byte-for-byte correct 041 ROM, checksum computed, all other bytes unchanged. Local ZIP **`/mnt/data/Chibi_041_G0G1_92UIFortuneQuiz_Content_First_UNTESTED.zip`** contains IPS + README + two QA reports, **NO copyrighted ROM/fonts**. GitHub builder not run in CI; real game emulator still **NOT TESTED**.
+- Cumulative actual direct text in this branch's trial = **38 menu/VS/quiz UI from 039 +33 Fortune from 040 +21 Quiz answer choices from 041 =92**, plus G0/G1 translated title/credit/mode/start/password graphics from 036. This is NOT all 1,021 meaning rows: most Story/Quiz/Fortune, Karaoke and Credits **not in ROM**. 216 editorial `vi_full` source improvements from 032 were not automatically runtime integrated.
+- **Important discovery for next handoff:** The GitHub repository still contains `translation/source/story_batch01_vi.csv` (123), Story batch02/03 source, and `docs/RUNTIME_STORY_BUILD_027.md` documenting old **328 field** segment-aware insertion, but **NO reproducible story runtime compact CSV / full Story builder in the current GitHub tree**, nor old exact direct-text Build035 binary. Must reconstruct segment-aware safe Story insertion from original ROM/layout; do NOT fill with stilted one-word dialogue to fake completion.
+- G2 rules source offset fix 037 already committed; G3 result asset source still untraced. Actual font visual failure not cleared; user's priority remains font LATER. Avoid requesting user test a partial patch 041.
+
+**NEXT:** Reconstruct real Story text stream boundaries incl. `816F` delimiters, 0E/0F metadata and soft layout spacing from original ROM. Build high-quality compact runtime candidates from canonical `vi_full` where they fit *each frame*; avoid overwriting control bytes or shortening character names. If dialogue cannot fit, research safe text allocation/relocation. Next integrate meaningful Quiz/Fortune from source and G3 result art, then a single LARGE real SNES emulator test.
+
+
 ## ACTIVE CONTENT-FIRST CHECKPOINT 039 — 2026-10-11: REAL G0/G1 + 38 VI DIRECT-UI FIELDS IN ROM
 
 **IMPORTANT: NEW ACTUAL COMBINED LOCAL ROM BUILT**, not historical direct-text Build035. Read `docs/CONTENT_FIRST_REAL_UI_ROM_CHECKPOINT_039.md` FIRST, then 038, 037 and 036. User explicitly wants **all content/graphics first, typography fixes later**.
