@@ -1,5 +1,18 @@
 # HANDOFF CURRENT — Chibi Maruko-chan SNES Việt hóa
 
+## ACTIVE CONTENT-FIRST CHECKPOINT 043 — 2026-10-11: 58 ADDITIONAL ACTUAL STORY RECORDS IN ROM
+
+**READ `docs/CONTENT_FIRST_STORY_CHECKPOINT_043.md` FIRST**, then checkpoint042 and 041. User's standing instruction: **FINISH CONTENT FIRST, FONT LATER**, preserve natural character voices and don't demand repeated tiny tests.
+
+- New **58** manually context-edited Story Batch01 records have been PHYSICALLY WRITTEN to a clean-ROM-based IPS over exact 042 baseline, with **170 original physical line segments and 167 original `81 6F`/`81 A5` line/page controls preserved**. Canonical full `vi_full` texts in `translation/source/story_batch01_vi.csv` remain unchanged; each record in `translation/runtime/story_batch01_safe_segments_043.json` includes source offset, full Vietnamese reference, edited compact runtime lines, exact per-segment capacities. Offsets from 042 are excluded and existing prior patched ROM bytes are explicitly guarded.
+- User-important writing consistency: Maruko/Tama-chan informal speech, Maruo's catchphrase `Nói thẳng ra!`, Hanawa's `Baby`, parents' dialogue and cartoon narration were maintained where old fixed ROM slots permit. Other longer natural canonical dialogue remains pending safe field expansion rather than machine truncation.
+- Exact 043 local binary SHA256 **`45ffca7db5db83bc2734e885ee90c77f33746e2c4a54d1c99f1502f3e992a6ae`**, clean-ROM IPS SHA **`d3cb7ea84067675a5cc12cb4a26f260194b0a6f00ff235f0129460a902a58a50`** (**28,135 bytes / 977 records**); 042 ROM base SHA `901744ff2edb6bbf667e225e68478009f426a4d1358c1c35ccb34cdc29254691`, source Japanese SHA `e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956`.
+- Independent IPS apply to exact clean ROM reproduces entire 2MiB 043 ROM **byte-identical**; 4,144 changed byte positions vs 042 wholly within 58 Story text regions and SNES checksum/complement `E83A/17C5`. All existing Story bank `816F`/`81A5` marker positions untouched. **No font/gfx modifications**.
+- **Cumulative current experiment: 176 direct translated fields =38 UI (039)+33 Fortune (040)+21 Quiz (041)+84 Story (26 in 042 +58 in 043)**, plus first-boot/selection G0/G1 artwork and required `Việt hóa bởi Votri Valley`. Story Batch01 now **84/123 text rows physically patched, 39 still pending**; other Story batches plus G2/G3, longer natural full text and complete Quiz/Fortune remain incomplete. SNES gameplay and old bad font visual appearance **NOT TESTED/FIXED**. Do NOT report release ready.
+- GitHub new reproducibility: `translation/runtime/story_batch01_safe_segments_043.json`, `tools/build_content_first_043_story_58.py`, `docs/CONTENT_FIRST_STORY_CHECKPOINT_043.md`. Local exact IPS `/mnt/data/Chibi_043_Story58_Content_First_UNTESTED.ips` and independent QA JSON in local **`/mnt/data/Chibi_043_G0G1_176Fields_Story58_Content_First_UNTESTED.zip`**. Only patch/source, no copyrighted ROM or TTF committed to GitHub. GitHub CI **not configured**.
+- **NEXT:** handle 39 remaining Batch01 long/exception Story frames with larger capacity proof (or meaningful next safe Batch02 coverage), not another lengthy report. Restore Story Batch02/03 from canonical `vi_full` and exact original script segmentation, no deceptive clipped text. Then G2 rule fix 0x1E325, G3 real result asset. One later comprehensive emulator test. **FONT LAST**.
+
+
 ## ACTIVE CONTENT-FIRST CHECKPOINT 042 — 2026-10-11: 26 REAL STORY DIALOGUE RECORDS PHYSICALLY PATCHED
 
 **READ `docs/CONTENT_FIRST_STORY_CHECKPOINT_042.md` FIRST**, then checkpoint041 for Quiz. **USER DIRECTIVE: complete CONTENT first, font after.** Do not return to 9px/65816 font microtests.
