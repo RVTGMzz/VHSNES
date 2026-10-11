@@ -1,0 +1,34 @@
+file_offset,source_jp,vi_full_reference,vi_runtime,max_units,category,status,notes
+0x2BD28,ねがい事,Điều ước,Ước,4,fortune_heading,runtime_candidate_exact_fit,Short heading within fortune panel
+0x2BD37,金  運,Tài lộc,Lộc,3,fortune_heading,runtime_candidate_exact_fit,Fortune column heading
+0x2BD44,恋愛運,Tình duyên,Yêu,3,fortune_heading,runtime_candidate_exact_fit,Love-fortune column
+0x2BD51,勉強運,Học hành,Học,3,fortune_heading,runtime_candidate_exact_fit,Study-fortune column
+0x2BF31,がっぽりもうかるよ,Sắp kiếm đậm đó,Sắp giàu,9,fortune_message,runtime_candidate_exact_fit,Conversational and context-appropriate
+0x2BFA5,ちょきんが  よしじゃ,Tiết kiệm là nhất,Để dành,10,fortune_message,runtime_candidate_exact_fit,Advice to save money
+0x2C0C3,サイフのひもはかたく,Giữ chặt hầu bao nhé,Giữ ví nhé,10,fortune_message,runtime_candidate_exact_fit,Money caution condensed to keep wallet safe
+0x2C1AE,まよっちゃダメダメ,Đừng có do dự nhé,Chớ do dự,9,fortune_message,runtime_candidate_exact_fit,Do not hesitate in 9 glyphs
+0x2C1C7,じぶんをしんじて！,Tin vào chính mình!,Tự tin đi,9,fortune_message,runtime_candidate_exact_fit,Encouragement
+0x2C1E0,あきらめちゃだめだよ,Đừng bỏ cuộc nhé,Đừng nản!,10,fortune_message,runtime_candidate_exact_fit,Encouragement not to give up
+0x2C2A5,その時まで待つことだね,Cứ chờ đến đúng lúc nhé,Chờ lúc đó,11,fortune_message,runtime_candidate_exact_fit,Wait for the right time
+0x2C2C2,あきらめるべきだね,Có lẽ nên từ bỏ thôi,Nên bỏ đi,9,fortune_message,runtime_candidate_exact_fit,Advice to give up
+0x2C462,まずは復習だよ,Trước hết ôn bài đã,Ôn bài,7,fortune_message,runtime_candidate_exact_fit,Study tip
+0x2C496,ひと休み  しちゃおう,Nghỉ một chút đi,Nghỉ chút,10,fortune_message,runtime_candidate_exact_fit,Advice to take break
+0x2C5A6,今日は  ごちそうだよ！,Hôm nay có món ngon đó!,Có món ngon,11,fortune_message,runtime_candidate_exact_fit,Good meal today
+0x2C61C,歯みがきしてみよう,Thử đánh răng xem,Đánh răng,9,fortune_message,runtime_candidate_exact_fit,Try brushing teeth
+0x2C635,４人集めてみて,Thử rủ đủ 4 người xem,Rủ đủ 4,7,fortune_message,runtime_candidate_exact_fit,Try to gather four players
+0x2C6B4,あわてない、あわてない,"Đừng cuống, đừng cuống",Bình tĩnh!,11,fortune_message,runtime_candidate_exact_fit,Natural anti-panic encouragement
+0x2CA5F,あかいろ,Đỏ,Đỏ,4,lucky_color,runtime_candidate_exact_fit,Red
+0x2CA6E,あおいろ,Xanh dương,Lam,4,lucky_color,runtime_candidate_exact_fit,Blue (compact)
+0x2CA9B,ピンクいろ,Hồng,Hồng,5,lucky_color,runtime_candidate_exact_fit,Pink
+0x2CAAC,みずいろ,Xanh da trời,Biếc,4,lucky_color,runtime_candidate_exact_fit,Light blue / cyan
+0x2CABB,オレンジいろ,Cam,Cam,6,lucky_color,runtime_candidate_exact_fit,Orange
+0x2CACE,くろいろ,Đen,Đen,4,lucky_color,runtime_candidate_exact_fit,Black
+0x2CAEC,きんいろ,Vàng kim,Vàng,4,lucky_color,runtime_candidate_exact_fit,Gold color compact
+0x2CAFB,ぎんいろ,Bạc,Bạc,4,lucky_color,runtime_candidate_exact_fit,Silver
+0x2CB0A,ちゃいろ,Nâu,Nâu,4,lucky_color,runtime_candidate_exact_fit,Brown
+0x2CB19,むらさきいろ,Tím,Tím,6,lucky_color,runtime_candidate_exact_fit,Purple
+0x2CB2C,はだいろ,Màu da,Da,4,lucky_color,runtime_candidate_exact_fit,Skin tone when within color list
+0x2CB3B,はいいろ,Xám,Xám,4,lucky_color,runtime_candidate_exact_fit,Grey
+0x2CB4A,きみどりいろ,Xanh lá mạ,Lá mạ,6,lucky_color,runtime_candidate_exact_fit,Fresh yellow green
+0x2CB81,レモンいろ,Vàng chanh,Chanh,5,lucky_color,runtime_candidate_exact_fit,Lemon yellow in color list
+0x2CB92,ぐんじょういろ,Xanh lam đậm,Lam đậm,7,lucky_color,runtime_candidate_exact_fit,Ultramarine/dark blue
