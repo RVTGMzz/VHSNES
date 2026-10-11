@@ -1,5 +1,20 @@
 # HANDOFF CURRENT — Chibi Maruko-chan SNES Việt hóa
 
+## CHECKPOINT 063 — 2026-10-12: INDEPENDENT PHYSICAL TRIAGE OF REMAINING 102 QUIZ ENTRIES
+
+Read `docs/QUIZ_REMAINING_SOURCE_TRIAGE_063.md` **before** adding more byte patches. The previous 061 snapshot remains **279/381 uniquely staged source IDs; 102 IDs unstaged**. This checkpoint adds **no** counted translations.
+
+Actual exact user-supplied Japanese 2MiB SFC SHA `e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956` has been examined at byte level. All **279** selected Quiz source addresses parsed into **546** original physical writable glyph windows: **zero overlapping staged byte spans**, beyond just zero duplicate addresses. Of the remaining 102 canonical Quiz source IDs: **92 valid native CP932 text starts / 10 unsafe raw start offsets**; of the 92, **10 actually overlap a previously staged larger text record**, while **8 of the 10 unsafe starts lie within already staged text**. There are **82 independent parsable physical source fields** left to address; this does not imply 20 extra translations completed! (20 are nested/unsafe fragments needing parent semantic QA, and two unsafe source positions need script tracing.)
+
+Of those 82 independently parsable fields, only **7** have any native trailing ASCII padding: six previous **UNAPPROVED** 062 text-width experiments, plus `0x34245` (one spare glyph, still insufficient to display Hanawa Akira). The other **75** have no trailing padding; correct rendering/Quiz answer choices need safe interpretation or relocation, **not forced incorrect abbreviations**. Full Japanese and `vi_full` in canonical CSVs are intact.
+
+Original Quiz bank-end has **5,881 consecutive `0xFF` bytes at `0x36907–0x37FFF`** (end-exclusive 0x38000), a possible **UNAPPROVED** area for future relocated strings. No interpreter jump, string pointer model, or in-emulator proof was established. This space is NOT safe to use merely because it contains `FF`; no bytes changed.
+
+New read-only tool `tools/audit_quiz_remaining_063.py` verifies original ROM SHA, all eight canonical source CSVs, stages 041–061, 279 actual original source ranges, remaining 102 inventory, overlap counts, padding, and raw `FF` region. It writes JSON reports only, no IPS/ROM; checked its essential physical counts independently locally on clean SFC. New file `docs/QUIZ_REMAINING_SOURCE_TRIAGE_063.md` details safe/unsafe offsets and next step. Full end-to-end repo checkout execution of the newly committed tool is still pending (connected GitHub source only), so validate script in checkout before acceptance.
+
+**Hard blocker remains** missing raw original 043 clean-ROM IPS SHA `d3cb7ea84067675a5cc12cb4a26f260194b0a6f00ff235f0129460a902a58a50` (old Library ZIP metadata could not be materialized). Consequently no full 061 ROM rebuilt, no emulator QA. User wants **CONTENT FIRST, FONT LAST**, no repeated small patch downloads. Next work: reverse engineer Quiz interpreter/control pointers on original ROM for one reversible long-name example, verify in emulator before treating 82 standalone labels as installable; four Fortune exceptions and G3 screen/result UI after. DO NOT inflate completion count from physically nested scanner fragments.
+
+
 ## CHECKPOINT 061 + PROBE 062 — 2026-10-11: 17 REAL-SOURCE QUIZ FIELDS; 6 UNAPPROVED PADDING PROBES
 
 **READ `docs/QUIZ_061_AND_PADDING_PROBE_062.md` FIRST.**
