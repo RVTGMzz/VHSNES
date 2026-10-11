@@ -184,7 +184,11 @@ def main():
     if len({x.resolve() for x in files})!=len(files):
         p.error("input and output files must be distinct")
     binary,ips,report=build(a.exact_clean_rom.read_bytes(),a.exact_041_ips.read_bytes(),a.project_root)
-    for target,data in ((a.ips,ips),(a.report,(json.dumps(report,indent=2,ensure_ascii=False)+"\n").encode("utf-8")):
+    outputs=[
+        (a.ips,ips),
+        (a.report,(json.dumps(report,indent=2,ensure_ascii=False)+"\n").encode("utf-8")),
+    ]
+    for target,data in outputs:
         target.parent.mkdir(parents=True,exist_ok=True)
         target.write_bytes(data)
     if a.output_rom:
