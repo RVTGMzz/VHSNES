@@ -67,8 +67,8 @@ def build(clean:bytes,base054:bytes,root:Path):
         if (clean[marker:marker+2]!=b"\x81\x6f" or
             base054[marker:marker+2]!=b"\x81\x6f"):
             raise AssertionError("Original G2 line marker missing")
-        prefix=8 if at==0x1e307 else 2
-        if clean[at-prefix:at]!=b" "*prefix or base054[at-prefix:at]!=b" "*prefix:
+        prefix=8 if at==0x1e307 else 4
+        # Real ROM: first field has eight indent spaces; next two each have four.\n        if clean[at-prefix:at]!=b" "*prefix or base054[at-prefix:at]!=b" "*prefix:
             raise AssertionError("Native G2 layout padding missing")
         data=bytearray()
         for char in caption+" "*(cap-len(caption)):
