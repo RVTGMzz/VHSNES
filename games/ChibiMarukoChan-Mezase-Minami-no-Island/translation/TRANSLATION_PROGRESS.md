@@ -1,5 +1,15 @@
 # Translation progress — Chibi Maruko-chan
 
+## LATEST CONTENT-FIRST — CHECKPOINT 042 (2026-10-11)
+
+**New actual binary translated Story: 26 early first-arc dialogue/narrator source records**, preserving 41 physical Story segments and 40 original `816F/81A5` line/page markers. Separate runtime short forms preserve character voices; full canonical `vi_full` and previous review results untouched. Explicitly skipped dynamic raw-ASCII `P` field and scanner artifact; did not guess or truncate lines requiring more than their existing byte budgets.
+
+- Prior checkpoint041 direct fields 92 (38 UI+33 Fortune+21 Quiz) preserved, now **118 total direct-text fields in experimental checkpoint042**; G0/G1 title `Việt hóa bởi Votri Valley` and graphic selection remain unchanged.
+- 042 experimental ROM SHA **`901744ff2edb6bbf667e225e68478009f426a4d1358c1c35ccb34cdc29254691`**, IPS SHA `3e3c3de245a9a0a6648b2e62eff44a72093ef1e2e9cfcb1cf013ff6c4cbb5035`, size 23,105B / 799 records. Independent apply IPS to clean ROM exact SHA; diff vs 041 **794 original byte positions** in approved Story fields plus checksum. Checksum/complement 3988/C677. Entire Story bank `816F`/`81A5` marker locations remain identical.
+- `translation/runtime/story_batch01_safe_segments_042.json`, `tools/build_content_first_042_story_safe_segments.py`, `docs/CONTENT_FIRST_STORY_CHECKPOINT_042.md` pushed. Full source Story Batch01 has 123 records and historical Build027 reported 328 Story fields; only these 26 recreated in this current integration. Many longer dialogues remain Japanese and require segment-aware work and safe expansion; don't count 118 as all Story coverage.
+- **SNES runtime UNTESTED**, font old screenshot fail UNRESOLVED. User wants CONTENT before font, fewer larger tests; not a finished playable release.
+
+
 ## LATEST CONTENT-FIRST 041 — 2026-10-11
 
 - **21 additional actual game Quiz choice fields patched into the 040 ROM baseline**, not just meaning-source CSV edits: 3 answer types, 9 age answers, 3 calendar dates, 3 grade/class answers, 3 floor-choice labels. Clean-ROM source CP932 exactly matched each; 21 original `816F` delimiters intact; all fields fit old two-byte glyph budgets. 21/21 pairs of original Japanese / full Vietnamese checked against 5 canonical Quiz CSVs in live GitHub.
