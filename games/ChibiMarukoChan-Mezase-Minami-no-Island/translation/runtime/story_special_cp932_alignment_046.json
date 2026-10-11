@@ -1,0 +1,313 @@
+{
+  "schema": "chibi.story.046.corrected_cp932_split",
+  "source_clean_sha256": "e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956",
+  "input_045_rom_sha256": "7ddf449c2266838c3d55415f14aeee34fc21334c1ed0a490590647eb75e047b5",
+  "output_046_rom_sha256": "c10c0f444a97d6bea7f8f669d67bb6c0c5b6889b654d99d6e6dfa25e3d061624",
+  "output_046_ips_sha256": "11abac1b8e0f48e6580822bcdcd3b1b3568ae08676020b86c819ae641f53367d",
+  "record_count": 15,
+  "scanner_alias_count": 8,
+  "previous_story_tutorial_rows_already_localized": 3,
+  "notes": "Both trailing bytes of Japanese fullwidth digits and leading CP932 xxF3 special glyphs are protected correctly. All Japanese line/page and script control bytes left identical. Static ROM check only, not emulator.",
+  "records": [
+    {
+      "canonical_scanner_offset": "0x18708",
+      "physical_record_start": "0x18708",
+      "preserve_leading_cp932_hex": "",
+      "original_glyph_capacities": [
+        6,
+        10
+      ],
+      "vi_runtime_lines": [
+        "Hè này",
+        "gặp ai đó!"
+      ],
+      "vi_full_reference": "Mùa hè này... mình có linh cảm sẽ gặp một người thật tuyệt...",
+      "source_file": "translation/source/story_batch01_vi.csv",
+      "status": "static_edited_special_source_not_runtime_qa"
+    },
+    {
+      "canonical_scanner_offset": "0x1873E",
+      "physical_record_start": "0x1873E",
+      "preserve_leading_cp932_hex": "",
+      "original_glyph_capacities": [
+        6
+      ],
+      "vi_runtime_lines": [
+        "Dự cảm"
+      ],
+      "vi_full_reference": "Linh... cảm!",
+      "source_file": "translation/source/story_batch01_vi.csv",
+      "status": "static_edited_special_source_not_runtime_qa"
+    },
+    {
+      "canonical_scanner_offset": "0x1A334",
+      "physical_record_start": "0x1A334",
+      "preserve_leading_cp932_hex": "e6f3",
+      "original_glyph_capacities": [
+        18,
+        17
+      ],
+      "vi_runtime_lines": [
+        "A ha ha!",
+        "Tớ thắng rồi!"
+      ],
+      "vi_full_reference": "A ha ha! Thắng rồi!",
+      "source_file": "translation/source/story_batch01_vi.csv",
+      "status": "static_edited_special_source_not_runtime_qa"
+    },
+    {
+      "canonical_scanner_offset": "0x1A64F",
+      "physical_record_start": "0x1A64C",
+      "preserve_leading_cp932_hex": "",
+      "original_glyph_capacities": [
+        16,
+        1
+      ],
+      "vi_runtime_lines": [
+        "Vòng 2! Cố lên!",
+        ""
+      ],
+      "vi_full_reference": "Sang vòng tiếp theo rồi, cố lên nhé!",
+      "source_file": "translation/source/story_batch02_part1_vi.csv",
+      "status": "static_edited_special_source_not_runtime_qa"
+    },
+    {
+      "canonical_scanner_offset": "0x1A916",
+      "physical_record_start": "0x1A916",
+      "preserve_leading_cp932_hex": "88f3",
+      "original_glyph_capacities": [
+        14
+      ],
+      "vi_runtime_lines": [
+        "A ha... ha..."
+      ],
+      "vi_full_reference": "A ha... a ha... a ha...",
+      "source_file": "translation/source/story_batch02_part1_vi.csv",
+      "status": "static_edited_special_source_not_runtime_qa"
+    },
+    {
+      "canonical_scanner_offset": "0x1B23A",
+      "physical_record_start": "0x1B23A",
+      "preserve_leading_cp932_hex": "",
+      "original_glyph_capacities": [
+        17,
+        1
+      ],
+      "vi_runtime_lines": [
+        "Sakura thua 2 bạn",
+        ""
+      ],
+      "vi_full_reference": "Sakura...",
+      "source_file": "translation/source/story_batch02_part2_vi.csv",
+      "status": "static_edited_special_source_not_runtime_qa"
+    },
+    {
+      "canonical_scanner_offset": "0x1B33A",
+      "physical_record_start": "0x1B33A",
+      "preserve_leading_cp932_hex": "",
+      "original_glyph_capacities": [
+        11,
+        13,
+        1
+      ],
+      "vi_runtime_lines": [
+        "Sakura lại",
+        "đấu 3 chọi 1!",
+        ""
+      ],
+      "vi_full_reference": "Sakura lại...",
+      "source_file": "translation/source/story_batch02_part2_vi.csv",
+      "status": "static_edited_special_source_not_runtime_qa"
+    },
+    {
+      "canonical_scanner_offset": "0x1B51E",
+      "physical_record_start": "0x1B51E",
+      "preserve_leading_cp932_hex": "",
+      "original_glyph_capacities": [
+        14,
+        9,
+        1
+      ],
+      "vi_runtime_lines": [
+        "Sakura lại hạ",
+        "ba người!",
+        ""
+      ],
+      "vi_full_reference": "Sakura lần này...",
+      "source_file": "translation/source/story_batch02_part2_vi.csv",
+      "status": "static_edited_special_source_not_runtime_qa"
+    },
+    {
+      "canonical_scanner_offset": "0x1B620",
+      "physical_record_start": "0x1B620",
+      "preserve_leading_cp932_hex": "",
+      "original_glyph_capacities": [
+        17,
+        14,
+        13,
+        1
+      ],
+      "vi_runtime_lines": [
+        "Sakura hạ ba bạn",
+        "vì mê đảo Nam!",
+        "Cậu hiểu chứ?",
+        ""
+      ],
+      "vi_full_reference": "Sakura đã vượt qua...",
+      "source_file": "translation/source/story_batch02_part2_vi.csv",
+      "status": "static_edited_special_source_not_runtime_qa"
+    },
+    {
+      "canonical_scanner_offset": "0x1BA79",
+      "physical_record_start": "0x1BA76",
+      "preserve_leading_cp932_hex": "",
+      "original_glyph_capacities": [
+        15,
+        1
+      ],
+      "vi_runtime_lines": [
+        "Ước cả hai đi",
+        ""
+      ],
+      "vi_full_reference": "Giá mà cả hai đứa mình cùng được đi thì hay biết mấy.",
+      "source_file": "translation/source/story_batch02_part3_vi.csv",
+      "status": "static_edited_special_source_not_runtime_qa"
+    },
+    {
+      "canonical_scanner_offset": "0x1BDFD",
+      "physical_record_start": "0x1BDFD",
+      "preserve_leading_cp932_hex": "88f3",
+      "original_glyph_capacities": [
+        18
+      ],
+      "vi_runtime_lines": [
+        "A ha... ha ha..."
+      ],
+      "vi_full_reference": "A ha... ha ha...",
+      "source_file": "translation/source/story_batch02_part3_vi.csv",
+      "status": "static_edited_special_source_not_runtime_qa"
+    },
+    {
+      "canonical_scanner_offset": "0x1C47F",
+      "physical_record_start": "0x1C47F",
+      "preserve_leading_cp932_hex": "88f3",
+      "original_glyph_capacities": [
+        18,
+        1
+      ],
+      "vi_runtime_lines": [
+        "A ha... ha ha...",
+        ""
+      ],
+      "vi_full_reference": "A ha... a ha ha...",
+      "source_file": "translation/source/story_batch02_part3_vi.csv",
+      "status": "static_edited_special_source_not_runtime_qa"
+    },
+    {
+      "canonical_scanner_offset": "0x1C661",
+      "physical_record_start": "0x1C661",
+      "preserve_leading_cp932_hex": "faf3",
+      "original_glyph_capacities": [
+        18
+      ],
+      "vi_runtime_lines": [
+        "Aaan, xấu tính!"
+      ],
+      "vi_full_reference": "Aaan, xấu tính quá!",
+      "source_file": "translation/source/story_batch03_part1_vi.csv",
+      "status": "static_edited_special_source_not_runtime_qa"
+    },
+    {
+      "canonical_scanner_offset": "0x1D46A",
+      "physical_record_start": "0x1D46A",
+      "preserve_leading_cp932_hex": "92f3",
+      "original_glyph_capacities": [
+        18,
+        6,
+        1
+      ],
+      "vi_runtime_lines": [
+        "Maru-chan, mừng!",
+        "Yay!",
+        ""
+      ],
+      "vi_full_reference": "Maru-chan, chúc mừng! Tuyệt quá!",
+      "source_file": "translation/source/story_batch03_part2a_vi.csv",
+      "status": "static_edited_special_source_not_runtime_qa"
+    },
+    {
+      "canonical_scanner_offset": "0x1DC33",
+      "physical_record_start": "0x1DC33",
+      "preserve_leading_cp932_hex": "88f3",
+      "original_glyph_capacities": [
+        18,
+        1
+      ],
+      "vi_runtime_lines": [
+        "A ha... ha ha...",
+        ""
+      ],
+      "vi_full_reference": "A ha... ha ha... ha ha...",
+      "source_file": "translation/source/story_batch03_part2b_vi.csv",
+      "status": "static_edited_special_source_not_runtime_qa"
+    }
+  ],
+  "scanner_aliases": [
+    {
+      "scanner_wrong_offset": "0x18408",
+      "parent_real_record": "0x183A7",
+      "source_file": "translation/source/story_batch01_vi.csv",
+      "canonical_vi_full": "...một bạn được chọn để đi.",
+      "reason": "CP932 １ trailing byte 0x50 previously covered by parent Story field 044"
+    },
+    {
+      "scanner_wrong_offset": "0x189EE",
+      "parent_real_record": "0x189B3",
+      "source_file": "translation/source/story_batch01_vi.csv",
+      "canonical_vi_full": "...còn sớm mười năm!",
+      "reason": "CP932 ０ trailing byte 0x4F previously covered by parent Story field 043"
+    },
+    {
+      "scanner_wrong_offset": "0x1A1B0",
+      "parent_real_record": "0x1A18F",
+      "source_file": "translation/source/story_batch01_vi.csv",
+      "canonical_vi_full": "...hai người bọn tôi sẽ thi đấu với cậu!",
+      "reason": "CP932 ３ trailing byte 0x52 previously covered by parent Story field 044"
+    },
+    {
+      "scanner_wrong_offset": "0x1B159",
+      "parent_real_record": "0x1B13C",
+      "source_file": "translation/source/story_batch02_part2_vi.csv",
+      "canonical_vi_full": "...hai người nữa rồi!",
+      "reason": "CP932 ２ trailing byte 0x51 previously covered by parent Story field 044"
+    },
+    {
+      "scanner_wrong_offset": "0x1B245",
+      "parent_real_record": "0x1B23A",
+      "source_file": "translation/source/story_batch02_part2_vi.csv",
+      "canonical_vi_full": "...hình như thua hai người rồi đấy.",
+      "reason": "CP932 ２ trailing byte 0x51 covered by full parent 046"
+    },
+    {
+      "scanner_wrong_offset": "0x1B34D",
+      "parent_real_record": "0x1B33A",
+      "source_file": "translation/source/story_batch02_part2_vi.csv",
+      "canonical_vi_full": "...thi tiếp à? Ghê thật.",
+      "reason": "CP932 １ trailing byte 0x50 covered by full parent 046"
+    },
+    {
+      "scanner_wrong_offset": "0x1B535",
+      "parent_real_record": "0x1B51E",
+      "source_file": "translation/source/story_batch02_part2_vi.csv",
+      "canonical_vi_full": "...hình như thắng ba người rồi nhỉ.",
+      "reason": "CP932 ３ trailing byte 0x52 covered by full parent 046"
+    },
+    {
+      "scanner_wrong_offset": "0x1B631",
+      "parent_real_record": "0x1B620",
+      "source_file": "translation/source/story_batch02_part2_vi.csv",
+      "canonical_vi_full": "...ba người rồi. Cậu không hiểu nó muốn đi đảo phương Nam đến mức nào à?",
+      "reason": "CP932 ３ trailing byte 0x52 covered by full parent 046"
+    }
+  ]
+}
