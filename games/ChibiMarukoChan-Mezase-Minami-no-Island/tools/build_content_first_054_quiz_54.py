@@ -18,7 +18,7 @@ from build_content_first_040_fortune import apply_ips,make_ips
 ROOT=Path(__file__).resolve().parent.parent
 CLEAN_SHA="e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956"
 MANIFEST="translation/runtime/quiz_content_first_54_054.json"
-PREVIEW_IPS_SHA="9f5069f7a105e371a71f9cf8bf5fdd38bae099d774c184a272f9abec9c8908ad"
+PREVIEW_IPS_SHA="792b0ccb6f60b77d6cc93f7ec91f87006e9d17a2c723344379df96731faf7ee9"
 
 def sha(raw:bytes)->str:
     return hashlib.sha256(raw).hexdigest()
@@ -69,7 +69,8 @@ def build(clean:bytes,baseline:bytes,project:Path):
     if (plan["schema"]!="chibi.quiz.content_first.054.v1" or
         plan["source_clean_sha256"]!=CLEAN_SHA or
         plan["candidate_count"]!=54 or len(rows)!=54 or
-        len({r["file_offset"].lower() for r in rows})!=54):
+        len({r["file_offset"].lower() for r in rows})!=54 or
+        plan["clean_ROM_overlay_static_QA"]["text_only_IPS_sha256"]!=PREVIEW_IPS_SHA):
         raise AssertionError("054 editorial source drift")
     used=set()
     for name in ("main_menu_compact_v1.csv","ui_choices_compact_v1.csv",
@@ -83,7 +84,17 @@ def build(clean:bytes,baseline:bytes,project:Path):
             csv_rows(project/"translation/codepage/vi_codepage_v4_fe4_native.csv")}
     if mapped.get(" ")!="8440":
         raise AssertionError("V2 space glyph code drift")
+    canonical={}
+    for filename in ("quiz_batch01_part1_vi.csv","quiz_batch01_part2_vi.csv",
+                     "quiz_batch02_part1_vi.csv"):
+        source_path="translation/source/"+filename
+        for record in csv_rows(project/source_path):
+            key=record["file_offset"].lower()
+            if key in canonical:
+                raise AssertionError("Duplicate canonical Quiz source "+key)
+            canonical[key]=(source_path,record)
     out=bytearray(baseline)
+    preview=bytearray(clean)
     allowed=set()
     markers=set()
     segments_count=0
@@ -92,6 +103,12 @@ def build(clean:bytes,baseline:bytes,project:Path):
         at=int(key,16)
         if key in used:
             raise AssertionError("Previously integrated Quiz/UI field: "+key)
+        source=canonical.get(key)
+        if source is None or (
+            row.get("source_file")!=source[0] or
+            row.get("source_jp_scanner")!=source[1]["source_jp_scanner"] or
+            row.get("vi_full_reference")!=source[1]["vi_full"]):
+            raise AssertionError("Canonical Japanese/Vietnamese Quiz drift: "+key)
         captions=row["vi_runtime_lines"]
         frames,breaks,stop=segments(clean,at)
         if (row["status"]!="clean_rom_source_verified_pending_048_merged_ROM_emulator"
@@ -135,6 +152,7 @@ def build(clean:bytes,baseline:bytes,project:Path):
                 raise AssertionError("Overlapping 054 source spans: "+key)
             allowed.update(physical)
             out[body_start:body_end]=dst
+            preview[body_start:body_end]=dst
         if capacities!=row["expected_capacities"]:
             raise AssertionError("Native line lengths shifted at "+key)
         if baseline[at:stop]!=clean[at:stop]:
@@ -147,6 +165,14 @@ def build(clean:bytes,baseline:bytes,project:Path):
         segments_count+=len(frames)
     if len(allowed)!=2642 or segments_count!=123 or len(markers)!=123:
         raise AssertionError("054 byte/line source inventory changed")
+    # Independently reproduce the exact clean-ROM physical experiment:
+    # every original field and preserved 816F marker must match prior byte QA.
+    preview_ips,preview_records=make_ips(clean,bytes(preview))
+    if (sha(preview_ips)!=PREVIEW_IPS_SHA or
+        len(preview_ips)!=3279 or preview_records!=127 or
+        sha(bytes(preview))!="6df189b94951cafc23cec6bb90fccbf4f1a66307b545f35619d708debd7aa26b" or
+        apply_ips(clean,preview_ips)!=bytes(preview)):
+        raise AssertionError("054 clean ROM physical-translation QA drift")
     text_only=bytes(out)
     text_changes={i for i,(x,y) in enumerate(zip(baseline,text_only)) if x!=y}
     if len(text_changes)!=2636 or text_changes-allowed:
@@ -169,6 +195,9 @@ def build(clean:bytes,baseline:bytes,project:Path):
         "source_clean_sha256":CLEAN_SHA,
         "baseline_048_sha256":sha(baseline),
         "new_Quiz_records":54,
+        "canonical_japanese_and_full_vi_matches":54,
+        "clean_source_preview_IPS_sha256":PREVIEW_IPS_SHA,
+        "clean_source_preview_IPS_records":preview_records,
         "new_physical_text_segments":123,
         "native_line_markers_preserved":len(markers),
         "approved_glyph_source_bytes":len(allowed),
