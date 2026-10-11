@@ -32,13 +32,13 @@ Based on exact original unheadered 2 MiB Japanese cartridge:
 
 - Original SHA256: `e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956`.
 - Exact 043 experimental input ROM SHA256: `45ffca7db5db83bc2734e885ee90c77f33746e2c4a54d1c99f1502f3e992a6ae`.
-- **044 experimental output ROM SHA256: `7f0c7ef92f2c40e0cab7703326c93cf6338d9ae771fef4b43a2350bda0c643fc`.**
-- **044 clean-ROM IPS SHA256: `5b4da16b00f7c38dd1de7f4bd2431479b9b75bd2441f4d122d42d8549e9d9784`.**
-- IPS size **33,901 bytes / 1,195 records**; independent applicator applied directly to exact clean ROM, reproduced exact output SHA256 byte-for-byte.
-- **87 actual Japanese source fields**, with original 8×8/font V2 two-byte glyph layout, all patched into exactly 4,680 original writable bytes (2,340 two-byte glyph units).
+- **044 experimental output ROM SHA256: `2312b9ba52c0cf6ac491e71117d5c537ad7dc61828dc9e87d838826e5165f322`.**
+- **044 clean-ROM IPS SHA256: `823009a95534b851b238efc439fa39c5b8af6af75a97075d1925e98f879c144d`.**
+- IPS size **33,893 bytes / 1,193 records**; independent applicator applied directly to exact clean ROM, reproduced exact output SHA256 byte-for-byte.
+- **87 actual Japanese source fields**, with original 8×8/font V2 two-byte glyph layout, all patched into exactly 4,680 original writable bytes (4,682 byte positions differ when including checksum) (2,340 two-byte glyph units).
 - **214** original `816F` and `81A5` line/page delimiters within the new fields untouched. A scan of the **entire Story bank** `0x18000..0x1DFFF` verified every line/page delimiter stays at the same offset.
-- Actual changed ROM positions vs checkpoint043 **4,680**, restricted to the 87 new Story text spans and checksum. Prior G0/G1 title/credit, 38 UI, 33 Fortune, 21 Quiz and 84 tracked Story records were not overwritten.
-- Cartridge header checksum/complement: `0x2D86 / 0xD279`.
+- Actual changed ROM positions vs checkpoint043 **4,682**, restricted to the 87 new Story text spans and checksum. Prior G0/G1 title/credit, 38 UI, 33 Fortune, 21 Quiz and 84 tracked Story records were not overwritten.
+- Cartridge header checksum/complement: `0x2DC9 / 0xD236`.
 - **NO new font or codepage graphics work**; existing V2 glyphs reused.
 - **SNES emulator runtime NOT TESTED**, no complete localization, no CI PASS asserted.
 
