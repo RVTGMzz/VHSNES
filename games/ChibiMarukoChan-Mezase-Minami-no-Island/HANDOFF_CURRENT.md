@@ -1,5 +1,13 @@
 # HANDOFF CURRENT — Chibi Maruko-chan SNES Việt hóa
 
+## CHECKPOINT 053 — 2026-10-11: 16 CURATED QUIZ ROM-SLOT TRANSLATIONS + GUARDED BUILDER
+
+- Authored `translation/runtime/quiz_content_first_16_053.json`: **16** Quiz source-addressed compact Vietnamese captions, including original Japanese and full canonical Vietnamese text. Covered short trivia/answers (comedy, riddles, driver, six age choices, birthday choices and more). Avoids name mutilation and preserves source-of-truth `vi_full`.
+- Added `tools/build_content_first_053_quiz_16.py`, a fail-closed source-to-ROM builder requiring clean-ROM SHA, previously integrated 048 binary with explicit external expected SHA, original CP932 two-byte exact source, unchanged `816F` terminators, no previously translated 047 overlaps, NFC/old V2 font mapping and approved byte diff plus rechecked clean-based IPS. Does not commit copyrighted ROM.
+- These are **source-reviewed candidates pending ROM byte verification**; no new ROM bytes actually tested, no new emulator PASS. Never count them as physically integrated in 048/053 until the strict builder runs successfully.
+- Local ROM original and 043 IPS unavailable in this session; run full checkpoint049 chain to create exact 048 and determine SHA, then 053 builder. Continue large Quiz/full text/layout engine instead of tiny clipping or font microtests; no intermediate IPS links.
+
+
 ## CHECKPOINT 052 — 2026-10-11: QUIZ 381-ROW PHYSICAL PREFLIGHT
 
 - Fixed actual Python syntax error in `tools/audit_quiz_source_050.py` introduced at checkpoint051 (literal `\\n` was inserted into executable source). The checker can now be parsed; no local execution has yet taken place.
