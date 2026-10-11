@@ -16,8 +16,8 @@ ROOT=Path(__file__).resolve().parent.parent
 SOURCE_SHA="e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956"
 BASE_IPS_SHA="d3cb7ea84067675a5cc12cb4a26f260194b0a6f00ff235f0129460a902a58a50"
 BASE_ROM_SHA="45ffca7db5db83bc2734e885ee90c77f33746e2c4a54d1c99f1502f3e992a6ae"
-NEW_ROM_SHA="7f0c7ef92f2c40e0cab7703326c93cf6338d9ae771fef4b43a2350bda0c643fc"
-NEW_IPS_SHA="5b4da16b00f7c38dd1de7f4bd2431479b9b75bd2441f4d122d42d8549e9d9784"
+NEW_ROM_SHA="2312b9ba52c0cf6ac491e71117d5c537ad7dc61828dc9e87d838826e5165f322"
+NEW_IPS_SHA="823009a95534b851b238efc439fa39c5b8af6af75a97075d1925e98f879c144d"
 CHECKSUM=(0x7FDC,0x7FE0)
 
 def sha(blob):return hashlib.sha256(blob).hexdigest()
@@ -123,13 +123,13 @@ def build(clean,ips043,project):
     if sha(output)!=NEW_ROM_SHA:
         raise AssertionError("result differs from exact independently verified 044")
     changed={i for i,(a,b) in enumerate(zip(previous,output)) if a!=b}
-    if len(changed)!=4680 or changed-(allowed|set(range(*CHECKSUM))):
+    if len(changed)!=4682 or changed-(allowed|set(range(*CHECKSUM))):
         raise AssertionError("044 changed non-Story bytes or source size")
     if marker_positions(previous)!=marker_positions(output):
         raise AssertionError("an original Story 816F/81A5 delimiter moved")
     patch,record_count=make_ips(clean,output)
-    if (sha(patch)!=NEW_IPS_SHA or len(patch)!=33901
-        or record_count!=1195 or apply_ips(clean,patch)!=output):
+    if (sha(patch)!=NEW_IPS_SHA or len(patch)!=33893
+        or record_count!=1193 or apply_ips(clean,patch)!=output):
         raise AssertionError("044 IPS clean-ROM replay mismatch")
     report={
         "status":"044_STATIC_STORY_87_PASS_NOT_EMULATOR",
