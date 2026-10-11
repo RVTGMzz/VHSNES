@@ -1,0 +1,47 @@
+name: Chibi SNES source localization checks
+
+on:
+  push:
+    branches:
+      - chibi-maruko-bootstrap-01
+    paths:
+      - 'games/ChibiMarukoChan-Mezase-Minami-no-Island/**'
+      - '.github/workflows/chibi-snes-source-qa.yml'
+  pull_request:
+    paths:
+      - 'games/ChibiMarukoChan-Mezase-Minami-no-Island/**'
+      - '.github/workflows/chibi-snes-source-qa.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository sources
+        uses: actions/checkout@v4
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check Python syntax without importing game binaries
+        run: python -m compileall -q games/ChibiMarukoChan-Mezase-Minami-no-Island/tools
+      - name: Verify all 381 Quiz sources and 279 unique staged records
+        working-directory: games/ChibiMarukoChan-Mezase-Minami-no-Island
+        run: python tools/audit_quiz_unique_061.py
+      - name: Verify 150 original answer offsets and 81 full-Vietnamese pending choices
+        working-directory: games/ChibiMarukoChan-Mezase-Minami-no-Island
+        run: python tools/audit_quiz_repo_no_rom_070.py
+      - name: Confirm no ROM or game-font binaries committed to source folder
+        run: |
+          if find games/ChibiMarukoChan-Mezase-Minami-no-Island \
+              -type f \( -iname '*.sfc' -o -iname '*.smc' \
+              -o -iname '*.rom' -o -iname '*.ips' \) \
+              -print -quit | grep -q .; then
+            echo 'Refusing copyrighted ROM or unreviewed IPS binary in source branch'
+            exit 1
+          fi
+          echo 'Source-only CI checks completed'
