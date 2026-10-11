@@ -14,12 +14,12 @@ ROOT=Path(__file__).resolve().parent.parent
 
 def run(clean:bytes,exact043:bytes,project:Path):
     ips057,qa057=build057(clean,exact043,project)
-    rom058=apply_ips(clean,ips058)
-    if sha(rom056)!=qa057["result_057_ROM_sha256"]:
+    rom057=apply_ips(clean,ips057)
+    if sha(rom057)!=qa057["result_057_ROM_sha256"]:
         raise AssertionError("Earlier checkpoint057 merged ROM SHA mismatch")
     ips058,qa058=build058(clean,rom057,project)
-    rom057=apply_ips(clean,ips057)
-    if sha(rom057)!=qa058["final_ROM_sha256"]:
+    rom058=apply_ips(clean,ips058)
+    if sha(rom058)!=qa058["final_ROM_sha256"]:
         raise AssertionError("Checkpoint058 clean IPS replay mismatch")
     return ips058,{
         "status":"FULL_043_THROUGH_058_STATIC_VERIFIED_NOT_EMULATOR",
@@ -30,6 +30,7 @@ def run(clean:bytes,exact043:bytes,project:Path):
         "emulator_tested":False,
         "fully_translated_game":False,
     }
+
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument("clean_japanese_rom",type=Path)
