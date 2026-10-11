@@ -1,5 +1,16 @@
 # Translation progress — Chibi Maruko-chan
 
+## NEW LARGE CONTENT BATCH — CHECKPOINT 044 (2026-10-11)
+
+**87 new actual on-ROM Story dialogue/narrator replacements** from clean→043→044: **33 Batch01 + 54 Batch02**, with **214 original line/page control marker positions unchanged inside records**, entire original Story bank marker locations unchanged, and canonical full `vi_full` left intact. Separate compact runtime lines retain Maruko/Tamae, Hanawa `Baby`, Maruo `Nói thẳng ra!`, family and narration distinctions. No glyph/font changes. All edits confined to exact verified original text spans.
+
+**CORRECTION to former progress reports:** Story Batch01 canonical source has **126 rows, not 123**. 042/043 explicitly patched 84; this round patches 33 more =117 tracked, and 3 *older pretranslated tutorial records* already present in 043 were identified separately (not touched or double-counted). Thus **120/126 Batch01** contain Vietnamese two-byte glyphs statically, **6 remain**. Batch02 **54/126** added, 72 remain. Batch03 still not rebuilt in current integrated sequence. There are **263 tracked directly localized ROM source fields** across UI, Fortune, Quiz and Story (176 old +87 this round), plus 3 earlier separately identified tutorial lines and G0/G1 graphics. These are not an assertion of all visible game text localized.
+
+ROM044 SHA `7f0c7ef92f2c40e0cab7703326c93cf6338d9ae771fef4b43a2350bda0c643fc`; exact CLEAN Japanese IPS SHA `5b4da16b00f7c38dd1de7f4bd2431479b9b75bd2441f4d122d42d8549e9d9784`, 33,901B /1,195 records. Offline reconstruction from original clean ROM matches output SHA byte-for-byte. Actual changed bytes vs 043 **4,680** in whitelisted fields and checksum, original 816F/81A5 Story controls untouched, checksum **2D86/D279**. GitHub `translation/runtime/story_batch01_02_content_first_044.json`, `tools/build_content_first_044_story_87.py`, `docs/CONTENT_FIRST_LARGE_STORY_CHECKPOINT_044.md`.
+
+User said: **too slow, stop tiny checkpoints and repeated IPS download links**. Future updates should do bigger Batch02/03 work and send status GitHub only, no test IPS downloads until a genuinely comprehensive build. Actual gameplay emulator still NOT TESTED; font user-visible quality still unresolved, FONT AFTER CONTENT.
+
+
 ## NEW — CHECKPOINT 043 CONTENT-FIRST STORY EXPANSION (2026-10-11)
 
 - **58 more real, player-facing Story Batch01 records** actually encoded into a new ROM experiment over checkpoint042, organized into 170 raw physical source segments and preserving 167 original line/page markers `816F`/`81A5` in those records. Markers throughout Story bank 0x18000..0x1DFFF remain unchanged. Speaker expressions `Maru-chan`, `Tama-chan`, Maruo's `Nói thẳng ra!`, Hanawa's `Baby` retained. Canonical full Vietnamese `vi_full` text is untouched; separate compact candidates remain subject to runtime editorial/screenshot QA.
