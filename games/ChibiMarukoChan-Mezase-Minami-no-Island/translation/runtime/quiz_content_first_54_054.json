@@ -1,0 +1,698 @@
+{
+  "schema": "chibi.quiz.content_first.054.v1",
+  "source_clean_sha256": "e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956",
+  "base_stage": "full_integrated_048",
+  "candidate_count": 54,
+  "physical_segments": 123,
+  "source_byte_slots": 2642,
+  "clean_ROM_overlay_static_QA": {
+    "source_fields": 54,
+    "control_816F_preserved": 123,
+    "changed_bytes": 2636,
+    "text_only_IPS_sha256": "9f5069f7a105e371a71f9cf8bf5fdd38bae099d774c184a272f9abec9c8908ad",
+    "checksum_rebuilt": false,
+    "emulator_tested": false
+  },
+  "historical_053_correction": "15/16 old 053 Quiz entries duplicate 041; only 0x340C0 is additional and is included here once.",
+  "source_note": "Canonical full Vietnamese remains in translation/source/*.csv; these compact runtime captions are a separate editorial layer. Manual gameplay polish pending.",
+  "records": [
+    {
+      "file_offset": "0x34009",
+      "vi_runtime_lines": [
+        "Cặp Fujiki",
+        "rất ăn ý!"
+      ],
+      "expected_capacities": [
+        12,
+        14
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x340C0",
+      "vi_runtime_lines": [
+        "...là gì?"
+      ],
+      "expected_capacities": [
+        10
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x34073",
+      "vi_runtime_lines": [
+        "Noguchi ít nói",
+        "ai cũng tò mò"
+      ],
+      "expected_capacities": [
+        14,
+        13
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x34116",
+      "vi_runtime_lines": [
+        "",
+        "Noguchi mê",
+        "hài kịch!"
+      ],
+      "expected_capacities": [
+        0,
+        11,
+        11
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x34161",
+      "vi_runtime_lines": [
+        "Cô ấy còn hay",
+        "chọc quê",
+        "sắc lẻm!"
+      ],
+      "expected_capacities": [
+        13,
+        8,
+        8
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x341D5",
+      "vi_runtime_lines": [
+        "Cậu ấm Hanawa",
+        "tên thật gì?"
+      ],
+      "expected_capacities": [
+        14,
+        12
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x342C5",
+      "vi_runtime_lines": [
+        "Migiwa thích",
+        "cậu ấy",
+        "lắm."
+      ],
+      "expected_capacities": [
+        13,
+        8,
+        4
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x34337",
+      "vi_runtime_lines": [
+        "Hanawa giỏi cả",
+        "piano, violin"
+      ],
+      "expected_capacities": [
+        14,
+        13
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x34382",
+      "vi_runtime_lines": [
+        "Mẹ mấy tuổi"
+      ],
+      "expected_capacities": [
+        11
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x343D2",
+      "vi_runtime_lines": [
+        "Mẹ Hanawa",
+        "mới 29 tuổi!",
+        "làm ở xa"
+      ],
+      "expected_capacities": [
+        12,
+        14,
+        12
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x34443",
+      "vi_runtime_lines": [
+        "Hiếm gặp mẹ",
+        "Hanawa",
+        "vẫn cố!"
+      ],
+      "expected_capacities": [
+        14,
+        6,
+        7
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x344D1",
+      "vi_runtime_lines": [
+        "Hanawa mê quán",
+        "sushi nào?"
+      ],
+      "expected_capacities": [
+        14,
+        12
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x34558",
+      "vi_runtime_lines": [
+        "Quán sushi",
+        "Ishimatsu",
+        "Hanawa ăn"
+      ],
+      "expected_capacities": [
+        12,
+        12,
+        12
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x345BF",
+      "vi_runtime_lines": [
+        "Giá quá",
+        "cao, ông",
+        "Tomozo"
+      ],
+      "expected_capacities": [
+        9,
+        8,
+        6
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x3460E",
+      "vi_runtime_lines": [
+        "tiêu hết",
+        "đấy!"
+      ],
+      "expected_capacities": [
+        8,
+        4
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x3464F",
+      "vi_runtime_lines": [
+        "Hamaji lắm trò",
+        "cả lớp đồn"
+      ],
+      "expected_capacities": [
+        14,
+        13
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x3469A",
+      "vi_runtime_lines": [
+        "Đồn với ai?"
+      ],
+      "expected_capacities": [
+        13
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x346F8",
+      "vi_runtime_lines": [
+        "Quà Maruko",
+        "'I LOVE YOU'",
+        "khiến bị đồn"
+      ],
+      "expected_capacities": [
+        11,
+        13,
+        13
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x34761",
+      "vi_runtime_lines": [
+        "Hamaji bị đồn",
+        "cả ở nhà",
+        "'mặt hài'"
+      ],
+      "expected_capacities": [
+        14,
+        10,
+        11
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x347C4",
+      "vi_runtime_lines": [
+        "Hama-jin",
+        "mà Hamaji",
+        "chả rõ"
+      ],
+      "expected_capacities": [
+        10,
+        9,
+        7
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x3482D",
+      "vi_runtime_lines": [
+        "Hamaji đổi",
+        "món gì lấy"
+      ],
+      "expected_capacities": [
+        12,
+        12
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x34876",
+      "vi_runtime_lines": [
+        "vé Momoe",
+        "vậy?"
+      ],
+      "expected_capacities": [
+        9,
+        5
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x348D6",
+      "vi_runtime_lines": [
+        "Hamaji đổi",
+        "sữa cà phê lấy",
+        "vé Momoe rồi!"
+      ],
+      "expected_capacities": [
+        11,
+        14,
+        13
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x34941",
+      "vi_runtime_lines": [
+        "Cậu chẳng tham",
+        "đâu!"
+      ],
+      "expected_capacities": [
+        14,
+        4
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x34997",
+      "vi_runtime_lines": [
+        "Hideji lái",
+        "như người cha"
+      ],
+      "expected_capacities": [
+        12,
+        13
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x34A2E",
+      "vi_runtime_lines": [
+        "Ông Hideji",
+        "thương Maruko",
+        "như Hanawa",
+        "68 tuổi"
+      ],
+      "expected_capacities": [
+        11,
+        13,
+        12,
+        7
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x34AD1",
+      "vi_runtime_lines": [
+        "Buutaro ồn ào",
+        "muốn làm nghề"
+      ],
+      "expected_capacities": [
+        13,
+        13
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x34B1E",
+      "vi_runtime_lines": [
+        "Mơ gì?"
+      ],
+      "expected_capacities": [
+        8
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x34B74",
+      "vi_runtime_lines": [
+        "",
+        "hay buu buu",
+        "thương em"
+      ],
+      "expected_capacities": [
+        0,
+        13,
+        11
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x34BBF",
+      "vi_runtime_lines": [
+        "Ước làm",
+        "cầu thủ",
+        "bóng chày"
+      ],
+      "expected_capacities": [
+        8,
+        8,
+        10
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x34C33",
+      "vi_runtime_lines": [
+        "Bạn Nagasawa",
+        "môi xanh lè"
+      ],
+      "expected_capacities": [
+        13,
+        11
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x34C7C",
+      "vi_runtime_lines": [
+        "Fujiki tên",
+        "gì nhỉ?"
+      ],
+      "expected_capacities": [
+        11,
+        7
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x34CF0",
+      "vi_runtime_lines": [
+        "Fujiki từng",
+        "gửi thư rủi",
+        "cho Maruko"
+      ],
+      "expected_capacities": [
+        12,
+        14,
+        12
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x34D5B",
+      "vi_runtime_lines": [
+        "Bạn Nagasawa",
+        "bị cậu",
+        "dắt mũi"
+      ],
+      "expected_capacities": [
+        12,
+        7,
+        7
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x34DAC",
+      "vi_runtime_lines": [
+        "luôn"
+      ],
+      "expected_capacities": [
+        4
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x34DD5",
+      "vi_runtime_lines": [
+        "Maruko đến đảo",
+        "gặp Pusadi"
+      ],
+      "expected_capacities": [
+        14,
+        13
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x34E24",
+      "vi_runtime_lines": [
+        "Cô ấy tặng",
+        "gì?"
+      ],
+      "expected_capacities": [
+        13,
+        3
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x34E84",
+      "vi_runtime_lines": [
+        "Pusadi hiền",
+        "làm Maruko vui",
+        "lắm!"
+      ],
+      "expected_capacities": [
+        13,
+        14,
+        6
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x34F3E",
+      "vi_runtime_lines": [
+        "Maruko khóc òa"
+      ],
+      "expected_capacities": [
+        14
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x34F7B",
+      "vi_runtime_lines": [
+        "Fuyuta ở lớp",
+        "đang yêu ai?"
+      ],
+      "expected_capacities": [
+        13,
+        13
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x34FC8",
+      "vi_runtime_lines": [
+        "Cô thích cậu",
+        "nào vậy?"
+      ],
+      "expected_capacities": [
+        13,
+        10
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x3503C",
+      "vi_runtime_lines": [
+        "Fuyuta mê",
+        "tem mặt ngộ",
+        "và thích Ono"
+      ],
+      "expected_capacities": [
+        13,
+        14,
+        13
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x350AD",
+      "vi_runtime_lines": [
+        "Ngày Valentine",
+        "chocolate",
+        "qua cô"
+      ],
+      "expected_capacities": [
+        14,
+        9,
+        9
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x3510A",
+      "vi_runtime_lines": [
+        "tới ông",
+        "chả rõ"
+      ],
+      "expected_capacities": [
+        9,
+        7
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x35157",
+      "vi_runtime_lines": [
+        "Maruo mê",
+        "lớp trưởng!"
+      ],
+      "expected_capacities": [
+        12,
+        12
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x3519C",
+      "vi_runtime_lines": [
+        "Sinh nhật?",
+        "bao giờ"
+      ],
+      "expected_capacities": [
+        11,
+        7
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x3521E",
+      "vi_runtime_lines": [
+        "Maruo Sueo",
+        "hay ra oai quá",
+        "mà rất nghiêm"
+      ],
+      "expected_capacities": [
+        13,
+        14,
+        14
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x3528F",
+      "vi_runtime_lines": [
+        "Sinh 31/12",
+        "nên tên",
+        "là Sueo!"
+      ],
+      "expected_capacities": [
+        14,
+        10,
+        9
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x3531F",
+      "vi_runtime_lines": [
+        "Mẹ Maruo lo",
+        "con làm trưởng"
+      ],
+      "expected_capacities": [
+        13,
+        14
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x3536A",
+      "vi_runtime_lines": [
+        "Mẹ chịu khó",
+        "mấy tuổi?"
+      ],
+      "expected_capacities": [
+        14,
+        10
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x353D6",
+      "vi_runtime_lines": [
+        "Mẹ Maruo 49",
+        "rất hiền nhưng",
+        "cậu muốn mẹ"
+      ],
+      "expected_capacities": [
+        14,
+        14,
+        13
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x354E1",
+      "vi_runtime_lines": [
+        "Kính Maruo",
+        "xoáy?"
+      ],
+      "expected_capacities": [
+        12,
+        6
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x3552F",
+      "vi_runtime_lines": [
+        "Phải"
+      ],
+      "expected_capacities": [
+        4
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    },
+    {
+      "file_offset": "0x3553E",
+      "vi_runtime_lines": [
+        "Trái"
+      ],
+      "expected_capacities": [
+        5
+      ],
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+    }
+  ]
+}
