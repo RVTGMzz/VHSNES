@@ -1,5 +1,17 @@
 # HANDOFF CURRENT — Chibi Maruko-chan SNES Việt hóa
 
+## CHECKPOINT 056 — 2026-10-11: TWO REAL-SOURCE FORTUNE EXCEPTIONS + G2 BUILD BUG FIX
+
+**Read `docs/CONTENT_FIRST_FORTUNE_EXCEPTIONS_056.md` before editing!** Actual mounted clean Japanese 2MiB ROM hash matched `e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956`.
+
+- Completed **2 of 6** formerly excluded Fortune original text fields as exact CP932 static source-only overlays: `0x2C413` **体育が開運のカギ -> Vận động** (8 cells) and `0x2C601` **プリンを食べてみよう -> Ăn pudding** (10 cells). The canonical full `vi_full` strings remain unchanged. Both original `81 6F` terminators preserved. 36/36 source text bytes changed under whitelist; independent original-ROM IPS replay PASS. QA-only text overlay: **54B /2 records**, SHA `84e30fe4f1bad5621934de99dcc9e0c3a11efd64152f36af676b42e56eca31be`. No altered font or game ROM shared; QA-only overlay is NOT playable.
+- Four **genuine capacity exceptions** retained for safe display-slot relocation, **not gibberish abbreviations**: `0x2BD5E` Heaven's voice, `0x2C86B` see you next week, `0x2CA7D` Yellow, `0x2CADD` White. Full original Vietnamese maintained in canonical Fortune source files. Conditional Fortune physical count would become **153/157**, not yet built or emulator-tested.
+- Fixed a **real guard error in 055**: native G2 line padding is 8 / **4 / 4** ASCII spaces, not 8/2/2; corrected `tools/build_content_first_055_g2_rules.py`. Original clean ROM bytes at all 3 positions personally checked.
+- GitHub source: `translation/runtime/fortune_exceptions_2_056.json`, `tools/build_content_first_056_fortune_2.py`, `tools/rebuild_content_first_056_full_chain.py`, plus QA doc. No old checkpoint043 IPS bytes accessible; Library's 043 ZIP and Probe008 ROM raw materialization both denied. **Full 056 integrated ROM NOT built; SNES emulator NOT TESTED.**
+- When exact 043 clean-ROM IPS available (SHA `d3cb7ea84067675a5cc12cb4a26f260194b0a6f00ff235f0129460a902a58a50`), run `python tools/rebuild_content_first_056_full_chain.py clean.sfc checkpoint043.ips --ips final056.ips --report qa056.json --allow-untested`.
+- Continue **content first**, especially remaining 291 Quiz source entries and 4 long Fortune fields and G3 graphics, then font/renderer QA. Avoid mini-patch downloads and repeated empty checkpoint claims.
+
+
 ## CHECKPOINT 055 — 2026-10-11: G2 RULES TRANSLATED, QUIZ 054 EDITORIAL QA
 
 Read `docs/CONTENT_FIRST_G2_RULES_CHECKPOINT_055.md`.
