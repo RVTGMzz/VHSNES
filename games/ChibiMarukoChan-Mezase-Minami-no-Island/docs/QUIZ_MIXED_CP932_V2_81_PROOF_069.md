@@ -42,6 +42,12 @@ A fresh independent Python implementation tested all **81 pending original Quiz 
 
 This test **does not touch the original ROM file** and creates no downloadable game ROM/IPS. The local QA is in `/mnt/data/chibi069_mixed_qa.json` for this session; the GitHub repository contains only the reproducible *source code* and documentation.
 
+## Separate display-width hazard audit
+
+A second original-ROM check compared **each original Japanese answer's real CP932 glyph count**, excluding native ASCII padding, to its full Vietnamese caption length. **All 81 relocated captions are longer than their original glyph cells.** Forty-three contain more than 10 glyphs, 15 contain more than 14, one contains 23. Examples: `Trường Tiểu học Shimizu` requires 23 characters versus five original glyphs; `Chiếc mặt nạ kỳ quặc` needs 20 versus four; each annotated `Nagasawa Kazuo` needs 19 versus four.
+
+This is an explicit **screen-layout / highlight / selection risk**: proving that pointers and enough ROM bytes exist does not demonstrate that 23 glyphs can render within the original one-line Quiz choice width. The committed 069 planner now fails closed if the 81 genuine source-width increases or the longest-caption distribution changes. **Do not approve or bulk-ship 81 answers until an emulator-visible rendering and answer-navigation test is passed.**
+
 ## GitHub tools added
 
 `tools/plan_quiz_long_answers_069_mixed.py` extends the verified 068 algorithm to include only the three whitelisted original CP932 Kanji, checking that they exist as native bytes in the retail ROM and that both full Nagasawa name alternatives remain distinguishable. It pins 81 relocated records, exact pointer changes, stored-byte bounds, unchanged original text, recomputed checksum, patch record count, and all SHA256 digests. **No binary output is emitted.** It stops on any ROM SHA mismatch or any unexpected glyph/collision.
