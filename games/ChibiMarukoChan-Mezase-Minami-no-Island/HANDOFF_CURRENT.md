@@ -1,5 +1,24 @@
 # HANDOFF CURRENT — Chibi Maruko-chan SNES Việt hóa
 
+## ACTIVE CHECKPOINT 047 — 2026-10-11: STORY SCANNER FIX +45 ACTUAL ROM TEXT PATCHES
+
+**READ `docs/CONTENT_FIRST_STORY_ALIGN_AND_QUIZ_FORTUNE_CHECKPOINT_047.md` FIRST**, then 045. User has repeatedly insisted on **CONTENT-FIRST, FONT LATER**, no endless tiny checkpoints and **NO UNREQUESTED INTERMEDIATE IPS/ZIP DOWNLOAD LINKS**. Push edits and reproducible tools to GitHub, do not ask user to test every mini-build.
+
+**MAJOR CORRECTION:** 23 apparently untranslated Story source CSV rows at 045 were not 23 unique on-ROM text windows. **8 scanner offsets incorrectly begin in the second CP932 byte of Japanese fullwidth `０/１/２/３`**, misread as Latin `O/P/Q/R`: 4 were already translated within prior 043/044 full-parent fields, and 4 must be translated by writing their complete real parent (not a bad half-glyph). Three tutorial Story lines at 181CC/18245/182BE were already localized. **15 unique physical Story records actually required new patches**. Some begin suspicious 2-byte `E6F3/88F3/FAF3/92F3` glyph-like prefixes: **PRESERVED exactly**, only following original text glyphs rewritten; do not assume definitively these prefix bytes are renderer metadata without runtime proof.
+
+**REAL ROM046:** 15 newly patched Story physical records, 31 original native spans, 30 original page/line markers kept, zero changes to other data except checksum. 616 writable glyph bytes; 620 actually different bytes vs045. Exact ROM SHA **`c10c0f444a97d6bea7f8f669d67bb6c0c5b6889b654d99d6e6dfa25e3d061624`**; original-clean IPS SHA **`11abac1b8e0f48e6580822bcdcd3b1b3568ae08676020b86c819ae641f53367d`**, 44,450 bytes/1,599 records; checksum/complement F71E/08E1.
+
+**ALL STORY SOURCE ROWS NOW ACCOUNTED FOR AT STATIC FIELD LEVEL**: GitHub live recomputed 7 canonical CSV sources **336 rows** and checked set equality against previous 042/043/044/045 manifest offsets (310 rows) + 15 new 046 true records + 8 false scanner alias offsets + 3 previously localized tutorial rows = **336/336**, zero unknown/extra. Distinct original physical Story records patched = 310+15+3 = **328**. This is NOT in-game user testing and NOT proof no visible Story beyond source CSVs.
+
+**REAL ROM047:** +30 further original direct-text slots **15 Quiz +15 Fortune** (numeric birthdates/ages/classes/prices, ten luck digits/three large numbers, `Gọi thử!`, `Văn hên!`). Original Japanese CP932 source exact, length and `816F` terminator intact, V2 old font unchanged; 222 approved glyph bytes, 174 actual changed positions vs046 incl. checksum. Final ROM SHA **`1f6430064b70671a4f3ba94f0fd256764db54690950519c22d9e03ec74230dd9`**, clean-ROM IPS SHA **`725ca433dfeb919bd19bde6903a1e2e7d95cde1889980677863724007090cd6c`**, **44,980 bytes/1,671 records**, checksum **EB53/14AC**. Another separately implemented clean-ROM IPS decoder applied all patch records to exact Japanese ROM and reproduced full 2MiB ROM/ SHA and checksum (PASS).
+
+**CURRENT TRIAL COUNTS:** 38 original UI direct slots + **48 Fortune** (33+15) + **36 Quiz** (21+15) + **328 distinct Story** = **450 translated direct text fields** in experimental ROM; separate G0/G1 actual Vietnamese artwork including `Việt hóa bởi Votri Valley` retained. **Not complete game**: Quiz canonical source has 381 rows, Fortune 157, and many longer questions/messages not integrated. G2 rules and G3 result assets still pending. Real emulator NOT TESTED; user previously reported poor V2 font, **FONT FIX AFTER CONTENT**.
+
+**NEW ON GITHUB:** `translation/runtime/story_special_cp932_alignment_046.json`, `tools/build_content_first_046_story_special.py`, `translation/runtime/quiz_fortune_exactfit_047.json`, `tools/build_content_first_047_quiz_fortune_30.py`, `docs/CONTENT_FIRST_STORY_ALIGN_AND_QUIZ_FORTUNE_CHECKPOINT_047.md`. Source code uses pinned exact ROM and IPS SHA, aliases and native width guards. Local working files `/mnt/data/chibi046_local.sfc`, `/mnt/data/chibi046_local.ips`, `/mnt/data/chibi047_local.sfc`, `/mnt/data/chibi047_local.ips`, `/mnt/data/chibi046_story_static.json`, `/mnt/data/chibi047_static_qa.json`; DO NOT UPLOAD copyrighted ROM/TTF or send intermediate IPS links. GitHub CI not run; static/local verify only.
+
+**NEXT MEANINGFUL WORK:** Quiz and Fortune full text records that need field expansion/wrapping; prioritise substantial content and keep complete `vi_full` translation. Then G2 real direct rule text and actual G3 result render assets. Do not return to minute 9px/65816 font tweaks until content is done. ONE meaningful full emulator QA when genuinely integrated.
+
+
 ## ACTIVE CHECKPOINT 045 — 2026-10-11: +139 ACTUAL STORY B02/B03, 313/336 STATIC COVERAGE
 
 **USER explicitly dislikes month-long drip-feed and piecemeal IPS links. DO NOT SEND INTERMEDIATE IPS/ZIP LINKS.** Prioritize LARGE content edits and true ROM builds, font later. Read `docs/CONTENT_FIRST_STORY_BATCH02_03_CHECKPOINT_045.md` first, plus 044 below.
