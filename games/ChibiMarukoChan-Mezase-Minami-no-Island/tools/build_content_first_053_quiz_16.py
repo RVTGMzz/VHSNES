@@ -19,6 +19,7 @@ def load_csv(p):
     with p.open(encoding="utf-8-sig",newline="") as f:return list(csv.DictReader(f))
 
 def build(clean,base,root):
+    raise RuntimeError("DEPRECATED: 15/16 entries here were already translated in 041. Use guarded rebuild_content_first_054_full_chain.py instead.")
     if len(clean)!=0x200000 or sha(clean)!=CLEAN_SHA or len(base)!=len(clean):
         raise ValueError("Need exact clean 2MiB Japanese ROM and same-size full 048")
     manifest=json.loads((root/"translation/runtime/quiz_content_first_16_053.json").read_text(encoding="utf-8"))
