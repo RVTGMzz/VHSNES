@@ -1,7 +1,7 @@
 {
   "schema": "chibi.quiz.content_first.053.v1",
   "base_checkpoint": "048",
-  "state": "16_source_candidates_original_clean_ROM_CP932_and_816F_verified_2026_10_11_pending_048_merger_and_emulator",
+  "state": "SUPERSEDED_054_DO_NOT_BUILD_AS_16_NEW_ENTRIES",
   "not_patched": true,
   "policy": "Exact original CP932 length, 816F delimiter, untouched baseline glyph bytes, NFC, assigned existing V2 code, keep canonical vi_full and semantic meaning; no auto-truncation.",
   "records": [
@@ -163,5 +163,12 @@
     "leading_trailing_ASCII_layout_checked": true,
     "physical_048_053_merge": "NOT_EXECUTED",
     "emulator": "NOT_TESTED"
+  },
+  "historical_correction": {
+    "previous_053_count": 16,
+    "already_integrated_in_041": 15,
+    "unique_053_entry": "0x340C0",
+    "where_integrated": "translation/runtime/quiz_content_first_54_054.json",
+    "replacement_builder": "tools/rebuild_content_first_054_full_chain.py"
   }
 }
