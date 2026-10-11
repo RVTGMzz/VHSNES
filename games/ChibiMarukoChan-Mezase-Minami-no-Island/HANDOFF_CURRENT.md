@@ -1,5 +1,13 @@
 # HANDOFF CURRENT — Chibi Maruko-chan SNES Việt hóa
 
+## CHECKPOINT 050 — 2026-10-11: QUIZ SOURCE TRIAGE TOOL ADDED
+
+- Confirmed accessible canonical Quiz Batch01/02/03 source CSVs, six files. Source rows already have complete Vietnamese `vi_full`, but the Japanese scanner source embeds line-layout separators and some entries start at CP932 half-glyph boundaries. Do not write these CSV scanner offsets directly into ROM.
+- Added `tools/audit_quiz_source_050.py`: read-only inventory of all six CSVs; checks duplicate offsets, compares previously integrated 047 Quiz rows, marks scanner layout delimiters, leading padding and manually corrected source spans for physical-ROM verification. Generates JSON with source text/full Vietnamese/risk reasons for the next meaningful larger Quiz integration.
+- The auditor has been committed but **not executed** against a local repo checkout in this turn. No new Quiz physical ROM entries or emulator PASS. Full 048 merge runner from 049 also remains unexecuted for lack of local original ROM + IPS 043.
+- Next: run the auditor and inspect original ROM byte slots/control flow; author a substantial safe Quiz batch and guarded build on top of merged 048. Content first, no new font experiments or interim download links.
+
+
 ## CHECKPOINT 049 — 2026-10-11: FULL-CHAIN REBUILDER COMMITTED (NOT YET EXECUTED)
 
 - Added `tools/rebuild_content_first_048_full_chain.py` to turn exact clean ROM + 043 clean IPS into validated 044, 045, 046, 047 and merged 048 entirely in memory, then write only final clean-ROM IPS + QA JSON. Uses each existing stage's full CP932/source/offset/SHA/IPS safety checks and independently replays every stage.
