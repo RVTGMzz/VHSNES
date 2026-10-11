@@ -1,0 +1,314 @@
+{
+  "schema": "chibi.quiz_fortune.047.v1",
+  "input_clean_rom_sha256": "e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956",
+  "base_046_rom_sha256": "c10c0f444a97d6bea7f8f669d67bb6c0c5b6889b654d99d6e6dfa25e3d061624",
+  "output_047_rom_sha256": "1f6430064b70671a4f3ba94f0fd256764db54690950519c22d9e03ec74230dd9",
+  "output_047_clean_ips_sha256": "725ca433dfeb919bd19bde6903a1e2e7d95cde1889980677863724007090cd6c",
+  "new_quiz": 15,
+  "new_fortune": 15,
+  "total": 30,
+  "source_semantics": "numeric alternatives retain numeric value; other 2 Fortune messages use approved compact natural language; canonical vi_full preserved",
+  "emulator_qa": "NOT_TESTED",
+  "records": [
+    {
+      "file_offset": "0x348BA",
+      "source_jp": "１００円",
+      "full_vi_reference": "100 yên",
+      "vi_runtime": "100",
+      "max_units": 4,
+      "category": "quiz",
+      "source_file": "translation/source/quiz_batch01_part2_vi.csv",
+      "status": "natural_compact_exact_slot_static"
+    },
+    {
+      "file_offset": "0x320FB",
+      "source_jp": "３０円",
+      "full_vi_reference": "30 yên",
+      "vi_runtime": "30",
+      "max_units": 3,
+      "category": "quiz",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "status": "natural_compact_exact_slot_static"
+    },
+    {
+      "file_offset": "0x32119",
+      "source_jp": "５０円",
+      "full_vi_reference": "50 yên",
+      "vi_runtime": "50",
+      "max_units": 3,
+      "category": "quiz",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "status": "natural_compact_exact_slot_static"
+    },
+    {
+      "file_offset": "0x32273",
+      "source_jp": "７６才",
+      "full_vi_reference": "76 tuổi",
+      "vi_runtime": "76",
+      "max_units": 3,
+      "category": "quiz",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "status": "natural_compact_exact_slot_static"
+    },
+    {
+      "file_offset": "0x32280",
+      "source_jp": "６７才",
+      "full_vi_reference": "67 tuổi",
+      "vi_runtime": "67",
+      "max_units": 3,
+      "category": "quiz",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "status": "natural_compact_exact_slot_static"
+    },
+    {
+      "file_offset": "0x3228D",
+      "source_jp": "８２才",
+      "full_vi_reference": "82 tuổi",
+      "vi_runtime": "82",
+      "max_units": 3,
+      "category": "quiz",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "status": "natural_compact_exact_slot_static"
+    },
+    {
+      "file_offset": "0x326F7",
+      "source_jp": "４０才",
+      "full_vi_reference": "40 tuổi",
+      "vi_runtime": "40",
+      "max_units": 3,
+      "category": "quiz",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "status": "natural_compact_exact_slot_static"
+    },
+    {
+      "file_offset": "0x32704",
+      "source_jp": "４５才",
+      "full_vi_reference": "45 tuổi",
+      "vi_runtime": "45",
+      "max_units": 3,
+      "category": "quiz",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "status": "natural_compact_exact_slot_static"
+    },
+    {
+      "file_offset": "0x32711",
+      "source_jp": "３６才",
+      "full_vi_reference": "36 tuổi",
+      "vi_runtime": "36",
+      "max_units": 3,
+      "category": "quiz",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "status": "natural_compact_exact_slot_static"
+    },
+    {
+      "file_offset": "0x32FEB",
+      "source_jp": "３年４組",
+      "full_vi_reference": "Lớp 3-4",
+      "vi_runtime": "3-4",
+      "max_units": 4,
+      "category": "quiz",
+      "source_file": "translation/source/quiz_batch03_part2_vi.csv",
+      "status": "natural_compact_exact_slot_static"
+    },
+    {
+      "file_offset": "0x32FFA",
+      "source_jp": "５年２組",
+      "full_vi_reference": "Lớp 5-2",
+      "vi_runtime": "5-2",
+      "max_units": 4,
+      "category": "quiz",
+      "source_file": "translation/source/quiz_batch03_part2_vi.csv",
+      "status": "natural_compact_exact_slot_static"
+    },
+    {
+      "file_offset": "0x33009",
+      "source_jp": "３年１組",
+      "full_vi_reference": "Lớp 3-1",
+      "vi_runtime": "3-1",
+      "max_units": 4,
+      "category": "quiz",
+      "source_file": "translation/source/quiz_batch03_part2_vi.csv",
+      "status": "natural_compact_exact_slot_static"
+    },
+    {
+      "file_offset": "0x31F75",
+      "source_jp": "５月８日",
+      "full_vi_reference": "Ngày 8 tháng 5",
+      "vi_runtime": "8/5",
+      "max_units": 4,
+      "category": "quiz",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "status": "natural_compact_exact_slot_static"
+    },
+    {
+      "file_offset": "0x31F84",
+      "source_jp": "４月２３日",
+      "full_vi_reference": "Ngày 23 tháng 4",
+      "vi_runtime": "23/4",
+      "max_units": 5,
+      "category": "quiz",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "status": "natural_compact_exact_slot_static"
+    },
+    {
+      "file_offset": "0x31F95",
+      "source_jp": "１０月１日",
+      "full_vi_reference": "Ngày 1 tháng 10",
+      "vi_runtime": "1/10",
+      "max_units": 5,
+      "category": "quiz",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "status": "natural_compact_exact_slot_static"
+    },
+    {
+      "file_offset": "0x2C9B4",
+      "source_jp": "０",
+      "full_vi_reference": "0",
+      "vi_runtime": "0",
+      "max_units": 1,
+      "category": "fortune",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "status": "natural_compact_exact_slot_static"
+    },
+    {
+      "file_offset": "0x2C9BD",
+      "source_jp": "１",
+      "full_vi_reference": "1",
+      "vi_runtime": "1",
+      "max_units": 1,
+      "category": "fortune",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "status": "natural_compact_exact_slot_static"
+    },
+    {
+      "file_offset": "0x2C9C6",
+      "source_jp": "２",
+      "full_vi_reference": "2",
+      "vi_runtime": "2",
+      "max_units": 1,
+      "category": "fortune",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "status": "natural_compact_exact_slot_static"
+    },
+    {
+      "file_offset": "0x2C9CF",
+      "source_jp": "３",
+      "full_vi_reference": "3",
+      "vi_runtime": "3",
+      "max_units": 1,
+      "category": "fortune",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "status": "natural_compact_exact_slot_static"
+    },
+    {
+      "file_offset": "0x2C9D8",
+      "source_jp": "４",
+      "full_vi_reference": "4",
+      "vi_runtime": "4",
+      "max_units": 1,
+      "category": "fortune",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "status": "natural_compact_exact_slot_static"
+    },
+    {
+      "file_offset": "0x2C9E1",
+      "source_jp": "５",
+      "full_vi_reference": "5",
+      "vi_runtime": "5",
+      "max_units": 1,
+      "category": "fortune",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "status": "natural_compact_exact_slot_static"
+    },
+    {
+      "file_offset": "0x2C9EA",
+      "source_jp": "６",
+      "full_vi_reference": "6",
+      "vi_runtime": "6",
+      "max_units": 1,
+      "category": "fortune",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "status": "natural_compact_exact_slot_static"
+    },
+    {
+      "file_offset": "0x2C9F3",
+      "source_jp": "７",
+      "full_vi_reference": "7",
+      "vi_runtime": "7",
+      "max_units": 1,
+      "category": "fortune",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "status": "natural_compact_exact_slot_static"
+    },
+    {
+      "file_offset": "0x2C9FC",
+      "source_jp": "８",
+      "full_vi_reference": "8",
+      "vi_runtime": "8",
+      "max_units": 1,
+      "category": "fortune",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "status": "natural_compact_exact_slot_static"
+    },
+    {
+      "file_offset": "0x2CA05",
+      "source_jp": "９",
+      "full_vi_reference": "9",
+      "vi_runtime": "9",
+      "max_units": 1,
+      "category": "fortune",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "status": "natural_compact_exact_slot_static"
+    },
+    {
+      "file_offset": "0x2CA0E",
+      "source_jp": "１６，７７７，２１６",
+      "full_vi_reference": "16.777.216",
+      "vi_runtime": "16777216",
+      "max_units": 10,
+      "category": "fortune",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "status": "natural_compact_exact_slot_static"
+    },
+    {
+      "file_offset": "0x2CA29",
+      "source_jp": "１，０００，０００",
+      "full_vi_reference": "1.000.000",
+      "vi_runtime": "1000000",
+      "max_units": 9,
+      "category": "fortune",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "status": "natural_compact_exact_slot_static"
+    },
+    {
+      "file_offset": "0x2CA42",
+      "source_jp": "１３０，０００，０００",
+      "full_vi_reference": "130.000.000",
+      "vi_runtime": "130000000",
+      "max_units": 11,
+      "category": "fortune",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "status": "natural_compact_exact_slot_static"
+    },
+    {
+      "file_offset": "0x2C1FB",
+      "source_jp": "でんわしてみよう",
+      "full_vi_reference": "Thử gọi điện xem",
+      "vi_runtime": "Gọi thử!",
+      "max_units": 8,
+      "category": "fortune",
+      "source_file": "translation/source/fortune_batch01_part2_vi.csv",
+      "status": "natural_compact_exact_slot_static"
+    },
+    {
+      "file_offset": "0x2C36E",
+      "source_jp": "国語がラッキーだよ",
+      "full_vi_reference": "Môn Văn gặp may",
+      "vi_runtime": "Văn hên!",
+      "max_units": 9,
+      "category": "fortune",
+      "source_file": "translation/source/fortune_batch01_part2_vi.csv",
+      "status": "natural_compact_exact_slot_static"
+    }
+  ]
+}
