@@ -108,7 +108,11 @@ def scan_native(rom: bytes, offset: int):
 def run(clean: bytes, root: Path):
     if len(clean) != 0x200000 or hashlib.sha256(clean).hexdigest() != CLEAN_SHA:
         raise ValueError("Exact original Japanese 2MiB Chibi Maruko ROM required")
-
+    # The 0xFF region is physical blank storage, not verified free code space.
+    # Its addressing/pointer mechanism and game runtime uses are not proven.
+    candidate_ff_start, candidate_ff_end = 0x36907, 0x38000
+    if clean[candidate_ff_start:candidate_ff_end] != b"\xff" * 5881:
+        raise AssertionError("Original Quiz bank-end 0xFF fill changed")
     source = {}
     for fname in SOURCE_FILES:
         for row in load_csv(root/"translation/source"/fname):
@@ -180,6 +184,12 @@ def run(clean: bytes, root: Path):
         "unapproved_062_padding_experiments_already_catalogued": len(UNAPPROVED_062),
         "other_padded_fragments_needing_overlap_review": len(padded - UNAPPROVED_062),
         "records_without_trailing_ascii_padding": 81,
+        "bank_end_0xFF_fill_candidate": {
+            "start": "0x36907", "end_exclusive": "0x38000", "bytes": 5881,
+            "approved_as_relocation_storage": False,
+            "script_pointer_relocation_understood": False,
+            "altered_in_this_audit": False,
+        },
         "stage_counts": counts,
         "emulator_tested": False,
         "patch_generated": False,
