@@ -1,5 +1,14 @@
 # HANDOFF CURRENT — Chibi Maruko-chan SNES Việt hóa
 
+## CHECKPOINT 052 — 2026-10-11: QUIZ 381-ROW PHYSICAL PREFLIGHT
+
+- Fixed actual Python syntax error in `tools/audit_quiz_source_050.py` introduced at checkpoint051 (literal `\\n` was inserted into executable source). The checker can now be parsed; no local execution has yet taken place.
+- Added `tools/preflight_quiz_physical_052.py` read-only strict physical scanner for all 381 Quiz rows. It requires exact original clean ROM SHA, identical CP932 source bytes at exact offsets, even glyph byte width, immediate original `816F` terminator, and no collision with existing Vietnamese baseline; it blocks scanner layout separators, half-character aliases and already-patched 047 rows.
+- Output reports original Japanese, canonical full Vietnamese, writable glyph-slot capacity only on proved safe fields, and blocking reasons. **Does NOT automatically truncate Vietnamese or produce patches.**
+- Both tools committed to GitHub. Neither has been executed here: no original ROM or baseline ROM mounted. Therefore no additional Quiz fields have been integrated into ROM and no emulator PASS.
+- Next: run checkers with real clean+verified 048 baseline, select natural compact translations under measured budgets, and author a single substantial guarded Quiz patch. Do not send intermediate IPS; prioritize content, font later.
+
+
 ## CHECKPOINT 051 — 2026-10-11: FIX QUIZ AUDIT COMPLETENESS
 
 - Live GitHub source check exposed two files accidentally omitted by checkpoint050 triage: `quiz_batch02_part3_vi.csv` (43 rows), `quiz_batch03_part3_vi.csv` (58 rows). Original six held 280 rows; total canonical inventory **381 = 280+43+58**.
