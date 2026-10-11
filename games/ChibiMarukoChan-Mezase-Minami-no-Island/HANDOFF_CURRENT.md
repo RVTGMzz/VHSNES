@@ -1,5 +1,17 @@
 # HANDOFF CURRENT — Chibi Maruko-chan SNES Việt hóa
 
+## CHECKPOINT 057 — 2026-10-11: 50 NEW NONDUPLICATE QUIZ RECORDS BYTE-VALIDATED
+
+**Read `docs/CONTENT_FIRST_QUIZ_50_CHECKPOINT_057.md` before proceeding.** Newly committed `translation/runtime/quiz_content_first_50_057.json` adds **50 distinct Quiz source records** not included in 039/041/047/054, in part2/3 of Quiz Batch02. Real user-uploaded clean Japanese 2MiB ROM SHA `e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956`.
+
+- **ACTUAL SOURCE-ROM BYTE QA PASS**, including refined natural wording: 50/50 logical records, 105 original physical text frames and **105 original `816F` separators preserved**. Exactly 2,106 source text bytes modified, only within approved original text cells, no control bytes or padding overwritten. Independent standalone clean-ROM text-only IPS apply/replay reproduced all 2MiB bytes byte-for-byte. Current QA preview IPS **SHA `73829cb20f1b182142e428ba55366227417258d8e87f9e7da6de4fa1d093b749`**, **2,614 bytes /100 records**. Preview ROM SHA `525575f7d178d3a2df4d616934484b8e5ae4a15db60c264c607db5fd3f1c4b98`.
+- **Existing V2 codepage limitations are real**: several characters (e.g. `R`, `X`, `ệ`) cannot be encoded in old 0x84 table. Consequently character-name answer choices and difficult captions not fitting original cells are **deferred**, not mangled for inflated completion stats. Full `vi_full` remains intact in canonical CSVs.
+- `tools/build_content_first_057_quiz_50.py` adds **056 -> 057** strict whole-ROM checksum and final IPS replay; `tools/rebuild_content_first_057_full_chain.py` invokes the 043->056 chain then 057. A **synthetic font-table baseline** test (not the true missing 056 ROM) passed local full 057 builder constraints (50 fields, 105 controls, checksum, IPS replay); the actual main original clean ROM was separately used for physical source-only QA. **Do NOT call this a playable release or real 056 merge.**
+- Candidate count math if assembled: Quiz **21 in 041 + 15 in 047 +54 in 054 +50 in 057 =140 unique source fields**, out of 381 canonical (remaining 241 original Quiz records), **NOT yet combined to one verified ROM**. Do not count 15 repeated old 053 rows again.
+- Still missing original 043 clean-ROM IPS raw bytes (SHA `d3cb7ea84067675a5cc12cb4a26f260194b0a6f00ff235f0129460a902a58a50`), despite visible Library ZIP metadata and failed authorization for old file raw materialization. Full integrated 057 ROM **NOT BUILT**, SNES emulator **NOT TESTED**. Once exact 043 IPS available, run `python tools/rebuild_content_first_057_full_chain.py clean.sfc exact-043.ips --ips final-057.ips --report qa057.json --allow-untested`. Never distribute clean Japanese source ROM or font files on GitHub.
+- Keep user preference: **CONTENT FIRST, font last; no intermediate test patch downloads**. Continue remaining long Quiz, 4 Fortune name/color capacity exceptions, G3 ending/result graphics. Do not claim final localization done.
+
+
 ## CHECKPOINT 056 — 2026-10-11: TWO REAL-SOURCE FORTUNE EXCEPTIONS + G2 BUILD BUG FIX
 
 **Read `docs/CONTENT_FIRST_FORTUNE_EXCEPTIONS_056.md` before editing!** Actual mounted clean Japanese 2MiB ROM hash matched `e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956`.
