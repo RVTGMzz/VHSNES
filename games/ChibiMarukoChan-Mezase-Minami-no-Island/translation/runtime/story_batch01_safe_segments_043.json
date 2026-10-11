@@ -1,0 +1,992 @@
+{
+  "schema": "chibi.story.runtime043.v1",
+  "date": "2026-10-11",
+  "source_clean_sha256": "e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956",
+  "input_042_rom_sha256": "901744ff2edb6bbf667e225e68478009f426a4d1358c1c35ccb34cdc29254691",
+  "output_043_rom_sha256": "45ffca7db5db83bc2734e885ee90c77f33746e2c4a54d1c99f1502f3e992a6ae",
+  "output_043_ips_sha256": "d3cb7ea84067675a5cc12cb4a26f260194b0a6f00ff235f0129460a902a58a50",
+  "expected_records": 58,
+  "source_bank": "0x18000..0x1DFFF",
+  "full_source": "translation/source/story_batch01_vi.csv",
+  "previous_runtime": "translation/runtime/story_batch01_safe_segments_042.json",
+  "records": [
+    {
+      "file_offset": "0x1859B",
+      "vi_full_reference": "Ơ... Maru-chan, cậu sang đó là để học mà...",
+      "vi_runtime_lines": [
+        "Maru-chan, cậu",
+        "qua đó để",
+        "học mà"
+      ],
+      "expected_segment_capacities": [
+        16,
+        9,
+        6
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x185E9",
+      "vi_full_reference": "Tội Tama-chan thật, nhưng đầu óc Maruko lúc này đã bay tận đâu đâu rồi.",
+      "vi_runtime_lines": [
+        "Tội Tama-chan...",
+        "Maruko thì đang",
+        "mơ xa..."
+      ],
+      "expected_segment_capacities": [
+        16,
+        15,
+        9
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x18649",
+      "vi_full_reference": "Vậy nên cả lớp hãy cùng quyết định xem ai sẽ đi nhé.",
+      "vi_runtime_lines": [
+        "Cả lớp hãy chọn",
+        "ai được đi nhé!"
+      ],
+      "expected_segment_capacities": [
+        16,
+        15
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x18695",
+      "vi_full_reference": "À phải rồi, cô cho các em xem ảnh người bạn sẽ sang đây nhé.",
+      "vi_runtime_lines": [
+        "À, cô còn có",
+        "ảnh bạn sẽ",
+        "sang đây.",
+        ""
+      ],
+      "expected_segment_capacities": [
+        13,
+        13,
+        9,
+        1
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x18755",
+      "vi_full_reference": "Một hòn đảo phương Nam mà không có anh ấy thì đi cũng vô ích thôi.",
+      "vi_runtime_lines": [
+        "Đảo ấy",
+        "vắng anh",
+        "thì vô vị."
+      ],
+      "expected_segment_capacities": [
+        7,
+        8,
+        10
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x18797",
+      "vi_full_reference": "Nhưng nếu Hanawa-kun và anh ấy giành mình rồi cãi nhau thì... mình...",
+      "vi_runtime_lines": [
+        "Nếu Hanawa-kun",
+        "và anh ấy giành",
+        "mình!"
+      ],
+      "expected_segment_capacities": [
+        15,
+        15,
+        6
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x18857",
+      "vi_full_reference": "Thật ra tớ cũng muốn tìm hiểu văn hóa nước ngoài.",
+      "vi_runtime_lines": [
+        "Tớ cũng muốn",
+        "hiểu văn hóa nước",
+        "ngoài."
+      ],
+      "expected_segment_capacities": [
+        14,
+        18,
+        8
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x188B7",
+      "vi_full_reference": "Chả hiểu mô tê gì, nhưng tớ cũng muốn đi!",
+      "vi_runtime_lines": [
+        "Dù chẳng hiểu gì",
+        "tớ đi!",
+        ""
+      ],
+      "expected_segment_capacities": [
+        16,
+        7,
+        1
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x188F7",
+      "vi_full_reference": "Tớ cũng muốn đi bư~!",
+      "vi_runtime_lines": [
+        "Đi bư~!"
+      ],
+      "expected_segment_capacities": [
+        8
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x18917",
+      "vi_full_reference": "Tớ nữa, tớ nữa! A ha ha ha...",
+      "vi_runtime_lines": [
+        "Tớ nữa!",
+        "Ha ha!"
+      ],
+      "expected_segment_capacities": [
+        10,
+        8
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x1894C",
+      "vi_full_reference": "Nói thẳng ra! Đại diện lớp thì đương nhiên phải là lớp trưởng như tôi chứ!",
+      "vi_runtime_lines": [
+        "Nói thẳng ra!",
+        "Đại diện lớp phải",
+        "là tôi đó!",
+        ""
+      ],
+      "expected_segment_capacities": [
+        17,
+        17,
+        10,
+        1
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x189B3",
+      "vi_full_reference": "Mọi người mà muốn thách thức tôi thì, nói thẳng ra là...",
+      "vi_runtime_lines": [
+        "Muốn thi",
+        "với tôi à?",
+        "Nói thẳng ra!"
+      ],
+      "expected_segment_capacities": [
+        9,
+        10,
+        17
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x18A0E",
+      "vi_full_reference": "Hey, chuyện này phải dựa vào thực lực chứ.",
+      "vi_runtime_lines": [
+        "Hey, phải dựa vào",
+        "thực lực chứ!",
+        ""
+      ],
+      "expected_segment_capacities": [
+        17,
+        14,
+        1
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x18A5E",
+      "vi_full_reference": "Người thật sự xứng đáng mới nên đi, cậu không thấy vậy sao? Chính cậu mới nên nhường chứ.",
+      "vi_runtime_lines": [
+        "Ai xứng đáng",
+        "mới được đi chứ",
+        "Cậu nhường đi!",
+        ""
+      ],
+      "expected_segment_capacities": [
+        14,
+        15,
+        16,
+        1
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x18AD1",
+      "vi_full_reference": "Đúng đó! Đừng tưởng chỉ mình cậu được ra nước ngoài miễn phí nhé. Không dễ vậy đâu!",
+      "vi_runtime_lines": [
+        "Đúng! Ai cũng",
+        "muốn đi chơi",
+        "miễn phí mà!"
+      ],
+      "expected_segment_capacities": [
+        15,
+        13,
+        17
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x18B36",
+      "vi_full_reference": "Trong đầu chỉ nghĩ chuyện được ra nước ngoài miễn phí mà còn nói người ta.",
+      "vi_runtime_lines": [
+        "Bản thân cũng ham",
+        "đi miễn phí",
+        "nói ai!"
+      ],
+      "expected_segment_capacities": [
+        17,
+        11,
+        9
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x18B8C",
+      "vi_full_reference": "Cái gì cơ!! Sakura Maruko! Thật là xúc phạm quá mức!! Vậy thì để tôi cho mọi người thấy thực lực của mình!",
+      "vi_runtime_lines": [
+        "Cái gì! Maruko!",
+        "Cậu...",
+        "xúc phạm tôi!",
+        "",
+        "Tôi sẽ cho mọi",
+        "người thấy tài!"
+      ],
+      "expected_segment_capacities": [
+        17,
+        6,
+        13,
+        1,
+        17,
+        17
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x18D48",
+      "vi_full_reference": "Maruko, con có ổn không đấy? Đừng để bị thương nhé.",
+      "vi_runtime_lines": [
+        "Maruko, đi nhớ",
+        "cẩn thận nhé!",
+        ""
+      ],
+      "expected_segment_capacities": [
+        14,
+        13,
+        1
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x18D90",
+      "vi_full_reference": "Hay mình làm cơm hộp mang đi cổ vũ nhỉ.",
+      "vi_runtime_lines": [
+        "Hay làm cơm hộp",
+        "đi cổ vũ?"
+      ],
+      "expected_segment_capacities": [
+        15,
+        10
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x18E16",
+      "vi_full_reference": "Không sao! Maruko là con của bố mà! Nào, cạn ly vì hòn đảo phương Nam!",
+      "vi_runtime_lines": [
+        "Không sao! Maruko",
+        "là con của bố mà!",
+        "Cạn ly vì đảo!"
+      ],
+      "expected_segment_capacities": [
+        17,
+        17,
+        17
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x18E8C",
+      "vi_full_reference": "Ồ, Nam Cực à? Xa xôi lạnh lẽo lắm đấy...",
+      "vi_runtime_lines": [
+        "Ồ, Nam Cực cơ à?",
+        "Xa xôi, lạnh lẽo",
+        "lắm đấy, cháu ơi!"
+      ],
+      "expected_segment_capacities": [
+        17,
+        17,
+        17
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x18F02",
+      "vi_full_reference": "Hòn đảo phương Nam... Maruko vui đùa cùng chim cánh cụt... tuyệt quá nhỉ.",
+      "vi_runtime_lines": [
+        "Đảo phương Nam...",
+        "Maruko chơi với",
+        "chim cánh cụt..."
+      ],
+      "expected_segment_capacities": [
+        17,
+        17,
+        17
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x18F99",
+      "vi_full_reference": "Vậy thì dùng hồ bơi, bóng và sơn để tổ chức cuộc thi chọn đại diện nhé!",
+      "vi_runtime_lines": [
+        "Dùng hồ bơi, bóng",
+        "và sơn để thi",
+        "chọn ai đi nhé!",
+        ""
+      ],
+      "expected_segment_capacities": [
+        17,
+        17,
+        17,
+        1
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x19013",
+      "vi_full_reference": "Có cần giải thích trắng trợn vậy không...",
+      "vi_runtime_lines": [
+        "Nói thẳng thế",
+        "không ngại sao..."
+      ],
+      "expected_segment_capacities": [
+        17,
+        17
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x19145",
+      "vi_full_reference": "Ừ, nhưng thi với Tama-chan thì... tớ thấy áy náy sao ấy.",
+      "vi_runtime_lines": [
+        "Thi với Tama-chan",
+        "tớ áy náy quá...",
+        ""
+      ],
+      "expected_segment_capacities": [
+        17,
+        17,
+        1
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x191A3",
+      "vi_full_reference": "Maru-chan! Nếu cứ để tình cảm lấn át thì cậu sẽ không tới được hòn đảo phương Nam đâu!",
+      "vi_runtime_lines": [
+        "Maru-chan! Đừng",
+        "để tình cảm cản",
+        "tới đảo đấy nhé!",
+        ""
+      ],
+      "expected_segment_capacities": [
+        17,
+        17,
+        17,
+        1
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x1924B",
+      "vi_full_reference": "Cô ấy nghiêm túc thật... Maruko hơi run trước quyết tâm của Tamae...",
+      "vi_runtime_lines": [
+        "Tamae nghiêm túc",
+        "thật... Maruko",
+        "cũng hơi run rồi."
+      ],
+      "expected_segment_capacities": [
+        17,
+        17,
+        17
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x192C1",
+      "vi_full_reference": "Tama-chan, cậu ổn chứ? Xin lỗi nhé.",
+      "vi_runtime_lines": [
+        "Tama-chan, tớ xin",
+        "lỗi. Cậu ổn chứ?",
+        ""
+      ],
+      "expected_segment_capacities": [
+        17,
+        17,
+        1
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x19317",
+      "vi_full_reference": "Ừ, tớ không sao. Khi thi với mọi người cũng cố lên nhé.",
+      "vi_runtime_lines": [
+        "Tớ ổn mà",
+        "Cậu cố lên nhé"
+      ],
+      "expected_segment_capacities": [
+        9,
+        14
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x19351",
+      "vi_full_reference": "Ừ! Tớ có cảm giác hòn đảo phương Nam đã gần hơn hẳn rồi.",
+      "vi_runtime_lines": [
+        "Ừ! Tớ thấy đảo",
+        "phương Nam gần",
+        "hơn rồi!"
+      ],
+      "expected_segment_capacities": [
+        17,
+        17,
+        8
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x193EE",
+      "vi_full_reference": "Nếu cậu thua cả tớ thì làm sao thắng được người khác!",
+      "vi_runtime_lines": [
+        "Thua cả tớ thì",
+        "sao thắng ai!",
+        ""
+      ],
+      "expected_segment_capacities": [
+        16,
+        13,
+        1
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x1943A",
+      "vi_full_reference": "Ừ, tớ luyện chưa đủ. Về gội đầu rồi làm lại từ đầu thôi.",
+      "vi_runtime_lines": [
+        "Chưa đủ giỏi...",
+        "Về gội đầu!"
+      ],
+      "expected_segment_capacities": [
+        16,
+        12
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x1947B",
+      "vi_full_reference": "Phải là “rửa mặt rồi làm lại từ đầu” mới đúng chứ...",
+      "vi_runtime_lines": [
+        "Là rửa mặt",
+        "rồi làm lại mà",
+        "Maruko!",
+        "",
+        ""
+      ],
+      "expected_segment_capacities": [
+        10,
+        14,
+        8,
+        1,
+        1
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x19500",
+      "vi_full_reference": "Hey, tớ không thích so tài với các quý cô lắm đâu.",
+      "vi_runtime_lines": [
+        "Hey, tớ chẳng",
+        "muốn đấu với các",
+        "quý cô đâu, baby.",
+        ""
+      ],
+      "expected_segment_capacities": [
+        17,
+        17,
+        17,
+        1
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x1959C",
+      "vi_full_reference": "Thế thì không tốt cho cậu đâu. Cứ coi đây là chút nghiêm khắc vì thương cậu nhé.",
+      "vi_runtime_lines": [
+        "Làm vậy không",
+        "tốt cho cậu!",
+        "Nghiêm vì thương."
+      ],
+      "expected_segment_capacities": [
+        13,
+        14,
+        17
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x195FF",
+      "vi_full_reference": "Kiểu yêu thương gì mà khó ưa thế.",
+      "vi_runtime_lines": [
+        "Khó ưa!"
+      ],
+      "expected_segment_capacities": [
+        9
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x19620",
+      "vi_full_reference": "Hay quá! Thắng Hanawa-kun rồi, hí hí!",
+      "vi_runtime_lines": [
+        "Hay quá! Tớ thắng",
+        "Hanawa-kun rồi!",
+        ""
+      ],
+      "expected_segment_capacities": [
+        17,
+        17,
+        1
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x19679",
+      "vi_full_reference": "Baby, tớ vốn yếu lòng trước các quý cô mà.",
+      "vi_runtime_lines": [
+        "Baby, tớ yếu lòng",
+        "trước các quý cô",
+        "như cậu mà."
+      ],
+      "expected_segment_capacities": [
+        17,
+        17,
+        17
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x196F2",
+      "vi_full_reference": "Aaa, tức quá! Thua Hanawa-kun rồi!",
+      "vi_runtime_lines": [
+        "Aaa! Tớ thua",
+        "Hanawa-kun rồi!",
+        ""
+      ],
+      "expected_segment_capacities": [
+        17,
+        17,
+        1
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x19776",
+      "vi_full_reference": "Nói thẳng ra!! Đến lúc so tài rồi!",
+      "vi_runtime_lines": [
+        "Nói thẳng ra!",
+        "Đến giờ so tài!",
+        ""
+      ],
+      "expected_segment_capacities": [
+        17,
+        17,
+        1
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x197CC",
+      "vi_full_reference": "Nè, nhường tớ đi mà~",
+      "vi_runtime_lines": [
+        "Nhường tớ đi mà~"
+      ],
+      "expected_segment_capacities": [
+        17
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x19821",
+      "vi_full_reference": "Nói thẳng ra, như thế là ăn gian!",
+      "vi_runtime_lines": [
+        "Thế là ăn gian!",
+        ""
+      ],
+      "expected_segment_capacities": [
+        17,
+        1
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x1984E",
+      "vi_full_reference": "Với tư cách lớp trưởng, tôi không thể làm ngơ chuyện gian lận! Nào, thi đấu!",
+      "vi_runtime_lines": [
+        "Tôi là lớp trưởng",
+        "không thể bỏ qua",
+        "gian lận. Đấu đi!"
+      ],
+      "expected_segment_capacities": [
+        17,
+        17,
+        17
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x198BF",
+      "vi_full_reference": "Maruko vừa đổ thêm dầu vào lửa...",
+      "vi_runtime_lines": [
+        "Maruko vừa đổ",
+        "thêm dầu vào lửa!",
+        ""
+      ],
+      "expected_segment_capacities": [
+        17,
+        17,
+        1
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x1990C",
+      "vi_full_reference": "A ha... ha...",
+      "vi_runtime_lines": [
+        "A ha... ha"
+      ],
+      "expected_segment_capacities": [
+        10
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x1992C",
+      "vi_full_reference": "Hóa ra người xứng đáng đi trao đổi là tớ nhỉ!",
+      "vi_runtime_lines": [
+        "Tớ mới xứng đáng",
+        "được đi!",
+        ""
+      ],
+      "expected_segment_capacities": [
+        17,
+        11,
+        1
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x19976",
+      "vi_full_reference": "Tôi mà thua Sakura-san ư!? Maruo Sueo này...",
+      "vi_runtime_lines": [
+        "Tôi thua Sakura",
+        "sao!?"
+      ],
+      "expected_segment_capacities": [
+        15,
+        6
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x199A7",
+      "vi_full_reference": "...một đời ôm hận mất!! Khụ... mẹ ơi... con... con...",
+      "vi_runtime_lines": [
+        "Ôm hận mãi!",
+        "",
+        "Khụ... mẹ ơi...",
+        "Con... con..."
+      ],
+      "expected_segment_capacities": [
+        12,
+        1,
+        17,
+        17
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x19A26",
+      "vi_full_reference": "Trời ạ, làm quá ghê.",
+      "vi_runtime_lines": [
+        "Trời",
+        "Làm quá!"
+      ],
+      "expected_segment_capacities": [
+        5,
+        10
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x19A55",
+      "vi_full_reference": "Nói thẳng ra!! Chính nghĩa lúc nào cũng thắng!",
+      "vi_runtime_lines": [
+        "Nói thẳng ra!",
+        "Lẽ phải đã thắng!",
+        ""
+      ],
+      "expected_segment_capacities": [
+        17,
+        17,
+        1
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x19AAE",
+      "vi_full_reference": "Hứ! Bầu lớp trưởng lần tới tớ không bầu cho cậu nữa...",
+      "vi_runtime_lines": [
+        "Hứ! Lần bầu tới",
+        "không bầu",
+        "cho cậu!"
+      ],
+      "expected_segment_capacities": [
+        17,
+        10,
+        9
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x19AFD",
+      "vi_full_reference": "HẢAAAA!! Cái gì cơ!! Trời ạ...",
+      "vi_runtime_lines": [
+        "HẢ!? Cậu nói gì!",
+        "Sao lại thế được",
+        "Trời ơi..."
+      ],
+      "expected_segment_capacities": [
+        17,
+        17,
+        17
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x19B75",
+      "vi_full_reference": "Nói thẳng ra!! Tôi vẫn chưa công nhận cậu là đại diện đâu!",
+      "vi_runtime_lines": [
+        "Nói thẳng ra!",
+        "Tôi vẫn chưa công",
+        "nhận cậu đâu nhé!",
+        ""
+      ],
+      "expected_segment_capacities": [
+        17,
+        17,
+        17,
+        1
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x19BEF",
+      "vi_full_reference": "Tớ không cần cậu công nhận cũng được mà.",
+      "vi_runtime_lines": [
+        "Tớ không cần",
+        "cậu đồng ý!",
+        ""
+      ],
+      "expected_segment_capacities": [
+        14,
+        12,
+        1
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x19C6A",
+      "vi_full_reference": "Gì vậy! Cậu làm tớ nổi da gà đó.",
+      "vi_runtime_lines": [
+        "Sao?",
+        "Nổi da gà!"
+      ],
+      "expected_segment_capacities": [
+        5,
+        11
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x19CA2",
+      "vi_full_reference": "Hey, lại gặp nhau rồi, baby. Nếu cậu đã muốn đến thế thì tớ xin tiếp cậu.",
+      "vi_runtime_lines": [
+        "Hey, lại gặp nhau",
+        "rồi, baby. Cậu",
+        "muốn thì đấu nhé!",
+        ""
+      ],
+      "expected_segment_capacities": [
+        17,
+        17,
+        17,
+        1
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x19D7F",
+      "vi_full_reference": "Hay quá! Thắng rồi! Tớ cũng ghê gớm phết nhỉ.",
+      "vi_runtime_lines": [
+        "Hay quá, thắng!",
+        "Tớ cũng giỏi ghê",
+        "phải không nhỉ!"
+      ],
+      "expected_segment_capacities": [
+        17,
+        17,
+        17
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    },
+    {
+      "file_offset": "0x19DF5",
+      "vi_full_reference": "Sakura hình như thắng cả Maruo-kun lẫn Hanawa-kun rồi đó.",
+      "vi_runtime_lines": [
+        "Sakura hạ Maruo",
+        "và Hanawa",
+        ""
+      ],
+      "expected_segment_capacities": [
+        17,
+        9,
+        1
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "editorial_compact_static_candidate",
+      "notes": "Separately edited for the exact original physical dialogue slots; full canonical vi_full retained. No emulator/runtime acceptance."
+    }
+  ]
+}
