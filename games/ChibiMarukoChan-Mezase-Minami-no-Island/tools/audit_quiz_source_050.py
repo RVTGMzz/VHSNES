@@ -43,7 +43,9 @@ def run(root: Path):
                 else: category="candidate_for_original_rom_byte_preflight_only"
                 rows.append({"source_file":name,"file_offset":addr,"source_jp_scanner":jp,
                              "vi_full":vi,"status":category,"risks":reasons})
-    if len(rows)!=381:\n        raise AssertionError(f"Quiz canonical row count drift: expected 381, got {len(rows)}")\n    counts={status:sum(r["status"]==status for r in rows) for status in sorted(set(r["status"] for r in rows))}
+    if len(rows)!=381:
+        raise AssertionError(f"Quiz canonical row count drift: expected 381, got {len(rows)}")
+    counts={status:sum(r["status"]==status for r in rows) for status in sorted(set(r["status"] for r in rows))}
     if previously-set(seen): raise AssertionError("Old integrated Quiz row missing from source CSV")
     return {"schema":"chibi.quiz.source_triage.050.v1",
             "source_count":len(rows),"already_integrated_047":len(previously),
