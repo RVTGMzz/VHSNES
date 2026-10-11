@@ -1,6 +1,8 @@
-# Chibi Maruko-chan SNES — Checkpoint 059: 37 more Quiz records
+# Chibi Maruko-chan SNES — Checkpoint 059: corrected 34 unique Quiz records
 
 Date: 2026-10-11. Branch: `chibi-maruko-bootstrap-01`.
+
+> **Correction (checkpoint 060, 2026-10-11):** Three birthday answers at 0x31F75, 0x31F84 and 0x31F95 had already been patched in stage 047. They were removed from the 059 manifest and a new exact-source IPS QA was performed. The file name containing `37` is historical; **there are 34 unique 059 rows**. Current correct metrics are 34 rows, 73 native controls, 1,544 editable bytes, 1,541 changed bytes, 1,914-byte/73-record source-only IPS SHA `d383a705336236b3ff2c992ab3ce28c4605d1a5afd809bb8f8eb630035802a81`. See `CONTENT_FIRST_QUIZ_21_CHECKPOINT_060.md`. The earlier 37-row QA below is superseded wherever it differs.
 
 ## What actually changed
 
