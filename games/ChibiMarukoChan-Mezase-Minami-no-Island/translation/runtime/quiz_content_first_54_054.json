@@ -9,9 +9,10 @@
     "source_fields": 54,
     "control_816F_preserved": 123,
     "changed_bytes": 2636,
-    "text_only_IPS_sha256": "9f5069f7a105e371a71f9cf8bf5fdd38bae099d774c184a272f9abec9c8908ad",
+    "text_only_IPS_sha256": "792b0ccb6f60b77d6cc93f7ec91f87006e9d17a2c723344379df96731faf7ee9",
     "checksum_rebuilt": false,
-    "emulator_tested": false
+    "emulator_tested": false,
+    "text_only_overlay_ROM_sha256": "6df189b94951cafc23cec6bb90fccbf4f1a66307b545f35619d708debd7aa26b"
   },
   "historical_053_correction": "15/16 old 053 Quiz entries duplicate 041; only 0x340C0 is additional and is included here once.",
   "source_note": "Canonical full Vietnamese remains in translation/source/*.csv; these compact runtime captions are a separate editorial layer. Manual gameplay polish pending.",
@@ -26,7 +27,10 @@
         12,
         14
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch01_part1_vi.csv",
+      "source_jp_scanner": "クラスメイトの藤木君とのコンビはいい味をだしている。",
+      "vi_full_reference": "Cặp bài trùng với bạn cùng lớp Fujiki-kun cũng tạo nên một nét rất riêng."
     },
     {
       "file_offset": "0x340C0",
@@ -36,7 +40,10 @@
       "expected_capacities": [
         10
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch01_part1_vi.csv",
+      "source_jp_scanner": "すきなものってなに？",
+      "vi_full_reference": "...là gì?"
     },
     {
       "file_offset": "0x34073",
@@ -48,7 +55,10 @@
         14,
         13
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch01_part1_vi.csv",
+      "source_jp_scanner": "くらいが、目のはなせない少女 野口さん。彼女のなによりも",
+      "vi_full_reference": "Noguchi-san, cô bé trầm tính mà cứ khiến người ta phải để ý. Thứ cô ấy thích hơn bất cứ gì..."
     },
     {
       "file_offset": "0x34116",
@@ -62,7 +72,10 @@
         11,
         11
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch01_part1_vi.csv",
+      "source_jp_scanner": "気になる少女野口さんは「おわらい」がなにより",
+      "vi_full_reference": "Cô nàng bí ẩn Noguchi-san thích 'hài kịch' hơn bất cứ thứ gì..."
     },
     {
       "file_offset": "0x34161",
@@ -76,7 +89,10 @@
         8,
         8
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch01_part1_vi.csv",
+      "source_jp_scanner": "大すきで、するどいつっこみを入れることすらあるのであった。",
+      "vi_full_reference": "...đến mức đôi khi còn tung ra những câu chọc sắc lẹm."
     },
     {
       "file_offset": "0x341D5",
@@ -88,7 +104,10 @@
         14,
         12
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch01_part1_vi.csv",
+      "source_jp_scanner": "大金持ちのキザ少年の花輪くんだが、彼のフルネームは？",
+      "vi_full_reference": "Hanawa-kun, cậu ấm giàu có lại điệu đà, có tên đầy đủ là gì?"
     },
     {
       "file_offset": "0x342C5",
@@ -102,7 +121,10 @@
         8,
         4
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch01_part1_vi.csv",
+      "source_jp_scanner": "おり、クラスメイトのみぎわさんにもあいされている。",
+      "vi_full_reference": "...và cô bạn cùng lớp Migiwa-san cũng mê cậu ấy như điếu đổ."
     },
     {
       "file_offset": "0x34337",
@@ -114,7 +136,10 @@
         14,
         13
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch01_part1_vi.csv",
+      "source_jp_scanner": "花輪くんはピアノもバイオリンもとくいだが、そんなかれの",
+      "vi_full_reference": "Hanawa-kun giỏi cả piano lẫn violin. Người mẹ cậu vô cùng yêu quý..."
     },
     {
       "file_offset": "0x34382",
@@ -124,7 +149,10 @@
       "expected_capacities": [
         11
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch01_part1_vi.csv",
+      "source_jp_scanner": "大すきなママは今何才？",
+      "vi_full_reference": "...hiện bao nhiêu tuổi?"
     },
     {
       "file_offset": "0x343D2",
@@ -138,7 +166,10 @@
         14,
         12
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch01_part1_vi.csv",
+      "source_jp_scanner": "花輪くんのママは、なんと まだ…",
+      "vi_full_reference": "Mẹ Hanawa-kun, thật bất ngờ, mới..."
     },
     {
       "file_offset": "0x34443",
@@ -152,7 +183,10 @@
         6,
         7
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch01_part1_vi.csv",
+      "source_jp_scanner": "会えないが、それでもがんばる強い花輪くんなのであった。",
+      "vi_full_reference": "...cậu không thể thường xuyên gặp mẹ, vậy mà Hanawa-kun vẫn mạnh mẽ cố gắng."
     },
     {
       "file_offset": "0x344D1",
@@ -164,47 +198,59 @@
         14,
         12
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch01_part1_vi.csv",
+      "source_jp_scanner": "お金持ちの花輪くんがよく行くおすし屋さんのなまえは？",
+      "vi_full_reference": "Quán sushi đắt tiền Hanawa-kun thường ghé có tên là gì?"
     },
     {
       "file_offset": "0x34558",
       "vi_runtime_lines": [
         "Quán sushi",
         "Ishimatsu",
-        "Hanawa ăn"
+        "Hanawa ghé"
       ],
       "expected_capacities": [
         12,
         12,
         12
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch01_part1_vi.csv",
+      "source_jp_scanner": "ねだんのたかい石松寿司でスペシャルメニューを食べているおとくいさまの花輪",
+      "vi_full_reference": "Hanawa-kun là khách quen, thường ăn thực đơn đặc biệt ở quán Sushi Ishimatsu đắt đỏ."
     },
     {
       "file_offset": "0x345BF",
       "vi_runtime_lines": [
-        "Giá quá",
-        "cao, ông",
-        "Tomozo"
+        "Tomozo mà",
+        "ăn là",
+        "hết cả"
       ],
       "expected_capacities": [
         9,
         8,
         6
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch01_part1_vi.csv",
+      "source_jp_scanner": "くん。そこのねだんのたかさは友蔵が年金パワーを",
+      "vi_full_reference": "Giá ở đó cao tới mức 'sức mạnh lương hưu' của Tomozou..."
     },
     {
       "file_offset": "0x3460E",
       "vi_runtime_lines": [
-        "tiêu hết",
+        "tiền hưu",
         "đấy!"
       ],
       "expected_capacities": [
         8,
         4
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch01_part1_vi.csv",
+      "source_jp_scanner": "つかいはたすほどである。",
+      "vi_full_reference": "...cũng bị tiêu sạch."
     },
     {
       "file_offset": "0x3464F",
@@ -216,7 +262,10 @@
         14,
         13
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch01_part1_vi.csv",
+      "source_jp_scanner": "お調子者で、ギャグのセンスが光るはまじ。クラスのだれと",
+      "vi_full_reference": "Hamaji là cậu bạn ham vui với khiếu pha trò nổi bật. Cậu từng..."
     },
     {
       "file_offset": "0x3469A",
@@ -226,7 +275,10 @@
       "expected_capacities": [
         13
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch01_part1_vi.csv",
+      "source_jp_scanner": "うわさになったことがある？",
+      "vi_full_reference": "...bị đồn với ai trong lớp?"
     },
     {
       "file_offset": "0x346F8",
@@ -240,7 +292,10 @@
         13,
         13
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch01_part1_vi.csv",
+      "source_jp_scanner": "まる子からのおみやげに「アイラブユー」と書かれてあったばっかりに、まる子と",
+      "vi_full_reference": "Chỉ vì món quà Maruko tặng có ghi 'I LOVE YOU', Hamaji liền bị đồn với Maruko."
     },
     {
       "file_offset": "0x34761",
@@ -254,7 +309,10 @@
         10,
         11
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch01_part1_vi.csv",
+      "source_jp_scanner": "うわさになってしまうはまじ。しかも、さくら家では「おもしろい顔のヤツ」",
+      "vi_full_reference": "Chưa hết, ở nhà Sakura cậu còn bị gọi là 'thằng mặt hài'..."
     },
     {
       "file_offset": "0x347C4",
@@ -268,7 +326,10 @@
         9,
         7
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch01_part1_vi.csv",
+      "source_jp_scanner": "とか「ハマ人」などと言われてるなんて、彼は知らない。",
+      "vi_full_reference": "...hay 'Hama-jin' nữa mà cậu chẳng hề hay biết."
     },
     {
       "file_offset": "0x3482D",
@@ -280,7 +341,10 @@
         12,
         12
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch01_part2_vi.csv",
+      "source_jp_scanner": "はまじは、まる子になにとこうかんにモモエちゃんの",
+      "vi_full_reference": "Hamaji đã đổi thứ gì với Maruko để lấy..."
     },
     {
       "file_offset": "0x34876",
@@ -292,7 +356,10 @@
         9,
         5
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch01_part2_vi.csv",
+      "source_jp_scanner": "コンサートのけんをあげたの？",
+      "vi_full_reference": "...vé concert của Momoe-chan?"
     },
     {
       "file_offset": "0x348D6",
@@ -306,7 +373,10 @@
         14,
         13
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch01_part2_vi.csv",
+      "source_jp_scanner": "なんとはまじは、給食のコーヒー牛乳とモモエちゃんのコンサートのけんをかえっこ",
+      "vi_full_reference": "Không ngờ Hamaji lại đổi hộp sữa cà phê trong bữa trưa lấy vé concert của Momoe-chan..."
     },
     {
       "file_offset": "0x34941",
@@ -318,24 +388,30 @@
         14,
         4
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch01_part2_vi.csv",
+      "source_jp_scanner": "してしまう、よくのない少年であった。",
+      "vi_full_reference": "...đúng là một cậu bé chẳng tham lam chút nào."
     },
     {
       "file_offset": "0x34997",
       "vi_runtime_lines": [
-        "Hideji lái",
-        "như người cha"
+        "Hideji vừa",
+        "lái, vừa chăm"
       ],
       "expected_capacities": [
         12,
         13
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch01_part2_vi.csv",
+      "source_jp_scanner": "花輪くんの運転手であり、親がわりでもあるヒデじい。",
+      "vi_full_reference": "Hideji vừa là tài xế, vừa như người cha chăm sóc Hanawa-kun."
     },
     {
       "file_offset": "0x34A2E",
       "vi_runtime_lines": [
-        "Ông Hideji",
+        "Hideji hiền",
         "thương Maruko",
         "như Hanawa",
         "68 tuổi"
@@ -346,7 +422,10 @@
         12,
         7
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch01_part2_vi.csv",
+      "source_jp_scanner": "いつもまる子たちを花輪くんと同じようにあつかってくれるやさしいヒデじいは",
+      "vi_full_reference": "Hideji hiền hậu luôn đối xử với Maruko và các bạn tử tế như với Hanawa-kun..."
     },
     {
       "file_offset": "0x34AD1",
@@ -358,7 +437,10 @@
         13,
         13
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch01_part2_vi.csv",
+      "source_jp_scanner": "いつもブーブーうるさい少年ブー太郎はおおきくなったら",
+      "vi_full_reference": "Buutaro, cậu bạn lúc nào cũng 'buu buu', lớn lên muốn..."
     },
     {
       "file_offset": "0x34B1E",
@@ -368,7 +450,10 @@
       "expected_capacities": [
         8
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch01_part2_vi.csv",
+      "source_jp_scanner": "なにになりたい？",
+      "vi_full_reference": "...làm nghề gì?"
     },
     {
       "file_offset": "0x34B74",
@@ -382,7 +467,10 @@
         13,
         11
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch01_part2_vi.csv",
+      "source_jp_scanner": "ブーブーうるさいながらも、いもうと思いなかれは、",
+      "vi_full_reference": "Dù lúc nào cũng 'buu buu' ồn ào, cậu lại là một người anh rất thương em gái..."
     },
     {
       "file_offset": "0x34BBF",
@@ -396,7 +484,10 @@
         8,
         10
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch01_part2_vi.csv",
+      "source_jp_scanner": "おおきくなったらプロの野球選手になるのがゆめである。",
+      "vi_full_reference": "...và mơ lớn lên sẽ trở thành cầu thủ bóng chày chuyên nghiệp."
     },
     {
       "file_offset": "0x34C33",
@@ -408,7 +499,10 @@
         13,
         11
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch01_part2_vi.csv",
+      "source_jp_scanner": "永沢君のともだちで、いつもくちびるの色がブルーな",
+      "vi_full_reference": "Là bạn của Nagasawa-kun, cậu bé có đôi môi lúc nào cũng xanh xanh..."
     },
     {
       "file_offset": "0x34C7C",
@@ -420,7 +514,10 @@
         11,
         7
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch01_part2_vi.csv",
+      "source_jp_scanner": "藤木くんのフルネームはなんていうの？",
+      "vi_full_reference": "Fujiki-kun có tên đầy đủ là gì?"
     },
     {
       "file_offset": "0x34CF0",
@@ -434,31 +531,40 @@
         14,
         12
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch01_part2_vi.csv",
+      "source_jp_scanner": "まる子たちに不幸の手紙をおくったりした気の小さい藤木くん。永沢くんといちばん",
+      "vi_full_reference": "Fujiki-kun nhút nhát từng gửi cả 'thư xui xẻo' cho Maruko và các bạn. Cậu thân nhất với Nagasawa-kun..."
     },
     {
       "file_offset": "0x34D5B",
       "vi_runtime_lines": [
-        "Bạn Nagasawa",
-        "bị cậu",
-        "dắt mũi"
+        "Nagasawa hay",
+        "bắt nạt",
+        "Fujiki"
       ],
       "expected_capacities": [
         12,
         7,
         7
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch01_part2_vi.csv",
+      "source_jp_scanner": "なかよしで、またいちばん永沢くんにふり回されるかれで",
+      "vi_full_reference": "...và cũng chính là người bị Nagasawa-kun quay như chong chóng nhiều nhất..."
     },
     {
       "file_offset": "0x34DAC",
       "vi_runtime_lines": [
-        "luôn"
+        "hoài"
       ],
       "expected_capacities": [
         4
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch01_part2_vi.csv",
+      "source_jp_scanner": "あった。",
+      "vi_full_reference": "...là thế đấy."
     },
     {
       "file_offset": "0x34DD5",
@@ -470,7 +576,10 @@
         14,
         13
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch01_part2_vi.csv",
+      "source_jp_scanner": "まる子が南の島に行ったとき、なかよしになったプサディー",
+      "vi_full_reference": "Khi Maruko đến đảo phương Nam, cô bé kết thân với Pusadi. Pusadi..."
     },
     {
       "file_offset": "0x34E24",
@@ -482,7 +591,10 @@
         13,
         3
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch01_part2_vi.csv",
+      "source_jp_scanner": "が、さいごにわたしたものはなに？",
+      "vi_full_reference": "...đã tặng Maruko thứ gì lúc chia tay?"
     },
     {
       "file_offset": "0x34E84",
@@ -496,7 +608,10 @@
         14,
         6
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch01_part2_vi.csv",
+      "source_jp_scanner": "やさしくて元気なプサディーにまる子はいろいろとかんどうさせられる。",
+      "vi_full_reference": "Pusadi hiền hậu và tràn đầy sức sống khiến Maruko cảm động bởi rất nhiều điều."
     },
     {
       "file_offset": "0x34F3E",
@@ -506,19 +621,25 @@
       "expected_capacities": [
         14
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch01_part2_vi.csv",
+      "source_jp_scanner": "ないてしまうまる子であった。",
+      "vi_full_reference": "...cô bé đã bật khóc."
     },
     {
       "file_offset": "0x34F7B",
       "vi_runtime_lines": [
         "Fuyuta ở lớp",
-        "đang yêu ai?"
+        "thích ai đây?"
       ],
       "expected_capacities": [
         13,
         13
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch02_part1_vi.csv",
+      "source_jp_scanner": "まる子のクラスメイトの冬田  ｛      さん。実は彼女にはすきな人  ｛",
+      "vi_full_reference": "Fuyuta-san là bạn cùng lớp với Maruko. Thật ra cô bạn đang để ý một người..."
     },
     {
       "file_offset": "0x34FC8",
@@ -530,7 +651,10 @@
         13,
         10
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch02_part1_vi.csv",
+      "source_jp_scanner": "が…。さて冬田さんのすきな  ｛      男子はいったいだれ？  ｛",
+      "vi_full_reference": "...Vậy chàng trai Fuyuta-san thích rốt cuộc là ai?"
     },
     {
       "file_offset": "0x3503C",
@@ -544,33 +668,42 @@
         14,
         13
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch02_part1_vi.csv",
+      "source_jp_scanner": "変な顔シールをあつめている｛      クラスの女子、冬田さん。大野｛      くんがすきで、バレンタイン  ｛",
+      "vi_full_reference": "Fuyuta-san là cô bạn trong lớp mê sưu tầm sticker mặt ngộ nghĩnh. Cô bé thích Ono-kun, và đến Valentine..."
     },
     {
       "file_offset": "0x350AD",
       "vi_runtime_lines": [
-        "Ngày Valentine",
-        "chocolate",
-        "qua cô"
+        "Fuyuta tặng",
+        "Ono kẹo",
+        "nhưng lại"
       ],
       "expected_capacities": [
         14,
         9,
         9
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch02_part1_vi.csv",
+      "source_jp_scanner": "にはチョコをわたすが、まさか｛      そのチョコがまる子｛      から、さらには友蔵｛",
+      "vi_full_reference": "...đã tặng cậu ấy sô-cô-la. Ai ngờ miếng sô-cô-la ấy lại vòng qua Maruko rồi tới cả Tomozo..."
     },
     {
       "file_offset": "0x3510A",
       "vi_runtime_lines": [
-        "tới ông",
-        "chả rõ"
+        "qua Maru",
+        "tới ông"
       ],
       "expected_capacities": [
         9,
         7
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch02_part1_vi.csv",
+      "source_jp_scanner": "の手にわたったとは｛      知りもしない。    ｛",
+      "vi_full_reference": "...mà cô bé chẳng hề hay biết."
     },
     {
       "file_offset": "0x35157",
@@ -582,19 +715,25 @@
         12,
         12
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch02_part1_vi.csv",
+      "source_jp_scanner": "学級委員であることに命を｛      かける少年丸尾くんだが、｛",
+      "vi_full_reference": "Maruo-kun là cậu bạn coi chức lớp trưởng như lẽ sống..."
     },
     {
       "file_offset": "0x3519C",
       "vi_runtime_lines": [
-        "Sinh nhật?",
+        "Ngày sinh?",
         "bao giờ"
       ],
       "expected_capacities": [
         11,
         7
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch02_part1_vi.csv",
+      "source_jp_scanner": "かれのたんじょう日って      ｛      いったいいつ？              ｛",
+      "vi_full_reference": "...vậy sinh nhật của cậu ấy là ngày nào?"
     },
     {
       "file_offset": "0x3521E",
@@ -608,7 +747,10 @@
         14,
         14
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch02_part1_vi.csv",
+      "source_jp_scanner": "本名、丸尾スエオ。ときどき｛      学級委員の強みをつかいすぎる｛      こともあるが、まじめなかれの｛",
+      "vi_full_reference": "Tên thật của cậu là Maruo Sueo. Đôi khi cậu cũng hơi lạm dụng quyền lớp trưởng, nhưng vốn rất nghiêm túc..."
     },
     {
       "file_offset": "0x3528F",
@@ -622,7 +764,10 @@
         10,
         9
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch02_part1_vi.csv",
+      "source_jp_scanner": "たんじょう日は",
+      "vi_full_reference": "...sinh nhật của cậu ấy là..."
     },
     {
       "file_offset": "0x3531F",
@@ -634,7 +779,10 @@
         13,
         14
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch02_part1_vi.csv",
+      "source_jp_scanner": "丸尾くんのかあさまは、丸尾｛      くんが学級委員になるためなら｛",
+      "vi_full_reference": "Mẹ Maruo-kun chẳng tiếc công sức, miễn sao con mình được làm lớp trưởng..."
     },
     {
       "file_offset": "0x3536A",
@@ -646,21 +794,27 @@
         14,
         10
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch02_part1_vi.csv",
+      "source_jp_scanner": "どりょくをおしまない人だが、｛      そのかあさまは何才？｛",
+      "vi_full_reference": "...vậy mẹ cậu ấy bao nhiêu tuổi?"
     },
     {
       "file_offset": "0x353D6",
       "vi_runtime_lines": [
         "Mẹ Maruo 49",
-        "rất hiền nhưng",
-        "cậu muốn mẹ"
+        "rất thương con",
+        "thế mà bị chê"
       ],
       "expected_capacities": [
         14,
         14,
         13
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch02_part1_vi.csv",
+      "source_jp_scanner": "丸尾くんのかあさまは",
+      "vi_full_reference": "Mẹ của Maruo-kun..."
     },
     {
       "file_offset": "0x354E1",
@@ -672,7 +826,10 @@
         12,
         6
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch02_part1_vi.csv",
+      "source_jp_scanner": "丸尾くんのメガネのうずは｛      どっちまき？            ｛",
+      "vi_full_reference": "Vòng xoáy trên kính của Maruo-kun xoắn theo hướng nào?"
     },
     {
       "file_offset": "0x3552F",
@@ -682,7 +839,10 @@
       "expected_capacities": [
         4
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch02_part1_vi.csv",
+      "source_jp_scanner": "みぎまき｛",
+      "vi_full_reference": "Theo chiều kim đồng hồ"
     },
     {
       "file_offset": "0x3553E",
@@ -692,7 +852,11 @@
       "expected_capacities": [
         5
       ],
-      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator"
+      "status": "clean_rom_source_verified_pending_048_merged_ROM_emulator",
+      "source_file": "translation/source/quiz_batch02_part1_vi.csv",
+      "source_jp_scanner": "ひだりまき｛",
+      "vi_full_reference": "Ngược chiều kim đồng hồ"
     }
-  ]
+  ],
+  "editorial_qa": "12 dialogue lines revised for meaning and character consistency; full canonical Japanese/Vietnamese references anchored for all 54 records"
 }
