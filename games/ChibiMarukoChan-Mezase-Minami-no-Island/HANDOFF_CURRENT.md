@@ -1,5 +1,24 @@
 # HANDOFF CURRENT — Chibi Maruko-chan SNES Việt hóa
 
+## CHECKPOINT 070 — 2026-10-12: REAL GITHUB CI PASS AFTER REPAIRING 3 BLOCKING PYTHON ERRORS
+
+**Read `docs/CHECKPOINT_070_REAL_CI_UNBLOCKED.md` FIRST.** Very important: after dozens of historical CI red runs, actual CI failure logs exposed **THREE serious source-code errors** preventing tool execution, not ROM crashes: checkpoint042 Story build Python SyntaxError in output loop line187; checkpoint043 Story build identical SyntaxError line202; checkpoint055 G2 rules contained literal `\\n` and IndentationError around line72. All fixed and **GITHUB ACTIONS VERIFIED PASS** on commit `13f727366319615b21eb3083ef1603fb8edc734c`:
+- `Chibi SNES source localization checks` run [38164080900](https://github.com/RVTGMzz/VHSNES/actions/runs/38164080900): **SUCCESS** — Python syntax + source QA.
+- `Chibi graphics reverse and build static` run [38164080910](https://github.com/RVTGMzz/VHSNES/actions/runs/38164080910): **SUCCESS** — original graphics self-tests formerly entirely skipped.
+Actual fix commits: `f1d487bd637ba832fee0bd2523fd17ec431f900b`, `62382c1107e4f8e619454747eaa55aacf9923de8`, `13f727366319615b21eb3083ef1603fb8edc734c`.
+
+New `translation/runtime/quiz_answer_pointer_offsets_070.json` is a compact original-ROM-derived **50×3 choice-source-offset atlas**, no copyrighted game text/font binary. New `tools/audit_quiz_repo_no_rom_070.py` proves in **REAL green GitHub CI**: all **381 original Quiz records**, **279 nonduplicate staged**, **150 original multiple-choice source addresses**, **69/150 prepared**, **81/150 not runtime-prepared**, **79 V2-compatible full strings** and **two CP932-native Kanji exceptions**. It optionally verifies the 150 actual LoROM pointer words on user-owned clean Japanese SFC with `--original-rom`. New `.github/workflows/chibi-snes-source-qa.yml` runs this automatically on branch pushes and rejects committed ROM/IPS binaries; this addresses the user's daily automated continuation goal with true CI quality checks (still not automated gameplay).
+
+New `tools/rebuild_from_checkpoint043_archive_070.py` accepts the exact historical user-owned original **043 ZIP directly** or exact extracted 043 IPS, checks original 28,135B IPS SHA `d3cb7ea84067675a5cc12cb4a26f260194b0a6f00ff235f0129460a902a58a50`, and invokes the 043→061 in-memory chain (clean-ROM cumulative IPS/report only, emulator untested). **NOT yet successfully built** because still no authorized raw 043 archive bytes. In this session an explicit Library `files.materialize` for original `Chibi_043_G0G1_176Fields_Story58_Content_First_UNTESTED.zip` again returned `This Project file does not have an authorized raw-byte materialization path`; ZIP metadata is NOT actual raw bytes. The user's original Japanese 2MiB SFC remains locally verified SHA `e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956`.
+
+When 043 raw ZIP is made available, from game project root:
+`python tools/audit_quiz_repo_no_rom_070.py --original-rom clean.sfc`
+`python tools/rebuild_from_checkpoint043_archive_070.py clean.sfc 043-original.zip --ips final061.ips --report qa061.json --allow-untested`
+Then actual SNES emulator gameplay/title/font checks and minimum Japanese 067→Vietnamese 069 relocated-choice test, before claiming any of 81 experimental long answers done.
+
+**Accurate progress still 279/381 prepared Quiz source fields, NOT a finished playable localization.** The 81 hybrid CP932/V2 batch strings in checkpoint069 are experimental, not approved. Four Fortune original too-long cases, G3 result/end UI graphics, real integrated run and full QA remain. User wants **content-first; font polish later; no repeated tiny unplayable downloads**. Do not repeat prior CI-failure claims now that runs 38164080900 and 38164080910 are green; don't confuse static CI success with game/emulator QA.
+
+
 ## CHECKPOINT 069 — 2026-10-12: ALL 81 FULL QUIZ CHOICES BYTE-ENCODABLE, HYBRID NATIVE CP932/V2 PROOF (EMULATOR NOT TESTED)
 
 **Read `docs/QUIZ_MIXED_CP932_V2_81_PROOF_069.md` first.** The previous 068 source-only batch could encode 79/81 longer canonical Quiz answer strings with the existing V2 Vietnamese glyph codepage. **New 069 fixes two ambiguous original Japanese answer alternatives without truncating either**: source `0x33DDF Nagasawa Kazuo (一雄)` and `0x33DFD Nagasawa Kazuo (和雄)`. The V2 font map does not include `一`, `和`, `雄`, but the clean original Quiz ROM already contains their exact 2-byte CP932 encodings `88EA`, `9861`, `9759`, each in at least three native source occurrences. New experimental per-character encoder uses existing V2 `84xx` for all Latin/Vietnamese and **four native Japanese CP932 Kanji glyph occurrences** across those two choices. This is a byte-level mix only; native CP932 glyph availability in the future integrated VN V2 font is **NOT PROVEN**.
