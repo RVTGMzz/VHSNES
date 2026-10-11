@@ -1,5 +1,14 @@
 # Translation progress — Chibi Maruko-chan
 
+## CHECKPOINT 048 CONTENT-FIRST (2026-10-11): 103 NEW FORTUNE ACTUAL GLYPH EDITS VERIFIED, INTEGRATED 047 MERGE PENDING
+
+- Authored **103 NEW context-aware Fortune display strings** (wishes, romance, money, learning, daily tips, lucky colors) and verified their exact Japanese original 2MiB source offsets and width including CP932 fullwidth glyphs and **two ASCII spaces occupying one glyph's bytes**. All 103 use existing 0x84 V2 font glyphs, maintain original `816F` line delimiters, and do not touch any preexisting source region. Canonical `vi_full` unchanged; abbreviations were edited by meaning, not automatic character trimming. Runtime/emulator visual QA pending.
+- Physically encoded all 103 into an **exact recovered 043 ROM** to prove actual bytes, 2,002 approved original glyph bytes, 1,997 edited positions, text-only IPS **2,545B/108 records** SHA `3eb7dcc55d0c0b585beb4b27d6d2ca08c5facd39196042756eae0cf0dc68379c`, correctly replayed; temporary unchecksummed preview ROM SHA `4f461333d171fc21c3541ae29393056f0c9234ea0f5c4de46f97589afd20378b`. This is **QA overlay only, not a merged 048 build, not playable release**.
+- 33 Fortune slots from 040 +15 from 047 =**48 already included** in documented full047 ROM, with **0 offset collisions** against the new 103. **Potential Fortune after verified merge: 151/157**, six items remain blocked by meaningful width/graphic layout (2BD5E,2C413,2C601,2C86B,2CA7D,2CADD). **Exact 047 combined ROM binary missing in this session**, so no verified cumulative 048 ROM SHA/checksum and no actual emulator result. This blocker must be resolved before counting 103 as safely merged on 047.
+- GitHub: `translation/runtime/fortune_content_first_103_048.json`, `tools/build_content_first_048_fortune_103.py`, `docs/CONTENT_FIRST_FORTUNE_103_CHECKPOINT_048.md`. Builder guards exact 047 source ROM SHA and text sources and recomputes full checksum, or runs exact reproducible 043 QA mode. Not run by GitHub CI; local independent text-byte patch passed.
+- User wants significant content/complete game first, font later, **no intermediate IPS download links**. Next reconstruct 047 exactly from 043 and GH source, actual 048 merge, then big Quiz sweep. Do not overclaim in-game readiness.
+
+
 ## CONTENT-FIRST CHECKPOINT 047 (2026-10-11) — +45 DIRECT TEXT FIELDS, FULL STORY SOURCE MAPPING
 
 - **15 additional distinct original Story record translations in binary 046**, including preserving original unusual leading `xxF3` CP932 pairs and 30 dialogue break markers. Fixed **8 scanner false offsets** that start at the second CP932 byte of Japanese fullwidth digits, wrongly appearing as Latin `O/P/Q/R`; four already translated inside old parent records, four addressed by new full parent records. These aliases are **NOT eight additional physical fields**.
