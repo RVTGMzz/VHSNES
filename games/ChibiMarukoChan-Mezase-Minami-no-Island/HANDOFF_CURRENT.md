@@ -1,5 +1,18 @@
 # HANDOFF CURRENT — Chibi Maruko-chan SNES Việt hóa
 
+## CHECKPOINT 054 — 2026-10-11: +54 NONDUPLICATE QUIZ PHYSICAL SOURCE FIELDS (INTEGRATED BUILD PENDING)
+
+**Read `docs/CONTENT_FIRST_QUIZ_54_CHECKPOINT_054.md` first.** Actual user-supplied Japanese clean ROM SHA `e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956` verified. **54 new original Quiz records**, 123 physical line spans, 123 original `816F` controls preserved, 2,642 permitted editable source bytes and 2,636 actual changed bytes were physically tested on the clean ROM as a **text-only, non-checksummed, NONPLAYABLE QA overlay**. Independently reapplying its 3,279B /127-record IPS returned the same 2MiB bytes; overlay IPS SHA `9f5069f7a105e371a71f9cf8bf5fdd38bae099d774c184a272f9abec9c8908ad`. No emulator test.
+
+**Historical 053 correction:** 15 of the 16 supposedly new Quiz entries were already integrated in 041. Only `0x340C0` was additional, and it is now included in 054 once. 053 standalone builder disabled; do not count or apply those 15 again. All new 054 offsets have zero collision with the 039/041/047 tracked source offsets.
+
+**Pushed to GitHub:** `translation/runtime/quiz_content_first_54_054.json`, `tools/build_content_first_054_quiz_54.py`, `tools/rebuild_content_first_054_full_chain.py`, and QA document. These new source-committed Python builders have **not** run against a 048 ROM in this session. Full 054 integrated ROM still **NOT BUILT**, because historical original-clean `043.ips` is not accessible: old ZIP is only visible in Library metadata and raw materialization failed. To run once user supplies exact 043 bytes:
+
+`python tools/rebuild_content_first_054_full_chain.py clean.sfc exact-043.ips --ips final-054.ips --report qa054.json --allow-untested`
+
+Do not upload copyrighted ROM or release a text-only IPS. User prefers content-first, font and emulator visual cleanup last; do not send unsolicited mini-patches. Remaining work includes long Quiz names/questions, G2 rules, G3 result assets.
+
+
 ## 2026-10-11 — LIVE USER ROM CHECK / 053 SOURCE CORRECTION
 
 ### Uploaded ROM physical 053 Quiz16 overlay — STATIC PASS, still not playable
