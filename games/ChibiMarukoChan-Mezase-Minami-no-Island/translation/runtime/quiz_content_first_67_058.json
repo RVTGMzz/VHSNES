@@ -1,0 +1,772 @@
+{
+  "schema": "chibi.quiz.content_first.058.v1",
+  "source_clean_rom_sha256": "e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956",
+  "candidate_count": 67,
+  "physical_line_segments": 149,
+  "native_816F_preserved": 149,
+  "writable_glyph_source_bytes": 3180,
+  "actually_changed_source_bytes": 3174,
+  "clean_source_only_IPS_bytes": 3937,
+  "clean_source_only_IPS_records": 151,
+  "clean_source_only_IPS_sha256": "6403b2937ac1f82e33809954c6693b196bd425a830dfb79be4f18741a15da7d7",
+  "clean_source_only_ROM_sha256": "510f1f64a765f16f00235fa2218b9919fab1e5fb977f7ed8afc633fbf4565ff8",
+  "based_on": "verified_clean_2MiB_source_only_not_integrated",
+  "stage_input": "full_integrated_057_ROM",
+  "notes": "All 67 canonical source Japanese/uncut Vietnamese texts anchored to quiz_batch03_part2/part3; compact display strings separately reviewed. Full safe length expansion needed for names with more glyphs than source capacity. A text-only original-Japanese ROM overlay lacks the Vietnamese V2 font and is NOT playable.",
+  "emulator_tested": false,
+  "full_058_merged_ROM_built": false,
+  "records": [
+    {
+      "file_offset": "0x3288E",
+      "vi_runtime_lines": [
+        "40",
+        "Mẹ hơi nóng",
+        "yêu hai chị em"
+      ],
+      "source_file": "translation/source/quiz_batch03_part2_vi.csv",
+      "source_jp_scanner": "４０才。｛      やや気がみじかいが、世界で  ｛      いちばんまる子とおねえちゃん｛",
+      "vi_full_reference": "...40 tuổi. Bà hơi nóng tính nhưng trên đời này thương Maruko và chị gái...",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x328E5",
+      "vi_runtime_lines": [
+        "Mẹ luôn thương",
+        "Maruko",
+        "rất nhiều"
+      ],
+      "source_file": "translation/source/quiz_batch03_part2_vi.csv",
+      "source_jp_scanner": "      のことを大切におもっている。｛      まる子のバカげた  ｛      こうどうをおさえる｛",
+      "vi_full_reference": "...hơn bất cứ ai. Bà cũng là người chuyên ngăn những hành động ngốc nghếch của Maruko...",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x32942",
+      "vi_runtime_lines": [
+        "vậy đó"
+      ],
+      "source_file": "translation/source/quiz_batch03_part2_vi.csv",
+      "source_jp_scanner": "      やくでもある。｛",
+      "vi_full_reference": "...lại.",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x32971",
+      "vi_runtime_lines": [
+        "Chị của Maruko",
+        "học lớp 6 rồi"
+      ],
+      "source_file": "translation/source/quiz_batch03_part2_vi.csv",
+      "source_jp_scanner": "      いつもクールなおねえちゃんは｛      小学",
+      "vi_full_reference": "Chị gái lúc nào cũng điềm tĩnh của Maruko là học sinh...",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x329BE",
+      "vi_runtime_lines": [
+        "Chị muốn bố",
+        "giống ai nhất?"
+      ],
+      "source_file": "translation/source/quiz_batch03_part2_vi.csv",
+      "source_jp_scanner": "      のかのじょの理想のおとうさん｛      はタレントでたとえるとだれ？｛",
+      "vi_full_reference": "Nếu ví với người nổi tiếng, mẫu người cha lý tưởng của chị là ai?",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x32A38",
+      "vi_runtime_lines": [
+        "Maruko quậy",
+        "chị phát mệt",
+        "chị học lớp 6"
+      ],
+      "source_file": "translation/source/quiz_batch03_part2_vi.csv",
+      "source_jp_scanner": "        まる子にしばしばめいわくを｛      かけられるおねえちゃんは｛      グラタンがすきな小学",
+      "vi_full_reference": "Chị gái, người thường xuyên bị Maruko làm phiền, thích gratin và đang học...",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x32AA5",
+      "vi_runtime_lines": [
+        "Bố lý tưởng",
+        "Utsui Ken",
+        "đó!"
+      ],
+      "source_file": "translation/source/quiz_batch03_part2_vi.csv",
+      "source_jp_scanner": "      ドライなせいかくのかのじょの｛      理想のおとうさんは宇津井健｛      である。｛",
+      "vi_full_reference": "Với tính cách khá lạnh và điềm tĩnh, mẫu người cha lý tưởng của chị là Utsui Ken.",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x32B1D",
+      "vi_runtime_lines": [
+        "Ono hơi kiêu",
+        "mà đáng tin"
+      ],
+      "source_file": "translation/source/quiz_batch03_part2_vi.csv",
+      "source_jp_scanner": "      えばりんぼうだけど、男の子｛      らしくたのもしい大野君の｛",
+      "vi_full_reference": "Ono-kun tuy hay ra vẻ nhưng rất đáng tin và đúng chất con trai. Ước mơ của cậu là...",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x32B64",
+      "vi_runtime_lines": [
+        "Mơ làm nghề",
+        "gì?"
+      ],
+      "source_file": "translation/source/quiz_batch03_part2_vi.csv",
+      "source_jp_scanner": "      ゆめはいったいなにになる｛      こと？｛",
+      "vi_full_reference": "...trở thành gì?",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x32BBE",
+      "vi_runtime_lines": [
+        "",
+        "Ono và bạn",
+        "cùng ra khơi"
+      ],
+      "source_file": "translation/source/quiz_batch03_part2_vi.csv",
+      "source_jp_scanner": "  ｛        杉山くんと二人でいつか｛      船乗りになることが大野君の｛",
+      "vi_full_reference": "Ước mơ của Ono-kun là một ngày nào đó cùng Sugiyama-kun...",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x32C09",
+      "vi_runtime_lines": [
+        "Sang đợt ba",
+        "đi Tokyo",
+        "rồi!"
+      ],
+      "source_file": "translation/source/quiz_batch03_part2_vi.csv",
+      "source_jp_scanner": "      ゆめ。",
+      "vi_full_reference": "...trở thành thủy thủ.",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x32C79",
+      "vi_runtime_lines": [
+        "Kayo rất vụng",
+        "mà lại vui vẻ"
+      ],
+      "source_file": "translation/source/quiz_batch03_part2_vi.csv",
+      "source_jp_scanner": "      おっちょこちょいだけど明るい｛      山田かよ子ちゃん。およめさん｛",
+      "vi_full_reference": "Yamada Kayoko tuy hậu đậu nhưng rất vui vẻ. Kayo-chan mơ được làm cô dâu...",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x32CC6",
+      "vi_runtime_lines": [
+        "Kayo có người",
+        "thích ai?"
+      ],
+      "source_file": "translation/source/quiz_batch03_part2_vi.csv",
+      "source_jp_scanner": "      になるのがゆめのかよちゃん｛      のすきな人ってだれ？｛",
+      "vi_full_reference": "...vậy người cô bé thích là ai?",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x32D34",
+      "vi_runtime_lines": [
+        "Kayo mê Sugi",
+        "nhưng Maruko",
+        "lỡ tiết lộ!"
+      ],
+      "source_file": "translation/source/quiz_batch03_part2_vi.csv",
+      "source_jp_scanner": "        杉山くんにおもいをよせる｛      かよちゃんだが、かのじょは｛      まる子にあっさりと好きな人｛",
+      "vi_full_reference": "Kayo-chan thầm thích Sugiyama-kun, nhưng Maruko lại vô tư nói toạc ra người cô bé thích...",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x32D9F",
+      "vi_runtime_lines": [
+        "Bị lộ",
+        "tội cô",
+        "bé quá"
+      ],
+      "source_file": "translation/source/quiz_batch03_part2_vi.csv",
+      "source_jp_scanner": "      をばらされて｛      しまう、なん｛      とも気のどく｛",
+      "vi_full_reference": "...khiến bí mật bị lộ mất. Đúng là...",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x32DE0",
+      "vi_runtime_lines": [
+        "thật mà"
+      ],
+      "source_file": "translation/source/quiz_batch03_part2_vi.csv",
+      "source_jp_scanner": "      な少女である。｛",
+      "vi_full_reference": "...một cô bé đáng thương.",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x32E0F",
+      "vi_runtime_lines": [
+        "Mê bóng đá lắm",
+        "rất chăm chỉ"
+      ],
+      "source_file": "translation/source/quiz_batch03_part2_vi.csv",
+      "source_jp_scanner": "      サッカーが大すきながんばり屋｛      で、ついにはプロのサッカー｛",
+      "vi_full_reference": "Cậu bé chăm chỉ mê bóng đá và sau này thật sự trở thành cầu thủ chuyên nghiệp...",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x32E5A",
+      "vi_runtime_lines": [
+        "Cậu ấy tên",
+        "gì?"
+      ],
+      "source_file": "translation/source/quiz_batch03_part2_vi.csv",
+      "source_jp_scanner": "      せんしゅになった男の子の｛      なまえは？｛",
+      "vi_full_reference": "...tên là gì?",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x32EC4",
+      "vi_runtime_lines": [
+        "Cậu bé Kenta",
+        "giỏi đá bóng",
+        "và nỗ lực mãi"
+      ],
+      "source_file": "translation/source/quiz_batch03_part2_vi.csv",
+      "source_jp_scanner": "        がんばり屋のサッカー少年、｛      長谷川ケンタくん。さいのうと｛      どりょくのかいがあって、プロ｛",
+      "vi_full_reference": "Hasegawa Kenta là một cậu bé bóng đá rất chăm chỉ. Nhờ tài năng và nỗ lực...",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x32F35",
+      "vi_runtime_lines": [
+        "Thành cầu thủ",
+        "rồi!"
+      ],
+      "source_file": "translation/source/quiz_batch03_part2_vi.csv",
+      "source_jp_scanner": "      のサッカーせんしゅになるの  ｛      だった。｛",
+      "vi_full_reference": "...cậu đã trở thành cầu thủ bóng đá chuyên nghiệp.",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x32F8B",
+      "vi_runtime_lines": [
+        "Ono, Sugiyama",
+        "học lớp nào?"
+      ],
+      "source_file": "translation/source/quiz_batch03_part2_vi.csv",
+      "source_jp_scanner": "      大野くんとなかよしの杉山くん｛      だが、かれらはいったい何年  ｛",
+      "vi_full_reference": "Sugiyama-kun rất thân với Ono-kun. Hai cậu học lớp mấy...",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x32FD8",
+      "vi_runtime_lines": [
+        "Gì?"
+      ],
+      "source_file": "translation/source/quiz_batch03_part2_vi.csv",
+      "source_jp_scanner": "      何組？｛",
+      "vi_full_reference": "...và lớp nào?",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x33018",
+      "vi_runtime_lines": [
+        "Lớp Maruko",
+        "là lớp 3-4",
+        "Cả hai bạn"
+      ],
+      "source_file": "translation/source/quiz_batch03_part2_vi.csv",
+      "source_jp_scanner": "        杉山くんたち、すなわち  ｛      まる子のクラスは",
+      "vi_full_reference": "Sugiyama-kun và các bạn, tức lớp của Maruko, là...",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x33083",
+      "vi_runtime_lines": [
+        "Ai cũng tin",
+        "cậu ấy hết"
+      ],
+      "source_file": "translation/source/quiz_batch03_part2_vi.csv",
+      "source_jp_scanner": "      じく、クラスのみんなの    ｛      たよれる男の子なのである。｛",
+      "vi_full_reference": "...là một cậu bạn mà cả lớp có thể dựa vào.",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x330E9",
+      "vi_runtime_lines": [
+        "Hamaji cùng",
+        "Buutaro hạng B"
+      ],
+      "source_file": "translation/source/quiz_batch03_part2_vi.csv",
+      "source_jp_scanner": "      クラス内ではまじ、ブー太郎｛      とともに",
+      "vi_full_reference": "Trong lớp, Hamaji và Buutaro cùng với...",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x33134",
+      "vi_runtime_lines": [
+        "Ai còn lại?"
+      ],
+      "source_file": "translation/source/quiz_batch03_part2_vi.csv",
+      "source_jp_scanner": "      ば、あとひとりはだれ？｛",
+      "vi_full_reference": "Người còn lại là ai?",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x33184",
+      "vi_runtime_lines": [
+        "Sekiguchi",
+        "bắt nạt bạn",
+        "ghét kẻ bỏ dở"
+      ],
+      "source_file": "translation/source/quiz_batch03_part2_vi.csv",
+      "source_jp_scanner": "        ときどき、クラスのいじめ｛      っ子になる関口くん。でも、｛      こんじょうのないヤツがきらい｛",
+      "vi_full_reference": "Sekiguchi-kun đôi lúc bắt nạt bạn trong lớp. Nhưng cậu ghét những kẻ thiếu ý chí...",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x331F1",
+      "vi_runtime_lines": [
+        "Quý người cố",
+        "Maruko",
+        "từng học"
+      ],
+      "source_file": "translation/source/quiz_batch03_part2_vi.csv",
+      "source_jp_scanner": "      で、がんばるもののみかた。｛      まる子も関口くん｛      に、じてんしゃの｛",
+      "vi_full_reference": "...và luôn đứng về phía những người chịu cố gắng. Maruko cũng từng được Sekiguchi-kun...",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x33248",
+      "vi_runtime_lines": [
+        "đạp xe",
+        "đó."
+      ],
+      "source_file": "translation/source/quiz_batch03_part2_vi.csv",
+      "source_jp_scanner": "      のりかたをおしえて｛      もらった。｛",
+      "vi_full_reference": "...chỉ cách đi xe đạp.",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x3328D",
+      "vi_runtime_lines": [
+        "Tama-chan là",
+        "bạn thân"
+      ],
+      "source_file": "translation/source/quiz_batch03_part2_vi.csv",
+      "source_jp_scanner": "      まる子の大のなかよしで、｛      女の子らしくてやさしい｛",
+      "vi_full_reference": "Tama-chan là bạn thân nhất của Maruko, dịu dàng và rất nữ tính...",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x332D0",
+      "vi_runtime_lines": [
+        "Tên đầy đủ?"
+      ],
+      "source_file": "translation/source/quiz_batch03_part2_vi.csv",
+      "source_jp_scanner": "      たまちゃんのフルネームは？｛",
+      "vi_full_reference": "...tên đầy đủ của cô bé là gì?",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x3332A",
+      "vi_runtime_lines": [
+        "Honami Tamae",
+        "bạn Maruko",
+        "thích làm thơ"
+      ],
+      "source_file": "translation/source/quiz_batch03_part2_vi.csv",
+      "source_jp_scanner": "        まる子の親友、たまちゃん。｛      フルネームは穂波たまえ。    ｛      ときどきタミーとなって心の  ｛",
+      "vi_full_reference": "Tama-chan, bạn thân của Maruko, tên đầy đủ là Honami Tamae. Đôi lúc cô bé hóa thành 'Tammy' và...",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x3339B",
+      "vi_runtime_lines": [
+        "Viết thơ và",
+        "rất thích vai",
+        "Tammy!"
+      ],
+      "source_file": "translation/source/quiz_batch03_part2_vi.csv",
+      "source_jp_scanner": "      ポエムをつくったりする｛      自分がちょっぴりお気に入り｛      だったりする。｛",
+      "vi_full_reference": "...làm thơ theo cảm xúc. Có vẻ chính cô bé cũng khá thích phiên bản ấy của mình.",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x33413",
+      "vi_runtime_lines": [
+        "Tammy làm thơ",
+        "báu vật là gì?"
+      ],
+      "source_file": "translation/source/quiz_batch03_part2_vi.csv",
+      "source_jp_scanner": "      ときどき、タミーとなって、  ｛      心のポエムをつくるたまちゃん｛",
+      "vi_full_reference": "Khi hóa thành 'Tammy' và làm thơ, báu vật của Tama-chan...",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x33460",
+      "vi_runtime_lines": [
+        "Báu vật gì?"
+      ],
+      "source_file": "translation/source/quiz_batch03_part3_vi.csv",
+      "source_jp_scanner": "      のたからものってなに？｛",
+      "vi_full_reference": "...là gì?",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x334B2",
+      "vi_runtime_lines": [
+        "",
+        "Tama hiền mà",
+        "lo cho Maru"
+      ],
+      "source_file": "translation/source/quiz_batch03_part3_vi.csv",
+      "source_jp_scanner": "  ｛        のんきなまる子をやさしく  ｛      見まもる、やさしい少女｛",
+      "vi_full_reference": "Tama-chan là cô bé dịu dàng, luôn lặng lẽ trông chừng Maruko vô tư...",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x334FD",
+      "vi_runtime_lines": [
+        "Mê Hideki",
+        "nên món quý",
+        "là chữ ký"
+      ],
+      "source_file": "translation/source/quiz_batch03_part3_vi.csv",
+      "source_jp_scanner": "      たまちゃん。かのじょもまた｛      ヒデキファンで、たからもの｛      は、もちろんヒデキの｛",
+      "vi_full_reference": "...Cô cũng là fan Hideki, nên báu vật dĩ nhiên là...",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x33562",
+      "vi_runtime_lines": [
+        "chữ ký!"
+      ],
+      "source_file": "translation/source/quiz_batch03_part3_vi.csv",
+      "source_jp_scanner": "      サインである。｛",
+      "vi_full_reference": "...chữ ký của Hideki.",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x33591",
+      "vi_runtime_lines": [
+        "Tama ngoan",
+        "học gì?"
+      ],
+      "source_file": "translation/source/quiz_batch03_part3_vi.csv",
+      "source_jp_scanner": "      まる子とちがってしっかり｛      しているたまちゃんが｛",
+      "vi_full_reference": "Tama-chan chín chắn hơn Maruko. Cô bé đang theo học...",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x335D2",
+      "vi_runtime_lines": [
+        "Học môn gì?"
+      ],
+      "source_file": "translation/source/quiz_batch03_part3_vi.csv",
+      "source_jp_scanner": "      ならってるおけいこはなに？｛",
+      "vi_full_reference": "...môn năng khiếu nào?",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x33622",
+      "vi_runtime_lines": [
+        "Tama có",
+        "giường riêng",
+        "học piano nữa"
+      ],
+      "source_file": "translation/source/quiz_batch03_part3_vi.csv",
+      "source_jp_scanner": "        たまちゃんはおうちに｛      ベッドがあったり、ピアノを｛      ならいに行ったりと、まる子｛",
+      "vi_full_reference": "Nhà Tama-chan có cả giường riêng, cô còn đi học piano, nên so với Maruko...",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x33689",
+      "vi_runtime_lines": [
+        "Thật nữ tính",
+        "biết mấy!"
+      ],
+      "source_file": "translation/source/quiz_batch03_part3_vi.csv",
+      "source_jp_scanner": "      とはちがって女の子らしい｛      人生をあゆんでいる。｛",
+      "vi_full_reference": "...quả là đang sống một cuộc đời rất 'con gái'.",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x336E7",
+      "vi_runtime_lines": [
+        "Thầy rất hiền",
+        "của lớp Maru"
+      ],
+      "source_file": "translation/source/quiz_batch03_part3_vi.csv",
+      "source_jp_scanner": "      やさしくって、おだやかな、｛      まる子のクラスのたんにん  ｛",
+      "vi_full_reference": "Người giáo viên chủ nhiệm hiền hậu và điềm đạm của lớp Maruko...",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x33730",
+      "vi_runtime_lines": [
+        "Tên thầy?"
+      ],
+      "source_file": "translation/source/quiz_batch03_part3_vi.csv",
+      "source_jp_scanner": "      の先生のなまえは？｛",
+      "vi_full_reference": "...tên là gì?",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x3377C",
+      "vi_runtime_lines": [
+        "Thầy Togawa",
+        "rất hiền",
+        "hay pha trò"
+      ],
+      "source_file": "translation/source/quiz_batch03_part3_vi.csv",
+      "source_jp_scanner": "        やさしいまる子のたんにん｛      の先生は戸川先生。｛      さんかんびにはシャレを言う｛",
+      "vi_full_reference": "Giáo viên chủ nhiệm dịu dàng của Maruko là thầy Togawa. Ngay cả trong ngày phụ huynh dự giờ, thầy còn...",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x337DF",
+      "vi_runtime_lines": [
+        "Vui tính lắm",
+        "đó"
+      ],
+      "source_file": "translation/source/quiz_batch03_part3_vi.csv",
+      "source_jp_scanner": "      ようなおちゃめなところも｛      ある。｛",
+      "vi_full_reference": "...pha trò, khá tinh nghịch.",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x3382F",
+      "vi_runtime_lines": [
+        "Bạn Maruko",
+        "Toku-chan"
+      ],
+      "source_file": "translation/source/quiz_batch03_part3_vi.csv",
+      "source_jp_scanner": "        まる子のクラスメイトの  ｛        とくちゃん。とっても    ｛",
+      "vi_full_reference": "Toku-chan là bạn cùng lớp của Maruko. Cậu rất...",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x33878",
+      "vi_runtime_lines": [
+        "Tốt bụng đó",
+        "tên là gì?"
+      ],
+      "source_file": "translation/source/quiz_batch03_part3_vi.csv",
+      "source_jp_scanner": "        やさしくて、お人よしな  ｛        この少年のフルネームは？｛",
+      "vi_full_reference": "...hiền và tốt bụng. Tên đầy đủ của cậu là gì?",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x3390E",
+      "vi_runtime_lines": [
+        "",
+        "Toku tốt",
+        "lắm luôn"
+      ],
+      "source_file": "translation/source/quiz_batch03_part3_vi.csv",
+      "source_jp_scanner": "  ｛        やさしすぎる少年｛      とくちゃんこと、  ｛",
+      "vi_full_reference": "Cậu bé hiền quá mức ấy, Toku-chan, tức...",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x3394B",
+      "vi_runtime_lines": [
+        "Là Tokuzo",
+        "Nhà bán hoa",
+        "ngày nào cũng"
+      ],
+      "source_file": "translation/source/quiz_batch03_part3_vi.csv",
+      "source_jp_scanner": "      杉浦とくぞうくん。｛      家がお花やさんなので、｛      いつもきれいなお花をいっぱい  ｛",
+      "vi_full_reference": "...Sugiura Tokuzo. Nhà cậu bán hoa nên ngày nào cậu cũng mang rất nhiều hoa đẹp...",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x339AE",
+      "vi_runtime_lines": [
+        "mang hoa",
+        ""
+      ],
+      "source_file": "translation/source/quiz_batch03_part3_vi.csv",
+      "source_jp_scanner": "      学校にもってくる。                        ｛  ｛",
+      "vi_full_reference": "...đến trường.",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x339FD",
+      "vi_runtime_lines": [
+        "Bạn Toshiko",
+        "thân Maru"
+      ],
+      "source_file": "translation/source/quiz_batch03_part3_vi.csv",
+      "source_jp_scanner": "      まる子やたまちゃんとなかよし｛      のとし子ちゃん。さて        ｛",
+      "vi_full_reference": "Toshiko-chan là bạn thân của Maruko và Tama-chan. Vậy...",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x33A50",
+      "vi_runtime_lines": [
+        "Học trường",
+        "nào vậy?"
+      ],
+      "source_file": "translation/source/quiz_batch03_part3_vi.csv",
+      "source_jp_scanner": "３人のかよう小学校っ        ｛      てなんていう小学校？        ｛",
+      "vi_full_reference": "...ngôi trường mà cả ba cùng theo học tên là gì?",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x33ADC",
+      "vi_runtime_lines": [
+        "Toshiko",
+        "cùng Maruko",
+        "Tama-chan"
+      ],
+      "source_file": "translation/source/quiz_batch03_part3_vi.csv",
+      "source_jp_scanner": "        まる子や、たまちゃんと｛      なかよしの女の子。とし子｛      ちゃんやまる子たち｛",
+      "vi_full_reference": "Toshiko-chan là cô bạn thân của Maruko và Tama-chan. Cả Toshiko, Maruko và các bạn...",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x33B3B",
+      "vi_runtime_lines": [
+        "Shimizu",
+        "học Irie",
+        "lớp 3"
+      ],
+      "source_file": "translation/source/quiz_batch03_part3_vi.csv",
+      "source_jp_scanner": "      は、静岡県の清水市｛      に住んでいて、入江｛      小学校に通う小学",
+      "vi_full_reference": "...sống ở thành phố Shimizu, tỉnh Shizuoka và học tại Trường Tiểu học Irie, học sinh...",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x33BB9",
+      "vi_runtime_lines": [
+        "Em của Buutaro",
+        "tên gì vậy?"
+      ],
+      "source_file": "translation/source/quiz_batch03_part3_vi.csv",
+      "source_jp_scanner": "      一目でブー太郎の妹だとわかる｛      この少女だが、この女の子の  ｛",
+      "vi_full_reference": "Nhìn một cái là biết ngay cô bé này là em gái Buutaro. Tên đầy đủ của cô bé...",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x33C06",
+      "vi_runtime_lines": [
+        "Tên gì?"
+      ],
+      "source_file": "translation/source/quiz_batch03_part3_vi.csv",
+      "source_jp_scanner": "      フルネームは？      ｛",
+      "vi_full_reference": "...là gì?",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x33C6C",
+      "vi_runtime_lines": [
+        "Em Buutaro",
+        "tên Tomiko",
+        "hay đi lễ"
+      ],
+      "source_file": "translation/source/quiz_batch03_part3_vi.csv",
+      "source_jp_scanner": "        ブー太郎の妹。なまえは  ｛      富田とみ子。おさないにも  ｛      かかわらず教会にかよい、  ｛",
+      "vi_full_reference": "Em gái Buutaro tên là Tomita Tomiko. Dù còn nhỏ, cô bé vẫn đi nhà thờ...",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x33CD7",
+      "vi_runtime_lines": [
+        "Nhìn Maruko",
+        "biết lười",
+        "Buu buu"
+      ],
+      "source_file": "translation/source/quiz_batch03_part3_vi.csv",
+      "source_jp_scanner": "      まる子のだらしなさをすぐに｛      見ぬいたするどい少女。    ｛      「ブーブー」言う  ｛",
+      "vi_full_reference": "...và lập tức nhìn thấu tính luộm thuộm của Maruko. Cách cô bé cứ 'buu buu'...",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x33D3A",
+      "vi_runtime_lines": [
+        "giống y",
+        "anh nó"
+      ],
+      "source_file": "translation/source/quiz_batch03_part3_vi.csv",
+      "source_jp_scanner": "      ところはやはり｛      兄ににている。｛",
+      "vi_full_reference": "...quả nhiên rất giống anh trai.",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x33D7F",
+      "vi_runtime_lines": [
+        "Nagasawa buồn",
+        "bố tên gì?"
+      ],
+      "source_file": "translation/source/quiz_batch03_part3_vi.csv",
+      "source_jp_scanner": "      人一倍くらい少年、永沢くん｛      だが、かれのお父さんの    ｛",
+      "vi_full_reference": "Nagasawa-kun là cậu bé u ám hơn người. Tên của bố cậu...",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x33DC8",
+      "vi_runtime_lines": [
+        "Tên?"
+      ],
+      "source_file": "translation/source/quiz_batch03_part3_vi.csv",
+      "source_jp_scanner": "      なまえは？｛",
+      "vi_full_reference": "...là gì?",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x33E0C",
+      "vi_runtime_lines": [
+        "Nagasawa buồn",
+        "bố tên Kazuo",
+        "sau vụ cháy"
+      ],
+      "source_file": "translation/source/quiz_batch03_part3_vi.csv",
+      "source_jp_scanner": "        ジメジメくらいタマネギ頭の｛      少年、永沢くんのお父さんの  ｛      なまえは永沢一雄。火事を    ｛",
+      "vi_full_reference": "Cậu bé đầu hành tây ẩm ương và u ám Nagasawa-kun có bố tên Nagasawa Kazuo. Sau vụ cháy...",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x33E7D",
+      "vi_runtime_lines": [
+        "Ông vẫn sống",
+        "tốt"
+      ],
+      "source_file": "translation/source/quiz_batch03_part3_vi.csv",
+      "source_jp_scanner": "      のりこえて、強く生きる男で  ｛      ある。｛",
+      "vi_full_reference": "...ông vẫn mạnh mẽ vượt qua và tiếp tục sống.",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x33ED1",
+      "vi_runtime_lines": [
+        "Sau vụ cháy",
+        "Nagasawa buồn"
+      ],
+      "source_file": "translation/source/quiz_batch03_part3_vi.csv",
+      "source_jp_scanner": "      永沢くんは火事にあったり    ｛      して、いろいろと運がわるい  ｛",
+      "vi_full_reference": "Nagasawa-kun gặp hỏa hoạn và đủ chuyện xui xẻo, nhưng lại rất thương em trai...",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x33F1E",
+      "vi_runtime_lines": [
+        "Vẫn thương em",
+        "Em tên gì?"
+      ],
+      "source_file": "translation/source/quiz_batch03_part3_vi.csv",
+      "source_jp_scanner": "      のだが、おとうと思いである。｛      そのおとうとの名前は？      ｛",
+      "vi_full_reference": "...Em trai cậu tên là gì?",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    },
+    {
+      "file_offset": "0x33F98",
+      "vi_runtime_lines": [
+        "Vụ cháy lớn",
+        "cậu u ám thêm",
+        "Tuy vậy..."
+      ],
+      "source_file": "translation/source/quiz_batch03_part3_vi.csv",
+      "source_jp_scanner": "        火事というショッキングな  ｛      じけんで、永沢くんはさらに  ｛      くらくなってしまう。しかし、｛",
+      "vi_full_reference": "Vụ hỏa hoạn đầy ám ảnh khiến Nagasawa-kun càng trở nên u ám hơn. Tuy vậy...",
+      "status": "clean_source_058_verified_await_057_merge_and_emulator"
+    }
+  ]
+}
