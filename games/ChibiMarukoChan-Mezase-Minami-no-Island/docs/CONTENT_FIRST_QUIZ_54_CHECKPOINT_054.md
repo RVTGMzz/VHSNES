@@ -16,12 +16,12 @@ This text-only experiment has no Vietnamese font or rewritten SNES checksum. It 
 | Approved editable text byte positions | **2,642** |
 | Actual changed byte positions on original | **2,636** |
 | Text-only IPS size / records | **3,279 bytes / 127** |
-| Text-only IPS SHA256 | `9f5069f7a105e371a71f9cf8bf5fdd38bae099d774c184a272f9abec9c8908ad` |
-| Text-only experiment output ROM SHA256 | `1eea9a31907384b42f1646d84a1c252a64c85b7adeba333c4e6b663a695008ef` |
+| Text-only IPS SHA256 | `792b0ccb6f60b77d6cc93f7ec91f87006e9d17a2c723344379df96731faf7ee9` |
+| Text-only experiment output ROM SHA256 | `6df189b94951cafc23cec6bb90fccbf4f1a66307b545f35619d708debd7aa26b` |
 | Actual 048 + 054 merged ROM | **NOT YET BUILT** |
 | SNES emulator/gameplay test | **NOT TESTED** |
 
-These 54 are **source-to-ROM edited caption candidates**, separate from full `vi_full` translations in canonical Quiz CSV. The captions are deliberately constrained by original SNES display cells and still require user-visible gameplay editorial review. The original Japanese layout is preserved rather than overwriting line breaks, pointer data, or names in adjacent slots.
+After this document's initial version, **12 of 54 Quiz runtime captions were revised for character identity, coherent Vietnamese dialogue and continuous context**; all 54 runtime rows were anchored to canonical Japanese scanner strings and their complete `vi_full` translations. Physical source checks and independent IPS replay PASS again with the updated hashes above. See `docs/CONTENT_FIRST_G2_RULES_CHECKPOINT_055.md`.\n\nThese 54 are **source-to-ROM edited caption candidates**, separate from full `vi_full` translations in canonical Quiz CSV. The captions are deliberately constrained by original SNES display cells and still require user-visible gameplay editorial review. The original Japanese layout is preserved rather than overwriting line breaks, pointer data, or names in adjacent slots.
 
 ## Major correction to earlier count
 
