@@ -23,8 +23,8 @@ def build(clean,base,root):
         raise ValueError("Need exact clean 2MiB Japanese ROM and same-size full 048")
     manifest=json.loads((root/"translation/runtime/quiz_content_first_16_053.json").read_text(encoding="utf-8"))
     entries=manifest["records"]
-    if (manifest["schema"]!="chibi.quiz.content_first.053.v1" or len(entries)!=15
-        or manifest.get("record_count")!=15):
+    if (manifest["schema"]!="chibi.quiz.content_first.053.v1" or len(entries)!=16
+        or manifest.get("record_count")!=16):
         raise AssertionError("053 source manifest drift")
     # Baseline identity is checked by main() using --expected-048-sha.
     # Do not silently accept any other candidate base.
@@ -49,15 +49,27 @@ def build(clean,base,root):
         original=r["source_jp"].encode("cp932")
         text=r["vi_runtime"]
         units=r["max_source_two_byte_units"]
+        lead=r.get("leading_source_padding_bytes",0)
+        tail=r.get("trailing_source_padding_bytes",0)
+        if (not isinstance(lead,int) or not isinstance(tail,int) or
+            (lead,tail) not in ((0,0),(6,8)) or
+            ((lead,tail)==(6,8) and key!="0X340C0")):
+            raise AssertionError("Unapproved Quiz alignment change "+key)
         if ("｛" in r["source_jp"] or len(original)!=2*units or len(text)>units or
             unicodedata.normalize("NFC",text)!=text):
             raise AssertionError("Unsafe scanner field or unsupported length "+key)
-        end=off+len(original)
-        if clean[off:end]!=original or base[off:end]!=original:
+        field=off+lead
+        end=field+len(original)
+        marker=end+tail
+        if clean[off:field]!=b" "*lead or base[off:field]!=b" "*lead:
+            raise AssertionError("Original leading layout padding missing "+key)
+        if clean[end:marker]!=b" "*tail or base[end:marker]!=b" "*tail:
+            raise AssertionError("Original trailing layout padding missing "+key)
+        if clean[field:end]!=original or base[field:end]!=original:
             raise AssertionError("Unverified CP932 source/changed baseline "+key)
-        if clean[end:end+2]!=b"\x81\x6f" or base[end:end+2]!=b"\x81\x6f":
+        if clean[marker:marker+2]!=b"\x81\x6f" or base[marker:marker+2]!=b"\x81\x6f":
             raise AssertionError("Original 816F delimiter missing "+key)
-        span=set(range(off,end))
+        span=set(range(field,end))
         if span&allowed:raise AssertionError("Overlapping Quiz slots "+key)
         allowed.update(span)
         dst=bytearray()
@@ -70,7 +82,7 @@ def build(clean,base,root):
             if idx<0x40 or int.from_bytes(base[ptr:ptr+2],"little")==0:
                 raise AssertionError("Unassigned V2 glyph "+repr(c)+" "+key)
             dst.extend(bytes.fromhex(glyph))
-        output[off:end]=dst
+        output[field:end]=dst
     output[0x7fdc:0x7fe0]=bytes(4)
     ck=(sum(output)+0x1fe)&0xffff
     output[0x7fdc:0x7fde]=(ck^0xffff).to_bytes(2,"little")
@@ -82,7 +94,7 @@ def build(clean,base,root):
     ips,count=make_ips(clean,final)
     if apply_ips(clean,ips)!=final:
         raise AssertionError("Independent clean-ROM IPS replay failed")
-    return ips,{"status":"053_STATIC_INTEGRATION_PASS_NOT_EMULATOR","records":15,
+    return ips,{"status":"053_STATIC_INTEGRATION_PASS_NOT_EMULATOR","records":16,
                 "ROM_sha256":sha(final),"IPS_sha256":sha(ips),"IPS_records":count,
                 "base_048_sha256":sha(base),"checksum":f"{ck:04X}",
                 "changed_bytes":len(changes),"emulator_tested":False}
