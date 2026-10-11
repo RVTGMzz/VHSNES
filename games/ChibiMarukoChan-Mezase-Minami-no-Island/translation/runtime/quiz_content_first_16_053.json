@@ -1,0 +1,153 @@
+{
+  "schema": "chibi.quiz.content_first.053.v1",
+  "base_checkpoint": "048",
+  "state": "source_authored_pending_exact_ROM_byte_check_and_emulator_QA",
+  "not_patched": true,
+  "policy": "Exact original CP932 length, 816F delimiter, untouched baseline glyph bytes, NFC, assigned existing V2 code, keep canonical vi_full and semantic meaning; no auto-truncation.",
+  "records": [
+    {
+      "file_offset": "0x340C0",
+      "source_jp": "すきなものってなに？",
+      "vi_full_reference": "...là gì?",
+      "vi_runtime": "...là gì?",
+      "source_file": "translation/source/quiz_batch01_part1_vi.csv",
+      "max_source_two_byte_units": 10,
+      "status": "candidate_requires_original_rom_validation"
+    },
+    {
+      "file_offset": "0x340E9",
+      "source_jp": "おわらい",
+      "vi_full_reference": "Hài kịch",
+      "vi_runtime": "Hài",
+      "source_file": "translation/source/quiz_batch01_part1_vi.csv",
+      "max_source_two_byte_units": 4,
+      "status": "candidate_requires_original_rom_validation"
+    },
+    {
+      "file_offset": "0x34107",
+      "source_jp": "なぞなぞ",
+      "vi_full_reference": "Đố vui",
+      "vi_runtime": "Đố",
+      "source_file": "translation/source/quiz_batch01_part1_vi.csv",
+      "max_source_two_byte_units": 4,
+      "status": "candidate_requires_original_rom_validation"
+    },
+    {
+      "file_offset": "0x343AB",
+      "source_jp": "２９才",
+      "vi_full_reference": "29 tuổi",
+      "vi_runtime": "29",
+      "source_file": "translation/source/quiz_batch01_part1_vi.csv",
+      "max_source_two_byte_units": 3,
+      "status": "candidate_requires_original_rom_validation"
+    },
+    {
+      "file_offset": "0x343B8",
+      "source_jp": "４０才",
+      "vi_full_reference": "40 tuổi",
+      "vi_runtime": "40",
+      "source_file": "translation/source/quiz_batch01_part1_vi.csv",
+      "max_source_two_byte_units": 3,
+      "status": "candidate_requires_original_rom_validation"
+    },
+    {
+      "file_offset": "0x343C5",
+      "source_jp": "３２才",
+      "vi_full_reference": "32 tuổi",
+      "vi_runtime": "32",
+      "source_file": "translation/source/quiz_batch01_part1_vi.csv",
+      "max_source_two_byte_units": 3,
+      "status": "candidate_requires_original_rom_validation"
+    },
+    {
+      "file_offset": "0x34A07",
+      "source_jp": "６８才",
+      "vi_full_reference": "68 tuổi",
+      "vi_runtime": "68",
+      "source_file": "translation/source/quiz_batch01_part2_vi.csv",
+      "max_source_two_byte_units": 3,
+      "status": "candidate_requires_original_rom_validation"
+    },
+    {
+      "file_offset": "0x34A14",
+      "source_jp": "７０才",
+      "vi_full_reference": "70 tuổi",
+      "vi_runtime": "70",
+      "source_file": "translation/source/quiz_batch01_part2_vi.csv",
+      "max_source_two_byte_units": 3,
+      "status": "candidate_requires_original_rom_validation"
+    },
+    {
+      "file_offset": "0x34A21",
+      "source_jp": "７８才",
+      "vi_full_reference": "78 tuổi",
+      "vi_runtime": "78",
+      "source_file": "translation/source/quiz_batch01_part2_vi.csv",
+      "max_source_two_byte_units": 3,
+      "status": "candidate_requires_original_rom_validation"
+    },
+    {
+      "file_offset": "0x34B50",
+      "source_jp": "うんてんしゅ",
+      "vi_full_reference": "Tài xế",
+      "vi_runtime": "Tài xế",
+      "source_file": "translation/source/quiz_batch01_part2_vi.csv",
+      "max_source_two_byte_units": 6,
+      "status": "candidate_requires_original_rom_validation"
+    },
+    {
+      "file_offset": "0x351E9",
+      "source_jp": "１２月３１日",
+      "vi_full_reference": "Ngày 31 tháng 12",
+      "vi_runtime": "31/12",
+      "source_file": "translation/source/quiz_batch02_part1_vi.csv",
+      "max_source_two_byte_units": 6,
+      "status": "candidate_requires_original_rom_validation"
+    },
+    {
+      "file_offset": "0x351FC",
+      "source_jp": "１２月１９日",
+      "vi_full_reference": "Ngày 19 tháng 12",
+      "vi_runtime": "19/12",
+      "source_file": "translation/source/quiz_batch02_part1_vi.csv",
+      "max_source_two_byte_units": 6,
+      "status": "candidate_requires_original_rom_validation"
+    },
+    {
+      "file_offset": "0x3520F",
+      "source_jp": "３月３日",
+      "vi_full_reference": "Ngày 3 tháng 3",
+      "vi_runtime": "3/3",
+      "source_file": "translation/source/quiz_batch02_part1_vi.csv",
+      "max_source_two_byte_units": 4,
+      "status": "candidate_requires_original_rom_validation"
+    },
+    {
+      "file_offset": "0x353AF",
+      "source_jp": "４９才",
+      "vi_full_reference": "49 tuổi",
+      "vi_runtime": "49",
+      "source_file": "translation/source/quiz_batch02_part1_vi.csv",
+      "max_source_two_byte_units": 3,
+      "status": "candidate_requires_original_rom_validation"
+    },
+    {
+      "file_offset": "0x353BC",
+      "source_jp": "４４才",
+      "vi_full_reference": "44 tuổi",
+      "vi_runtime": "44",
+      "source_file": "translation/source/quiz_batch02_part1_vi.csv",
+      "max_source_two_byte_units": 3,
+      "status": "candidate_requires_original_rom_validation"
+    },
+    {
+      "file_offset": "0x353C9",
+      "source_jp": "３４才",
+      "vi_full_reference": "34 tuổi",
+      "vi_runtime": "34",
+      "source_file": "translation/source/quiz_batch02_part1_vi.csv",
+      "max_source_two_byte_units": 3,
+      "status": "candidate_requires_original_rom_validation"
+    }
+  ]
+}
