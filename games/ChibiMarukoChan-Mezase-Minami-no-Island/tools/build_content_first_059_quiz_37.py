@@ -6,8 +6,8 @@ from pathlib import Path
 from build_content_first_040_fortune import make_ips,apply_ips
 ROOT=Path(__file__).resolve().parent.parent
 CLEAN_SHA="e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956"
-PREVIEW_IPS_SHA="15e12c50f501f6455c4b31dc837231ca23dbccdfe94bd07ef5a4d4384f844856"
-PREVIEW_ROM_SHA="3dcdaca24ed47d92c7f11d8851fcf1c3516a41412f224a123fb3fe4234e51aaf"
+PREVIEW_IPS_SHA="d383a705336236b3ff2c992ab3ce28c4605d1a5afd809bb8f8eb630035802a81"
+PREVIEW_ROM_SHA="7a6c5cb411738706b019ea4b320e20d4bb131888ba2acdf3bd3aae3fdd3be0c2"
 def sha(b:bytes)->str:return hashlib.sha256(b).hexdigest()
 def csv_rows(p:Path):
     with p.open(encoding="utf-8-sig",newline="") as f:return list(csv.DictReader(f))
@@ -38,12 +38,17 @@ def build(clean:bytes,base058:bytes,root:Path):
     plan=json.loads((root/"translation/runtime/quiz_content_first_37_059.json").read_text(encoding="utf-8"))
     rows=plan["records"]
     if (plan["schema"]!="chibi.quiz.content_first.059.v1" or
-        plan["source_clean_rom_sha256"]!=CLEAN_SHA or len(rows)!=37 or
-        plan["candidate_count"]!=37 or plan["native_physical_segments"]!=76 or
-        len({r["file_offset"].upper() for r in rows})!=37 or
+        plan["source_clean_rom_sha256"]!=CLEAN_SHA or len(rows)!=34 or
+        plan["candidate_count"]!=34 or plan["native_physical_segments"]!=73 or
+        len({r["file_offset"].upper() for r in rows})!=34 or
         plan["clean_source_only_IPS_sha256"]!=PREVIEW_IPS_SHA or
         plan["clean_source_only_ROM_sha256"]!=PREVIEW_ROM_SHA):
         raise AssertionError("059 reviewed Quiz source manifest drift")
+    # The three birthday choices at 0x31F75/0x31F84/0x31F95 were already
+    # integrated by stage047. Fail closed if they are re-added to stage059.
+    prior={"0X31F75","0X31F84","0X31F95"}
+    if {r["file_offset"].upper() for r in rows}&prior:
+        raise AssertionError("Duplicate 047 birthday answer in 059")
     canonical={}
     for filename in ("quiz_batch03_part1_vi.csv",):
         for rec in csv_rows(root/"translation/source"/filename):
@@ -103,16 +108,16 @@ def build(clean:bytes,base058:bytes,root:Path):
         if capacities!=item["expected_capacities"]:
             raise AssertionError("059 source slots differ from original ROM audit "+key)
         markers.update(breaks);nsegments+=len(frames)
-    if (len(allowed)!=1572 or nsegments!=76 or len(markers)!=76):
+    if (len(allowed)!=1544 or nsegments!=73 or len(markers)!=73):
         raise AssertionError("059 physical text / native line inventory changed")
     if any(output[m:m+2]!=b"\x81\x6f" for m in markers):
         raise AssertionError("059 altered original 816F script line controls")
     probe=bytes(preview);probe_ips,probe_count=make_ips(clean,probe)
     if (sha(probe)!=PREVIEW_ROM_SHA or sha(probe_ips)!=PREVIEW_IPS_SHA or
-        len(probe_ips)!=1961 or probe_count!=77 or apply_ips(clean,probe_ips)!=probe):
+        len(probe_ips)!=1914 or probe_count!=73 or apply_ips(clean,probe_ips)!=probe):
         raise AssertionError("057 actual clean Japanese ROM overlay fingerprint mismatch")
     changed={i for i,(a,b) in enumerate(zip(base058,output)) if a!=b}
-    if len(changed)!=1568 or changed-allowed:
+    if len(changed)!=1541 or changed-allowed:
         raise AssertionError("057 modified unapproved source/script/font data")
     output[0x7fdc:0x7fe0]=bytes(4)
     checksum=(sum(output)+0x1fe)&0xffff
@@ -126,7 +131,7 @@ def build(clean:bytes,base058:bytes,root:Path):
     if apply_ips(clean,ips)!=merged:
         raise AssertionError("059 final clean-ROM IPS replay failed")
     return ips,{"status":"059_QUIZ37_STATIC_PASS_EMULATOR_NOT_TESTED",
-        "new_Quiz_records":37,"original_native_line_frames":nsegments,
+        "new_Quiz_records":34,"original_native_line_frames":nsegments,
         "native_816F_controls_preserved":len(markers),
         "source_glyph_bytes_written":len(allowed),
         "actual_text_byte_differences":len(changed),
