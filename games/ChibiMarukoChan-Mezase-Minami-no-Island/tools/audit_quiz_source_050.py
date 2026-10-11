@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Quiz source triage for content-first integration (read-only).
 
-Audit six canonical translated CSVs. Never treat the scanner's curly-brace
+Audit all eight known canonical translated CSVs. Never treat the scanner's curly-brace
 line separators or CP932 trailing-byte artifacts as safe writable slots.
 The output is a source inventory, NOT proof of ROM integration.
 """
@@ -15,8 +15,8 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parent.parent
 SOURCES=(
     "quiz_batch01_part1_vi.csv","quiz_batch01_part2_vi.csv",
-    "quiz_batch02_part1_vi.csv","quiz_batch02_part2_vi.csv",
-    "quiz_batch03_part1_vi.csv","quiz_batch03_part2_vi.csv",
+    "quiz_batch02_part1_vi.csv","quiz_batch02_part2_vi.csv","quiz_batch02_part3_vi.csv",
+    "quiz_batch03_part1_vi.csv","quiz_batch03_part2_vi.csv","quiz_batch03_part3_vi.csv",
 )
 
 def run(root: Path):
@@ -43,7 +43,7 @@ def run(root: Path):
                 else: category="candidate_for_original_rom_byte_preflight_only"
                 rows.append({"source_file":name,"file_offset":addr,"source_jp_scanner":jp,
                              "vi_full":vi,"status":category,"risks":reasons})
-    counts={status:sum(r["status"]==status for r in rows) for status in sorted(set(r["status"] for r in rows))}
+    if len(rows)!=381:\n        raise AssertionError(f"Quiz canonical row count drift: expected 381, got {len(rows)}")\n    counts={status:sum(r["status"]==status for r in rows) for status in sorted(set(r["status"] for r in rows))}
     if previously-set(seen): raise AssertionError("Old integrated Quiz row missing from source CSV")
     return {"schema":"chibi.quiz.source_triage.050.v1",
             "source_count":len(rows),"already_integrated_047":len(previously),
