@@ -2,25 +2,14 @@
   "schema": "chibi.story.content_first.045.v1",
   "clean_rom_sha256": "e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956",
   "baseline_044_rom_sha256": "2312b9ba52c0cf6ac491e71117d5c537ad7dc61828dc9e87d838826e5165f322",
-  "rom_sha256": "0e84038c226e56fb32ad12bfcaa64c594efc316c5f3ca793dcc0dfc787274c08",
-  "ips_sha256": "58828d62eb1cc36af1653104aaa81178c8ce53aa3e1a18373bef9a5d186744fe",
-  "batch02": 59,
+  "rom_sha256": "7ddf449c2266838c3d55415f14aeee34fc21334c1ed0a490590647eb75e047b5",
+  "ips_sha256": "685d7e9f0146950ca030fd8469f57313a0b368be98e0a9c95999bda48cb65379",
+  "batch02": 58,
   "batch03": 81,
-  "total_new": 140,
-  "breaks_preserved": 368,
-  "scope": "140 actual translated original fixed-size Story glyph fields, canonical vi_full preserved, local static IPS replay exact; SNES runtime untested",
+  "total_new": 139,
+  "breaks_preserved": 367,
+  "scope": "139 actual source-verified fixed-size Story fields; B02 58 plus B03 81. 0x1A916 omitted after byte 88F3 suspicious metadata guard. Full canonical vi_full retained, SNES gameplay UNTESTED.",
   "records": [
-    {
-      "file_offset": "0x1A916",
-      "vi_runtime_lines": [
-        "A ha... ha ha!"
-      ],
-      "story_batch": "batch02",
-      "vi_full_reference": "A ha... a ha... a ha...",
-      "source_file": "translation/source/story_batch02_part1_vi.csv",
-      "source_jp_scanner": "印  「アハ  アハ  アハ……」｛",
-      "status": "static_exact_slot_translation_not_runtime_accepted"
-    },
     {
       "file_offset": "0x1B55E",
       "vi_runtime_lines": [
