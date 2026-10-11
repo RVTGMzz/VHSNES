@@ -2,6 +2,11 @@
 
 ## 2026-10-11 — LIVE USER ROM CHECK / 053 SOURCE CORRECTION
 
+### Uploaded ROM physical 053 Quiz16 overlay — STATIC PASS, still not playable
+
+Read `docs/QUIZ_053_UPLOADED_ROM_BYTE_QA.md`. On the actual user-uploaded clean ROM, all **16** Quiz captions were written as a text-only in-memory byte overlay, 134 writable bytes, 112 changed positions, 310B/38-record text-only IPS SHA `8ae0adc95fcb69c9aab141fd10004dc698f295be3e0a4fd2d5399f8382709f7e`; separate IPS replay matched. All original `816F` terminators and native padding retained. **Text-only overlay is NOT PLAYABLE; no checksum or Vietnamese font, no emulator QA.** Integrated 048+053 still awaits accessible 043 ZIP/IPS.
+
+
 **VERIFIED against user-uploaded exact clean SNES ROM, 2,097,152 B, SHA256 `e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956`: 16/16 reviewed Quiz source records match original CP932 and actual `816F` field boundaries.** The prior rejected `0x340C0` Quiz row is real: 6 native ASCII spaces at the scanner offset, JP text actually starts `0x340C6`, then eight native trailing ASCII spaces and `816F`. The corrected 053 manifest and builder protect both original padding regions byte-for-byte and replace ONLY the real 10-glyph text region. Other 15 records match original source and delimiters without padded scanner correction.
 
 - Updated `translation/runtime/quiz_content_first_16_053.json` and `tools/build_content_first_053_quiz_16.py` to retain 16 original-ROM-safe candidates; it is not a new patch build yet.
