@@ -1,0 +1,284 @@
+{
+  "schema": "chibi.quiz.content_first.061.v1",
+  "stage_input": "verified_full_060_rom_not_available_yet",
+  "clean_original_sha256": "e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956",
+  "selected_unique": 19,
+  "original_native_816F": 19,
+  "source_editable_bytes": 206,
+  "actually_changed_bytes": 203,
+  "source_only_ips_bytes": 321,
+  "source_only_ips_records": 22,
+  "source_only_ips_sha256": "5e0a04b7c708cc6af34031dfdf1a0677ad0bce5d49ba510e52f33e861a48dc78",
+  "source_only_rom_sha256": "96a88234ff852c612183da387cb497b5ad0cc7b7436bbda7c03dc3b16727d385",
+  "qa_scope": "Exact original 2MiB ROM physical glyph slots, native 816F delimiters and clean IPS replay. Does not validate font appearance, game play, or combined 060->061 baseline.",
+  "full_stage_061_built": false,
+  "emulator_tested": false,
+  "records": [
+    {
+      "file_offset": "0x346D0",
+      "vi_runtime_lines": [
+        "Kyoko"
+      ],
+      "expected_capacities": [
+        7
+      ],
+      "source_file": "translation/source/quiz_batch01_part1_vi.csv",
+      "source_jp_scanner": "きょう子ちゃん",
+      "vi_full_reference": "Kyoko-chan",
+      "editorial_note": "Concise context-preserving label; full original Japanese/full Vietnamese retained",
+      "status": "clean_rom_verified_not_integrated_emulator_untested"
+    },
+    {
+      "file_offset": "0x34B3B",
+      "vi_runtime_lines": [
+        "Cầu thủ"
+      ],
+      "expected_capacities": [
+        7
+      ],
+      "source_file": "translation/source/quiz_batch01_part2_vi.csv",
+      "source_jp_scanner": "プロ野球の選手",
+      "vi_full_reference": "Cầu thủ bóng chày chuyên nghiệp",
+      "editorial_note": "Concise context-preserving label; full original Japanese/full Vietnamese retained",
+      "status": "clean_rom_verified_not_integrated_emulator_untested"
+    },
+    {
+      "file_offset": "0x35885",
+      "vi_runtime_lines": [
+        "Con bạn"
+      ],
+      "expected_capacities": [
+        9
+      ],
+      "source_file": "translation/source/quiz_batch02_part2_vi.csv",
+      "source_jp_scanner": "友蔵の知り合いの子｛",
+      "vi_full_reference": "Con của một người quen của ông Tomozo",
+      "editorial_note": "Concise context-preserving label; full original Japanese/full Vietnamese retained",
+      "status": "clean_rom_verified_not_integrated_emulator_untested"
+    },
+    {
+      "file_offset": "0x3589E",
+      "vi_runtime_lines": [
+        "Bà con"
+      ],
+      "expected_capacities": [
+        6
+      ],
+      "source_file": "translation/source/quiz_batch02_part2_vi.csv",
+      "source_jp_scanner": "いとこどうし｛",
+      "vi_full_reference": "Hai người là chị em họ",
+      "editorial_note": "Concise context-preserving label; full original Japanese/full Vietnamese retained",
+      "status": "clean_rom_verified_not_integrated_emulator_untested"
+    },
+    {
+      "file_offset": "0x36579",
+      "vi_runtime_lines": [
+        "Rolls"
+      ],
+      "expected_capacities": [
+        7
+      ],
+      "source_file": "translation/source/quiz_batch02_part3_vi.csv",
+      "source_jp_scanner": "ロールスロイス｛",
+      "vi_full_reference": "Rolls-Royce",
+      "editorial_note": "Concise context-preserving label; full original Japanese/full Vietnamese retained",
+      "status": "clean_rom_verified_not_integrated_emulator_untested"
+    },
+    {
+      "file_offset": "0x32108",
+      "vi_runtime_lines": [
+        "1tr"
+      ],
+      "expected_capacities": [
+        5
+      ],
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "source_jp_scanner": "１００万円｛",
+      "vi_full_reference": "1.000.000 yên",
+      "editorial_note": "Concise context-preserving label; full original Japanese/full Vietnamese retained",
+      "status": "clean_rom_verified_not_integrated_emulator_untested"
+    },
+    {
+      "file_offset": "0x32E91",
+      "vi_runtime_lines": [
+        "Kenta"
+      ],
+      "expected_capacities": [
+        6
+      ],
+      "source_file": "translation/source/quiz_batch03_part2_vi.csv",
+      "source_jp_scanner": "長谷川ケンタ｛",
+      "vi_full_reference": "Hasegawa Kenta",
+      "editorial_note": "Concise context-preserving label; full original Japanese/full Vietnamese retained",
+      "status": "clean_rom_verified_not_integrated_emulator_untested"
+    },
+    {
+      "file_offset": "0x32EA4",
+      "vi_runtime_lines": [
+        "Kenji"
+      ],
+      "expected_capacities": [
+        5
+      ],
+      "source_file": "translation/source/quiz_batch03_part2_vi.csv",
+      "source_jp_scanner": "田中ケンジ｛",
+      "vi_full_reference": "Tanaka Kenji",
+      "editorial_note": "Concise context-preserving label; full original Japanese/full Vietnamese retained",
+      "status": "clean_rom_verified_not_integrated_emulator_untested"
+    },
+    {
+      "file_offset": "0x32EB5",
+      "vi_runtime_lines": [
+        "Taro"
+      ],
+      "expected_capacities": [
+        4
+      ],
+      "source_file": "translation/source/quiz_batch03_part2_vi.csv",
+      "source_jp_scanner": "小沢太郎｛",
+      "vi_full_reference": "Ozawa Taro",
+      "editorial_note": "Concise context-preserving label; full original Japanese/full Vietnamese retained",
+      "status": "clean_rom_verified_not_integrated_emulator_untested"
+    },
+    {
+      "file_offset": "0x33483",
+      "vi_runtime_lines": [
+        "Chữ ký"
+      ],
+      "expected_capacities": [
+        7
+      ],
+      "source_file": "translation/source/quiz_batch03_part3_vi.csv",
+      "source_jp_scanner": "ヒデキのサイン｛",
+      "vi_full_reference": "Chữ ký của Hideki",
+      "editorial_note": "Concise context-preserving label; full original Japanese/full Vietnamese retained",
+      "status": "clean_rom_verified_not_integrated_emulator_untested"
+    },
+    {
+      "file_offset": "0x334A5",
+      "vi_runtime_lines": [
+        "Đàn"
+      ],
+      "expected_capacities": [
+        3
+      ],
+      "source_file": "translation/source/quiz_batch03_part3_vi.csv",
+      "source_jp_scanner": "ピアノ｛",
+      "vi_full_reference": "Đàn piano",
+      "editorial_note": "Concise context-preserving label; full original Japanese/full Vietnamese retained",
+      "status": "clean_rom_verified_not_integrated_emulator_untested"
+    },
+    {
+      "file_offset": "0x335F9",
+      "vi_runtime_lines": [
+        "Đàn"
+      ],
+      "expected_capacities": [
+        3
+      ],
+      "source_file": "translation/source/quiz_batch03_part3_vi.csv",
+      "source_jp_scanner": "ピアノ｛",
+      "vi_full_reference": "Piano",
+      "editorial_note": "Concise context-preserving label; full original Japanese/full Vietnamese retained",
+      "status": "clean_rom_verified_not_integrated_emulator_untested"
+    },
+    {
+      "file_offset": "0x33606",
+      "vi_runtime_lines": [
+        "Múa"
+      ],
+      "expected_capacities": [
+        3
+      ],
+      "source_file": "translation/source/quiz_batch03_part3_vi.csv",
+      "source_jp_scanner": "ダンス｛",
+      "vi_full_reference": "Khiêu vũ",
+      "editorial_note": "Concise context-preserving label; full original Japanese/full Vietnamese retained",
+      "status": "clean_rom_verified_not_integrated_emulator_untested"
+    },
+    {
+      "file_offset": "0x33AAE",
+      "vi_runtime_lines": [
+        "Kamome 3"
+      ],
+      "expected_capacities": [
+        8
+      ],
+      "source_file": "translation/source/quiz_batch03_part3_vi.csv",
+      "source_jp_scanner": "かもめ第３小学校｛",
+      "vi_full_reference": "Trường Tiểu học Kamome số 3",
+      "editorial_note": "Concise context-preserving label; full original Japanese/full Vietnamese retained",
+      "status": "clean_rom_verified_not_integrated_emulator_untested"
+    },
+    {
+      "file_offset": "0x33F6B",
+      "vi_runtime_lines": [
+        "Taro"
+      ],
+      "expected_capacities": [
+        4
+      ],
+      "source_file": "translation/source/quiz_batch03_part3_vi.csv",
+      "source_jp_scanner": "永沢太郎｛",
+      "vi_full_reference": "Nagasawa Taro",
+      "editorial_note": "Concise context-preserving label; full original Japanese/full Vietnamese retained",
+      "status": "clean_rom_verified_not_integrated_emulator_untested"
+    },
+    {
+      "file_offset": "0x33F7A",
+      "vi_runtime_lines": [
+        "Goro"
+      ],
+      "expected_capacities": [
+        4
+      ],
+      "source_file": "translation/source/quiz_batch03_part3_vi.csv",
+      "source_jp_scanner": "永沢五郎｛",
+      "vi_full_reference": "Nagasawa Goro",
+      "editorial_note": "Concise context-preserving label; full original Japanese/full Vietnamese retained",
+      "status": "clean_rom_verified_not_integrated_emulator_untested"
+    },
+    {
+      "file_offset": "0x33F89",
+      "vi_runtime_lines": [
+        "Jiro"
+      ],
+      "expected_capacities": [
+        4
+      ],
+      "source_file": "translation/source/quiz_batch03_part3_vi.csv",
+      "source_jp_scanner": "永沢次郎｛",
+      "vi_full_reference": "Nagasawa Jiro",
+      "editorial_note": "Concise context-preserving label; full original Japanese/full Vietnamese retained",
+      "status": "clean_rom_verified_not_integrated_emulator_untested"
+    },
+    {
+      "file_offset": "0x338C1",
+      "vi_runtime_lines": [
+        "Tokuzo"
+      ],
+      "expected_capacities": [
+        6
+      ],
+      "source_file": "translation/source/quiz_batch03_part3_vi.csv",
+      "source_jp_scanner": "杉浦とくぞう    ｛",
+      "vi_full_reference": "Sugiura Tokuzo",
+      "editorial_note": "Concise context-preserving label; full original Japanese/full Vietnamese retained",
+      "status": "clean_rom_verified_not_integrated_emulator_untested"
+    },
+    {
+      "file_offset": "0x33A97",
+      "vi_runtime_lines": [
+        "Irie"
+      ],
+      "expected_capacities": [
+        5
+      ],
+      "source_file": "translation/source/quiz_batch03_part3_vi.csv",
+      "source_jp_scanner": "入江小学校      ｛",
+      "vi_full_reference": "Trường Tiểu học Irie",
+      "editorial_note": "Concise context-preserving label; full original Japanese/full Vietnamese retained",
+      "status": "clean_rom_verified_not_integrated_emulator_untested"
+    }
+  ]
+}
