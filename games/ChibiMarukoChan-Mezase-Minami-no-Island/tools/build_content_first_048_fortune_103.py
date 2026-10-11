@@ -84,7 +84,7 @@ def build(clean: bytes, base: bytes, project: Path, static_check_043: bool = Fal
         original=canonical.get(key)
         if original is None: raise AssertionError("unknown original Fortune source "+key)
         fname,rec=original
-        if (row["source_file"]!=fn
+        if (row["source_file"]!=fname
             or row["source_jp"]!=rec["source_jp"]
             or row["vi_full_reference"]!=rec["vi_full"]
             or row["status"]!="approved_static_048_experimental_not_emulator_reviewed"):
