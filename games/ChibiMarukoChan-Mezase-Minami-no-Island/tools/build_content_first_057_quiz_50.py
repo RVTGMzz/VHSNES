@@ -6,8 +6,8 @@ from pathlib import Path
 from build_content_first_040_fortune import make_ips,apply_ips
 ROOT=Path(__file__).resolve().parent.parent
 CLEAN_SHA="e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956"
-PREVIEW_IPS_SHA="e763f959c851bffea4d0df1f9d42cb90c9026ffdb442df288615581235f8f482"
-PREVIEW_ROM_SHA="3c20e41ba5fe16c6ce9c5acb26f81e6b5665a9512059eb96403bcf8919b46f98"
+PREVIEW_IPS_SHA="73829cb20f1b182142e428ba55366227417258d8e87f9e7da6de4fa1d093b749"
+PREVIEW_ROM_SHA="525575f7d178d3a2df4d616934484b8e5ae4a15db60c264c607db5fd3f1c4b98"
 def sha(b:bytes)->str:return hashlib.sha256(b).hexdigest()
 def csv_rows(p:Path):
     with p.open(encoding="utf-8-sig",newline="") as f:return list(csv.DictReader(f))
