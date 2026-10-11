@@ -1,0 +1,337 @@
+{
+  "schema": "chibi.quiz.content_first.060.v1",
+  "clean_original_rom_sha256": "e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956",
+  "stage_input": "full_integrated_059",
+  "candidate_count": 21,
+  "original_line_segments": 43,
+  "original_816F_markers": 43,
+  "allowed_source_bytes": 816,
+  "changed_source_bytes": 815,
+  "source_only_IPS_bytes": 1038,
+  "source_only_IPS_records": 43,
+  "source_only_IPS_sha256": "f03313fd1d822c2b3c49b46c3bec520313f3ae3d5b8c62db6d177206238a5822",
+  "source_only_ROM_sha256": "8eb2b3ea0aedafd744039d4b05f2a647d0c4a239e778ef4c604305c2b033fbe9",
+  "source_only_byte_QA": "PASS_ON_EXACT_USER_CLEAN_JAPANESE_ROM_NOT_PLAYABLE",
+  "complete_merged_ROM_built": false,
+  "emulator_tested": false,
+  "editorial_note": "Preserve original full meaning in source CSV, compact Vietnamese runtime lines are display candidates only. This adds proper readable short loanword answer choices such as Ono, Jump, Idol, Sáo without truncating longer original proper names.",
+  "records": [
+    {
+      "file_offset": "0x34254",
+      "vi_runtime_lines": [
+        "Hanawa điệu",
+        "Tên Kazuhiko",
+        "Mẹ gọi Kazu"
+      ],
+      "source_file": "translation/source/quiz_batch01_part1_vi.csv",
+      "source_jp_scanner": "キザなお金持ち少年花輪くんの名は、花輪和彦。ママには「カズちゃん」とよばれて",
+      "vi_full_reference": "Cậu ấm điệu đà Hanawa-kun tên là Hanawa Kazuhiko. Mẹ gọi cậu là 'Kazu-chan'...",
+      "expected_capacities": [
+        11,
+        14,
+        13
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_059_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x349E0",
+      "vi_runtime_lines": [
+        "Tuổi?"
+      ],
+      "source_file": "translation/source/quiz_batch01_part2_vi.csv",
+      "source_jp_scanner": "いったい何才？",
+      "vi_full_reference": "Ông ấy bao nhiêu tuổi?",
+      "expected_capacities": [
+        7
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_059_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x34EE7",
+      "vi_runtime_lines": [
+        "Nhận thư",
+        "búp bê",
+        "xúc động!"
+      ],
+      "source_file": "translation/source/quiz_batch01_part2_vi.csv",
+      "source_jp_scanner": "お別れのとき手紙と人形をもらい、うれしさとさびしさで",
+      "vi_full_reference": "Khi chia tay, Maruko nhận được thư và búp bê. Vừa vui vừa buồn...",
+      "expected_capacities": [
+        8,
+        8,
+        10
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_059_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x352EE",
+      "vi_runtime_lines": [
+        "Có lẽ!"
+      ],
+      "source_file": "translation/source/quiz_batch02_part1_vi.csv",
+      "source_jp_scanner": "なのでしょう！  ｛",
+      "vi_full_reference": "...nên mới được đặt tên là Sueo!",
+      "expected_capacities": [
+        7
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_059_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x35445",
+      "vi_runtime_lines": [
+        "Mẹ Hanawa",
+        "trẻ đẹp",
+        "cậu ước"
+      ],
+      "source_file": "translation/source/quiz_batch02_part1_vi.csv",
+      "source_jp_scanner": "ような、わかくてきれいな｛      かあさまがいいと｛      いって、かあさまを  ｛",
+      "vi_full_reference": "...nói rằng mình muốn có một người mẹ trẻ đẹp như mẹ Hanawa-kun...",
+      "expected_capacities": [
+        12,
+        8,
+        9
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_059_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x3549E",
+      "vi_runtime_lines": [
+        "Mẹ buồn",
+        "lắm"
+      ],
+      "source_file": "translation/source/quiz_batch02_part1_vi.csv",
+      "source_jp_scanner": "こまらせるので  ｛      あった。  ｛",
+      "vi_full_reference": "...khiến mẹ mình không ít lần khổ tâm.",
+      "expected_capacities": [
+        7,
+        4
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_059_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x35562",
+      "vi_runtime_lines": [
+        "",
+        "Maruo siêng",
+        "dẫn cả lớp!"
+      ],
+      "source_file": "translation/source/quiz_batch02_part1_vi.csv",
+      "source_jp_scanner": "｛        つよいせきにんかんと、  ｛      大きな声でクラスをひっぱる｛",
+      "vi_full_reference": "Maruo-kun có tinh thần trách nhiệm cao, giọng lại oang oang, luôn dẫn dắt cả lớp...",
+      "expected_capacities": [
+        0,
+        11,
+        13
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_059_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x355AF",
+      "vi_runtime_lines": [
+        "Kính Maruo",
+        "sáng loá",
+        "về phải"
+      ],
+      "source_file": "translation/source/quiz_batch02_part1_vi.csv",
+      "source_jp_scanner": "丸尾くんの、いつもキラリと｛      光るそのメガネは、｛      ズバリ！みぎまき  ｛",
+      "vi_full_reference": "...chiếc kính lúc nào cũng lóe sáng của Maruo-kun, nói thẳng ra, xoáy sang phải.",
+      "expected_capacities": [
+        13,
+        9,
+        8
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_059_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x3560A",
+      "vi_runtime_lines": [
+        "đấy"
+      ],
+      "source_file": "translation/source/quiz_batch02_part1_vi.csv",
+      "source_jp_scanner": "である。｛",
+      "vi_full_reference": "Đúng là như vậy.",
+      "expected_capacities": [
+        4
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_059_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x35633",
+      "vi_runtime_lines": [
+        "Migiwa mê",
+        "Hanawa nhất!"
+      ],
+      "source_file": "translation/source/quiz_batch02_part1_vi.csv",
+      "source_jp_scanner": "クラスメイトのみぎわさん。｛      ほんめいは花輪くんだが、その｛",
+      "vi_full_reference": "Migiwa-san là bạn cùng lớp với Maruko. Người trong mộng của cô bé là Hanawa-kun, nhưng trong nhóm bạn cậu ấy...",
+      "expected_capacities": [
+        13,
+        14
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_059_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x35680",
+      "vi_runtime_lines": [
+        "Người bạn đẹp",
+        "Tên gì nhỉ?"
+      ],
+      "source_file": "translation/source/quiz_batch02_part1_vi.csv",
+      "source_jp_scanner": "ともだちにもかっこいい男の子｛      が…。さて、そのなまえは？  ｛",
+      "vi_full_reference": "...cũng có một cậu bạn rất đẹp trai... Cậu ấy tên gì?",
+      "expected_capacities": [
+        14,
+        13
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_059_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x356F4",
+      "vi_runtime_lines": [
+        "Migiwa thích",
+        "Hanawa, lại mê",
+        "bạn Mark nữa!"
+      ],
+      "source_file": "translation/source/quiz_batch02_part1_vi.csv",
+      "source_jp_scanner": "花輪くんひとすじのみぎわ｛      さんだが、花輪くんのともだち｛      マークにもときめいてしまうの｛",
+      "vi_full_reference": "Migiwa-san một lòng một dạ với Hanawa-kun, thế mà cũng từng rung động trước Mark, bạn của cậu ấy.",
+      "expected_capacities": [
+        12,
+        14,
+        14
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_059_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x35763",
+      "vi_runtime_lines": [
+        "Thế là Migiwa",
+        "ghen ai gần",
+        "Hanawa!"
+      ],
+      "source_file": "translation/source/quiz_batch02_part1_vi.csv",
+      "source_jp_scanner": "だった。でも、やっぱり、花輪｛      くんとなかのいい女の子は彼女｛      のこうげきをうける。｛",
+      "vi_full_reference": "Nhưng dù vậy, cô gái nào thân với Hanawa-kun cũng vẫn phải hứng đòn ghen của cô bé...",
+      "expected_capacities": [
+        14,
+        14,
+        10
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_059_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x357CC",
+      "vi_runtime_lines": [
+        "Maruko",
+        "cũng bị"
+      ],
+      "source_file": "translation/source/quiz_batch02_part1_vi.csv",
+      "source_jp_scanner": "まる子もそのうち｛      の一人である。｛",
+      "vi_full_reference": "...và Maruko cũng là một trong số đó.",
+      "expected_capacities": [
+        8,
+        7
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_059_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x35813",
+      "vi_runtime_lines": [
+        "Midori",
+        "ấn tượng"
+      ],
+      "source_file": "translation/source/quiz_batch02_part1_vi.csv",
+      "source_jp_scanner": "インパクトのある  ｛      みどりちゃんだが、｛",
+      "vi_full_reference": "Midori-chan là một cô bé cực kỳ gây ấn tượng...",
+      "expected_capacities": [
+        8,
+        9
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_059_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x3600E",
+      "vi_runtime_lines": [
+        "Anh tốt",
+        "lắm!"
+      ],
+      "source_file": "translation/source/quiz_batch02_part2_vi.csv",
+      "source_jp_scanner": "するよき兄でも  ｛      あるのだった。  ｛",
+      "vi_full_reference": "...và cũng là một người anh rất tốt.",
+      "expected_capacities": [
+        7,
+        7
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_059_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x365AE",
+      "vi_runtime_lines": [
+        "Xe Hanawa",
+        "Rolls-Royce",
+        "Maru từng đi"
+      ],
+      "source_file": "translation/source/quiz_batch02_part3_vi.csv",
+      "source_jp_scanner": "花輪くんののるピカピカの｛      車は、ロールスロイスという    ｛      すごい車。まる子もなん回か｛",
+      "vi_full_reference": "Chiếc xe bóng loáng Hanawa-kun thường đi là một chiếc Rolls-Royce cực kỳ sang. Maruko cũng từng...",
+      "expected_capacities": [
+        12,
+        13,
+        13
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_059_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x3500F",
+      "vi_runtime_lines": [
+        "Ono"
+      ],
+      "source_file": "translation/source/quiz_batch02_part1_vi.csv",
+      "source_jp_scanner": "大野くん｛",
+      "vi_full_reference": "Ono-kun",
+      "expected_capacities": [
+        4
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_059_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x366CC",
+      "vi_runtime_lines": [
+        "Jump"
+      ],
+      "source_file": "translation/source/quiz_batch02_part3_vi.csv",
+      "source_jp_scanner": "ジャンプ｛",
+      "vi_full_reference": "Jump",
+      "expected_capacities": [
+        4
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_059_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x32BAF",
+      "vi_runtime_lines": [
+        "Idol"
+      ],
+      "source_file": "translation/source/quiz_batch03_part2_vi.csv",
+      "source_jp_scanner": "アイドル｛",
+      "vi_full_reference": "Thần tượng",
+      "expected_capacities": [
+        4
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_059_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x33613",
+      "vi_runtime_lines": [
+        "Sáo"
+      ],
+      "source_file": "translation/source/quiz_batch03_part3_vi.csv",
+      "source_jp_scanner": "フルート｛",
+      "vi_full_reference": "Sáo flute",
+      "expected_capacities": [
+        4
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_059_baseline_and_emulator"
+    }
+  ]
+}
