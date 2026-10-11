@@ -1,5 +1,13 @@
 # HANDOFF CURRENT — Chibi Maruko-chan SNES Việt hóa
 
+## CHECKPOINT 051 — 2026-10-11: FIX QUIZ AUDIT COMPLETENESS
+
+- Live GitHub source check exposed two files accidentally omitted by checkpoint050 triage: `quiz_batch02_part3_vi.csv` (43 rows), `quiz_batch03_part3_vi.csv` (58 rows). Original six held 280 rows; total canonical inventory **381 = 280+43+58**.
+- Fixed `tools/audit_quiz_source_050.py` to scan **eight** canonical Quiz CSVs and fail closed if the row count differs from 381. This is substantive source coverage correction, **not** an integrated ROM text patch.
+- In this conversation, no original ROM/043 IPS is mounted. The Quiz auditor and 048 merge still have NOT been executed locally; no emulator/runtime PASS.
+- Next: run complete eight-file audit against source checkout, then build substantial Quiz ROM integration with guarded original CP932 text and relocation for long names/questions. Never shrink meaningful names to illegible abbreviations. Continue content-first and no interim download links.
+
+
 ## CHECKPOINT 050 — 2026-10-11: QUIZ SOURCE TRIAGE TOOL ADDED
 
 - Confirmed accessible canonical Quiz Batch01/02/03 source CSVs, six files. Source rows already have complete Vietnamese `vi_full`, but the Japanese scanner source embeds line-layout separators and some entries start at CP932 half-glyph boundaries. Do not write these CSV scanner offsets directly into ROM.
