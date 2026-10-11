@@ -1,5 +1,20 @@
 # HANDOFF CURRENT — Chibi Maruko-chan SNES Việt hóa
 
+## CHECKPOINT 071 — 2026-10-12: RECOVER FULL 061 FROM **ANY** EXACT 039, 040, 041, 042 OR 043 ZIP/IPS
+
+**Read `docs/CHECKPOINT_071_ANY_039_TO_043_RECOVERY.md` first.** Critical production-blocker improvement: old recovery tool required ONLY the exact historical original 043 ZIP/IPS (28,135B, SHA `d3cb7ea84067675a5cc12cb4a26f260194b0a6f00ff235f0129460a902a58a50`). The user's Library shows original 039, 041, 042 and 043 ZIP metadata; archived bytes remain unavailable to model via repeated `files.materialize` attempts. In current runtime the exact Japanese original 2MiB SFC SHA `e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956` is available.
+
+NEW `tools/recover_from_any_039_to_043_archive_071.py` accepts **one original user-owned .ips or .zip from any stage 039–043**, identifies exact matching historical stage by **SHA256 and IPS length, not basename**, reads ZIP entries in memory and rejects forged/oversized archives. For 039, it runs `build_content_first_040_fortune.build(clean,ips039,root)` then 041/042/043 in source order; for 041, it runs only 042+043; for 042, only 043; for an exact 043 it skips earlier stages. Every stage is guarded by its original recorded IPA SHA256 plus clean-ROM IPS replay, no intermediate ROM output. Finally invokes the existing `rebuild_content_first_061_full_chain.run(clean,ips043,root)` and writes cumulative **061 clean-ROM IPS + JSON QA only**, release/emulator status false. Verified original IPS SHA/bytes: 039 `97c0e41b354b0dda3ea7c0c292b5aef236586e279870962fd0d4f3398285008c` /21130; 040 `2bfdcc64973bc31ce268fa7e68a6118808c633b10d1437b7f811ac290616e580` /21727; 041 `2117bc6e165f2c86263e74a637b6961a13f79257fccd9f02152a769fe1deb962` /22100; 042 `3e3c3de245a9a0a6648b2e62eff44a72093ef1e2e9cfcb1cf013ff6c4cbb5035` /23105; 043 above.
+
+NEW `tools/selftest_recovery_071.py` checks those hashes against source module constants, checks original source build imports and must reject same-size forged IPS, fake ZIP, missing archive. Added this no-ROM test to `.github/workflows/chibi-snes-source-qa.yml`; source CI at [run 38165060169](https://github.com/RVTGMzz/VHSNES/actions/runs/38165060169) **PASSED**, including negative ZIP/SHA test. 043 or cumulative 061 was **NOT ACTUALLY REBUILT** because raw authorized 039/041/042/043 archive bytes are still missing; selftest green is NOT emulator or full build acceptance. New docs `docs/CHECKPOINT_071_ANY_039_TO_043_RECOVERY.md`.
+
+When user supplies ANY original archive, example:
+`python tools/recover_from_any_039_to_043_archive_071.py clean.sfc Chibi_041_G0G1_92UIFortuneQuiz_Content_First_UNTESTED.zip --ips combined061.ips --report qa061.json --allow-untested`
+(The ZIP is just an example of an accepted stage if SHA matches, not currently accessible.) After exact actual build, emulator-test Quiz and title/UI first before integrating the 81 experimental full-length answers.
+
+**Accurate Quiz content staging remains 279/381**, 81 proposed full-length answer replacements from prior 069 still byte-experimental, four Fortune overlong cases and G3 results outstanding. User content-first, fonts-last, no release of game ROM or dummy patches. Do not claim integrated ROM or all translations done.
+
+
 ## CHECKPOINT 070 — 2026-10-12: REAL GITHUB CI PASS AFTER REPAIRING 3 BLOCKING PYTHON ERRORS
 
 **Read `docs/CHECKPOINT_070_REAL_CI_UNBLOCKED.md` FIRST.** Very important: after dozens of historical CI red runs, actual CI failure logs exposed **THREE serious source-code errors** preventing tool execution, not ROM crashes: checkpoint042 Story build Python SyntaxError in output loop line187; checkpoint043 Story build identical SyntaxError line202; checkpoint055 G2 rules contained literal `\\n` and IndentationError around line72. All fixed and **GITHUB ACTIONS VERIFIED PASS** on commit `13f727366319615b21eb3083ef1603fb8edc734c`:
