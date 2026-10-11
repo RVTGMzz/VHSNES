@@ -1,0 +1,428 @@
+{
+  "schema": "chibi.quiz.content_first.057.v1",
+  "clean_rom_sha256": "e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956",
+  "integrate_after": "056",
+  "logical_fields": 50,
+  "physical_segments": 105,
+  "native_816F_markers": 105,
+  "source_editable_bytes": 2106,
+  "source_changed_bytes": 2106,
+  "original_clean_preview_IPS_sha256": "e763f959c851bffea4d0df1f9d42cb90c9026ffdb442df288615581235f8f482",
+  "original_clean_preview_IPS_bytes": 2614,
+  "original_clean_preview_IPS_records": 100,
+  "original_clean_preview_ROM_sha256": "3c20e41ba5fe16c6ce9c5acb26f81e6b5665a9512059eb96403bcf8919b46f98",
+  "rules": "Preserve full Japanese and canonical vi_full in eight CSV sources; compact runtime lines are an editorial layer. Reject scanner aliases, unknown opcodes, overlapped patches, missing original control boundaries and glyphs. Preserve all leading and trailing raw layout bytes.",
+  "explicitly_deferred": [
+    "Names too long to preserve accurately (Hanawa/Fujiki/Nagasawa families, Ichiro, etc.)",
+    "Rolls-Royce/Ribon/Jump answer cells longer than legacy source fields or requiring font glyphs not available in V2"
+  ],
+  "emulator_tested": false,
+  "full_combined_057_ROM_built": false,
+  "records": [
+    {
+      "file_offset": "0x3584C",
+      "vi_runtime_lines": [
+        "Với Maru",
+        "họ là gì?"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x358B1",
+      "vi_runtime_lines": [
+        "Hàng xóm"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x358CA",
+      "vi_runtime_lines": [
+        "Midori",
+        "mít ướt",
+        "mà lì"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x35911",
+      "vi_runtime_lines": [
+        "Con của",
+        "bạn ông",
+        "Tomozo rất lạ"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x35968",
+      "vi_runtime_lines": [
+        "Mê Fujiki"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x359A3",
+      "vi_runtime_lines": [
+        "Yamada sắp bị",
+        "lừa!"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x359E2",
+      "vi_runtime_lines": [
+        "Ngày nào?",
+        "nhỉ?"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x35A1B",
+      "vi_runtime_lines": [
+        "Cá 1/4"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x35A32",
+      "vi_runtime_lines": [
+        "Hina"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x35A43",
+      "vi_runtime_lines": [
+        "Tuần Vàng"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x35AC3",
+      "vi_runtime_lines": [
+        "Tin thật",
+        "nên đành",
+        "nói thật"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x35B16",
+      "vi_runtime_lines": [
+        "Hóa thật rồi"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x35B4F",
+      "vi_runtime_lines": [
+        "Yamane ít nói",
+        "mê ai vậy?"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x35B94",
+      "vi_runtime_lines": [
+        "Người đó",
+        "là?"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x35BF6",
+      "vi_runtime_lines": [
+        "Yamane u ám",
+        "nhắc Michiru",
+        "vui hẳn lên!"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x35C63",
+      "vi_runtime_lines": [
+        "Nhưng cậu",
+        "rất quý",
+        "người già"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x35CB2",
+      "vi_runtime_lines": [
+        "tử tế!"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x35CE1",
+      "vi_runtime_lines": [
+        "Yoshiko là bạn",
+        "chị Maruko"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x35D2A",
+      "vi_runtime_lines": [
+        "Học lớp nào?"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x35D7C",
+      "vi_runtime_lines": [
+        "Yoshiko học",
+        "chung khối với",
+        "chị Maruko"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x35DED",
+      "vi_runtime_lines": [
+        "Cô cho cá bảy",
+        "màu, nào ngờ",
+        "bị ăn!"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x35E50",
+      "vi_runtime_lines": [
+        "Tôm ăn",
+        "mất!"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x35E93",
+      "vi_runtime_lines": [
+        "Nagayama",
+        "có em hay ốm"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x35EDE",
+      "vi_runtime_lines": [
+        "Em tên gì?",
+        "nào"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x35F38",
+      "vi_runtime_lines": [
+        "Nagayama rất",
+        "rành sâu bọ",
+        "em tên Koharu"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x35FA9",
+      "vi_runtime_lines": [
+        "Koharu hay ốm",
+        "anh thương em",
+        "lắm!"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x36057",
+      "vi_runtime_lines": [
+        "Ono, Sugiyama",
+        "hạ bọn quậy"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x360A4",
+      "vi_runtime_lines": [
+        "Công viên?"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x360E9",
+      "vi_runtime_lines": [
+        "Ooki"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x360FA",
+      "vi_runtime_lines": [
+        "Bọn quậy phá",
+        "bắt nạt bạn",
+        "Ono, Sugiyama"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x36165",
+      "vi_runtime_lines": [
+        "Đấu ở Namiki",
+        "hai cậu",
+        "thắng!"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x361D5",
+      "vi_runtime_lines": [
+        "Bác của Maruko",
+        "tên là gì?"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x3625E",
+      "vi_runtime_lines": [
+        "",
+        "Bác Ichiro",
+        "gửi Maruko"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x362A9",
+      "vi_runtime_lines": [
+        "trà mới đó",
+        "đấy!"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x36307",
+      "vi_runtime_lines": [
+        "Fujiki giỏi",
+        "môn gì nhất?",
+        "nhỉ?"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x36394",
+      "vi_runtime_lines": [
+        "Fujiki giỏi",
+        "trên băng",
+        "Midori mê cậu"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x363FF",
+      "vi_runtime_lines": [
+        "phải lòng!"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x3643D",
+      "vi_runtime_lines": [
+        "",
+        "Nhà mấy tầng?"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x36498",
+      "vi_runtime_lines": [
+        "",
+        "Nhà Maruko",
+        "chỉ một tầng"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x364E5",
+      "vi_runtime_lines": [
+        "nhớ!"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x36519",
+      "vi_runtime_lines": [
+        "Hideji",
+        "chở cậu",
+        "xe gì vậy?"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x3659B",
+      "vi_runtime_lines": [
+        "xe xịn"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x3661D",
+      "vi_runtime_lines": [
+        "vài lần rồi!"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x36661",
+      "vi_runtime_lines": [
+        "Chị Maruko",
+        "hay đọc gì?",
+        "nhỉ?"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x366EE",
+      "vi_runtime_lines": [
+        "",
+        "Chị Maruko",
+        "mà thích mơ"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x36739",
+      "vi_runtime_lines": [
+        "Chị mơ mộng",
+        "đọc ribon!"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x3679D",
+      "vi_runtime_lines": [
+        "Maruko, Tama",
+        "mua kẹo ở đâu?"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x3681E",
+      "vi_runtime_lines": [
+        "",
+        "Maruko, Tama",
+        "mua bánh kẹo"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x3686F",
+      "vi_runtime_lines": [
+        "tại Mitsuya",
+        "quán quen",
+        "cả nhóm!"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    },
+    {
+      "file_offset": "0x368D8",
+      "vi_runtime_lines": [
+        "thân quen"
+      ],
+      "status": "clean_rom_source_verified_pending_056_baseline_and_emulator"
+    }
+  ]
+}
