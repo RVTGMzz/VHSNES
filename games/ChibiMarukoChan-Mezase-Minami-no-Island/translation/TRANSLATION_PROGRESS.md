@@ -1,5 +1,13 @@
 # Translation progress — Chibi Maruko-chan
 
+## LATEST CONTENT-FIRST 041 — 2026-10-11
+
+- **21 additional actual game Quiz choice fields patched into the 040 ROM baseline**, not just meaning-source CSV edits: 3 answer types, 9 age answers, 3 calendar dates, 3 grade/class answers, 3 floor-choice labels. Clean-ROM source CP932 exactly matched each; 21 original `816F` delimiters intact; all fields fit old two-byte glyph budgets. 21/21 pairs of original Japanese / full Vietnamese checked against 5 canonical Quiz CSVs in live GitHub.
+- Exact 041 experimental clean-ROM IPS SHA `2117bc6e165f2c86263e74a637b6961a13f79257fccd9f02152a769fe1deb962`, **22,100B / 756 IPS records**; target ROM SHA `56c36cbc8e477d262216d3aa0f06909e09b9929ba0f6f544dccbaa3671bf48fb`. Independent clean-ROM replay PASS; SNES checksum `327D`, 132 altered bytes vs 040 solely in 21 Quiz fields and checksum.
+- Total actually integrated **fixed-field direct text in this experimental build: 92 =38 UI (039)+33 Fortune (040)+21 Quiz (041)**. G0/G1 title/menu graphics from checkpoint036 unchanged; required credit `Việt hóa bởi Votri Valley`. New files: `translation/runtime/quiz_answers_exact_fit_041.csv`, `tools/build_content_first_041_quiz.py`, `docs/CONTENT_FIRST_QUIZ_CHECKPOINT_041.md`.
+- Original `vi_full` texts are **not shortened**, these are separate reviewed compact menu/answer forms. Several longer Quiz/Story fields and character names still NEED SAFE FIELD EXPANSION; historical 328-field Story runtime build 027 and direct-text Build035 ROM not available as reproducible files. NO full dialogue/Quiz/Fortune coverage in this ROM. Real SNES emulator NOT TESTED and font 025 visual failure NOT resolved. User explicitly says **CONTENT BEFORE FONT**.
+
+
 ## NEW CHECKPOINT 039 — 2026-10-11: 38 ACTUAL ADDITIONAL VIETNAMESE DIRECT-UI ROM FIELDS
 
 - Real experimental ROM produced from exact CLEAN Japanese + previously existing V2 0x84 Unicode glyph/codepage layer + checkpoint036 G0 first-boot Vietnamese title/credit and G1 selection graphics. All three existing binary layers byte-compatible (0 collisions except header).
