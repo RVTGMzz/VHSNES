@@ -35,6 +35,9 @@ jobs:
       - name: Verify 150 original answer offsets and 81 full-Vietnamese pending choices
         working-directory: games/ChibiMarukoChan-Mezase-Minami-no-Island
         run: python tools/audit_quiz_repo_no_rom_070.py
+      - name: Verify reconstruction chain and reject forged 039–043 archives (ROM-free)
+        working-directory: games/ChibiMarukoChan-Mezase-Minami-no-Island
+        run: python tools/selftest_recovery_071.py
       - name: Confirm no ROM or game-font binaries committed to source folder
         run: |
           if find games/ChibiMarukoChan-Mezase-Minami-no-Island \
