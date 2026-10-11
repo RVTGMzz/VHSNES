@@ -257,7 +257,7 @@ def run(clean: bytes, root: Path):
         "patch_generated": False,
         "full_game_translated": False,
     }
-    assert totals["independent_CP932_text_frame_starts"] == sum(
+    assert totals["safe_to_parse_CP932_starts_total_including_nested"] == sum(
         x["source_status"] in (
             "physical_text_already_inside_staged_source",
             "independent_CP932_text_requires_editorial_or_layout_QA") for x in result)
