@@ -1,0 +1,1783 @@
+{
+  "schema": "chibi.story.content_first.045.v1",
+  "clean_rom_sha256": "e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956",
+  "baseline_044_rom_sha256": "2312b9ba52c0cf6ac491e71117d5c537ad7dc61828dc9e87d838826e5165f322",
+  "rom_sha256": "0e84038c226e56fb32ad12bfcaa64c594efc316c5f3ca793dcc0dfc787274c08",
+  "ips_sha256": "58828d62eb1cc36af1653104aaa81178c8ce53aa3e1a18373bef9a5d186744fe",
+  "batch02": 59,
+  "batch03": 81,
+  "total_new": 140,
+  "breaks_preserved": 368,
+  "scope": "140 actual translated original fixed-size Story glyph fields, canonical vi_full preserved, local static IPS replay exact; SNES runtime untested",
+  "records": [
+    {
+      "file_offset": "0x1A916",
+      "vi_runtime_lines": [
+        "A ha... ha ha!"
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "A ha... a ha... a ha...",
+      "source_file": "translation/source/story_batch02_part1_vi.csv",
+      "source_jp_scanner": "印  「アハ  アハ  アハ……」｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1B55E",
+      "vi_runtime_lines": [
+        "Ừ...",
+        "Sakura vô tâm",
+        "với bạn!",
+        ""
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Ừ. Sakura đúng là chẳng biết quý bạn bè gì cả.",
+      "source_file": "translation/source/story_batch02_part2_vi.csv",
+      "source_jp_scanner": "  そうだね｛  ともだちを  たいせつにしない｛  人だね  さくらは｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1B5AC",
+      "vi_runtime_lines": [
+        "Cứ như vậy",
+        "chẳng khá đâu!",
+        ""
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Cậu cứ thế này thì bao giờ mới khá lên nổi.",
+      "source_file": "translation/source/story_batch02_part2_vi.csv",
+      "source_jp_scanner": "  きみは  そんなふうだから｛  いつまでたっても  ダメなんだ｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1B5F6",
+      "vi_runtime_lines": [
+        "Nagasawa cũng",
+        ""
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Nagasawa-kun lúc nãy cũng...",
+      "source_file": "translation/source/story_batch02_part2_vi.csv",
+      "source_jp_scanner": "  永沢くんだって  さっき…｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1B68C",
+      "vi_runtime_lines": [
+        "Ư...",
+        ""
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Ư...",
+      "source_file": "translation/source/story_batch02_part2_vi.csv",
+      "source_jp_scanner": "  う…                            ｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1B6BE",
+      "vi_runtime_lines": [
+        "Chẳng hiểu sao?",
+        "Sống sao nổi!",
+        "Tôi đi!",
+        ""
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Đến chuyện đó mà cũng không hiểu thì sống còn có ý nghĩa gì nữa. Tôi xin phép.",
+      "source_file": "translation/source/story_batch02_part2_vi.csv",
+      "source_jp_scanner": "  そんなこと  わからないなんて｛  キミ  いきてるかいがないね｛  しつれいするよ｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1B721",
+      "vi_runtime_lines": [
+        "Sống sao?"
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Ý... ý nghĩa để sống...",
+      "source_file": "translation/source/story_batch02_part2_vi.csv",
+      "source_jp_scanner": "  い  いきてるかい…｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1B73C",
+      "vi_runtime_lines": [
+        "Tớ thật vô dụng!"
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Mình đúng là đứa con gái vô dụng thật...",
+      "source_file": "translation/source/story_batch02_part2_vi.csv",
+      "source_jp_scanner": "  「わたしゃダメな女なんだね…」  ｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1B76D",
+      "vi_runtime_lines": [
+        "Maru-chan đã cố",
+        ""
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Maru-chan, cậu đã cố gắng lắm rồi.",
+      "source_file": "translation/source/story_batch02_part2_vi.csv",
+      "source_jp_scanner": "  まるちゃん  よくがんばったよ｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1B79B",
+      "vi_runtime_lines": [
+        "Chỉ có cậu",
+        "hiểu tớ mà",
+        "Bạn tri kỷ!",
+        ""
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Chỉ có Tama-chan mới chịu nói vậy với tớ thôi. Đúng là bạn tâm giao mà!",
+      "source_file": "translation/source/story_batch02_part2_vi.csv",
+      "source_jp_scanner": "  そういってくれるのは｛  たまちゃんだけだよ｛  心の友だね  まったく｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1B7EA",
+      "vi_runtime_lines": [
+        "Qua nhà tớ chơi",
+        "nhé?",
+        ""
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Vậy lát nữa qua nhà tớ chơi không?",
+      "source_file": "translation/source/story_batch02_part2_vi.csv",
+      "source_jp_scanner": "  じゃあ  これから  うちにきて｛  あそばない？｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1B828",
+      "vi_runtime_lines": [
+        "Hẹn",
+        "hôm khác nhé...",
+        ""
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Xin lỗi nhé, tớ có chút việc...",
+      "source_file": "translation/source/story_batch02_part2_vi.csv",
+      "source_jp_scanner": "  ごめんね｛  ちょっと  ようじがあるんだ…｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1B862",
+      "vi_runtime_lines": [
+        "Việc gì?",
+        ""
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Hửm? Việc gì?",
+      "source_file": "translation/source/story_batch02_part2_vi.csv",
+      "source_jp_scanner": "  ん？  なんの？｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1B882",
+      "vi_runtime_lines": [
+        "Lấy hộ chiếu"
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Đi làm hộ chiếu...",
+      "source_file": "translation/source/story_batch02_part2_vi.csv",
+      "source_jp_scanner": "  パスポートを  とりに…｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1B8A4",
+      "vi_runtime_lines": [
+        "Choáng luôn rồi!"
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Choáng...",
+      "source_file": "translation/source/story_batch02_part2_vi.csv",
+      "source_jp_scanner": "  「ガーン…                      ｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1B8CD",
+      "vi_runtime_lines": [
+        "Ta-Tama-chan...",
+        "Cậu cũng đi sao?"
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Ta-Tama-chan... cậu chẳng lẽ...",
+      "source_file": "translation/source/story_batch02_part2_vi.csv",
+      "source_jp_scanner": "    た  たまちゃん                ｛    あんた  まさか…」            ｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1B91D",
+      "vi_runtime_lines": [
+        "Tớ là ai chứ...",
+        ""
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Rốt cuộc mình là cái gì vậy...",
+      "source_file": "translation/source/story_batch02_part2_vi.csv",
+      "source_jp_scanner": "  「わたしって  いったい…」      ｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1B94F",
+      "vi_runtime_lines": [
+        "Làm cô ấy buồn",
+        "tớ có lỗi...",
+        "Baby..."
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Làm con gái phải buồn, tớ đúng là một chàng trai mang tội. Tha lỗi cho tớ nhé...",
+      "source_file": "translation/source/story_batch02_part2_vi.csv",
+      "source_jp_scanner": "  女の子を  かなしませてしまう｛  ボクって  つみな男だよ｛  ゆるしておくれ",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1B99C",
+      "vi_runtime_lines": [
+        "Baby!"
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Baby.",
+      "source_file": "translation/source/story_batch02_part2_vi.csv",
+      "source_jp_scanner": "  ベイビー｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1BA12",
+      "vi_runtime_lines": [
+        "Trận cuối đây!",
+        ""
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Cuối cùng cũng đến lượt thi cuối rồi nhỉ.",
+      "source_file": "translation/source/story_batch02_part2_vi.csv",
+      "source_jp_scanner": "  ついに  さいごに  なったね｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1BA3E",
+      "vi_runtime_lines": [
+        "Tưởng lâu lắm",
+        "mà...",
+        ""
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Cuộc thi tưởng dài mà ngắn thật nhỉ.",
+      "source_file": "translation/source/story_batch02_part3_vi.csv",
+      "source_jp_scanner": "  ながいようで  みじかい戦い｛  だったよ｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1BAA4",
+      "vi_runtime_lines": [
+        "Ừ mà!"
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Ừ, đúng vậy.",
+      "source_file": "translation/source/story_batch02_part3_vi.csv",
+      "source_jp_scanner": "  まったくね｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1BABA",
+      "vi_runtime_lines": [
+        "Hư hư hư...",
+        "Ha ha ha...",
+        "",
+        "Cuộc đấu ngầm",
+        "bắt đầu!"
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Ư hư hư... A ha ha... Cuộc đấu ngầm giữa hai cô gái giờ mới thật sự bắt đầu...",
+      "source_file": "translation/source/story_batch02_part3_vi.csv",
+      "source_jp_scanner": "  「ウフフフ」                    ｛  「アハハハ」                    ｛  ▼  「目にみえない女の戦いが｛    いま  ここに…」｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1BB42",
+      "vi_runtime_lines": [
+        "Maru tiếc quá",
+        ""
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Maru-chan, tiếc quá nhỉ.",
+      "source_file": "translation/source/story_batch02_part3_vi.csv",
+      "source_jp_scanner": "  まるちゃん  おしかったね｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1BB6C",
+      "vi_runtime_lines": [
+        "Cậu đã cố rồi"
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Nhưng cậu đã cố gắng lắm rồi...",
+      "source_file": "translation/source/story_batch02_part3_vi.csv",
+      "source_jp_scanner": "  でも  よくがんばったよ…｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1BB97",
+      "vi_runtime_lines": [
+        "Mất hoa quả",
+        "và biển cả",
+        "rồi đó nhé!"
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Nhưng vậy là cậu chẳng còn được vui với trái cây và biển xanh ở đảo phương Nam nữa rồi!!",
+      "source_file": "translation/source/story_batch02_part3_vi.csv",
+      "source_jp_scanner": "  でも  もう  南の島の｛  フルーツや  青い海を｛  たのしめないんだよ！！｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1BBE6",
+      "vi_runtime_lines": [
+        "Hoa quả...",
+        "Biển xanh... Cậu",
+        "chỉ muốn đi chơi?"
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Trái cây... biển xanh... Maru-chan, rốt cuộc cậu định sang đảo phương Nam để làm gì vậy...?",
+      "source_file": "translation/source/story_batch02_part3_vi.csv",
+      "source_jp_scanner": "  「フルーツ…  青い海…｛    まるちゃん  いったい  南の島で｛    なにをするつもりだったの…？」｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1BC4D",
+      "vi_runtime_lines": [
+        "Aaa... tiếc ghê!"
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Aaa...",
+      "source_file": "translation/source/story_batch02_part3_vi.csv",
+      "source_jp_scanner": "  「あぁー」                      ｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1BC7B",
+      "vi_runtime_lines": [
+        "Maru-chan",
+        "giỏi!",
+        ""
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Maru-chan đúng là giỏi ghê.",
+      "source_file": "translation/source/story_batch02_part3_vi.csv",
+      "source_jp_scanner": "  やっぱり  まるちゃん｛  つよいねぇー｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1BCB4",
+      "vi_runtime_lines": [
+        "Ha ha ha!",
+        "Lúc cấp bách",
+        "mạnh!",
+        ""
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "A ha ha, người ta gọi là 'lực sĩ lúc nguy cấp' ấy mà!",
+      "source_file": "translation/source/story_batch02_part3_vi.csv",
+      "source_jp_scanner": "  アハハ                          ｛  火事場の  ちからもちって｛  やつだょー｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1BD13",
+      "vi_runtime_lines": [
+        "Maruko, phải gọi",
+        "là sức trâu cơ!",
+        ""
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Maru-chan, phải gọi là 'sức trâu' mới đúng.",
+      "source_file": "translation/source/story_batch02_part3_vi.csv",
+      "source_jp_scanner": "  まるちゃん  それをいうなら      ｛  バカぢからだよ                  ｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1BD6C",
+      "vi_runtime_lines": [
+        "Hả!?"
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Hả!?",
+      "source_file": "translation/source/story_batch02_part3_vi.csv",
+      "source_jp_scanner": "  えっ！？｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1BD86",
+      "vi_runtime_lines": [
+        "Là sức trâu",
+        "đấy, Maruko!",
+        ""
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Không phải 'lực sĩ', là 'sức trâu' đó, Maru-chan.",
+      "source_file": "translation/source/story_batch02_part3_vi.csv",
+      "source_jp_scanner": "  ちからもちじゃなくて｛  バカぢからだよ  まるちゃん｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1BDCF",
+      "vi_runtime_lines": [
+        "Đâu cần",
+        "nói thế"
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Có cần nói kỹ đến thế không...",
+      "source_file": "translation/source/story_batch02_part3_vi.csv",
+      "source_jp_scanner": "  な  なにもそこまで｛  いわなくても…｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1BE35",
+      "vi_runtime_lines": [
+        "Hey! Cuối cùng",
+        "đến trận chót",
+        "rồi!",
+        ""
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Hey, cuối cùng cũng đến lần thi cuối rồi nhỉ.",
+      "source_file": "translation/source/story_batch02_part3_vi.csv",
+      "source_jp_scanner": "  ヘーイ                          ｛  ついに  さいごの  対戦に｛  なったねぇ｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1BE91",
+      "vi_runtime_lines": [
+        "Mong trận cuối!",
+        ""
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Tớ thật sự mong đây là lần cuối đấy.",
+      "source_file": "translation/source/story_batch02_part3_vi.csv",
+      "source_jp_scanner": "  ほんとに  さいごにしたいもんだよ｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1BEC3",
+      "vi_runtime_lines": [
+        "Nhận hoa nhé",
+        "Tim tớ đỏ rực",
+        "như hồng vậy!",
+        ""
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Xin hãy nhận lấy. Lúc này trái tim tớ đang đỏ rực như đóa hồng này.",
+      "source_file": "translation/source/story_batch02_part3_vi.csv",
+      "source_jp_scanner": "  うけとってくれたまえっ｛  いま  ボクの心は  このバラの｛  ように  赤く  もえているのさ｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1BF2B",
+      "vi_runtime_lines": [
+        "Thà cho tớ",
+        "đồ ăn còn hơn!",
+        ""
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Nếu được chọn thì tớ thích nhận đồ ăn hơn...",
+      "source_file": "translation/source/story_batch02_part3_vi.csv",
+      "source_jp_scanner": "  どうせなら  たべるもの｛  もらったほうが  うれしかったよ…｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1BF77",
+      "vi_runtime_lines": [
+        "Cậu chẳng hiểu",
+        "gu tớ đến tận",
+        "cuối!",
+        ""
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Đến tận cuối cùng cậu vẫn không hiểu được gu của tớ nhỉ. Tiếc thật.",
+      "source_file": "translation/source/story_batch02_part3_vi.csv",
+      "source_jp_scanner": "  さいごまで  キミには  ボクの｛  センスは  つうじないようだね｛  ざんねんだよ｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1BFD8",
+      "vi_runtime_lines": [
+        "........."
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": ".........",
+      "source_file": "translation/source/story_batch02_part3_vi.csv",
+      "source_jp_scanner": "  ………                          ｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1C006",
+      "vi_runtime_lines": [
+        "Tớ làm được rồi?",
+        ""
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Có khi tớ cũng làm được nếu chịu khó nhỉ.",
+      "source_file": "translation/source/story_batch02_part3_vi.csv",
+      "source_jp_scanner": "  わたしも  やりゃ  できるのかもね｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1C03D",
+      "vi_runtime_lines": [
+        "Cậu thắng!",
+        "Cạn ly!"
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Đúng là cậu thắng rồi. Nâng ly mừng cậu nào!",
+      "source_file": "translation/source/story_batch02_part3_vi.csv",
+      "source_jp_scanner": "  まさに  キミの  勝ちさっ｛  この勝利にカンパイ｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1C077",
+      "vi_runtime_lines": [
+        "Aaa... đảo Nam...",
+        "Nghe sóng vỗ",
+        "ở ngay bên tai"
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Aaa, đảo phương Nam... nghe như tiếng sóng đã vọng tới rồi...",
+      "source_file": "translation/source/story_batch02_part3_vi.csv",
+      "source_jp_scanner": "  「あぁー  南の島かぁ…          ｛    なみのおとが  もう            ｛    きこえてくるようだよ…」｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1C0E5",
+      "vi_runtime_lines": [
+        "Señorita",
+        "Còn sớm!",
+        "Chớ mơ xa!"
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Señorita, còn sớm để mơ vậy đấy...",
+      "source_file": "translation/source/story_batch02_part3_vi.csv",
+      "source_jp_scanner": "  「セニョリータ｛    それには  まだ｛    はやいんじゃないか…」｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1C12C",
+      "vi_runtime_lines": [
+        "Biển xanh",
+        "Mây trắng...",
+        ""
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Biển xanh, mây trắng... a, háo hức quá...",
+      "source_file": "translation/source/story_batch02_part3_vi.csv",
+      "source_jp_scanner": "  「青い海  白いくも｛    あぁー  たのしみだよ…」｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1C16C",
+      "vi_runtime_lines": [
+        "Hết thuốc chữa",
+        "rồi!"
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Hết cứu rồi...",
+      "source_file": "translation/source/story_batch02_part3_vi.csv",
+      "source_jp_scanner": "  「もはや  手のほどこしようが｛    ない…」｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1C1A4",
+      "vi_runtime_lines": [
+        "Tớ tới đây thôi",
+        ""
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Tớ cũng đến đây là hết rồi nhỉ.",
+      "source_file": "translation/source/story_batch02_part3_vi.csv",
+      "source_jp_scanner": "  わたしも  もはや  これまでだね｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1C1D4",
+      "vi_runtime_lines": [
+        "Cậu làm tốt!",
+        "Bất ngờ!",
+        "Cạn ly vì cậu!",
+        ""
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Không ngờ cậu làm được tới mức này. Nâng ly cho nỗ lực của cậu!",
+      "source_file": "translation/source/story_batch02_part3_vi.csv",
+      "source_jp_scanner": "  キミが  ここまで  やるとは｛  思わなかったよ｛  キミの  どりょくに  カンパイさっ｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1C236",
+      "vi_runtime_lines": [
+        "Thế nể tình",
+        "cho tớ thắng đi!",
+        ""
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Vậy nể tình nỗ lực đó, cho tớ thắng đi.",
+      "source_file": "translation/source/story_batch02_part3_vi.csv",
+      "source_jp_scanner": "  じゃ  その  どりょくに  めんじて｛  勝ちにしてよ                    ｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1C294",
+      "vi_runtime_lines": [
+        "Cố gắng khác",
+        "kết quả!",
+        "hiểu chứ, baby?"
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "N-nỗ lực là nỗ lực, kết quả là kết quả, baby.",
+      "source_file": "translation/source/story_batch02_part3_vi.csv",
+      "source_jp_scanner": "  ど  どりょくは  どりょく｛  けっかは  けっかだよ｛  ベイビー                        ｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1C2F4",
+      "vi_runtime_lines": [
+        "Thôi mà, được mà!"
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Thôi mà, được mà.",
+      "source_file": "translation/source/story_batch02_part3_vi.csv",
+      "source_jp_scanner": "  「いいじゃん  いいじゃん」      ｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1C31D",
+      "vi_runtime_lines": [
+        "Đ-đừng làm vậy!",
+        "Sakura-kun ơi!",
+        ""
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Đ-đừng, Sakura-kun!",
+      "source_file": "translation/source/story_batch02_part3_vi.csv",
+      "source_jp_scanner": "  「やめ  やめたまえ              ｛    さくらくんっっ」              ｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1C373",
+      "vi_runtime_lines": [
+        "Trận cuối rồi!",
+        "",
+        "Tôi, Maruo, sẽ",
+        "nghiêm túc đấu",
+        "hết sức mình!",
+        ""
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Cuối cùng cũng tới phần thi cuối. Maruo Sueo này trước giờ đã coi thường bạn, nhưng giờ tôi sẽ quyết tâm nghiêm túc hết sức!",
+      "source_file": "translation/source/story_batch02_part3_vi.csv",
+      "source_jp_scanner": "  ついに最後の競技ですね          ｛  ▼  丸尾スエオ  今まであなたを甘く｛  見ていましたが  心を鬼にして｛  本気を出させていただきますよ｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1C40B",
+      "vi_runtime_lines": [
+        "Như quỷ vậy!"
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Đúng là biến thành quỷ thật rồi đấy.",
+      "source_file": "translation/source/story_batch02_part3_vi.csv",
+      "source_jp_scanner": "  ホント  オニのようだよ｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1C42F",
+      "vi_runtime_lines": [
+        "Giờ chọn người",
+        "đại diện",
+        "Thi đấu nào"
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Giờ là lúc chọn ra người đại diện thật sự! Nào, so tài thôi!!",
+      "source_file": "translation/source/story_batch02_part3_vi.csv",
+      "source_jp_scanner": "  「今こそ！！  真の代表者が｛    選ばれるのです｛    いざっ  勝負っっ」｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1C4AC",
+      "vi_runtime_lines": [
+        "Maruko giờ còn",
+        "muốn xử lý cậu",
+        "ấy hơn cả đi đảo!"
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Đến lúc này, Maruko còn muốn ai đó xử lý cậu chàng này hơn cả chuyện đi đảo phương Nam...",
+      "source_file": "translation/source/story_batch02_part3_vi.csv",
+      "source_jp_scanner": "  「もはや  南の島よりも  この男を｛    なんとかしてほしい  まる子で  ｛    あった」                      ｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1C525",
+      "vi_runtime_lines": [
+        "Maruko giỏi lắm!",
+        "Mẹ sẽ nấu món",
+        "con thích nhé!",
+        ""
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Maruko, con cố gắng lắm rồi. Tối nay mẹ sẽ làm món con thích.",
+      "source_file": "translation/source/story_batch02_part3_vi.csv",
+      "source_jp_scanner": "  まる子  よくがんばったね        ｛  こんやは  まる子の  すきなものに｛  してあげるよ                    ｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1C5A2",
+      "vi_runtime_lines": [
+        "Vậy bít-tết,",
+        "hamburger, ramen",
+        "và sushi nhé!",
+        ""
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Yay! Vậy bít-tết, hamburger, ramen với sushi nhé?",
+      "source_file": "translation/source/story_batch02_part3_vi.csv",
+      "source_jp_scanner": "  やーりー  じゃあ                ｛  ステーキと  ハンバーグと        ｛  ラーメンと  おすしだね？        ｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1C61C",
+      "vi_runtime_lines": [
+        "Dù Tết đến",
+        "cũng không có!",
+        ""
+      ],
+      "story_batch": "batch02",
+      "vi_full_reference": "Có gom cả Tết lẫn lễ hội vào một ngày cũng chẳng có bữa thế đâu!",
+      "source_file": "translation/source/story_batch02_part3_vi.csv",
+      "source_jp_scanner": "  そんなの  盆と正月が｛  いっしょにきたって  ないよ｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1C691",
+      "vi_runtime_lines": [
+        "Ông chỉ cần",
+        "món mềm mềm",
+        "ngon là đủ!"
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Ông chỉ cần có món gì mềm mềm, ngon ngon là được rồi...",
+      "source_file": "translation/source/story_batch03_part1_vi.csv",
+      "source_jp_scanner": "  わしゃ  やわらかくて｛  うまいもんが  あれば｛  それで  いいんじゃがのう…｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1C6E4",
+      "vi_runtime_lines": [
+        "Ông thì đã",
+        "làm gì?"
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Rốt cuộc ông đã làm gì đâu?",
+      "source_file": "translation/source/story_batch03_part1_vi.csv",
+      "source_jp_scanner": "  「いったい  あんたが｛    なにをした？」｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1C71A",
+      "vi_runtime_lines": [
+        "Sakura-san!",
+        "Tôi có suất rồi",
+        "Đó là luật!",
+        "",
+        "Tôi phải gọi mẹ",
+        "để tô mắt Daruma",
+        "Tôi xin phép!",
+        ""
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Sakura-san! Suất đại diện là của tôi rồi... Đây chính là quy luật của xã hội trọng thực lực. Giờ tôi phải gọi ngay cho mẹ để vẽ nốt mắt cho Daruma, xin phép!",
+      "source_file": "translation/source/story_batch03_part1_vi.csv",
+      "source_jp_scanner": "  「さくらさんっ  代表の座は｛    いただきましたよ…  これが｛    実力社会の  おきてなのです」｛  ▼  「それでは私はさっそくかあさまに｛    電話して  ダルマに目を入れます｛    ので  これにて失礼いたします」｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1C7F8",
+      "vi_runtime_lines": [
+        "Giờ nghĩ lại",
+        "ông ấy?",
+        ""
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Nghĩ lại mới thấy... người này rốt cuộc là kiểu gì vậy...",
+      "source_file": "translation/source/story_batch03_part1_vi.csv",
+      "source_jp_scanner": "  「いまさらながら  あの人って｛    いったい…」｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1C832",
+      "vi_runtime_lines": [
+        "Mình lại thua",
+        "người như thế..."
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Mình lại thua một người như thế... mình rốt cuộc là sao vậy...",
+      "source_file": "translation/source/story_batch03_part1_vi.csv",
+      "source_jp_scanner": "  「そんな人に負ける  わたしって｛    いったい…」                  ｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1C882",
+      "vi_runtime_lines": [
+        "Sakura",
+        "sắp được đi",
+        "đảo!",
+        ""
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Sakura-san, cậu sắp được đi đảo phương Nam rồi nhỉ.",
+      "source_file": "translation/source/story_batch03_part1_vi.csv",
+      "source_jp_scanner": "  さくらさん｛  南の島に  もうすこしで｛  行けるのね｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1C8C6",
+      "vi_runtime_lines": [
+        "Ừ, đúng rồi!",
+        ""
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Ừ-ừ, đúng vậy.",
+      "source_file": "translation/source/story_batch03_part1_vi.csv",
+      "source_jp_scanner": "  う  うん  そうなんだよ｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1C8EE",
+      "vi_runtime_lines": [
+        "Thích",
+        ""
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Thích thật...",
+      "source_file": "translation/source/story_batch03_part1_vi.csv",
+      "source_jp_scanner": "  いーなー｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1C908",
+      "vi_runtime_lines": [
+        "Noguchi đi nữa",
+        "thì hay!",
+        ""
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Vậy Noguchi-san cũng tham gia thì hay rồi...",
+      "source_file": "translation/source/story_batch03_part1_vi.csv",
+      "source_jp_scanner": "  じゃあ  野口さんも  でれば｛  よかったのに…｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1C946",
+      "vi_runtime_lines": [
+        "Tớ đâu muốn đi!",
+        ""
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Không, nhưng tớ không muốn đi.",
+      "source_file": "translation/source/story_batch03_part1_vi.csv",
+      "source_jp_scanner": "  ううん  でも  私は  行きたくない｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1C978",
+      "vi_runtime_lines": [
+        "Sao?",
+        ""
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "T-tại sao?",
+      "source_file": "translation/source/story_batch03_part1_vi.csv",
+      "source_jp_scanner": "  な  なんで｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1C994",
+      "vi_runtime_lines": [
+        "Nhỡ đâu",
+        "họ bán cậu",
+        "thay vì du học",
+        "",
+        "Cố lên nhé!",
+        ""
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Biết đâu không phải du học mà bị đem bán thì sao... Vậy Sakura-san, cố lên nhé.",
+      "source_file": "translation/source/story_batch03_part1_vi.csv",
+      "source_jp_scanner": "  もしかしたら｛  りゅうがくじゃなくて｛  うられるかも  しれないから…｛  ▼  じゃあ  さくらさん              ｛  がんばってね                    ｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1CA3C",
+      "vi_runtime_lines": [
+        "Hả!?"
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Hả!?",
+      "source_file": "translation/source/story_batch03_part1_vi.csv",
+      "source_jp_scanner": "  えっ！？｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1CA4D",
+      "vi_runtime_lines": [
+        "Bị bán?",
+        "Cậu nói gì?"
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Bị bán...? Hả? Ý cậu là sao?",
+      "source_file": "translation/source/story_batch03_part1_vi.csv",
+      "source_jp_scanner": "  「うられる…？｛    え？  それって？」｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1CA81",
+      "vi_runtime_lines": [
+        "Sakura, lần này",
+        "thắng là đi!",
+        ""
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Sakura, nghe nói chỉ cần thắng lần này là được đi đảo phương Nam đấy.",
+      "source_file": "translation/source/story_batch03_part1_vi.csv",
+      "source_jp_scanner": "  さくら  ついに  こんど勝てば｛  南の島に  行けるらしいよ｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1CACB",
+      "vi_runtime_lines": [
+        "Sakura giỏi nhờ",
+        "ý chí!",
+        ""
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Ồ, đúng là nhờ quyết tâm cháy bỏng của Sakura nhỉ.",
+      "source_file": "translation/source/story_batch03_part1_vi.csv",
+      "source_jp_scanner": "  へぇ  さくらの  あつい思いの｛  たまものだね｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1CB09",
+      "vi_runtime_lines": [
+        "Ý chí đó",
+        "Hay ghê!",
+        ""
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Quyết tâm cháy bỏng à... nghe hay thật đấy.",
+      "source_file": "translation/source/story_batch03_part1_vi.csv",
+      "source_jp_scanner": "  あつい思いか…｛  いいひびきだけどね｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1CB3F",
+      "vi_runtime_lines": [
+        "Ý là sao?",
+        ""
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Ý cậu là sao?",
+      "source_file": "translation/source/story_batch03_part1_vi.csv",
+      "source_jp_scanner": "  どういうことだい？｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1CB63",
+      "vi_runtime_lines": [
+        "Sakura hên",
+        "chứ đâu giỏi!",
+        "Đời hên xui mà!",
+        ""
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Nói là quyết tâm chứ thật ra Sakura chỉ gặp may thôi... Đời mà, hên xui cả thôi.",
+      "source_file": "translation/source/story_batch03_part1_vi.csv",
+      "source_jp_scanner": "  あつい思いっていうより｛  運が  よかっただけなんだよ｛  さくらは…  世の中  運しだいさ｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1CBCB",
+      "vi_runtime_lines": [
+        "Xui à?",
+        "nên nhà cháy",
+        "phải không?"
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Ra vậy. Nagasawa-kun xui nên nhà mới cháy nhỉ.",
+      "source_file": "translation/source/story_batch03_part1_vi.csv",
+      "source_jp_scanner": "  なるほどね｛  永沢くんは  運がなかったから｛  火事に  なったんだね｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1CC16",
+      "vi_runtime_lines": [
+        "Cháy!",
+        "Mình kém may"
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Cháy nhà... mình đúng là không may...",
+      "source_file": "translation/source/story_batch03_part1_vi.csv",
+      "source_jp_scanner": "  「火事…｛    ボクは  運がない…」｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1CC46",
+      "vi_runtime_lines": [
+        "Maruko hết",
+        "cửa...",
+        ""
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Maruko cũng chỉ đến thế thôi nhỉ.",
+      "source_file": "translation/source/story_batch03_part1_vi.csv",
+      "source_jp_scanner": "  まる子は  やっぱり  ここまでの｛  女なんだね｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1CC84",
+      "vi_runtime_lines": [
+        "Maruko à, ông",
+        "chỉ mong cháu",
+        "vẫn là Maruko!",
+        ""
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Maruko à, ông chỉ cần cháu vẫn là Maruko là đủ rồi.",
+      "source_file": "translation/source/story_batch03_part1_vi.csv",
+      "source_jp_scanner": "  まる子や                        ｛  わしゃ  まる子が  まる子で      ｛  あってくれれば  いいんじゃよ    ｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1CCFE",
+      "vi_runtime_lines": [
+        "Nên Maruko vẫn",
+        "hậu đậu như xưa!",
+        ""
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Thế nên Maruko vẫn đúng là cô bé hậu đậu ấy thôi...",
+      "source_file": "translation/source/story_batch03_part1_vi.csv",
+      "source_jp_scanner": "  だから  まる子は  ダメまる子    ｛  そのものなんだょ…              ｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1CD54",
+      "vi_runtime_lines": [
+        "Hôm nay ông",
+        "cho cháu ăn món",
+        "ngon",
+        ""
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Được! Hôm nay ông sẽ cho Maruko ăn món nó thích! Nhé?",
+      "source_file": "translation/source/story_batch03_part1_vi.csv",
+      "source_jp_scanner": "  よしっ  きょうは  まる子の｛  すきなもの  食わしてやろう！！｛  なっ？｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1CDAC",
+      "vi_runtime_lines": [
+        "Thật à",
+        "ông ơi!",
+        "Sướng!",
+        ""
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Thật hả? Ông ơi!! Vui quá!",
+      "source_file": "translation/source/story_batch03_part1_vi.csv",
+      "source_jp_scanner": "  ほんとー？｛  おじーちゃん！！｛  うれしーい｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1CDEA",
+      "vi_runtime_lines": [
+        "Ông phải làm thế!",
+        "Cháu muốn món gì?",
+        "Nói ông nghe nào!"
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Là ông thì phải thế chứ. Nào, cháu muốn ăn gì?",
+      "source_file": "translation/source/story_batch03_part1_vi.csv",
+      "source_jp_scanner": "  じーさんとして                  ｛  とうぜんのことじゃよ            ｛  で  なにが  いいんじゃ？        ｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1CE5B",
+      "vi_runtime_lines": [
+        "Cháu muốn sushi!"
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Maruko muốn sushi!",
+      "source_file": "translation/source/story_batch03_part1_vi.csv",
+      "source_jp_scanner": "  「まる子  おすしが  いいなぁ」｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1CE82",
+      "vi_runtime_lines": [
+        "C-cái gì!? Sushi!"
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Cái gì! Su-sushi á!!",
+      "source_file": "translation/source/story_batch03_part1_vi.csv",
+      "source_jp_scanner": "  「なんと！  す  すしとなっっ！！｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1CEAE",
+      "vi_runtime_lines": [
+        "Không ngờ cháu",
+        "chọn sushi..."
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Kh-không ngờ cháu lại chọn món đó... khó cho ông rồi, Maruko...",
+      "source_file": "translation/source/story_batch03_part1_vi.csv",
+      "source_jp_scanner": "    ま  まさか  そうくるとは…｛    キビシイゾ  まる子…」｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1CEF4",
+      "vi_runtime_lines": [
+        "Sakura-san!",
+        "Cậu đã tới đây",
+        "ghê nhỉ!",
+        ""
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Sakura-san! Không ngờ bạn đi được tới tận đây... thật khó tin.",
+      "source_file": "translation/source/story_batch03_part1_vi.csv",
+      "source_jp_scanner": "  さくらさんっっ  あなたが｛  ここまで  残っていたとは…｛  信じられません｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1CF56",
+      "vi_runtime_lines": [
+        "Hey! Quý cô",
+        "mạnh mẽ rất tuyệt",
+        "đấy, señorita!"
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Hey, một lady bản lĩnh cũng tuyệt lắm, señorita.",
+      "source_file": "translation/source/story_batch03_part1_vi.csv",
+      "source_jp_scanner": "  ヘーイ                          ｛  強いレディーも  ステキだよ      ｛  セニョリータ                    ｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1CFCC",
+      "vi_runtime_lines": [
+        "Trận cuối rồi!",
+        "Cố lên!",
+        ""
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Cuối cùng thật sự tới lượt cuối rồi nhỉ. Cố lên nhé.",
+      "source_file": "translation/source/story_batch03_part1_vi.csv",
+      "source_jp_scanner": "  ほんとうに  さいごに  なったね｛  がんばろうね｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1D014",
+      "vi_runtime_lines": [
+        "Nói thẳng ra!",
+        "Cậu chỉ nhờ may",
+        "mà thắng thôi!"
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Nói thẳng ra! Tôi sẽ cho bạn biết từ nãy tới giờ bạn chỉ gặp may thôi!",
+      "source_file": "translation/source/story_batch03_part1_vi.csv",
+      "source_jp_scanner": "  ズバリ  あなたが  今まで        ｛  勝ち進んだのは  まぐれだという  ｛  事を  お教えしましょう！        ｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1D08A",
+      "vi_runtime_lines": [
+        "Cố lên nhé!",
+        ""
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Mọi người cố lên nhé.",
+      "source_file": "translation/source/story_batch03_part1_vi.csv",
+      "source_jp_scanner": "  みんな  がんばってね｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1D0B0",
+      "vi_runtime_lines": [
+        "Ừ, tớ cổ vũ!"
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Ừ, tớ đang cổ vũ đây.",
+      "source_file": "translation/source/story_batch03_part1_vi.csv",
+      "source_jp_scanner": "  うん  おうえんしてるよ｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1D0CF",
+      "vi_runtime_lines": [
+        "Ừ...",
+        "Xong rồi ư?",
+        "Chắc chứ?"
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Ừ... đây thật sự là lần cuối đúng không...?",
+      "source_file": "translation/source/story_batch03_part1_vi.csv",
+      "source_jp_scanner": "  「う  うん｛    ほんとうに  これが｛    さいごなんだよね…？」｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1D11B",
+      "vi_runtime_lines": [
+        "Cuối cùng sao?",
+        "Vậy phải chia tay",
+        "thật rồi à?",
+        ""
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Cuối cùng? Vậy là hết à? Vậy là phải chia tay sao...?",
+      "source_file": "translation/source/story_batch03_part1_vi.csv",
+      "source_jp_scanner": "  さいご？                        ｛  じゃあ  おわり？                ｛  じゃあ  さよならってこと…？    ｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1D190",
+      "vi_runtime_lines": [
+        "Ông không chịu!",
+        "Đừng chia tay mà!"
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Ông không chịu đâu! Chia tay gì chứ, ông không chịu!",
+      "source_file": "translation/source/story_batch03_part1_vi.csv",
+      "source_jp_scanner": "  わしゃ  いやじゃー              ｛  さよならなんて  いやじゃーっ    ｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1D1E0",
+      "vi_runtime_lines": [
+        "Ông ơi! Sao ông",
+        "lại hiểu lầm chứ?"
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Ông ơi, ông đang hiểu lầm gì vậy?",
+      "source_file": "translation/source/story_batch03_part1_vi.csv",
+      "source_jp_scanner": "  「おじーちゃん                  ｛    なに  カンちがいしてるの？」  ｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1D22D",
+      "vi_runtime_lines": [
+        "Tomozou khóc",
+        "chưa hiểu",
+        "vì sao nữa..."
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Tomozou cũng chẳng còn biết vì sao mình đang khóc nữa...",
+      "source_file": "translation/source/story_batch03_part1_vi.csv",
+      "source_jp_scanner": "  「友蔵も  なぜこんなに｛    ないているのか｛    わからなくなっていた…」｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1D27E",
+      "vi_runtime_lines": [
+        "Đến đây rồi mà",
+        "thua thật nhục!"
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Đến tận đây rồi mà còn thua... tớ mất mặt quá...",
+      "source_file": "translation/source/story_batch03_part2a_vi.csv",
+      "source_jp_scanner": "  「ここまできて  負けるとは…｛    なさけないよ  わたしゃ…」｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1D2CB",
+      "vi_runtime_lines": [
+        "Nói thẳng ra!",
+        "Cậu vẫn còn quá",
+        "chủ quan đấy!"
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Nói thẳng ra!! Bạn vẫn còn quá chủ quan!",
+      "source_file": "translation/source/story_batch03_part2a_vi.csv",
+      "source_jp_scanner": "  ズバリっっ！！                  ｛  あなたは  つめが                ｛  あまいでしょう！！              ｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1D33F",
+      "vi_runtime_lines": [
+        "Hic... buồn quá!"
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Hic...",
+      "source_file": "translation/source/story_batch03_part2a_vi.csv",
+      "source_jp_scanner": "  「トホホ…」                    ｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1D3AD",
+      "vi_runtime_lines": [
+        "Vai chính",
+        "được đi đảo!",
+        "Manga mà",
+        ""
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Cuối cùng thì nhân vật chính vẫn là người được đi thôi. Vì đây là manga mà.",
+      "source_file": "translation/source/story_batch03_part2a_vi.csv",
+      "source_jp_scanner": "  けっきょく  しゅやくが｛  行けるように  なっているのさ｛  マンガだからね｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1D407",
+      "vi_runtime_lines": [
+        "Vai phụ như ta",
+        "mình đâu có",
+        "cửa đi!"
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Ra vậy. Mấy vai phụ âm u như tụi mình thì ngay từ đầu đã chẳng có cửa được đi nhỉ.",
+      "source_file": "translation/source/story_batch03_part2a_vi.csv",
+      "source_jp_scanner": "  なるほどね  ボクらのように｛  くらい  わきやくは  さいしょから｛  行けやしないんだね｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1D4B4",
+      "vi_runtime_lines": [
+        "Chúc mừng, baby!",
+        "Hãy trân trọng",
+        "phút giây này!",
+        ""
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Chúc mừng, baby. Hãy tận hưởng thật trọn vẹn quãng thời gian quý giá này nhé.",
+      "source_file": "translation/source/story_batch03_part2a_vi.csv",
+      "source_jp_scanner": "  おめでとう  ベイビー            ｛  だいじな  じかんを              ｛  たいせつにして  くれたまえ      ｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1D536",
+      "vi_runtime_lines": [
+        "Sakura-san,",
+        "xin chúc mừng!",
+        "",
+        "Tôi đã nhường cậu",
+        "nên kỳ bầu tới",
+        "hãy bầu tôi nhé!",
+        ""
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Sakura-san, xin chúc mừng. Vì tôi đã nhường quyền cho bạn, kỳ bầu cử tới bỏ phiếu cho tôi là nghĩa vụ của bạn, nói thẳng ra là vậy!",
+      "source_file": "translation/source/story_batch03_part2a_vi.csv",
+      "source_jp_scanner": "  さくらさんっ                    ｛  おめでとうございます            ｛  ▼  あなたに権利をゆずったのですから｛  次回の選挙では  私に入れるのが  ｛  ズバリ  あなたの義務でしょう！  ｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1D5FC",
+      "vi_runtime_lines": [
+        "Nhà Sakura..."
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Và ở nhà Sakura...",
+      "source_file": "translation/source/story_batch03_part2a_vi.csv",
+      "source_jp_scanner": "  「そして  さくら家では…」｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1D624",
+      "vi_runtime_lines": [
+        "Giỏi đó",
+        "Đi cẩn thận!",
+        ""
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Con làm tốt lắm. Nhưng đi nhớ cẩn thận nhé.",
+      "source_file": "translation/source/story_batch03_part2a_vi.csv",
+      "source_jp_scanner": "  よくやったね｛  でも  気をつけて  行くのよ｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1D660",
+      "vi_runtime_lines": [
+        "Đừng uống nước lã"
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Đừng uống nước lã đấy.",
+      "source_file": "translation/source/story_batch03_part2a_vi.csv",
+      "source_jp_scanner": "  なまみずは  のんだら  だめじゃよ｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1D68E",
+      "vi_runtime_lines": [
+        "Maruko giỏi",
+        "Mua quà gì",
+        "cho mình",
+        ""
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Maruko cũng giỏi ghê. Mình nên nhờ mua quà gì nhỉ?",
+      "source_file": "translation/source/story_batch03_part2a_vi.csv",
+      "source_jp_scanner": "  まる子も  やるわねぇー｛  私  おみやげ  なにに｛  しようかしら？｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1D6E0",
+      "vi_runtime_lines": [
+        "Maruko giỏi lắm!",
+        "Cạn ly vì Maruko!"
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Maruko! Giỏi lắm! Nâng ly mừng Maruko thắng nào!",
+      "source_file": "translation/source/story_batch03_part2a_vi.csv",
+      "source_jp_scanner": "  まる子ー  いいぞー              ｛  まる子の勝利に  カンパーイ！    ｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1D732",
+      "vi_runtime_lines": [
+        "Gửi lời tới chim",
+        "cụt nhé, Maruko!"
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Maruko, nhớ gửi lời hỏi thăm mấy chú chim cánh cụt nhé. Với cả đừng để bị cảm.",
+      "source_file": "translation/source/story_batch03_part2a_vi.csv",
+      "source_jp_scanner": "  まる子  ペンギンに  よろしくな  ｛  あと  カゼを  ひくんじゃないよ  ｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1D77F",
+      "vi_runtime_lines": [
+        "Ông cứ",
+        "nhầm hoài...",
+        ""
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Định hiểu lầm đến bao giờ đây...",
+      "source_file": "translation/source/story_batch03_part2a_vi.csv",
+      "source_jp_scanner": "  「いつまで｛    かんちがいしている…」｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1D7BA",
+      "vi_runtime_lines": [
+        "Ông ơiiii!",
+        ""
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Ông ơiiii!",
+      "source_file": "translation/source/story_batch03_part2a_vi.csv",
+      "source_jp_scanner": "  「おじいちゃーん」              ｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1D7F1",
+      "vi_runtime_lines": [
+        "Ông nhầm rồi!",
+        "Maruko đi đảo",
+        "thiên đường!",
+        "",
+        "Ông hiểu chưa?"
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Cứ Nam Cực, Nam Cực mãi! Maruko đi đảo thiên đường phương Nam cơ mà! Ông chẳng hiểu gì cả, thật tình!",
+      "source_file": "translation/source/story_batch03_part2a_vi.csv",
+      "source_jp_scanner": "  なんきょく  なんきょくって｛  まる子はねぇー  南のアイランド｛  パラダイスに  行くんだよ｛  ▼  わかってないんだから  もー｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1D874",
+      "vi_runtime_lines": [
+        "Đảo Nam cơ à?"
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Cái gì! Đảo phương Nam sao?",
+      "source_file": "translation/source/story_batch03_part2a_vi.csv",
+      "source_jp_scanner": "  「なんとっ  南の島とな？｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1D895",
+      "vi_runtime_lines": [
+        "Đâu phải Nam Cực!"
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Không phải Nam Cực à!?",
+      "source_file": "translation/source/story_batch03_part2a_vi.csv",
+      "source_jp_scanner": "    なんきょくじゃないとなっ！？」｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1D8CA",
+      "vi_runtime_lines": [
+        "Ông đúng là...",
+        "ông đúng là..."
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Ông đúng là... ông đúng là...",
+      "source_file": "translation/source/story_batch03_part2a_vi.csv",
+      "source_jp_scanner": "  「わしって  わしって…」        ｛                                  ｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1D91A",
+      "vi_runtime_lines": [
+        "Rồi Maruko",
+        "đến đảo Nam!"
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Và rồi Maruko đến hòn đảo phương Nam...",
+      "source_file": "translation/source/story_batch03_part2a_vi.csv",
+      "source_jp_scanner": "  「そして  まる子は｛    南のアイランドへ…」｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1D94F",
+      "vi_runtime_lines": [
+        "Đảo Nam!",
+        ""
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Hòn đảo phương Nam",
+      "source_file": "translation/source/story_batch03_part2b_vi.csv",
+      "source_jp_scanner": "  「南のアイランド」｛    ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1D978",
+      "vi_runtime_lines": [
+        "Haah... đảo Nam",
+        "đẹp quá đi thôi!",
+        "Đúng thiên đường!",
+        ""
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Haah... đảo phương Nam đúng là tuyệt thật. Chuẩn thiên đường luôn.",
+      "source_file": "translation/source/story_batch03_part2b_vi.csv",
+      "source_jp_scanner": "  はぁー                          ｛  やっぱり南の島は  いいねぇ      ｛  らくえんだよ  まさに            ｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1D9F2",
+      "vi_runtime_lines": [
+        "Ừ... tuyệt thật!"
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Ừ.",
+      "source_file": "translation/source/story_batch03_part2b_vi.csv",
+      "source_jp_scanner": "  うん                            ｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1DA23",
+      "vi_runtime_lines": [
+        "Ồn quá đấy!",
+        "Tớ đang tận hưởng",
+        "thiên đường mà!",
+        ""
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Ồn quá đi. Tớ đang tận hưởng cảm giác thiên đường cơ mà.",
+      "source_file": "translation/source/story_batch03_part2b_vi.csv",
+      "source_jp_scanner": "  「ちょっと  うるさいねぇ        ｛    せっかく  パラダイスきぶんを  ｛    あじわっているのにさ」        ｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1DAA0",
+      "vi_runtime_lines": [
+        "Hửm?"
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Hửm?",
+      "source_file": "translation/source/story_batch03_part2b_vi.csv",
+      "source_jp_scanner": "  「ん？」｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1DABD",
+      "vi_runtime_lines": [
+        "Hả!?"
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Hả!?",
+      "source_file": "translation/source/story_batch03_part2b_vi.csv",
+      "source_jp_scanner": "  「えっ！？」｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1DADF",
+      "vi_runtime_lines": [
+        "Hey! Cả bọn",
+        "lo lắm!",
+        "",
+        "Papa mua nhà",
+        "để cả bọn tới!",
+        ""
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Hey, mọi người lo cho cậu lắm. Tớ nhờ papa mua hẳn một căn biệt thự, thế là cả bọn kéo tới đây!",
+      "source_file": "translation/source/story_batch03_part2b_vi.csv",
+      "source_jp_scanner": "  ヘーイ  みんな  キミのことが    ｛  しんぱいでね｛  ▼  パパに  べっそうを  かって｛  もらって  みんなで  きたのさっ  ｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1DB6C",
+      "vi_runtime_lines": [
+        "Mọi người",
+        "làm cậu sốc",
+        "đúng không?",
+        ""
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Mọi người kéo tới thế này làm bạn sốc đến mức không giấu nổi, đúng không?",
+      "source_file": "translation/source/story_batch03_part2b_vi.csv",
+      "source_jp_scanner": "  今  あなたは  みんなが｛  来たことで  ショックが｛  かくせませんね？      ｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1DBC1",
+      "vi_runtime_lines": [
+        "Nói thẳng ra rồi!"
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Nói thẳng ra, trúng tim đen rồi chứ gì!!",
+      "source_file": "translation/source/story_batch03_part2b_vi.csv",
+      "source_jp_scanner": "  ズバリ  図星でしょう！！        ｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1DBEA",
+      "vi_runtime_lines": [
+        "Lo cho mình...",
+        "mua biệt thự..."
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Lo cho mình... biệt thự...",
+      "source_file": "translation/source/story_batch03_part2b_vi.csv",
+      "source_jp_scanner": "  「しんぱい…                    ｛    べっそう…                    ｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1DC60",
+      "vi_runtime_lines": [
+        "A ha...",
+        ""
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "A ha...",
+      "source_file": "translation/source/story_batch03_part2b_vi.csv",
+      "source_jp_scanner": "  「あは…」                      ｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1DC92",
+      "vi_runtime_lines": [
+        "Nào! Mau ra",
+        "chơi!",
+        ""
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Này! Mau cùng nhau đi chơi nào!",
+      "source_file": "translation/source/story_batch03_part2b_vi.csv",
+      "source_jp_scanner": "  おうっ  はやく  みんなで｛  あそぼーぜ｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1DCCA",
+      "vi_runtime_lines": [
+        "Vắng Maruko",
+        "tớ buồn!",
+        ""
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Tớ buồn lắm vì Maru-chan không ở đây.",
+      "source_file": "translation/source/story_batch03_part2b_vi.csv",
+      "source_jp_scanner": "  わたし  まるちゃんが  いなくて｛  さびしかったの｛  ▼",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1DD0C",
+      "vi_runtime_lines": [
+        "Tớ nữa!",
+        "Ha ha ha!"
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Tớ cũng vậy, tớ cũng vậy! A ha ha ha.",
+      "source_file": "translation/source/story_batch03_part2b_vi.csv",
+      "source_jp_scanner": "  オイラも  オイラも｛  あは  あは  あは｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1DD3B",
+      "vi_runtime_lines": [
+        "Các cậu"
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Mọi người...",
+      "source_file": "translation/source/story_batch03_part2b_vi.csv",
+      "source_jp_scanner": "  「みんな…」｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1DD50",
+      "vi_runtime_lines": [
+        "Ừ nhỉ!",
+        "Chơi với bạn",
+        "vui nhất mà!"
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Ừ nhỉ. Chơi cùng mọi người vẫn là vui nhất.",
+      "source_file": "translation/source/story_batch03_part2b_vi.csv",
+      "source_jp_scanner": "  「そうだね｛    みんなで  あそぶのが｛    いちばん  たのしいよね」｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1DDA0",
+      "vi_runtime_lines": [
+        "Các bạn du học!",
+        "Đến giờ học rồi!",
+        "Mời qua bên này!"
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Các bạn du học sinh! Bây giờ đến giờ học rồi! Mời qua bên này!",
+      "source_file": "translation/source/story_batch03_part2b_vi.csv",
+      "source_jp_scanner": "  「りゅうがくせいの  みなさんは  ｛    イマから  ベンキョウデース    ｛    コチラに  キテクダサーイ」    ｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1DE14",
+      "vi_runtime_lines": [
+        "Hả!! Học luôn à!?"
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Hả!!",
+      "source_file": "translation/source/story_batch03_part2b_vi.csv",
+      "source_jp_scanner": "  「えっっ！！」                  ｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1DE3D",
+      "vi_runtime_lines": [
+        "Pusadi!",
+        "Maruko!"
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Pusadi! / Maruko!",
+      "source_file": "translation/source/story_batch03_part2b_vi.csv",
+      "source_jp_scanner": "  「プサディー」            ｛  「マルコー」              ｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    },
+    {
+      "file_offset": "0x1DE81",
+      "vi_runtime_lines": [
+        "Mình đúng là..."
+      ],
+      "story_batch": "batch03",
+      "vi_full_reference": "Mình đúng là...",
+      "source_file": "translation/source/story_batch03_part2b_vi.csv",
+      "source_jp_scanner": "  「わたしって…」                ｛",
+      "status": "static_exact_slot_translation_not_runtime_accepted"
+    }
+  ]
+}
