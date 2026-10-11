@@ -23,13 +23,11 @@ def build(clean,base,root):
         raise ValueError("Need exact clean 2MiB Japanese ROM and same-size full 048")
     manifest=json.loads((root/"translation/runtime/quiz_content_first_16_053.json").read_text(encoding="utf-8"))
     entries=manifest["records"]
-    if manifest["schema"]!="chibi.quiz.content_first.053.v1" or len(entries)!=16:
+    if (manifest["schema"]!="chibi.quiz.content_first.053.v1" or len(entries)!=15
+        or manifest.get("record_count")!=15):
         raise AssertionError("053 source manifest drift")
-    # Rebuild exact full 048 using the guarded script first; do not trust a
-    # claimed 048 SHA from a report that has never been executed.
-    from rebuild_content_first_048_full_chain import run as rebuild048
-    # Baseline SHA is checked externally with --expected-048-sha to prevent
-    # silently accepting a different branch ROM in this standalone builder.
+    # Baseline identity is checked by main() using --expected-048-sha.
+    # Do not silently accept any other candidate base.
     mapping={r["unicode"]:r["code_hex"] for r in load_csv(root/"translation/codepage/vi_codepage_v4_fe4_native.csv")}
     if mapping.get(" ")!="8440" or int.from_bytes(base[0x2975e:0x29760],"little")!=0x9a74:
         raise AssertionError("V2 codepage/table pointer mismatch")
@@ -84,7 +82,7 @@ def build(clean,base,root):
     ips,count=make_ips(clean,final)
     if apply_ips(clean,ips)!=final:
         raise AssertionError("Independent clean-ROM IPS replay failed")
-    return ips,{"status":"053_STATIC_INTEGRATION_PASS_NOT_EMULATOR","records":16,
+    return ips,{"status":"053_STATIC_INTEGRATION_PASS_NOT_EMULATOR","records":15,
                 "ROM_sha256":sha(final),"IPS_sha256":sha(ips),"IPS_records":count,
                 "base_048_sha256":sha(base),"checksum":f"{ck:04X}",
                 "changed_bytes":len(changes),"emulator_tested":False}
