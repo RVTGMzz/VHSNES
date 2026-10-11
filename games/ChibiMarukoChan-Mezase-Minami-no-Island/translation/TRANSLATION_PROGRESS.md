@@ -1,5 +1,16 @@
 # Translation progress — Chibi Maruko-chan
 
+## CONTENT-FIRST CHECKPOINT 047 (2026-10-11) — +45 DIRECT TEXT FIELDS, FULL STORY SOURCE MAPPING
+
+- **15 additional distinct original Story record translations in binary 046**, including preserving original unusual leading `xxF3` CP932 pairs and 30 dialogue break markers. Fixed **8 scanner false offsets** that start at the second CP932 byte of Japanese fullwidth digits, wrongly appearing as Latin `O/P/Q/R`; four already translated inside old parent records, four addressed by new full parent records. These aliases are **NOT eight additional physical fields**.
+- Live GitHub source-set QA: all **336 canonical Story CSV rows** are now mapped to a physical translated Story record or already-localized alias (310 prior tracked source rows + 15 newly translated physical rows + 8 byte-split aliases +3 prior tutorial rows), **zero unmapped Story source rows**. There are **328 distinct physical Story fields** now patched, but SNES gameplay NOT TESTED; not a claim all possible visible Story/game strings are finished.
+- **+30 ACTUAL Quiz/Fortune field patches** in binary 047 (15 numeric Quiz choices plus 15 Fortune digits/numeric amounts/brief advice). Every CP932 source field, original length, `816F` delimiter and existing V2 glyph table audited. Old complete `vi_full` meanings unchanged; no character names clipped.
+- Current integrated experimental trial **450 direct text fields** =38 UI +48 Fortune +36 Quiz +328 distinct physical Story. Separate G0/G1 Vietnamese title/selection and exact `Việt hóa bởi Votri Valley` credit intact. **Quiz canonical 381 rows and Fortune 157** demonstrate much untranslated display content still exists; G2/G3 unresolved and font user complaint pending.
+- Final 047 ROM SHA **`1f6430064b70671a4f3ba94f0fd256764db54690950519c22d9e03ec74230dd9`**; clean-Japanese ROM IPS SHA **`725ca433dfeb919bd19bde6903a1e2e7d95cde1889980677863724007090cd6c`**, 44,980B/1671 records, SNES checksum/complement EB53/14AC. Separate IPS parser re-applied clean ROM to exact target SHA. No emulator gameplay PASS.
+- GitHub artifacts: `translation/runtime/story_special_cp932_alignment_046.json`, `tools/build_content_first_046_story_special.py`, `translation/runtime/quiz_fortune_exactfit_047.json`, `tools/build_content_first_047_quiz_fortune_30.py`, `docs/CONTENT_FIRST_STORY_ALIGN_AND_QUIZ_FORTUNE_CHECKPOINT_047.md`.
+- Standing user rule: avoid tiny checkpoint IPS download links. Continue substantial Quiz/Fortune/G2/G3 translation and preserve original Story character voices. **CONTENT FIRST, FONT LAST**.
+
+
 ## LATEST CONTENT-FIRST CHECKPOINT 045 (2026-10-11)
 
 **+139 player-facing Story dialogue/narrator fields actually encoded in an experimental original SNES ROM** (58 Batch02 +81 Batch03), covering more contest, friend, final and island scenes. 368 original physical text segments, 367 original line/page `816F/81A5` markers within new records and all such markers across full Story bank verified unchanged. Only preexisting V2 glyphs used; no font edits.
