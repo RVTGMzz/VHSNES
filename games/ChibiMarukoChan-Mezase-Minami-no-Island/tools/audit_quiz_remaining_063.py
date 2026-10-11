@@ -143,19 +143,58 @@ def run(clean: bytes, root: Path):
     if len(selected) != 279:
         raise AssertionError("Expected 279 staged distinct Quiz source addresses")
 
+    # Also check physical text-window overlaps, not just identical source
+    # offsets. Several scanner rows name fragments of earlier patched text.
+    staged_text_ranges = []
+    staged_frame_count = 0
+    for off, stage in selected.items():
+        physical = scan_native(clean, off)
+        staged_frame_count += physical["line_count"]
+        for start, stop in physical["text_byte_spans"]:
+            staged_text_ranges.append((start, stop, stage, off))
+    if staged_frame_count != 546:
+        raise AssertionError(f"Previously staged original text frames changed: {staged_frame_count}")
+    staged_text_ranges.sort()
+    for prev, curr in zip(staged_text_ranges, staged_text_ranges[1:]):
+        if curr[0] < prev[1]:
+            raise AssertionError(
+                f"Overlapping staged glyph windows: 0x{prev[3]:X} and 0x{curr[3]:X}")
+
     remaining = sorted(set(source) - set(selected))
     if len(remaining) != 102:
         raise AssertionError(f"Expected 102 genuinely unselected Quiz sources: {len(remaining)}")
     result = []
     unsafe = set()
     padded = set()
+    nested = set()
+    unsafe_inside = set()
+    overlapping_frame_pairs = 0
     for off in remaining:
         record = {"file_offset": f"0x{off:X}", "source_file": source[off]["file"],
                   "canonical_vi": source[off]["vi_full"]}
         try:
             physical = scan_native(clean, off)
             record.update(physical)
-            record["source_status"] = "text_frames_byte_valid_not_renderer_approved"
+            overlap = sorted({
+                f"{stage}@0x{prior:X}"
+                for a,b in physical["text_byte_spans"]
+                for lo,hi,stage,prior in staged_text_ranges
+                if a < hi and lo < b
+            })
+            cross_count = sum(
+                a < hi and lo < b
+                for a,b in physical["text_byte_spans"]
+                for lo,hi,stage,prior in staged_text_ranges
+            )
+            overlapping_frame_pairs += cross_count
+            if overlap:
+                nested.add(off)
+                record["source_status"] = "physical_text_already_inside_staged_source"
+                record["covered_by_stage_source_windows"] = overlap
+                record["independent_patch_allowed"] = False
+            else:
+                record["source_status"] = "independent_CP932_text_requires_editorial_or_layout_QA"
+                record["independent_patch_allowed"] = True
             if any(physical["trailing_ascii_pad_bytes"]):
                 padded.add(off)
                 record["padding_policy"] = (
@@ -165,20 +204,43 @@ def run(clean: bytes, root: Path):
                 record["padding_policy"] = "none_require_accurate_fit_or_relocation"
         except ValueError as exc:
             unsafe.add(off)
+            covering = sorted({
+                f"{stage}@0x{prior:X}"
+                for lo,hi,stage,prior in staged_text_ranges if lo <= off < hi
+            })
+            if covering:
+                unsafe_inside.add(off)
+                record["covered_by_stage_source_windows"] = covering
             record["source_status"] = "unsafe_scanner_offset_do_not_patch_independently"
             record["failure_reason"] = str(exc)
+            record["independent_patch_allowed"] = False
         result.append(record)
     if unsafe != EXPECTED_UNSAFE_SOURCE_STARTS:
         raise AssertionError("Original CP932 scanner-safe/unsafe offsets changed")
     if padded != EXPECTED_PADDING_SOURCES:
         raise AssertionError("Exact native ASCII padding inventory changed")
+    if (len(nested) != 10 or overlapping_frame_pairs != 18 or
+        len(unsafe_inside) != 8 or
+        len(remaining) - len(unsafe) - len(nested) != 82 or
+        len(padded - nested) != 7):
+        raise AssertionError("Nested physical Quiz source/fragments inventory drift")
     totals = {
         "status": "PASS_SOURCE_ROM_INVENTORY_NOT_EMULATOR_QA",
         "original_clean_ROM_SHA256": CLEAN_SHA,
         "canonical_quiz_source_count": len(source),
         "staged_quiz_distinct_offsets": len(selected),
         "current_remaining_unstaged": len(remaining),
-        "independent_CP932_text_frame_starts": 92,
+        "safe_to_parse_CP932_starts_total_including_nested": 92,
+        "parsed_CP932_starts_total_including_nested": 92,
+        "staged_original_text_line_windows": staged_frame_count,
+        "staged_original_text_byte_overlaps": 0,
+        "remaining_parsable_starts_nested_in_staged": len(nested),
+        "remaining_parsed_line_overlap_pairs": overlapping_frame_pairs,
+        "remaining_unsafe_starts_inside_staged_text": len(unsafe_inside),
+        "remaining_unsafe_starts_outside_staged_text": len(unsafe - unsafe_inside),
+        "independent_original_text_regions_not_yet_staged": 82,
+        "independent_remaining_with_possible_ASCII_padding": len(padded - nested),
+        "independent_remaining_without_ASCII_padding": 75,
         "unsafe_scanner_starts_not_standalone_patchable": len(unsafe),
         "remaining_records_with_trailing_ASCII_padding": len(padded),
         "unapproved_062_padding_experiments_already_catalogued": len(UNAPPROVED_062),
@@ -196,7 +258,9 @@ def run(clean: bytes, root: Path):
         "full_game_translated": False,
     }
     assert totals["independent_CP932_text_frame_starts"] == sum(
-        x["source_status"] == "text_frames_byte_valid_not_renderer_approved" for x in result)
+        x["source_status"] in (
+            "physical_text_already_inside_staged_source",
+            "independent_CP932_text_requires_editorial_or_layout_QA") for x in result)
     return {"summary": totals, "remaining": result}
 
 
