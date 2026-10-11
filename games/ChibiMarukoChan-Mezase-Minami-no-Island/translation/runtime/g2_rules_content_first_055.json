@@ -1,0 +1,42 @@
+{
+  "schema": "chibi.g2.rules.content_first.055.v1",
+  "clean_original_sha256": "e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956",
+  "base_stage": "full_integrated_054",
+  "translation_count": 3,
+  "source_editable_bytes": 64,
+  "experimental_clean_overlay_sha256": "1da12b5de13f06e1902690274709111bcfd0a510c2170a5bd0abd994ea362569",
+  "experimental_clean_overlay_ips_sha256": "b2372df59679573167cd82f0c95b2c30de24eb088b323d91a2b4a8d72f494f04",
+  "experimental_clean_overlay_ips_records": 3,
+  "experimental_clean_overlay_ips_bytes": 87,
+  "experimental_changed_bytes": 64,
+  "control_816F_preserved": 3,
+  "font_changed": false,
+  "full_combined_ROM_built": false,
+  "emulator_tested": false,
+  "records": [
+    {
+      "file_offset": "0x1E307",
+      "source_jp": "ルールをせつめいするよ",
+      "vi_full": "Mình sẽ giải thích luật chơi nhé!",
+      "vi_runtime": "Luật chơi!",
+      "capacity": 11,
+      "marker_offset": "0x1E31D"
+    },
+    {
+      "file_offset": "0x1E323",
+      "source_jp": "・２本先取だよ",
+      "vi_full": "Ai thắng hai ván trước sẽ giành chiến thắng.",
+      "vi_runtime": "Thắng 2",
+      "capacity": 7,
+      "marker_offset": "0x1E331"
+    },
+    {
+      "file_offset": "0x1E337",
+      "source_jp": "・ゲームの時間は勝つまでだよ",
+      "vi_full": "Trò chơi kéo dài cho đến khi có người thắng.",
+      "vi_runtime": "Tới khi thắng",
+      "capacity": 14,
+      "marker_offset": "0x1E353"
+    }
+  ]
+}
