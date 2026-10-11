@@ -1,5 +1,18 @@
 # Translation progress — Chibi Maruko-chan
 
+## LATEST CONTENT-FIRST CHECKPOINT 045 (2026-10-11)
+
+**+139 player-facing Story dialogue/narrator fields actually encoded in an experimental original SNES ROM** (58 Batch02 +81 Batch03), covering more contest, friend, final and island scenes. 368 original physical text segments, 367 original line/page `816F/81A5` markers within new records and all such markers across full Story bank verified unchanged. Only preexisting V2 glyphs used; no font edits.
+
+**Accurate Story static totals:** Batch01 **120/126**, Batch02 **112/126**, Batch03 **81/84**: **313/336** source records now have Vietnamese codepoint bytes in ROM experiment, **23 remain** and require special script/metadata work. Across categories, **402 tracked direct fields** (38 UI +33 Fortune +21 Quiz +310 tracked Story) + **3 separately prelocalized tutorial Story rows** = **405 static direct source locations** (not an all-game completion percentage). G0/G1 graphics including `Việt hóa bởi Votri Valley` remain.
+
+Final input044 ROM SHA `2312b9ba52c0cf6ac491e71117d5c537ad7dc61828dc9e87d838826e5165f322`; **final 045 ROM SHA `7ddf449c2266838c3d55415f14aeee34fc21334c1ed0a490590647eb75e047b5`**, original-clean IPS SHA `685d7e9f0146950ca030fd8469f57313a0b368be98e0a9c95999bda48cb65379`, **43,679B/1,568 records** independently replayed to exact ROM. SNES checksum/complement `E4C1/1B3E`. Diff vs 044 **7,915 bytes**, entirely within 139 approved original Story glyph spans and checksum.
+
+**Safety:** preliminary 140-row candidate at `0x1A916` had raw `88 F3` likely internal scanner metadata; it was excluded; final source/ROM reports correctly say 139, not 140. Full natural `vi_full` remains canonical; compact in-ROM presentation still requires dialogue style/readability QA. New GitHub `translation/runtime/story_batch02_03_content_first_045.json`, `tools/build_content_first_045_story_139.py` with option reconstructing lost 044 intermediate IPS from 043, and `docs/CONTENT_FIRST_STORY_BATCH02_03_CHECKPOINT_045.md`.
+
+**User preference:** no repetitive IPS/ZIP download links for intermediate builds, content first, font later. **No SNES emulator runtime PASS**, not all Quiz/Fortune/G2/G3, credits or full-game text done. Next: 23 special Story sources and additional real visible-game localization, not font or generic checkpoints.
+
+
 ## NEW LARGE CONTENT BATCH — CHECKPOINT 044 (2026-10-11)
 
 **87 new actual on-ROM Story dialogue/narrator replacements** from clean→043→044: **33 Batch01 + 54 Batch02**, with **214 original line/page control marker positions unchanged inside records**, entire original Story bank marker locations unchanged, and canonical full `vi_full` left intact. Separate compact runtime lines retain Maruko/Tamae, Hanawa `Baby`, Maruo `Nói thẳng ra!`, family and narration distinctions. No glyph/font changes. All edits confined to exact verified original text spans.
