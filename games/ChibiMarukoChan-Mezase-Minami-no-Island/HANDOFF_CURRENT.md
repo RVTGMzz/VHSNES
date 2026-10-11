@@ -1,5 +1,14 @@
 # HANDOFF CURRENT — Chibi Maruko-chan SNES Việt hóa
 
+## CHECKPOINT 049 — 2026-10-11: FULL-CHAIN REBUILDER COMMITTED (NOT YET EXECUTED)
+
+- Added `tools/rebuild_content_first_048_full_chain.py` to turn exact clean ROM + 043 clean IPS into validated 044, 045, 046, 047 and merged 048 entirely in memory, then write only final clean-ROM IPS + QA JSON. Uses each existing stage's full CP932/source/offset/SHA/IPS safety checks and independently replays every stage.
+- This specifically eliminates the missing intermediate 047 ROM/IPS dependency documented in checkpoint048. It DOES NOT eliminate need for user's clean original ROM and exact 043 IPS to actually execute it.
+- **No binary integration has been run in this chat:** clean ROM and 043 IPS are not mounted here. Therefore 048 complete physical merge remains **UNVERIFIED**, despite the runner being committed. No emulator testing or release approval.
+- Command (technical only): `python tools/rebuild_content_first_048_full_chain.py clean.sfc 043-clean.ips --ips final-048.ips --report final-048-qa.json --allow-untested`.
+- Next: run against exact local inputs, review merged SHA and checksum, then proceed with large Quiz sweep, six remaining Fortune entries, G2 rules and G3 results. User preference: CONTENT FIRST, font later; do not send interim patches.
+
+
 ## NEW CHECKPOINT 048 — 2026-10-11: +103 REAL FORTUNE GLYPH OVERLAY QA, 047 REBASE PENDING
 
 **User preference:** finish significant game content, no intermediate IPS/ZIP download links, no font microtests. Read `docs/CONTENT_FIRST_FORTUNE_103_CHECKPOINT_048.md` FIRST and 047 below.
