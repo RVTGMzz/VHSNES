@@ -1,0 +1,378 @@
+{
+  "schema": "chibi.story.runtime042.v1",
+  "source_clean_sha256": "e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956",
+  "baseline_041_rom_sha256": "56c36cbc8e477d262216d3aa0f06909e09b9929ba0f6f544dccbaa3671bf48fb",
+  "output_042_rom_sha256": "901744ff2edb6bbf667e225e68478009f426a4d1358c1c35ccb34cdc29254691",
+  "scope": "26 fixed-field Story Batch01 dialogue/narrator windows only; no runtime emulator test",
+  "expected_records": 26,
+  "records": [
+    {
+      "file_offset": "0x18377",
+      "vi_full_reference": "Cô có một tin hay muốn báo cho cả lớp đây.",
+      "vi_runtime_lines": [
+        "Cô có tin vui!"
+      ],
+      "expected_segment_capacities": [
+        16
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "approved_condensed_story_first_arc",
+      "note": "Short runtime wording preserves scene sense; complete meaning stays in canonical vi_full. Original line/page controls must remain intact."
+    },
+    {
+      "file_offset": "0x18442",
+      "vi_full_reference": "Nghe ghê gớm thật đó.",
+      "vi_runtime_lines": [
+        "Ghê thật!",
+        ""
+      ],
+      "expected_segment_capacities": [
+        10,
+        1
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "approved_condensed_story_first_arc",
+      "note": "Short runtime wording preserves scene sense; complete meaning stays in canonical vi_full. Original line/page controls must remain intact."
+    },
+    {
+      "file_offset": "0x18517",
+      "vi_full_reference": "Ra là vậy...",
+      "vi_runtime_lines": [
+        "À...",
+        ""
+      ],
+      "expected_segment_capacities": [
+        5,
+        1
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "approved_condensed_story_first_arc",
+      "note": "Short runtime wording preserves scene sense; complete meaning stays in canonical vi_full. Original line/page controls must remain intact."
+    },
+    {
+      "file_offset": "0x1852C",
+      "vi_full_reference": "Nói gọn lại là được ra nước ngoài miễn phí chứ gì.",
+      "vi_runtime_lines": [
+        "Được đi xa",
+        "miễn phí còn gì!"
+      ],
+      "expected_segment_capacities": [
+        12,
+        16
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "approved_condensed_story_first_arc",
+      "note": "Short runtime wording preserves scene sense; complete meaning stays in canonical vi_full. Original line/page controls must remain intact."
+    },
+    {
+      "file_offset": "0x1856B",
+      "vi_full_reference": "Ha... tớ cũng muốn đi quá.",
+      "vi_runtime_lines": [
+        "Tớ cũng muốn đi!"
+      ],
+      "expected_segment_capacities": [
+        16
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "approved_condensed_story_first_arc",
+      "note": "Short runtime wording preserves scene sense; complete meaning stays in canonical vi_full. Original line/page controls must remain intact."
+    },
+    {
+      "file_offset": "0x186F3",
+      "vi_full_reference": "Tuyệt... quá!",
+      "vi_runtime_lines": [
+        "Tuyệt!"
+      ],
+      "expected_segment_capacities": [
+        6
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "approved_condensed_story_first_arc",
+      "note": "Short runtime wording preserves scene sense; complete meaning stays in canonical vi_full. Original line/page controls must remain intact."
+    },
+    {
+      "file_offset": "0x187F2",
+      "vi_full_reference": "Hey, đừng lo mà...",
+      "vi_runtime_lines": [
+        "Hey, đừng lo",
+        "mà..."
+      ],
+      "expected_segment_capacities": [
+        17,
+        17
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "approved_condensed_story_first_arc",
+      "note": "Short runtime wording preserves scene sense; complete meaning stays in canonical vi_full. Original line/page controls must remain intact."
+    },
+    {
+      "file_offset": "0x1883D",
+      "vi_full_reference": "...baby.",
+      "vi_runtime_lines": [
+        "Baby!",
+        ""
+      ],
+      "expected_segment_capacities": [
+        5,
+        1
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "approved_condensed_story_first_arc",
+      "note": "Short runtime wording preserves scene sense; complete meaning stays in canonical vi_full. Original line/page controls must remain intact."
+    },
+    {
+      "file_offset": "0x18C30",
+      "vi_full_reference": "Rắc rối to rồi nhỉ...",
+      "vi_runtime_lines": [
+        "Gay go rồi...",
+        ""
+      ],
+      "expected_segment_capacities": [
+        17,
+        1
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "approved_condensed_story_first_arc",
+      "note": "Short runtime wording preserves scene sense; complete meaning stays in canonical vi_full. Original line/page controls must remain intact."
+    },
+    {
+      "file_offset": "0x18C62",
+      "vi_full_reference": "Tama-chan cũng tham gia chứ?",
+      "vi_runtime_lines": [
+        "Tama-chan thi?",
+        ""
+      ],
+      "expected_segment_capacities": [
+        15,
+        1
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "approved_condensed_story_first_arc",
+      "note": "Short runtime wording preserves scene sense; complete meaning stays in canonical vi_full. Original line/page controls must remain intact."
+    },
+    {
+      "file_offset": "0x18C93",
+      "vi_full_reference": "Ơ... tớ thì...",
+      "vi_runtime_lines": [
+        "Ơ... tớ thì..."
+      ],
+      "expected_segment_capacities": [
+        17
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "approved_condensed_story_first_arc",
+      "note": "Short runtime wording preserves scene sense; complete meaning stays in canonical vi_full. Original line/page controls must remain intact."
+    },
+    {
+      "file_offset": "0x18F73",
+      "vi_full_reference": "Ông đi về phương Nam xa quá rồi đó.",
+      "vi_runtime_lines": [
+        "Ông đi quá xa"
+      ],
+      "expected_segment_capacities": [
+        13
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "approved_condensed_story_first_arc",
+      "note": "Short runtime wording preserves scene sense; complete meaning stays in canonical vi_full. Original line/page controls must remain intact."
+    },
+    {
+      "file_offset": "0x190B7",
+      "vi_full_reference": "Tự nhiên thấy hồi hộp ghê...",
+      "vi_runtime_lines": [
+        "Hồi hộp ghê...",
+        ""
+      ],
+      "expected_segment_capacities": [
+        14,
+        1
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "approved_condensed_story_first_arc",
+      "note": "Short runtime wording preserves scene sense; complete meaning stays in canonical vi_full. Original line/page controls must remain intact."
+    },
+    {
+      "file_offset": "0x19117",
+      "vi_full_reference": "Thế bắt đầu nhé.",
+      "vi_runtime_lines": [
+        "Bắt đầu nhé",
+        ""
+      ],
+      "expected_segment_capacities": [
+        11,
+        1
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "approved_condensed_story_first_arc",
+      "note": "Short runtime wording preserves scene sense; complete meaning stays in canonical vi_full. Original line/page controls must remain intact."
+    },
+    {
+      "file_offset": "0x19222",
+      "vi_full_reference": "Ta-Tama-chan...",
+      "vi_runtime_lines": [
+        "Ta-Tama-chan..."
+      ],
+      "expected_segment_capacities": [
+        17
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "approved_condensed_story_first_arc",
+      "note": "Short runtime wording preserves scene sense; complete meaning stays in canonical vi_full. Original line/page controls must remain intact."
+    },
+    {
+      "file_offset": "0x193B0",
+      "vi_full_reference": "Còn hơi sớm để nói thế đó.",
+      "vi_runtime_lines": [
+        "Còn sớm quá!",
+        ""
+      ],
+      "expected_segment_capacities": [
+        13,
+        11
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "approved_condensed_story_first_arc",
+      "note": "Short runtime wording preserves scene sense; complete meaning stays in canonical vi_full. Original line/page controls must remain intact."
+    },
+    {
+      "file_offset": "0x194CF",
+      "vi_full_reference": "Khổ ghê...",
+      "vi_runtime_lines": [
+        "Khổ ghê..."
+      ],
+      "expected_segment_capacities": [
+        17
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "approved_condensed_story_first_arc",
+      "note": "Short runtime wording preserves scene sense; complete meaning stays in canonical vi_full. Original line/page controls must remain intact."
+    },
+    {
+      "file_offset": "0x1957A",
+      "vi_full_reference": "Vậy cho tớ qua luôn đi.",
+      "vi_runtime_lines": [
+        "Cho tớ qua!"
+      ],
+      "expected_segment_capacities": [
+        11
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "approved_condensed_story_first_arc",
+      "note": "Short runtime wording preserves scene sense; complete meaning stays in canonical vi_full. Original line/page controls must remain intact."
+    },
+    {
+      "file_offset": "0x19748",
+      "vi_full_reference": "Tiếc thật đấy, baby.",
+      "vi_runtime_lines": [
+        "Tiếc, baby"
+      ],
+      "expected_segment_capacities": [
+        10
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "approved_condensed_story_first_arc",
+      "note": "Short runtime wording preserves scene sense; complete meaning stays in canonical vi_full. Original line/page controls must remain intact."
+    },
+    {
+      "file_offset": "0x1975F",
+      "vi_full_reference": "Baby.",
+      "vi_runtime_lines": [
+        "Baby"
+      ],
+      "expected_segment_capacities": [
+        4
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "approved_condensed_story_first_arc",
+      "note": "Short runtime wording preserves scene sense; complete meaning stays in canonical vi_full. Original line/page controls must remain intact."
+    },
+    {
+      "file_offset": "0x197F8",
+      "vi_full_reference": "Hả!? Cậu nói gì cơ!?",
+      "vi_runtime_lines": [
+        "Hả? Cậu nói gì!?"
+      ],
+      "expected_segment_capacities": [
+        17
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "approved_condensed_story_first_arc",
+      "note": "Short runtime wording preserves scene sense; complete meaning stays in canonical vi_full. Original line/page controls must remain intact."
+    },
+    {
+      "file_offset": "0x19C38",
+      "vi_full_reference": "Hê hê hê...",
+      "vi_runtime_lines": [
+        "Hê hê hê...",
+        ""
+      ],
+      "expected_segment_capacities": [
+        17,
+        1
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "approved_condensed_story_first_arc",
+      "note": "Short runtime wording preserves scene sense; complete meaning stays in canonical vi_full. Original line/page controls must remain intact."
+    },
+    {
+      "file_offset": "0x19D1C",
+      "vi_full_reference": "Tớ có nói gì đâu...",
+      "vi_runtime_lines": [
+        "Tớ nói gì đâu..."
+      ],
+      "expected_segment_capacities": [
+        17
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "approved_condensed_story_first_arc",
+      "note": "Short runtime wording preserves scene sense; complete meaning stays in canonical vi_full. Original line/page controls must remain intact."
+    },
+    {
+      "file_offset": "0x19D4A",
+      "vi_full_reference": "Chuẩn bị tinh thần chưa...?",
+      "vi_runtime_lines": [
+        "Chuẩn bị chưa?",
+        ""
+      ],
+      "expected_segment_capacities": [
+        17,
+        1
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "approved_condensed_story_first_arc",
+      "note": "Short runtime wording preserves scene sense; complete meaning stays in canonical vi_full. Original line/page controls must remain intact."
+    },
+    {
+      "file_offset": "0x19E3B",
+      "vi_full_reference": "Ừ, ghê thật.",
+      "vi_runtime_lines": [
+        "Hay ghê!",
+        ""
+      ],
+      "expected_segment_capacities": [
+        8,
+        1
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "approved_condensed_story_first_arc",
+      "note": "Short runtime wording preserves scene sense; complete meaning stays in canonical vi_full. Original line/page controls must remain intact."
+    },
+    {
+      "file_offset": "0x19E5B",
+      "vi_full_reference": "Cậu thật sự nghĩ vậy sao?",
+      "vi_runtime_lines": [
+        "Cậu nghĩ",
+        "thật sao?",
+        ""
+      ],
+      "expected_segment_capacities": [
+        10,
+        9,
+        1
+      ],
+      "source_file": "story_batch01_vi.csv",
+      "status": "approved_condensed_story_first_arc",
+      "note": "Short runtime wording preserves scene sense; complete meaning stays in canonical vi_full. Original line/page controls must remain intact."
+    }
+  ]
+}
