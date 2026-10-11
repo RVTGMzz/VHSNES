@@ -147,8 +147,14 @@ def plan(clean:bytes,root:Path):
     expected_native={0x33DDF,0x33DFD}
     if (native_kanji_choices!=expected_native or native_kanji_char_count!=4):
         raise AssertionError("Two Japanese-original names/4 distinctive CP932 Kanji not retained")
+    # Fail if original Japanese alternatives ceased to be distinct.
+    if not ("(一雄)" in next(r["full_canonical_vietnamese"] for r in planned
+                         if r["original_file_offset"]=="0x33DDF")
+            and "(和雄)" in next(r["full_canonical_vietnamese"] for r in planned
+                         if r["original_file_offset"]=="0x33DFD")):
+        raise AssertionError("Nagasawa alternatives no longer have distinct Kanji")
     if cursor!=0x3797F or cursor-RELOCATION_START!=2431:
-        raise AssertionError("Original clean-ROM 79-answer packing layout changed")
+        raise AssertionError("Original clean-ROM 81-answer mixed-codepage packing layout changed")
     if out[0x36907:RELOCATION_START]!=clean[0x36907:RELOCATION_START]:
         raise AssertionError("Reassigned previously reserved script-end padding")
     for r in planned:
@@ -168,7 +174,7 @@ def plan(clean:bytes,root:Path):
     if (count!=124 or len(patch)!=3145 or sha(patch)!=EXPECTED_IPS_SHA
         or sha(preview)!=EXPECTED_ROM_SHA or checksum!=0xc3bc
         or apply_ips(clean,patch)!=preview):
-        raise AssertionError("Exact original clean-ROM 79-answer IPS replay/QA drift")
+        raise AssertionError("Exact original clean-ROM 81-answer IPS replay/QA drift")
     return {"summary":{
         "status":"PASS_SOURCE_ROM_81_CHOICE_HYBRID_REPACK_NO_EMULATOR",
         "source_clean_ROM_sha256":CLEAN_SHA,
