@@ -1,0 +1,579 @@
+{
+  "schema": "chibi.quiz.content_first.059.v1",
+  "source_clean_rom_sha256": "e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956",
+  "stage_input": "full_integrated_058",
+  "candidate_count": 37,
+  "native_physical_segments": 76,
+  "native_816F_markers": 76,
+  "source_editable_glyph_bytes": 1572,
+  "changed_source_bytes": 1568,
+  "clean_source_only_IPS_bytes": 1961,
+  "clean_source_only_IPS_records": 77,
+  "clean_source_only_IPS_sha256": "15e12c50f501f6455c4b31dc837231ca23dbccdfe94bd07ef5a4d4384f844856",
+  "clean_source_only_ROM_sha256": "3dcdaca24ed47d92c7f11d8851fcf1c3516a41412f224a123fb3fe4234e51aaf",
+  "source_only_byte_qa": "PASS_REAL_USER_CLEAN_ROM_NOT_PLAYABLE",
+  "full_integrated_059_ROM": "NOT_BUILT",
+  "emulator_tested": false,
+  "excluded_by_content_policy": "No unsafe text truncations for 'Xe đạp', 'Hành lá', 'Nepal', '1 triệu yên', or overlapping script windows; preserve originals for safe expansion.",
+  "records": [
+    {
+      "file_offset": "0x31D47",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "source_jp_scanner": "      モモエちゃんが大好きなまる｛      子は、コンサートで｛",
+      "vi_full_reference": "Maruko mê Momoe-chan lắm. Ở buổi hòa nhạc, cô bé đã...",
+      "vi_runtime_lines": [
+        "Maruko mê",
+        "Momoe!"
+      ],
+      "expected_capacities": [
+        13,
+        9
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_058_merged_ROM_and_emulator"
+    },
+    {
+      "file_offset": "0x31D88",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "source_jp_scanner": "      マヨネーズと何を｛      プレゼントした？｛",
+      "vi_full_reference": "...tặng mayonnaise kèm theo thứ gì?",
+      "vi_runtime_lines": [
+        "thêm gì",
+        "với mayo"
+      ],
+      "expected_capacities": [
+        8,
+        8
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_058_merged_ROM_and_emulator"
+    },
+    {
+      "file_offset": "0x31DBD",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "source_jp_scanner": "かにカンとカンきり｛",
+      "vi_full_reference": "Hộp cua và đồ khui hộp",
+      "vi_runtime_lines": [
+        "Cua, khui"
+      ],
+      "expected_capacities": [
+        9
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_058_merged_ROM_and_emulator"
+    },
+    {
+      "file_offset": "0x31DD6",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "source_jp_scanner": "きゅうりとツナカン｛",
+      "vi_full_reference": "Dưa leo và cá ngừ đóng hộp",
+      "vi_runtime_lines": [
+        "Dưa và cá"
+      ],
+      "expected_capacities": [
+        9
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_058_merged_ROM_and_emulator"
+    },
+    {
+      "file_offset": "0x31E04",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "source_jp_scanner": "        さくらももこことまる子  ｛      はモモエちゃんが大すきな｛      小学",
+      "vi_full_reference": "Sakura Momoko, tức Maruko, rất mê Momoe-chan và là học sinh tiểu học...",
+      "vi_runtime_lines": [
+        "Maruko đây",
+        "mê Momoe mà",
+        "lớp 3"
+      ],
+      "expected_capacities": [
+        11,
+        12,
+        6
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_058_merged_ROM_and_emulator"
+    },
+    {
+      "file_offset": "0x31E6D",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "source_jp_scanner": "      血液型は",
+      "vi_full_reference": "Nhóm máu của cô bé là...",
+      "vi_runtime_lines": [
+        "Máu A",
+        "lười!",
+        "Momoe có ăn?"
+      ],
+      "expected_capacities": [
+        7,
+        6,
+        12
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_058_merged_ROM_and_emulator"
+    },
+    {
+      "file_offset": "0x31ED2",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "source_jp_scanner": "      モモエちゃんはたべてくれ｛      たのだろうか…？｛",
+      "vi_full_reference": "...Momoe-chan có chịu ăn món quà đó không nhỉ...?",
+      "vi_runtime_lines": [
+        "Momoe có ăn",
+        "quà kia?"
+      ],
+      "expected_capacities": [
+        12,
+        8
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_058_merged_ROM_and_emulator"
+    },
+    {
+      "file_offset": "0x31F23",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "source_jp_scanner": "      おうし座で",
+      "vi_full_reference": "Maruko thuộc cung Kim Ngưu và...",
+      "vi_runtime_lines": [
+        "Cung Kim Ngưu",
+        "Sinh hôm nào?"
+      ],
+      "expected_capacities": [
+        13,
+        13
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_058_merged_ROM_and_emulator"
+    },
+    {
+      "file_offset": "0x31F75",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "source_jp_scanner": "５月８日",
+      "vi_full_reference": "Ngày 8 tháng 5",
+      "vi_runtime_lines": [
+        "8/5"
+      ],
+      "expected_capacities": [
+        4
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_058_merged_ROM_and_emulator"
+    },
+    {
+      "file_offset": "0x31F84",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "source_jp_scanner": "４月２３日",
+      "vi_full_reference": "Ngày 23 tháng 4",
+      "vi_runtime_lines": [
+        "23/4"
+      ],
+      "expected_capacities": [
+        5
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_058_merged_ROM_and_emulator"
+    },
+    {
+      "file_offset": "0x31F95",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "source_jp_scanner": "１０月１日",
+      "vi_full_reference": "Ngày 1 tháng 10",
+      "vi_runtime_lines": [
+        "1/10"
+      ],
+      "expected_capacities": [
+        5
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_058_merged_ROM_and_emulator"
+    },
+    {
+      "file_offset": "0x31FA6",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "source_jp_scanner": "        ウキウキのおたんじょうび｛      のはずが、花輪君、丸尾君、｛      みどりちゃんというメンバー｛",
+      "vi_full_reference": "Đáng lẽ sinh nhật phải vui lắm, vậy mà Hanawa-kun, Maruo-kun và Midori-chan...",
+      "vi_runtime_lines": [
+        "Đáng lẽ vui",
+        "Hanawa, Maruo",
+        "Midori tới!"
+      ],
+      "expected_capacities": [
+        12,
+        13,
+        13
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_058_merged_ROM_and_emulator"
+    },
+    {
+      "file_offset": "0x32011",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "source_jp_scanner": "      がもれなくついて来ることで｛      ハッピーなきぶんになりきれ｛      ないまる子であった。｛",
+      "vi_full_reference": "...lại kéo tới đủ bộ, khiến Maruko chẳng thể vui cho trọn.",
+      "vi_runtime_lines": [
+        "đều kéo tới!",
+        "Maru hết vui",
+        "lắm rồi!"
+      ],
+      "expected_capacities": [
+        13,
+        13,
+        10
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_058_merged_ROM_and_emulator"
+    },
+    {
+      "file_offset": "0x32095",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "source_jp_scanner": "      ハンバーグとアイスクリームが｛      大すきなまる子のおこづかい｛",
+      "vi_full_reference": "Maruko mê hamburger và kem. Tiền tiêu vặt của cô bé...",
+      "vi_runtime_lines": [
+        "Maru mê kem",
+        "Tiền tiêu vặt"
+      ],
+      "expected_capacities": [
+        14,
+        13
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_058_merged_ROM_and_emulator"
+    },
+    {
+      "file_offset": "0x32126",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "source_jp_scanner": "  ｛        このたいせつなおこづかい｛      をかみしばい屋で使いはたす  ｛",
+      "vi_full_reference": "Maruko lại đem sạch khoản tiền tiêu vặt quý giá ấy tiêu ở gánh kể chuyện tranh...",
+      "vi_runtime_lines": [
+        "",
+        "Maru xài hết",
+        "gánh kể tranh"
+      ],
+      "expected_capacities": [
+        0,
+        12,
+        13
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_058_merged_ROM_and_emulator"
+    },
+    {
+      "file_offset": "0x32175",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "source_jp_scanner": "      少女まる子。ちなみにきらい｛      なものはなっとうと、トマト｛      と、ネギ。である。｛",
+      "vi_full_reference": "...Cô bé còn ghét natto, cà chua và hành lá nữa.",
+      "vi_runtime_lines": [
+        "Maruko ghét",
+        "natto,cà chua",
+        "hành lá!"
+      ],
+      "expected_capacities": [
+        13,
+        13,
+        9
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_058_merged_ROM_and_emulator"
+    },
+    {
+      "file_offset": "0x321F5",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "source_jp_scanner": "        いつもまる子とつるんで  ｛      さわぎをおこす友蔵だが、  ｛",
+      "vi_full_reference": "Ông Tomozou lúc nào cũng quậy cùng Maruko và gây ra đủ chuyện...",
+      "vi_runtime_lines": [
+        "Ông Tomozou",
+        "thường quậy"
+      ],
+      "expected_capacities": [
+        11,
+        12
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_058_merged_ROM_and_emulator"
+    },
+    {
+      "file_offset": "0x3223E",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "source_jp_scanner": "      このじいさんっていったい  ｛      何才？｛",
+      "vi_full_reference": "...thế ông cụ này rốt cuộc bao nhiêu tuổi vậy?",
+      "vi_runtime_lines": [
+        "Ông bao tuổi",
+        "nhỉ"
+      ],
+      "expected_capacities": [
+        12,
+        3
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_058_merged_ROM_and_emulator"
+    },
+    {
+      "file_offset": "0x322A2",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "source_jp_scanner": "７６才にもなってしばしば  ｛      まる子にだまされるさくら｛      友蔵。しかし、まる子の  ｛",
+      "vi_full_reference": "Dù đã 76 tuổi, Sakura Tomozou vẫn thường xuyên bị Maruko lừa. Nhưng ông...",
+      "vi_runtime_lines": [
+        "76 tuổi rồi",
+        "vẫn bị Maru",
+        "lừa suốt"
+      ],
+      "expected_capacities": [
+        12,
+        12,
+        11
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_058_merged_ROM_and_emulator"
+    },
+    {
+      "file_offset": "0x32303",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "source_jp_scanner": "      いちばんのりかいしゃであり、｛      なかよし。時に、｛      心のはいくをよむ。｛",
+      "vi_full_reference": "...là người hiểu Maruko nhất, cũng là bạn thân của cô bé. Thỉnh thoảng ông còn ngâm haiku trong lòng.",
+      "vi_runtime_lines": [
+        "Ông hiểu Maru",
+        "nhất nhà",
+        "thơ haiku"
+      ],
+      "expected_capacities": [
+        14,
+        8,
+        9
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_058_merged_ROM_and_emulator"
+    },
+    {
+      "file_offset": "0x3237B",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "source_jp_scanner": "      まる子はきらいで、おじい｛      ちゃんはすきな、頭がよく｛",
+      "vi_full_reference": "Maruko ghét, còn ông thì thích. Món ăn nào được cho là ăn vào sẽ giúp đầu óc...",
+      "vi_runtime_lines": [
+        "Maru ghét mà",
+        "ông lại mê"
+      ],
+      "expected_capacities": [
+        12,
+        12
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_058_merged_ROM_and_emulator"
+    },
+    {
+      "file_offset": "0x323C0",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "source_jp_scanner": "      なる食べものってなに？｛",
+      "vi_full_reference": "...thông minh hơn là món gì?",
+      "vi_runtime_lines": [
+        "Ăn gì giỏi?"
+      ],
+      "expected_capacities": [
+        11
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_058_merged_ROM_and_emulator"
+    },
+    {
+      "file_offset": "0x3240A",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "source_jp_scanner": "  ｛        これでネギには頭がよく  ｛      なるというこうかがないこと｛",
+      "vi_full_reference": "Vậy là biết hành lá chẳng hề giúp đầu óc thông minh hơn...",
+      "vi_runtime_lines": [
+        "",
+        "Ăn hành mà",
+        "chả thêm khôn"
+      ],
+      "expected_capacities": [
+        0,
+        11,
+        13
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_058_merged_ROM_and_emulator"
+    },
+    {
+      "file_offset": "0x32457",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "source_jp_scanner": "      がわかった…？  ちなみに  ｛      友蔵のすきなものは｛      やわらかくて、｛",
+      "vi_full_reference": "...chắc vậy? Nhân tiện, ông Tomozou thích những món mềm mềm...",
+      "vi_runtime_lines": [
+        "Rõ rồi nhỉ",
+        "Ông Tomo",
+        "ăn mềm"
+      ],
+      "expected_capacities": [
+        12,
+        9,
+        7
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_058_merged_ROM_and_emulator"
+    },
+    {
+      "file_offset": "0x324AE",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "source_jp_scanner": "      うまいもの。  ｛",
+      "vi_full_reference": "...và ngon.",
+      "vi_runtime_lines": [
+        "ngon!"
+      ],
+      "expected_capacities": [
+        6
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_058_merged_ROM_and_emulator"
+    },
+    {
+      "file_offset": "0x324DD",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "source_jp_scanner": "      おっとりしていてむかしながら｛      のことにくわしいまる子の｛",
+      "vi_full_reference": "Bà của Maruko hiền hòa, lại rất rành những chuyện xưa...",
+      "vi_runtime_lines": [
+        "Bà Maruko hiền",
+        "rành chuyện"
+      ],
+      "expected_capacities": [
+        14,
+        12
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_058_merged_ROM_and_emulator"
+    },
+    {
+      "file_offset": "0x32526",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "source_jp_scanner": "      おばあちゃんが、うんてん｛      できるのりものは、なに？｛",
+      "vi_full_reference": "...bà có thể điều khiển loại phương tiện nào?",
+      "vi_runtime_lines": [
+        "Bà biết chạy",
+        "xe gì nhỉ?"
+      ],
+      "expected_capacities": [
+        12,
+        12
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_058_merged_ROM_and_emulator"
+    },
+    {
+      "file_offset": "0x3257C",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "source_jp_scanner": "じどうしゃ｛",
+      "vi_full_reference": "Ô tô",
+      "vi_runtime_lines": [
+        "Ô tô"
+      ],
+      "expected_capacities": [
+        5
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_058_merged_ROM_and_emulator"
+    },
+    {
+      "file_offset": "0x3259A",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "source_jp_scanner": "        目立たないおばあちゃんも  ｛      じつは、じてんしゃにのれた。｛      このじじつは、まる子が      ｛",
+      "vi_full_reference": "Bà tuy ít khi nổi bật, nhưng thật ra lại biết đi xe đạp. Maruko phát hiện chuyện này khi...",
+      "vi_runtime_lines": [
+        "Bà âm thầm",
+        "mà biết đạp xe",
+        "Maru đã hay"
+      ],
+      "expected_capacities": [
+        12,
+        14,
+        11
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_058_merged_ROM_and_emulator"
+    },
+    {
+      "file_offset": "0x3260B",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "source_jp_scanner": "      じてんしゃのれんしゅうをして｛      いた時にあきらかになった。  ｛",
+      "vi_full_reference": "...đang tập đi xe đạp.",
+      "vi_runtime_lines": [
+        "Khi tập đạp xe",
+        "Maru mới rõ"
+      ],
+      "expected_capacities": [
+        14,
+        13
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_058_merged_ROM_and_emulator"
+    },
+    {
+      "file_offset": "0x32675",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "source_jp_scanner": "      酒に人生をささげる男、ヒロシ｛      は、巨人と酒をこよなく愛する｛",
+      "vi_full_reference": "Hiroshi, người đàn ông dành cả đời cho rượu, mê đội Giants và rượu hơn gì hết...",
+      "vi_runtime_lines": [
+        "Bố Hiroshi mê",
+        "rượu và Giants"
+      ],
+      "expected_capacities": [
+        14,
+        14
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_058_merged_ROM_and_emulator"
+    },
+    {
+      "file_offset": "0x326C2",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "source_jp_scanner": "      まる子の父だが、かれはいま｛      何才？｛",
+      "vi_full_reference": "...là bố của Maruko. Hiện ông bao nhiêu tuổi?",
+      "vi_runtime_lines": [
+        "Bố bao tuổi",
+        "nhỉ"
+      ],
+      "expected_capacities": [
+        13,
+        3
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_058_merged_ROM_and_emulator"
+    },
+    {
+      "file_offset": "0x3271E",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "source_jp_scanner": "  ｛        父ヒロシはしゅみがつりで、｛      美空ひばりファンの",
+      "vi_full_reference": "Bố Hiroshi có thú vui câu cá, là fan của Misora Hibari và...",
+      "vi_runtime_lines": [
+        "",
+        "Bố mê câu cá",
+        "và Misora nữa"
+      ],
+      "expected_capacities": [
+        0,
+        13,
+        13
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_058_merged_ROM_and_emulator"
+    },
+    {
+      "file_offset": "0x3276D",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "source_jp_scanner": "      さしみが大すきである。｛",
+      "vi_full_reference": "Ông còn cực kỳ mê sashimi.",
+      "vi_runtime_lines": [
+        "Mê sashimi"
+      ],
+      "expected_capacities": [
+        11
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_058_merged_ROM_and_emulator"
+    },
+    {
+      "file_offset": "0x327AD",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "source_jp_scanner": "      まる子はお母さんのたからもの｛      のゆびわをなくしてしまい、  ｛",
+      "vi_full_reference": "Maruko từng làm mất chiếc nhẫn quý của mẹ và bị mắng một trận...",
+      "vi_runtime_lines": [
+        "Maruko làm mất",
+        "nhẫn của mẹ"
+      ],
+      "expected_capacities": [
+        14,
+        13
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_058_merged_ROM_and_emulator"
+    },
+    {
+      "file_offset": "0x327FA",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "source_jp_scanner": "      ひどくしかられたことがあるが｛      それはなんのゆびわだった？｛",
+      "vi_full_reference": "...đó là chiếc nhẫn gì?",
+      "vi_runtime_lines": [
+        "Mẹ giận ghê!",
+        "Nhẫn gì vậy?"
+      ],
+      "expected_capacities": [
+        14,
+        13
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_058_merged_ROM_and_emulator"
+    },
+    {
+      "file_offset": "0x32845",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "source_jp_scanner": "オパール｛",
+      "vi_full_reference": "Nhẫn opal",
+      "vi_runtime_lines": [
+        "Opal"
+      ],
+      "expected_capacities": [
+        4
+      ],
+      "status": "verified_clean_original_byte_overlay_pending_full_058_merged_ROM_and_emulator"
+    }
+  ]
+}
