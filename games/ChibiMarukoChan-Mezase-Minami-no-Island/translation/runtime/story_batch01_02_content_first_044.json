@@ -2,12 +2,12 @@
   "schema": "chibi.story.content_first.044.v1",
   "baseline_clean_sha256": "e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956",
   "baseline_043_sha256": "45ffca7db5db83bc2734e885ee90c77f33746e2c4a54d1c99f1502f3e992a6ae",
-  "output_044_sha256": "7f0c7ef92f2c40e0cab7703326c93cf6338d9ae771fef4b43a2350bda0c643fc",
-  "output_044_ips_sha256": "5b4da16b00f7c38dd1de7f4bd2431479b9b75bd2441f4d122d42d8549e9d9784",
+  "output_044_sha256": "2312b9ba52c0cf6ac491e71117d5c537ad7dc61828dc9e87d838826e5165f322",
+  "output_044_ips_sha256": "823009a95534b851b238efc439fa39c5b8af6af75a97075d1925e98f879c144d",
   "batch01_added": 33,
   "batch02_added": 54,
   "expected_records": 87,
-  "notes": "Physical Japanese ROM segments and all break-marker positions verified. Compact display wording separately edited; canonical vi_full untouched. Static-only; no gameplay run.",
+  "notes": "Physical Japanese ROM segments and all break-marker positions verified. Compact display wording separately edited; canonical vi_full untouched. Static-only; no gameplay run. Seven scene-flow editorial tweaks after reading adjacent display segments; exact hash now matches final binary.",
   "records": [
     {
       "file_offset": "0x183A7",
@@ -15,11 +15,11 @@
       "vi_full_reference": "Chương trình trao đổi học sinh với một hòn đảo phương Nam đã được quyết định. Đại diện lớp mình sẽ có...",
       "source_file": "translation/source/story_batch01_vi.csv",
       "vi_runtime_lines": [
-        "Lớp được trao đổi",
-        "với đảo",
+        "Trao đổi học sinh",
+        "đã chốt!",
         "",
-        "Sẽ có một bạn",
-        "được chọn",
+        "Một bạn của lớp",
+        "sẽ được chọn",
         "để đi!"
       ],
       "source_jp_reference": "",
@@ -45,9 +45,9 @@
       "vi_full_reference": "Là học sinh Nhật với học sinh nước ngoài đến nước của nhau rồi học đủ thứ ở đó ấy mà.",
       "source_file": "translation/source/story_batch01_vi.csv",
       "vi_runtime_lines": [
-        "Hai nước cho",
-        "học sinh qua học",
-        "bên nhau đó mà",
+        "Học sinh hai",
+        "nước sang học ở",
+        "nước kia đó mà",
         ""
       ],
       "source_jp_reference": "",
@@ -244,7 +244,7 @@
       "vi_full_reference": "Lần này tôi sẽ cùng Honami-san...",
       "source_file": "translation/source/story_batch01_vi.csv",
       "vi_runtime_lines": [
-        "Lần này tôi sẽ",
+        "Hôm nay cả tôi",
         "và Honami-san",
         "đấu cậu",
         ""
@@ -648,7 +648,7 @@
       "vi_full_reference": "Chẳng lẽ vận may của tớ chỉ tới đây thôi sao?",
       "source_file": "translation/source/story_batch02_part1_vi.csv",
       "vi_runtime_lines": [
-        "May mắn hết?",
+        "Vận may tớ",
         "hết rồi à?",
         ""
       ],
@@ -696,8 +696,8 @@
       "vi_full_reference": "Tôi, Maruo Sueo, xin cược cả lòng tự trọng: lần này nhất định không thua!!",
       "source_file": "translation/source/story_batch02_part1_vi.csv",
       "vi_runtime_lines": [
-        "Maruo!",
-        "đặt cả tự trọng",
+        "Tôi đây",
+        "cược cả danh dự",
         "nhất định thắng!",
         ""
       ],
@@ -776,7 +776,7 @@
       "source_file": "translation/source/story_batch02_part1_vi.csv",
       "vi_runtime_lines": [
         "Nói thẳng ra!",
-        "Cậu quá chủ quan!",
+        "Cậu quá tự cao!",
         ""
       ],
       "source_jp_reference": "  ズバリ！！                      ｛  あなたは身のほど知らずでしょう！｛  ▼",
@@ -949,7 +949,7 @@
       "vi_runtime_lines": [
         "Giỏi quá",
         "Maruko ơi",
-        "sáng rực!",
+        "Sáng ngời!",
         ""
       ],
       "source_jp_reference": "  よーやったのう｛  わしには  まる子が｛  かがやいてみえるわい｛  ▼",
