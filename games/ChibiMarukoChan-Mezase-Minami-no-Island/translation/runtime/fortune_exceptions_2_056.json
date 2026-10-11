@@ -1,0 +1,40 @@
+{
+  "schema": "chibi.fortune.exceptions.056.v1",
+  "clean_original_sha256": "e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956",
+  "source_047_and_048_exceptions": 6,
+  "translated_additional_fortune": 2,
+  "unresolved_source_offsets": [
+    "0x2BD5E",
+    "0x2C86B",
+    "0x2CA7D",
+    "0x2CADD"
+  ],
+  "source_text_slots_bytes": 36,
+  "changed_text_bytes": 36,
+  "original_816F_preserved": 2,
+  "preview_source_ROM_sha256": "d308a8a4b9b87a2c496fda3409398df6803c98381424a2a3a253f274d0491071",
+  "preview_IPS_sha256": "84e30fe4f1bad5621934de99dcc9e0c3a11efd64152f36af676b42e56eca31be",
+  "preview_IPS_bytes": 54,
+  "preview_IPS_records": 2,
+  "verified_original_clean_source_only": true,
+  "merged_055_plus_056_built": false,
+  "emulator_tested": false,
+  "records": [
+    {
+      "file_offset": "0x2C413",
+      "source_jp": "体育が開運のカギ",
+      "vi_full": "Môn Thể dục là chìa khóa may mắn",
+      "vi_runtime": "Vận động",
+      "capacity": 8,
+      "source_file": "translation/source/fortune_batch01_part2_vi.csv"
+    },
+    {
+      "file_offset": "0x2C601",
+      "source_jp": "プリンを食べてみよう",
+      "vi_full": "Thử ăn pudding xem",
+      "vi_runtime": "Ăn pudding",
+      "capacity": 10,
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv"
+    }
+  ]
+}
