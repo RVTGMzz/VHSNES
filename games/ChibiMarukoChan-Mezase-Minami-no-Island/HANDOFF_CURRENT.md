@@ -1,5 +1,18 @@
 # HANDOFF CURRENT — Chibi Maruko-chan SNES Việt hóa
 
+## CHECKPOINT 059 — 2026-10-11: 37 MORE QUIZ FIELDS, EXACT ORIGINAL-ROM BYTE TEST PASS
+
+Read `docs/CONTENT_FIRST_QUIZ_37_CHECKPOINT_059.md`.
+
+- Added 37 distinct original Quiz03 part1 content slots, not included in old 047 numeric-answer layer or 058. New runtime manifest `translation/runtime/quiz_content_first_37_059.json`, validated source Japanese + full Vietnamese references and per-line capacities, no lossy truncation of missing complex answers.
+- Performed **ACTUAL CLEAN 2MiB JAPANESE ROM SOURCE QA** on attached `Chibi Maruko-chan - Mezase! Minami no Island!! (Japan)(1).sfc` SHA `e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956`. **37/37 fields, 76/76 physical rows, 76/76 native `816F` controls retained; 1,572 byte source windows / 1,568 physically changed positions.** Real source-only IPS 1,961B /77 records SHA `15e12c50f501f6455c4b31dc837231ca23dbccdfe94bd07ef5a4d4384f844856`; applying separately via independent IPS parser reproduced entire 2MiB source overlay SHA `3dcdaca24ed47d92c7f11d8851fcf1c3516a41412f224a123fb3fe4234e51aaf`. **That source-only overlay is not playable**, never send it as a finished patch.
+- Critical careful byte coverage: do NOT separately patch scanner offsets 0x31E50 /0x31F33 /0x3275E as their physical text windows overlap earlier records. Do NOT add 0x32874 because it extends into 058 source window at 0x3288E. Preserve too-small source alternatives (`Xe đạp`, `Hành lá`, `Nepal`, one million yen) for future layout expansion rather than invent incorrect abbreviations. All original full translations remain untouched in `translation/source/quiz_batch03_part1_vi.csv`.
+- Newly authored `tools/build_content_first_059_quiz_37.py` safely patches existing full 058 ROM and recomputes checksum, replays clean IPS; `tools/rebuild_content_first_059_full_chain.py` reproduces 043->059 in memory. These new GitHub scripts have **not been run on the missing original 058 full integrated ROM**; any source-only QA PASS must not be confused with an emulator PASS.
+- Conditional Quiz physical inventory **244/381 distinct source targets** = 21 (041)+15(047)+54(054)+50(057)+67(058)+37(059); **137 need further safe runtime selection**. Do not count duplicated old 053 rows. These 244 are not yet assembled into a working 059 game.
+- **Blocker unchanged:** raw bytes of exact earlier checkpoint043 clean IPS SHA `d3cb7ea84067675a5cc12cb4a26f260194b0a6f00ff235f0129460a902a58a50` remain unavailable; old ZIP metadata in user's Library cannot currently materialize. User's original clean ROM is available. **FULL 059 COMBINED ROM NOT BUILT, EMULATOR NOT TESTED.**
+- Once checkpoint043 .ips is made accessible, run `python tools/rebuild_content_first_059_full_chain.py clean.sfc exact043.ips --ips full059.ips --report qa059.json --allow-untested`. Still need 4 Fortune too-long cases and G3 ending/result UI and last QA. No commercial ROM/font uploads; user wants CONTENT FIRST, FONT LAST and no endless micro IPS downloads.
+
+
 ## CHECKPOINT 058 — 2026-10-11: 67 MORE REAL ORIGINAL-ROM QUIZ SOURCE FIELDS, 149 NATIVE LINE CONTROLS
 
 **READ `docs/CONTENT_FIRST_QUIZ_67_CHECKPOINT_058.md` first.** New reviewed canonical-source-anchored files: `translation/runtime/quiz_content_first_67_058.json`, `tools/build_content_first_058_quiz_67.py`, and `tools/rebuild_content_first_058_full_chain.py`.
