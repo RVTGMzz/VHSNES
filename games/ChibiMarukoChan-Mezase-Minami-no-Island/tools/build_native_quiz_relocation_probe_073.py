@@ -110,7 +110,7 @@ def build(clean:bytes):
         "native_16bit_word_read_iterations":33,
         "native_source_copy_window_bytes":66,
         "source_copy_windows_are_nonoverlapping":True,
-        "previous_073_source_windows_overlapped_by_two_bytes":True,
+        "previous_072_source_windows_overlapped_by_two_bytes":True,
         "previous_067_example_read_crosses_bank_at_0x37FE0":True,
         "original_inplace_choice_text_preserved":True,
         "all_changes_whitelisted":True,"exact_IPS_replay":True,
