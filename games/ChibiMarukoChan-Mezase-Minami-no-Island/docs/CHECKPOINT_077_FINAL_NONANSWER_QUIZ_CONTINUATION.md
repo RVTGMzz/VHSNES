@@ -1,5 +1,8 @@
 # Chibi Maruko-chan SNES — Checkpoint 077: the final independent non-answer Quiz source
 
+**SUPERSEDED PHYSICAL-RECORD COUNT — CHECKPOINT 078 CORRECTION:** 077 found only one independent field among 21 *scanner* entries, but this was incomplete. Original ROM nine-table pointer audit later recovered **two more native records**: `0x35A58` (pointer `0x3136B`, scanner `0x35A69`) and `0x33B8A` (pointer `0x31453`, scanner `0x33B8D`). Correct disposition: 10 nested source aliases, 8 other unsafe scanner aliases and **3 independently pointer-addressable native fields in total**, not one. Read `docs/CHECKPOINT_078_TWO_MISSED_QUIZ_EXPLANATIONS.md` before continuing.
+
+
 Date: 2026-10-12 · Branch `chibi-maruko-bootstrap-01` · Original user-owned Japanese ROM SHA256 `e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956`.
 
 ## Actual progress: identify and prepare the ONE separate question line
