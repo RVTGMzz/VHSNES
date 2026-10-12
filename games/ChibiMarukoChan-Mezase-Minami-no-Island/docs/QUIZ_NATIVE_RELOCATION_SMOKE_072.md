@@ -1,5 +1,7 @@
 # Chibi Maruko-chan SNES — Checkpoint 072: a minimal, playable-engine hypothesis test without checkpoint043
 
+**SUPERSEDED BY CHECKPOINT 073.** Actual 65c816 Quiz routine copies 66 bytes from each answer source; old two new addresses are 64 bytes apart and their copy windows overlap by 2 bytes. Do not use prior 072 ZIP as the preferred test; use the corrected 073 ZIP and see `docs/CHECKPOINT_073_QUIZ_ENGINE_66_BYTE_COPY.md`.
+
 Date: 2026-10-12. Branch: `chibi-maruko-bootstrap-01`.
 
 ## Why the experiment matters
