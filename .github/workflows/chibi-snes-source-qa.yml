@@ -56,6 +56,9 @@ jobs:
       - name: Audit 21 remaining Quiz nonanswer rows and one native continuation manifest
         working-directory: games/ChibiMarukoChan-Mezase-Minami-no-Island
         run: python tools/audit_quiz_nonanswers_077.py
+      - name: Verify 078 two original-pointer-anchored Quiz explanation fields and fixed Vietnamese line capacities
+        working-directory: games/ChibiMarukoChan-Mezase-Minami-no-Island
+        run: python tools/audit_quiz_native_fields_078.py
       - name: Confirm no ROM or game-font binaries committed to source folder
         run: |
           if find games/ChibiMarukoChan-Mezase-Minami-no-Island \
