@@ -53,6 +53,9 @@ jobs:
       - name: Test 061/070/071 SHA report compatibility for one-archive 076 merge
         working-directory: games/ChibiMarukoChan-Mezase-Minami-no-Island
         run: python tools/selftest_merge_076.py
+      - name: Audit 21 remaining Quiz nonanswer rows and one native continuation manifest
+        working-directory: games/ChibiMarukoChan-Mezase-Minami-no-Island
+        run: python tools/audit_quiz_nonanswers_077.py
       - name: Confirm no ROM or game-font binaries committed to source folder
         run: |
           if find games/ChibiMarukoChan-Mezase-Minami-no-Island \
