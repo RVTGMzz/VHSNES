@@ -47,6 +47,9 @@ jobs:
       - name: Simulate three native 66-byte Quiz WRAM copies and assert 18 overwrites
         working-directory: games/ChibiMarukoChan-Mezase-Minami-no-Island
         run: python tools/selftest_quiz_wram_layout_074.py
+      - name: Verify actual Quiz caller COPY then immediate renderer JSL ordering (ROM-free scenario model)
+        working-directory: games/ChibiMarukoChan-Mezase-Minami-no-Island
+        run: python tools/audit_quiz_copy_render_order_075.py
       - name: Confirm no ROM or game-font binaries committed to source folder
         run: |
           if find games/ChibiMarukoChan-Mezase-Minami-no-Island \
