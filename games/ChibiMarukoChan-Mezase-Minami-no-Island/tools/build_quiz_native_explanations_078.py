@@ -70,12 +70,12 @@ def build(clean:bytes,baseline:bytes,root:Path):
             baseline[start:start+4]!=prefix or
             baseline[word:word+2]!=clean[word:word+2]):
             raise AssertionError(f"Original explanation pointer/native prefix changed at {start:05X}")
-    expected_33b8a=("lớp 3" in
-                    json.loads((root/"translation/runtime/quiz_content_first_67_058.json").read_text(encoding="utf-8"))["records"][
-                        next(i for i,r in enumerate(json.loads((root/"translation/runtime/quiz_content_first_67_058.json").read_text(encoding="utf-8"))["records"]) if int(r["file_offset"],0)==0x33B3B)
-                    ]["vi_runtime_lines"])
-    if not expected_33b8a:
-        raise AssertionError("Previous 058 grade-3 source translation no longer covers Year 3")
+    staged058=json.loads(
+        (root/"translation/runtime/quiz_content_first_67_058.json").read_text(
+            encoding="utf-8"))["records"]
+    previous=[r for r in staged058 if int(r["file_offset"],0)==0x33B3B]
+    if len(previous)!=1 or "lớp 3" not in previous[0]["vi_runtime_lines"]:
+        raise AssertionError("Existing stage058 translation must include the full grade")
     patched=bytearray(baseline)
     allow=set(range(0x7FDC,0x7FE0))
     fields=[]
