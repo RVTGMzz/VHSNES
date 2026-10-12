@@ -1,5 +1,8 @@
 # Checkpoint 073 — Actual SNES Quiz copier, corrected relocation, 81-bank-slot geometry
 
+**CHECKPOINT 074 CORRECTION — ORIGINAL WRAM OVERWRITE HAZARD.** Checkpoint073's 81 disjoint 68-byte source slots prove original-ROM BANK06 safety, **not** WRAM safety. The original game writes each 66-byte copy into buffers only **32 bytes** apart (`$7E8000`, `$7E8020`, `$7E8040`). Exactly **29/81** full translated answer records are longer than 32 bytes; **18 choice #1/#2 records will have text bytes overwritten by the following copy**, and 11 choice #3 records remain a rendering/WRAM-layout risk. The bulk-81 runtime proposal is therefore **NOT SAFE FOR PRODUCTION**. Read `docs/CHECKPOINT_074_REAL_WRAM_STRIDE_GUARD_AND_52_SAFE_CHOICES.md`: it prepares the **52** full answers that fit the original WRAM stride as isolated, still untested source-ROM candidates and defers 29 long ones for engine work.
+
+
 Date: 2026-10-12. Branch: `chibi-maruko-bootstrap-01`. User-owned clean Japanese 2MiB SFC SHA256 `e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956`.
 
 ## New reverse-engineering evidence: the game copies a FIXED window, not just a string
