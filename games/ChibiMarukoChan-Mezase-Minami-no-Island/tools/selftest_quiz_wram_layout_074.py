@@ -74,7 +74,7 @@ def run(root:Path):
             "actual_original_65c816_WRAM_copy_starts":[0,32,64],
             "per_choice_native_copy_bytes":66,
             "canonical_source_choices_simulated":len(choices),
-            "truly_strid e_safe_texts".replace(" ","_"):len(stride_safe),
+            "truly_stride_safe_texts":len(stride_safe),
             "definitely_corrupted_choice_1_or_2":len(corrupted),
             "choice_3_long_and_not_next_copy_overwritten":len(third_long),
             "release_all_81_full_labels_safe":False,
