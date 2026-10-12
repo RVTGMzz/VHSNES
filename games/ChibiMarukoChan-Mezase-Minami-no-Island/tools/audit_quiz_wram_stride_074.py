@@ -53,7 +53,7 @@ def run(root:Path,clean:bytes|None=None):
     # Option 3 has no following overwrite, but its >32B width / memory
     # safety is still untested in the real SNES renderer.
     return {"summary":{
-        "status":"FAIL_CLOSED_ROM_SOURCE_SAFE_BUT_WRAM_STRIDE_UNSAFE_FOR_ALL_81",
+        "status":"OBSERVED_WRAM_OVERLAP_VISUAL_RUNTIME_SAFETY_UNVERIFIED_CHECK_075",
         "pending_full_answer_candidates":len(options),
         "native_fixed_copy_bytes":COPIED_BYTES,
         "native_WRAM_stride_bytes":WRAM_STRIDE,
@@ -64,7 +64,9 @@ def run(root:Path,clean:bytes|None=None):
         "original_answer_3_records_larger_than_32_byte_stride":len(last_choice),
         "largest_full_answer_record_bytes":53,
         "safe_to_release_81_full_answer_patch":False,
-        "requires_WRAM_buffer_layout_or_engine_change":True,
+        "requires_WRAM_buffer_layout_or_engine_change":None,
+        "later_copy_overlap_is_NOT_proof_of_visible_corruption":True,
+        "source_075_proves_per_answer_JSL858160_BCC_wait_before_next_choice":True,
         "actual_SNES_emulator_tested":False,
         "patch_or_ROM_emitted":False,
     },"definite_choice_1_or_2_buffer_overwrites":overwritten,
