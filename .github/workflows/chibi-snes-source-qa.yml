@@ -41,6 +41,9 @@ jobs:
       - name: Verify 81 complete Vietnamese Quiz answers fit disjoint native 66-byte copy windows
         working-directory: games/ChibiMarukoChan-Mezase-Minami-no-Island
         run: python tools/plan_quiz_bankcopy_slots_073.py
+      - name: Block 81-answer bulk release when 29 exceed native 32-byte WRAM stride
+        working-directory: games/ChibiMarukoChan-Mezase-Minami-no-Island
+        run: python tools/audit_quiz_wram_stride_074.py
       - name: Confirm no ROM or game-font binaries committed to source folder
         run: |
           if find games/ChibiMarukoChan-Mezase-Minami-no-Island \
