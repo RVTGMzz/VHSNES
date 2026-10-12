@@ -1,5 +1,8 @@
 # Chibi Maruko-chan SNES — Checkpoint 074: WRAM copy overlap and real 52-answer safe subset
 
+**CHECKPOINT 075 CORRECTION — DO NOT READ THIS AS GUARANTEED VISIBLE CORRUPTION.** Actual original 65c816 caller order is COPY → `JSL $85804B` text job → repeatedly `JSL $858160; BCC -6` until text-job completion, for **each individual choice**, before advancing. Therefore earlier recorded **18 overwritten WRAM buffers** describe a hypothetical snapshot *after all three copies*, not proof that the player sees 18 truncated answers. The game explicitly waits for the earlier text job before copying a later answer. Buffer expansion is NOT established as necessary; text width/emulator acceptance is still pending. **Use `docs/CHECKPOINT_075_QUIZ_PER_ANSWER_RENDER_WAIT.md` and `tools/audit_quiz_copy_render_order_075.py` for the corrected interpretation.**
+
+
 Date: 2026-10-12 · Branch `chibi-maruko-bootstrap-01`.
 
 ## CRITICAL CORRECTION to checkpoint 073
