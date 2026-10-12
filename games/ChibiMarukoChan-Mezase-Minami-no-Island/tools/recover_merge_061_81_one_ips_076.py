@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Chibi: one user-owned 039–043 ZIP/IPS -> 061+81 answers+1 question IPS.
+"""Chibi: one 039–043 ZIP/IPS -> 061 +81 Quiz answers +3 native fields IPS.
 
 End-to-end combines checkpoint071 guarded recovery and checkpoint075 complete
 Quiz 81-choice source/LoROM pointer relocation plus one independently
@@ -25,6 +25,7 @@ from build_quiz_relocated_81_jobwait_075 import (
     validate_061_baseline_report,
 )
 from build_quiz_nonanswer_continuation_077 import build as integrate_one_question
+from build_quiz_native_explanations_078 import build as integrate_two_explanations
 
 ROOT=Path(__file__).resolve().parent.parent
 
@@ -49,12 +50,19 @@ def rebuild_one_patch(clean:bytes,archive_file:Path,root:Path):
     if (choice_qa.get("canonical_full_Quiz_answer_records")!=81 or
         choice_qa.get("candidate_ROM_sha256")!=sha(choice_rom)):
         raise AssertionError("Full 81-answer intermediate source IPS failed static QA")
-    final_ips,continuation_qa=integrate_one_question(
+    continuation_ips,continuation_qa=integrate_one_question(
         clean,choice_rom,root,require_all81=True)
+    continuation_rom=apply_ips(clean,continuation_ips)
+    if (continuation_qa.get("candidate_ROM_SHA256")!=sha(continuation_rom)
+        or continuation_qa.get("clean_ROM_IPS_SHA256")!=sha(continuation_ips)):
+        raise AssertionError("077 original full Quiz question continuation failed replay")
+    final_ips,explanation_qa=integrate_two_explanations(
+        clean,continuation_rom,root)
     final_rom=apply_ips(clean,final_ips)
     if (len(final_rom)!=len(clean) or
-        continuation_qa.get("candidate_ROM_SHA256")!=sha(final_rom) or
-        continuation_qa.get("clean_ROM_IPS_SHA256")!=sha(final_ips) or
+        explanation_qa.get("final_candidate_ROM_sha256")!=sha(final_rom) or
+        explanation_qa.get("clean_ROM_IPS_sha256")!=sha(final_ips) or
+        explanation_qa.get("new_native_explanation_fields_prepared")!=2 or
         continuation_qa.get("new_independent_original_Quiz_source_offset")!="0x320E8" or
         choice_qa.get("canonical_full_Quiz_answer_records")!=81 or
         choice_qa.get("SNES_emulator_tested") is not False or
@@ -64,7 +72,7 @@ def rebuild_one_patch(clean:bytes,archive_file:Path,root:Path):
     if final_rom[0x2975e:0x29760]!=original_061[0x2975e:0x29760]:
         raise AssertionError("Quiz relocation altered Vietnamese V2 font pointer")
     return final_ips,{
-        "status":"COMBINED_061_PLUS_81_CHOICES_PLUS_1_QUESTION_STATIC_UNTESTED",
+        "status":"COMBINED_061_PLUS_81_CHOICES_PLUS_3_QUIZ_FIELDS_STATIC_UNTESTED",
         "original_clean_ROM_sha256":CLEAN_SHA,
         "recovered_historical_stage":selected,
         "user_archive":provenance,
@@ -76,13 +84,15 @@ def rebuild_one_patch(clean:bytes,archive_file:Path,root:Path):
         "physical_ROM_size":len(final_rom),
         "quiz_81_choice_relocation_report":choice_qa,
         "additional_independent_Quiz_question_continuation_077_report":continuation_qa,
+        "additional_two_pointer_anchored_Quiz_explanations_078_report":explanation_qa,
+        "original_remaining_Quiz_native_field_candidates_added":3,
         "independent_Quiz_077_candidate_added":1,
-        "original_remaining_scanner_aliases_not_independently_patched":20,
+        "original_remaining_scanner_aliases_not_independently_patched":18,
         "source_one_archive_rebuild_passed":True,
         "newly_emulator_accepted_Quiz_source_strings":0,
         "recomputed_SNES_checksum":choice_qa["recomputed_SNES_checksum"],
         "font_V2_present_in_combined_candidate":True,
-        "all_82_original_independent_remaining_Quiz_fields_have_source_byte_prototypes":True,
+        "all_84_original_independent_remaining_Quiz_fields_have_source_byte_prototypes":True,
         "emulator_visual_text_tested":False,
         "quiz_answer_highlight_and_grading_tested":False,
         "mixed_native_Kanji_glyphs_verified_in_emulator":False,
