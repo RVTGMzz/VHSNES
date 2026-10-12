@@ -38,6 +38,9 @@ jobs:
       - name: Verify reconstruction chain and reject forged 039–043 archives (ROM-free)
         working-directory: games/ChibiMarukoChan-Mezase-Minami-no-Island
         run: python tools/selftest_recovery_071.py
+      - name: Verify 81 complete Vietnamese Quiz answers fit disjoint native 66-byte copy windows
+        working-directory: games/ChibiMarukoChan-Mezase-Minami-no-Island
+        run: python tools/plan_quiz_bankcopy_slots_073.py
       - name: Confirm no ROM or game-font binaries committed to source folder
         run: |
           if find games/ChibiMarukoChan-Mezase-Minami-no-Island \
