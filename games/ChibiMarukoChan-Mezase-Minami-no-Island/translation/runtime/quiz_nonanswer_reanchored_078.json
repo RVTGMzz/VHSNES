@@ -1,0 +1,65 @@
+{
+  "schema": "chibi.quiz.pointer_reanchored_nonanswers_078.v1",
+  "original_rom_sha256": "e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956",
+  "notice": "These are two ORIGINAL independent Quiz script fields missed by scanner source 077. 0x35A69 and 0x33B8D were not valid field starts, but their surrounding complete native fields are pointer-addressable.",
+  "fields": [
+    {
+      "native_record_start": "0x35A58",
+      "original_pointer_word_at": "0x3136B",
+      "original_pointer_word_hex": "58DA",
+      "table_role": "explanation_part_1",
+      "scanner_alias": "0x35A69",
+      "has_approved_prior_byte_overlay": false,
+      "original_japanese_lines": [
+        "４月１日エイプリルフールに",
+        "まる子とおじいちゃんは、山田",
+        "くんをだまそうとす"
+      ],
+      "vi_runtime_lines": [
+        "Cá tháng Tư",
+        "Maru và ông",
+        "lừa cậu."
+      ],
+      "original_glyph_capacities": [
+        13,
+        14,
+        9
+      ],
+      "original_native_glyph_offsets": [
+        "0x35A64",
+        "0x35A86",
+        "0x35AAA"
+      ],
+      "semantic_context": "Original 057 question already reads Yamada sắp bị lừa; the phrase 'cậu' in explanation refers to Yamada. Continuation part 2 remains separately staged at 0x35AC3."
+    },
+    {
+      "native_record_start": "0x33B8A",
+      "original_pointer_word_at": "0x31453",
+      "original_pointer_word_hex": "8ABB",
+      "table_role": "explanation_part_3",
+      "scanner_alias": "0x33B8D",
+      "has_approved_prior_byte_overlay": false,
+      "original_japanese_lines": [
+        "年生。"
+      ],
+      "vi_runtime_lines": [
+        "đó."
+      ],
+      "original_glyph_capacities": [
+        3
+      ],
+      "original_native_glyph_offsets": [
+        "0x33B94"
+      ],
+      "semantic_context": "Staged explanation part 2 at 0x33B3B already ends with the complete grade 'lớp 3'. This tail replaces leftover Japanese with natural conversational emphasis 'đó.' without duplicating the grade."
+    }
+  ],
+  "static_tested_original_ROM_byte_overlay": true,
+  "original_61_V2_font_build_verified": false,
+  "emulator_tested": false,
+  "approved_for_gameplay": false,
+  "source_only_replay_SHA256": "f560fb8b326b2f4185f7c0b4da149ebe0dee576a40b4ec28d32f375de1241e97",
+  "resulting_clean_Japanese_base_ROM_SHA256": "b1ae53c74a04bf69cde9c4aaa708cc6b53d20eea7a3f80c25a81a97a24daf421",
+  "checksum": "0x0A44",
+  "notes": "In original Japanese retail ROM 0x84xx custom Vietnamese glyphs do NOT render as Vietnamese; must be combined with original V2 font and tested in an SNES emulator."
+}
