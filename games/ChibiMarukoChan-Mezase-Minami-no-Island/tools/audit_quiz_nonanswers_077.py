@@ -3,8 +3,10 @@
 
 After 279 already-staged source IDs and 81 actual still-unstaged three-choice
 answer IDs, exactly 21 scanner rows remain. 10 are partially within an
-already staged physical script, 10 are an unsafe scanner boundary, and just
-ONE is an independently locatable native continuation (0x320E8). This does
+already staged physical script, 10 start at unsafe scanner boundaries, BUT
+two of those unsafe scanner aliases were re-anchored to real independently
+pointer-addressable native explanation records in checkpoint078. Thus there
+are THREE independent native fields: 0x320E8, 0x35A69 and 0x33B8D. This does
 NOT imply those 20 aliases are semantically fully localized.
 
 Never double-count fragments as new game strings. Never emit a ROM/IPS.
@@ -30,6 +32,7 @@ EXPECTED_UNSAFE={
     0x35A69,0x35DB3,0x361A4,0x364B1,0x33B8D,
 }
 ONE_INDEPENDENT={0x320E8}
+REANCHORED_UNSAFE_078={0x35A69,0x33B8D}
 
 def rows(p:Path):
     with p.open(encoding="utf-8-sig",newline="") as f:
@@ -69,8 +72,9 @@ def run(root:Path):
     records=[]
     for off in sorted(remaining):
         label=("nested_source_alias_review_parent" if off in EXPECTED_NESTED
+               else "scanner_unsafe_but_078_reanchored_to_native_pointer_field" if off in REANCHORED_UNSAFE_078
                else "unsafe_scanner_start_needs_parent_review" if off in EXPECTED_UNSAFE
-               else "single_independent_full_native_continuation_pending_emulator_QA")
+               else "077_independent_full_native_continuation_pending_emulator_QA")
         records.append({
             "original_scanner_offset":f"0x{off:X}",
             "classification":label,
@@ -86,7 +90,10 @@ def run(root:Path):
         "remaining_nonanswer_canonical_scanner_rows":21,
         "already_staged_nested_text_window_aliases":10,
         "unsafe_standalone_scanner_boundaries":10,
-        "single_original_physical_field_with_native_pointer":1,
+        "independent_native_field_recognized_by_077":1,
+        "further_pointer_reanchored_independent_fields_078":2,
+        "independent_native_fields_across_077_and_078":3,
+        "unsafe_scanner_aliases_still_requiring_parent_review":8,
         "unique_unstaged_nonanswer_native_field_original_offset":"0x320E8",
         "unique_unstaged_nonanswer_field_native_pointer_ROM":"0x311AF",
         "candidate_077_full_Vietnamese_line":manifest["selected_full_vietnamese_continuation"],
