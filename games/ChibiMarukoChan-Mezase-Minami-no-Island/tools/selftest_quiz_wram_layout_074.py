@@ -4,7 +4,10 @@
 Uses the exact canonical Vietnamese source files + original V2 codepage,
 and models the three sequential 65c816 66-byte writes into $7E8000,
 $7E8020 and $7E8040. Staged choices not in this experimental batch
-receive a short neutral fixture. This is NOT a full SNES emulator.
+receive a short neutral fixture. This is NOT a full SNES emulator. The 075 disassembly shows the game
+WAITS between choice copies for the text job to finish. Therefore this
+simulation's after-all-three-copies RAM damage cannot be interpreted as
+guaranteed *onscreen* corruption.
 """
 from __future__ import annotations
 import argparse
@@ -75,7 +78,8 @@ def run(root:Path):
             "per_choice_native_copy_bytes":66,
             "canonical_source_choices_simulated":len(choices),
             "truly_stride_safe_texts":len(stride_safe),
-            "definitely_corrupted_choice_1_or_2":len(corrupted),
+            "choice_1_or_2_buffer_bytes_changed_IF_render_deferred":len(corrupted),
+            "real_65816_waits_for_text_job_to_complete_before_next_copy":True,
             "choice_3_long_and_not_next_copy_overwritten":len(third_long),
             "release_all_81_full_labels_safe":False,
             "SNES_emulator_executed":False,
