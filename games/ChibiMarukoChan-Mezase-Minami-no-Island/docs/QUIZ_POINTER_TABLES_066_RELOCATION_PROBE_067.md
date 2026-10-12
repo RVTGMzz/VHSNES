@@ -1,5 +1,7 @@
 # Chibi Maruko-chan SNES — checkpoint 066/067: recovered all Quiz pointers and byte-only long-answer relocation
 
+**CHECKPOINT 073 SAFETY UPDATE.** The original SNES routine copies 66 bytes from the answer source. Single-option probe 067's relocation at `0x37FE0` lies only 32 bytes from end of bank06 and causes a 34-byte out-of-bank read. Its byte-level IPS replay is not evidence of safe engine execution. See `docs/CHECKPOINT_073_QUIZ_ENGINE_66_BYTE_COPY.md`.
+
 Date: 2026-10-12 · Branch `chibi-maruko-bootstrap-01` · Original ROM SHA256 `e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956`.
 
 ## 066 — The actual 9 × 50 bank-06 LoROM pointer arrays
