@@ -94,7 +94,11 @@ def run(root:Path,original_rom:bytes|None):
         snapshot={}
         for ordinal in (1,2,3):
             x=per_question.get((q,ordinal))
-            rec=(b"\x41"*x["record_size"]) if x else b"\x42"*11
+            # Make *every* slot's synthetic bytes distinct. If all source
+            # records use the same filler, an overlapping write can look
+            # byte-identical and falsely pass the deferred-copy test.
+            token=1+q*3+(ordinal-1)  # 1..150: unique per Quiz slot
+            rec=(bytes([token])*x["record_size"]) if x else bytes([token])*11
             source_window=rec+b"\x00"*(66-len(rec))
             start=start_by_ordinal[ordinal]
             ram[start:start+66]=source_window
