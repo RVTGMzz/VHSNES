@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Build complete 81-choice Quiz relocation IPS (EXPERIMENT, NOT PLAYABLE).
+"""Build a 52-choice native WRAM-safe subset of 81 Quiz answers (UNTESTED).
 
 Uses true original ROM byte-verified 65c816 66-byte answer copy contract and
-full canonical source Vietnamese text. Each answer gets a separate 68-byte
+full canonical source Vietnamese text. Each candidate gets a reserved 68-byte
 bank06 cell: 4-byte native header + 2-byte V2/CP932 glyphs + 81 6F 00 end,
 then zero padding to cover ALL 66 bytes the original engine reads. The two
 extra FF bytes per cell are an untouched guard.
@@ -11,6 +11,7 @@ Accepts clean original source only, or a previously cumulative Vietnamese
 checkpoint061 IPS + its verified QA report. Rebuilds a CLEAN-ROM-based IPS
 without distributing copyrighted original ROM/font bytes.
 
+The 29 answers requiring >32 bytes are DEFERRED because of SNES WRAM overlap.
 This is static byte-level integration only: the game is NOT emulator-tested.
 Never call it a release or assume wide Quiz options fit the visual menu.
 """
@@ -23,17 +24,21 @@ import unicodedata
 from pathlib import Path
 
 from build_content_first_040_fortune import apply_ips, make_ips
+from audit_quiz_wram_stride_074 import run as audit_wram
 from plan_quiz_bankcopy_slots_073 import (
     plan as plan_073, START, END, CELL_BYTES, NATIVE_COPY_BYTES,
 )
 
 ROOT=Path(__file__).resolve().parent.parent
 ORIGINAL_SHA="e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956"
-EXPECT_CLEAN_ONLY_IPS_SHA="58f284de922c3e44d2616c0de73918f6a2a86ee552c19cdc4e2cc51643f5f109"
-EXPECT_CLEAN_ONLY_ROM_SHA="5b8ed66e2ed43936703b99393607c552b5e3697d59eb22e4b3cb6ee94ed23aaa"
+EXPECT_CLEAN_ONLY_IPS_SHA="17b9d03fd42a732d6f0348816c540ca06e21175cde588fc25b0d60d62bfd6446"
+EXPECT_CLEAN_ONLY_ROM_SHA="5f640db8539312bf3ac01f25daff80357e4ecddffb66b7d86dcbbbb722648b10"
 PREFIX=bytes.fromhex("0E 06 0F 12")
 TERMINATOR=bytes.fromhex("81 6F 00")
 EXPECTED_COUNT=81
+EXPECTED_WRAM_SAFE_COUNT=52
+EXPECTED_BLOCKED_COUNT=29
+MAX_UNCHANGED_WRAM_STRIDE=32
 KANJI={"一","和","雄"}
 
 def sha(blob:bytes)->str:
@@ -84,11 +89,16 @@ def build(clean:bytes,baseline:bytes,project:Path,stage:str):
         or source_qa["summary"]["max_payload_record_size"]!=53
         or source_qa["summary"]["remaining_bank_end_bytes"]!=124):
         raise AssertionError("81 original source records or bank06 copy contract changed")
+    WRAM_audit=audit_wram(project,clean)["summary"]
+    if (WRAM_audit["canonical_full_answers_exceeding_32_byte_WRAM_stride"]!=29
+        or WRAM_audit["original_answer_1_or_2_records_overwritten_by_next_copy"]!=18):
+        raise AssertionError("Quiz WRAM destination overwrite risk regression")
     mapping=read_codepage(project)
 
     patched=bytearray(baseline)
     allowed=set(range(0x7fdc,0x7fe0))
     table_entries=[]
+    deferred_options=[]
     kanji_count=0
     for index,row in enumerate(slots):
         off=int(row["source_offset"],16)
@@ -113,16 +123,22 @@ def build(clean:bytes,baseline:bytes,project:Path,stage:str):
             raise AssertionError("Previous localization rewrote one of the 81 independent sources")
         if baseline[dst:dst+CELL_BYTES]!=b"\xFF"*CELL_BYTES:
             raise AssertionError("Previous localization occupied reserved bank06 source cell")
-        if len(text)!=row["record_size"]//2:
-            # A record has 7 fixed control bytes and 2 bytes per character:
-            # use a direct guard below rather than infer from record length.
-            if 7+2*len(text)!=row["record_size"]:
-                raise AssertionError("Full Vietnamese glyph count/source records changed")
+        if 7+2*len(text)!=row["record_size"]:
+            raise AssertionError("Full Vietnamese glyph count/source records changed")
         payload,native=encode_full(text,mapping,off)
-        kanji_count+=native
         record=PREFIX+payload+TERMINATOR
         if len(record)!=row["record_size"] or len(record)>NATIVE_COPY_BYTES:
             raise AssertionError("Full choice does not fit reserved original 66-byte copy window")
+        if len(record)>MAX_UNCHANGED_WRAM_STRIDE:
+            deferred_options.append({
+                "original_Japanese_source_offset":f"0x{off:X}",
+                "full_canonical_Vietnamese":text,
+                "original_answer_ordinal":row["answer_ordinal"],
+                "record_bytes":len(record),
+                "blocked_reason":"Record exceeds native 32-byte WRAM destination stride",
+            })
+            continue
+        kanji_count+=native
         full_copied=record+b"\x00"*(NATIVE_COPY_BYTES-len(record))
         if len(full_copied)!=66 or patched[dst:dst+CELL_BYTES]!=b"\xFF"*CELL_BYTES:
             raise AssertionError("Source memory bank must be unused full 68-byte cell")
@@ -140,8 +156,10 @@ def build(clean:bytes,baseline:bytes,project:Path,stage:str):
             "record_glyph_count":len(text),
             "record_bytes_before_zero_padding":len(record),
         })
-    if kanji_count!=4:
-        raise AssertionError("Distinct original Kazuo Kanji alternatives no longer intact")
+    if (len(table_entries)!=EXPECTED_WRAM_SAFE_COUNT or
+        len(deferred_options)!=EXPECTED_BLOCKED_COUNT or
+        kanji_count!=0):
+        raise AssertionError("52 safe/29 deferred full Quiz candidates changed")
     if not all(patched[START+i*CELL_BYTES+NATIVE_COPY_BYTES:
                        START+(i+1)*CELL_BYTES]==b"\xFF\xFF"
                for i in range(EXPECTED_COUNT)):
@@ -160,13 +178,13 @@ def build(clean:bytes,baseline:bytes,project:Path,stage:str):
         raise AssertionError("Clean original ROM IPS cannot reproduce the full result")
 
     if stage=="clean_source_only":
-        if (checksum!=0x1C5D or
-            len(changed)!=5511 or len(ips)!=6139 or nrecords!=124 or
+        if (checksum!=0xB592 or
+            len(changed)!=3539 or len(ips)!=3982 or nrecords!=87 or
             sha(ips)!=EXPECT_CLEAN_ONLY_IPS_SHA or
             sha(final_rom)!=EXPECT_CLEAN_ONLY_ROM_SHA):
             raise AssertionError("Independent 81-option clean Japanese ROM fingerprint drift")
     report={
-        "status":"SOURCE_BYTE_81_FULL_QUIZ_RELOCATION_STATIC_ONLY",
+        "status":"SOURCE_BYTE_52_WRAM_STRIDE_SAFE_QUIZ_RELOCATION_UNTESTED",
         "baseline_stage":stage,
         "clean_original_ROM_sha256":ORIGINAL_SHA,
         "baseline_ROM_sha256":sha(baseline),
@@ -175,7 +193,11 @@ def build(clean:bytes,baseline:bytes,project:Path,stage:str):
         "cumulative_clean_ROM_IPS_bytes":len(ips),
         "cumulative_clean_ROM_IPS_records":nrecords,
         "canonical_full_Quiz_answer_records":len(slots),
-        "native_Japanese_Kanji_2byte_glyph_occurrences":kanji_count,
+        "candidates_patched_in_source_byte_preview":len(table_entries),
+        "candidates_DEFERRED_for_original_WRAM_overwrite":len(deferred_options),
+        "candidates_with_guaranteed_next_copy_overwrite_if_forced":18,
+        "original_three_choice_WRAM_stride_bytes":MAX_UNCHANGED_WRAM_STRIDE,
+        "native_Japanese_Kanji_2byte_glyph_occurrences_in_safe_subset":kanji_count,
         "independent_disjoint_source_cell_size":CELL_BYTES,
         "engine_fixed_copy_window_bytes":NATIVE_COPY_BYTES,
         "changed_byte_count_vs_baseline":len(changed),
@@ -187,8 +209,10 @@ def build(clean:bytes,baseline:bytes,project:Path,stage:str):
         "80_plus_visual_width_acceptance_passed":False,
         "release_approved":False,
         "already_staged_Quiz_source_progress_changed":False,
+        "not_accepted_until_SNEmulator_verifies_UI":True,
         "no_commercial_ROM_written":True,
         "candidate_choices":table_entries,
+        "deferred_long_choices":deferred_options,
     }
     return ips,report
 
