@@ -1,5 +1,7 @@
 # Chibi Maruko-chan SNES — Checkpoint 069: 81/81 long Quiz answers byte-encodable via hybrid CP932/V2
 
+**CHECKPOINT 073 SAFETY UPDATE.** Although packed 81-answer text and pointer IPS bytes replayed, the native Quiz routine copies a *fixed 66 bytes* per answer. Checkpoint069's tightly packed variable-length records can spill into adjacent strings during RAM transfers. Future integration must use dedicated 68-byte slots from `0x36A00`, with emulator QA. See `docs/CHECKPOINT_073_QUIZ_ENGINE_66_BYTE_COPY.md`.
+
 Date: 2026-10-12 · Branch `chibi-maruko-bootstrap-01` · Clean user-supplied original SNES ROM SHA256 `e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956`.
 
 ## Result: preserve both Nagasawa Kazuo answer choices instead of shortening
