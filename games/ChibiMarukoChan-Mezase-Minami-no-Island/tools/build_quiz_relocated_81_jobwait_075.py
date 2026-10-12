@@ -203,6 +203,48 @@ def build(clean:bytes,baseline:bytes,project:Path,stage:str):
     }
     return ips,report
 
+def validate_061_baseline_report(qa:dict,rom_sha:str,ips_sha:str,clean_sha:str=ORIGINAL_SHA):
+    """Fail-closed support for direct 061/070 and recovery 071 JSON shapes.
+
+    This verifies actual hash agreement, report lineage and the claimed
+    release/test status. Caller ALSO checks native V2 byte pointer in ROM.
+    Never trust a filename, status string or an unverified report alone.
+    """
+    if not isinstance(qa,dict):
+        raise AssertionError("Expected a real checkpoint061 QA JSON object")
+    approved_shapes={
+        "FULL_043_TO_061_STATIC_ONLY_EMULATOR_UNTESTED",
+        "REBUILT_EXACT_043_AND_061_STATIC_ONLY_EMULATOR_UNTESTED",
+    }
+    if qa.get("status") not in approved_shapes:
+        raise AssertionError("Unexpected checkpoint061 source chain report status")
+    hashes=[qa.get("result_061_ROM_sha256"),qa.get("final_061_ROM_sha256")]
+    nested=qa.get("full_061_source_report")
+    if nested is not None:
+        if not isinstance(nested,dict) or nested.get("status")!="FULL_043_TO_061_STATIC_ONLY_EMULATOR_UNTESTED":
+            raise AssertionError("Invalid nested recovery 061 source-chain QA")
+        hashes.append(nested.get("result_061_ROM_sha256"))
+    hashes=[x for x in hashes if x is not None]
+    if not hashes or any(x!=rom_sha for x in hashes):
+        raise AssertionError("Supplied 061 QA ROM hash mismatch")
+    present_original=qa.get("original_clean_ROM_sha256")
+    if present_original is not None and present_original!=clean_sha:
+        raise AssertionError("061 QA refers to an unrelated clean Japanese ROM")
+    if qa.get("historical_baseline_stage") is not None and qa["historical_baseline_stage"] not in ("039","040","041","042","043"):
+        raise AssertionError("Unrecognized recovery provenance")
+    for key in ("final_clean_ROM_IPS_sha256","final_061_clean_ROM_IPS_sha256"):
+        if key in qa and qa[key]!=ips_sha:
+            raise AssertionError("061 report IPS fingerprint differs from the supplied IPS")
+    if any(qa.get(key) is True for key in ("emulator_tested","actual_SNEmulator_tested","original_sfc_emulator_tested","release_ready","release_approved")):
+        raise AssertionError("Untested static 061 provenance cannot claim emulator/release")
+    return {
+        "validated_ROM_SHA256":rom_sha,
+        "validated_clean_ROM_IPS_SHA256":ips_sha,
+        "report_kind":qa["status"],
+        "provenance_hash_fields_agree":True,
+    }
+
+
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument("original_clean_sfc",type=Path)
@@ -227,14 +269,20 @@ def main():
     clean=a.original_clean_sfc.read_bytes()
     baseline=clean
     stage="clean_source_only"
+    provenance=None
     if a.baseline_ips:
-        baseline=apply_ips(clean,a.baseline_ips.read_bytes())
+        baseline_ips_bytes=a.baseline_ips.read_bytes()
+        baseline=apply_ips(clean,baseline_ips_bytes)
         official_qa=json.loads(a.baseline_qa_json.read_text(encoding="utf-8"))
-        if (official_qa.get("result_061_ROM_sha256")!=sha(baseline) or
-            official_qa.get("emulator_tested") is True):
-            raise AssertionError("Missing/incorrect 061 lineage or unverified report")
+        provenance=validate_061_baseline_report(
+            official_qa,sha(baseline),sha(baseline_ips_bytes),sha(clean))
+        if (len(baseline)!=len(clean) or
+            int.from_bytes(baseline[0x2975e:0x29760],"little")!=0x9a74):
+            raise AssertionError("Supplied 061 baseline lacks original verified V2 font pointer")
         stage="cumulative_V2_061"
     ips,report=build(clean,baseline,a.project_root,stage)
+    if provenance is not None:
+        report["verified_061_input_provenance"]=provenance
     # Outputs only after full byte, source, pointer, checksum and replay QA.
     a.ips.parent.mkdir(parents=True,exist_ok=True)
     a.report.parent.mkdir(parents=True,exist_ok=True)
