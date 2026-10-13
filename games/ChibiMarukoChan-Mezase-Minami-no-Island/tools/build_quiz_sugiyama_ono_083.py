@@ -68,7 +68,7 @@ def audit(root: Path) -> dict:
     if (int(first["at"], 0) != 0x32BBE
         or first["kind"] != "ascii_only_indent"
         or first["original_byte_count"] != 2
-        or first["caption_old"] != first["caption_new"] != ""):
+        or first["caption_old"] != "" or first["caption_new"] != ""):
         raise AssertionError("Original leading indentation is not mutable Quiz text")
     mapping = read_codepage(root)
     changes = 0
