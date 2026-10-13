@@ -1,0 +1,124 @@
+{
+  "schema": "chibi.quiz.parent_semantic_restore.079.v1",
+  "original_clean_rom_sha256": "e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956",
+  "goal": "Restore real Japanese facts omitted from earlier compressed Quiz scene lines without changing byte layout, historical manifests, or original JP pointers.",
+  "source_qa": "18 remaining nested/unsafe scanner aliases after 077+078; these three parents contain independently confirmed semantic omissions.",
+  "records": [
+    {
+      "parent_source": "0x3271E",
+      "original_record": "0x3271A",
+      "pointer_word_at": "0x31399",
+      "prior_stage": "059",
+      "source_aliases": [
+        "0x3275E"
+      ],
+      "semantic_fact_restored": [
+        "Hiroshi is 40 years old",
+        "likes fishing",
+        "fan of Misora Hibari; existing compressed name Misora"
+      ],
+      "lines": [
+        {
+          "glyph_offset": "0x3272A",
+          "capacity": 13,
+          "old": "Bố mê câu cá",
+          "new": "Bố mê câu cá",
+          "original_jp": "父ヒロシはしゅみがつりで、"
+        },
+        {
+          "glyph_offset": "0x3274C",
+          "capacity": 13,
+          "old": "và Misora nữa",
+          "new": "40. Mê Misora",
+          "original_jp": "美空ひばりファンの４０才。"
+        }
+      ]
+    },
+    {
+      "parent_source": "0x32971",
+      "original_record": "0x3296D",
+      "pointer_word_at": "0x31171",
+      "prior_stage": "058",
+      "source_aliases": [
+        "0x3299F"
+      ],
+      "semantic_fact_restored": [
+        "older sister attends grade 6",
+        "fan of singer Saijo Hideki"
+      ],
+      "lines": [
+        {
+          "glyph_offset": "0x32977",
+          "capacity": 14,
+          "old": "Chị của Maruko",
+          "new": "Chị lớp 6 mê",
+          "original_jp": "いつもクールなおねえちゃんは"
+        },
+        {
+          "glyph_offset": "0x3299B",
+          "capacity": 14,
+          "old": "học lớp 6 rồi",
+          "new": "Saijo Hideki",
+          "original_jp": "小学６年生。西城秀樹のファン"
+        }
+      ]
+    },
+    {
+      "parent_source": "0x35D7C",
+      "original_record": "0x35D78",
+      "pointer_word_at": "0x313AD",
+      "prior_stage": "057",
+      "source_aliases": [
+        "0x35DB3"
+      ],
+      "semantic_fact_restored": [
+        "Yoshiko is in class 6-2, same as Maruko's elder sister",
+        "Yoshiko likes Koyama"
+      ],
+      "lines": [
+        {
+          "glyph_offset": "0x35D84",
+          "capacity": 13,
+          "old": "Yoshiko học",
+          "new": "Yoshiko 6-2",
+          "original_jp": "よし子さんは、おねえちゃん"
+        },
+        {
+          "glyph_offset": "0x35DA6",
+          "capacity": 14,
+          "old": "chung khối với",
+          "new": "cùng lớp chị",
+          "original_jp": "とおなじ６年２組。小山くんの"
+        },
+        {
+          "glyph_offset": "0x35DCA",
+          "capacity": 14,
+          "old": "chị Maruko",
+          "new": "mê Koyama",
+          "original_jp": "ことがすきである。まる子たち"
+        }
+      ]
+    }
+  ],
+  "other_original_scanner_offsets_need_context_review": [
+    "0x31E50",
+    "0x31E7B",
+    "0x31F33",
+    "0x32874",
+    "0x32A96",
+    "0x32C15",
+    "0x33050",
+    "0x33119",
+    "0x34403",
+    "0x34A99",
+    "0x352AC",
+    "0x352C2",
+    "0x353F3",
+    "0x361A4",
+    "0x364B1"
+  ],
+  "official_stage_completed_count_changed": false,
+  "actual_real_061_font_baseline_present": false,
+  "emulator_tested": false,
+  "ready_to_release": false
+}
