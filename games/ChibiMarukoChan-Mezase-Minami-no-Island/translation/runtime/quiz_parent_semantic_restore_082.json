@@ -1,0 +1,75 @@
+{
+  "schema": "chibi.quiz.parent_semantic_restore.082.v1",
+  "original_clean_ROM_sha256": "e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956",
+  "apply_after": "081 post-font V2 overlay; historical 058 source-only manifest is immutable",
+  "intent": "Remove repeated mother-love caption, reinstate her curbing Maruko's antics; restore sister's gratin preference while retaining grade 6 and sibling trouble; real two existing original Quiz explanation records, not extra source IDs",
+  "records": [
+    {
+      "source": "0x328E5",
+      "native_start": "0x328E1",
+      "stage": "058",
+      "role": "Sumire mother explanation continuation",
+      "context": "Previous physical record 0x3288E already says Sumire is 40, hot-tempered, and loves both daughters; this record must cover まる子のバカげたこうどうをおさえる (also restrains Maruko's foolish behavior). Next record 0x32942 means this is also her role.",
+      "glyphs": [
+        {
+          "at": "0x328EB",
+          "capacity": 14,
+          "jp": "のことを大切におもっている。",
+          "old": "Mẹ luôn thương",
+          "vi": "Mẹ cũng ngăn"
+        },
+        {
+          "at": "0x3290F",
+          "capacity": 8,
+          "jp": "まる子のバカげた",
+          "old": "Maruko",
+          "vi": "Maruko"
+        },
+        {
+          "at": "0x32929",
+          "capacity": 9,
+          "jp": "こうどうをおさえる",
+          "old": "rất nhiều",
+          "vi": "quậy phá"
+        }
+      ]
+    },
+    {
+      "source": "0x32A38",
+      "native_start": "0x32A34",
+      "stage": "058",
+      "role": "Maruko older sister explanation",
+      "context": "Original Japanese reports frequent trouble caused by Maruko, older sister likes gratin, and is in sixth grade. Prior three visible lines retained only trouble and grade, silently dropped gratin. Reflow as two colloquial sentences.",
+      "glyphs": [
+        {
+          "at": "0x32A40",
+          "capacity": 13,
+          "jp": "まる子にしばしばめいわくを",
+          "old": "Maruko quậy",
+          "vi": "Maru phá chị."
+        },
+        {
+          "at": "0x32A62",
+          "capacity": 12,
+          "jp": "かけられるおねえちゃんは",
+          "old": "chị phát mệt",
+          "vi": "Chị lớp 6"
+        },
+        {
+          "at": "0x32A82",
+          "capacity": 14,
+          "jp": "グラタンがすきな小学６年生。",
+          "old": "chị học lớp 6",
+          "vi": "mê gratin."
+        }
+      ]
+    }
+  ],
+  "existing_original_parent_records_corrected": 2,
+  "original_physical_glyph_frames": 6,
+  "changed_glyph_frames": 5,
+  "original_fixed_width_cells": 70,
+  "new_independent_scanner_IDs": 0,
+  "emulator_tested": false,
+  "production_approved": false
+}
