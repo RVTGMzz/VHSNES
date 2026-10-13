@@ -59,6 +59,9 @@ jobs:
       - name: Verify 078 two original-pointer-anchored Quiz explanation fields and fixed Vietnamese line capacities
         working-directory: games/ChibiMarukoChan-Mezase-Minami-no-Island
         run: python tools/audit_quiz_native_fields_078.py
+      - name: Audit 079 old Quiz omissions and seven exact original glyph cells, preserve stages 057-059
+        working-directory: games/ChibiMarukoChan-Mezase-Minami-no-Island
+        run: python tools/selftest_quiz_parent_semantics_079.py
       - name: Confirm no ROM or game-font binaries committed to source folder
         run: |
           if find games/ChibiMarukoChan-Mezase-Minami-no-Island \
