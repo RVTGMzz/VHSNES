@@ -57,7 +57,7 @@ def audit(root:Path)->dict:
     data=json.loads((root/MANIFEST).read_text(encoding="utf-8"))
     records=data.get("records",[])
     if (data.get("schema")!="chibi.quiz.seven_fact_repair.085.v1"
-        or data.get("clean_sha256")!=CLEAN_SHA
+        or data.get("clean_original_sha256")!=CLEAN_SHA
         or data.get("apply_after")!="084 cumulative V2 Quiz source candidate"
         or data.get("stage_manifests_immutable") is not True
         or data.get("emulator_tested") is not False
@@ -67,7 +67,7 @@ def audit(root:Path)->dict:
         or data.get("changed_caption_frames")!=14
         or data.get("new_canonical_source_ids")!=0
         or len(records)!=7):
-        raise AssertionError("084 source contract/status drift")
+        raise AssertionError("085 source contract/status drift")
     old_stages={
         name:{int(r["file_offset"],0):r
               for r in json.loads((root/path).read_text(encoding="utf-8"))["records"]}
