@@ -80,6 +80,9 @@ jobs:
       - name: Verify 084 four context-faithful Quiz corrections keep exact stage054-058 byte capacities
         working-directory: games/ChibiMarukoChan-Mezase-Minami-no-Island
         run: python tools/build_quiz_semantic_context_batch_084.py --audit-only
+      - name: Verify 085 seven Japanese Quiz omissions repaired in existing V2 frames
+        working-directory: games/ChibiMarukoChan-Mezase-Minami-no-Island
+        run: python tools/build_quiz_seven_fact_restore_085.py --audit-only
       - name: Confirm no ROM or game-font binaries committed to source folder
         run: |
           if find games/ChibiMarukoChan-Mezase-Minami-no-Island \
