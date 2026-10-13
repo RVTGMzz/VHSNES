@@ -1,5 +1,13 @@
 # Translation progress — Chibi Maruko-chan
 
+## Checkpoint 083 (2026-10-13) — named Quiz context + honest Fortune expansion audit
+
+- **One existing stage058 Quiz explanation (`0x32BBE`) revised:** `Ono và bạn / cùng ra khơi` -> **`Sugiyama và / Ono ra khơi`** to preserve the named friend from original `杉山くんと二人でいつか`. Fits original 11/13 V2 glyph-cell lines, source/parent 058 unchanged, covered by guarded cumulative post082 083 ROM builder. **No new original source ID.**
+- Four remaining Fortune canonical source strings `0x2BD5E`, `0x2C86B`, `0x2CA7D`, `0x2CADD` fully translated but still **do not fit** original physical 3/4/3/4 cells: `Lời trời mách`, `Hẹn tuần sau`, `Vàng`, `Trắng`. New source-only JSON/tool validates existing V2 glyph mappings, overflow and no unsafe fixed-field writing; **0 newly executable Fortune text fields**. The 153/157 previously prepared content candidates remain conditional on an exact integrated ROM build; four expansion cases still pending.
+- GitHub source QA [run 38364216770](https://github.com/RVTGMzz/VHSNES/actions/runs/38364216770) **PASS**, including both 083 checks. No original game SFC or historic 039–043 ZIP/IPS in this runtime, so no integrated IPS or actual SNES emulator pass.
+- Honest historical Quiz staging **279/381** unchanged; 81 answer/3 extra native source proposals remain static-only, `0x31F33` age-nine detail unresolved. Avoid fake 100%-translated claims and unplayable micro-downloads.
+
+
 ## Checkpoint 082 (2026-10-13) — two source-faithful Quiz narration repairs
 
 - **2 existing stage058 original Quiz explanation records revised, 5 of 6 fixed-glyph text lines changed**: Sumire now also restrains Maruko's mischief (`0x328E5`); Maruko's sister still attends grade six and now explicitly likes gratin (`0x32A38`). See `docs/CHECKPOINT_082_SUMIRE_SISTER_FACTS.md` and the guarded runtime manifest/builder.
