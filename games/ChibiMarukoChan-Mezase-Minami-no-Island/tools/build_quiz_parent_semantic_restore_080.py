@@ -77,6 +77,34 @@ def audit(root: Path) -> dict:
     for stage,path in STAGE_MANIFESTS.items():
         records=json.loads((root/path).read_text(encoding="utf-8"))["records"]
         older[stage]={int(r["file_offset"],0):r for r in records}
+    prior_lookup=older
+    # All 12 remaining scanner aliases must have a reviewed parent;
+    # 11 key facts are in old text, one age-nine fact remains missing.
+    remaining=json.loads((root/"translation/runtime/quiz_remaining_fact_qa_080.json").read_text(encoding="utf-8"))
+    tail=remaining.get("audit_remaining",[])
+    if (remaining.get("schema")!="chibi.quiz.remaining_scanner_fact_qa.080.v1"
+        or len(tail)!=12
+        or len({int(x["scanner"],0) for x in tail})!=12
+        or set(remaining.get("new_semantic_parent_repairs_080",[]))!=
+           {"0x32C15","0x33119","0x353F3"}
+        or remaining.get("source_inventory_marked_completed") is not False):
+        raise AssertionError("Incomplete 12 Quiz scanner alias source QA ledger")
+    outstanding=[]
+    for fact in tail:
+        stage=fact["stage"]
+        if stage not in prior_lookup:
+            raise AssertionError("Missing original stage for Quiz scanner alias")
+        parent=prior_lookup[stage].get(int(fact["parent"],0))
+        if parent is None:
+            raise AssertionError("Quiz scanner alias has no approved parent")
+        lines=parent["vi_runtime_lines"]
+        if any(e not in lines for e in fact["evidence_in_staged_lines"]):
+            raise AssertionError("Supposed translated Quiz fact not present in earlier parent")
+        if fact["disposition"].startswith("needs_"):
+            outstanding.append(int(fact["scanner"],0))
+    if outstanding!=[0x31F33]:
+        raise AssertionError("Known original Maruko age-nine clue still requires a natural fit")
+
     cp=read_codepage(root)
     changed=0;checked=0;writable=0;previous_bytes=0
     for record in plan["records"]:
@@ -130,6 +158,8 @@ def audit(root: Path) -> dict:
         "newly_counted_canonical_Quiz_strings":0,
         "source_aliases_with_fact_repair":[f"0x{x:X}" for x in sorted(EXPECTED_PATCHED_SOURCE_ALIASES)],
         "other_original_scanner_aliases_pending_context_QA":12,
+        "remaining_alias_parent_facts_verified":11,
+        "remaining_age_9_clue_unresolved":"0x31F33",
         "SNES_emulator_tested":False,
         "ROM_or_IPS_written_by_audit":False,
     }
