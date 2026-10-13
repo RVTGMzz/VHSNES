@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Chibi: one 039–043 ZIP/IPS -> 061 +81 choices +3 fields +079 QA IPS.
+"""Chibi: one 039–043 ZIP/IPS -> 061 +81 choices +3 fields +079–082 QA IPS.
 
 End-to-end combines checkpoint071 guarded recovery and checkpoint075 complete
 Quiz 81-choice source/LoROM pointer relocation plus one independently
@@ -29,6 +29,7 @@ from build_quiz_native_explanations_078 import build as integrate_two_explanatio
 from build_quiz_parent_semantic_restore_079 import build as restore_three_semantic_parents
 from build_quiz_parent_semantic_restore_080 import build as restore_080_quiz_context
 from build_quiz_parent_semantic_restore_081 import build as restore_081_quiz_context
+from build_quiz_parent_semantic_restore_082 import build as restore_082_quiz_context
 
 ROOT=Path(__file__).resolve().parent.parent
 
@@ -77,12 +78,19 @@ def rebuild_one_patch(clean:bytes,archive_file:Path,root:Path):
     if (semantic_080_qa.get("candidate_ROM_sha256")!=sha(semantic_080_rom)
         or semantic_080_qa.get("cumulative_clean_ROM_IPS_sha256")!=sha(semantic_080_ips)):
         raise AssertionError("080 known contextual Quiz corrections failed exact IPS replay")
-    final_ips,semantic_081_qa=restore_081_quiz_context(
+    semantic_081_ips,semantic_081_qa=restore_081_quiz_context(
         clean,semantic_080_rom,root)
+    semantic_081_rom=apply_ips(clean,semantic_081_ips)
+    if (semantic_081_qa.get("candidate_ROM_sha256")!=sha(semantic_081_rom)
+        or semantic_081_qa.get("final_cumulative_clean_ROM_IPS_sha256")!=sha(semantic_081_ips)):
+        raise AssertionError("081 previous Quiz source contextual edits failed replay")
+    final_ips,semantic_082_qa=restore_082_quiz_context(
+        clean,semantic_081_rom,root)
     final_rom=apply_ips(clean,final_ips)
     if (len(final_rom)!=len(clean) or
-        semantic_081_qa.get("candidate_ROM_sha256")!=sha(final_rom) or
-        semantic_081_qa.get("final_cumulative_clean_ROM_IPS_sha256")!=sha(final_ips) or
+        semantic_082_qa.get("candidate_ROM_sha256")!=sha(final_rom) or
+        semantic_082_qa.get("cumulative_clean_ROM_IPS_sha256")!=sha(final_ips) or
+        semantic_082_qa.get("existing_native_Quiz_explanation_records")!=2 or
         semantic_081_qa.get("canonical_source_records_covered_by_prior_stages")!=4 or
         semantic_080_qa.get("three_original_Quiz_parents_reviewed")!=3 or
         semantic_qa.get("canonical_parent_fields_reviewed")!=3 or
@@ -96,7 +104,7 @@ def rebuild_one_patch(clean:bytes,archive_file:Path,root:Path):
     if final_rom[0x2975e:0x29760]!=original_061[0x2975e:0x29760]:
         raise AssertionError("Quiz relocation altered Vietnamese V2 font pointer")
     return final_ips,{
-        "status":"COMBINED_061_PLUS_81_CHOICES_PLUS_3_NATIVE_FIELDS_PLUS_079_080_081_SEMANTIC_QA_UNTESTED",
+        "status":"COMBINED_061_PLUS_81_CHOICES_PLUS_3_NATIVE_FIELDS_PLUS_079_080_081_082_SEMANTIC_QA_UNTESTED",
         "original_clean_ROM_sha256":CLEAN_SHA,
         "recovered_historical_stage":selected,
         "user_archive":provenance,
@@ -112,6 +120,7 @@ def rebuild_one_patch(clean:bytes,archive_file:Path,root:Path):
         "079_restored_existing_3_semantic_parent_fields_report":semantic_qa,
         "080_restored_existing_3_additional_semantic_parents_report":semantic_080_qa,
         "081_restored_existing_4_more_semantic_parents_report":semantic_081_qa,
+        "082_restored_two_additional_semantic_parent_records_report":semantic_082_qa,
         "original_remaining_Quiz_native_field_candidates_added":3,
         "independent_Quiz_077_candidate_added":1,
         "original_remaining_scanner_aliases_not_independently_patched":18,
@@ -121,7 +130,8 @@ def rebuild_one_patch(clean:bytes,archive_file:Path,root:Path):
         "079_existing_original_semantic_omissions_restored":3,
         "080_existing_original_semantic_omissions_restored":3,
         "081_existing_original_semantic_omissions_restored":4,
-        "recomputed_SNES_checksum":choice_qa["recomputed_SNES_checksum"],
+        "082_existing_original_semantic_omissions_restored":2,
+        "recomputed_SNES_checksum":semantic_082_qa["LoROM_checksum"],
         "font_V2_present_in_combined_candidate":True,
         "all_84_original_independent_remaining_Quiz_fields_have_source_byte_prototypes":True,
         "emulator_visual_text_tested":False,
