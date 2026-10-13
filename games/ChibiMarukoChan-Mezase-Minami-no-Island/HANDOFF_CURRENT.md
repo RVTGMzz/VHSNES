@@ -1,5 +1,22 @@
 # HANDOFF CURRENT — Chibi Maruko-chan SNES Việt hóa
 
+## CHECKPOINT 086 — 2026-10-13: 7 STAGE057 QUIZ CONTENT/GRAMMAR REPAIRS, SOURCE CI PASS
+
+**Read `docs/CHECKPOINT_086_SEVEN_QUIZ_STAGE057_CONTEXT_REPAIRS.md` FIRST.** Re-reviewed seven previously staged **057** Quiz records against `quiz_batch02_part2_vi.csv` and `part3` original Japanese + full Vietnamese, fixed **16** flawed V2 display captions within **19** existing JP two-byte frames (**191 original glyph cells**), no new scanner source IDs:
+- `0x35AC3`: prior `Tin thật / nên đành / nói thật` **WRONGLY implied telling the truth**. New **`Yamada / tin Maru / thật lòng`**; next native `0x35B16` still says the lie **became true**. The emotional beat is in canonical full VI, curtailed on-screen due to 9/9/9 original cell widths.
+- `0x35B94`: `Người đó / là?` -> **`Ca sĩ tên / gì?`**, natural complete Yamane question.
+- `0x35C63`: `Nhưng cậu / rất quý / người già` -> **`Quý người / già và / khiêm tốn`**; restore Japanese humility `けんきょ`.
+- `0x35EDE`: `Em tên gì? / nào` -> **`Em gái tên / gì?`**, eliminate truncated orphan word.
+- `0x35F38`: `Nagayama rất / rành sâu bọ / em tên Koharu` -> **`Nagayama rành / cây cỏ, sâu bọ / Hanawa cũng nể`**. Full JP says Hanawa respects his nature/insect knowledge, and next original `0x35FA9` already identifies little sister Koharu.
+- `0x360FA`: originally ambiguous `Bọn quậy phá / bắt nạt bạn / Ono, Sugiyama` -> **`Bọn quậy phá / bắt nạt bạn / Ono, Sugi cứu`**. Ono/Sugiyama are helpers defending classmates, not bullies/victims; full names in prior `0x36057`.
+- `0x36661`: vague `Chị Maruko / hay đọc gì? / nhỉ?` -> **`Chị Maruko / đọc manga / nào?`**; exact manga title is next-stage answer Ribon.
+
+Added `translation/runtime/quiz_context_semantics_086.json`; fail-closed `tools/build_quiz_context_semantics_086.py` ROM-free `--audit-only` proves 057 source CSV+historic captions, V2 mapping/cell lengths, total 16 edited/19 frames/191 cells. Optional ORIGINAL JAPANESE SHA-locked ROM function only can verify native raw CP932/816F, baseline V2/font/old captions, pointer-shaped anchors, changing only approved 16 glyph spans+checksum and replay one clean-ROM IPS. **No real user-owned original 2MiB SFC or historical 039–043 ZIP/IPS access this session**, so binary/emu build not run; do NOT claim gameplay tested.
+
+Added dedicated 086 source CI step, **PASS** [38377484960](https://github.com/RVTGMzz/VHSNES/actions/runs/38377484960) together with older 084/085 checks. `tools/recover_merge_061_81_one_ips_076.py` appends guarded **086** after 085, outputs ONE cumulative original-ROM IPS when inputs available; preserved earlier stage hashes/font. Github source files and docs have been updated.
+
+Original Quiz historic scanner staging **279/381 unchanged** (086 changed 7 existing explanations, zero new independent originals), 81 full-answer +3 native non-answer candidates untested; Fortune 4 long overflow captions, age-nine `0x31F33` needing natural room, G3 result/ending, credit exact **Việt hóa bởi Votri Valley**, emulator/title/font QA pending. Existing 13/13-cell `Cung Kim Ngưu / Sinh hôm nào?` intentionally NOT compromised to force awkward `9t`. **Next checkpoint: 087**.
+
 ## CHECKPOINT 085 — 2026-10-13: SEVEN REAL QUIZ FACT/NAMES RESTORED IN CONTENT SOURCE
 
 **Read `docs/CHECKPOINT_085_SEVEN_QUIZ_FACTS_AND_NAMES.md` FIRST.** Re-read full source Japanese with canonical Vietnamese and historical real stage054/058/059 Quiz captions; seven previously compressed or imprecise contexts restored, **14** changed V2 caption frames in **20** original native physical lines, total **234** original glyph cells preserved:
