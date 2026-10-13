@@ -1,0 +1,114 @@
+{
+  "schema": "chibi.quiz.parent_semantic_restore.080.v1",
+  "original_clean_ROM_sha256": "e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956",
+  "description": "Preserve original Japanese 65c816 script/control/pointer bytes and the historical 054/058 V2 stage digests; correct 3 already-staged Quiz parent fields in post-079 composite overlay only.",
+  "records": [
+    {
+      "parent_source_offset": "0x32C09",
+      "historical_stage": "058",
+      "original_native_record": "0x32C05",
+      "original_pointer_word_at": "0x313BD",
+      "original_pointer_word_hex": "05AC",
+      "role": "quiz_explanation_2",
+      "scanner_alias": "0x32C15",
+      "source_fact": "Ono moves/transfers to Tokyo during the 3rd school term, not in a third round",
+      "old_lines": [
+        "Sang đợt ba",
+        "đi Tokyo",
+        "rồi!"
+      ],
+      "new_lines": [
+        "Học kỳ 3",
+        "đi Tokyo",
+        "rồi!"
+      ],
+      "original_line_caps": [
+        13,
+        8,
+        6
+      ],
+      "original_line_offsets": [
+        "0x32C0F",
+        "0x32C31",
+        "0x32C49"
+      ],
+      "original_japanese": [
+        "ゆめ。３学期には東京へ転校",
+        "してしまうことに",
+        "なっている。"
+      ]
+    },
+    {
+      "parent_source_offset": "0x330E9",
+      "historical_stage": "058",
+      "original_native_record": "0x330E5",
+      "original_pointer_word_at": "0x3114F",
+      "original_pointer_word_hex": "E5B0",
+      "role": "quiz_question_main",
+      "scanner_alias": "0x33119",
+      "source_fact": "The class B-ranking male trio includes Hamaji and Buutaro; the question asks who the third boy is",
+      "old_lines": [
+        "Hamaji cùng",
+        "Buutaro hạng B"
+      ],
+      "new_lines": [
+        "Bộ ba hạng B",
+        "Hamaji Buutaro"
+      ],
+      "original_line_caps": [
+        13,
+        14
+      ],
+      "original_line_offsets": [
+        "0x330EF",
+        "0x33111"
+      ],
+      "original_japanese": [
+        "クラス内ではまじ、ブー太郎",
+        "とともにＢ級男子トリオと言え"
+      ]
+    },
+    {
+      "parent_source_offset": "0x353D6",
+      "historical_stage": "054",
+      "original_native_record": "0x353D2",
+      "original_pointer_word_at": "0x313A7",
+      "original_pointer_word_hex": "D2D3",
+      "role": "quiz_explanation_1",
+      "scanner_alias": "0x353F3",
+      "source_fact": "Maruo's mother is 49 and described as a very kind/gentle woman; not necessarily a statement of her love toward her son",
+      "old_lines": [
+        "Mẹ Maruo 49",
+        "rất thương con",
+        "thế mà bị chê"
+      ],
+      "new_lines": [
+        "Mẹ Maruo 49",
+        "rất hiền lành",
+        "thế mà bị chê"
+      ],
+      "original_line_caps": [
+        14,
+        14,
+        13
+      ],
+      "original_line_offsets": [
+        "0x353DC",
+        "0x35400",
+        "0x35424"
+      ],
+      "original_japanese": [
+        "丸尾くんのかあさまは４９才。",
+        "とてもやさしいかあさまだが、",
+        "丸尾くんは花輪くんのママの"
+      ]
+    }
+  ],
+  "counted_as_new_canonical_source_items": 0,
+  "change_original_054_058_manifests": false,
+  "full_parent_manifests_semantically_lossless": false,
+  "requires_genuine_integrated_V2_font_ROM": true,
+  "actual_combined_ROM_built": false,
+  "SNES_emulator_tested": false,
+  "release_approved": false
+}
