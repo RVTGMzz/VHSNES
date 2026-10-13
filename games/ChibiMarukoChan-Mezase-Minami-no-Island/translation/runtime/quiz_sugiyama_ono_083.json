@@ -1,0 +1,45 @@
+{
+  "schema": "chibi.quiz.sugiyama_ono_context.083.v1",
+  "clean_original_sha256": "e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956",
+  "apply_after": "checkpoint 082; exact previous stage058 V2 captions must be present; historical 058 file immutable",
+  "original_stage": "058",
+  "source": "0x32BBE",
+  "native_header": "0x32BBA",
+  "source_file": "translation/source/quiz_batch03_part2_vi.csv",
+  "original_source_jp_scanner": "  ｛        杉山くんと二人でいつか｛      船乗りになることが大野君の｛",
+  "source_vi_full": "Ước mơ của Ono-kun là một ngày nào đó cùng Sugiyama-kun...",
+  "context": "The previous question asks what Ono dreams of becoming. Restore the actual friend Sugiyama's name in the following native explanation, not a vague 'bạn'.",
+  "frames": [
+    {
+      "at": "0x32BBE",
+      "kind": "ascii_only_indent",
+      "original_byte_count": 2,
+      "caption_old": "",
+      "caption_new": "",
+      "immutable": true
+    },
+    {
+      "at": "0x32BCA",
+      "capacity": 11,
+      "jp": "杉山くんと二人でいつか",
+      "old": "Ono và bạn",
+      "vi": "Sugiyama và"
+    },
+    {
+      "at": "0x32BE8",
+      "capacity": 13,
+      "jp": "船乗りになることが大野君の",
+      "old": "cùng ra khơi",
+      "vi": "Ono ra khơi"
+    }
+  ],
+  "original_816f_offsets": [
+    "0x32BC0",
+    "0x32BE0",
+    "0x32C02"
+  ],
+  "changed_existing_V2_frames": 2,
+  "new_canonical_source_offsets_added": 0,
+  "emulator_tested": false,
+  "release_approved": false
+}
