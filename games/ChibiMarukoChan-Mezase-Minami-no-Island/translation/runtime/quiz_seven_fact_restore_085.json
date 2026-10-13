@@ -19,7 +19,10 @@
         "Mê burger, kem",
         "Tiền tiêu vặt"
       ],
-      "why": "Original ハンバーグとアイスクリーム explicitly names both hamburger and ice cream; prior runtime hid hamburger. Money setup remains for next record."
+      "why": "Original ハンバーグとアイスクリーム explicitly names both hamburger and ice cream; prior runtime hid hamburger. Money setup remains for next record.",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "jp_scanner": "      ハンバーグとアイスクリームが｛      大すきなまる子のおこづかい｛",
+      "canonical_vi_full": "Maruko mê hamburger và kem. Tiền tiêu vặt của cô bé..."
     },
     {
       "source": "0x32303",
@@ -39,7 +42,10 @@
         "thân lắm",
         "làm haiku"
       ],
-      "why": "JP いちばんのりかいしゃであり、なかよし。時に、心のはいくをよむ means the grandfather is Maruko's best understanding close friend and sometimes composes haiku. Restore their friendship, rather than unsupported 'nhất nhà'."
+      "why": "JP いちばんのりかいしゃであり、なかよし。時に、心のはいくをよむ means the grandfather is Maruko's best understanding close friend and sometimes composes haiku. Restore their friendship, rather than unsupported 'nhất nhà'.",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "jp_scanner": "      いちばんのりかいしゃであり、｛      なかよし。時に、｛      心のはいくをよむ。｛",
+      "canonical_vi_full": "...là người hiểu Maruko nhất, cũng là bạn thân của cô bé. Thỉnh thoảng ông còn ngâm haiku trong lòng."
     },
     {
       "source": "0x3259A",
@@ -59,7 +65,10 @@
         "mà biết đạp xe",
         "Maru đã hay"
       ],
-      "why": "JP 目立たない (unassuming, unobtrusive grandmother) sounds unnatural in Vietnamese as 'bà âm thầm'; use a simple conversational description."
+      "why": "JP 目立たない (unassuming, unobtrusive grandmother) sounds unnatural in Vietnamese as 'bà âm thầm'; use a simple conversational description.",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "jp_scanner": "        目立たないおばあちゃんも  ｛      じつは、じてんしゃにのれた。｛      このじじつは、まる子が      ｛",
+      "canonical_vi_full": "Bà tuy ít khi nổi bật, nhưng thật ra lại biết đi xe đạp. Maruko phát hiện chuyện này khi..."
     },
     {
       "source": "0x31FA6",
@@ -79,7 +88,10 @@
         "Hanawa, Maruo",
         "Midori nữa!"
       ],
-      "why": "Japanese ウキウキのおたんじょうび makes birthday the essential setup for the following disappointment; restore explicit birthday while all three unwanted guests stay present."
+      "why": "Japanese ウキウキのおたんじょうび makes birthday the essential setup for the following disappointment; restore explicit birthday while all three unwanted guests stay present.",
+      "source_file": "translation/source/quiz_batch03_part1_vi.csv",
+      "jp_scanner": "        ウキウキのおたんじょうび｛      のはずが、花輪君、丸尾君、｛      みどりちゃんというメンバー｛",
+      "canonical_vi_full": "Đáng lẽ sinh nhật phải vui lắm, vậy mà Hanawa-kun, Maruo-kun và Midori-chan..."
     },
     {
       "source": "0x3394B",
@@ -99,7 +111,10 @@
         "Tokuzo",
         "Nhà bán hoa"
       ],
-      "why": "The preceding full-name question needs surname Sugiura as well as Tokuzo. The next independent 0x339AE record already says he brings flowers, so restore full name and family florist shop without losing the continuation."
+      "why": "The preceding full-name question needs surname Sugiura as well as Tokuzo. The next independent 0x339AE record already says he brings flowers, so restore full name and family florist shop without losing the continuation.",
+      "source_file": "translation/source/quiz_batch03_part3_vi.csv",
+      "jp_scanner": "      杉浦とくぞうくん。｛      家がお花やさんなので、｛      いつもきれいなお花をいっぱい  ｛",
+      "canonical_vi_full": "...Sugiura Tokuzo. Nhà cậu bán hoa nên ngày nào cậu cũng mang rất nhiều hoa đẹp..."
     },
     {
       "source": "0x33C6C",
@@ -119,7 +134,10 @@
         "Tomita",
         "Tomiko đi lễ"
       ],
-      "why": "Original names Buutaro's younger sister Tomita Tomiko and her church-going habit. Restore Tomita surname across two consecutive 12-cell original fields."
+      "why": "Original names Buutaro's younger sister Tomita Tomiko and her church-going habit. Restore Tomita surname across two consecutive 12-cell original fields.",
+      "source_file": "translation/source/quiz_batch03_part3_vi.csv",
+      "jp_scanner": "        ブー太郎の妹。なまえは  ｛      富田とみ子。おさないにも  ｛      かかわらず教会にかよい、  ｛",
+      "canonical_vi_full": "Em gái Buutaro tên là Tomita Tomiko. Dù còn nhỏ, cô bé vẫn đi nhà thờ..."
     },
     {
       "source": "0x350AD",
@@ -139,7 +157,10 @@
         "sô-cô-la",
         "cho Ono"
       ],
-      "why": "JP チョコ specifically means chocolate; next 0x3510A continuation already says this same gift passes via Maruko to grandpa Tomozou. Restore specific food and recipient."
+      "why": "JP チョコ specifically means chocolate; next 0x3510A continuation already says this same gift passes via Maruko to grandpa Tomozou. Restore specific food and recipient.",
+      "source_file": "translation/source/quiz_batch02_part1_vi.csv",
+      "jp_scanner": "にはチョコをわたすが、まさか｛      そのチョコがまる子｛      から、さらには友蔵｛",
+      "canonical_vi_full": "...đã tặng cậu ấy sô-cô-la. Ai ngờ miếng sô-cô-la ấy lại vòng qua Maruko rồi tới cả Tomozo..."
     }
   ],
   "prior_original_parent_records_corrected": 7,
