@@ -32,7 +32,7 @@ NATIVE = {
     0x330E9: (0x330E5, 0x3114F, "058", [(0x330EF,13),(0x33111,14)]),
     0x353D6: (0x353D2, 0x313A7, "054", [(0x353DC,14),(0x35400,14),(0x35424,13)]),
 }
-EXPECTED_PATCHED_SOURCE_ALIASES = {"0x32C15","0x33119","0x353F3"}
+EXPECTED_PATCHED_SOURCE_ALIASES = {0x32C15,0x33119,0x353F3}
 
 def sha(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
@@ -113,7 +113,7 @@ def audit(root: Path) -> dict:
             checked+=1;writable+=2*cap
             changed+=int(old_bytes!=new_bytes)
     if (checked!=8 or changed!=4 or writable!=2*(13+8+6+13+14+14+14+13)
-        or {r["scanner_alias"].upper() for r in plan["records"]}!=
+        or {int(r["scanner_alias"],0) for r in plan["records"]}!=
              EXPECTED_PATCHED_SOURCE_ALIASES):
         raise AssertionError("Wrong original 8 caption spans / four intended repairs")
     if (len(plan.get("records",[]))!=3 or
@@ -128,7 +128,7 @@ def audit(root: Path) -> dict:
         "native_original_glyph_storage_bytes_preserved":writable,
         "old_054_058_manifest_byte_signatures_preserved":True,
         "newly_counted_canonical_Quiz_strings":0,
-        "source_aliases_with_fact_repair":sorted(EXPECTED_PATCHED_SOURCE_ALIASES),
+        "source_aliases_with_fact_repair":[f"0x{x:X}" for x in sorted(EXPECTED_PATCHED_SOURCE_ALIASES)],
         "other_original_scanner_aliases_pending_context_QA":12,
         "SNES_emulator_tested":False,
         "ROM_or_IPS_written_by_audit":False,
