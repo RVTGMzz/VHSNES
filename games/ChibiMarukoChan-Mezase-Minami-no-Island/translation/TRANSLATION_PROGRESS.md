@@ -1,5 +1,13 @@
 # Translation progress — Chibi Maruko-chan
 
+## Checkpoint 084 (2026-10-13) — four real Quiz source-semantic improvements
+
+- Fixed **four already staged 054/058 Quiz explanation records** (11 exact original two-byte glyph frames, six caption revisions): Fujiki's `thư xui xẻo`, Nagasawa `dắt mũi` rather than unproven bullying, Pusadi making Maruko `xúc động`, and Nagasawa's father remaining `vững vàng` after fire, rather than morally `sống tốt`. Full before/after: `docs/CHECKPOINT_084_FOUR_QUIZ_CONTEXT_REPAIRS.md`.
+- New `translation/runtime/quiz_semantic_context_batch_084.json` and `tools/build_quiz_semantic_context_batch_084.py`; added source CI verifying four immutable parent IDs and exact 113 existing 0x84 V2 glyph cells. In cumulative 076 builder, 084 overlays AFTER 083, preserving earlier SHA-pinned stages.
+- **Source CI pass:** [38368390692](https://github.com/RVTGMzz/VHSNES/actions/runs/38368390692) on 084 source check. NO user-owned original Japanese ROM/039–043 historical archive present locally, no full V2 merged IPS/emulator test; **zero newly accepted/independent Quiz source IDs**. Official historical Quiz source count unchanged **279/381**, with 81 full-answer +3 nonanswer source prototypes still pending real-game acceptance.
+- Still pending: birthday clue Maruko turns 9 (`0x31F33`), 4 long Fortune native UI fields, G3 win/lose/title credit, full visual acceptance. Prioritize content, final font last.
+
+
 ## Checkpoint 083 (2026-10-13) — named Quiz context + honest Fortune expansion audit
 
 - **One existing stage058 Quiz explanation (`0x32BBE`) revised:** `Ono và bạn / cùng ra khơi` -> **`Sugiyama và / Ono ra khơi`** to preserve the named friend from original `杉山くんと二人でいつか`. Fits original 11/13 V2 glyph-cell lines, source/parent 058 unchanged, covered by guarded cumulative post082 083 ROM builder. **No new original source ID.**
