@@ -1,5 +1,13 @@
 # Translation progress — Chibi Maruko-chan
 
+## Checkpoint 086 (2026-10-13) — seven original Quiz text and narrative semantics restored
+
+- **7 historical stage057 Quiz explanation records corrected; 19 physical V2 frames, 16 actual changed caption lines, 191 fixed original glyph cells.** No new source scanner IDs; original 279/381 previous staging unchanged. Full JP/VI/source evidence: `docs/CHECKPOINT_086_SEVEN_QUIZ_STAGE057_CONTEXT_REPAIRS.md`.
+- Original parent IDs: `0x35AC3` replace wrong “nói thật” (Yamada trusts Maruko and the lie later becomes true); `0x35B94` complete the question about the singer's name; `0x35C63` Yamane's kindness AND humility; `0x35EDE` remove dangling “nào” from sister's name question; `0x35F38` Hanawa respects Nagayama's knowledge of nature and insects (following record already names Koharu); `0x360FA` Ono and Sugiyama **help** bullied classmates; `0x36661` sister's question explicitly about which **manga**.
+- Source JSON and guarded Python builder `tools/build_quiz_context_semantics_086.py` added; checked Japanese actual CSV identities/057 static captions/V2 codepage, immutable frames. [Source CI dedicated 086 PASS](https://github.com/RVTGMzz/VHSNES/actions/runs/38377484960) (also verifies 084/085). Extended one clean-ROM cumulative IPS builder `tools/recover_merge_061_81_one_ips_076.py` to append 086 after 085.
+- Original JP 2MiB SFC and historical 039–043 ZIP/IPS not accessible in session; no binary IPS produced, emulator not run. **Static code validation ≠ game verified.** Prior 81 answer/3 independent native candidate source fields remain untested; four Fortune original slots overflow, Maruko 9-age detail `0x31F33` remains omitted to protect naturalness of Taurus+birthdate question, G3/credits/font pending.
+
+
 ## Checkpoint 085 (2026-10-13) — seven important existing Quiz captions restored
 
 - Seven previous original parent source IDs in 054/058/059 repaired (14 changed Vietnamese glyph frames in 20 original physical frames/234 unchanged native cells): `0x32095` **burger and kem**; `0x32303` **Tomozou is close to Maruko / haiku**; `0x3259A` grandmother natural wording; `0x31FA6` **birthday** frame; `0x3394B` **Sugiura Tokuzo** surname; `0x33C6C` **Tomita Tomiko** surname; `0x350AD` **sô-cô-la for Ono**. Each exact before/after and Japanese source evidence in `docs/CHECKPOINT_085_SEVEN_QUIZ_FACTS_AND_NAMES.md`.
