@@ -1,0 +1,172 @@
+{
+  "schema": "chibi.quiz.context_semantics.086.v1",
+  "original_clean_ROM_sha256": "e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956",
+  "apply_after": "085 cumulative V2 Quiz candidate",
+  "source_history_immutable": true,
+  "original_source_parent_count": 7,
+  "original_physical_frame_count": 19,
+  "revised_existing_caption_count": 16,
+  "original_fixed_glyph_cells": 191,
+  "new_canonical_scanner_source_IDs": 0,
+  "original_retail_ROM_available_in_this_session": false,
+  "actual_binary_patch_produced_this_session": false,
+  "emulator_tested": false,
+  "release_approved": false,
+  "records": [
+    {
+      "original_source_offset": "0x35AC3",
+      "historical_stage": "057",
+      "source_file": "translation/source/quiz_batch02_part2_vi.csv",
+      "original_japanese_scanner": "るのだが、山田くん｛      がまる子をしんじる｛      心にうたれ、うそを｛",
+      "canonical_vi_full": "...nhưng thấy Yamada-kun tin Maruko hết lòng, hai ông cháu lại cảm động...",
+      "original_two_byte_glyph_cell_caps": [
+        9,
+        9,
+        9
+      ],
+      "previous_native_V2_captions": [
+        "Tin thật",
+        "nên đành",
+        "nói thật"
+      ],
+      "revised_native_V2_captions": [
+        "Yamada",
+        "tin Maru",
+        "thật lòng"
+      ],
+      "editorial_reason": "Japanese says Yamada believes Maruko so Maruko and Tomozou are moved and subsequently make the lie true; old 'nói thật' falsely asserts they simply told the truth. Prior source 0x35A... plus next 0x35B16 supply the continuation."
+    },
+    {
+      "original_source_offset": "0x35B94",
+      "historical_stage": "057",
+      "source_file": "translation/source/quiz_batch02_part2_vi.csv",
+      "original_japanese_scanner": "タレントってなんていう｛      なまえ？｛",
+      "canonical_vi_full": "...người đó tên là gì?",
+      "original_two_byte_glyph_cell_caps": [
+        11,
+        4
+      ],
+      "previous_native_V2_captions": [
+        "Người đó",
+        "là?"
+      ],
+      "revised_native_V2_captions": [
+        "Ca sĩ tên",
+        "gì?"
+      ],
+      "editorial_reason": "The prior Quiz asks for the favorite singer Jo Michiru; restore a complete spoken question, not an abruptly truncated 'là?'."
+    },
+    {
+      "original_source_offset": "0x35C63",
+      "historical_stage": "057",
+      "source_file": "translation/source/quiz_batch02_part2_vi.csv",
+      "original_japanese_scanner": "でもじつは、年より｛      にもやさしく、｛      けんきょな、できた｛",
+      "canonical_vi_full": "Nhưng thật ra cậu rất tử tế với người lớn tuổi, lại khiêm tốn và...",
+      "original_two_byte_glyph_cell_caps": [
+        9,
+        7,
+        9
+      ],
+      "previous_native_V2_captions": [
+        "Nhưng cậu",
+        "rất quý",
+        "người già"
+      ],
+      "revised_native_V2_captions": [
+        "Quý người",
+        "già và",
+        "khiêm tốn"
+      ],
+      "editorial_reason": "Japanese says he is kind to elderly people AND modest; prior caption omitted the distinct けんきょ (humility) fact."
+    },
+    {
+      "original_source_offset": "0x35EDE",
+      "historical_stage": "057",
+      "source_file": "translation/source/quiz_batch02_part2_vi.csv",
+      "original_japanese_scanner": "いもうとのなまえはなんて    ｛      いうの？｛",
+      "canonical_vi_full": "...cô bé tên là gì?",
+      "original_two_byte_glyph_cell_caps": [
+        12,
+        4
+      ],
+      "previous_native_V2_captions": [
+        "Em tên gì?",
+        "nào"
+      ],
+      "revised_native_V2_captions": [
+        "Em gái tên",
+        "gì?"
+      ],
+      "editorial_reason": "Question for Nagayama's sickly little sister should read naturally rather than appending orphan 'nào'."
+    },
+    {
+      "original_source_offset": "0x35F38",
+      "historical_stage": "057",
+      "source_file": "translation/source/quiz_batch02_part2_vi.csv",
+      "original_japanese_scanner": "しぜんや、むしにくわしくて、｛      あの花輪くんもいちもくおいて｛      いる長山くんには、小春ちゃん｛",
+      "canonical_vi_full": "Nagayama-kun rất rành thiên nhiên và côn trùng, đến Hanawa-kun cũng phải nể cậu. Cậu có một cô em gái tên Koharu...",
+      "original_two_byte_glyph_cell_caps": [
+        14,
+        14,
+        14
+      ],
+      "previous_native_V2_captions": [
+        "Nagayama rất",
+        "rành sâu bọ",
+        "em tên Koharu"
+      ],
+      "revised_native_V2_captions": [
+        "Nagayama rành",
+        "cây cỏ, sâu bọ",
+        "Hanawa cũng nể"
+      ],
+      "editorial_reason": "Restore Hanawa's explicit respect and nature + insect knowledge; next staged 0x35FA9 already names the ill younger sister Koharu, so no deletion of her identity."
+    },
+    {
+      "original_source_offset": "0x360FA",
+      "historical_stage": "057",
+      "source_file": "translation/source/quiz_batch02_part3_vi.csv",
+      "original_japanese_scanner": "となり町のあばれんぼうに｛      いじめられるクラスメイトの｛      ため、大野、杉山くんコンビ｛",
+      "canonical_vi_full": "Vì bạn cùng lớp bị đám quậy phá ở thị trấn bên bắt nạt, bộ đôi Ono-kun và Sugiyama-kun...",
+      "original_two_byte_glyph_cell_caps": [
+        12,
+        13,
+        13
+      ],
+      "previous_native_V2_captions": [
+        "Bọn quậy phá",
+        "bắt nạt bạn",
+        "Ono, Sugiyama"
+      ],
+      "revised_native_V2_captions": [
+        "Bọn quậy phá",
+        "bắt nạt bạn",
+        "Ono, Sugi cứu"
+      ],
+      "editorial_reason": "JP implies the duo DEFEND a bullied classmate. Prior disconnected display may imply the duo are bullying victims; name abbreviates Sugiyama already named in 0x36057; next 0x36165 describes the battle."
+    },
+    {
+      "original_source_offset": "0x36661",
+      "historical_stage": "057",
+      "source_file": "translation/source/quiz_batch02_part3_vi.csv",
+      "original_japanese_scanner": "まる子のおねえちゃんが｛      よくよむマンガはなんて｛      いうなまえ？｛",
+      "canonical_vi_full": "Tạp chí manga mà chị Maruko thường đọc tên là gì?",
+      "original_two_byte_glyph_cell_caps": [
+        11,
+        11,
+        6
+      ],
+      "previous_native_V2_captions": [
+        "Chị Maruko",
+        "hay đọc gì?",
+        "nhỉ?"
+      ],
+      "revised_native_V2_captions": [
+        "Chị Maruko",
+        "đọc manga",
+        "nào?"
+      ],
+      "editorial_reason": "The original asks specifically which manga the sister reads, not vaguely what she likes to read. Following 0x36739 answers Ribon."
+    }
+  ]
+}
