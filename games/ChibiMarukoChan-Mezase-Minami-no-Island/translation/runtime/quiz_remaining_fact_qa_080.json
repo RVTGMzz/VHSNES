@@ -1,0 +1,142 @@
+{
+  "schema": "chibi.quiz.remaining_scanner_fact_qa.080.v1",
+  "description": "After 079 fixes 3/18 and 080 fixes 3 more, these 12 original scanner aliases remain. 11 important subfacts are present in earlier approved parent captions. The 9-year-old detail is known to be omitted and cannot be added naturally within existing 13+13 glyph cells while preserving zodiac+birthdate question; do not silently mark it complete.",
+  "original_canonical_scanner_aliases_before_080": 15,
+  "new_semantic_parent_repairs_080": [
+    "0x32C15",
+    "0x33119",
+    "0x353F3"
+  ],
+  "audit_remaining": [
+    {
+      "scanner": "0x31E50",
+      "parent": "0x31E04",
+      "stage": "059",
+      "fact": "Maruko is in third grade",
+      "evidence_in_staged_lines": [
+        "lớp 3"
+      ],
+      "disposition": "parent_contains_key_fact_not_independent"
+    },
+    {
+      "scanner": "0x31E7B",
+      "parent": "0x31E6D",
+      "stage": "059",
+      "fact": "Maruko has A blood type and is lazy",
+      "evidence_in_staged_lines": [
+        "Máu A",
+        "lười!"
+      ],
+      "disposition": "parent_contains_key_fact_not_independent"
+    },
+    {
+      "scanner": "0x31F33",
+      "parent": "0x31F23",
+      "stage": "059",
+      "fact": "Maruko is turning 9; zodiac Taurus and birthdate question",
+      "evidence_in_staged_lines": [
+        "Cung Kim Ngưu",
+        "Sinh hôm nào?"
+      ],
+      "missing_detail": "age 9 omitted from historical visual caption",
+      "disposition": "needs_wider_quest_text_or_approved_natural_shortening_no_unsafe_patch"
+    },
+    {
+      "scanner": "0x32874",
+      "parent": "0x3288E",
+      "stage": "058",
+      "fact": "mother Sakura Sumire is 40",
+      "evidence_in_staged_lines": [
+        "40"
+      ],
+      "disposition": "parent_contains_key_fact_not_independent"
+    },
+    {
+      "scanner": "0x32A96",
+      "parent": "0x32A38",
+      "stage": "058",
+      "fact": "older sister is in sixth grade",
+      "evidence_in_staged_lines": [
+        "chị học lớp 6"
+      ],
+      "disposition": "parent_contains_key_fact_not_independent"
+    },
+    {
+      "scanner": "0x33050",
+      "parent": "0x33018",
+      "stage": "058",
+      "fact": "Maruko and Sugiyama attend class 3-4",
+      "evidence_in_staged_lines": [
+        "là lớp 3-4"
+      ],
+      "disposition": "parent_contains_key_fact_not_independent"
+    },
+    {
+      "scanner": "0x34403",
+      "parent": "0x343D2",
+      "stage": "054",
+      "fact": "Hanawa's mother is 29 and works far away",
+      "evidence_in_staged_lines": [
+        "mới 29 tuổi!",
+        "làm ở xa"
+      ],
+      "disposition": "parent_contains_key_fact_not_independent"
+    },
+    {
+      "scanner": "0x34A99",
+      "parent": "0x34A2E",
+      "stage": "054",
+      "fact": "Hideji is 68",
+      "evidence_in_staged_lines": [
+        "68 tuổi"
+      ],
+      "disposition": "parent_contains_key_fact_not_independent"
+    },
+    {
+      "scanner": "0x352AC",
+      "parent": "0x3528F",
+      "stage": "054",
+      "fact": "Maruo birthday is December 31",
+      "evidence_in_staged_lines": [
+        "Sinh 31/12"
+      ],
+      "disposition": "parent_contains_key_fact_not_independent"
+    },
+    {
+      "scanner": "0x352C2",
+      "parent": "0x3528F",
+      "stage": "054",
+      "fact": "Sueo named because born near year-end",
+      "evidence_in_staged_lines": [
+        "nên tên",
+        "là Sueo!"
+      ],
+      "disposition": "parent_contains_key_fact_not_independent"
+    },
+    {
+      "scanner": "0x361A4",
+      "parent": "0x36165",
+      "stage": "057",
+      "fact": "the two win at Namiki",
+      "evidence_in_staged_lines": [
+        "Đấu ở Namiki",
+        "hai cậu",
+        "thắng!"
+      ],
+      "disposition": "parent_contains_key_fact_not_independent"
+    },
+    {
+      "scanner": "0x364B1",
+      "parent": "0x36498",
+      "stage": "057",
+      "fact": "Maruko family house is one-story",
+      "evidence_in_staged_lines": [
+        "chỉ một tầng"
+      ],
+      "disposition": "parent_contains_key_fact_not_independent"
+    }
+  ],
+  "emulator_QA": false,
+  "source_inventory_marked_completed": false,
+  "other_content_audit_still_pending": true
+}
