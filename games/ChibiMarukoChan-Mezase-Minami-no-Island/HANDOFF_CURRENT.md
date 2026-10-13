@@ -1,5 +1,22 @@
 # HANDOFF CURRENT — Chibi Maruko-chan SNES Việt hóa
 
+## CHECKPOINT 085 — 2026-10-13: SEVEN REAL QUIZ FACT/NAMES RESTORED IN CONTENT SOURCE
+
+**Read `docs/CHECKPOINT_085_SEVEN_QUIZ_FACTS_AND_NAMES.md` FIRST.** Re-read full source Japanese with canonical Vietnamese and historical real stage054/058/059 Quiz captions; seven previously compressed or imprecise contexts restored, **14** changed V2 caption frames in **20** original native physical lines, total **234** original glyph cells preserved:
+- 059 `0x32095` burger **and** ice cream, not just ice cream; keep pocket-money setup.
+- 059 `0x32303` Tomozou **best understands Maruko / is close to her / makes haiku**, not just `nhất nhà`.
+- 059 `0x3259A` natural `Bà lặng lẽ`, not awkward `Bà âm thầm`.
+- 059 `0x31FA6` original scene explicitly Maruko's **birthday** (Hanawa, Maruo, Midori arrive), not vague “đáng lẽ vui”. This is a DIFFERENT record from unresolved Maruko `lên 9` detail `0x31F33`.
+- 058 `0x3394B` Toku-chan FULL NAME **Sugiura Tokuzo** + florist family. The next `0x339AE` still says he brings flowers, no loss of meaning.
+- 058 `0x33C6C` Buutaro's little sister FULL NAME **Tomita Tomiko** + church-going detail.
+- 054 `0x350AD` Valentine gift is explicitly **sô-cô-la**, for Ono; next independent `0x3510A` already mentions route through Maruko and Tomozou.
+
+New `translation/runtime/quiz_seven_fact_restore_085.json` includes original full JP/VI source identities, seven exact original cap arrays, historical captions, revised complete Vietnamese choices and why. New `tools/build_quiz_seven_fact_restore_085.py` provides `--audit-only`: verifies all exact old source 054/058/059 JSON + canonical CSV + codepage160 + capacities (20 frames / 234 cells) + 14 altered frames. Optional SHA-locked clean-ROM/real V2 baseline builder derives original raw native frames, 816F and pointer-shaped words, checks old caption glyph bytes and font table, edits ONLY approved 14 old V2 spans + checksum, and returns cumulative IPS with full clean-ROM replay. NO clean ROM or 039–043 historical archive accessible in this session, therefore **no real merged playable ROM/IPS built** or emulator QA.
+
+`tools/recover_merge_061_81_one_ips_076.py` now chains 079→080→081→082→083→084→**085** in ONE future original-ROM patch, preserving pinned historical stages and V2 font. Source CI initially caught mismatched `clean_sha256` key / immutable source contract; FIXED both, source run [38372615081](https://github.com/RVTGMzz/VHSNES/actions/runs/38372615081) **SUCCESS** including explicit 085 audit step, and graphics [38372615093](https://github.com/RVTGMzz/VHSNES/actions/runs/38372615093) **SUCCESS**. Earlier red CI was obsolete, not a currently ignored failed test.
+
+Quiz historical distinct scanner IDs **279/381 unchanged**; 085 repairs seven existing parent captions, **zero new independent source IDs**. 81 answer/3 independent nonanswer source-only proposals not emulator verified. Four Fortune too-long source fields, age nine `0x31F33`, G3 outcome/ending and exact **Việt hóa bởi Votri Valley** title credit, final emulator/font QA remain open. Prioritize true content, stop repeated micro-IPS/tests and unsafe shortened text.
+
 ## CHECKPOINT 084 — 2026-10-13: 4 REAL QUIZ NARRATIVE SEMANTIC REPAIRS, 11 FRAMES / 6 ACTUAL CHANGES
 
 **Read `docs/CHECKPOINT_084_FOUR_QUIZ_CONTEXT_REPAIRS.md` FIRST.** Reviewed 4 original existing Quiz explanation records stage054/058 against canonical Japanese `source_jp_scanner`, full Vietnamese `vi_full`, and historical exact fixed-line capacities; found 4 inaccurate/overstrong/softened phrasings, correcting six of eleven existing V2 physical line captions:
