@@ -1,0 +1,152 @@
+{
+  "schema": "chibi.quiz.seven_fact_repair.085.v1",
+  "clean_original_sha256": "e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956",
+  "apply_after": "084 cumulative V2 Quiz source candidate",
+  "policy": "Preserve native JP record fields, original caption capacities and full canonical Japanese/VI sources; overlay source revisions only, do not modify prior SHA-pinned staged manifests.",
+  "records": [
+    {
+      "source": "0x32095",
+      "historical_stage": "059",
+      "original_capacities": [
+        14,
+        13
+      ],
+      "old_lines": [
+        "Maru mê kem",
+        "Tiền tiêu vặt"
+      ],
+      "new_lines": [
+        "Mê burger, kem",
+        "Tiền tiêu vặt"
+      ],
+      "why": "Original ハンバーグとアイスクリーム explicitly names both hamburger and ice cream; prior runtime hid hamburger. Money setup remains for next record."
+    },
+    {
+      "source": "0x32303",
+      "historical_stage": "059",
+      "original_capacities": [
+        14,
+        8,
+        9
+      ],
+      "old_lines": [
+        "Ông hiểu Maru",
+        "nhất nhà",
+        "thơ haiku"
+      ],
+      "new_lines": [
+        "Hiểu Maru nhất",
+        "thân lắm",
+        "làm haiku"
+      ],
+      "why": "JP いちばんのりかいしゃであり、なかよし。時に、心のはいくをよむ means the grandfather is Maruko's best understanding close friend and sometimes composes haiku. Restore their friendship, rather than unsupported 'nhất nhà'."
+    },
+    {
+      "source": "0x3259A",
+      "historical_stage": "059",
+      "original_capacities": [
+        12,
+        14,
+        11
+      ],
+      "old_lines": [
+        "Bà âm thầm",
+        "mà biết đạp xe",
+        "Maru đã hay"
+      ],
+      "new_lines": [
+        "Bà lặng lẽ",
+        "mà biết đạp xe",
+        "Maru đã hay"
+      ],
+      "why": "JP 目立たない (unassuming, unobtrusive grandmother) sounds unnatural in Vietnamese as 'bà âm thầm'; use a simple conversational description."
+    },
+    {
+      "source": "0x31FA6",
+      "historical_stage": "059",
+      "original_capacities": [
+        12,
+        13,
+        13
+      ],
+      "old_lines": [
+        "Đáng lẽ vui",
+        "Hanawa, Maruo",
+        "Midori tới!"
+      ],
+      "new_lines": [
+        "Sinh nhật mà",
+        "Hanawa, Maruo",
+        "Midori nữa!"
+      ],
+      "why": "Japanese ウキウキのおたんじょうび makes birthday the essential setup for the following disappointment; restore explicit birthday while all three unwanted guests stay present."
+    },
+    {
+      "source": "0x3394B",
+      "historical_stage": "058",
+      "original_capacities": [
+        9,
+        11,
+        14
+      ],
+      "old_lines": [
+        "Là Tokuzo",
+        "Nhà bán hoa",
+        "ngày nào cũng"
+      ],
+      "new_lines": [
+        "Sugiura",
+        "Tokuzo",
+        "Nhà bán hoa"
+      ],
+      "why": "The preceding full-name question needs surname Sugiura as well as Tokuzo. The next independent 0x339AE record already says he brings flowers, so restore full name and family florist shop without losing the continuation."
+    },
+    {
+      "source": "0x33C6C",
+      "historical_stage": "058",
+      "original_capacities": [
+        11,
+        12,
+        12
+      ],
+      "old_lines": [
+        "Em Buutaro",
+        "tên Tomiko",
+        "hay đi lễ"
+      ],
+      "new_lines": [
+        "Em Buutaro",
+        "Tomita",
+        "Tomiko đi lễ"
+      ],
+      "why": "Original names Buutaro's younger sister Tomita Tomiko and her church-going habit. Restore Tomita surname across two consecutive 12-cell original fields."
+    },
+    {
+      "source": "0x350AD",
+      "historical_stage": "054",
+      "original_capacities": [
+        14,
+        9,
+        9
+      ],
+      "old_lines": [
+        "Fuyuta tặng",
+        "Ono kẹo",
+        "nhưng lại"
+      ],
+      "new_lines": [
+        "Fuyuta tặng",
+        "sô-cô-la",
+        "cho Ono"
+      ],
+      "why": "JP チョコ specifically means chocolate; next 0x3510A continuation already says this same gift passes via Maruko to grandpa Tomozou. Restore specific food and recipient."
+    }
+  ],
+  "prior_original_parent_records_corrected": 7,
+  "original_physical_glyph_frames": 20,
+  "changed_caption_frames": 14,
+  "original_fixed_glyph_cells": 234,
+  "new_canonical_source_ids": 0,
+  "emulator_tested": false,
+  "release_approved": false
+}
