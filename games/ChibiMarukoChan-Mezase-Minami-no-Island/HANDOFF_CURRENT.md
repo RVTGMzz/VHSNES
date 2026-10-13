@@ -1,5 +1,19 @@
 # HANDOFF CURRENT — Chibi Maruko-chan SNES Việt hóa
 
+## CHECKPOINT 084 — 2026-10-13: 4 REAL QUIZ NARRATIVE SEMANTIC REPAIRS, 11 FRAMES / 6 ACTUAL CHANGES
+
+**Read `docs/CHECKPOINT_084_FOUR_QUIZ_CONTEXT_REPAIRS.md` FIRST.** Reviewed 4 original existing Quiz explanation records stage054/058 against canonical Japanese `source_jp_scanner`, full Vietnamese `vi_full`, and historical exact fixed-line capacities; found 4 inaccurate/overstrong/softened phrasings, correcting six of eleven existing V2 physical line captions:
+- `0x34CF0` (054) `Fujiki từng / gửi thư rủi / cho Maruko` -> **`Fujiki gửi / thư xui xẻo / cho Maruko`**; widths 12/14/12.
+- `0x34D5B` (054) `Nagasawa hay / bắt nạt / Fujiki` -> **`Nagasawa hay / dắt mũi / Fujiki`**; widths 12/7/7. Japanese `ふり回される` doesn't directly say bully.
+- `0x34E84` (054) `Pusadi hiền / làm Maruko vui / lắm!` -> **`Pusadi hiền / Maru xúc động / lắm!`**; widths 13/14/6. Original `かんどうさせられる` means moved, not just amused.
+- `0x33E7D` (058) `Ông vẫn sống / tốt` -> **`Ông vững vàng / lắm`**; widths 13/3. Original `強く生きる` refers to persevering strongly after fire, not a judgment of goodness.
+
+NEW `translation/runtime/quiz_semantic_context_batch_084.json` and `tools/build_quiz_semantic_context_batch_084.py` verify 4 source/stage/canonical CSV matches, **11** physical line capacities (113 cells), 6 changed line values, exact V2 glyph availability; source-only CI has dedicated 084 audit. Optional actual clean-SFC SHA-pinned builder derives physical glyph spans from actual source ROM native CP932, checks 816F/pointers/headers and old post083 V2 caption bytes, alters only revised glyph spans/checksum, yields one original-ROM-relative cumulative IPS with replay check; **no original ROM or historical 039–043 raw archive in this session**, so full binary code/emulator not run.
+
+Extended `tools/recover_merge_061_81_one_ips_076.py` cumulative chain 079→080→081→082→083→**084**. Original stage054/058 historical manifests/pinned SHA unchanged, no font adjustments, no individual experimental IPS downloads.
+
+**Source CI SUCCESS:** [run 38368390692](https://github.com/RVTGMzz/VHSNES/actions/runs/38368390692) passed added 084 source audit. Check latest HEAD CI separately. Nothing SNES emulator-tested, no playable build. **Historical Quiz 279/381** source scanner IDs unchanged (084 was four existing sources); 81 answers + three nonanswer native prototypes remain static candidates. Known remaining: Maruko turns 9 age fact at `0x31F33` (not naturally fit 13+13), four Fortune overflow cases, G3 result/title credit **Việt hóa bởi Votri Valley**, integrated testable V2 font/Quiz grading and final visual QA. User wants genuine CONTENT before final font polishing and refuses piles of micro-patches.
+
 ## CHECKPOINT 083 — 2026-10-13: SUGIYAMA NAMED IN QUIZ + FOUR FORTUNE OVERFLOW STRINGS AUDITED
 
 **Read `docs/CHECKPOINT_083_FORTUNE_OVERFLOW_AND_QUIZ_NAME.md` FIRST.** Checkpoint082 + existing 058 Quiz native source `0x32BBE` previously used an anonymous friend `Ono và bạn / cùng ra khơi` despite original Japanese naming `杉山くん`. New 083 names both boys: **`Sugiyama và / Ono ra khơi`**, lengths **11/11** in physical 11/13 original V2-cell frames `0x32BCA`/`0x32BE8`. Original blank leading indentation, `81 6F` frame separators, 058 pinned manifest/codepage and Japanese CP932 source stay unchanged. Add `translation/runtime/quiz_sugiyama_ono_083.json`, fail-closed `tools/build_quiz_sugiyama_ono_083.py`; ROM-free `--audit-only` includes exact canonical source and historically staged captions. Real ROM build (not run) requires original SHA, native CP932 physical bytes, original LoROM pointer, source V2 baseline after 082, mapped font glyph pointers, diff whitelist and IPS replay.
