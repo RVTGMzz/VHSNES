@@ -71,6 +71,12 @@ jobs:
       - name: Verify 082 two Quiz narrative fixes and exact V2 glyph fits (ROM-free)
         working-directory: games/ChibiMarukoChan-Mezase-Minami-no-Island
         run: python tools/build_quiz_parent_semantic_restore_082.py --audit-only
+      - name: Verify 083 four authentic Fortune source captions and why they cannot fit old cells
+        working-directory: games/ChibiMarukoChan-Mezase-Minami-no-Island
+        run: python tools/audit_fortune_expansion_083.py
+      - name: Verify 083 Sugiyama-and-Ono Quiz narrative name restoration
+        working-directory: games/ChibiMarukoChan-Mezase-Minami-no-Island
+        run: python tools/build_quiz_sugiyama_ono_083.py --audit-only
       - name: Confirm no ROM or game-font binaries committed to source folder
         run: |
           if find games/ChibiMarukoChan-Mezase-Minami-no-Island \
