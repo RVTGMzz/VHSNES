@@ -1,0 +1,135 @@
+{
+  "schema": "chibi.quiz.parent_semantic_restore.081.v1",
+  "original_clean_ROM_sha256": "e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956",
+  "apply_after": "080 over original 061 V2 font/previous 054,058,059 unchanged Quiz narration overlays",
+  "intent": "Restore original Japanese story continuity and native labels, no change to existing source stage manifests/historical IPS hashes",
+  "records": [
+    {
+      "source": "0x31E6D",
+      "native_start": "0x31E69",
+      "pointer_word": "0x313FF",
+      "stage": "059",
+      "scanner_alias": "0x31E7B",
+      "role": "explanation_part_2",
+      "full_context": "Maruko A-type, lazy; narrator introduces this gift before the next part asks whether Momoe ate the present",
+      "glyphs": [
+        {
+          "at": "0x31E73",
+          "capacity": 7,
+          "jp": "血液型はＡ型で",
+          "old": "Máu A",
+          "vi": "Máu A"
+        },
+        {
+          "at": "0x31E93",
+          "capacity": 6,
+          "jp": "なまけもの。",
+          "old": "lười!",
+          "vi": "lười!"
+        },
+        {
+          "at": "0x31EB3",
+          "capacity": 12,
+          "jp": "このプレゼント、はたして",
+          "old": "Momoe có ăn?",
+          "vi": "Món quà này?"
+        }
+      ]
+    },
+    {
+      "source": "0x343D2",
+      "native_start": "0x343CE",
+      "pointer_word": "0x313A3",
+      "stage": "054",
+      "scanner_alias": "0x34403",
+      "role": "explanation_part_1",
+      "full_context": "Hanawa's mother works in a foreign country, not merely an unspecified distant place",
+      "glyphs": [
+        {
+          "at": "0x343DA",
+          "capacity": 12,
+          "jp": "花輪くんのママは、なんと",
+          "old": "Mẹ Hanawa",
+          "vi": "Mẹ Hanawa"
+        },
+        {
+          "at": "0x343FC",
+          "capacity": 14,
+          "jp": "まだ２９才。がいこくでしごと",
+          "old": "mới 29 tuổi!",
+          "vi": "mới 29 tuổi!"
+        },
+        {
+          "at": "0x34420",
+          "capacity": 12,
+          "jp": "をしているので、いつもは",
+          "old": "làm ở xa",
+          "vi": "làm xa xứ"
+        }
+      ]
+    },
+    {
+      "source": "0x33018",
+      "native_start": "0x33014",
+      "pointer_word": "0x3139B",
+      "stage": "058",
+      "scanner_alias": "0x33050",
+      "role": "explanation_part_1",
+      "full_context": "Sugiyama, like Ono, is a boy classmates can rely on; connect this text naturally into the following independent native field",
+      "glyphs": [
+        {
+          "at": "0x33020",
+          "capacity": 11,
+          "jp": "杉山くんたち、すなわち",
+          "old": "Lớp Maruko",
+          "vi": "Lớp Maruko"
+        },
+        {
+          "at": "0x33040",
+          "capacity": 13,
+          "jp": "まる子のクラスは３年４組。",
+          "old": "là lớp 3-4",
+          "vi": "là lớp 3-4"
+        },
+        {
+          "at": "0x33062",
+          "capacity": 12,
+          "jp": "杉山くんは大野くんとおな",
+          "old": "Cả hai bạn",
+          "vi": "Sugiyama và"
+        }
+      ]
+    },
+    {
+      "source": "0x33083",
+      "native_start": "0x3307F",
+      "pointer_word": "0x31403",
+      "stage": "058",
+      "scanner_alias": "0x33050",
+      "role": "explanation_part_2",
+      "full_context": "Finish the previous Sugiyama/Ono explanation as one natural sentence across real script record boundary",
+      "glyphs": [
+        {
+          "at": "0x33089",
+          "capacity": 11,
+          "jp": "じく、クラスのみんなの",
+          "old": "Ai cũng tin",
+          "vi": "Ono là hai"
+        },
+        {
+          "at": "0x330AB",
+          "capacity": 13,
+          "jp": "たよれる男の子なのである。",
+          "old": "cậu ấy hết",
+          "vi": "bạn đáng tin!"
+        }
+      ]
+    }
+  ],
+  "already_staged_parents": 4,
+  "changed_existing_glyph_frames": 5,
+  "independent_new_source_IDs": 0,
+  "untouched_ending_control_and_pointers": true,
+  "emulator_tested": false,
+  "production_approved": false
+}
