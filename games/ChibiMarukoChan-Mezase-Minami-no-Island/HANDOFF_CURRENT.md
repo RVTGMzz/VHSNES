@@ -1,5 +1,20 @@
 # HANDOFF CURRENT — Chibi Maruko-chan SNES Việt hóa
 
+## CHECKPOINT 083 — 2026-10-13: SUGIYAMA NAMED IN QUIZ + FOUR FORTUNE OVERFLOW STRINGS AUDITED
+
+**Read `docs/CHECKPOINT_083_FORTUNE_OVERFLOW_AND_QUIZ_NAME.md` FIRST.** Checkpoint082 + existing 058 Quiz native source `0x32BBE` previously used an anonymous friend `Ono và bạn / cùng ra khơi` despite original Japanese naming `杉山くん`. New 083 names both boys: **`Sugiyama và / Ono ra khơi`**, lengths **11/11** in physical 11/13 original V2-cell frames `0x32BCA`/`0x32BE8`. Original blank leading indentation, `81 6F` frame separators, 058 pinned manifest/codepage and Japanese CP932 source stay unchanged. Add `translation/runtime/quiz_sugiyama_ono_083.json`, fail-closed `tools/build_quiz_sugiyama_ono_083.py`; ROM-free `--audit-only` includes exact canonical source and historically staged captions. Real ROM build (not run) requires original SHA, native CP932 physical bytes, original LoROM pointer, source V2 baseline after 082, mapped font glyph pointers, diff whitelist and IPS replay.
+
+Added stage **083** last in single archive-to-cumulative-IPS tool `tools/recover_merge_061_81_one_ips_076.py`. Still zero newly staged unique Quiz source IDs: **279/381 remains the honest historical count**, plus 81 answer and 3 nonanswer static-only candidate fields. This correction repairs one *existing* Quiz narration field.
+
+FORTUNE: reviewed exactly four **already-translated but not runtime-fit** canonical source strings:
+- `0x2BD5E` `天の声` — **Lời trời mách**; 3 original cells vs **13** needed.
+- `0x2C86B` `また来週` — **Hẹn tuần sau**; 4 vs **12**.
+- `0x2CA7D` `きいろ` — **Vàng**; 3 vs **4**.
+- `0x2CADD` `しろいろ` — **Trắng**; 4 vs **5**.
+No ambiguous one-word substitutions or fake in-place patch. New `translation/runtime/fortune_expansion_083.json` + `tools/audit_fortune_expansion_083.py`: verifies 157 Fortune source IDs, 4 prior 056 blockers, exact JP/VI pairs, 160 mapped V2 glyphs, native two-byte capacity overflow, and explicit **no patch** flags. Optional user-owned clean ROM `--original-sfc` mode can verify raw CP932 plus `81 6F` and enumerate 16-/24-bit LoROM pointer **hypotheses**, NOT execution-proven pointer tables. ROM bytes absent this session. These four need safe text relocation/graphics width proof, not just a relocated string: display clipping remains untested.
+
+**GitHub source-only CI PASS** [run 38364216770](https://github.com/RVTGMzz/VHSNES/actions/runs/38364216770) for both 083 audit steps, including previous 082 checks. NO original 039–043 historical ZIP/IPS bytes or exact 2 MiB retail SFC currently mounted; no integrated V2 ROM/IPS built, no emulator or playable release. Nine-year-old Maruko fact `0x31F33` still omits age; four Fortune expansions, G3 win/lose results, first-title credit **Việt hóa bởi Votri Valley** and all gameplay/font QA remain unresolved. User prioritizes content first, final font polish later, no repeated micro-downloads.
+
 ## CHECKPOINT 082 — 2026-10-13: TWO REAL QUIZ NARRATIVE OMISSIONS FIXED (SOURCES + GUARDED INTEGRATION)
 
 **Read `docs/CHECKPOINT_082_SUMIRE_SISTER_FACTS.md` FIRST.** Existing original stage058 Quiz explanation `0x328E5` duplicated Sumire's affection already covered in previous frame `0x3288E` and omitted her genuine role in stopping Maruko's mischief. Restore original semantic meaning: `Mẹ luôn thương / Maruko / rất nhiều` -> **`Mẹ cũng ngăn / Maruko / quậy phá`** in original 14/8/9 cells. Existing native explanation `0x32A38` omitted sister's love of **gratin** while retaining grade six and annoyed-sibling context. Restore `Maruko quậy / chị phát mệt / chị học lớp 6` -> **`Maru phá chị. / Chị lớp 6 / mê gratin.`** in original 13/12/14 cells. Two **already** staged parent records, 6 actual frames, **5 changed captions**, 70 preserved original glyph-cell capacities, zero invented new Quiz source IDs. No old stage058 JSON, pinned SHA or raw native JP field changes.
