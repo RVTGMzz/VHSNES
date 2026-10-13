@@ -169,5 +169,6 @@
   "original_fixed_glyph_cells": 234,
   "new_canonical_source_ids": 0,
   "emulator_tested": false,
-  "release_approved": false
+  "release_approved": false,
+  "stage_manifests_immutable": true
 }
