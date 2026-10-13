@@ -152,7 +152,8 @@ def build(clean: bytes, baseline: bytes, root: Path):
         "cumulative_IPS_records":n,
         "last_stage_checksum":f"0x{checksum:04X}",
         "modified_baseline_ROM_bytes_including_checksum":len(diffs),
-        "ROM_or_IPS_written":False,
+        "copyrighted_ROM_written":False,
+        "IPS_output_prepared_in_memory":True,
         "SNES_emulator_tested":False,
         "release_approved":False,
     }
@@ -179,6 +180,7 @@ def main():
     clean=args.original_sfc.read_bytes()
     previous=apply_ips(clean,args.previous_cumulative_ips.read_bytes())
     ips,qa=build(clean,previous,args.project_root)
+    qa["IPS_file_written"]=True
     args.ips.parent.mkdir(parents=True,exist_ok=True)
     args.report.parent.mkdir(parents=True,exist_ok=True)
     args.ips.write_bytes(ips)
