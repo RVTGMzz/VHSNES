@@ -1,0 +1,109 @@
+{
+  "schema": "chibi.quiz.semantic_context_batch.084.v1",
+  "clean_sha256": "e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956",
+  "apply_after": "083 cumulative Quiz/Fortune V2 baseline",
+  "stage_manifests_immutable": true,
+  "editorial_policy": "Restore precise Japanese meaning within original 0x84 V2 widths. Existing historical 054/058 manifests and SHA-locked stages must never be mutated.",
+  "records": [
+    {
+      "source": "0x34CF0",
+      "historical_stage": "054",
+      "source_file": "translation/source/quiz_batch01_part2_vi.csv",
+      "jp_scanner": "まる子たちに不幸の手紙をおくったりした気の小さい藤木くん。永沢くんといちばん",
+      "canonical_vi_full": "Fujiki-kun nhút nhát từng gửi cả 'thư xui xẻo' cho Maruko và các bạn. Cậu thân nhất với Nagasawa-kun...",
+      "original_glyph_capacities": [
+        12,
+        14,
+        12
+      ],
+      "original_058_jp_note": null,
+      "old_lines": [
+        "Fujiki từng",
+        "gửi thư rủi",
+        "cho Maruko"
+      ],
+      "new_lines": [
+        "Fujiki gửi",
+        "thư xui xẻo",
+        "cho Maruko"
+      ],
+      "why": "Fujiki's 不幸の手紙 is an ominous chain/misfortune letter; rewrite natural Vietnamese while keeping his delivery to Maruko in 12/14/12 cells."
+    },
+    {
+      "source": "0x34D5B",
+      "historical_stage": "054",
+      "source_file": "translation/source/quiz_batch01_part2_vi.csv",
+      "jp_scanner": "なかよしで、またいちばん永沢くんにふり回されるかれで",
+      "canonical_vi_full": "...và cũng chính là người bị Nagasawa-kun quay như chong chóng nhiều nhất...",
+      "original_glyph_capacities": [
+        12,
+        7,
+        7
+      ],
+      "original_058_jp_note": null,
+      "old_lines": [
+        "Nagasawa hay",
+        "bắt nạt",
+        "Fujiki"
+      ],
+      "new_lines": [
+        "Nagasawa hay",
+        "dắt mũi",
+        "Fujiki"
+      ],
+      "why": "ふり回される is being dragged around/manipulated, not necessarily bullied; restore a natural idiom."
+    },
+    {
+      "source": "0x34E84",
+      "historical_stage": "054",
+      "source_file": "translation/source/quiz_batch01_part2_vi.csv",
+      "jp_scanner": "やさしくて元気なプサディーにまる子はいろいろとかんどうさせられる。",
+      "canonical_vi_full": "Pusadi hiền hậu và tràn đầy sức sống khiến Maruko cảm động bởi rất nhiều điều.",
+      "original_glyph_capacities": [
+        13,
+        14,
+        6
+      ],
+      "original_058_jp_note": null,
+      "old_lines": [
+        "Pusadi hiền",
+        "làm Maruko vui",
+        "lắm!"
+      ],
+      "new_lines": [
+        "Pusadi hiền",
+        "Maru xúc động",
+        "lắm!"
+      ],
+      "why": "かんどうさせられる expresses being moved emotionally, not merely made happy."
+    },
+    {
+      "source": "0x33E7D",
+      "historical_stage": "058",
+      "source_file": "translation/source/quiz_batch03_part3_vi.csv",
+      "jp_scanner": "      のりこえて、強く生きる男で  ｛      ある。｛",
+      "canonical_vi_full": "...ông vẫn mạnh mẽ vượt qua và tiếp tục sống.",
+      "original_glyph_capacities": [
+        13,
+        3
+      ],
+      "original_058_jp_note": "Original scanned string includes 816F-like separators represented as fullwidth braces. Do not confuse with native raw bytes.",
+      "old_lines": [
+        "Ông vẫn sống",
+        "tốt"
+      ],
+      "new_lines": [
+        "Ông vững vàng",
+        "lắm"
+      ],
+      "why": "Following the fire, the man perseveres strongly. Old 'sống tốt' misleadingly sounds morally good instead of resilient."
+    }
+  ],
+  "revised_historical_parent_fields": 4,
+  "original_glyph_frames": 11,
+  "changed_caption_frames": 6,
+  "distinct_new_source_ids": 0,
+  "original_ROM_bytes_read_this_session": false,
+  "emulator_tested": false,
+  "release_approved": false
+}
