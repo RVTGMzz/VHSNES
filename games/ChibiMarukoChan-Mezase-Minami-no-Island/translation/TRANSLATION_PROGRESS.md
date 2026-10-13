@@ -1,5 +1,14 @@
 # Translation progress — Chibi Maruko-chan
 
+## Checkpoint 082 (2026-10-13) — two source-faithful Quiz narration repairs
+
+- **2 existing stage058 original Quiz explanation records revised, 5 of 6 fixed-glyph text lines changed**: Sumire now also restrains Maruko's mischief (`0x328E5`); Maruko's sister still attends grade six and now explicitly likes gratin (`0x32A38`). See `docs/CHECKPOINT_082_SUMIRE_SISTER_FACTS.md` and the guarded runtime manifest/builder.
+- Native line budgets preserved: **14+8+9 and 13+12+14 V2 glyph cells**; no old stage058 content/CP932 original/source pointer edits. Source-only GitHub CI **SUCCESS** [run 38362299037](https://github.com/RVTGMzz/VHSNES/actions/runs/38362299037), including step 18 for 082.
+- Original historially staged Quiz scanner IDs **279/381, unchanged**. Nine remaining nested scanner aliases are not independent patchable records; eight key subfacts retained, but Maruko turning nine (`0x31F33`) still cannot naturally fit the old 13+13 cells while retaining zodiac and birthdate prompt.
+- 81 answers + three non-answer source byte prototypes have not passed SNES emulator/gameplay tests; historical 039–043 raw archive unavailable in current environment. **No integrated ROM patch built or released this session.**
+- Priority remains full semantic content (Fortune four long entries, Quiz age-nine clue, graphics/result/title credit) before final visual font work.
+
+
 ## CHECKPOINT 048 CONTENT-FIRST (2026-10-11): 103 NEW FORTUNE ACTUAL GLYPH EDITS VERIFIED, INTEGRATED 047 MERGE PENDING
 
 - Authored **103 NEW context-aware Fortune display strings** (wishes, romance, money, learning, daily tips, lucky colors) and verified their exact Japanese original 2MiB source offsets and width including CP932 fullwidth glyphs and **two ASCII spaces occupying one glyph's bytes**. All 103 use existing 0x84 V2 font glyphs, maintain original `816F` line delimiters, and do not touch any preexisting source region. Canonical `vi_full` unchanged; abbreviations were edited by meaning, not automatic character trimming. Runtime/emulator visual QA pending.
