@@ -1,5 +1,13 @@
 # Translation progress — Chibi Maruko-chan
 
+## Checkpoint 085 (2026-10-13) — seven important existing Quiz captions restored
+
+- Seven previous original parent source IDs in 054/058/059 repaired (14 changed Vietnamese glyph frames in 20 original physical frames/234 unchanged native cells): `0x32095` **burger and kem**; `0x32303` **Tomozou is close to Maruko / haiku**; `0x3259A` grandmother natural wording; `0x31FA6` **birthday** frame; `0x3394B` **Sugiura Tokuzo** surname; `0x33C6C` **Tomita Tomiko** surname; `0x350AD` **sô-cô-la for Ono**. Each exact before/after and Japanese source evidence in `docs/CHECKPOINT_085_SEVEN_QUIZ_FACTS_AND_NAMES.md`.
+- New `translation/runtime/quiz_seven_fact_restore_085.json` and `tools/build_quiz_seven_fact_restore_085.py`. The local source CI audit caught and then corrected a SHA schema key mismatch/immutable historical manifest flag; [fixed final 085 code run 38372615081](https://github.com/RVTGMzz/VHSNES/actions/runs/38372615081) **PASS**, including explicit 085 audit. GitHub graphics/static [38372615093](https://github.com/RVTGMzz/VHSNES/actions/runs/38372615093) **PASS**.
+- Cumulative single-IPS reconstruction tool now appends stage085 after stage084 with fail-closed original ROM/source/field/Unicode checks, while leaving all old source and font stages intact. **No ROM/IPS was built or emulator run**: exact original SFC and user-owned 039–043 historical ZIP/IPS not available in this session.
+- Historical Quiz distinct source count **279/381 unchanged**, since these are seven already-staged fields; 81 answer/3 independent source-only fields still await true runtime validation. Age nine `0x31F33` remains missing (do not conflate with restored birthday elsewhere). Four long Fortune fields and G3/title-credit/full-game visual QA still outstanding.
+
+
 ## Checkpoint 084 (2026-10-13) — four real Quiz source-semantic improvements
 
 - Fixed **four already staged 054/058 Quiz explanation records** (11 exact original two-byte glyph frames, six caption revisions): Fujiki's `thư xui xẻo`, Nagasawa `dắt mũi` rather than unproven bullying, Pusadi making Maruko `xúc động`, and Nagasawa's father remaining `vững vàng` after fire, rather than morally `sống tốt`. Full before/after: `docs/CHECKPOINT_084_FOUR_QUIZ_CONTEXT_REPAIRS.md`.
