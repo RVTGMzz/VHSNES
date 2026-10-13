@@ -1,0 +1,56 @@
+{
+  "schema": "chibi.fortune.expansion.083.v1",
+  "original_clean_sha256": "e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956",
+  "intention": "Preserve natural full-accented Vietnamese for four independent canonical Fortune entries too long for their original physical slots; never fake translation by ambiguous abbreviations",
+  "prior_source_manifest": "translation/runtime/fortune_exceptions_2_056.json",
+  "rows": [
+    {
+      "file_offset": "0x2BD5E",
+      "source_file": "translation/source/fortune_batch01_part1_vi.csv",
+      "source_jp": "天の声",
+      "vi_full": "Lời trời mách",
+      "vi_display": "Lời trời mách",
+      "source_glyph_capacity": 3,
+      "role": "fortune_heading",
+      "fixed_field_edit_allowed": false
+    },
+    {
+      "file_offset": "0x2C86B",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "source_jp": "また来週",
+      "vi_full": "Hẹn tuần sau",
+      "vi_display": "Hẹn tuần sau",
+      "source_glyph_capacity": 4,
+      "role": "fortune_outro",
+      "fixed_field_edit_allowed": false
+    },
+    {
+      "file_offset": "0x2CA7D",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "source_jp": "きいろ",
+      "vi_full": "Vàng",
+      "vi_display": "Vàng",
+      "source_glyph_capacity": 3,
+      "role": "lucky_color_yellow",
+      "fixed_field_edit_allowed": false
+    },
+    {
+      "file_offset": "0x2CADD",
+      "source_file": "translation/source/fortune_batch01_part3_vi.csv",
+      "source_jp": "しろいろ",
+      "vi_full": "Trắng",
+      "vi_display": "Trắng",
+      "source_glyph_capacity": 4,
+      "role": "lucky_color_white",
+      "fixed_field_edit_allowed": false
+    }
+  ],
+  "source_only_translation_reviewed": true,
+  "original_source_bytes_checked_in_this_session": false,
+  "verified_native_pointer_tables": false,
+  "renderer_visual_width_verified": false,
+  "emulator_tested": false,
+  "allow_static_inplace_patch": false,
+  "release_ready": false,
+  "note": "The physical ROM has not been available for this 083 session. Do not infer pointer tables from raw CP932 occurrences. Current caption strings are editorially complete; relocation/render path remains UNSOLVED."
+}
