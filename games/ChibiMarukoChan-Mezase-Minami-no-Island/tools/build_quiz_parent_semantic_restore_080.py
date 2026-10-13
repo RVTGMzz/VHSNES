@@ -25,7 +25,9 @@ ORIGINAL_SHA = "e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956
 MANIFEST = "translation/runtime/quiz_parent_semantic_restore_080.json"
 STAGE_MANIFESTS = {
     "054": "translation/runtime/quiz_content_first_54_054.json",
+    "057": "translation/runtime/quiz_content_first_50_057.json",
     "058": "translation/runtime/quiz_content_first_67_058.json",
+    "059": "translation/runtime/quiz_content_first_37_059.json",
 }
 NATIVE = {
     0x32C09: (0x32C05, 0x313BD, "058", [(0x32C0F,13),(0x32C31,8),(0x32C49,6)]),
