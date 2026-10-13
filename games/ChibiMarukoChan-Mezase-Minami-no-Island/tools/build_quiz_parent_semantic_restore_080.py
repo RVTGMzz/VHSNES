@@ -87,7 +87,7 @@ def audit(root: Path) -> dict:
         if (record["historical_stage"]!=stage or
             int(record["original_native_record"],0)!=at or
             int(record["original_pointer_word_at"],0)!=ptr or
-            int(record["original_pointer_word_hex"],16)!=(0x8000+at-0x30000) and False):
+            len(record.get("original_japanese",[]))!=len(lines)):
             raise AssertionError("Unexpected original source to Quiz table mapping")
         if bytes.fromhex(record["original_pointer_word_hex"])!=(
             0x8000+at-0x30000).to_bytes(2,"little"):
