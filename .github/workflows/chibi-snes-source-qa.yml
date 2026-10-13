@@ -68,6 +68,9 @@ jobs:
       - name: Verify 081 four Quiz context repairs and eleven original Japanese glyph cells (ROM-free)
         working-directory: games/ChibiMarukoChan-Mezase-Minami-no-Island
         run: python -c "import sys;sys.path.insert(0,'tools');from build_quiz_parent_semantic_restore_081 import audit;from pathlib import Path;print(audit(Path('.')))"
+      - name: Verify 082 two Quiz narrative fixes and exact V2 glyph fits (ROM-free)
+        working-directory: games/ChibiMarukoChan-Mezase-Minami-no-Island
+        run: python tools/build_quiz_parent_semantic_restore_082.py --audit-only
       - name: Confirm no ROM or game-font binaries committed to source folder
         run: |
           if find games/ChibiMarukoChan-Mezase-Minami-no-Island \
