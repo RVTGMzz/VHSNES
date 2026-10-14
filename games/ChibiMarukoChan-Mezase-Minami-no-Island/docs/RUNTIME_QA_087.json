@@ -1,0 +1,35 @@
+{
+  "method": "Snes9x CPU/PPU emulation, savestates, injected WRAM question slot; no ROM edits by harness",
+  "original_SHA256": "e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956",
+  "IPS_SHA256": "5d380dc6d4a14b38615848236ee6991f9ced0d357d7d451658c00f8866dd49ec",
+  "core_DLL_SHA256": "92ae802823d4e43e97bbdba5f2399f2fc1eaf074556853057b4eb76bfa1c4de2",
+  "question_slots_exercised": 50,
+  "answer_selections_exercised": 150,
+  "natural_full_game_playthrough": false,
+  "grading_correctness_certified": false,
+  "visual_acceptance_requires_review": true,
+  "date": "2026-10-14",
+  "question_contact_sheet_visually_reviewed": true,
+  "large_cases_reviewed": [
+    0,
+    4,
+    18,
+    22,
+    26,
+    39
+  ],
+  "runtime_smoke_observed": [
+    "publisher logo",
+    "localized title and credit",
+    "menu entry",
+    "Quiz question/highlight/response"
+  ],
+  "remaining_defects": [
+    "partial/broken G1 and Story Start graphics",
+    "Japanese Fortune artwork and four overflowing Fortune captions",
+    "Japanese Quiz counter",
+    "G3 results/ending not accepted",
+    "natural whole-game playthrough not completed"
+  ],
+  "release_approved": false
+}

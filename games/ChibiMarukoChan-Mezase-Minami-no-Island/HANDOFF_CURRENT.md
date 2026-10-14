@@ -1,5 +1,69 @@
 # HANDOFF CURRENT — Chibi Maruko-chan SNES Việt hóa
 
+## CHECKPOINT 089 — 2026-10-14: VIETNAMESE QUIZ COUNTER, FINAL CURRENT TEST IPS
+
+Read `docs/CHECKPOINT_089_VIETNAMESE_QUIZ_COUNTER.md`. User flagged the Japanese
+第1問 counter; both native fixed heading records now show “Câu”, with native
+dynamic digits preserved. Real Snes9x screenshots verify question counts 1,
+10 and 50. The latest title is the corrected high-contrast 088 artwork;
+do NOT confuse intermediate grey/brown palette experiments with this artifact.
+
+One final cumulative IPS: 68,500B, SHA256
+`7ac471724c3d0867ecea1defb18844798fa647b8c325d9deb309677e6b6508ca`.
+Rebuild original ROM + historical ZIP + local fonts with
+`tools/build_title_readable_088.py --translate-quiz-counter` and --ips/--report.
+All prior source/runtime evidence remains labeled by its actual tested version.
+Not a whole-game finished release. Next checkpoint: 090; real remaining
+G1/Story/Fortune/G3 defects should take priority over new title/font polishing.
+
+## CHECKPOINT 088 — 2026-10-14: USER-REQUESTED READABLE TITLE GROUP
+
+Read `docs/CHECKPOINT_088_READABLE_TITLE_GROUP.md`. After the real Quiz 087
+runtime batch, user requested fixing the entire title group. New G0 artwork
+has bold red/black game name, white/black subtitle and bold black exact credit
+on a white bordered panel. Native palette colors were measured in Snes9x;
+binary masks prevent palette-index blending. 176 tiles fit 185 isolated slots.
+Original characters/copyright and Quiz bank06 bytes are preserved.
+
+One cumulative 088 IPS: 68,458B, SHA256
+`a4c9b5cec15358a11b131c27e812532d2d488074d0de6ac067e5a5d16c95945d`.
+Rebuild directly from original ROM + historical ZIP with
+`tools/build_title_readable_088.py`, local font paths, --ips and --report.
+Title visually inspected in Snes9x; 087 targeted 50-slot/150-selection evidence
+still applies to unchanged Quiz content, not a full natural 088 game run.
+Whole-game completion remains false; see 087 runtime blocker list below.
+Concurrent upstream 087 wording-manifest/audit work is retained. Next: 089.
+
+## CHECKPOINT 087 — 2026-10-14: REAL CUMULATIVE BUILD + QUIZ RUNTIME LAYOUT
+
+Read `docs/CHECKPOINT_087_REAL_BUILD_AND_QUIZ_RUNTIME_LAYOUT.md` first.
+Exact user ROM and SHA-approved 043 ZIP are now available locally. The real build
+exposed G0 title graphics occupying the proposed 81-answer bank06 cells. The
+builder now moves the exact title stream to `$8B:96FE`, preserves decoded art,
+and builds ONE clean-ROM-relative 087 IPS (67,908B; SHA256
+`5d380dc6d4a14b38615848236ee6991f9ced0d357d7d451658c00f8866dd49ec`).
+
+Actual Snes9x execution exposed long-answer clipping and portrait overlap.
+087 adds Quiz-only 8px/28-column geometry, hooks all THREE position consumers
+(including the overlooked bitmap ADC), moves answer/number columns, hides the
+question portrait and pads four wider native Kanji glyph occurrences. No font
+bitmap changes. Allowance continuation fits naturally; the age-nine question
+now reads “Maruko cung Kim Ngưu, / lên 9 tuổi ngày nào?” in a genuine relocated
+main record, with original Japanese source and answer-key metadata preserved.
+
+The targeted real-emulator sweep exercises 50 table slots and 150 selections
+using savestates and WRAM slot injection. This is NOT a natural complete game
+playthrough or independent certification of every grading key. Question images
+and long/age-nine/Kanji cases were visually reviewed. Source checks (19 old plus
+972-case new hook selftest) pass locally. See separate runtime JSON evidence;
+the builder conservatively continues to report no runtime certification.
+
+Historical Quiz scanner count remains 279/381; zero new independent source IDs.
+Remaining: four Fortune overflows, broken/partial G1/Story graphics seen in
+actual runtime, residual Japanese Quiz counter, G3 results/ending, remaining
+alias semantic review and whole-game QA. Title art/credit boots correctly.
+Next checkpoint: 088. Work from this real integrated baseline, content first.
+
 ## CHECKPOINT 086 — 2026-10-13: 7 STAGE057 QUIZ CONTENT/GRAMMAR REPAIRS, SOURCE CI PASS
 
 **Read `docs/CHECKPOINT_086_SEVEN_QUIZ_STAGE057_CONTEXT_REPAIRS.md` FIRST.** Re-reviewed seven previously staged **057** Quiz records against `quiz_batch02_part2_vi.csv` and `part3` original Japanese + full Vietnamese, fixed **16** flawed V2 display captions within **19** existing JP two-byte frames (**191 original glyph cells**), no new scanner source IDs:

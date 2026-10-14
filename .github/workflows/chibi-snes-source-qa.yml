@@ -86,6 +86,9 @@ jobs:
       - name: Verify 086 seven Quiz fact and dialogue repairs in original 057 Japanese frames
         working-directory: games/ChibiMarukoChan-Mezase-Minami-no-Island
         run: python tools/build_quiz_context_semantics_086.py --audit-only
+      - name: Execute 087 Quiz layout hooks and verify native fallback (ROM-free)
+        working-directory: games/ChibiMarukoChan-Mezase-Minami-no-Island
+        run: python tools/selftest_quiz_layout_087.py
       - name: Confirm no ROM or game-font binaries committed to source folder
         run: |
           if find games/ChibiMarukoChan-Mezase-Minami-no-Island \

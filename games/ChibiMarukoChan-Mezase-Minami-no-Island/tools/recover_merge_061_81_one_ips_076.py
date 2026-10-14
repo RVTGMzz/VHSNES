@@ -34,6 +34,8 @@ from build_quiz_sugiyama_ono_083 import build as restore_sugiyama_ono_083
 from build_quiz_semantic_context_batch_084 import build as restore_four_context_parents_084
 from build_quiz_seven_fact_restore_085 import build as restore_seven_fact_parents_085
 from build_quiz_context_semantics_086 import build as restore_seven_stage057_086
+from relocate_title_asset_087 import relocate as relocate_title
+from build_quiz_layout_087 import build as correct_quiz_layout
 
 ROOT=Path(__file__).resolve().parent.parent
 
@@ -52,8 +54,11 @@ def rebuild_one_patch(clean:bytes,archive_file:Path,root:Path):
         qa061,sha(original_061),sha(ips061),sha(clean))
     if int.from_bytes(original_061[0x2975e:0x29760],"little")!=0x9a74:
         raise AssertionError("Actual reconstructed 061 is missing required V2 glyph pointer")
+    # Historical G0 graphics at 0x36907 overlap the proposed answer cells.
+    # Validate the original 061 provenance before moving its exact packed asset.
+    quiz_baseline,title_relocation_qa=relocate_title(clean,original_061)
     choice_ips,choice_qa=integrate_full_81(
-        clean,original_061,root,"cumulative_V2_061")
+        clean,quiz_baseline,root,"cumulative_V2_061")
     choice_rom=apply_ips(clean,choice_ips)
     if (choice_qa.get("canonical_full_Quiz_answer_records")!=81 or
         choice_qa.get("candidate_ROM_sha256")!=sha(choice_rom)):
@@ -138,13 +143,19 @@ def rebuild_one_patch(clean:bytes,archive_file:Path,root:Path):
     # Ensure the cumulative output actually retained the original V2 font.
     if final_rom[0x2975e:0x29760]!=original_061[0x2975e:0x29760]:
         raise AssertionError("Quiz relocation altered Vietnamese V2 font pointer")
+    final_ips,layout_087_qa=correct_quiz_layout(clean,final_rom,root)
+    final_rom=apply_ips(clean,final_ips)
+    if sha(final_rom)!=layout_087_qa["candidate_ROM_sha256"]:
+        raise AssertionError("087 Quiz layout failed cumulative replay")
     return final_ips,{
-        "status":"COMBINED_061_PLUS_81_CHOICES_PLUS_3_NATIVE_FIELDS_PLUS_079_080_081_082_083_084_085_086_SEMANTIC_QA_UNTESTED",
+        "status":"COMBINED_087_QUIZ_LAYOUT_BINARY_PASS_RUNTIME_QA_SEPARATE",
         "original_clean_ROM_sha256":CLEAN_SHA,
         "recovered_historical_stage":selected,
         "user_archive":provenance,
         "validated_061_input_SHA_contract":qa_contract,
         "original_061_ROM_sha256":sha(original_061),
+        "087_title_asset_relocation_report":title_relocation_qa,
+        "087_quiz_layout_report":layout_087_qa,
         "final_candidate_ROM_sha256":sha(final_rom),
         "final_clean_ROM_IPS_sha256":sha(final_ips),
         "final_clean_ROM_IPS_bytes":len(final_ips),
@@ -174,7 +185,7 @@ def rebuild_one_patch(clean:bytes,archive_file:Path,root:Path):
         "084_existing_original_semantic_omissions_restored":4,
         "085_existing_original_semantic_omissions_restored":7,
         "086_existing_original_semantic_omissions_restored":7,
-        "recomputed_SNES_checksum":semantic_086_qa["final_SNES_checksum"],
+        "recomputed_SNES_checksum":layout_087_qa["checksum"],
         "font_V2_present_in_combined_candidate":True,
         "all_84_original_independent_remaining_Quiz_fields_have_source_byte_prototypes":True,
         "emulator_visual_text_tested":False,

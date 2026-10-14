@@ -208,14 +208,15 @@ def make_ips(original: bytes, patched: bytes) -> tuple[bytes, int]:
     return bytes(out), records
 
 
-def build(source: bytes, font_bold: str, font_regular: str):
+def build(source: bytes, font_bold: str, font_regular: str, *,
+          art_factory=None, relocation_file=RELOCATE_FILE):
     from PIL import Image
     if source[SCRIPT_OFF:SCRIPT_OFF + 2] != bytes(2):
         raise AssertionError("G0 package signature changed")
     if source[OLD_POINTER_OFF:OLD_POINTER_OFF + 3] != OLD_POINTER:
         raise AssertionError("original G0 third graphics source changed")
 
-    plane, tiles, index_map = prepare_art(font_bold, font_regular)
+    plane, tiles, index_map = (art_factory or prepare_art)(font_bold, font_regular)
     source_decoded = {}
     original = {}
     for off, dest, length, span in (*GRAPHICS, TITLE_MAP):
@@ -305,12 +306,14 @@ def build(source: bytes, font_bold: str, font_regular: str):
         if newspan > span:
             if off != 0xF456D:
                 raise RuntimeError(f"in-place resource {off:#x} overflows {span}")
-            target = RELOCATE_FILE
-            if target + newspan > 0x38000:
-                raise AssertionError("relocated resource crosses ROM bank86")
+            target = relocation_file
+            if target // 0x8000 != (target + newspan - 1) // 0x8000:
+                raise AssertionError("relocated resource crosses its LoROM bank")
             if source[target:target+newspan] != bytes([255])*newspan:
                 raise AssertionError("bank86 staging area is NOT free")
-            output[OLD_POINTER_OFF:OLD_POINTER_OFF+3] = NEW_POINTER
+            bank,within = divmod(target,0x8000)
+            pointer=((0x80|bank)<<16)|(0x8000+within)
+            output[OLD_POINTER_OFF:OLD_POINTER_OFF+3] = pointer.to_bytes(3,"little")
             output[target:target+newspan] = (
                 (newspan | (int(hdr.postprocess) << 15)).to_bytes(2, "little")
                 + packed
