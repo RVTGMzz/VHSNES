@@ -1,0 +1,78 @@
+{
+  "schema": "chibi.quiz.context_semantics.087.v1",
+  "apply_after": "086 cumulative V2 Quiz candidate",
+  "source_stage": "057",
+  "source_immutable": true,
+  "source_parents": 4,
+  "native_frames": 9,
+  "changed_frames": 5,
+  "original_glyph_cells": 102,
+  "new_scanner_ids": 0,
+  "emulator_tested": false,
+  "release_approved": false,
+  "records": [
+    {
+      "off": "0x359A3",
+      "caps": [
+        14,
+        7
+      ],
+      "old": [
+        "Yamada sắp bị",
+        "lừa!"
+      ],
+      "new": [
+        "Yamada suýt bị",
+        "lừa!"
+      ]
+    },
+    {
+      "off": "0x35B4F",
+      "caps": [
+        13,
+        11
+      ],
+      "old": [
+        "Yamane ít nói",
+        "mê ai vậy?"
+      ],
+      "new": [
+        "Yamane u ám",
+        "mê ai vậy?"
+      ]
+    },
+    {
+      "off": "0x36307",
+      "caps": [
+        13,
+        13,
+        5
+      ],
+      "old": [
+        "Fujiki giỏi",
+        "môn gì nhất?",
+        "nhỉ?"
+      ],
+      "new": [
+        "Fujiki giỏi",
+        "môn thể thao",
+        "nào?"
+      ]
+    },
+    {
+      "off": "0x3679D",
+      "caps": [
+        12,
+        14
+      ],
+      "old": [
+        "Maruko, Tama",
+        "mua kẹo ở đâu?"
+      ],
+      "new": [
+        "Maruko, Tama",
+        "ghé tiệm nào?"
+      ]
+    }
+  ]
+}
