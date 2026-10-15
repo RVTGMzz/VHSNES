@@ -94,6 +94,11 @@ jobs:
         run: |
           python games/ChibiMarukoChan-Mezase-Minami-no-Island/tools/selftest_fortune_layout_091.py
           python games/ChibiMarukoChan-Mezase-Minami-no-Island/tools/selftest_story_spacing_095.py
+      - name: Execute Karaoke layout hooks and source identity checks
+        working-directory: games/ChibiMarukoChan-Mezase-Minami-no-Island
+        run: |
+          python tools/selftest_karaoke_layout_106.py
+          python tools/audit_karaoke_source_104.py
       - name: Confirm no copyrighted game binaries in source
         run: |
           if find games/ChibiMarukoChan-Mezase-Minami-no-Island \

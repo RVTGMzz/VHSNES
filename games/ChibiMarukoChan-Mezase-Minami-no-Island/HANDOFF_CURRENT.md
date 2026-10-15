@@ -1,3 +1,12 @@
+## CHECKPOINT112 — 2026-10-15: CUMULATIVE INTEGRATION AND RECHECK
+
+Read docs/CHECKPOINT_112_RECHECK.md first. Current builder: tools/build_cumulative_112.py.
+Latest IPS:06750e72ca6e51b6db6603ab10949be4631049b8e0988e4149231b6dec6dcfb1.
+19 credits records remain Japanese; Karaoke2B675 needs a semantic correction. Ending/all15 stage selection screens and several device/Paint branches still need direct QA. Whole-game complete=false.
+Remote104 source-only Karaoke audit is retained; it is distinct from local binary104 character-name stage. Do not overwrite parallel updates. Deliver only one cumulative IPS in outputs, never commit ROM/IPS/font/core binaries.
+
+---
+
 ## CHECKPOINT 103 — 2026-10-15: USER SCREENSHOT REVIEW AND ACTIVE TEXT AUDIT
 
 Read docs/CHECKPOINT_103_SCREENSHOT_REVIEW.md first. Current builder:
