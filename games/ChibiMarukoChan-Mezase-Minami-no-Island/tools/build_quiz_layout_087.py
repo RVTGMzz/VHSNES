@@ -30,10 +30,10 @@ def selector(a):
     a.branch(0x90, 'quiz')
 
 
-def spacing_stub(word):
+def spacing_stub(word, selector_factory=None):
     a = Assembly()
     a.emit(0x08, 0xC2, 0x20)  # preserve P; M16 for source-bank comparisons
-    selector(a)
+    (selector_factory or selector)(a)
     a.label('native')
     a.emit(0x28)
     a.load_long_x(0x859670 if word else 0x859696)
@@ -45,12 +45,12 @@ def spacing_stub(word):
     return a.assemble()
 
 
-def destination_stub():
+def destination_stub(selector_factory=None):
     # The bitmap destination uses ADC long,X from the SAME position table.
     # Preserve the incoming A and carry while checking the source context.
     a = Assembly()
     a.emit(0x48, 0x08)
-    selector(a)
+    (selector_factory or selector)(a)
     a.label('native')
     a.emit(0x28, 0x68, 0x7F, 0x70, 0x96, 0x85, 0x6B)
     a.label('quiz')
@@ -58,9 +58,9 @@ def destination_stub():
     return a.assemble()
 
 
-def wrap_stub():
+def wrap_stub(selector_factory=None):
     a = Assembly()  # caller has M16; return the original A/compare flags
-    selector(a)
+    (selector_factory or selector)(a)
     a.label('native')
     a.emit(0xAF, 0x9A, 0x1F, 0x00)
     a.cmp16(19)

@@ -1,3 +1,21 @@
+## CHECKPOINT 101 — 2026-10-15: FIVE NATIVE SETUP HEADINGS
+
+Read docs/CHECKPOINT_101_NATIVE_SETUP_HEADINGS.md first.
+Current builder: tools/build_cumulative_101.py; IPS SHA256:
+9cc673b08d2097b1733bff6f6d21e047f1403dc2c5ae28f4003ec80b90c949bb.
+Native selection/VS headings are Vietnamese; private palette jobs preserve
+other palette owners. Main-menu/intro and all nonheading live OBJ cells were
+checked against100. Remaining: minigame titles, character/team nameplates,
+victory/ending artwork, source aliases and complete gameplay QA. Not finished.
+## CHECKPOINT 100 — 2026-10-14: FONT, FORTUNE AND NATIVE RESULTS
+
+Read docs/CHECKPOINT_100_FONT_FORTUNE_AND_NATIVE_RESULTS.md first.
+Latest cumulative IPS SHA256: 33158e9a0c1927f5dc283c3bd530d4e80c7b5388ad81a12a8304aec99dbded0b.
+Rebuild with tools/build_cumulative_100.py. Native VS now has both Đội labels.
+Synthetic Story-to-VS screenshots are invalid acceptance; their stray skin
+fragments do not occur in native VS. Pink rabbit cheeks are original artwork.
+Next: remaining minigame/VS setup, victory/ending graphics, aliases and full QA.
+Whole-game completion remains false. Earlier checkpoint records are historical.
 # HANDOFF CURRENT — Chibi Maruko-chan SNES Việt hóa
 
 ## CHECKPOINT 089 — 2026-10-14: VIETNAMESE QUIZ COUNTER, FINAL CURRENT TEST IPS

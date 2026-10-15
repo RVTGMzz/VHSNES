@@ -38,9 +38,9 @@ def execute(code, bank, pointer, column, word=True, incoming=0x2400, carry=0):
             value=int.from_bytes(code[ip:ip+2],'little');ip+=2
             if op==0x29:a&=value;z=a==0
             else:c=int(a>=value);z=a==value
-        elif op in (0xf0,0xd0,0x90):
+        elif op in (0xf0,0xd0,0x90,0x80):
             n=code[ip];ip+=1;n=n-256 if n>127 else n
-            if (op==0xf0 and z) or (op==0xd0 and not z) or (op==0x90 and not c):ip+=n
+            if op==0x80 or (op==0xf0 and z) or (op==0xd0 and not z) or (op==0x90 and not c):ip+=n
         elif op==0x6b:
             assert not stack
             return a,c,m,x
