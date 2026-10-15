@@ -1,3 +1,12 @@
+## CHECKPOINT 102 — 2026-10-15: BOTH TEAM-SELECTION LABELS
+
+Read docs/CHECKPOINT_102_TEAM_SELECTION_LABELS.md first.
+Latest: tools/build_cumulative_102.py; IPS SHA256:
+08ccd04e2fc6fc8c6d8eb2855283ce5b7eab907092bc1d40219b9d578d625b6e.
+Includes101 plus both Đội labels in native team selection. Native mascots,
+frames and palette preserved; zero Japanese ink in the two word regions.
+Next: minigame names/intros, character nameplates, victory/ending and full QA.
+Whole-game completion remains false. Earlier checkpoints below are historical.
 ## CHECKPOINT 101 — 2026-10-15: FIVE NATIVE SETUP HEADINGS
 
 Read docs/CHECKPOINT_101_NATIVE_SETUP_HEADINGS.md first.
