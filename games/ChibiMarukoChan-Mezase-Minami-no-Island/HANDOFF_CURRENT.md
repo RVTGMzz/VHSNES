@@ -1,3 +1,15 @@
+## CHECKPOINT 103 — 2026-10-15: USER SCREENSHOT REVIEW AND ACTIVE TEXT AUDIT
+
+Read docs/CHECKPOINT_103_SCREENSHOT_REVIEW.md first. Current builder:
+tools/build_cumulative_103.py; final IPS SHA256:
+5a5a46ec63eea4c5aa9f876b008b112e31f4cef4ab4bd470b33e67cc9ccfc9c7.
+Fixes both team labels, weak L/ơ/ư horns and a missed Japanese mother line.
+Audit actual50 question/150 choice/150 explanation-page pointers +157 Fortune
+fields with tools/audit_active_text_103.py. Preserve intentional Kazuo Kanji.
+Remaining confirmed Japanese: minigame/character graphics, Paint UI, Karaoke
+entry/28 uninserted lyric rows. Menu4 is Paint; menu6 Karaoke; menu7 Sound.
+Story267 source records reviewed;7 special leading046 prefixes need tracing.
+Whole-game completion false. Next: residual graphics/Paint/Karaoke and full QA.
 ## CHECKPOINT 102 — 2026-10-15: BOTH TEAM-SELECTION LABELS
 
 Read docs/CHECKPOINT_102_TEAM_SELECTION_LABELS.md first.
