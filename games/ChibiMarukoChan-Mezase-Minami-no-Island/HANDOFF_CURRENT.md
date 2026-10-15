@@ -1,3 +1,12 @@
+## CHECKPOINT116 — 2026-10-15: CREDITS, GAMEPLAY QA AND CAPTION FIX
+
+Read docs/CHECKPOINT_116_GAMEPLAY_AND_CAPTION_QA.md first. Current builder:tools/build_cumulative_116.py.
+Latest IPS:910e77ab5da5235c8aae1c5d9d3dbf3e697728466039250e8a4f82d45069f4bd. One cumulative IPS in outputs/ChibiMaruko_116_RC.zip.
+All15 captions including ordinals fit the paper by actual PPU pixel audit; long names wrap, old rows clear.19 credits roles translated, staff names preserved.13 Karaoke pages and corrected line tested. Native15 stage entries and3 full timed minigame matches passed. Natural Story first loss/retry/quit passed; ending/credits use explicit fixture. Whole-game complete=false; a natural full winning Story run, real mouse motion and singable timing remain uncertified. Some scenery signs and proper names remain Japanese intentionally.
+Do not deliver old overflowing contact sheets or claim fixture completion as a full playthrough. Keep all source/asset ownership guards; no FF-run allocation. No ROM/IPS/font/core/savestate binaries in Git.
+
+---
+
 ## CHECKPOINT112 — 2026-10-15: CUMULATIVE INTEGRATION AND RECHECK
 
 Read docs/CHECKPOINT_112_RECHECK.md first. Current builder: tools/build_cumulative_112.py.

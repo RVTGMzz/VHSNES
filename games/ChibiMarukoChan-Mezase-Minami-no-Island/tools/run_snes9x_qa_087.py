@@ -14,6 +14,8 @@ ap.add_argument('ips',type=Path)
 ap.add_argument('core',type=Path)
 ap.add_argument('--out',type=Path,required=True)
 ap.add_argument('--sweep',action='store_true')
+ap.add_argument('--stage-sweep',action='store_true',help='Visit all15 actual stage selectors and exercise each match entry')
+ap.add_argument('--full-stage-matches',action='store_true',help='Also wait for one complete timed match in each minigame family')
 args=ap.parse_args()
 ROOT=args.out.resolve(); ROOT.mkdir(parents=True,exist_ok=True)
 (ROOT/'work').mkdir(exist_ok=True);(ROOT/'outputs').mkdir(exist_ok=True)
@@ -152,4 +154,29 @@ if args.sweep:
         'question_slots_exercised':50,'answer_selections_exercised':150,
         'natural_full_game_playthrough':False,'grading_correctness_certified':False,
         'visual_acceptance_requires_review':True,'results':results},indent=2),encoding='utf-8')
+if args.stage_sweep:
+    shots=ROOT/'outputs/stages';shots.mkdir(exist_ok=True)
+    load('mode_menu');run(4,[5]);run(30);run(4,[8]);run(240);save('stage_game_base')
+    results=[];matches=[]
+    for game in range(3):
+        load('stage_game_base')
+        for _ in range(game):run(4,[7]);run(40)
+        run(4,[8]);run(300);run(4,[8]);run(400)
+        run(4,[5]);run(20);run(4,[7]);run(20);run(4,[3]);run(300)
+        run(4,[3]);run(300);run(4,[8]);run(200)
+        for stage in range(5):
+            if stage:run(4,[7]);run(100)
+            assert ram[0x70]==0x14 and ram[0x2048]==stage
+            name=f'114_stage_{game}_{stage}'
+            last.save(shots/f'game_{game}_stage_{stage}.png');save(name)
+            results.append({'game':game,'ordinal':stage,'selected':ram[0x2048],'control':ram[0x70],'actor_state':ram[0xa2]})
+            run(4,[3]);run(300)
+            for key in (6,8,7,8):run(30,[key]);run(10)
+            last.save(shots/f'gameplay_{game}_{stage}.png')
+            if stage==4 and args.full_stage_matches:
+                run(14000)
+                assert ram[0x70] in (0x35,0x55,0x79) and ram[0xa2]==7
+                last.save(shots/f'full_match_result_{game}.png');matches.append({'game':game,'controller':ram[0x70],'result_state':ram[0xa2]})
+            if stage<4:load(name);run(2)
+    (ROOT/'outputs/stage_runtime.json').write_text(json.dumps({'ROM_SHA256':hashlib.sha256(rom).hexdigest(),'IPS_SHA256':hashlib.sha256(patch.read_bytes()).hexdigest(),'core_SHA256':hashlib.sha256(args.core.read_bytes()).hexdigest(),'method':'Native controller flow through solo setup, CPU selection, all15 stage selectors and match entry; no WRAM injection','events':results,'completed_timed_matches':matches,'natural_full_game_playthrough':False},indent=2),encoding='utf-8')
 core.retro_unload_game();core.retro_deinit()

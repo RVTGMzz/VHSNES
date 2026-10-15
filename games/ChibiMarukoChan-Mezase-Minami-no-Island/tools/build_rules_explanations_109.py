@@ -13,16 +13,7 @@ from build_content_first_040_fortune import apply_ips,make_ips
 ROOT=Path(__file__).resolve().parent.parent
 BASE_SHA='697a9d220e5adb315ea7699dd9791409d34d4fb45385aaafef1d2b15f0f12a93'
 
-def rules_selector(a,stage=False):
- a.emit(0xAF,0x86,0x1F,0,0x29,0x7F,0)
- for bank in (3,6):a.cmp16(bank);a.branch(0xF0,'quiz')
- a.cmp16(5);a.branch(0xF0,'bank5')
- a.cmp16(0x7e);a.branch(0xD0,'native');a.emit(0xAF,0x94,0x1F,0)
- a.cmp16(0x8000);a.branch(0x90,'native');a.cmp16(0x8090);a.branch(0x90,'quiz');a.branch(0x80,'native')
- a.label('bank5');a.emit(0xAF,0x94,0x1F,0)
- for lo,hi,label in [(0x88be,0x8a90,'lyrics1'),(0xb37a,0xb80a,'fortune'),(0xbd24,0xcd74 if stage else 0xcb9b,'lyrics2'),(0xf272,0xf800,'rules'),(0xf821,0xfa00,'relocated')]:
-  a.cmp16(lo);a.branch(0x90,label);a.cmp16(hi);a.branch(0x90,'quiz');a.label(label)
- a.cmp16(0xff20);a.branch(0x90,'native');a.cmp16(0xffa0);a.branch(0x90,'quiz')
+from layout_contexts_109 import rules_selector
 
 def build(clean,base,font,root=ROOT):
  if hashlib.sha256(base).hexdigest()!=BASE_SHA or hashlib.sha256(clean).hexdigest()!='e62768e8c0743acca2632a500d4c8463f0f88920d71e8c3a94da4cc3e6f08956':raise ValueError('Exact108/original required')

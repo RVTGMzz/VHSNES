@@ -4,7 +4,7 @@ import json
 from build_quiz_layout_087 import spacing_stub, destination_stub, wrap_stub
 
 
-def execute(code, bank, pointer, column, word=True, incoming=0x2400, carry=0):
+def execute(code, bank, pointer, column, word=True, incoming=0x2400, carry=0, subroutines=None):
     # Model only emitted instructions; real Snes9x evidence is recorded
     # separately. M16 is required by the native word/ADC/wrap callers.
     mem={0x001f86:bank,0x001f94:pointer,0x001f9a:column}
@@ -15,8 +15,8 @@ def execute(code, bank, pointer, column, word=True, incoming=0x2400, carry=0):
         mem[0x859670+i*2]=16*((4+13*i)//8)
         mem[0x859696+i]=(4+13*i)%8
     a=incoming; x=column*(2 if word else 1); m=16 if word else 8
-    c=carry;z=False;stack=[];ip=0
-    for _ in range(100):
+    c=carry;z=False;stack=[];ip=0;calls=[]
+    for _ in range(300):
         op=code[ip];ip+=1
         if op==0x08:stack.append(('P',m,c,z))
         elif op==0x28:_,m,c,z=stack.pop()
@@ -33,15 +33,22 @@ def execute(code, bank, pointer, column, word=True, incoming=0x2400, carry=0):
             elif m==8:a=(a&0xff00)|(value&255)
             else:a=value
             z=(a&mask)==0
-        elif op in (0x29,0xc9):
+        elif op in (0x29,0xc9,0xa9):
             assert m==16
             value=int.from_bytes(code[ip:ip+2],'little');ip+=2
-            if op==0x29:a&=value;z=a==0
+            if op==0xa9:a=value;z=a==0
+            elif op==0x29:a&=value;z=a==0
             else:c=int(a>=value);z=a==value
-        elif op in (0xf0,0xd0,0x90,0x80):
+        elif op in (0xf0,0xd0,0x90,0xb0,0x80):
             n=code[ip];ip+=1;n=n-256 if n>127 else n
-            if op==0x80 or (op==0xf0 and z) or (op==0xd0 and not z) or (op==0x90 and not c):ip+=n
+            if op==0x80 or (op==0xf0 and z) or (op==0xd0 and not z) or (op==0x90 and not c) or (op==0xb0 and c):ip+=n
+        elif op==0xea:pass
+        elif op==0x22:
+            addr=int.from_bytes(code[ip:ip+3],'little');ip+=3
+            assert subroutines and addr in subroutines
+            calls.append((code,ip));code=subroutines[addr];ip=0
         elif op==0x6b:
+            if calls:code,ip=calls.pop();continue
             assert not stack
             return a,c,m,x
         else:raise AssertionError(f'Unexpected emitted opcode {op:#x}')
