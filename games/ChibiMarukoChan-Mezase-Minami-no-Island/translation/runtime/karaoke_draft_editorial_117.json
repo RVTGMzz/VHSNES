@@ -1,0 +1,56 @@
+{
+  "schema": "chibi.karaoke.singable_editorial_117.v1",
+  "source_inventory": "translation/source/karaoke_batch01_vi.csv",
+  "draft_inventory": "translation/source/karaoke_batch01_singable_v1_vi.csv",
+  "runtime_override": "translation/runtime/karaoke_semantic_113.json",
+  "source_104_audit": "tools/audit_karaoke_source_104.py",
+  "changes": [
+    {
+      "source_offset": "0x2B47D",
+      "original_Japanese": "そのあと  腰痛  足もと  ふらふら",
+      "previous_draft": "Xong rồi đau lưng, chân tay lảo đảo",
+      "revised_draft": "Xong rồi đau lưng, bước chân lảo đảo",
+      "meaning_guard": "腰痛 is backache; 足もとふらふら describes unsteady footing, not hands.",
+      "whitespace_token_count_preserved": true
+    },
+    {
+      "source_offset": "0x2B4FA",
+      "original_Japanese": "満足  極楽  シュラシュシュシュ",
+      "previous_draft": "Mãn nguyện, cực vui, shura-shu-shu-shu!",
+      "revised_draft": "Mãn nguyện, cực lạc, shura-shu-shu-shu!",
+      "meaning_guard": "極楽 connotes bliss/paradise, not merely fun; keep the vocal refrain.",
+      "whitespace_token_count_preserved": true
+    },
+    {
+      "source_offset": "0x2B622",
+      "original_Japanese": "スッキリするには  マラソンなわとび",
+      "previous_draft": "Muốn người khoan khoái: chạy bộ, nhảy dây",
+      "revised_draft": "Muốn thật khoan khoái: chạy marathon, nhảy dây",
+      "meaning_guard": "マラソン is marathon, なわとび is jump rope; do not generalize to jogging.",
+      "whitespace_token_count_preserved": true
+    },
+    {
+      "source_offset": "0x2B675",
+      "original_Japanese": "やらなきゃならない  今のうち",
+      "previous_draft": "Muốn làm thì làm, tranh thủ lúc này",
+      "revised_draft": "Phải làm ngay, tranh thủ lúc còn kịp",
+      "meaning_guard": "やらなきゃならない expresses obligation, 今のうち urgency/opportunity.",
+      "whitespace_token_count_preserved": true
+    },
+    {
+      "source_offset": "0x2B69D",
+      "original_Japanese": "がっちり  体力  つけなくちゃ",
+      "previous_draft": "Rèn cho thật khỏe, thể lực thật đầy",
+      "revised_draft": "Rèn luyện thể lực cho người thêm khỏe",
+      "meaning_guard": "体力をつける is to build stamina/physical fitness; use natural Vietnamese.",
+      "whitespace_token_count_preserved": true
+    }
+  ],
+  "canonical_vi_full_changed": false,
+  "runtime_106_113_changed": false,
+  "stage_116_IPS_changed": false,
+  "rom_or_ips_built": false,
+  "emulator_tested": false,
+  "lyric_singability_certified": false,
+  "source_only": true
+}
