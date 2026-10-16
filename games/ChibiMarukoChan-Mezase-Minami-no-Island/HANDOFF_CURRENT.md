@@ -1,3 +1,12 @@
+## CHECKPOINT118 — 2026-10-16: RELEASE CANDIDATE AND JAPANESE RESIDUAL RECHECK
+
+Read docs/CHECKPOINT_118_RELEASE_AND_RESIDUAL_QA.md first. Builder:tools/build_cumulative_118.py. Public117 editorial proposal files are preserved, not merged into runtime lyrics.
+IPS9075914cbbffb76fb7a8488a3c8530def2b37e9aa51509c947aa838f65c34b3f; patched4MiB ROM22d02aa0ab67966e7f88c24097b434d86c79972a5ea3254ca92a5e7f9cd59f09.
+Known residual signs/copyright/29 staff names/Kazuo Kanji choices are now VI or Latin. Also blanked Karaoke Japanese ruby and cleared stale lyric rows; all13 pages and19 credits have actual bitmap DMA audits. Source scan:507 Quiz/Fortune fields and267 Story records, no unexpected Japanese.15 stage captions retain116 pixel bounds;3 complete minigame matches passed.
+No known visible Japanese in reviewed scope; natural full winning Story, real mouse hardware and singable timing remain uncertified. Do not claim100% QA. Public ZIP containsIPS only; localSFC is separate. Keep retired native copies, scripts, original resource ownership, and DMA queue safeguards.
+
+---
+
 ## CHECKPOINT116 — 2026-10-15: CREDITS, GAMEPLAY QA AND CAPTION FIX
 
 Read docs/CHECKPOINT_116_GAMEPLAY_AND_CAPTION_QA.md first. Current builder:tools/build_cumulative_116.py.

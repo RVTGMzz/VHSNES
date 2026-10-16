@@ -21,7 +21,7 @@ ROOT=args.out.resolve(); ROOT.mkdir(parents=True,exist_ok=True)
 (ROOT/'work').mkdir(exist_ok=True);(ROOT/'outputs').mkdir(exist_ok=True)
 GAME=Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(GAME / 'tools'))
-from build_content_first_040_fortune import apply_ips
+from ips_release_118 import apply_ips
 
 core = C.CDLL(str(args.core.resolve()))
 ENV=C.CFUNCTYPE(C.c_bool,C.c_uint,C.c_void_p)
@@ -173,6 +173,7 @@ if args.stage_sweep:
             run(4,[3]);run(300)
             for key in (6,8,7,8):run(30,[key]);run(10)
             last.save(shots/f'gameplay_{game}_{stage}.png')
+            save(f'gameplay_{game}_{stage}')
             if stage==4 and args.full_stage_matches:
                 run(14000)
                 assert ram[0x70] in (0x35,0x55,0x79) and ram[0xa2]==7

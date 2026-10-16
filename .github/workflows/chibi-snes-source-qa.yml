@@ -100,6 +100,7 @@ jobs:
           python tools/selftest_karaoke_layout_106.py
           python tools/audit_karaoke_source_104.py
           python tools/selftest_credits_spacing_113.py
+          python tools/selftest_ips_expansion_118.py
       - name: Confirm no copyrighted game binaries in source
         run: |
           if find games/ChibiMarukoChan-Mezase-Minami-no-Island \

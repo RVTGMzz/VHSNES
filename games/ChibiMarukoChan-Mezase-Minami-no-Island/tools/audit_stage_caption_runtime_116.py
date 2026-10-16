@@ -1,7 +1,7 @@
 """Measure actual BG3 caption ink in15 Snes9x snapshots, including scroll."""
 import argparse,hashlib,json
 from pathlib import Path
-from build_content_first_040_fortune import apply_ips
+from ips_release_118 import apply_ips
 
 def block(data,tag,size):
  marker=f'{tag}:{size:06d}:'.encode();at=data.index(marker)+11;return data[at:at+size]

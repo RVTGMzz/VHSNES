@@ -9,7 +9,9 @@ from pathlib import Path
 
 from rom_common import require_clean_rom
 
-ROM_SIZE = 0x200000
+# LoROM mapping includes release118's explicitly added banks C0..FF.
+# parse_header still validates every read against the supplied image length.
+ROM_SIZE = 0x400000
 
 
 @dataclass(frozen=True)

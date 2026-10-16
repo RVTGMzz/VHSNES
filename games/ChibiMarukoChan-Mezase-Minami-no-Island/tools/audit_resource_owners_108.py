@@ -3,7 +3,7 @@ import argparse,hashlib,json
 from pathlib import Path
 from render_chibi_resource_package import parse_type0_package
 from build_native_setup_headings_101 import decoded
-from build_content_first_040_fortune import apply_ips
+from ips_release_118 import apply_ips
 
 def audit(clean,old,new):
  packages={}
@@ -15,6 +15,8 @@ def audit(clean,old,new):
  cache1={};cache2={};same=set();changes=[];errors=[]
  allowed_sources={0xe100,0x17d1c,0x9f18e,0x12de52}
  allowed_pointers={0x1262b,0x12630,0x12635,0x12621,0x1263d,0x12626,0x12642,0x12290,0x121f6,0x121fb,0x122c9,0x122e2,0x122ef,0x12308,0x12315,0x1232e}
+ #118: isolated copyright BG3 and the three explicitly edited sign atlases.
+ allowed_pointers.update((0x120a9,0x120ae,0x122f4,0x12561,0x12588,0x1256e,0x1257b,0x12595))
  for package,recs in packages.items():
   for rec in recs:
    ref=package+4+rec.index*5;src=rec.source_file;cpu=int.from_bytes(new[ref:ref+3],'little');at=((cpu>>16)&0x7f)*0x8000+(cpu&0x7fff)
