@@ -1,0 +1,40 @@
+{
+  "schema": "chibi.karaoke.draft_source_recheck.120.v1",
+  "date": "2026-10-18",
+  "previous_release_checkpoint": 118,
+  "input_source_commit": "85db80a33faed97946e629452f49fbdcb687723f",
+  "source": "translation/source/karaoke_batch01_vi.csv",
+  "draft": "translation/source/karaoke_batch01_singable_v1_vi.csv",
+  "editorial_manifest": "translation/runtime/karaoke_draft_editorial_117.json",
+  "protected_runtime": "translation/runtime/karaoke_semantic_113.json",
+  "independently_checked": {
+    "original_source_rows": 28,
+    "draft_rows": 28,
+    "original_offset_order_preserved": true,
+    "Japanese_and_vi_full_identity_preserved": true,
+    "changed_draft_lines": 5,
+    "offsets": [
+      "0x2B47D",
+      "0x2B4FA",
+      "0x2B622",
+      "0x2B675",
+      "0x2B69D"
+    ],
+    "all_five_previous_and_revised_word_counts_match": true,
+    "all_28_draft_lines_NFC": true,
+    "all_28_draft_lines_no_ASCII_control": true,
+    "all_28_draft_lines_no_Japanese_script": true,
+    "repeated_refrain_groups_consistent": 2,
+    "protected_runtime_113_text": "Phải làm ngay, khi vẫn còn kịp",
+    "source_only_validation": "PASS"
+  },
+  "existing_119_audit_defect": "A wrongly double-escaped control-character regular expression matches ordinary Latin letters; 119 standalone audit is NOT a valid PASS until fixed.",
+  "existing_CI_scope": "Source workflow passes existing 104 source inventory checks and syntax compilation; it does not execute 119 audit.",
+  "recommended_fix": "In tools/audit_karaoke_draft_119.py replace faulty re.search with any(ord(ch) < 32 or ord(ch) == 127 for ch in after); add dedicated workflow execution of 119 audit.",
+  "source_code_fix_committed": false,
+  "ROM_or_IPS_built": false,
+  "SNES_emulator_tested": false,
+  "karaoke_singable_timing_certified": false,
+  "release_118_changed": false,
+  "game_complete": false
+}
