@@ -9,7 +9,6 @@ from __future__ import annotations
 
 import argparse
 import json
-import re
 import unicodedata
 from pathlib import Path
 
@@ -62,7 +61,7 @@ def audit(root: Path = ROOT) -> dict:
             raise AssertionError(f"Draft phrase count changed at {off:05X}")
         if (not item.get("meaning_guard")
                 or after != unicodedata.normalize("NFC", after)
-                or re.search(r"[\\x00-\\x1f]", after)):
+                or any(ord(ch) < 32 or ord(ch) == 127 for ch in after)):
             raise AssertionError(f"Editorial safety guard failed at {off:05X}")
 
     # The separately reviewed runtime113 obligation fix is already in 118.
